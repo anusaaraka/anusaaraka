@@ -9,7 +9,23 @@
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
 ;------------------------- Modify mwe alignment ----------------
-
+;Similarly, the price or employment level of this representative good will reflect the general price and employment level of the economy.
+;isI waraha, isa prawiniXi vaswu kA kImawa swara aWavA rojZagAra swara arWavyavasWA ke sAmAnya kImawa Ora [rojZagAra swara ko] prawibiMbiwa karegA.
+(defrule modify_mwe
+(declare (salience 13))
+(or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
+?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning $?mng ?v&se|ko|meM|para|kI))
+?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning $?mng) (man_meaning $?m))
+(test (eq (integerp (member$ ?id $?ids)) TRUE))
+(test (eq (integerp (member$ ?id1 $?ids)) TRUE))
+(test (neq ?id ?id1))
+?f2<-(left_over_ids $?l)
+=>
+        (retract ?f0 ?f2)
+        (modify ?f1 (man_id ?mid)(man_meaning $?mng ?v))
+	(assert (left_over_ids $?l ?mid1))
+)
+;------------------------------------------------------------------
 ;Why does a [railway track] have a particular shape like I?
 ;Man: [rela] [patarI kI] Akqwi @I ke samAna kyoM howI hE ?
 ;Anu: [rela paWa] mEM samAna rUpa kyoM howA hE?
@@ -20,7 +36,8 @@
 ?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning $? ?m $?amng) (man_meaning $?mng))
 (test (eq (integerp (member$ ?id $?ids)) TRUE))
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
-(test (neq $?mng (create$ $?pre ?m $?m1)))
+;(test (neq $?mng (create$ $?pre ?m $?m1)))
+(test (and (neq $?mng ?m ) (eq (integerp (member$ ?m (create$ $?mng))) FALSE)))
 =>
         (retract ?f0)
         (modify ?f1 (man_meaning $?pre ?m $?m1 $?mng))
@@ -38,6 +55,7 @@
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
 (test (eq (integerp (member$ ?m $?m1)) TRUE))
 (not (modified_mwe_slot ?mid))
+(not (alignment (anu_id ?id1) )) ;The railways affected the structure of the Indian economy in two important ways.
 =>
         (modify ?f0 (anu_id ?id1))
 	(assert (modified_mwe_slot ?mid))
@@ -53,7 +71,7 @@
 (declare (salience 13))
 (root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?h)
 ?f<-(alignment (anu_id ?id) (man_id ?mid)(anu_meaning) (man_meaning $?mng))
-(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM hogA))) FALSE))
+(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM hogA avaSya))) FALSE))
 ?f1<-(left_over_ids $?ids)
 =>
         (retract ?f ?f1)
@@ -72,7 +90,11 @@
 (test (eq (integerp (member$ $?mng (create$ $?m))) FALSE));In SI, there are seven base units as given in Table 2.1. 11-02
 =>
 		(retract ?f )
-	        (modify ?f0 (man_meaning $?m $?mng))
+		(if (> ?mid ?mid1) then
+		        (modify ?f0 (man_meaning $?mng $?m))
+		else	
+		        (modify ?f0 (man_meaning $?m $?mng))
+		)
 )
 ;---------------------------------------------------------------------------------
 ;Some physical quantities that are represented by vectors are displacement, velocity, acceleration and force.
@@ -147,16 +169,17 @@
 (declare (salience -1))
 ?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?amng) (man_meaning ?mng))
+(test (neq (integerp (member$ ?mng (create$ WIM WA We))) TRUE));Dates for depositing specified sums of revenue were fixed, failing which the zamindars were to lose their rights.
 (id-cat_coarse ?aid verb)
 (chunk_name-chunk_ids JJP|NP|VGNF ?mid )
-(manual_word_info (head_id ?id) (word $?mng1)(vibakthi $?v))
+(manual_word_info (head_id ?id) (word $?mng1)(vibakthi ?v $?vib))
 (chunk_name-chunk_ids ?c&VGF|VGNN $? ?id $?)
 =>
         (retract ?f)
         (assert (left_over_ids $?p $?p1))
-        (if (eq ?c VGNN) then
-                (modify ?f0 (man_meaning ?mng $?mng1 $?v))
-        else
+        (if (and (neq ?c VGF)(neq ?v 0)) then
+                (modify ?f0 (man_meaning ?mng $?mng1 ?v $?vib))
+       else
                 (modify ?f0 (man_meaning ?mng $?mng1))
         )
 )
@@ -175,15 +198,17 @@
         (modify ?f0 (man_meaning ?mng1 ?m  $?mng))
 )
 ;----------------------------------------------------------------------------------------------
+;if kara/ho leftover then group with previous word.
 ;The world has an [astonishing] variety of materials and a bewildering diversity of life and behavior.
 ;saMsAra meM paxArWoM ke [AScaryacakiwa] [karane vAle] prakAra waWA jIvana evaM vyavahAra kI vismayakArI viBinnawAez hEM.
 ;It is deformable, i.e. it allows some relative displacement between different parts.
 ;isameM [virUpaNa] [ho sakawA hE], arWAw isake viBinna BAgoM ke bIca ApekRa visWApana samBava hE .
 (defrule default_kara/ho_group
-?f<-(left_over_ids ?id )
+?f<-(left_over_ids $?p ?id $?p1)
 (manual_word_info (head_id ?id) (word ?mng1 $?w)(vibakthi ?v $?vib))
-(man_word-root-cat ?mng1 kara|ho v)
+(man_word-root-cat ?mng1&~hE kara|ho v)
 ?f0<-(alignment (anu_id ?aid) (man_id ?mid&:(= (- ?id 1) ?mid)) (man_meaning ?mng))
+(not (root-verbchunk-tam-chunkids ? are|is ? ?aid)) ;Ex: hogA,hEM -- ho
 =>
 	(retract ?f)
 	(if (or (eq ?v 0) (eq ?v EOF)) then
@@ -191,7 +216,26 @@
 	else
 		(modify ?f0 (man_meaning ?mng ?mng1 $?w ?v $?vib))
 	)
+	(assert (left_over_ids $?p $?p1))
 )
+;----------------------------------------------------------------------------------------------
+;if leftover id next word is kara and if it is aligned then combine both.
+;The principles [will be stated], as far as possible, in simple language.
+;jahAz waka samBava hogA sixXAnwoM kA sarala BARA meM [varNana kiyA jAegA] .
+;Within the category of industrial goods also output of different kinds of goods tend to rise or fall simultaneously.
+;Oxyogika vaswuoM meM BI viBinna prakAra kI vaswuoM ke nirgawa meM eka sAWa vqxXi yA hrAsa kI [pravqwwi howI hE].
+(defrule default_kara/ho_group1
+?f<-(left_over_ids $?p ?id $?p1)
+(manual_word_info (head_id ?id) (word ?mng)(vibakthi 0))
+?f0<-(alignment (anu_id ?aid) (man_id ?mid&:(= (+ ?id 1) ?mid))(anu_meaning ? $?) (man_meaning ?kara $?tam))
+(man_word-root-cat ?kara kara|ho v)
+(not (root-verbchunk-tam-chunkids ? are|is ? ?aid)) ;Ex: hogA,hEM -- ho
+=>
+        (retract ?f)
+        (modify ?f0 (man_meaning ?mng ?kara $?tam))
+	(assert (left_over_ids $?p $?p1))
+)
+
 ;---------------------------------- noun related rules---------------------------------------
 
 ;The first model of atom was proposed by J. J. Thomson in 1898.
@@ -225,13 +269,39 @@
 ;Like velocity, acceleration can also be positive, negative or zero.
 ;[vega ke samAna] [hI] wvaraNa BI XanAwmaka, qNAwmaka aWavA SUnya ho sakawA hE .
 (defrule group_hI
-?f<-(left_over_ids ?id)
+?f<-(left_over_ids $?p ?id $?p1)
 (manual_word_info (head_id ?id) (word hI))
 (manual_word_info (head_id ?mid)(vibakthi $?v) (group_ids $?d ?id1&:(=(- ?id 1) ?id1)))
 ?f0<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?m) (man_meaning $?m1))
 =>
 	(retract ?f)
 	(modify ?f0 (man_meaning $?m1 hI))
+	(assert (left_over_ids $?p $?p1))
+)
+;----------------------------------------------------------------------------------------------
+;At maximum compression the kinetic energy of the car is converted [entirely] into the potential energy of the spring. 
+;kAra kI gawija UrjA aXikawama sampIdana para [sampUrNa rUpa se] spriMga kI sWiwija UrjA meM parivarwiwa ho jAwI hE.
+(defrule align_rUpa
+?f<-(left_over_ids $?p ?mid $?p1)
+(manual_word_info (head_id ?mid) (word rUpa)(vibakthi ?v))
+?f1<-(alignment (man_id ?mid1&:(=(- ?mid 1) ?mid1)) (man_meaning $?m))
+=>
+	(retract ?f)
+        (modify ?f1 (man_meaning $?m rUpa ?v))
+	(assert (left_over_ids $?p $?p1))
+)
+;----------------------------------------------------------------------------------------------
+;The second Law is [obviously] consistent with the first law. 
+;[prawyakRa rUpa se] xviwIya niyama praWama niyama ke anurUpa hE.
+(defrule align_rUpa1
+?f<-(left_over_ids $?p ?mid $?p1)
+?f1<-(alignment (anu_id ?aid) (man_id ?mid1&:(=(+ ?mid 1) ?mid1)) (man_meaning rUpa ?m))                                 
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi 0))
+(id-cat_coarse ?aid adverb)
+=>
+        (retract ?f)
+        (modify ?f1 (man_meaning ?mng rUpa ?m))
+        (assert (left_over_ids $?p $?p1))
 )
 ;----------------------------------------------------------------------------------------------
 ;Often, in these situations, the force and the time duration are difficult to ascertain separately.
@@ -270,6 +340,39 @@
 		(modify ?f0 (man_meaning $?word @PUNCT-OpenParen ?m @PUNCT-ClosedParen ))
 	)
 )
+;----------------------------------------------------------------------------------------------
+;For example, if we multiply a constant velocity vector by duration (of time), we get a displacement vector.
+;uxAharaNasvarUpa, yaxi hama kisI acara vega saxiSa ko kisI (samaya) anwarAla se guNA kareM wo hameM eka visWApana saxiSa prApwa hogA .
+(defrule align_paren_word1
+?f<-(left_over_ids $?p ?id $?p1)
+(manual_word_info (head_id ?id) (word ?m))
+(manual_id-word =(+ ?id 1) @PUNCT-OpenParen)
+(manual_word_info (head_id ?mid&:(= (+ ?id 2) ?mid)) (word $?word)(vibakthi ?v $?vib))
+(manual_id-word =(+ ?id 3) @PUNCT-ClosedParen)
+?f0<-(alignment (man_id ?mid))
+=>
+        (retract ?f)
+        (assert (left_over_ids $?p $?p1))
+        (if (neq ?v 0) then
+                (modify ?f0 (man_meaning ?m  @PUNCT-OpenParen $?word @PUNCT-ClosedParen ?v $?vib))
+        else
+                (modify ?f0 (man_meaning ?m @PUNCT-OpenParen $?word @PUNCT-ClosedParen ))
+        )
+)
+;----------------------------------------------------------------------------------------------
+;If the object moves from P to P′, the vector PP′ (with tail at P and tip at P′) is [called] the displacement vector corresponding to motion from point P (at time t) to point P′ (at time t′).
+;yaxi vaswu @P se calakara @P′ para pahuFca jAwI hE wo saxiSa @PP′ (jisakI pucCa @P para waWA SIrRa @P′ para hE) biMxu @P (samaya @t) se @P′ (samaya @t′) waka gawi ke safgawa visWApana saxiSa [kahalAwA hE].
+(defrule align_using_phrasal
+?f<-(left_over_ids ?id)
+(manual_word_info (head_id ?id) (word ?m ?m1&hE|hEM|hue|huI))
+(eng_id-eng_wrd-man_wrd ?aid ? ?m)
+(not (alignment (anu_id ?aid)))
+(id-Apertium_output ?aid $?amng)
+=>
+	(retract ?f)
+	(assert (alignment (anu_id ?aid) (man_id ?id) (anu_meaning $?amng) (man_meaning ?m ?m1)))
+)
+
 ;----------------------- to get leftover_anu_ids ----------------------------------------
 (defrule get_left_anu_ids
 (declare (salience -7))
@@ -358,37 +461,33 @@
 (defrule print_single_left_over_wrd
 (declare (salience -11))
 ?f0<-(left_over_ids ?id)
-(manual_word_info (head_id ?id) (word $?mng))
+(manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib) )
+(chunk_name-chunk_ids ?c $? ?id $?)
 =>
 	(retract ?f0)
-	(printout ?*lf-f* (wx_utf8 (implode$ (create$ $?mng))) crlf)
+	(if (or (eq ?v 0) (eq ?c VGF) (eq ?c VGNF)(eq ?c VGNN)) then
+		(printout ?*lf-f* (wx_utf8 (implode$ (create$ $?mng))) crlf)
+	else
+		(printout ?*lf-f* (wx_utf8 (implode$ (create$ $?mng ?v $?vib))) crlf)
+	)
 )
 
 (defrule print_left_over_wrd
 (declare (salience -11))
 ?f0<-(left_over_ids ?id $?po ?lid)
-(manual_word_info (head_id ?id) (word $?mng))
+(manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib))
+(chunk_name-chunk_ids ?c $? ?id $?)
 =>
         (retract ?f0)
 	(assert (left_over_ids $?po ?lid))
-	(bind ?m (string-to-field (str-cat (wx_utf8 (implode$ (create$ $?mng))) ",") ))
-        (printout ?*lf-f* ?m " ")
+	(if (or (eq ?v 0) (eq ?c VGF) (eq ?c VGNF) (eq ?c VGNN)) then
+;	(if (eq ?v 0) then
+		(printout ?*lf-f*  (str-cat (wx_utf8 (implode$ (create$ $?mng))) ", ") )
+	else
+		(printout ?*lf-f* (str-cat (wx_utf8 (implode$ (create$ $?mng ?v $?vib))) ", "))
+	)
 )
 
-;-------------------- Modify potential -------------------
-(defrule potential_align
-(declare (salience -12))
-?f1<-(alignment (anu_id ?aid) (man_id ?id) (anu_meaning ?m) (man_meaning ?m))
-?f0<-(alignment (anu_id ?aid2) (man_id ?id2) (anu_meaning ?m $?) (man_meaning $?mng1))
-(test (neq ?aid ?aid2))
-(alignment (anu_id ?aid3) (man_id ?id3&:(= (- ?id2 1) ?id3) ))
-(test (neq ?aid3 =(- ?aid2 1)))
-(not (modification done ))
-=>
-        (modify ?f0 (anu_id ?aid))
-        (modify ?f1 (anu_id ?aid2))
-	(assert (modification done ))
-)
 ;----------------------------------------------------------------------------------------------
 ;Since momentum is a vector this implies three equations for the three directions {x, y, z}.
 ;cUzki saMvega eka saxiSa rASi hE, awaH yaha wIna xiSAoM [{@x], @y, @z} ke lie wIna samIkaraNa praxarSiwa karawA hE.

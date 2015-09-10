@@ -145,6 +145,7 @@
  ?f<-(English_Sen $?Eng_list)
   =>
         (mwe_lookup "eng_phy_multi_word_dic.gdbm" 1 $?Eng_list)
+        (mwe_lookup "eng_social_science_multi_word_dic.gdbm" 1 $?Eng_list)
         (mwe_lookup "eng_acronyms_multi.gdbm" 1 $?Eng_list)
         (mwe_lookup "eng_named_entity_multi.gdbm" 1 $?Eng_list)
         (mwe_lookup "eng_proper_noun_multi.gdbm" 1 $?Eng_list)
@@ -171,7 +172,7 @@
                 	(print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
 		)
 	)
-	(if (eq ?gdbm "physics_dic.gdbm") then
+	(if (or (eq ?gdbm "physics_dic.gdbm") (eq ?gdbm "social_science_dic.gdbm")) then
 		(bind ?w (str-cat ?root "_" ?cat))
                 (bind ?wrd_mng (gdbm_lookup ?gdbm ?w))
                 (if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
@@ -217,6 +218,7 @@
 		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "physics_dic.gdbm" ?id ?w ?w ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?w ?w ?cat)
+		(dic_lookup "social_science_dic.gdbm" ?id ?w ?w ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic1
@@ -235,6 +237,7 @@
 		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 
@@ -276,6 +279,7 @@
                 (dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat1)
                 (dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat1)
                 (dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat1)
+		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat1)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi

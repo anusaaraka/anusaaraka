@@ -7,7 +7,7 @@
 
 (deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
-(deftemplate tam_database_info (slot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
+(deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 ;----------------------------------------------------------------------------------------------------------
 
 (deffunction remove_character(?char ?str ?replace_char)
@@ -228,6 +228,7 @@
 ?f1<-(manual_word_info (word $?noun ?m1)(group_ids $?grp_ids ?mid))
 (test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")(eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wA")))
 ?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM|hue|huI))
+(not (id-Apertium_output ? ?m1)) ;The lengths of the line segments representing these vectors are proportional to the magnitude of the vectors.
 =>
         (retract ?f2)
 	(modify ?f1 (word $?noun ?m1 ?m2)(vibakthi wA ?m2)(group_ids $?grp_ids ?mid ?id))
@@ -288,6 +289,7 @@
 (test (and (neq ?tam 0) (eq (integerp (member$ ?tam (create$ meM se para))) FALSE)))
 (not (replaced_tam_with_root_tam ?id))
 (not (vib_added ?id))
+(not (vib_modified ?id))
 =>
        (bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?tams)) "_"))
  ;      (printout t (implode$ ?new_mng) crlf)
@@ -356,12 +358,13 @@
 ;----------------------------------------------------------------------------------------------------------
 ;This suggests the definition of dipole moment. 
 ;isase xviXruva AGUrNa kI pariBARA kA [safkewa] [milawA hE].
+; not: What major occupations do the people follow today?
 (defrule verb_group_using_L_layer
 (declare (salience 400))
 ?f2<-(chunk_name-chunk_ids-words VGF ?id0 $?ids - ?m1 $?mng)
 ?f<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(root $?r) (group_ids ?id0 $?ids))
 (anu_id-anu_mng-man_mng ? ? ?m ?m1 $?m2)
-?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m)(group_ids $?ids1))
+?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m&~kyA)(group_ids $?ids1))
 ?f1<-(chunk_name-chunk_ids ? ?id)
 =>
 	(retract ?f ?f0 ?f1 ?f2)
@@ -430,3 +433,38 @@
         (assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
 )
 
+
+;--------------------------  corrections --- improve above rules then del these rules --------------------
+;Added by Shirisha Manju
+;(manual_word_info (word uTAe jAne cAhie) (root uTA) (vibakthi e jAne cAhie)) == (vibakthi jAne cAhie)
+;(word WIM) (root WA)  (vibakthi M) == (vibakthi 0)
+(defrule rm_jnk_from_vib
+(declare (salience -12))
+?f0<-(manual_word_info (head_id ?id0) (vibakthi ?j $?vib))
+(test (eq (integerp (member$ ?j (create$ e EOF M))) TRUE))
+=>
+	(if (eq (length $?vib) 0) then
+		(modify ?f0 (vibakthi 0))
+	else
+		(modify ?f0 (vibakthi $?vib))
+	)
+	(assert (vib_modified ?id0))
+)
+
+;Added by Shirisha Manju
+; (manual_word_info (word ho jAwA hE) (root hE) (root_components 0) (vibakthi EOF jAwA hE)
+;(word ho) (root ho) (vibakthi jAwA hE)
+(defrule modify_root_and_vib
+(declare (salience -13))
+?f0<-(manual_word_info (head_id ?id0) (word ?m&ho|howA|howI $?mng)(vibakthi $?vib))
+(test (neq (length $?mng) 0))
+?f<-(chunk_name-chunk_ids ?c $? ?id0 $?)
+=>
+	(retract ?f)
+	(if (eq ?c VGF) then
+		(modify ?f0 (word ?m $?mng)(root ho)(vibakthi $?vib))
+	else
+		(modify ?f0 (word ho)(root ho)(vibakthi $?vib))
+	)
+	(assert (vib_modified ?id0))
+)

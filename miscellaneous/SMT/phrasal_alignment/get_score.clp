@@ -35,16 +35,59 @@
         (retract ?f0)
         (assert (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics ?h)(rule_names ?r)))
 )
-;-----------------------------------------------------------------------------------
+;------------------------------------  Modifying weight ------------------------------------
+;same wt and same man_id , one from phrasal data and one from dic then increase wt for dic
 ;8. Critically appraise some of the shortfalls of the industrial [policy] pursued by the British colonial administration.
 ;8. britiSa OpaniveSika praSAsana xvArA apanAI gaI Oxyogika [nIwiyoM] kI kamiyoM kI AlocanAwmaka vivecanA kareM .
 (defrule modify_count_for_same_wt
 (declare (salience -1))
 (or (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics M_layer_pharasal_match L_layer_pharasal_match))(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics L_layer_pharasal_match))(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics M_layer_pharasal_match )))
-?f<-(score (anu_id ?aid1) (man_id ?mid)(weightage_sum ?w)(heuristics $? hindi_wordnet|dictionary|dictionary_without_vib $?))
+?f<-(score (anu_id ?aid1) (man_id ?mid)(weightage_sum ?w)(heuristics $? hindi_wordnet|dictionary|dictionary_without_vib|kriyA_mUla_with_dic $?))
 (test (neq ?aid ?aid1))
 =>
 	(bind ?wt (+ ?w 1))
 	(modify ?f (weightage_sum ?wt))
 )
+;-----------------------------------------------------------------------------------
+; same wt and same anu_id ,  one from phrasal data and one from dic then increase wt for dic
+;The lengths of the line segments representing these vectors are proportional to the magnitude of the vectors. 
+;ina saxiSoM ko [vyakwa karane vAlI] [reKA-KaNdoM kI] lambAiyAz saxiSoM ke parimANa ke samAnupAwI hEM .
+(defrule modify_count_for_same_wt1
+(declare (salience -1))
+(or (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics M_layer_pharasal_match L_layer_pharasal_match))(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics L_layer_pharasal_match))(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics M_layer_pharasal_match )))
+?f<-(score (anu_id ?aid) (man_id ?mid1)(weightage_sum ?w)(heuristics $? hindi_wordnet|dictionary|dictionary_without_vib|kriyA_mUla_with_dic $?))
+(test (neq ?mid ?mid1))
+=>
+        (bind ?wt (+ ?w 1))
+        (modify ?f (weightage_sum ?wt))
+)
+;-----------------------------------------------------------------------------------
+;if same wt and same anu_id then check the neighbour
+;If the consensus is negative, then what measures would you think should be taken to banish it and why?
+;yaxi ApakA sAmAnya mawa nakArAwmaka hE, wo [Apake] [vicAra se] ise samApwa karane ke lie kyA kaxama uTAe jAne cAhie Ora kyoM ?
+(defrule modify_count_for_same_wt2
+(declare (salience -2))
+?f<-(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics $?))
+(score (anu_id ?aid) (man_id ?mid1)(weightage_sum ?w)(heuristics $?))
+(test (neq ?mid ?mid1))
+(score (anu_id =(+ ?aid 1)) (man_id =(+ ?mid 1)))
+=>
+	(bind ?wt (+ ?w 1))
+        (modify ?f (weightage_sum ?wt))
+)
+;-----------------------------------------------------------------------------------
+;Similarly, the price or employment level of this representative good will reflect the general price and employment level of the economy.
+;isI waraha, isa prawiniXi vaswu kA kImawa swara aWavA [rojZagAra swara] arWavyavasWA ke sAmAnya kImawa Ora [rojZagAra swara ko] prawibiMbiwa karegA.
+;(defrule modify_count_for_same_wt3
+;(declare (salience -2))
+;?f<-(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics $?))
+;(score (anu_id ?aid1) (man_id ?mid)(weightage_sum ?w)(heuristics $?))
+;(test (neq ?aid ?aid1))
+;(test (<= (- ?mid ?aid) 2))
+;(not (mod_man_id ?mid))
+;=>
+;	(bind ?wt (+ ?w 1))
+;        (modify ?f (weightage_sum ?wt))
+;	(assert (mod_man_id ?mid))
+;)
 

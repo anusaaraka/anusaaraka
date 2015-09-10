@@ -4,7 +4,7 @@
 
 (deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
-(deftemplate tam_database_info (slot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
+(deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 
 
 (defglobal ?*count* = 0)
@@ -81,6 +81,16 @@
 	(assert (database_info (root ?root)(components ?m ?m1)))
 )
 ;-------------------------------------------------------------------------------------
+;to use in scope rule - becoz manual_word_info fact is removed after alignment
+(defrule generate_man_id_and_grp_fact
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (group_ids $?ids))
+(not (id-grp_ids ?mid $?))
+=>
+	(assert (id-grp_ids ?mid - $?ids))
+)
+
+
 (defrule get_current_word
 (manual_word_info (head_id ?mid))
 (not (manual_word_info (head_id ?mid1&:(< ?mid1 ?mid)))) 
@@ -354,7 +364,8 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?verb_mng)(root $?v_root)(vibakthi $?tam)(group_ids $?grp_ids))
 (database_info (components $?v_root)(group_ids $? ?aid $?))
-(e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
+(tam_database_info (e_tam ?e_tam) (components $?tam ))
+;(e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary verb_root_and_tam_match_using_dic))
@@ -445,6 +456,21 @@
 	(assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))
 	(assert (anu_id-man_id-src-rule_name ?aid ?mid kriyA_mUla_with_dic kriyA_mUla_partial_match))
 )
+
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+(defrule tam_match
+(declare (salience 810))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (vibakthi $? ?tam))
+(tam_database_info (e_tam ?etam) (components $? ?tam))
+(id-TAM ?aid ?etam)
+=>
+	(assert (anu_id-man_id-type ?aid ?mid  hindi_tam_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid tam_dict tam_match))
+)
+
+
 ;================================ English word rules ====================================
 ;Eng : This process under forward bias is known as minority [carrier] [injection].
 ;Anu : agra aBinawi ke nIce yaha prakriyA alpasafKyaka vAhaka iMjekSana kI waraha jAnI jAwI hE.
@@ -543,13 +569,32 @@
         (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid M_layer_pharasal_match align_using_phrasal_data_M))
 )
+
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;If the consensus is negative, then what measures would you think should be taken to banish it and why?
+;yaxi ApakA sAmAnya mawa nakArAwmaka hE, wo Apake vicAra se ise samApwa karane ke lie kyA [kaxama] uTAe jAne cAhie Ora kyoM ?
+;(defrule align_with_chunker
+;(declare (salience 830))
+;(current_id ?mid)
+;(anu_id-man_id-src-rule_name ?aid ?mid1&:(= (- ?mid 1) ?mid1) $?)
+;(chunk_name-chunk_ids ? $?grp)
+;(test (integerp (member$ ?mid1 $?grp)))
+;(test (integerp (member$ ?mid $?grp)))
+;(id-Apertium_output =(+ ?aid 1) $?)
+;(not (anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid $? manual_scope $?))
+;=>
+;        (assert (anu_id-man_id-type =(+ ?aid 1) ?mid  manual_scope))
+;        (assert (anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid manual_scope get_manual_scope))
+;)
+
 ;============================== get scope ============================================
 ;Added by Shirisha Manju
 (defrule get_small_scope_fact
 (declare (salience 811))
 (current_id ?mid)
 (anu_id-man_id-src-rule_name ?aid ?mid $?)
-(anu_id-man_id-src-rule_name ?aid1 =(- ?mid 1) $?)
+(or (anu_id-man_id-src-rule_name ?aid1 =(- ?mid 1) $?)(anu_id-man_id-src-rule_name ?aid1 =(+ ?mid 1) $?))
 (pada_info (group_ids $?grp))
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
@@ -579,7 +624,8 @@
 (declare (salience 810))
 (current_id ?mid)
 (anu_id-man_id-src-rule_name ?aid ?mid $?)
-(anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid1&:(= (+ ?mid 1) ?mid1) $?)
+(id-grp_ids ?mid - $? ?id)
+(anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid1&:(= (+ ?id 1) ?mid1) $?) 
 (chunk_name-chunk_ids ? $?grp)
 (test (integerp (member$ ?mid1 $?grp)))
 (test (integerp (member$ ?mid $?grp)))

@@ -231,7 +231,8 @@
 ;====================================== noun multi-word grouping =======================================
 (defrule get_default_group
 (declare (salience 600))
-?f1<-(manual_id-word ?mid ?man_wrd&~kA&~kI&~se&~ke&~{&~}&~.)
+?f1<-(manual_id-word ?mid ?man_wrd&~kA&~se&~ke&~{&~}&~.)
+;?f1<-(manual_id-word ?mid ?man_wrd&~kA&~kI&~se&~ke&~{&~}&~.)
 (test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
 (not (manual_word_info (group_ids $? ?mid $?)))
 (not (mng_has_been_grouped ?mid))
@@ -391,11 +392,11 @@
 (defrule pronoun_group
 (declare (salience 650))
 ?f<-(manual_word_info (head_id ?id0) (word ?noun&isake|usake|inake|isa|jEse|isI) (group_ids $?ids))
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?w&awirikwa|bAxa|prakAra|ki))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?w&awirikwa|bAxa|prakAra|ki)(vibakthi $?vib))
 (not (mng_has_been_grouped ?id1))
 =>
 	(retract ?f2)
-	(modify ?f (word ?noun ?w) (group_ids $?ids ?id1))
+	(modify ?f (word ?noun ?w) (group_ids $?ids ?id1)(vibakthi $?vib))
         (assert (mng_has_been_grouped ?id1))
 )
 ;---------------------------------------------------------------------------------------------------------------
@@ -451,7 +452,8 @@
 ;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
 (defrule single_vib_Paren
 (declare (salience 601))
-?f1<-(manual_id-word ?id0 $?noun)
+?f1<-(manual_word_info  (word $?noun) (group_ids $?ids ?id0))
+;?f1<-(manual_id-word ?id0 $?noun)
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen)
 (manual_id-word ?id2 @PUNCT-ClosedParen)
 (test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
@@ -460,7 +462,8 @@
 (not (mng_has_been_grouped ?id0))
 (not (vib_added ?id0))
 =>
-        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 ?id3)))
+;        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 ?id3)))
+	(modify ?f1 (vibakthi ?vib)(group_ids ?id0 ?id3))
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id3))
 )
