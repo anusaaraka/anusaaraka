@@ -17,6 +17,7 @@ var rows_visibility = [
 1, // row12
 1, // row13
 1, // row14
+1, // row15
 0, // last row will be the suggestions row
 ]; // The array can be of different size than the number of rows at hand
 
@@ -34,8 +35,9 @@ var row_labels = [
 "Hindi Generation (K)",
 "Phrasal meaning (E-H) (L)",
 "Phrasal meaning (H-E) (M)",
-"Manual meaning  (N) ",
-"Suggestions (O)"
+"Manual meaning1  (N) ",
+"Manual meaning  (O) ",
+"Suggestions (P)"
 ];
 
 var row_descriptions = [
@@ -52,6 +54,7 @@ var row_descriptions = [
 "Shows the Hindi word after calling the Hindi generator",
 "Shows the manual word translation using  phrasal english to hindi training data",
 "Shows the manual word translation using  phrasal hindi to english training data",
+"Shows the manual aligned meaning after applying huristics",
 "Shows the manual aligned meaning after applying huristics",
 "Shows the user suggestion"
 ];

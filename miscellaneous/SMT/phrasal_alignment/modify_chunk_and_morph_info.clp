@@ -67,6 +67,7 @@
 =>
         (retract ?f)
         (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid))
+        (assert (chunk_name-chunk_ids NP ?lid))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;The applications of physics are not always easy to foresee.
@@ -78,6 +79,7 @@
 =>
         (retract ?f)
         (assert (chunk_name-chunk_ids VGF $?ids))
+        (assert (chunk_name-chunk_ids NP ?id))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Note that when mole is used, the elementary entities must be specified.
@@ -93,3 +95,29 @@
 	(assert (chunk_name-chunk_ids NP  $?p))
 	(assert (chunk_name-chunk_ids VGNF  ?id))
 )
+;----------------------------------------------------------------------------------------------------------
+;His garret was under the roof of a high, five-storied house and was more like a cupboard than a room. 
+;usakI xuCawwI eka pAzca-maFjilA , Uzce makAna kI ekaxama UparavAlI Cawa ke nIce WI. kamarA kyA WA , goyA eka alamArI WI. 
+(defrule modify_chunk_for_sen_boundary
+?f0<-(chunk_name-chunk_ids NP $?p ?id $?po)
+(test (or (neq (length $?p) 0) (neq (length $?po) 0)))
+?f<-(manual_word_info (head_id ?id) (word ?w)) 
+(test (neq (str-index "." ?w) FALSE))  
+(man_word-root-cat  ?w1	 ?    ?cat)
+(test (eq (string-to-field (sub-string 1  (- (str-index "." ?w) 1) ?w)) ?w1))
+=>
+	(retract ?f0)
+	(modify ?f (word ?w1))
+	(if (eq (length $?p) 0) then
+		(assert (chunk_name-chunk_ids NP $?po))
+	else
+		(assert (chunk_name-chunk_ids NP  $?p))
+		(assert (chunk_name-chunk_ids NP  $?po))
+	)
+	(if (eq ?cat v) then
+		(assert (chunk_name-chunk_ids VGF ?id))
+	else
+		(assert (chunk_name-chunk_ids NP ?id))
+	)
+)
+	

@@ -1,4 +1,4 @@
- 03-09-15
+ 17-10-15
  ========
  1. WSD:
 	substantially.clp 
@@ -54,7 +54,8 @@
  17. get_dbase_mng.clp
 	Modified : print_dic_mng and dic_lookup functions to add group_ids
  18. Updated alignment files
-	alignment.clp		get_heuristics.clp	get_score.clp
+	alignment.clp		get_heuristics.clp	get_score.clp	modify_chunk_and_morph_info.clp		
+	create_eng_align_html_phrasal.clp
  19. run_modules_std.bat 
 	Loaded "relations_tmp1.dat" file in number module
 	Loaded  E_constituents_info_tmp5.dat and parserid_wordid_mapping.dat files and added save-facts for GNP_agmt_info.dat in
@@ -103,10 +104,10 @@
 	Anu_data/canonical_form_dictionary/list_Anu_data_domain
 	Anu_data/canonical_form_dictionary/list_Anu_data_multi_domain
  29. Updated following files related to phrasal alignment:
-	Anusaaraka_alignment.sh
-        run_alignment-hi-en.sh
-        run_alignment.sh
-	get_phrasal_dic-en-hi.sh 
+	Anusaaraka_alignment.sh		phrasal_alignment.css	
+        run_alignment-hi-en.sh		phrasal_alignment.js
+        run_alignment.sh		mapping.py
+	get_phrasal_dic-en-hi.sh 	
 	get_phrasal_dic-hi-en-en.sh
  30. Updated following dictionaries:
         changes_in_databases		apertium-en-hi.en.metadix		provisional_multi_word_dictionary.txt

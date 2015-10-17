@@ -81,6 +81,7 @@
 	(assert (database_info (root ?root)(components ?m ?m1)))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;to use in scope rule - becoz manual_word_info fact is removed after alignment
 (defrule generate_man_id_and_grp_fact
 (declare (salience 1000))
@@ -89,8 +90,7 @@
 =>
 	(assert (id-grp_ids ?mid - $?ids))
 )
-
-
+;-------------------------------------------------------------------------------------
 (defrule get_current_word
 (manual_word_info (head_id ?mid))
 (not (manual_word_info (head_id ?mid1&:(< ?mid1 ?mid)))) 
@@ -195,7 +195,7 @@
 (defrule exact_match_with_anu_output1 
 (declare (salience 900))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?vib)(group_ids $?grp_ids))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?vib)(group_ids $?grp_ids))(id-hyphen_word-vib ?mid - $?mng - ?v $?vib))
 (id-Apertium_output ?aid $?mng)
 (pada_info (group_head_id ?aid)(vibakthi 0))
 (test (neq ?v 0))
@@ -291,6 +291,23 @@
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary man_word_match_using_dic))
 )
 ;---------------------------------------------------------------------------
+;Added by Shirisha Manju
+;He had forgotten the note of that bell, and now its peculiar tinkle seemed to remind him of something and to bring it clearly before him....
+;vaha usa GaMtI kI AvAja BUla cukA WA. so usakI [ajIba-sI] tanatanAhata suna kara aba use EsA lagA jEse use koI cIja yAxa A gaI ho Ora vahI cIja sAPa wOra para usake sAmane A gaI ho
+;ajIba-sI <==> ajIba
+(defrule man_hyphen_wrd_match_using_dic
+(declare (salience 839))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $?mng sA|sI|se)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng sA|sI|se - 0))
+(database_info (components $?mng)(group_ids $? ?aid $?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_root_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_match_using_dic))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary man_word_match_using_dic))
+)
+;---------------------------------------------------------------------------
 (defrule man_root_match_using_dic
 (declare (salience 835))
 (current_id ?mid)
@@ -321,6 +338,7 @@
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_without_vib dic_word_match_without_vib))
 )
 ;---------------------------------------------------------------------------
+
 ;You will learn more about the significant figures in section 2.7.
 ;anuBAga 2.7 meM Apa sArWaka afkoM ke viRaya meM Ora viswAra se sIKeMge.  sArWaka afkoM == man  sArWaka afka == dic  
 (defrule dic_root_match_without_vib
@@ -343,8 +361,30 @@
 (defrule partial_word_match_with_anu
 (declare (salience 840))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng))(manual_word_info (head_id ?mid)(word $?mng ?v&se|ko_ke)))
-(id-Apertium_output ?aid $? $?mng $?)
+(or (manual_word_info (head_id ?mid) (word $? ?mng $? ))(manual_word_info (head_id ?mid)(word $? ?mng $? ?v&se|ko|ke)))
+(id-Apertium_output ?aid $? ?mng&~WI&~ho&~huI&~hEM&~WA $?)
+(not (got_wsd_align ?aid ?mid))                
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match_without_vib)) 
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_with_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output1))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output2))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output3))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial partial_word_match_with_anu))
+)
+;---------------------------------------------------------------------------
+;Added by Shirisha Manju
+;The little flats in such houses always have bells that [ring] like that.
+;isa waraha ke Cote-Cote PlEtoM kI GaNtiyAz hameSA [isI waraha kI] [AvAja karawI hEM] .
+;dic: ring = AvAja , like =  usI warAha
+(defrule partial_word_match_with_dic
+(declare (salience 840))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $? ?mng&~kI&~kara&~hE&~ho&~hue $? ))(manual_word_info (head_id ?mid)(word $? ?mng $? ?v&se|ko|ke)))
+(database_info (components $? ?mng $?)(group_ids ?aid))
 (not (got_wsd_align ?aid ?mid))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_without_vib))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match_without_vib))
@@ -352,10 +392,15 @@
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output1))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output2))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output3))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? man_root_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? man_word_match_using_dic))
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  anu_partial_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_partial partial_word_match_with_anu))
+        (assert (anu_id-man_id-type ?aid ?mid  partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial partial_word_match_with_dic))
 )
+
 ;=================================   verb rules =================================================
 ;Check for manual verb[root] and tam match in the dictionary
 ; The strong nuclear force binds protons and neutrons in a nucleus.  
@@ -419,16 +464,19 @@
 )
 
 ;---------------------------------------------------------------------------
-;Eng_sen : This property of the [body] is called inertia.
-;Anu     : [piMda kA] yaha guNa jadawva kahA jAwA hE.
-;Man     : [vaswu ke] isa guNa ko jadawva kahawe hEM.
+;dic:
+;Eng : This property of the [body] is called inertia.
+;Anu : [piMda kA] yaha guNa jadawva kahA jAwA hE.				Man : [vaswu ke] isa guNa ko jadawva kahawe hEM.
+;anu :
+;Eng : Three or four door-keepers were employed on the building.
+;Anu : wIna yA cAra [xvArapAla] imArawa para kAma_para lagAyA gayA WA.	     	Man : wIna-cAra [xarabAna] BI paharA xene ke lie We
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 820))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word ?m_mng)(vibakthi $?vib))
 (man_word-root-cat ?m_mng ?h_root ?)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) "FALSE"))
-(database_info (meaning ?mng) (group_ids $? ?aid $?))
+(or (database_info (meaning ?mng) (group_ids $? ?aid $?))(id-Apertium_output ?aid ?mng))
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
 (test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
 =>
@@ -569,24 +617,6 @@
         (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid M_layer_pharasal_match align_using_phrasal_data_M))
 )
-
-;-------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;If the consensus is negative, then what measures would you think should be taken to banish it and why?
-;yaxi ApakA sAmAnya mawa nakArAwmaka hE, wo Apake vicAra se ise samApwa karane ke lie kyA [kaxama] uTAe jAne cAhie Ora kyoM ?
-;(defrule align_with_chunker
-;(declare (salience 830))
-;(current_id ?mid)
-;(anu_id-man_id-src-rule_name ?aid ?mid1&:(= (- ?mid 1) ?mid1) $?)
-;(chunk_name-chunk_ids ? $?grp)
-;(test (integerp (member$ ?mid1 $?grp)))
-;(test (integerp (member$ ?mid $?grp)))
-;(id-Apertium_output =(+ ?aid 1) $?)
-;(not (anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid $? manual_scope $?))
-;=>
-;        (assert (anu_id-man_id-type =(+ ?aid 1) ?mid  manual_scope))
-;        (assert (anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid manual_scope get_manual_scope))
-;)
 
 ;============================== get scope ============================================
 ;Added by Shirisha Manju
