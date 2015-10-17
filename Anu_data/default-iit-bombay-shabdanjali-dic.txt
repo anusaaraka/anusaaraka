@@ -18266,7 +18266,7 @@ courtly_adjective	saBya/susaBya
 courts_UNDEFINED	nyAyAlaya
 courtship_noun	vivAhArWa_milanA_julanA/praNaya_nivexana
 courtships_UNDEFINED	vivAhArWa_milanA_julanA
-courtyard_noun	Azgana
+courtyard_noun	Azgana/xAlAna
 courtyards_UNDEFINED	Azgana
 cousin_UNDEFINED	cacerA_BAI
 cousin_noun	cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana
@@ -70628,7 +70628,7 @@ server_noun	sarvara/bErA
 serves_UNDEFINED	parosanA
 service-Charge_noun	sevA_Sulka
 service-area_noun	sarvisa_kRewra
-service_noun	sevA/upayoga/upAsanA/upacAra/sevA_viBAga/sarvisa/safgaTana/sAhayawA/pUrI_saPAI/pUjA/maxaxa/marammwa/kramavyavasWA/kArya/karmacArI/kAma/jAzca/BOjana_parosane_ke_barwana/bArI/viBAga/sahAyawA/vyavasWA/anuRtAna/saPAI-XulAI/seta/barawana/wAmIla/sarvisa{tenisa_meM}
+service_noun	sevA/upayoga/upAsanA/upacAra/sevA_viBAga/sarvisa/safgaTana/sAhayawA/pUrI_saPAI/pUjA/maxaxa/marammwa/kramavyavasWA/kArya/karmacArI/kAma/jAzca/BOjana_parosane_ke_barwana/bArI/viBAga/sahAyawA/vyavasWA/anuRtAna/saPAI-XulAI/seta/barawana/wAmIla/sarvisa{tenisa_meM}/nOkarI
 service_verb	xeKa-BAla_kara/sevA_kara/sarvisa_kara/maxaxa_kara/KLxamawa_kara/saPAI-XulAI_kara
 serviceability_noun	upayogiwA
 serviceable_adjective	upayogI/tikAU/kAma_kA

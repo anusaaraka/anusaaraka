@@ -3810,7 +3810,8 @@ artificial_farm_manure	kqwrima_kqRi_KAxa#kqwrima_kqRi_KAxa#noun#3#RM
 artificial_humidification	kqwrima_namIkaraNa#kqwrima_namIkaraNa#noun#2#RM
 artificial_hybridisation	kqwrima_saMkaraNa#kqwrima_saMkaraNa#noun#2#RM
 artificial_insemination_officer	kqwrima_gaBArXAna_aXikArI#kqwrima_gaBArXAna_aXikArI#noun#3#RM
-artificial_intelligence	kqwrima_BARA#kqwrima_BARA#noun#2#RM
+artificial_intelligence	kqwrima_buxXimawwA#kqwrima_buxXimawwA#noun#2#RM
+artificial_language	kqwrima_BARA#kqwrima_BARA#noun#2#RM
 artificial_juridicial_person	kqwrima_viXika_vyikwa#kqwrima_viXika_vyikwa#noun#3#RM
 artificial_lake	kqwrima_JIla#kqwrima_JIla#noun#2#RM
 artificial_life	kqwrima_jIvana#kqwrima_jIvana#noun#2#RM
@@ -18863,7 +18864,7 @@ machine_tool_order	maSIna_upakaraNa_AxeSa#maSIna_upakaraNa_AxeSa#noun#3#RM
 machine_tool_plant	maSInI_upakaraNa_kAraKAna#maSInI_upakaraNa_kAraKAna#noun#3#RM
 machine_tool_producer	maSInI_upakaraNa_kA_uwpAxaka#maSInI_upakaraNa_kA_uwpAxaka#noun#3#RM
 machine_tool_shipment	maSInI_upakaraNa_nOBaraNa#maSInI_upakaraNa_nOBaraNa#noun#3#RM
-machine_translation	yaMwra_anuvAxa#yaMwra_anuvAxa#noun#2#RM
+machine_translation	yAMwrika_anuvAxa#yAMwrika_anuvAxa#noun#2#RM
 machine_usage_time	yaMwra_upayoga_kAla#yaMwra_upayoga_kAla#noun#3#RM
 machinery_ORG	waMwra_oArajI#waMwra_oArajI#noun#2#RM
 machinery_PCT	waMwra_pIsItI#waMwra_pIsItI#noun#2#RM
@@ -33268,6 +33269,9 @@ those_of_you	Apa_meM_se#Apa_meM_se#pronoun#3#WM
 higher_studies	ucca_aXyayana#ucca_aXyayana#noun#2#RM
 food_grain	KAxyAnna#KAxyAnna#noun#2#RM
 curative_petition	nirNaya_saMSoXana_nivexanapawra#nirNaya_saMSoXana_nivexanapawra#noun#2#RM
+in_many_ways	kaI_mAyanoM_meM/kaI_warIke_se#kaI_mAyanoM_meM/kaI_warIke_se#noun#3#RM
+very_first	pahale_hI#pahale_hI#noun#2#RM
+old_woman	buDZiyA/vqxXA#buDZiyA/vqxXA#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

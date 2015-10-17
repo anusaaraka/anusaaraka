@@ -46,7 +46,6 @@ travel	gawi
 later	agale
 however	yaxyapi/kiMwu
 before	ke_pUrva
-handicraft	haswakalA
 macroeconomics	samaRti_arWaSAswra
 macroeconomic	samaRti_arWaSAswrIya
 microeconomics	vyaRti_arWaSAswra

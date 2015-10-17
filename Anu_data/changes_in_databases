@@ -622,7 +622,8 @@ Modified :
 	  Stopped generation of 'gayIM'
   22.   vikiraNa	kroXa/__n		as	Gar/a__n		("	"		    29-12-14)
   23.   sWiwi		kavi/__n		as	Apawwi/__n		(Suggested by Chaitanya Sir 03-02-15)
-  24.   nasla		Gar/a__n		as	rAw/a__n		(		"		"  5)
+  24.   nasla		Gar/a__n		as	rAw/a__n		(		"		"   )
+  25. 	PlEta		kroXa/__n		as	Gar/a__n		(		"	    29-09-15)
 	
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -686,6 +687,7 @@ Modified :
 	lens		approach__vblex		(     "	  12-04-13)
 	unravel		accept__vblex		(     "	     "    )
 	unravell	accept__vblex		(     "      " 	  )
+	rod		house__n		(     "      "    )
 	rod		house__n		(     "      "    )
 	rod		accept__vblex		(     "	     "    )
 	encapsulate	liv/e__vblex		(     "	  02-05-13)
@@ -889,6 +891,7 @@ Removed:
 	Cave		(	"		"	"  ) Ex: On the entrance of Karla Cave there are one pillar and three lion statues
 								 prior to the cave .
 	Industry	(	"		"  28-02-15) Ex: Industry in Britain has been in decline since the 1970s.  	
+	Maharashtra	(Added by Shirisha Manju   22-09-15)
 
  Removed  :
  ---------
@@ -1762,6 +1765,11 @@ Nandini ji LTRC 	27-11-13)
 	164. briefcase_noun		baswA{brIPZakesa}	(Suggested by Chaitanya Sir     02-09-15)
 				      	Ex: Memon was arrested with a briefcase which contained a recording of a conversation he had had in 
 					Karachi.
+	165. service_noun		nOkarI			(Suggested by Chaitanya Sir     09-10-15)
+					Ex: He knew that the flat had been occupied by a German clerk in the civil service, and his family. 
+	166. courtyard_noun		xAlAna			(Suggested by Chaitanya Sir     09-10-15)
+					Ex: There was a continual coming and going through the two gates and in the two courtyards of the house.
+
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2488,7 +2496,11 @@ Nandini ji LTRC 	27-11-13)
 				Ex: People use espresso to make other coffee drinks.
 	in_advance		agrima	as	pahale_se	(Suggested by Soma Mam	24-07-14)
 				Ex: A paper scale may be put inside the bottle in advance to measure the separation of leaves. 
-
+	artificial_intelligence kqwrima_BARA	   as	kqwrima_buxXimawwA	(Suggested by Chaitanya Sir 15-09-15)
+				Ex: Ever since the incipient of computers and the very first introduction of artificial intelligence, machine 
+				    translation has been a target goal.
+	machine_translation     yaMwra_anuvAxa	   as	yAMwrika_anuvAxa	(Suggested by Chaitanya Sir 15-09-15)
+				Ex: above sentence
 		
     Added new entry:
     ----------------
@@ -2823,6 +2835,14 @@ Nandini ji LTRC 	27-11-13)
 				    output level of industrial goods. 
 	167. curative_petition  nirNaya_saMSoXana_nivexanapawra#noun#2#RM		(Suggested by Chaitanya sir 02-09-15 )
 				Ex: Memon then filed a curative petition to the Supreme Court.
+	168. in_many_ways    	kaI_mAyanoM_meM/kaI_warIke_se#noun#3#RM			(Suggested by Soma Madam   15-09-15)
+				Ex: Languages differ in many ways. 
+	169. artificial_language     kqwrima_BARA#kqwrima_BARA#noun#2#RM		(Suggested by Chaitanya sir 15-09-15)
+	170. very_first      	pahale_hI#pahale_hI#noun#2#RM				(	"	"		"   )
+				Ex: He spoke a lot on the very first day of his job.
+	171. old_woman       	buDZiyA/vqxXA#buDZiyA/vqxXA#noun#2#RM			(	"	"	    06-10-15)
+				Ex: The old woman stood facing him in silence and looking inquiringly at him. 
+	
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -3378,6 +3398,9 @@ Nandini ji LTRC 	27-11-13)
 	Ganges		gaMgA		(Suggested by Chaitanya Sir 	      15-12-14	)
 	Persia  	PArasa		(	"	14anu-ban-09	"     16-02-15  )	
 
+	Following entries are added from  wiki sentences by Shirisha Manju
+	Chidambaram     cixaMbarama	to	Sathasivam      sawyaSivama
+	
 
    Modified:
    ---------
@@ -3578,7 +3601,6 @@ Nandini ji LTRC 	27-11-13)
 	Modified first meaning:
         -----------------------
 	1. selection_noun  	varaNa		as	cayana		(Suggested by 14anu-ban-01 02-12-14)
-				Ex: IPM is the selection and use of pest control actions that will ensure favourable economic,ecological and
                                     social consequences and is applicable to most agricultural, public health and amenity pest management 
 				    situations.
 
