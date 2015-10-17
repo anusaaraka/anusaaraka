@@ -161,9 +161,9 @@
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 02-06-15
 (defrule get_verb_chunk_with_root
-(declare (salience 801))
+(declare (salience 802))
 ?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd $?r_mng)
-?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd))
+?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd $?))
 (test (member$ ?mid $?gids))
 (id-man_root ?mid $?root)
 (not (manual_word_info (group_ids $?gids)))
@@ -173,6 +173,23 @@
 	(assert (root_decided ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 23-09-15
+;usane vyAvahArika mahawva ke viRayoM ke lie upasWiwa howA huA ki [Coda xiyA] WA; usane karane ke lie saBI icCA KoI WI.
+(defrule get_vb_root_for_chunker_info
+(declare (salience 801))
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd ?m $?r_mng)
+(man_word-root-cat ?m ?r&kara|ho|xe|raha|bana v)
+(or (database_info (components ?man_wrd ?r) )(id-HM-source ? $? ?man_wrd ?r ?))
+?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd $?))
+(test (member$ ?mid $?gids))
+(not (manual_word_info (group_ids $?gids)))
+=>
+	(bind $?new_mng (create$ ?man_wrd ?m $?r_mng))
+        (modify ?f1 (word $?new_mng)(root ?man_wrd ?r)(root_components ?man_wrd ?r) (group_ids $?gids))
+        (assert (root_decided ?mid))
+)
+;----------------------------------------------------------------------------------------------------------
+
 ;Ex for not:This is mainly because most of the electrical energy sold by power companies is transmitted and distributed as alternating current.
 ;isakA muKya kAraNa yaha hE ki aXikAMSa vixyuwa kampaniyoM xvArA becI jA rahI vixyuwa UrjA prawyAvarwI XArA ke rUpa meM hI sampreRiwa evaM [viwariwa howI hE].
 (defrule get_verb_chunk1
@@ -199,6 +216,7 @@
 	(retract ?f2 ?f3)
        	(modify ?f1 (word $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2))
         (assert (replaced_tam_with_root_tam ?id0))
+	(assert (root_decided ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;It can be noted that each term represents a periodic function with a different angular frequency.
@@ -215,6 +233,7 @@
         (retract ?f2)
 	(modify ?f1 (word $?noun $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2))
         (assert (replaced_tam_with_root_tam ?id0))
+	(assert (root_decided ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -227,7 +246,7 @@
 (declare (salience 730))
 ?f1<-(manual_word_info (word $?noun ?m1)(group_ids $?grp_ids ?mid))
 (test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")(eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wA")))
-?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM|hue|huI))
+?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM|hue|huI|WI))
 (not (id-Apertium_output ? ?m1)) ;The lengths of the line segments representing these vectors are proportional to the magnitude of the vectors.
 =>
         (retract ?f2)
@@ -246,12 +265,30 @@
 ?f0<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(group_ids $?ids))
 (man_word-root-cat ?m1	?r&kara|xe|raha	v)
 ?f1<-(manual_word_info (head_id ?id1) (word ?m)(group_ids ?id1))
-(database_info (components ?m kara|xe|raha))
+(database_info (components ?m ?r))
 (not (id-Apertium_output ? ?m1 $?mng));The [work] [done] by the spring force in a cyclic process is zero. awaH spriMga bala xvArA kisI cakrIya prakrama meM [kiyA gayA] [kArya] SUnya howA hE.  dic -- kArya_kara
 =>
         (retract ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
 	(assert	(replaced_tam_with_root_tam ?id1))
+	(assert (root_decided ?id0))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;And each time he passed, the young man had a sick, frightened feeling, which made him scowl and feel ashamed.
+;Ora uXara se gujarawe hue hara bAra usa nOjavAna ko JiJaka BI howI WI Ora dara BI lagawA WA, jisakI vajaha se usakI wyoriyoM para Sikana padZa jAwI WI Ora Sarma [mahasUsa howI WI]
+;database : mahasUsa kara
+(defrule group_kara_or_ho
+(declare (salience 639))
+?f1<-(manual_word_info (head_id ?id) (word ?m)(group_ids ?id))
+(database_info (components ?m ?r&kara|ho))
+?f<-(manual_word_info (word ?m1 $?m2)(group_ids ?id1&:(= (+ ?id 1) ?id1) $?ids))
+(man_word-root-cat ?m1  ?r1&kara|ho v)
+=>
+	(retract ?f1)
+        (modify ?f1 (word ?m ?m1 $?m2)(root ?m ?r1)(vibakthi 0 $?m2) (group_ids ?id ?id1 $?ids))
+;        (assert (replaced_tam_with_root_tam ?id))
+        (assert (root_decided ?id))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;As vib and tam both goes into same field...increasing tam rule and replace_tam_with_root-tam rule salience above than vib rules
@@ -259,7 +296,8 @@
 (defrule tam
 (declare (salience 600))
 ?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(group_ids $?grp_ids))
-?f1<-(man_word-root-cat    ?word&~hE ?root&~kara    v)
+?f1<-(man_word-root-cat    ?word&~hE ?root    v)
+;?f1<-(man_word-root-cat    ?word&~hE ?root&~kara    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
 (not (root_decided ?id))
 ;(test (neq (length ?root) (length ?word)))
@@ -456,7 +494,7 @@
 ;(word ho) (root ho) (vibakthi jAwA hE)
 (defrule modify_root_and_vib
 (declare (salience -13))
-?f0<-(manual_word_info (head_id ?id0) (word ?m&ho|howA|howI $?mng)(vibakthi $?vib))
+?f0<-(manual_word_info (head_id ?id0) (word ?m&ho|howA|howI $?mng)(root ?r&~ho)(vibakthi $?vib))
 (test (neq (length $?mng) 0))
 ?f<-(chunk_name-chunk_ids ?c $? ?id0 $?)
 =>

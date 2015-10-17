@@ -76,18 +76,3 @@
         (modify ?f (weightage_sum ?wt))
 )
 ;-----------------------------------------------------------------------------------
-;Similarly, the price or employment level of this representative good will reflect the general price and employment level of the economy.
-;isI waraha, isa prawiniXi vaswu kA kImawa swara aWavA [rojZagAra swara] arWavyavasWA ke sAmAnya kImawa Ora [rojZagAra swara ko] prawibiMbiwa karegA.
-;(defrule modify_count_for_same_wt3
-;(declare (salience -2))
-;?f<-(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics $?))
-;(score (anu_id ?aid1) (man_id ?mid)(weightage_sum ?w)(heuristics $?))
-;(test (neq ?aid ?aid1))
-;(test (<= (- ?mid ?aid) 2))
-;(not (mod_man_id ?mid))
-;=>
-;	(bind ?wt (+ ?w 1))
-;        (modify ?f (weightage_sum ?wt))
-;	(assert (mod_man_id ?mid))
-;)
-
