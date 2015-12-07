@@ -92,7 +92,7 @@
  ;------------------------------------------------------------------------------------------------------------------
  ;She made the girl feed the child 
  (defrule tam_id_frm_cau_vb
- (declare (salience 850))
+ (declare (salience 851))
  (root-verbchunk-tam-chunkids ? ? tam_to_be_decided ?root_id $? ?id)
  (id-root-category-suffix-number ?root_id ?root ? en ?)
  (word-morph (root ?root) (suffix ed))
@@ -103,7 +103,7 @@
   )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule tam_id_frm_cau_vb2
- (declare (salience 850))
+ (declare (salience 851))
  (root-verbchunk-tam-chunkids ? ? tam_to_be_decided ?root_id $? ?id)
  (id-root-category-suffix-number ?root_id ?root ? ed ?)
  (word-morph (root ?root) (suffix en))
@@ -111,6 +111,17 @@
  =>
         (retract ?mng )
         (printout ?*tam_id_file* "(id-TAM " ?id " ed_en )" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; These are the kind of questions that [make] us [think] about the health of the country's economy as a whole.
+ (defrule tam_id_frm_cau_vb3
+ (declare (salience 850))
+ (root-verbchunk-tam-chunkids ? ? tam_to_be_decided ?root_id $? ?id)
+ (id-root-category-suffix-number ?root_id ?root ? ?suf ?)
+ ?mng <-(meaning_to_be_decided ?id)
+ =>
+        (retract ?mng )
+        (printout ?*tam_id_file* "(id-TAM " ?id " " ?suf ")" crlf)
   )
  ;------------------------------------------------------------------------------------------------------------------
  ;I made it clear that I was angry .  

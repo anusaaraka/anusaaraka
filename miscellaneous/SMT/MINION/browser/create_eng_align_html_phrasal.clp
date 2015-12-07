@@ -67,7 +67,7 @@
  (printout fp "</div>" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
- (printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"14\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=650,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
+ (printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"15\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=650,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
  (printout fp "</form>" crlf)
  (printout fp "</div>" crlf)
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
@@ -79,7 +79,7 @@
                       (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf)
                       (printout fp "<!-- Sent Start -->" crlf)
                       (printout fp "<table border=\"1\">" crlf)
-                      (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr><tr><td>" crlf)
+                      (printout fp "<tr><td class=\"outertd\">"(implode$ $?eng_sen)"</td></tr><tr><td class=\"outertd\">" crlf)
                       (printout fp "<!-- Sent End -->" crlf)
  )
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
@@ -254,8 +254,20 @@
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
  )
 
- (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
+ (deffunction print_manual_ouput_row3(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
  (printout fp "<tr class=\"row15\">" crlf )
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".O</td>"))
+ (if (eq ?lwg_type MAIN_VERB) then
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
+ else (if (eq ?lwg_type AUX_VERB) then
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)
+ else
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
+ )
+
+
+ (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
+ (printout fp "<tr class=\"row16\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
  (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp (implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc)) "\" /></td></tr>" crlf))
@@ -835,14 +847,14 @@
 
  (defrule convert_wx_to_utf8_for_manual_output_human_rules-hi_en
  (declare (salience 2001))
- ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?aid $?mng - ?mid $?man_output)
+ ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?mng - ?mid $?man_output)
  (test (and (> (length $?mng) 0) (neq $?man_output -)))
  (not (id_manual_output_mng_modified3 ?aid))
  =>
  (retract ?f)
  (bind ?length (length $?man_output))
  (if (eq ?length 0) then
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?aid $?mng - ?mid -))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?mng - ?mid -))
  else
         (loop-for-count (?i  1 ?length)
                 ;(bind ?word (nth$ ?i (create$ $?man_output)))
@@ -857,8 +869,8 @@
                 else
                         (bind ?utf8_man_output ?word)))
 
-          (bind ?utf8_man_output (string-to-field ?utf8_man_output))
-          (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?aid  $?mng - ?mid ?utf8_man_output))
+        ;  (bind ?utf8_man_output (string-to-field ?utf8_man_output))
+          (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid  $?mng - ?mid ?utf8_man_output))
  )
         (assert (id_manual_output_mng_modified3 ?aid))
  )
@@ -867,10 +879,10 @@
  (defrule man_rule_human_rules_hi_en
  (declare (salience 900))
  (id-word ?id ?word)
- (not (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id $?))
+ (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $?))
  =>
 
- (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id - - - -))
+ (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - - -))
  )
 
  ;========================================= Generating html format ========================================
@@ -978,7 +990,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- ;(anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? ? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
  (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
  (anu_id-man_left_punc ?id ?m_l_punc)
@@ -1014,6 +1026,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng MAIN_VERB)
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 MAIN_VERB)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 MAIN_VERB)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp MAIN_VERB)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB) 
  else
  (print_lwg_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_tam ?padasuthra AUX_VERB)
@@ -1023,6 +1036,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng AUX_VERB)
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 AUX_VERB)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 AUX_VERB)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp AUX_VERB)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output AUX_VERB)) 
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1057,7 +1071,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- ;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
  (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
  (anu_id-man_left_punc ?id ?m_l_punc)
@@ -1092,6 +1106,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
  (print_manual_ouput_row1 ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1124,7 +1139,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?pp_id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?pp_id $? ? - ? ?man_mng1)
  (alignment (anu_id ?pp_id)(man_meaning ?man_mng2))
- ;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?pp_id $? ? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp ?pp_id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?pp_id ?ph_ltype ?ph_l_val) 
  (id-phrase_type-rvalue ?pp_id ?ph_rtype ?ph_r_val) 
  (anu_id-man_left_punc ?id ?m_l_punc)
@@ -1164,6 +1179,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
  (print_manual_ouput_row1  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
  (print_suggestion_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc "~" -) 
  
  (assert (id-index (+ ?pp_id 1) (- ?n_words 1)))
@@ -1188,7 +1204,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- ;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
  (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
  (anu_id-man_left_punc ?id ?m_l_punc)
@@ -1223,6 +1239,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1246,7 +1263,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- ;(anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? ? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
  (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
  (anu_id-man_left_punc ?id ?m_l_punc)
@@ -1281,6 +1298,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1303,7 +1321,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- ;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
  (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
  (anu_id-man_left_punc ?id ?m_l_punc)
@@ -1338,6 +1356,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1385,6 +1404,7 @@
  (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc - -)
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en - -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1401,11 +1421,11 @@
  (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div> " crlf)
  (printout fp "</td></tr>" crlf)
  (printout fp "<!-- Sent Start -->" crlf) 
- (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr>" crlf)
+ (printout fp "<tr><td class=\"outertd\">"(implode$ $?eng_sen)"</td></tr>" crlf)
  (bind ?dic_path1 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/hindi_sentence_tmp2.dat"))
  (open ?dic_path1 dic_fp1)
  (bind ?val1 (readline dic_fp1))
- (printout fp "<tr><td>" crlf)
+ (printout fp "<tr><td class=\"outertd\">" crlf)
  (while (neq ?val1 EOF)
  (printout fp "Anu translation :: "(wx_utf8 ?val1)"<br>" crlf)
  (printout t ?val1 crlf)
@@ -1414,12 +1434,12 @@
  (printout fp "</td></tr>" crlf)
  (close dic_fp1)
  
- (printout fp "<tr><td>" "Man translation :: " (wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
+ (printout fp "<tr><td class=\"outertd\">" "Man translation :: " (wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
 
  (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/total-left-over.dat"))
  (open ?dic_path dic_fp)
  (bind ?val (readline dic_fp))
- (printout fp "<tr><td>" crlf)
+ (printout fp "<tr><td class=\"outertd\">" crlf)
  (while (neq ?val EOF)
  (printout fp ?val"<br>" crlf)
  ;(printout t ?val crlf)

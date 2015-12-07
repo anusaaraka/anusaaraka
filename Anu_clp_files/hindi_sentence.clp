@@ -37,6 +37,10 @@
  (assert (id-wsd_viBakwi))
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
+ (assert (prep_id-relation-anu_ids))
+ (assert (conjunction-components))
+ (assert (id-cat))
+ (assert (id-cat_coarse)) 
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
@@ -86,6 +90,38 @@
  (id-HM-source ?id ? ?s&~WSD_root_mng&~WSD_word_mng)
  =>
 	(retract ?f)
+ )
+ ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (25-07-15)
+ ;No politician is completely honest. 
+ ;koI BI rAjanIwijFa pUrI waraha se niRkapata nahIM hE.
+ ;We have no fruits in the house. 
+ ;hamAre Gara meM Pala nahIM hEM.
+ ;There is no 'final' theory in science and no unquestioned authority among scientists. 
+ ;vijFAna meM 'anwima' sixXAnwa Ora vEjFAnikoM ke bIca meM kuCa asanxigXa aXikArI nahIM hE.
+ ;No wonder, the overall mortality rate was very high.
+ ;koI axBuwawA nahIM, sampUrNawayaH mqwyu xara bahuwa UzcI WI.
+ (defrule move_nahIM_before_verb_or_after_noun
+ (declare (salience 2551))
+ ?f<-(id-Apertium_output ?id $?pre nahIM)
+ (id-word ?id no)
+ (prep_id-relation-anu_ids  -  ?r1  ?k ?id)
+ (prep_id-relation-anu_ids  -  ?r2  ?kri ?k)
+ (id-cat_coarse ?kri verb)
+ ?f1<-(id-Apertium_output ?kri $?mng)
+ (pada_info (group_head_id ?h) (group_ids $? ?id $?))
+ ?f0<-(id-Apertium_output ?h $?hmng)
+ (id-right_punctuation ?h ?punct)
+ =>
+	(retract ?f)
+	(assert (id-Apertium_output ?id $?pre))
+	(if (eq ?punct PUNCT-Comma) then
+		(assert (id-Apertium_output ?h $?hmng nahIM)) 
+		(retract ?f0)
+	else
+		(assert (id-Apertium_output ?kri nahIM $?mng))
+		(retract ?f1)
+	)
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Add english meaning to the hindi mng

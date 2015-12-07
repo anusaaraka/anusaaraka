@@ -1,0 +1,16 @@
+Logon Parser Installation :
+=========================
+See Logon INSTALL file.
+
+Compile :
+=======
+1. source ~/.bashrc
+2. cd $HOME_anu_test/
+   sh shell_scripts/remove_out-files.sh 
+   sh shell_scripts/anu_compile.sh
+
+Run :
+====
+  sh Anusaaraka_logon.sh <input_file> 0 True
+
+  Ex:- Anusaaraka_logon.sh verified 0 True

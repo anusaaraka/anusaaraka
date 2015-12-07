@@ -261,7 +261,7 @@ hamAre SarIra meM carbI ke bahuwa Uwaka hEM.
 
 Hindi meaning using Stanford parser 2.59
 The mystery of the Nixon tapes was never solved. 
-PropN-nixon-PropN pattiyoM kA rahasya kaBI nahIM hala kiyA gayA WA.
+niksana pattiyoM kA rahasya kaBI nahIM hala kiyA gayA WA.
 
 Hindi meaning using Stanford parser 2.60
 The income tax proposal was rejected. 
@@ -1341,7 +1341,7 @@ mEMne anwawaH pawA lagAyA yaha progrAma iwanA XImA kyoM hE.
 
 Hindi meaning using Stanford parser 3.2
 He was an exotic creature with short red hair and brilliant green eyes. 
-vaha Cote lAla keSa vAlA Ora wejomaya harI AzKoM vAlA AkarRaka prANI WA.
+vaha Cote lAla keSa Ora wejomaya harI AzKoM vAlA AkarRaka prANI WA.
 Warning: Multiple adjective senses are available for exotic. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.3
@@ -1475,11 +1475,13 @@ Hindi meaning using Stanford parser 3.31
 The girl who you called yesterday has arrived. 
 jise Apane kala bulAyA vaha ladakI pahuzca gaI.
 vaha ladakI Apane kala jise bulAyA pahuzca gaI.
+vaha ladakI jise Apane kala bulAyA AI hE.
 Apane kala jise bulAyA vaha ladakI pahuzca gaI.
 jise Apane kala bulAyA vaha ladakI AI hE.
 
 Hindi meaning using Stanford parser 3.32
 The snake who swallowed the rat hissed loudly. 
+vaha sAzpa jisane cUhe ko nigalA Uzce_svara meM PuPakArA.
 jisane cUhe ko nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 jisane cUhA nigalA vaha sAzpa jora se PuPakArA.
 jisane cUhA nigalA vaha sAzpa Uzce_svara meM PuPakArA.
@@ -1487,13 +1489,14 @@ vaha sAzpa jisane cUhA nigalA Uzce_svara meM PuPakArA.
 
 Hindi meaning using Stanford parser 3.33
 The dog which Chris bought is really ugly. 
+vaha kuwwA jise krisa ne KarIxA vAswava meM kurUpa hE.
 jise PropN-chris-PropN ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
 Chris ne jise KarIxA vaha kuwwA vAswava meM kurUpa hE.
 Warning: Multiple adjective senses are available for ugly. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.34
 Phil gave me a sweater which he bought in Paris. 
-PropN-phil-PropN ne vaha svetara muJe xiyA jise usane perisa meM KarIxA.
+Pila ne vaha svetara muJe xiyA jise usane perisa meM KarIxA.
 Phil ne vaha svetara muJe xiyA usane jise Paris meM KarIxA.
 Phil ne vaha svetara muJe xiyA jise usane Paris meM KarIxA.
 Phil ne jise usane Paris meM KarIxA vaha svetara muJe xiyA.
@@ -1501,6 +1504,7 @@ Phil ne muJe vaha svetara xiyA jise usane Paris meM KarIxA.
 
 Hindi meaning using Stanford parser 3.35
 The boy who came yesterday from Delhi is my friend. 
+vaha ladakA jo xillI se kala AyA merA miwra hE.
 jo xillI se kala AyA vaha ladakA merA miwra hE.
 
 Hindi meaning using Stanford parser 3.36
@@ -1735,7 +1739,7 @@ sIXA jAie Ora xAzyA moda lIjie.
 
 Hindi meaning using Stanford parser 3.84
 Both of her parents are from India. 
-usake mAz bApa xono BArawa se hEM.
+usake mAz bApa xonoM BArawa se hEM.
 
 Hindi meaning using Stanford parser 3.85
 Please enclose a curriculum vitae with your letter of application. 
@@ -2140,6 +2144,7 @@ rAma ne kahA ki rAXA ne JUTa bawAyA.
 
 Hindi meaning using Stanford parser 4.70
 The dog who chased me was black. 
+vaha kuwwA jisane merA pICA kiyA kAlA WA.
 jisane merA pICA kiyA vaha kuwwA kAlA WA.
 
 Hindi meaning using Stanford parser 4.71
@@ -2154,6 +2159,7 @@ mEMne usa AxamI ko jise Apa pasanxa karawe hEM xeKA.
 
 Hindi meaning using Stanford parser 4.73
 The place where you are staying is very congested. 
+vaha sWAna jahAz Apa raha rahe hEM awyanwa safkuliwa hE.
 jahAz Apa raha rahe hEM vaha sWAna awyanwa safkuliwa hE.
 Warning: Multiple adjective senses are available for congested. WSD rule is required 
 
@@ -2226,6 +2232,7 @@ Warning: Multiple adjective senses are available for important. WSD rule is requ
 
 Hindi meaning using Stanford parser 4.88
 I know a woman who has two children. 
+mEM eka EsI swrI ko jisake xo bacce hEM jAnawA hUz.
 mEM eka EsI swrI ko jAnawA hUz jisake xo bacce hEM.
 
 Hindi meaning using Stanford parser 4.89
@@ -2234,6 +2241,7 @@ xukAna kI ora xOdawI huI ladakI merI miwra hE.
 
 Hindi meaning using Stanford parser 4.90
 The soldier that is ill is in the hospital. 
+vaha sEnika jo asvasWa hE aspawAla meM hE.
 jo asvasWa hE vaha sEnika aspawAla meM hE.
 
 Hindi meaning using Stanford parser 4.91
@@ -2260,6 +2268,7 @@ mEM isakA KyAla_raKa rahA hUz.
 Hindi meaning using Stanford parser 4.96
 We should make our relationship strong. 
 hameM hamArA sambanXa majabUwa banAnA cAhie.
+Warning: Multiple adjective senses are available for strong. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.97
 The quotes of this volume are nice. 
@@ -2860,7 +2869,7 @@ mEM dAktara hUz, javAba xiyA makadI ne.
 
 Hindi meaning using Stanford parser 6.37
 The milkman was a tall thin man with a long face and a longer nose. 
-xUXavAlA eka lambe cehare vAlA Ora eka aXika lambI nAka vAlA eka lambA pawalA AxamI WA.
+xUXavAlA eka lambe cehare Ora eka aXika lambI nAka vAlA eka lambA pawalA AxamI WA.
 
 Hindi meaning using Stanford parser 6.38
 It was a small stall and she sat at one corner of it. 
@@ -2904,6 +2913,7 @@ isalie XUpa samAna rUpa se bAztI huI hE.
 Hindi meaning using Stanford parser 6.47
 Do pests also attack tea plants? 
 kyA hAnikAraka jIva cAya vanaspawiyoM para BI hamalA karawe hEM?
+Warning: Compound Meaning is missing for:  tea plants
 
 Hindi meaning using Stanford parser 6.48
 I saw the spots clearly. 
@@ -3353,6 +3363,7 @@ usake xAzwa bAhara_nikala rahe hEM.
 Hindi meaning using Stanford parser 7.57
 The union leaders stuck out for their demand. 
 safgaTana newA unakI mAzga para_date rahe.
+Warning: Compound Meaning is missing for:  union leaders
 
 Hindi meaning using Stanford parser 7.58
 The team is bidding to retain its place in the league. 
@@ -3585,7 +3596,7 @@ saBI ladake yahAz hEM.
 
 Hindi meaning using Stanford parser 8.14
 Both the boys and girls are here. 
-xono ladake Ora ladakiyAz yahAz hEM.
+xonoM ladake Ora ladakiyAz yahAz hEM.
 
 Hindi meaning using Stanford parser 8.15
 Toms likes to eat fish. 
@@ -3716,6 +3727,44 @@ vaha buxXimAna prawIwa howA hE.
 Hindi meaning using Stanford parser 8.46
 The boy seems to be intelligent. 
 ladakA buxXimAna prawIwa howA hE.
+
+Hindi meaning using Stanford parser 8.47
+They scale the fish to cook. 
+ve pakAne ke lie maCaliyoM kI parawa uwArawe hEM.
+
+Hindi meaning using Stanford parser 8.48
+The intelligent students study in libraries, streets, and cinema houses. 
+buxXimAna vixyArWI puswakAlaya, sadakoM, Ora calaciwra GaroM meM aXyayana karawe hEM.
+Warning: Compound Meaning is missing for:  cinema houses
+
+Hindi meaning using Stanford parser 8.49
+The baby was wriggling in her arms. 
+SiSu usakI bAzhoM meM kulabulA rahA WA.
+
+Hindi meaning using Stanford parser 8.50
+The patient is wriggling on his bed. 
+marIja usake biswara para lOta rahA hE.
+
+Hindi meaning using Stanford parser 8.51
+The snake wriggled through the grass. 
+sAzpa GAsa meM se reMgawe_hue gayA.
+
+Hindi meaning using Stanford parser 8.52
+A serious injury nearly wrecked his career. 
+eka gamBIra cota ne karIba karIba usakA kEriyara barbAxa_kara xiyA.
+Warning: Multiple adjective senses are available for serious. WSD rule is required 
+
+Hindi meaning using Stanford parser 8.53
+She wiped off her make-up. 
+usane usakA SrqfgAra hatA xiyA.
+
+Hindi meaning using Stanford parser 8.54
+I asked him not to wait for me. 
+mEMne usako mere lie prawIkRA_nahIM karane ke lie kahA.
+
+Hindi meaning using Stanford parser 8.55
+I asked him not to sleep. 
+mEMne usako nahIM sone ke lie kahA.
 
 Calling Transliteration
 Calling Interface related programs

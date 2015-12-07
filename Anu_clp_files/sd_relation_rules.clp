@@ -252,7 +252,7 @@
  ; Ex. I like fruits as well as nuts.  
  ;------------------------------------------------------------------------------------------------------------------------
  ;SD gives multiple conj_and relations with different ids for same 'AND', So handling them in one single list.
- ;Added 'conj_but' ny Roja (22-11-14) Ex: Many people can speak but only a few can act .
+ ;Added 'conj_but' by Roja (22-11-14) Ex: Many people can speak but only a few can act .
  (defrule decide_conj_rel
  (declare (salience -900))
  ?f<-(rel_name-sids ?conj&conj_and|conj_or|conj_but   ?x ?y)
@@ -268,7 +268,7 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;printing conjunction-components.
  ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
- ;Added 'but', 'conj_but' ny Roja (22-11-14) Ex: Many people can speak but only a few can act .
+ ;Added 'but', 'conj_but' by Roja (22-11-14) Ex: Many people can speak but only a few can act .
  (defrule conj-comp-rule
  (declare (salience -1000))
  (rel_name-sids conj_and|conj_or|conj_but  ?x $?ids  ?y)
@@ -971,7 +971,7 @@ else
 (declare (salience 220))
 (rel_name-sids  rcmod ?vi ?kri)
 (parserid-word ?js ?w)
-(test (eq (string_to_integer ?js) (+ (string_to_integer ?vi) 1)))
+;(test (eq (string_to_integer ?js) (+ (string_to_integer ?vi) 1))) ;commented for: In 1979, Hearst hired editor James Bellows, who brightened the editorial product considerably. 
 (test (>(string_to_integer ?kri)(string_to_integer ?vi)))
 =>
  (if (or (eq ?w who) (eq ?w whom) (eq ?w that) (eq ?w which)) then
@@ -1108,7 +1108,7 @@ else
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (not (rel_name-sids  rel   ?rv  ?))
 (not (rel_name-sids  advmod   ?rv  ?))
-(not (parserid-word ?id which)) ;Coaxial cable is a widely used wire medium, which offers a bandwidth of approximately 750 MHz.
+(not (parserid-word ?id which|who|that|whom|whoever|whichever|whomever)) ;Coaxial cable is a widely used wire medium, which offers a bandwidth of approximately 750 MHz. He succeeds Terrence D. Daniels, formerly a W.R. Grace vice chairman, who resigned. 
 =>
     (printout       ?*fp*   "(prep_id-relation-parser_ids  -   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
     (printout       ?*dbug*    "(prep_id-Rule-Rel-ids  -   insert-which1  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)

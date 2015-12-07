@@ -145,6 +145,11 @@
 ;Added by Shirisha Manju (26-07-14) -- Suggested by Sukhada.
 ;Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
 ;S :  I do not think ghosts exist. ;I want to go there.
+;But he adds, "I feel pressured, disappointed, uncomfortable and, frankly, quite angry with Viacom. 
+;Mr. Canepa confirmed he had consented to the sanctions but declined to comment further. 
+;Mr. Hahn agrees that he has a "retentive" memory, but friends say that is an understatement. 
+;Many worry that Saleh will remain a power broker in Yemen through relatives and allies he put in key state positions. 
+;Israeli defense officials warn that Syria, a close Iranian ally, is believed to possess GPS-guided missiles and chemical weapons. 
 (defrule dont_rev_VP_if_immediate_sis_sbar
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?verb ?sbar $?d)
@@ -153,7 +158,7 @@
 (Head-Level-Mother-Daughters  ?  ?  ?verb ?id)
 (id-cat_coarse ?id verb)
 (id-root ?head ?root) 
-(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume)) )
+(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume add confirm agree doubt worry believe estimate)) ) 
 (not (Mother  ?Mot))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -163,6 +168,28 @@
                          "              After     - "?head" "?l" "?Mot" "?verb" "?sbar" "(implode$ $?d) ")" crlf)
 
 )
+;-----------------------------------------------------------------------------------------------------------------------
+
+;Added by Shirisha Manju (30-07-15) -- Suggested by Sukhada.
+;Stock futures trading has minted [dozens of millionaires] in their 20s and 30s.
+;xarjana laKapawiyoM ke
+;Such program trades, which can involve the purchase or sale of [millions of dollars] of stock, occur in a matter of seconds.
+(defrule dont_reverse_NP
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
+(Node-Category  ?Mot  NP)(Node-Category  ?PP  PP)
+(id-original_word ?head ?wrd&lot|most|number|spot|kinds|set|sort|whole|dozens|some|millions|type|tens|hundreds|thousands|billions|dollars)
+(Head-Level-Mother-Daughters ?h ? ?PP ?IN $? ?NP2)
+(id-root ?h of)
+(not (Mother  ?mot))
+(not (Mother  ?NP2))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (Mother  ?mot))
+        (assert (Mother  ?NP2))
+        (printout ?*order_debug-file* "(rule_name - dont_rev_NP " ?*count* " " crlf)
+)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging2
 (declare (salience 1000))
@@ -224,7 +251,7 @@
 ; The root fact is loaded only for OL bcoz Ol shows head as root sometimes and word some times
 ;I refused to lend him extra money.
 (defrule rev_VP_for_obj1_obj2
-(declare (salience 940))
+(declare (salience 799))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP|Inf_VP)
 (and (prep_id-relation-anu_ids ? kriyA-object_2 ?head ?obj2)(prep_id-relation-anu_ids ? kriyA-object_1 ?head ?obj1))
@@ -392,13 +419,14 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
-; He never really recovered from the shock of his wife's death.
+; He never really recovered from the shock of his wife's death. I have never played golf in my life.
 (defrule move_negation_before_verb
 (declare (salience 900))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
 (Head-Level-Mother-Daughters ?never ? ?ADVP $?)
 (id-original_word ?never never)
 (Node-Category ?ADVP ADVP)
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1 ?VP) 
+(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 $?d3 ?VP)
 (Node-Category ?VP VP)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (or (Node-Category ?V VBD) (id-cat_coarse ?V verb))
@@ -406,7 +434,8 @@
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1 ?VP))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1))
+;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1 ?VP))
 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?ADVP ?V $?d5))
         (assert (Mother  ?ADVP))
 	(assert (Mother ?VP))
@@ -476,10 +505,10 @@
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
-(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole)
+(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole&~dozens)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
-(Node-Category  ?PP PP|VP|RRC)
+(Node-Category  ?PP PP|VP|RRC|ADJP); ADJP: Previously, Mr. Vitulli, 43 years old, was general marketing manager of Chrysler Corp.'s Chrysler division. 
 (not (Mother  ?mot))
 ;And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings
@@ -492,6 +521,44 @@
 	(printout ?*order_debug-file* "(rule_name - reverse-NP-Daughters "  ?*count* crlf 
                          "              Before    - "?head" "?lvl" "?mot" "?NP" "?PP " "(implode$ $?d) crlf
 	                 "              After     - "(implode$ ?NP_rev) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(20-06-11) Suggested by Sukhada
+;Cray has been working on the project for more than six years. 
+;Current PCs are more than 50 times faster and have memory capacity 500 times greater than their 1977 counterparts.
+;Defense Minister Ehud Barak has estimated that an Iranian attack would claim fewer than 500 Israeli casualties a statement intended to calm the nation, but which has achieved the opposite effect.
+(defrule move_more_than_after_head
+(declare (salience 800))
+?f<-(Head-Level-Mother-Daughters ?h ?l ?NP ?QP $?d ?NN)
+(and (Node-Category  ?NP NP|ADJP)(Node-Category  ?QP QP))
+?f0<-(Head-Level-Mother-Daughters ?h1 ?l1 ?QP $?pre ?more ?than $?post ?head)
+(Head-Level-Mother-Daughters ?m_id ? ?more ?)
+(Head-Level-Mother-Daughters ?t_id ? ?than ?)
+(id-original_word ?m_id more|less|few|fewer|lesser)
+(id-root ?t_id than)
+(Head-Level-Mother-Daughters ?h2 ?l2 ?NN ?id)
+(id-root ?id ?w)
+(not (Mother  ?QP))
+=>
+	(bind ?*count* (+ ?*count* 1))
+	(assert (Mother  ?QP))
+	(if (and (neq ?w year)(neq ?w percent)(neq ?w symbol-percent)) then
+	 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?QP $?pre $?post ?head ?more ?than))
+        	(retract ?f0)
+		(printout ?*order_debug-file* "(rule_name - move_more_than_after_head "  ?*count* crlf 
+			"              Before    - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" " ?more" " ?than" " (implode$ $?post)" " ?head crlf
+			"	      After     - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" "(implode$ $?post)" " ?head" " ?more" " ?than crlf)
+	else
+        	(retract ?f0 ?f)
+	 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?QP $?pre $?post ?head ))
+		(printout ?*order_debug-file* "(rule_name - move_more_than_after_head "  ?*count* crlf 
+			"		 Before    - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" " ?more" " ?than" " (implode$ $?post)" " ?head crlf
+			"		After	   - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" "(implode$ $?post)" " ?head crlf)
+		(assert (Head-Level-Mother-Daughters ?h ?l ?NP ?QP $?d ?NN ?more ?than))
+		(printout ?*order_debug-file* "(rule_name - move_more_than_after_head "  ?*count* crlf
+                        "                Before    - "?h" " ?l" " ?NP" " ?QP" "(implode$ $?d)" " ?NN crlf
+			"		After	   - "?h" " ?l" " ?NP" " ?QP" "(implode$ $?d)" " ?NN " " ?more" " ?than" " crlf)
+	)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;All our sisters are coming. He left all his money to the orphanage. 
@@ -606,6 +673,23 @@
                 	 "              After     - "?head1" "?level" "?mother1" "(implode$ $?pre)" "(implode$ $?daughters)" "(implode$ $?post) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (30-07-15) -- Suggested by Sukhada.
+;Eng: Mr. Otero, who apparently has an unpublished number, also could not be reached. 
+;Anu: SrImAna ovterova, jisameM UparI wOra se aprakASiwa safKyA hE, BI nahIM pahuzcA jA sakA.
+(defrule dont_separate_sbar_for_jo_samAnAXikaraNa
+(declare (salience 551))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?vid ?sid $?po)
+(Node-Category  ?Mot ROOT)
+?f1<-(Head-Level-Mother-Daughters ?h ? ?dat ?sid $?child)
+(Node-Category  ?dat SBAR|SBARQ)
+(prep_id-relation-anu_ids - viSeRya-jo_samAnAXikaraNa ?vid ?sid)
+(not (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI  ? ?vid));He was the leader of the first Indian expedition which attempted to climb Everest.
+(not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ? ?vid));She was a severe woman who seldom smiled.
+(not (prep_id-relation-anu_ids ? kriyA-aBihiwa  ? ?vid));Once there was a king who was generous and kind. 
+=>
+	(assert (dont_separate_sbar ?dat))
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
 (declare (salience 550))
@@ -616,7 +700,7 @@
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
 (test (neq (length $?child) 0))
-;(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
+(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
 =>
 	(retract ?f)
 	(assert (Sen  $?child))
@@ -627,7 +711,7 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Here ROOT category is changed to SBAR
-(defrule rename_ROOT_cat_to_SBAR
+(defrule get_sen_fact
 (declare (salience 500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Node-Category  ?Mot ROOT)
@@ -646,7 +730,7 @@
         (assert (removed_node))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule print_eroor_msg_to_user
+(defrule print_error_msg_to_user
 (declare (salience 94))
 (removed_node)
 =>
@@ -707,6 +791,22 @@
         (assert (hindi_id_order   $?ids $?ids1))
         (assert (to_id_deleted ?to_id))
 )
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha manju (27-07-15) 
+;I asked him not to wait for me. 
+;mEMne usako mere lie prawIkRA_nahIM karane ke lie kahA.
+(defrule rm_not_id_b4_inf_in_order
+(declare (salience 61))
+(pada_info (group_cat infinitive) (group_ids ?to_id ?))
+(id-root ?id1&:(=(- ?to_id 1) ?id1) not)
+?f1<-(hindi_id_order  $?ids ?id1 $?ids1)
+(not (not_id_deleted ?id1))
+=>
+        (retract ?f1)
+        (assert (hindi_id_order   $?ids $?ids1))
+        (assert (not_id_deleted ?id1))
+)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(27-02-12)
 (defrule rm_prep_node_in_cons

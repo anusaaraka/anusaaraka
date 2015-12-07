@@ -11,5 +11,6 @@ sh get_multi_word-dic.sh proper_noun_dic.txt     proper_noun-dic.c
 sh get_multi_word-dic.sh $MYPATH/phy_eng_multi_word_dic_in_canonical_form.txt   physics_multi_dic.c
 sh get_multi_word-dic.sh $MYPATH/provisional_multi_word_dictionary_in_canonical_form.txt   provisional_multi_dic.c
 sh get_multi_word-dic.sh $MYPATH/agriculture_multi_dic_in_canonical_form.txt  agriculture_multi_dic.c
+sh get_multi_word-dic.sh $MYPATH/social_science_multi_dic_in_canonical_form.txt  social_science_multi_dic.c
 
 rm proper_noun_dic.txt

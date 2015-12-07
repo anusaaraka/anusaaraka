@@ -157,10 +157,10 @@ then
 (or(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "place.gdbm" ?str))))
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id  kabjA_kara)
+(assert (id-wsd_root_mng ?id  kabjA_kara))
 (if ?*debug_flag*
 then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  seize.clp 	seize13 " ?id "  kabjA_kara )" crlf)))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  seize.clp 	seize13 " ?id "  kabjA_kara )" crlf))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Pramendra Rathi : NIT ALLAHABAD student(14-6-11)

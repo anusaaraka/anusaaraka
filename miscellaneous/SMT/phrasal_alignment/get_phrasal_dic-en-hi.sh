@@ -38,7 +38,7 @@ else
 	cut -f1  $Phrasal_align_path/en-hi-gdbm-dict.txt  > f1
 fi
 grep -v "^$" f1 > f1-1
-sed 's/ \[/\t[/'  f1-1 | sed 's/ /##/g' | sed 's/__/_/g'  | sed 's/^_//g' | sed 's/_$//g' | sed 's/"/\\"/g' > tmp
+sed 's/ \[/\t[/'  f1-1 | sed 's/ /##/g' | sed 's/__/_/g'  | sed 's/^_//g' | sed 's/_$//g' | sed 's/\\/\\\\/g' | sed 's/"/\\"/g'  > tmp
 $HOME_anu_test/multifast-v1.4.2/src/get_word_count_single.out  tmp > tmp1
 sed 's/##//g' tmp1 | sed 's/\t/_",0, {stringy: "/g' | sed 's/^/\t{"_/g' | sed 's/$/"}},/g' > tmp2
 sed '1i\AC_PATTERN_t sample_patterns[] = {'  tmp2 > tmp3

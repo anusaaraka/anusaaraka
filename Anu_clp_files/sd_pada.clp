@@ -41,14 +41,16 @@
                         (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
                         (if (eq ?flag 1) then
                                 (bind ?str ?k)
-                                (bind $?grp_ids ?j)
+                                (bind $?grp_ids (create$ ?j))
                                 (bind ?flag 0)
                         else
                                 (bind ?str (str-cat ?str "_" ?k))
                                 (bind $?grp_ids (create$ $?grp_ids ?j)))
                                 (bind ?lkup (gdbm_lookup "preposition.gdbm"  ?str))
                                 (if (neq ?lkup "FALSE") then
-                                        (assert (prep_ids $?grp_ids))
+	 				(if (> (length $?grp_ids) 1) then
+                                        	(assert (prep_ids $?grp_ids))
+					)
                                 )
                 )
         )
@@ -81,9 +83,10 @@
         (printout ?*pada_debug_file* "	(pada_info (group_head_id "?np_id")(group_cat PP) (group_ids "(implode$ $?d)" "?cc" "(implode$ $?d1)")))" crlf)
        	(assert (conj_head-conj_id-components ?np_id ?cc $?d $?d1))
 	(assert (generated_conj_pada ?np_id))
-	(bind ?lh (nth$ (length $?d) $?d))
+	(bind ?lh (nth$ 1 $?d))
 	(bind ?rh (nth$ (length $?d1) $?d1))
 	(assert (conj-lt_head-rt_head ?CC ?lh ?rh))
+	(assert (conj_last_id ?rh))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_pada_group
@@ -128,6 +131,7 @@
         (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np_id")(preposition 0))" crlf)
         (modify ?f1  (preposition  $?ids ?prep))
         (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np_id")(preposition "(implode$ $?ids)" "?prep"))" crlf)
+	(assert (prep_id_decided ?prep))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;She declared that out of love for the poor she had gotten her family to go against convention.
@@ -229,6 +233,9 @@
  ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1 ?last_id)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
  (not (shared_conj_for_pada_id ?id))
+ (not (prawiniXi_id-node-category ?con_h ? Inf_VP))
+ (test (neq (str-index "." (implode$ (create$ ?con_h)))  FALSE))
+ (test (eq (string-to-field (sub-string (+ (str-index "." (implode$ (create$ ?con_h))) 1) (length (implode$ (create$ ?con_h))) (implode$ (create$ ?con_h)))) 1))
  =>
 	(assert (shared_conj_for_pada_id ?id))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
@@ -236,7 +243,6 @@
 	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)))
         (printout ?*pada_debug_file* "		(pada_info (group_head_id "?head")(group_cat PP) (group_ids "?id") ))" crlf)
 	(assert (id-grp_ids ?head ?id))
-	(assert (last_id-prep ?last_id $?prep))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis
@@ -244,9 +250,9 @@
  ;Rainwear is a must if you are visiting between june and september.
  (defrule get_zero_level_prep
  (declare (salience 4240))
- (last_id-prep ?id $?prep)
- (pada_info (group_head_id ?con_h)(preposition $?prep) (pada_head ?h))
- ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id)
+ (conj_last_id ?id)
+ (pada_info (group_head_id ?con_h)(preposition $?prep) (group_ids $? ?id))
+ ?f<-(conj_head-conj_id-components ?con_h $?d)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
  (not (shared_conj_for_pada_id ?id))
  =>
@@ -394,6 +400,27 @@
 	(assert (inf_id-to_id ?id ?to_id))
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.  
+ (defrule get_zero_level_mul_inf
+ (declare (salience 1100))
+ (head_id-prawiniXi_id-grp_ids ? ? ?to ?conj_h)
+ (prawiniXi_id-node-category ?to ?TO TO)
+ (head_id-prawiniXi_id-grp_ids ?to_id ?to ?)
+ ?f<-(conj_head-conj_id-components ?conj_h ?cid $?pre ?id $?po)
+ ?f0<-(pada_info (group_head_id ?conj_h) (group_ids $?d ?id $?d1))
+ (prawiniXi_id-node-category ?id ? VB)
+ (head_id-prawiniXi_id-grp_ids ? ?id ?v_id)
+ (test (eq (string-to-field (sub-string (+ (str-index "." (implode$ (create$ ?id))) 1) (length (implode$ (create$ ?id))) (implode$ (create$ ?id)))) 0))
+ =>
+	(retract ?f)
+	(modify ?f0 (group_ids $?d $?d1))
+ 	(assert (conj_head-conj_id-components ?conj_h ?cid $?pre ?v_id $?po ))
+	(bind $?grp_ids (create$ ?to_id ?v_id))
+        (print_pada_info get_multiple_infinitive ?v_id infinitive 0 $?grp_ids)
+        (print_in_ctrl_fact_files  ?v_id)
+        (assert (inf_id-to_id ?id ?to_id))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
  ;"One kind of response from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature ".
  (defrule get_multiple_infinitive1
  (declare (salience 1100))
@@ -412,20 +439,25 @@
 	(assert (id-grp_ids ?h $?a $?a1))
  )	
  ;----------------------------------------------------------------------------------------------------------------------
- ;He wasted his golden opportunity to play in the national team.
+ ;He wasted his golden opportunity [to play] in the national team.
+ ;The company said it made the purchase in order [to] locally [produce] hydraulically operated shovels. 
  (defrule get_infinitive_pada
  (declare  (salience 1000))
  ?f0<-(id-grp_ids ? ?to ?vp)
  (prawiniXi_id-node-category ?to ?TO TO)
  (head_id-prawiniXi_id-grp_ids ?to_id ?to ?)
  (prawiniXi_id-node-category ?vp ?VP Inf_VP)
- ?f1<-(id-grp_ids ?vp ?verb $?)
+ ?f1<-(id-grp_ids ?vp $?p ?verb $?po)
+ ;?f1<-(id-grp_ids ?vp ?verb $?)
  (head_id-prawiniXi_id-grp_ids ?verb_id ?verb ?)
+ (prawiniXi_id-node-category ?verb ? VB)
+ (not (inf_id-to_id ? ?to_id))
  =>
         (retract ?f0 ?f1)
 	(bind $?grp_ids (create$ ?to_id ?verb_id))
 	(print_pada_info get_infinitive_pada ?verb_id infinitive 0 $?grp_ids) 
         (print_in_ctrl_fact_files  ?verb_id)
+	(assert (id-grp_ids ?vp $?p $?po))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;A big, black, ugly dog chased me.  I do not have very much money. Look how blue it is.
@@ -653,12 +685,13 @@
  (get_pada)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
  (prawiniXi_id-node-category ?c_h ?CC CC)
- (conj_head-conj_id-components ? ?c_h $?daut)
+ ?f<-(conj_head-conj_id-components ? ?c_h $?daut)
  (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
  (id-grp_ids ?lh $? ?left_head)
  (id-grp_ids ?rh $? ?right_head)
  (not (agreement_decided ?conj_id))
  =>
+	(retract ?f)
         (assert (agreement_decided ?conj_id))
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
 	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
@@ -670,7 +703,7 @@
  (get_pada)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
  (prawiniXi_id-node-category ?c_h ?CC CC)
- (conj_head-conj_id-components ? ?c_h $?daut)
+ ?f<-(conj_head-conj_id-components ? ?c_h $?daut)
  (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
  (head_id-prawiniXi_id-grp_ids ?left_head ?lh ?)
  (head_id-prawiniXi_id-grp_ids ?right_head ?rh ?)
@@ -678,6 +711,7 @@
  (id-grp_ids ? $? ?right_head)
  (not (agreement_decided ?conj_id))
  =>
+	(retract ?f)
         (assert (agreement_decided ?conj_id))
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
 	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
@@ -694,6 +728,30 @@
  ;       (printout  ?*pada_debug_file* "(pada_info (group_head_id "?hid")(group_cat "?cat")(group_ids  "(implode$ $?grp_ids)")(preposition  "(implode$ $?prep)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
         (print_in_ctrl_fact_files   ?hid)
  )	
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.
+ (defrule rm_pp_id_form_inf_conj
+ (declare (salience 1))
+ ?f0<-(conj_head-conj_id-components ?c ?c_h ?id $?d ?rh)
+ (pada_info (group_head_id ?id) (group_cat infinitive) )
+ (pada_info (group_head_id ?rh) (group_cat PP))
+ =>
+	(retract ?f0)
+	(assert (conj_head-conj_id-components ?c ?c_h ?id $?d))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.
+ (defrule print_conj_for_inf
+ (inf_id-to_id ?lh ?)
+ (conj-lt_head-rt_head ?cc ?lh ?)
+ (prawiniXi_id-node-category ?c_h ?cc CC)
+ (conj_head-conj_id-components ? ?c_h $?d ?rh)
+ (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
+ (head_id-prawiniXi_id-grp_ids ?left_head ?lh ?)
+ =>
+	(printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?rh ")" crlf)
+        (printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ (create$ $?d ?rh)) ")" crlf)
+ )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;Suggested by Chaitanya Sir (6-11-14)
  (defrule get_tam_type

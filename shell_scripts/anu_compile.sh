@@ -25,6 +25,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/physics_dic.gdbm < phy_dictionary_in_canonical_form.txt
  echo "Creating agriculture_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture_dic.gdbm < agriculture_dic_in_canonical_form.txt
+ echo "Creating social_science_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 
@@ -180,6 +182,12 @@
  cp run_penn-rnn.sh $HOME_anu_test/bin/
  cp run_penn-pcfg.sh $HOME_anu_test/bin/
 
+ echo "Compiling Logon parser files"
+ cd $HOME_anu_test/Parsers/logon-parser/src
+ sh compile_bison.sh dependency_parse
+ sh compile_bison.sh derivation_parse
+ $HOME_anu_test/Anu_src/comp.sh add_info_for_no_parse
+ 
  echo "Compiling RASP parser files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
  sh comp.sh 

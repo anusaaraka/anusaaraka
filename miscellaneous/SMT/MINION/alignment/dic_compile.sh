@@ -38,6 +38,8 @@ cd  $HOME_anu_test/multifast-v1.4.2/src
 cd $MYPATH
 echo "Creating phy_hnd_multi_word_dic.txt"
  sh generate_multi_word_dic_for_alignment.sh $MYPATH1/phy_eng_multi_word_dic_in_canonical_form.txt phy_multi_word_dic.txt hindi
+echo "Creating social_science_hnd_multi_word_dic.txt"
+ sh generate_multi_word_dic_for_alignment.sh $MYPATH1/social_science_multi_dic_in_canonical_form.txt social_science_multi_word_dic.txt hindi
 echo "Creating hindi_multi_word_dic.txt"
  sh generate_multi_word_dic_for_alignment.sh $MYPATH1/multi_word_expressions_in_canonical_form.txt multi_word_dic.txt hindi
  sh generate_multi_word_dic_for_alignment.sh $MYPATH1/multi_word_expressions_from_iit_bombay_in_canonical_form.txt multi_word_from_iit_bombay_dic.txt hindi
@@ -55,6 +57,9 @@ cd $MYPATH1
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/physics_dic.gdbm < phy_dictionary_in_canonical_form.txt
  echo "Creating agriculture_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture_dic.gdbm < agriculture_dic_in_canonical_form.txt
+  echo "Creating social_science_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
+
  echo "Creating provisional_PropN_dic.gdbm"
   ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm  < provisional_PropN_dic_in_canonical_form.txt
  echo "Creating provisional_word_dic.gdbm"
@@ -87,6 +92,12 @@ cd $MYPATH1
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_phy_multi_word_dic.gdbm < $MYPATH/eng_phy_multi_word_dic.txt
  echo "Creating phy_hnd_multi_word_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd_phy_multi_word_dic.gdbm < $MYPATH/hnd_phy_multi_word_dic.txt
+
+echo "social_science_eng_multi_word_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_social_science_multi_word_dic.gdbm < $MYPATH/eng_social_science_multi_word_dic.txt
+ echo "Creating social_science_hnd_multi_word_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd_social_science_multi_word_dic.gdbm < $MYPATH/hnd_social_science_multi_word_dic.txt
+
  
  echo "Creating eng_multi_word_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_multi_word_dic.gdbm     < $MYPATH/eng_multi_word_dic.txt 

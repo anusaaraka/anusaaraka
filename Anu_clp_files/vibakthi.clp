@@ -407,6 +407,7 @@
  ?f2<-(id-HM-source ?id ?h_mng ?s)
  (test (> (length $?pp_ids) 1))
  (test (and (member$ ?id $?pp_ids)(neq ?h_mng -)))
+ (not (modified_pada_with_prep ?pada_id)) 
  =>
 	(bind ?len (length $?pp_ids))
 	(loop-for-count (?i 1 ?len) do
@@ -415,6 +416,7 @@
 	          	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	"?h_mng" 	"?s"(multi_prep) )" crlf )
 		)
        )
+	(assert (modified_pada_with_prep ?pada_id))
  )
  ;------------------------------------------------------------------------------------------
  ; She asked me to guess her age.
@@ -431,10 +433,11 @@
  )
 ;------------------------------------------------------------------------------------------
  ; Is that the film in which he kills his mother. This book is mine|ours|yours.
+ ; As a committed educator, he inspired millions of young people to achieve their very best.
  (defrule default_kA_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  ?w&his|His|our|Our|mine|my|ours|your|yours)
+ (id-original_word ?pada_id  ?w&his|His|our|Our|mine|my|ours|your|yours|their|Their)
  ?f1<-(pada_control_fact ?pada_id)
  =>
         (retract ?f1)
@@ -472,6 +475,20 @@
        	(printout ?*vib_debug_file* "(id-vib-source	"?hid"	ko	previous_word_every )" crlf )
 )
 ;------------------------------------------------------------------------------------------
+;Suggested by Sukhada (18-08-15)
+;Hadi is to be rubber-stamped as Yemen's new leader Tuesday in a vote that can hardly be called an election.
+(defrule ko_vib_using_kAlavAcI
+(declare (salience 440))
+(prep_id-relation-anu_ids - kriyA-kAlavAcI ? ?day)
+(id-root ?day sunday|monday|tuesday|wednesday|thursday|friday|saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)
+?f0<-(pada_info (group_head_id ?day)(group_cat PP)(vibakthi 0))
+?f1<-(pada_control_fact ?day)
+=>
+        (retract ?f1)
+        (modify ?f0 (vibakthi ko))
+        (printout ?*vib_debug_file* "(id-vib-source     "?day"  ko      ko_vib_using_kAlavAcI )" crlf )
+)
+;------------------------------------------------------------------------------------------
 ;Added on (23-05-12)
 ;Many fat boys, a tall girl and a small child ate fruits. 
 (defrule modify_and_vib
@@ -488,4 +505,21 @@
        	(printout ?*vib_debug_file* "(id-vib-source	"?rh"	"?vib"	"?w " )" crlf )
 )
 ;------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 08-05-2015 Suggested by Sukhada
+ ;I met John, your friend.              mEM joYna, Apake miwra se milA.
+ ;I saw Dashrath, the king of Ayodhya.  mEMne PropN-dashrath-PropN, ayoXyA ke rAjA ko xeKA.
+ ;United Illuminating is based in New Haven, Conn., and Northeast is based in Hartford, Conn..
+ (defrule saMjFA_vib_to_saMjFA_samA_vibakthi_rule
+ (declare (salience 300))
+ (prep_id-relation-anu_ids - saMjFA-saMjFA_samAnAXikaraNa  ?s_id ?sam_id)
+ ?f0<-(pada_info (group_head_id ?s_id) (vibakthi ?v))
+ (test (neq ?v 0))
+ ?f2<-(pada_control_fact ?sam_id)
+ ?f1<-(pada_info (group_head_id ?sam_id)(group_cat PP))
+ =>
+        (retract ?f2)
+        (modify ?f1 (vibakthi ?v))
+	(modify ?f0 (vibakthi 0))
+        (printout ?*vib_debug_file* "(id-vib-source     "?sam_id"       "?v"  saMjFA_vib_to_saMjFA_samA_vibakthi) " crlf )
+ )
 

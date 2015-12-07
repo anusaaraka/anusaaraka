@@ -149,3 +149,5 @@ nephew	1
 volunteer	1
 passenger	1
 someone	1
+poor	1
+government	1

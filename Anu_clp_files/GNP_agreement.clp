@@ -448,14 +448,31 @@
         (printout ?*gnp_debug* "(pada_id-rule_name-case_src " ?pada_id " case_for_kAlavAcI     o    kAlavAcI_relation)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju Suggested by Sukhada (20-07-15)
+ ;United Illuminating is based in New Haven, Conn., and Northeast is based in Hartford, Conn..
+ ;yUnAitada ilUmaneVtifa nU heVvana, koYna meM AXAriwa hE, Ora noVrWIsta hoYrtParda, koYna meM AXAriwa hE.
+ (defrule case_for_saMjFA
+ (declare (salience 590))
+ ?f<-(prep_id-relation-anu_ids - saMjFA-saMjFA_samAnAXikaraNa  ?s_id ?sam_id)
+ (pada_info (group_head_id ?sam_id) (vibakthi ?v))
+ (test (neq ?v 0))
+ ?f0<-(pada_info (group_head_id ?s_id))
+ =>
+	(retract ?f)
+	(modify ?f0 (case o))
+        (printout ?*gnp_debug* "(pada_id-rule_name-case_src " ?s_id " case_for_saMjFA     o    saMjFA-saMjFA_samAnAXikaraNa_relation)" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
  ;We see leaves falling from trees and water flowing down a dam.
  ;He stopped killing of animals and birds throughout his kingdom. 
+ ;The intelligent students study in libraries, streets, and cinema houses.
  (defrule modify_case_for_and_grp
  (declare (salience 590))
  (conj_head-left_head-right_head ? ?l_h ?r_h)
  (pada_info (group_head_id ?r_h) (vibakthi ?vib))
  (test (neq ?vib 0))
- ?f0<-(pada_info (group_head_id ?l_h)(case d))
+ ?f0<-(pada_info (group_head_id ?id)(case d))
+ (test (or (eq ?id ?l_h) (and (> ?id ?l_h)(< ?id ?r_h))))
  =>
 	(retract ?f0)
 	(modify ?f0 (case o))

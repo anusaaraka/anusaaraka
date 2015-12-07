@@ -5,7 +5,6 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
-;(deftemplate  database_info (slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 (deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
 (deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
@@ -146,6 +145,7 @@
  ?f<-(English_Sen $?Eng_list)
   =>
         (mwe_lookup "eng_phy_multi_word_dic.gdbm" 1 $?Eng_list)
+        (mwe_lookup "eng_social_science_multi_word_dic.gdbm" 1 $?Eng_list)
         (mwe_lookup "eng_acronyms_multi.gdbm" 1 $?Eng_list)
         (mwe_lookup "eng_named_entity_multi.gdbm" 1 $?Eng_list)
         (mwe_lookup "eng_proper_noun_multi.gdbm" 1 $?Eng_list)
@@ -155,7 +155,7 @@
 	(mwe_lookup "eng_multi_word_from_iit_bombay_dic.gdbm" 1 $?Eng_list)
  )
  ;--------------------------------------------------------------------------------------------------------
- ;Modified by Shirisha Manju to get word mng from all the databases
+ ;Modified by Shirisha Manju to get word mng from all the databases, to get mng from physics dic
  ;Added by Mahalaxmi
  ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 
  (deffunction dic_lookup(?gdbm ?id ?word ?root ?cat)
@@ -165,9 +165,22 @@
 	(bind ?wrd_mng (gdbm_lookup ?gdbm ?word))
 	(if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
 		(print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
+	else  ; to get mng from physics dic
+		(bind ?w (str-cat ?word "_" ?cat))
+		(bind ?wrd_mng (gdbm_lookup ?gdbm ?w))
+		(if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
+                	(print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
+		)
+	)
+	(if (or (eq ?gdbm "physics_dic.gdbm") (eq ?gdbm "social_science_dic.gdbm")) then
+		(bind ?w (str-cat ?root "_" ?cat))
+                (bind ?wrd_mng (gdbm_lookup ?gdbm ?w))
+                (if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
+                        (print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
+                )
 	)
 	(bind ?rt_mng (gdbm_lookup ?gdbm ?root))
-      	(if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng)
+	(if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng)
 		(print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
 	else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then
 		(bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
@@ -205,10 +218,11 @@
 		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "physics_dic.gdbm" ?id ?w ?w ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?w ?w ?cat)
+		(dic_lookup "social_science_dic.gdbm" ?id ?w ?w ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic1
- (declare (salience 150))
+ (declare (salience 155))
  (id-original_word ?id ?word)
  (id-root ?id ?root)
  (id-cat_coarse ?id ?cat)
@@ -223,6 +237,7 @@
 		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 
@@ -264,6 +279,7 @@
                 (dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat1)
                 (dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat1)
                 (dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat1)
+		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat1)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
