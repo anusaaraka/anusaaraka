@@ -17,6 +17,7 @@
  fi
 
  MYPATH=$HOME_anu_tmp
+ STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -62,8 +63,8 @@
  cd $PRES_PATH
  echo "Saving Format info ..."
 
- $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
- $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
+ $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH $5
+ $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH $5
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
 
  echo "Saving word information"

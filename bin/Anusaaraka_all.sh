@@ -17,7 +17,8 @@
  fi
 
  MYPATH=$HOME_anu_tmp
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
+ #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
+ STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -144,14 +145,15 @@
   $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
  #  $HOME_anu_test/Anu_src/split_file.out sd-relation.txt dir_names.txt sd-relations_tmp.dat
-   $HOME_anu_test/Anu_src/split_file.out sd-tree_relation.txt dir_names.txt sd-tree_relations_tmp.dat
-   $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat
-   $HOME_anu_test/Anu_src/split_file.out sd-propagation_relations.txt dir_names.txt sd-propagation_relations_tmp1.dat
-   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
-   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
-   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
-   perl  $HOME_anu_test/Anu_src/pre-split.pl < $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt   >tmp1
-   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-lexicalize_info.txt dir_names.txt sd-lexicalize_info.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-tree_relation.txt dir_names.txt sd-tree_relations_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-propagation_relations.txt dir_names.txt sd-propagation_relations_tmp1.dat
+  $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
+  perl  $HOME_anu_test/Anu_src/pre-split.pl < $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt   >tmp1
+  $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
  
   $HOME_anu_test/Anu_src/split_file.out tmp1  dir_names.txt ol-EG-TR.diag
   $HOME_anu_test/Anu_src/split_file.out $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat  dir_names.txt transformed_word_id.dat

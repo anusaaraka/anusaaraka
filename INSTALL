@@ -2,7 +2,7 @@
     ==============
 
      English-Hindi Anusaaraka requires the following resources.
-       -- Java 1.6.0 
+       -- Java 1.8.0 
        -- perl,
        -- python,
        -- flex,
@@ -42,8 +42,8 @@
         export HOME_anu_tmp=path_for_tmp_dir
         export HOME_anu_provisional_wsd_rules=path_for_user_wsd_rules(provisional_wsd_rules)
         
-        export PATH=path for jdk1.6.0_03/bin and $HOME_anu_test/bin
-        export JAVA_HOME=path for jdk1.6.0_03
+        export PATH=path for jdk1.8.0_25/bin and $HOME_anu_test/bin
+        export JAVA_HOME=path for jdk1.8.0_25
 	export http_proxy=path for proxy settings
         export LD_LIBRARY_PATH=/usr/local/lib/    ( for Shared libraries )
         
@@ -59,8 +59,8 @@
 	export HOME_anu_tmp=$HOME/tmp_anu_dir
 	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
 
-        export PATH=$HOME/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
-        export JAVA_HOME=$HOME/jdk1.6.0_03
+        export PATH=$HOME/jdk1.8.0_25/bin:$HOME_anu_test/bin:$PATH
+        export JAVA_HOME=$HOME/jdk1.8.0_25
         export LD_LIBRARY_PATH=/usr/local/lib/
 	export http_proxy=http://proxy.iiit.ac.in:8080
 
