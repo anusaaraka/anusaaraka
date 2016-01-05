@@ -7,7 +7,7 @@ FILE *fp;
 
 %%
 
-[A-Za-z_]*\([A-Za-z0-9'-\.]*[-][0-9]*[,][ ][A-Za-z0-9'-\.]*[-][0-9]*\)\n      {  
+[A-Za-z:_]*\([A-Za-z0-9'-\.]*[-][0-9]*[,][ ][A-Za-z0-9'-\.]*[-][0-9]*\)\n      {  
 				                              len=strcspn(yytext,"(");
                                                               strncpy(str,yytext,len);
                                                               str[len]='\0';

@@ -14,7 +14,8 @@
  MYPATH1=$HOME_anu_tmp/tmp/$1_tmp
 
  MYPATH=$HOME_anu_tmp
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
+ #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
+ STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then

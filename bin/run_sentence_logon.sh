@@ -14,7 +14,7 @@
  
  cd $HOME_anu_test/Anu_src/
  ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info_tmp.dat  $MYPATH/$1_tmp/$2/Node_category_tmp.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
- 
+
  cd $MYPATH/$1_tmp/$2
  sed "/\[[0-9]*[:][0-9]*\][ ][(]active[)]/d" $MYPATH/$1_tmp/$2/logon_output.txt |sed -n -e "H;\${g;s/)\n\n{/)\n\n;~~~~~~~~~~\n{/g;p}" | sed -n -e "H;\${g;s/[[][0-9]*[]][ ][(][0-9]*[ ]of[ ][0-9]*[)][ ][{][0-9]*[}][ ][\`]\(.*\)[']\(.*\)\n[;]\~\~\~\~\~\~\~\~\~\~\n/\`\1\'\2\n;\~\~\~\~\~\~\~\~\~\~\n\`\1\'\n/g;p}" | sed -n -e "H;\${g;s/}\n\n{/}\n\n;~~~~~~~~~~\n{/g;p}" | sed -n -e "H;\${g;s/\n\n[\n]*/\n/g;p}" > $MYPATH/$1_tmp/$2/logon_output_tmp.txt
  

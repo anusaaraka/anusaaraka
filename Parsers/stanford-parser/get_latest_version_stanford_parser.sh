@@ -5,4 +5,4 @@ sed -i 's/.zip//g' tmp
 var=`cat tmp`
 rm tmp
 cd $var
-jar -xf stanford-parser-3.4.1-models.jar
+jar -xf stanford-parser*models.jar

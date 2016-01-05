@@ -23,7 +23,7 @@
  ; The parents documented every step of their child's development .
  (defrule word_rule_for_poss
  (declare (salience 100))
- (rel_name-sids poss|num|conj_and|conj_or|dep ?lnode ?rnode)
+ (rel_name-sids nmod:poss|nummod|conj:and|conj:or|poss|num|conj_and|conj_or|dep ?lnode ?rnode)
  ?f1<-(id-sd_cat ?rnode ?c)
  ?f2<-(parserid-word ?rnode ?wrd)
  ?f3<-(parser_numeric_id-word ?rid ?wrd1)
@@ -42,7 +42,7 @@
  ;I read about the train accident in today's paper. 
  (defrule word_rule_4_possessive
  (declare (salience 100))
- (rel_name-sids possessive ?lnode ?rnode)
+ (rel_name-sids possessive|case ?lnode ?rnode)
  ?f1<-(parserid-word ?lnode ?wrd)
  ?f2<-(parserid-word ?rnode ?rwrd)
  ?f3<-(parser_numeric_id-word ?lid ?wrd1)

@@ -58,7 +58,7 @@
  (defrule assert_rel
  (declare (salience 9999))
  (rel_name-sids ?rel  ?y ?x) 
- (rel_name-sids conj_and|conj_or  ?x ?z) 
+ (rel_name-sids conj:and|conj:or  ?x ?z) 
  =>
  (assert (rel_name-sids ?rel  ?y  ?z))
  (printout       ?*dbug* "(rule-asserted_Relation-ids    assert_rel  "?rel "  "?y"  "?z")"crlf)
@@ -101,7 +101,7 @@
 (rel_name-sids expl ?kriyA ?kriyA_dummy_subject)
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
 (not (rel_name-sids cop ?kriyA ?))
-(not (rel_name-sids nn ?sub ?));Added by Shirisha Manju Ex : You are lucky that there is no exam today .
+(not (rel_name-sids compound|nn ?sub ?));Added by Shirisha Manju Ex : You are lucky that there is no exam today .
 (not (sub_for_kriyA ?sub))
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-dummy_subject       "?kriyA"        "?kriyA_dummy_subject")"crlf)
@@ -117,7 +117,7 @@
  (declare(salience 202))
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids expl ?kriyA ?kriyA_dummy_subject)
- (rel_name-sids nn  ?sub ?GNP_sub)
+ (rel_name-sids compound|nn  ?sub ?GNP_sub)
  (not (rel_name-sids cop ?kriyA ?))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-dummy_subject       "?kriyA"        "?kriyA_dummy_subject")"crlf)
@@ -207,7 +207,7 @@
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule nsubj_conj
  (declare (salience 100))
- (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
+ (rel_name-sids conj:and|conj:or|conj:but  ?kriyA ?kriyA1)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (parser_id-cat_coarse ?kriyA1 verb);The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture.
  (not (rel_name-sids cop  ?kriyA ?v))
@@ -224,7 +224,7 @@
  ;Added by Shirisha Manju (07-09-11) Suggested by Sukhada
  (defrule nsubj_conj_1
  (declare (salience 100))
- (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
+ (rel_name-sids conj:and|conj:or|conj:but  ?kriyA ?kriyA1)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids cop ?kriyA1 ?s1)
  (not (rel_name-sids cop  ?kriyA ?v))
@@ -240,7 +240,7 @@
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule dobj_as_well_as
  (declare (salience 900))
- (rel_name-sids conj_and|conj_or  ?ob ?ob1)
+ (rel_name-sids conj:and|conj:or  ?ob ?ob1)
  (rel_name-sids dobj ?kriyA ?ob)
  (parserid-word ?id well)
  (test (and (> (string_to_integer ?id) (string_to_integer ?ob)) (< (string_to_integer ?id) (string_to_integer ?ob1))))
@@ -252,11 +252,10 @@
  ; Ex. I like fruits as well as nuts.  
  ;------------------------------------------------------------------------------------------------------------------------
  ;SD gives multiple conj_and relations with different ids for same 'AND', So handling them in one single list.
- ;Added 'conj_but' by Roja (22-11-14) Ex: Many people can speak but only a few can act .
  (defrule decide_conj_rel
  (declare (salience -900))
- ?f<-(rel_name-sids ?conj&conj_and|conj_or|conj_but   ?x ?y)
- ?f1<-(rel_name-sids ?conj&conj_and|conj_or|conj_but  ?x $?y1)
+ ?f<-(rel_name-sids ?conj&conj:and|conj:or   ?x ?y)
+ ?f1<-(rel_name-sids ?conj&conj:and|conj:or  ?x $?y1)
  (test (eq (member$ ?y ?y1) FALSE))
  =>
    (bind ?plist (create$ ))
@@ -268,11 +267,10 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;printing conjunction-components.
  ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
- ;Added 'but', 'conj_but' by Roja (22-11-14) Ex: Many people can speak but only a few can act .
  (defrule conj-comp-rule
  (declare (salience -1000))
- (rel_name-sids conj_and|conj_or|conj_but  ?x $?ids  ?y)
- (parserid-word ?id and|or|well|but)
+ (rel_name-sids conj:and|conj:or  ?x $?ids  ?y)
+ (parserid-word ?id and|or|well)
  (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
  =>
      (assert (conjunction-components   ?id   ?x  (implode$ $?ids)   ?y))
@@ -304,7 +302,7 @@
  ; Ex. Dole was defeated by Clinton. That she lied was suspected by everyone . 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule nn
-(rel_name-sids nn  ?n1 ?n2)
+(rel_name-sids compound|nn  ?n1 ?n2)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     samAsa_viSeRya-samAsa_viSeRaNa   "?n1"        "?n2")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nn     samAsa_viSeRya-samAsa_viSeRaNa   "?n1"        "?n2   ")"crlf)
@@ -329,7 +327,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule acomp+nsubj
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
-(rel_name-sids acomp ?kriyA ?samA)
+(rel_name-sids xcomp|acomp ?kriyA ?samA)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	acomp+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
@@ -525,7 +523,7 @@ else
  ; Ex: It is not a good manner to eat alone.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (rel_name-sids nmod:poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
  (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
  =>
  (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
@@ -534,7 +532,7 @@ else
  ; Ex.  He is John's cousin. Sam is my brother.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule prt
-(rel_name-sids prt ?kriyA ?upasarga)
+(rel_name-sids compound:prt ?kriyA ?upasarga)
 (not (got_preposition_obj_for_this ?upasarga))
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-upasarga	"?kriyA"	"?upasarga")"crlf)	
@@ -552,6 +550,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule advcl
 (rel_name-sids  advcl ?kri ?vAkya_vi)
+(root-verbchunk-tam-chunkids ?r $?v ?vAkya_vi  $?t)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-vAkya_viSeRaNa  	"?kri"	"?vAkya_vi")"crlf)
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-vAkya_viSeRaNa   	"?kri"	"?vAkya_vi")"crlf)
@@ -595,7 +594,7 @@ else
 (declare (salience 100))
 (rel_name-sids advmod ?kriyA_viSeRaNa  ?kriyA_viSeRaNa_viSeRaka)
 (rel_name-sids advmod ?kriyA ?kriyA_viSeRaNa)
-(not (rel_name-sids prt ?kriyA ?))
+(not (rel_name-sids compound:prt ?kriyA ?))
 =>
 (assert (got_kriyA_viSeRaNa_viSeRaka ?kriyA_viSeRaNa))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka     "?kriyA_viSeRaNa"        "?kriyA_viSeRaNa_viSeRaka")"crlf)
@@ -627,7 +626,7 @@ else
  ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule det
- (rel_name-sids det|predet|preconj  ?vi ?det_vi)
+ (rel_name-sids det|predet|preconj|cc:preconj|det:predet  ?vi ?det_vi)
  =>
  (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)	
  (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	det	viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)
@@ -675,6 +674,7 @@ else
 (defrule mark
 (rel_name-sids mark ?kri ?conj)
 (not (got_kriyA-vAkya_viBakwi_for ?conj))
+(not (parserid-word ?conj to))
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-vAkya_viBakwi        "?kri"      "?conj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   mark    kriyA-vAkya_viBakwi        "?kri"      "?conj")"crlf)
@@ -686,6 +686,7 @@ else
 (declare (salience 200))
 (rel_name-sids mark ?x  ?conj)
 (rel_name-sids cop ?x ?kriyA) 
+(not (parserid-word ?conj to))
 =>
 (assert (got_kriyA-vAkya_viBakwi_for ?conj))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-vAkya_viBakwi        "?kriyA"      "?conj")"crlf)
@@ -696,8 +697,8 @@ else
 (defrule conj+cc
 (declare (salience 200))
 (rel_name-sids ?cnj ?kri1 ?kri2)
-(test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
-;(rel_name-sids cc ?kri1  ?conj) ;commented by manju for the same sentence.
+(test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj:"))
+(rel_name-sids cc ?kri1  ?conj)
 (parser_id-cat_coarse ?kri1 verb)
 (parser_id-cat_coarse ?kri2 verb)
 =>
@@ -708,11 +709,11 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule conj_but
 (rel_name-sids ?cnj ?kriyA ?kri)
-(test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
+(test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj:"))
 (parserid-word ?conj_id but)
 (test (and (> (string_to_integer ?conj_id) (string_to_integer ?kriyA)) (< (string_to_integer ?conj_id) (string_to_integer ?kri))))
-(not (rel_name-sids conj_and ?kriyA ?kri))
-(not (rel_name-sids conj_or ?kri ?))
+(not (rel_name-sids conj:and ?kriyA ?kri))
+(not (rel_name-sids conj:or ?kri ?))
 (not (found_kriyA-sub_rel ?kri))
 (not (rel_name-sids nsubj ?kri ?x))
 =>
@@ -777,7 +778,7 @@ else
  (propogation_rel_name-sids ?prep_wd ?kri  ?p_saM)
  (propogation_rel_name-sids ?prep_wd1 ?kri  ?x)
  (parserid-word ?p ?word)
- (rel_name-sids conj_and|conj_or  ?p_saM ?x)
+ (rel_name-sids conj:and|conj:or  ?p_saM ?x)
  (parserid-word ?id and|or)
  (parser_id-cat_coarse ?kri ?cat)
  (test (and (> (string_to_integer ?id) (string_to_integer ?p_saM)) (< (string_to_integer ?id) (string_to_integer ?x)) (eq ?prep_wd ?prep_wd1)))
@@ -802,29 +803,36 @@ else
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule single_prep
  (declare (salience 1))
- ?f0<-(basic_rel_name-sids prep  ?kri ?p)
- (or (basic_rel_name-sids pobj ?p ?p_saM)(basic_rel_name-sids pcomp ?p ?p_saM))
- (parser_id-cat_coarse ?kri verb)
  (parserid-word ?p ?word)
+?f1<-(rel_name-sids  ?nmod  ?kri  ?p_saM)
+?f0<-(rel_name-sids  case  ?p_saM  ?p)
+ (test (eq (sub-string 1 5 ?nmod) "nmod:"))
  (not (got_prepositional_rel ?p))
  (not (parserid-word  ?p_saM  ABBRdollar))
  (test (neq (numberp ?word) TRUE)) ; Added by Roja (24-05-13) Ex: Also on the takeover front, Jaguar's ADRs rose 1/4 to [13] 7/8 on turnover of 4.4 million.
+ (parser_id-cat_coarse ?kri ?cat)
  =>
  (retract ?f0)
  (assert (got_prep_rel ?p_saM))
+ (if (eq ?cat verb) then
  (printout ?*fp* "(prep_id-relation-parser_ids  "?p" kriyA-"(lowcase ?word)"_saMbanXI "?kri" "?p_saM")"crlf)
  (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?p_saM")"crlf)
+  else
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" viSeRya-"(lowcase ?word)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep  viSeRya-"(lowcase ?word)"_saMbanXI  " ?kri" "?p_saM")"crlf)
  )
+)
  ;He lives at Chandinichok in Delhi in India. Of her childhood we know very little. 
  ; Ex. The people of Orissa are FACING grave adversities DUE TO the CYCLONE. 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule double_p
  (declare (salience 100))
- (basic_rel_name-sids prep ?kri ?p-1)
- ?f<- (basic_rel_name-sids pcomp ?p-1 ?p)
- (basic_rel_name-sids pobj ?p ?p_saM)
- (parser_id-cat_coarse ?kri ?cat)
+?f<-(rel_name-sids  case  ?p_saM  ?p-1)
+(rel_name-sids  mwe  ?p-1  ?p)
+?f1<-(rel_name-sids  ?nmod  ?kri  ?p_saM)
  (parserid-word ?p-1 ?word) (parserid-word ?p ?word1)
+ (test (eq (sub-string 1 5 ?nmod) "nmod:"))
+ (parser_id-cat_coarse ?kri ?cat)
  =>
  (retract ?f)
  (if (eq ?cat verb) then
@@ -834,7 +842,7 @@ else
  (printout ?*fp* "(prep_id-relation-parser_ids  "?p-1" "?p" viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
  (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p-1" "?p"  duble_prep  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
  ))
- ;Ex. Buyers stepped in to the futures pit.
+ ;Ex. Buyers stepped in to the futures pit. We stayed at home because of the bad weather.
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule duble_prep_conj
  (declare (salience 220))
@@ -843,7 +851,7 @@ else
  (basic_rel_name-sids  mwe  ?p   ?p-1)
  (rel_name-sids  prep_such_as  ?kri  ?p_saM)
  (rel_name-sids  prep_such_as  ?kri  ?x)
- (rel_name-sids conj_or ?x ?p_saM )
+ (rel_name-sids conj:or ?x ?p_saM )
  (parser_id-cat_coarse ?kri ?cat)
  (parserid-word ?p-1 ?word) (parserid-word ?p ?word1)
  (parserid-word ?id and|or)
@@ -877,13 +885,14 @@ else
  ; Ex. The people of Orissa are facing grave adversities due to the cyclone.
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule triple_prep
- (declare (salience 100))
- ?f0<-(basic_rel_name-sids prep  ?kri ?p)
- (basic_rel_name-sids pobj  ?p   ?p1)
- ?f1<-(basic_rel_name-sids prep  ?p1 ?p2)
- (basic_rel_name-sids pobj ?p2 ?p_saM)
- (rel_name-sids ?prep ?kri ?p_saM)
- (test (eq (sub-string 1 5 ?prep) "prep_"))
+ (declare (salience 110))
+?f0<-(rel_name-sids  case  ?p_saM  ?p)
+(rel_name-sids  mwe  ?p  ?p1)
+(rel_name-sids  mwe  ?p  ?p2)
+?f1<-(rel_name-sids  ?nmod  ?kri  ?p_saM)
+ (test (eq (sub-string 1 5 ?nmod) "nmod:"))
+ (test (neq ?p1 ?p2))
+(test (>(string_to_integer ?p2)(string_to_integer ?p1)))
  (parser_id-cat_coarse ?kri ?cat)
  (parserid-word ?p ?word)  (parserid-word ?p1 ?word1)  (parserid-word ?p2 ?word2)
  =>
@@ -895,7 +904,7 @@ else
  (printout ?*fp* "(prep_id-relation-parser_ids  "?p" "?p1" "?p2"  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_"(lowcase ?word2)"_saMbanXI "?kri" "?p_saM")"crlf)
  (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p" "?p1" "?p2"  triple_prep  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_"(lowcase ?word2)"_saMbanXI "?kri" "?p_saM")"crlf)
  ))
- ; Ex. Several people are in front of me in line.
+ ; Ex. Who is acting on behalf of the defendant? Several people are in front of me in line. She has a pear tree in front of his house. 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule vi_prep
  (declare (salience 1))
@@ -913,8 +922,8 @@ else
 (defrule rel_1
 (declare (salience 100))
 (rel_name-sids  rel|dobj     ?rv ?jos)
-(rel_name-sids  rcmod   ?vi ?rv)
-(rel_name-sids  prt     ?rv  ?p)
+(rel_name-sids  acl:relcl|rcmod   ?vi ?rv)
+(rel_name-sids  compound:prt|prt     ?rv  ?p)
 (parserid-word  ?jos    who|which|where|that)
 (parserid-word  ?p      ?prep)
 =>
@@ -927,7 +936,7 @@ else
 (defrule dobj_rcmod
 (declare (salience 200))
 (rel_name-sids dobj ?kriyA ?x)
-(rel_name-sids rcmod ?x ?kriyA)
+(rel_name-sids acl:relcl|rcmod ?x ?kriyA)
 (basic_rel_name-sids dobj ?kriyA ?obj) ; In new version dobj is given between 'called' and 'who' in basic rel
 ;(propogation_rel_name-sids rel ?kriyA ?obj) ; In new version  'rel' relation is missing so using above fact. Suggested by Chaitanya Sir
 =>
@@ -941,7 +950,7 @@ else
 
 (defrule nsubj_rcmod
 (declare (salience 2000))
-(rel_name-sids rcmod ?x ?kriyA )
+(rel_name-sids acl:relcl|rcmod ?x ?kriyA )
 (basic_rel_name-sids nsubj ?kriyA ?sub)
 =>
 (assert (got_kriyA-subject ?kriyA))
@@ -969,7 +978,7 @@ else
 
 (defrule rcmod
 (declare (salience 220))
-(rel_name-sids  rcmod ?vi ?kri)
+(rel_name-sids  acl:relcl|rcmod ?vi ?kri)
 (parserid-word ?js ?w)
 ;(test (eq (string_to_integer ?js) (+ (string_to_integer ?vi) 1))) ;commented for: In 1979, Hearst hired editor James Bellows, who brightened the editorial product considerably. 
 (test (>(string_to_integer ?kri)(string_to_integer ?vi)))
@@ -992,7 +1001,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-who
 (declare (salience 100))
-(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  acl:relcl|rcmod   ?vi  ?rv)
 (rel_name-sids  nsubj   ?rv  ?s)
 (parserid-word ?vi ?vi_word)
 (parserid-word ?s ?word&~who&~which&~when&~whom&~that)
@@ -1016,7 +1025,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-where
 (declare (salience 100))
-(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  acl:relcl|rcmod   ?vi  ?rv)
 (parserid-word ?vi ?vi_word)
 (not (rel_name-sids  dobj   ?rv  ?))
 (not (rel_name-sids  rel   ?rv  ?x))
@@ -1038,7 +1047,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-where_2
 (declare (salience 100))
-(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  acl:relcl|rcmod   ?vi  ?rv)
 (parserid-word ?vi ?vi_word)
 (rel_name-sids  dobj   ?rv  ?obj)
 (not (rel_name-sids  rel   ?rv  ?))
@@ -1062,7 +1071,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-when
 (declare (salience 100))
-(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  acl:relcl|rcmod   ?vi  ?rv)
 (not (rel_name-sids  rel   ?rv  ?))
 (parserid-word ?vi ?vi_word)
 (test (eq (lexemep ?vi_word) TRUE));Added by Shirisha Manju (lexemep = symbol or string)(21-06-11) 
@@ -1080,7 +1089,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-which
 (declare (salience 100))
-(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  acl:relcl|rcmod   ?vi  ?rv)
 (rel_name-sids  nsubj   ?rv  ?s)
 (parserid-word ?s ?word&~who&~which&~that)
 (not (rel_name-sids  dobj   ?rv  ?))
@@ -1104,7 +1113,7 @@ else
 ;Ex. I will show you the house we talked about.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-which1
-(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  acl:relcl|rcmod   ?vi  ?rv)
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (not (rel_name-sids  rel   ?rv  ?))
 (not (rel_name-sids  advmod   ?rv  ?))
@@ -1150,7 +1159,7 @@ else
  ; Ex.  
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule num
-(rel_name-sids num ?vi ?sa-vi)
+(rel_name-sids nummod|num ?vi ?sa-vi)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-saMKyA_viSeRaNa	"?vi"	"?sa-vi")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	num	viSeRya-saMKyA_viSeRaNa	"	?vi"	"?sa-vi")"crlf)	
@@ -1174,7 +1183,7 @@ else
  ; Ex. The director is 65 years old .  
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule aux_to
-(rel_name-sids aux  ?v ?to)
+(rel_name-sids aux|mark  ?v ?to)
 (parserid-word ?to to|To);Added "To" by Shirisha Manju(11-07-13)
 (not (rel_name-sids cop ?v ?))
 =>
@@ -1184,9 +1193,12 @@ else
  ; Ex. I want to go. Dick is important to fix the problem. To measure any time interval we need a clock.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule aux_cop
- (rel_name-sids aux ?id ?to)
+ (rel_name-sids aux|mark ?id ?to)
  (rel_name-sids cop ?id ?inf)
  (parserid-word ?to to)
+;mark(rude-5, to-3)
+;cop(rude-5, be-4)
+
  =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     to-infinitive       "       ?to"    "?inf")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   aux_cop  to-infinitive       "       ?to"    "?inf")"crlf)
@@ -1283,7 +1295,7 @@ else
 ;;Ex.  I made him go.The teacher made the students stay after class.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule tmod
-(rel_name-sids tmod  ?kri ?kAl)
+(rel_name-sids nmod:tmod  ?kri ?kAl)
 (not (basic_rel_name-sids pobj ?p ?kAl))
 ;(not (got_prep_rel ?vi))
 =>
@@ -1301,9 +1313,13 @@ else
  ; Ex. About 200 people came to the party .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule vmod1 
-(rel_name-sids vmod|xcomp  ?saMjFA ?kqxanwa) ;Modified infmod to vmod as new version of Stanford 3.3.1
+(rel_name-sids vmod|xcomp|acl  ?saMjFA ?kqxanwa) ;Modified infmod to vmod as new version of Stanford 3.3.1
 (parser_id-cat_coarse ?saMjFA ~verb) ;Added by Sukhada
-(rel_name-sids aux  ?kqxanwa ?to); Added by Sukhada. Ex. Truffles picked during the spring are tasty. 
+(rel_name-sids aux|mark  ?kqxanwa ?to); Added by Sukhada. Ex. Truffles picked during the spring are tasty. 
+(parserid-word ?to to|To)
+;mark(go-6, to-5)
+;acl(way-4, go-6)
+
  =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   vmod1   saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
@@ -1312,7 +1328,7 @@ else
  ;Added by Mahalaxmi.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule npadvmod
-(rel_name-sids npadvmod  ?vi ?vi_Na)
+(rel_name-sids npadvmod|nmod:npmod  ?vi ?vi_Na)
  =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-viSeRaNa        "?vi"    "?vi_Na")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   npadvmod viSeRya-viSeRaNa        "?vi"    "?vi_Na")"crlf)
@@ -1331,7 +1347,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule prep_advmod_rule
  (declare (salience 100))
- ?f0<-(rel_name-sids prep ?kriyA ?prep)
+ ?f0<-(rel_name-sids prep|case ?kriyA ?prep)
  ?f1<-(rel_name-sids advmod ?kriyA ?prep_saM)
  (parserid-word ?prep ?prp&~than)
  (parserid-word ?prep_saM  ?word&where|what|Where|What|Who|who|Whom|whom)

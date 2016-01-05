@@ -17,7 +17,8 @@
  fi
 
  MYPATH=$HOME_anu_tmp
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
+ #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
+ STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -127,7 +128,7 @@
   fi
 
   if [ "$4" != "general" -a "$4" != "" ]; then
-  $HOME_anu_test/Anu_src/split_file.out phy_multi_word_expressions.txt  dir_names.txt  phy_multi_word_expressions.dat
+  $HOME_anu_test/Anu_src/split_file.out domain_multi_word_expressions.txt  dir_names.txt  domain_multi_word_expressions.dat
   fi
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
