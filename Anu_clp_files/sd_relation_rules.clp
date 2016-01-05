@@ -904,7 +904,7 @@ else
  (printout ?*fp* "(prep_id-relation-parser_ids  "?p" "?p1" "?p2"  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_"(lowcase ?word2)"_saMbanXI "?kri" "?p_saM")"crlf)
  (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p" "?p1" "?p2"  triple_prep  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_"(lowcase ?word2)"_saMbanXI "?kri" "?p_saM")"crlf)
  ))
- ; Ex. Several people are in front of me in line. She has a pear tree in front of his house. 
+ ; Ex. Who is acting on behalf of the defendant? Several people are in front of me in line. She has a pear tree in front of his house. 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule vi_prep
  (declare (salience 1))

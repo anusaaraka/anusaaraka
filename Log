@@ -1,4 +1,4 @@
- 29-12-15
+ 04-01-16
  ======== 
   1. Updated Stanford version 3.4.1 to 3.6.0
   2. Following files are modified accordingly:
@@ -15,7 +15,9 @@
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
   3. Modified absolute paths in:
 	 phrasal-mert/phrasal.final.ini		work/phrasal.conf
-  4. Updated Log.
+  4. Updated following dictionaries:
+	provisional_multi_word_dictionary.txt
+  5. Updated Log.
 
  19-11-15
  ========
