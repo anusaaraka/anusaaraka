@@ -45,7 +45,7 @@ int word_id[1000], offset_no[1000];
 
  void check_for_punctuation(char *str)
      {
-          if(strcmp(str,")")==0 ||strcmp(str,"(")==0 ||strcmp(str,"$")==0 ||strcmp(str,",")==0 ||strcmp(str,".")==0 ||strcmp(str,":")==0 ||strcmp(str,";")==0 ||strcmp(str,"?")==0 ||strcmp(str,"!")==0 ||strcmp(str,"''")==0 ||strcmp(str,"'")==0||strcmp(str,"=")==0 || strcmp(str,"\"")==0 || strcmp(str,"\n")==0)
+          if(strcmp(str,")")==0 ||strcmp(str,"(")==0 ||strcmp(str,"$")==0 ||strcmp(str,",")==0 ||strcmp(str,".")==0 ||strcmp(str,":")==0 ||strcmp(str,";")==0 ||strcmp(str,"?")==0 ||strcmp(str,"!")==0 ||strcmp(str,"''")==0 ||strcmp(str,"'")==0||strcmp(str,"=")==0 || strcmp(str,"\"")==0 || strcmp(str,"\n")==0 || strcmp(str, "...")==0)
 		flag=0;
           else
              flag=1;
