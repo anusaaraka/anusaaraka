@@ -8,15 +8,18 @@ int count=0;
 
 %%
 [\^][a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$][\^]['][s][<]gen[>][$] 	{ print_category(yytext); } 
-[\^][a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$] 			{ print_category(yytext); } 
-[\^][\*][a-zA-Z0-9\-]*[$]					{count=count+1;
-                                                                 if((yytext[2]>=65)&&(yytext[2]<=90)){
-								    fprintf(fp,"(id-cat %d proper_noun)\n",count);
-                                                                    fprintf(fp,"(id-cat_coarse %d PropN)\n",count);}
-                                                                 else {
-                                                                    fprintf(fp,"(id-cat %d unknown)\n",count);
-                                                                    fprintf(fp,"(id-cat_coarse %d unknown)\n",count); }}
-[<]sent[>][$]							{count=0;fprintf(fp,";~~~~~~~~~~\n");}
+[\^][a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$] 				{ print_category(yytext); } 
+[\^][\*][a-zA-Z0-9\-]*[$]						{ count=count+1;
+	                                                                  if((yytext[2]>=65)&&(yytext[2]<=90)){
+										    fprintf(fp,"(id-cat %d proper_noun)\n",count);
+                        		                                            fprintf(fp,"(id-cat_coarse %d PropN)\n",count);}
+                                        	                         else {
+                                                		                    fprintf(fp,"(id-cat %d unknown)\n",count);
+                                                                		    fprintf(fp,"(id-cat_coarse %d unknown)\n",count); 
+									      }
+									}
+[<]sent[>][$][" ]+\n							{count=0; fprintf(fp,";~~~~~~~~~~\n"); }
+
 
 %%
 

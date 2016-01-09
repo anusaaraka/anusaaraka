@@ -1,4 +1,4 @@
- 07-01-16
+ 09-01-16
  ======== 
   1. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
@@ -16,9 +16,11 @@
 	run_stanford-gui-pcfg.sh	run_sentence_ol.sh	run_sentence_stanford_align_man.sh
 	run_stanford-gui-factored.sh	run_sentence_stanford_minion.sh
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
-  4. Updated following dictionaries:
+  4. Updated following lex files:
+	tagger.lex -> Modified pattern for sent end.
+  5. Updated following dictionaries:
 	provisional_multi_word_dictionary.txt
-  5. Updated Log.
+  6. Updated Log.
 
  19-11-15
  ========
