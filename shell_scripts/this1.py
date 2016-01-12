@@ -151,6 +151,12 @@ for i in range(0,len(dire)):
 					if dic2[0] not in check:
 						check.append(dic2[0])
 						dic1.append(dic2)
+				#Added below loop to access mixed domain dic by Roja(12-01-16)
+				elif(source=="Mixed_domain_dic_meaning"):
+					dic2.append("Anu_data/canonical_form_dictionary/dictionaries/mixed_domain_dic_in_canonical_form.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
 				elif(source=="Default_meaning_for_adjective"):
 					dic2.append("Anu_data/default-iit-bombay-shabdanjali-dic.txt")
 					if dic2[0] not in check:

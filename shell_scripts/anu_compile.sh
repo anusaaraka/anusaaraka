@@ -66,7 +66,10 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib_in_canonical_form.txt
  echo "Creating proper_noun_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/proper_noun_dic.gdbm < proper_noun_dic_in_canonical_form.txt
+ echo "Creating mixed_domain_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/mixed_domain_dic.gdbm < mixed_domain_dic_in_canonical_form.txt
 
+ 
  cd $HOME_anu_test/Anu_data
  echo "Creating PropN.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/PropN.gdbm < PropN.txt 
