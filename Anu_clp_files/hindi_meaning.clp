@@ -531,21 +531,49 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
-;; ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-7-14)
-; (defrule get_mng_from_transliterate_mng
-; (declare (salience 7000))
-; (id-word ?id ?word)
-; ?f<-(meaning_to_be_decided ?id)
-; (test (neq (numberp ?word) TRUE))
-; (test (neq (gdbm_lookup "transliterate_meaning.gdbm" ?word ) "FALSE"))
-; =>
-;	(bind ?mng (gdbm_lookup "transliterate_meaning.gdbm" ?word ))
-;        (if (neq ?mng "FALSE") then
-;                (retract ?f)
-;                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
-;                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
-;        )
-; )
+ ;Added by Roja (12-01-16).
+ ;Getting Hindi meaning from Mixied domain dictionary for a word with same category
+ ;Basically, there are two domains of interest: [macroscopic] and microscopic.
+ ;Note: To check this rule fire, run above sentence without domain option.
+ (defrule mixed_dom_hindi_mng-same-cat
+ (declare (salience 7000))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (id-word ?id ?wrd)
+ (test (neq (numberp ?wrd) TRUE))
+ (test (neq (gdbm_lookup "mixed_domain_dic.gdbm" (str-cat ?wrd "_" ?cat)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?wrd ?cat mixed_domain_dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Mixed_domain_dic_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Mixed_domain_dic_meaning "?id")" crlf)
+        )
+ )
+
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (12-01-16).
+ ;Getting Hindi meaning from default dictionary with word when there is a different category.
+ ;Also asserting a fact (sen_type-id-phrase Mixed_domain_mng_with_different_category) as a warning message in catastrophe.dat
+ ;Assuming first meaning always has 'Defualt'.
+ (defrule mixed_domain_hindi_mng-different-cat
+ (declare (salience 6900))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-word ?id ?wrd)
+ (id-cat_coarse ?id ?cat)
+ (default-cat ?cat1)
+ (test (neq (numberp ?wrd) TRUE))
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "mixed_domain_dic.gdbm" (str-cat ?wrd "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?wrd ?cat1 mixed_domain_dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Mixed_domain_dic_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Mixed_domain_dic_meaning "?id")" crlf)
+                (printout ?*catastrophe_file* "(sen_type-id-phrase Mixed_domain_mng_with_different_category "?id"  " ?wrd")" crlf)
+        )
+ )
  ;--------------------------------------------------------------------------------------------------------------
   ;Getting meaning for Proper noun 
   (defrule test_for_PropN

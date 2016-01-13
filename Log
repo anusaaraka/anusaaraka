@@ -1,10 +1,17 @@
- 09-01-16
- ======== 
-  1. Added '...' in punctuations list in following files:
+ 12-01-16
+ ========
+  1. hindi_meaning.clp:
+	Added: mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
+  2. create_eng_ord_html.clp:
+	Modified:  print_caution_row function
+  3. this1.py:
+	Added code to open mixed domain dictionary file
+  4. Added unique_entries.py 
+  5. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
 	multi_word_expression_for_domain.c		multi_word_expression.c		
-  2. Updated Stanford version 3.4.1 to 3.6.0
-  3. Following files are modified accordingly:
+  6. Updated Stanford version 3.4.1 to 3.6.0
+  7. Following files are modified accordingly:
 	constituency_to_dependency.sh	stanford-parser/README	get_latest_version_stanford_parser.sh
 	run_lexicalize.sh		run_stanford.sh		run_multiple_parse_penn.sh
 	run_penn-factored.sh		run_penn-pcfg.sh	run_penn-rnn.sh
@@ -16,11 +23,14 @@
 	run_stanford-gui-pcfg.sh	run_sentence_ol.sh	run_sentence_stanford_align_man.sh
 	run_stanford-gui-factored.sh	run_sentence_stanford_minion.sh
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
-  4. Updated following lex files:
+  8. Updated following lex files:
 	tagger.lex -> Modified pattern for sent end.
-  5. Updated following dictionaries:
+  9. Updated following shell files:
+	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
+	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm
+ 10. Updated following dictionaries:
 	provisional_multi_word_dictionary.txt
-  6. Updated Log.
+ 11. Updated Log.
 
  19-11-15
  ========
