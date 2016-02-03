@@ -1,0 +1,51 @@
+#workshop multi word dictionary extracted by Monika Sharma. Formatted by Roja (26-01-2016)
+#Changes:: 1) Separated single word and multi words into separate dictionaries
+#          2) English words are converted to lower case
+#          3) Added category as 'noun' by default
+#          4) If last word is not punctuation then treated last word as head
+#             or else treated last but one word as head
+##########################################################################################
+air_tight	vAyuroXI#vAyuroXI#noun#2#RM
+butt_joint	takkara_sanXi/takkara_sanXi#takkara_sanXi/takkara_sanXi#noun#2#RM
+by_product	upowpAxa#upowpAxa#noun#2#RM
+cast_iron	DalavAM_lohA#DalavAM_lohA#noun#2#RM
+cold_working	awAparUpaNa#awAparUpaNa#noun#2#RM
+compact_size	saMhawa_parimANa#saMhawa_parimANa#noun#2#RM
+confined_space	sazkarI_jagaha#sazkarI_jagaha#noun#2#RM
+cross_section	paricCexa#paricCexa#noun#2#RM
+cutting_edge	karwana_XAra#karwana_XAra#noun#2#RM
+dip_brazing	nimajjiwa_piwwalana#nimajjiwa_piwwalana#noun#2#RM
+emery_paper	emarI_pawra#emarI_pawra#noun#2#RM
+energy_consumption	UrjA_vyaya#UrjA_vyaya#noun#2#RM
+feed_water	praBaraNa_jala#praBaraNa_jala#noun#2#RM
+filler_metal	pUraka_XAwu#pUraka_XAwu#noun#2#RM
+foot_bellows	paxacAliwa_XOMkanI#paxacAliwa_XOMkanI#noun#2#RM
+gland_nut	glanx_DibarI#glanx_DibarI#noun#2#RM
+gusset_plate	sangama_pattikA#sangama_pattikA#noun#2#RM
+hard_solder	kaTora_JAla#kaTora_JAla#noun#2#RM
+hermetically_sealed	saMmuxriwa#saMmuxriwa#noun#2#RM
+intended_path	uxXiRta_paWa#uxXiRta_paWa#noun#2#RM
+lap_joint	caDZAva_sanXi/caDZAva_konA#caDZAva_sanXi/caDZAva_konA#noun#2#RM
+machine_tools	yanwra_OjAra#yanwra_OjAra#noun#2#RM
+maintenance_charge	parirakRana_vyaya#parirakRana_vyaya#noun#2#RM
+manifold_tube	bahumuKI_nalikA#bahumuKI_nalikA#noun#2#RM
+muffle_brazing	avaguNiwa_piwwalana/AcCAxiwa_piwwalana#avaguNiwa_piwwalana/AcCAxiwa_piwwalana#noun#2#RM
+over_size	aXiparimANa#aXiparimANa#noun#2#RM
+pipe_line	nalapaWa#nalapaWa#noun#2#RM
+powder_materal	cUrNa_xravya#cUrNa_xravya#noun#2#RM
+purifying_chamber	SoXana_kakRa#SoXana_kakRa#noun#2#RM
+rated_capacty	nirXAriwa_kRamawA#nirXAriwa_kRamawA#noun#2#RM
+red_hot	rakwawapwa#rakwawapwa#noun#2#RM
+reddish_tinge	rakwABa#rakwABa#noun#2#RM
+repeated_impact	bArambAra_saMGatta#bArambAra_saMGatta#noun#2#RM
+side_way	pArSva_mArga#pArSva_mArga#noun#2#RM
+slaked_lime	buJA_huA_cUnA#buJA_huA_cUnA#noun#2#RM
+strain_hardening	vikqwi_kaTorIkaraNa#vikqwi_kaTorIkaraNa#noun#2#RM
+strap_joint	pattikA_sanXi/pattikA_sanXi#pattikA_sanXi/pattikA_sanXi#noun#2#RM
+thin_strip	wanu_pawwI#wanu_pawwI#noun#2#RM
+tight_joint	apraveSa_sanXi#apraveSa_sanXi#noun#2#RM
+tools_and_equipments	OjAra_evaM_upaskara#OjAra_evaM_upaskara#noun#3#RM
+trial_and_error	anvIkRA_evaM_viBrama#anvIkRA_evaM_viBrama#noun#3#RM
+uniform_metal	samAMga_XAwu#samAMga_XAwu#noun#2#RM
+wetting_agent	arxraka#arxraka#noun#2#RM
+zig_zag	teDZI_meDZI#teDZI_meDZI#noun#2#RM

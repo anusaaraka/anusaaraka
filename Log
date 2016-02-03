@@ -1,4 +1,4 @@
- 12-01-16
+ 03-02-16
  ========
   1. hindi_meaning.clp:
 	Added: mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
@@ -9,9 +9,25 @@
   4. Added unique_entries.py 
   5. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
-	multi_word_expression_for_domain.c		multi_word_expression.c		
-  6. Updated Stanford version 3.4.1 to 3.6.0
-  7. Following files are modified accordingly:
+	multi_word_expression_for_domain.c		multi_word_expression.c	
+  6. Added following new single and multi domain dics and Updated in changes_in_databases:
+	administrative_dic.txt		administrative_multi_dic.txt
+	civil_dic.txt			civil_multi_dic.txt
+	electrical_dic.txt		electrical_multi_dic.txt
+	electronics_dic.txt		electronics_multi_dic.txt
+	geotechnology_dic.txt		geotechnology_multi_dic.txt
+	it_dic.txt			it_multi_dic.txt
+	space_dic.txt			space_multi_dic.txt
+	steel_dic.txt			steel_multi_dic.txt
+	telecommunication_dic.txt	telecommunication_multi_dic.txt
+	workshop_dic.txt		workshop_multi_dic.txt
+  7. Modified following files to add above dics to get canonical form and mixed domain dic: 
+	get_dictionary_in_canonical_form.sh
+	list-right
+	list_Anu_data_domain
+	list_Anu_data_multi_domain
+  8. Updated Stanford version 3.4.1 to 3.6.0
+  9. Following files are modified accordingly:
 	constituency_to_dependency.sh	stanford-parser/README	get_latest_version_stanford_parser.sh
 	run_lexicalize.sh		run_stanford.sh		run_multiple_parse_penn.sh
 	run_penn-factored.sh		run_penn-pcfg.sh	run_penn-rnn.sh
@@ -23,14 +39,16 @@
 	run_stanford-gui-pcfg.sh	run_sentence_ol.sh	run_sentence_stanford_align_man.sh
 	run_stanford-gui-factored.sh	run_sentence_stanford_minion.sh
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
-  8. Updated following lex files:
+ 10. Updated following lex files:
 	tagger.lex -> Modified pattern for sent end.
-  9. Updated following shell files:
+ 11. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm
- 10. Updated following dictionaries:
+	view_trees.sh				-> Updated according to new std version
+
+ 12. Updated following dictionaries:
 	provisional_multi_word_dictionary.txt
- 11. Updated Log.
+ 13. Updated Log.
 
  19-11-15
  ========

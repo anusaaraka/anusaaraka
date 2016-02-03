@@ -45,7 +45,7 @@ done < list-two-side-hindi
 ###########################################
 #To get mixed domain dictionary
 cd dictionaries
-cat phy_dictionary_in_canonical_form.txt agriculture_dic_in_canonical_form.txt social_science_dic_in_canonical_form.txt > mixed_domain_dic_in_canonical_form.tmp
+cat phy_dictionary_in_canonical_form.txt agriculture_dic_in_canonical_form.txt social_science_dic_in_canonical_form.txt administrative_dic_in_canonical_form.txt civil_dic_in_canonical_form.txt electrical_dic_in_canonical_form.txt electronics_dic_in_canonical_form.txt geotechnology_dic_in_canonical_form.txt it_dic_in_canonical_form.txt space_dic_in_canonical_form.txt steel_dic_in_canonical_form.txt telecommunication_dic_in_canonical_form.txt workshop_dic_in_canonical_form.txt > mixed_domain_dic_in_canonical_form.tmp
 grep -v "^#"  mixed_domain_dic_in_canonical_form.tmp > mixed_domain_dic_in_canonical_form.tmp1
 sort -u mixed_domain_dic_in_canonical_form.tmp1 > mixed_domain_dic_in_canonical_form.tmp2
 python $HOME_anu_test/Anu_src/unique_entries.py mixed_domain_dic_in_canonical_form.tmp2 mixed_domain_dic_in_canonical_form.txt

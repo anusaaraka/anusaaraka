@@ -1,0 +1,50 @@
+#electronics dictionary extracted by Monika Sharma. Formatted by Roja (26-01-2016)
+#Changes:: 1) Separated single word and multi words into separate dictionaries
+#          2) English words are converted to lower case
+#          3) Added category as 'noun' by default
+#################################################################################
+activation_noun	saMkriyaNa
+adder_noun	yojaka
+admittance_noun	praveSyawA
+alignment_noun	anuyojana
+ambiguity_noun	saMxigXawA
+amplification_noun	pravarXana
+amplifier_noun	pravarXaka
+amplitude_noun	AyAma
+anode_noun	enoda
+antenna_noun	entenA
+anti-coincidence_noun	prawisaMpAwa
+antiresonance_noun	prawianunAxa
+astable_noun	asWAyI
+automation_noun	svacAlana
+avalanche_noun	evalAMSa/avaXAva
+band_noun	bEMda
+barretter_noun	bEretara
+base_noun	besa
+bias_noun	bAyasa/aBinawi
+bioelectronics_noun	ilektroYna_jEvikI
+bionics_noun	bAyonikI/jEva_ilektroYnikI_(jEvanikI)
+bistable_noun	xvisWiwika
+bit_noun	bita/xvayaMka
+blanking_noun	lopana
+bolometer_noun	bolomItara/wejamApI
+bonding_noun	baMXana
+booster_noun	aBivarXaka
+buffer_noun	baPara/uBaya_prawiroXI
+bunching_noun	gucCana
+bus_noun	basa
+carry_noun	hAsila
+cathode_noun	kEWoda
+channel_noun	cEnela/vAhikA
+charecteristic_noun	aBilakRaNa
+charectron_noun	kErektrAna
+choke_noun	coka
+chopper_noun	savirAmI_avaroXaka/aMwarAyiwra
+chromatron_noun	krometroYna
+chronotron_noun	kronotroYna
+code_noun	koda/saMkewa/kUta
+collector_noun	saMgrAhaka/saMgrAhI
+efficiency_noun	xakRawA
+modulation_noun	mAdulana
+oscillator_noun	xoliwra
+reception_noun	aBigrahaNa
