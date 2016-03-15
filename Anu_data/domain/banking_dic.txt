@@ -1,0 +1,9 @@
+#banking dictionary extracted by Smriti Paliwal. Formatted by Roja (14-03-2016)
+#Changes:: 1) Separated single word and multi words into separate dictionaries
+#	   2) English words are converted to lower case
+#	   3) Added category as 'noun' by default
+###############################################################################
+cum-dividend_noun	lABAMSa_sahiwa
+non-acceptance_noun	asvIkqwi/nakAranA
+overdraft_noun	ovaradrAPta
+pass-book_noun	pAsa_buka

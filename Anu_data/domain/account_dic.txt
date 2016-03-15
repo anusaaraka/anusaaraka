@@ -1,0 +1,54 @@
+#account dictionary extracted by Smriti Paliwal. Formatted by Roja (14-03-2016)
+#Changes:: 1) Separated single word and multi words into separate dictionaries
+#	   2) English words are converted to lower case
+#	   3) Added category as 'noun' by default
+###############################################################################
+accountant_noun	leKAkAra/aXInasWa_leKA_sevA_leKAkAra
+accounts_noun	leKA_anuxAna
+apprentice_noun	aXInasWa_leKA_sevA_SikRu
+auditor_noun	leKAparIkRaka
+boom_noun	wejI/vyApAra_uwkarRa/garama_bAjArI
+breakup_noun	byOrA
+care-taker_noun	raKavAlA
+cashier_noun	rokadafZyA
+chowkidar_noun	cOkIxAra
+clerk_noun	lipika
+constraints_noun	bAXyawAeM_xabAva
+daftry_noun	xaPwarI
+darwan_noun	xaravAna
+envisage_noun	parikalpanA_karanA
+ex-india_noun	BArawa_ke_bAhara
+farash_noun	ParASa
+fore-date_noun	pahale_kI_wArIKa_lagAnA
+futures_noun	vAyaxA/sattA
+gardner_noun	mAlI
+groundage_noun	banxaragAha_Sulka/laMgara_dAlane_kA_Karca
+henceforth_noun	Age_se/aba_se
+hereafter_noun	isake_bAxa
+in-house_noun	Anwarika
+jamadar_noun	jamAxAra
+key_noun	mUla/AXAra/kuMjI
+librarian_noun	lAibreriyana_(puswakAXyakRa)
+location_noun	avasWiwa
+messenger_noun	saMxeSavAhaka
+middlings_noun	maXyama_koyalA
+orderly_noun	arxalI
+output_noun	uwpAxana
+peon_noun	caparAsI
+pre-inspection_noun	pUrva-nirIkRaNa
+reaches_noun	KaNda
+receptionist_noun	svAgawI
+seavenger_noun	apamArjaka
+slate_noun	xEnika_laxAna_kA_lakRya
+sorter_noun	soYrtara
+steno-typist_noun	steno-tAipista
+stenographer_noun	ASulipika/stenogrAPara
+sub-assembly_noun	upa-sajjIkara/upasaMyojana
+superintendent_noun	aXInasWa_leKA_sevA_aXIkRaka/aXIkRaka
+supervisor_noun	paryavekRaka
+sweeper_noun	JAdUvAlA/svIpara/saPAIvAlA
+tenuous_noun	virala/sUkRama/halakA
+typist_noun	taMkaka/tAipista
+unserviceable_noun	aprayojya
+watchman_noun	cOkIxAra
+water-man_noun	pAnI_vAlA

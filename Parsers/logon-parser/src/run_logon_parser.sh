@@ -1,8 +1,8 @@
-if [ -d $LOGONTMP/$1_logon.gz ] ; then
+if [ -s $LOGONTMP/$1_logon.gz ] ; then
 	rm $LOGONTMP/$1_logon.gz 
 fi
 
-if [ -d $LOGONTMP/$1_logon ] ; then
+if [ -s $LOGONTMP/$1_logon ] ; then
         rm $LOGONTMP/$1_logon
 fi
 
