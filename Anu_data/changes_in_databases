@@ -3653,8 +3653,9 @@ Nandini ji LTRC 	27-11-13)
 	steel_dic.txt			steel_multi_dic.txt
 	telecommunication_dic.txt	telecommunication_multi_dic.txt
 	workshop_dic.txt		workshop_multi_dic.txt
-
-
+	account_dic.txt                 account_multi_dic.txt
+        banking_dic.txt                 banking_multi_dic.txt
+        computer_dic.txt                computer_multi_dic.txt
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
