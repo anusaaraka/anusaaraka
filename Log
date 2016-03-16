@@ -1,4 +1,4 @@
- 15-03-16
+ 16-03-16
  ========
   1. hindi_meaning.clp:
 	Added: mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
@@ -23,10 +23,11 @@
 	workshop_dic.txt		workshop_multi_dic.txt
 	account_dic.txt			account_multi_dic.txt	
 	banking_dic.txt			banking_multi_dic.txt
-	computer_dic.txt		computer_multi_dic.txt
+	computer_dic.txt		computer_multi_dic.txt		wsd_dictionary.txt
   7. Modified following files to add above dics to get canonical form and mixed domain dic: 
 	get_dictionary_in_canonical_form.sh
 	list-right
+	list_SMT
 	list_Anu_data_domain
 	list_Anu_data_multi_domain
   8. Updated Stanford version 3.4.1 to 3.6.0
@@ -50,6 +51,7 @@
 	view_trees.sh				-> Updated according to new std version
 	run_logon_parser.sh			-> Modified -d to -s to check file exists inside 'if loop'
  12. Updated following dictionaries:
+	changes_in_databas
 	provisional_multi_word_dictionary.txt
  13. Updated Log.
 

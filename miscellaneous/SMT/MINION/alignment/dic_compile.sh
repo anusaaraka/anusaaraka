@@ -60,6 +60,9 @@ cd $MYPATH1
   echo "Creating social_science_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
 
+
+ echo "Creating wsd_dic.gdbm"
+  ./create-gdbm.pl $HOME_anu_test/Anu_databases/wsd_dic.gdbm  < wsd_dictionary_in_canonical_form.txt
  echo "Creating provisional_PropN_dic.gdbm"
   ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm  < provisional_PropN_dic_in_canonical_form.txt
  echo "Creating provisional_word_dic.gdbm"
@@ -155,6 +158,8 @@ echo "Creating eng_proper_noun_multi.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm < multi_word_expressions_in_canonical_form.txt
  echo "Creating kriyA_object_vib.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib_in_canonical_form.txt
+ echo "Creating mixed_domain_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/mixed_domain_dic.gdbm < mixed_domain_dic_in_canonical_form.txt
 
  echo "Creating default-iit-bombay-shabdanjali-dic_smt.gdbm"
  cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field
