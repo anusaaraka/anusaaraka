@@ -2883,7 +2883,7 @@
 2891	SeRaPala/SeRa/GatAna_Pala/pariSeRa
 2892	uTanA/KadZA_honA
 2893	tepa/mApa-pattI
-2894	hqxaya/kalejA/karejA/xila/hiya/jigara/ura/marma_sWala/marma/jiyA/jiyarA/hI/uCaMga/avaCaMga/asaha/uara
+2894	hqxaya/kalejA/karejA/xila/hiya/jigara/ura/marma_sWala/marma/jiyA/jiyarA/uCaMga/avaCaMga/asaha/uara
 2895	hAWa_se/hAWa_xvArA/haswacAliwa_DaMga_se/haswacAlana_xvArA
 2896	tikorA/kErI/aMbI/aMbiyA/azbiyA/ambI/ambiyA/amorI/AmI
 2897	kalyANa/BalAI/maMgala/salAmawI/BalA/SuBa/hiwa/svaswi/Baxra

@@ -406,7 +406,7 @@ magnetosphere_UNDEFINED	cuMbakamaMdala
 magnetron_UNDEFINED	meganetroYna
 magnitude_noun	parimANa
 mammalian_UNDEFINED	swanapAyI_jaMwuoM
-manifestation_noun	AvirBAva
+manifestation_noun	aBivyakwi/AvirBAva
 manometer_UNDEFINED	mEnomItara
 mars_noun	maMgala
 mass_noun	saMhawi

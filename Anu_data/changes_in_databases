@@ -538,6 +538,7 @@
 	someone		(	"	 "		    "	  ) Ex: Someone had been poisoning his food.        
 	poor            (       "     Jagriti Banasthali 10-03-14 )
         government      (       "     14anu-ban-04       25-04-15 ) Ex: Deposition of government is not in the interest of the country.
+	messenger	(	"     14anu-ban-02	 26-02-16 ) Ex: He is a sure messenger.	
 
 
   Changes in total-paxasUwra.txt 
@@ -1086,7 +1087,8 @@ Nandini ji LTRC 	27-11-13)
 	128. missile_noun    		prakRepAstra	as	prakRepAswra	(Suggested by Sukhada           17-08-15)
 	129. likely_adverb   		samBavawH	as	samBavawaH	(	"	"		"	)
 	130. tendency_noun   		pravqwi		as	pravqwwi	(Suggested by Chaitanya Sir 20-08-15    )
-		
+	131. misbehave_verb  		burA_vyahavAra_kara  as 
+	132. say_verb        		baw		as	bawA		(   By Shirisha Manju     	31-10-15)
 
     3. Added new entry:
        ---------------
@@ -1430,6 +1432,10 @@ Nandini ji LTRC 	27-11-13)
 	168. restart_verb    		punaH_prAramBa_kara/Pira_se_Suru_kara	( Suggested by Chaitanya Sir  31-08-15  )
 					Ex: When Janata government collapsed, Vajpayee restarted the Jana Sangh as the Bharatiya Janata Party in
 					    1980.
+	169. beggary_noun 		BIKa_mAznA			(Suggested by 14anu-ban-02      20-01-16)
+					Ex: But beggary, honoured sir, beggary is a vice. 
+	170. sub-categories_noun      	upa-SreNiyA			(Suggested by Manasa 		01-03-16)
+					Ex: The last section  describes the various sub-categories of national income.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1769,7 +1775,16 @@ Nandini ji LTRC 	27-11-13)
 					Ex: He knew that the flat had been occupied by a German clerk in the civil service, and his family. 
 	166. courtyard_noun		xAlAna			(Suggested by Chaitanya Sir     09-10-15)
 					Ex: There was a continual coming and going through the two gates and in the two courtyards of the house.
-
+	167. inferior_adjective      	ikqRta			(Suggested by Sukhada 		18-11-15)
+	168. festival_noun   		mahowsava		( By Shirisha Manju       	21-11-15)
+	169. honoured_adjective      	sammAnIya		(Suggested by 14anu-ban-02      21-01-16)
+					Ex: But beggary, honoured sir, beggary is a vice. 
+	170. civilisation_noun       	saByawA			(Suggested by Chaitanya Sir     13-02-16)
+	171. basic_noun      		mUla_AXAra		(	"	"		16-02-16)
+	172. improve_verb    		saMSoXana		(	"	"		17-02-16)
+	173. welfare_noun    		samvqxXi		(Suggested by Manasa		01-03-16)
+					Ex: The State shall strive to promote the welfare of the people by securing and protecting.
+					
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2204,6 +2219,11 @@ Nandini ji LTRC 	27-11-13)
 				Ex:And as a devoted leader,he gained support both at home and abroad, becoming known as 'the people's President'.
 	198. curative_adjective Arogyakara_paxArWa	as	Arogyakara	(Suggested by Chaitanya Sir     02-09-15)
 				Ex: Memon then filed a curative petition to the Supreme Court, which was rejected on 21 July 2015.
+	199. superior_adjective variRTa			as	SreRTa		(Suggested by Sukhada           18-11-15)
+	200. clemency_noun   	anukUlawA		as	xayA		(Suggested by manasa bomma      11-02-16)
+				Ex: petitions for clemency were all rejected.
+	201. mathematical_adjective  gaNiwa_sambanXI	as	gaNiwIya	(Suggested by manasa bomma	16-02-16)
+	
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -3145,6 +3165,9 @@ Nandini ji LTRC 	27-11-13)
                                             probes such as electrons, photons and other elementary particles.
 	12. mercury_noun    		pArA			(Suggested by 14anu-ban-08  05-11-14)
 					Ex: Mercury and alcohol are the liquids used in most liquid-in-glass thermometers.
+	13. manifestation_noun		aBivyakwi		(Suggested by 14anu-ban-02  26-02-16)
+					Ex: We can broadly describe physics as a study of the basic laws of nature and their manifestation in 
+					    different natural phenomena
 	
 			
     Modifing category:
@@ -3400,6 +3423,7 @@ Nandini ji LTRC 	27-11-13)
 
 	Following entries are added from  wiki sentences by Shirisha Manju
 	Chidambaram     cixaMbarama	to	Sathasivam      sawyaSivama
+	shimla  	SimalA		(By Shirisha Manju  tourism corpus   24-11-15	)	
 	
 
    Modified:
@@ -3621,6 +3645,16 @@ Nandini ji LTRC 	27-11-13)
 			to
 	following_morning       agalI_subaha#agalI_subaha#noun#2#RM
 
+ changes in hindi_wordnet_dic1.txt
+ =================================
+   Removed :
+	    2894     hI				(Suggested by Chaitanya Sir)
+
+ changes in hindi_wordnet_dic2.txt
+ =================================
+  Removed :
+		hI	2894			(Suggested by Chaitanya Sir)
+				
 
  Added new files:
  ===============
@@ -3656,6 +3690,7 @@ Nandini ji LTRC 	27-11-13)
 	account_dic.txt                 account_multi_dic.txt
         banking_dic.txt                 banking_multi_dic.txt
         computer_dic.txt                computer_multi_dic.txt
+
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)

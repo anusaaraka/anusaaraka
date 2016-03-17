@@ -4,6 +4,8 @@
   MYPATH=$HOME_anu_tmp/tmp/$1_tmp
   PHRASAL_PATH=$HOME_anu_test/miscellaneous/SMT/phrasal_alignment
 
+  cp $4 $MYPATH/    #ilparser
+
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $2 $MYPATH/hnd1
   sed -i  '1iparIkRaNa .' $MYPATH/hnd1
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
@@ -69,12 +71,23 @@
  $HOME_anu_test/Anu_src/split_file.out pos.txt dir_names.txt pos.dat
  $HOME_anu_test/Anu_src/split_file.out chunk_info.txt dir_names.txt chunk_info.dat
 
+ #--------------    dependency alignment files -----------------
+ sh $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_conll_info.sh $MYPATH $4
+
+ $HOME_anu_test/Anu_src/split_file.out hnd_parser_relns.txt dir_names.txt hindi_parser_rel_ids_tmp.dat
+ $HOME_anu_test/Anu_src/split_file.out hnd_root_and_tam_info.txt dir_names.txt hindi_root_and_tam_info.dat
+ $HOME_anu_test/Anu_src/split_file.out hnd_parser_cat.txt dir_names.txt hnd_parser_cat.dat
+
+#rm -f */total-left-over.dat
+#python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/get_omitted_sent_info.py $4 $5
+
+
  cd $PHRASAL_PATH
  while read line
  do
 	if [ "$3" == "general" ] ; then
         	cd $HOME_anu_test/bin 
-		sh run_alignment.sh $MYPATH/$line $1
+		sh run_alignment.sh $MYPATH/$line $1 $3 
 		cd $PHRASAL_PATH
 	else	
 	 

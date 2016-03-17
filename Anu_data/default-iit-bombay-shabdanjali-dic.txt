@@ -8591,7 +8591,7 @@ bashfulest_UNDEFINED	safkocI
 bashfully_adverb	SarmAwA_huA
 bashfulness_noun	safkoca
 basic_adjective	buniyAxI/mUlaBUwa/mUla/AXArika
-basic_noun	mUlawawwva
+basic_noun	mUlawawwva/mUla_AXAra
 basically_UNDEFINED	mUlawaH-1
 basically_adverb	mUlawaH/svaBAvawaH/mUla_rUpa_se
 basicer_UNDEFINED	mUlawawwva
@@ -14459,7 +14459,7 @@ civilest_UNDEFINED	saBya
 civilian_adjective	asEnika
 civilian_noun	asEnika_karmacArI/asEnika_nAgarika
 civilians_UNDEFINED	asEnika_karmacArI
-civilisation_noun	samAja
+civilisation_noun	saByawA/samAja
 civilisations_UNDEFINED	saBya_samAja
 civilise_UNDEFINED	saBya_banAnA
 civilised_UNDEFINED	saBya_banAnA
@@ -14743,7 +14743,7 @@ clefts_UNDEFINED	viBAjiwa
 clematis_noun	eka_prakAra_kI_bela/murvA
 clematises_UNDEFINED	eka_prakAra_kI_bela
 clemencies_UNDEFINED	xayA
-clemency_noun	anukUlawA/xayASIlawA/xayA
+clemency_noun	xayA/anukUlawA/xayASIlawA
 clement_adjective	anukUla/xayAlu
 clementer_UNDEFINED	xayAlu
 clementest_UNDEFINED	xayAlu
@@ -29123,7 +29123,7 @@ festered_UNDEFINED	sadanA
 festering_UNDEFINED	sadanA
 festering_noun	pIpa
 festers_UNDEFINED	sadanA
-festival_noun	wyOhAra/wyohAra/uwsava/samAroha
+festival_noun	wyOhAra/wyohAra/uwsava/samAroha/mahowsava
 festivals_UNDEFINED	uwsava
 festive_adjective	uwsava_sambanXI/uwsavI/uwsava_k/ullAsamaya/krisamasa_kA/parasawra
 festiver_UNDEFINED	parasawra
@@ -37639,7 +37639,7 @@ honourabler_UNDEFINED	sammAnanIya
 honourablest_UNDEFINED	sammAnanIya
 honourably_adverb	AxarapUrvaka/prawiRTApUrNa_Dafga_se/mAnapUrvaka
 honoured_UNDEFINED	sammAna_karanA
-honoured_adjective	sawkqwa/Axqwa
+honoured_adjective	sammAnIya/sawkqwa/Axqwa
 honouring_UNDEFINED	sammAna_karanA
 honours_UNDEFINED	sammAna_karanA
 honours_noun	oYnarsa
@@ -39532,7 +39532,7 @@ improperest_UNDEFINED	anuciwa
 improperly_adverb	anuciwa_rUpa_se/anuciwa_Dafga_se
 improprieties_UNDEFINED	anOciwya
 impropriety_noun	anOciwya/anuciwa_vyavahAra
-improve_verb	suXara/uwkqRta_banA/suXAra/behawara_ho/behawara_banA/baDA
+improve_verb	suXara/uwkqRta_banA/suXAra/behawara_ho/behawara_banA/baDA/saMSoXana
 improved_UNDEFINED	suXaranA
 improved_adjective	vikAsa_yogya/unnawa/kqRi_yogya/behawara
 improvement_noun	suXAra/vqXxi/unnawi/pragawi
@@ -40714,7 +40714,7 @@ infects_UNDEFINED	CUwa_lagAnA
 infer_verb	anumAna_kara/sAbiwa_kara/niRkarRa_nikAla/nawIjA_nikala/anumAna_lagA
 inference_noun	anumAna/niRkaRa
 inferences_UNDEFINED	anumAna
-inferior_adjective	GatiyA/wucCa/CotA
+inferior_adjective	nikqRta/GatiyA/wucCa/CotA
 inferior_noun	nimna/aXIna
 inferiorer_UNDEFINED	CotA
 inferiorest_UNDEFINED	CotA
@@ -48012,7 +48012,7 @@ mateyest_UNDEFINED	miwravaw
 mateys_UNDEFINED	miwravaw
 math_noun	gaNiwa
 mathematic_UNDEFINED	gaNiwa_sambanXI
-mathematical_adjective	gaNiwa_sambanXI/gaNiwIya/gaNiwa_kA
+mathematical_adjective	gaNiwIya/gaNiwa_sambanXI/gaNiwa_kA
 mathematicaler_UNDEFINED	gaNiwa_sambanXI
 mathematicalest_UNDEFINED	gaNiwa_sambanXI
 mathematically_adverb	gaNiwa_ke_anusAra
@@ -49503,7 +49503,7 @@ misbegotten_adjective	xurniyojiwa/jAraja
 misbegotten_noun	bekAra_yojanA_banAnA
 misbegottener_UNDEFINED	bekAra_yojanA_banAnA
 misbegottenest_UNDEFINED	bekAra_yojanA_banAnA
-misbehave_verb	burA_vyahavAra_kara/aBaxra_vyavahAra_kara
+misbehave_verb	burA_vyavahAra_kara/aBaxra_vyavahAra_kara/xurvyavahAra_kara
 misbehaved_UNDEFINED	burA_vyahavAra_karanA
 misbehaves_UNDEFINED	burA_vyahavAra_karanA
 misbehaving_UNDEFINED	burA_vyahavAra_karanA
@@ -53921,7 +53921,7 @@ on-the-job_adjective	kAma_karawe_hue
 on-the-wing_noun	udawA_huA
 on-their-own-terms_UNDEFINED	unakI_apanI_SarwoM_para
 on_adverb	lagAwAra
-on_preposition	pe/para/ora/meM/ko/ke_upara/ke_pAsa/ke_kinAre/ke_bAre_meM
+on_preposition	para/pe/ora/meM/ko/ke_upara/ke_pAsa/ke_kinAre/ke_bAre_meM
 onanism_noun	apUrNa_mEWuna
 onboard_adverb	savAra
 once-again_adverb	eka_bAra_Ora
@@ -68743,7 +68743,7 @@ saxophonist_UNDEFINED	sEksoMona_vAxaka
 saxophonist_noun	sEksoPona_vAxaka
 say-so_noun	sAkRya_vihIna_kaWana/anumawi
 say_noun	uxAharaNa/samaJowA/nirxeSa/nikatawA/kalpanA
-say_verb	kaha/xalIla_xe/rAya_xe/PEsalA_sun/mAna_le/kah/bolanA/bola/baw/bawal/bAwacIwa_kara
+say_verb	kaha/xalIla_xe/rAya_xe/PEsalA_sun/mAna_le/kah/bolanA/bola/bawA/bawal/bAwacIwa_kara
 sayed_UNDEFINED	sEyaxa
 saying_UNDEFINED	kahanA
 saying_noun	kahAvawa
@@ -78192,7 +78192,7 @@ superintendent_noun	eka_pulIsa_aXikArI/sarvekRaka/nirIkRaka
 superintendents_UNDEFINED	eka_pulIsa_aXikArI
 superintending_UNDEFINED	paryavekRaNa_karanA
 superintends_UNDEFINED	paryavekRaNa_karanA
-superior_adjective	variRTa/uwkqRta/ucca/SreRTa/acCA
+superior_adjective	SreRTa/variRTa/uwkqRta/ucca/acCA
 superior_noun	bade_loga
 superiorer_UNDEFINED	SreRTa
 superiorest_UNDEFINED	SreRTa
@@ -87621,7 +87621,7 @@ upgrader_UNDEFINED	unnawi_karanA
 upgrades_UNDEFINED	unnawi_karanA
 upgradest_UNDEFINED	unnawi_karanA
 upgrading_UNDEFINED	unnawi_karanA
-upheaval_noun	kAyApalata/KalabalI
+upheaval_noun	KalabalI/kAyApalata/uWala_puWala
 upheavals_UNDEFINED	kAyApalata
 upheave_verb	jora_lagA_kara_uTAa
 upheld_UNDEFINED	samBala
@@ -90830,7 +90830,7 @@ welds_UNDEFINED	peda
 welfare-state_noun	kalyANa_rAjya
 welfare-statist_adjective	loka_hiwakArI_rAjyoM_kA
 welfare_UNDEFINED	BalAI
-welfare_noun	xeKaBAla/suKa/kalyANakArI_sahAyawA/kalyANakArI_paxvawi/kalyANa/hiwa
+welfare_noun	samvqxXi/xeKaBAla/suKa/kalyANakArI_sahAyawA/kalyANakArI_paxvawi/kalyANa/hiwa
 welfares_UNDEFINED	kalyANa
 welfarist_adjective	loka_hiwakArI_rAjyoM_kA
 welkin_noun	AkASa
@@ -93587,3 +93587,5 @@ chicken-run_noun	murgI_kA_bAdZA
 ski-run_noun	skI-rana
 pre-independence_adjective	svawanwrawA_pUrva/svawanwrawA_ke_pUrva
 restart_verb	punaH_prAramBa_kara/Pira_se_Suru_kara
+beggary_noun	BIKa_mAznA
+sub-categories_noun	upa-SreNiyA

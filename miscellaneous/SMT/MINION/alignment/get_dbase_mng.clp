@@ -128,16 +128,16 @@
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  ;As aux ids are grouped in LWG individual word meaning is not necessary [Suggested by Chaitanya Sir (11-08-12)]
- (defrule remove_aux_ids
- (declare (salience 200))
- ?f<-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?head_id)
- (test (neq (length $?chunk_ids) 0))
- ?f1<-(id-original_word ?id ?word)
- ?f2<-(id-root ?id ?root)
- (test (member$ ?id $?chunk_ids))
- =>
-	(retract ?f1 ?f2)
- )
+; (defrule remove_aux_ids
+; (declare (salience 200))
+; ?f<-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?head_id)
+; (test (neq (length $?chunk_ids) 0))
+; ?f1<-(id-original_word ?id ?word)
+; ?f2<-(id-root ?id ?root)
+; (test (member$ ?id $?chunk_ids))
+; =>
+;	(retract ?f1 ?f2)
+; )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  (defrule chk_for_mwe
@@ -219,6 +219,7 @@
 		(dic_lookup "physics_dic.gdbm" ?id ?w ?w ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?w ?w ?cat)
 		(dic_lookup "social_science_dic.gdbm" ?id ?w ?w ?cat)
+		(dic_lookup "wsd_dic.gdbm" ?id ?w ?w ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic1
@@ -238,6 +239,7 @@
 		(dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "wsd_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 
@@ -280,6 +282,7 @@
                 (dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat1)
                 (dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat1)
 		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat1)
+		(dic_lookup "wsd_dic.gdbm" ?id ?word ?root ?cat1)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
