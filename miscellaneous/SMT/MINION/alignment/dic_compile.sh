@@ -15,6 +15,10 @@ make clean
 
 cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
  $HOME_anu_test/Anu_src/comp.sh adding@-for-eng-words
+
+cd $HOME_anu_test/miscellaneous/SMT/dependency_alignment/
+   $HOME_anu_test/Anu_src/comp.sh mapping-hindi_pos-univ_pos
+   $HOME_anu_test/Anu_src/comp.sh mapping-hindi_rel-univ_rel
  
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  flex canonical_form.lex
