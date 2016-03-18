@@ -1,7 +1,6 @@
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
 (deftemplate alignment (slot anu_id (default 0))(slot man_id (default 0))(multislot anu_meaning (default 0))(multislot man_meaning(default 0)))
-(deftemplate final_align (slot anu_id (default 0))(slot man_id (default 0))(multislot anu_meaning (default 0))(multislot man_meaning(default 0)))
 (deftemplate parser_align (slot anu_id (default 0))(slot man_id (default 0))(multislot anu_meaning (default 0))(multislot man_meaning(default 0)))
 
  (deffunction string_to_integer (?parser_id)
@@ -69,8 +68,7 @@
  (printout fp "</div>" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
- (printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"17\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
- ;(printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"17\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=100,left=200,height=1000,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
+ (printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"16\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
  (printout fp "</form>" crlf)
  (printout fp "</div>" crlf)
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
@@ -279,20 +277,8 @@
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
  )
 
- (deffunction print_manual_ouput_row4(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row17\">" crlf )
- (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".Q</td>"))
- (if (eq ?lwg_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
- else (if (eq ?lwg_type AUX_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)
- else
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
- )
-
-
  (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
- (printout fp "<tr class=\"row18\">" crlf )
+ (printout fp "<tr class=\"row17\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
  (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp (implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc)) "\" /></td></tr>" crlf))
@@ -900,40 +886,40 @@
 
  ;===============================  hnd parser align facts ================================
 
- (defrule convert_wx_to_utf8_for_manual_output_hnd_parser_align
- (declare (salience 2001))
- ?f<-(final_align (anu_id ?aid)(man_id ?mid)(anu_meaning $?mng)(man_meaning $?man_output))
- (not (id_manual_output_mng_modified4 ?aid))
- =>
-	(bind ?length (length $?man_output))
-	(if (eq ?length 0) then
-        	(modify ?f (man_meaning -) (anu_meaning $?mng))
- 	else
-        	(loop-for-count (?i  1 ?length)
-                	(bind ?word (nth$ ?i $?man_output))
-                	(if (not (numberp ?word)) then
-                        	(bind ?manual_output (wx_utf8 ?word))
-                        	(if (eq ?i 1) then
-                                	(bind ?utf8_man_output ?manual_output)
-                        	else
-                                	(bind ?utf8_man_output (str-cat ?utf8_man_output " " ?manual_output))
-  				)
-                	else
-                        	(bind ?utf8_man_output ?word))
-		)
-        	(modify ?f (man_meaning ?utf8_man_output)(anu_meaning $?mng))
- 	)
-        (assert (id_manual_output_mng_modified4 ?aid))
- )
- ;-----------------------------------------------------------------------------------------
- (defrule dummy_hnd_parser_align
- (declare (salience 900))
- (id-word ?id ?word)
- (not (final_align (anu_id ?id)))
- =>
-  	(assert (final_align (anu_id ?id)(man_id -)(anu_meaning -)(man_meaning -)))
- )
-
+; (defrule convert_wx_to_utf8_for_manual_output_hnd_parser_align
+; (declare (salience 2001))
+; ?f<-(final_align (anu_id ?aid)(man_id ?mid)(anu_meaning $?mng)(man_meaning $?man_output))
+; (not (id_manual_output_mng_modified4 ?aid))
+; =>
+;	(bind ?length (length $?man_output))
+;	(if (eq ?length 0) then
+;        	(modify ?f (man_meaning -) (anu_meaning $?mng))
+; 	else
+;        	(loop-for-count (?i  1 ?length)
+;                	(bind ?word (nth$ ?i $?man_output))
+;                	(if (not (numberp ?word)) then
+;                        	(bind ?manual_output (wx_utf8 ?word))
+;                        	(if (eq ?i 1) then
+;                                	(bind ?utf8_man_output ?manual_output)
+;                        	else
+;                                	(bind ?utf8_man_output (str-cat ?utf8_man_output " " ?manual_output))
+;  				)
+;                	else
+;                        	(bind ?utf8_man_output ?word))
+;		)
+;        	(modify ?f (man_meaning ?utf8_man_output)(anu_meaning $?mng))
+; 	)
+;        (assert (id_manual_output_mng_modified4 ?aid))
+; )
+; ;-----------------------------------------------------------------------------------------
+; (defrule dummy_hnd_parser_align
+; (declare (salience 900))
+; (id-word ?id ?word)
+; (not (final_align (anu_id ?id)))
+; =>
+;  	(assert (final_align (anu_id ?id)(man_id -)(anu_meaning -)(man_meaning -)))
+; )
+;
  ;=======================================================================================================
 
 
@@ -1082,7 +1068,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- (final_align (anu_id ?id)(man_meaning ?man_mng3))
+; (final_align (anu_id ?id)(man_meaning ?man_mng3))
  (parser_align (anu_id ?id)(man_meaning ?man_mng4))
  (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
@@ -1122,7 +1108,7 @@
  (print_parser_align_row   ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 MAIN_VERB)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 MAIN_VERB)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp MAIN_VERB)
- (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 MAIN_VERB)
+; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 MAIN_VERB)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB) 
  else
  (print_lwg_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_tam ?padasuthra AUX_VERB)
@@ -1134,7 +1120,7 @@
  (print_parser_align_row   ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 AUX_VERB)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 AUX_VERB)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp AUX_VERB)
- (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 AUX_VERB)
+; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 AUX_VERB)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output AUX_VERB)) 
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1169,7 +1155,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- (final_align (anu_id ?id)(man_meaning ?man_mng3))
+; (final_align (anu_id ?id)(man_meaning ?man_mng3))
  (parser_align (anu_id ?id)(man_meaning ?man_mng4))
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
@@ -1208,7 +1194,7 @@
  (print_parser_align_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 -)
  (print_manual_ouput_row2 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
- (print_manual_ouput_row4 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+; (print_manual_ouput_row4 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1241,7 +1227,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?pp_id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?pp_id $? ? - ? ?man_mng1)
  (alignment (anu_id ?pp_id)(man_meaning ?man_mng2))
- (final_align (anu_id ?pp_id)(man_meaning ?man_mng3))
+; (final_align (anu_id ?pp_id)(man_meaning ?man_mng3))
  (parser_align (anu_id ?pp_id)(man_meaning ?man_mng4))
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?pp_id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?pp_id ?ph_ltype ?ph_l_val) 
@@ -1285,7 +1271,7 @@
  (print_parser_align_row   ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
- (print_manual_ouput_row4  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+; (print_manual_ouput_row4  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc "~" -) 
  
  (assert (id-index (+ ?pp_id 1) (- ?n_words 1)))
@@ -1310,7 +1296,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- (final_align (anu_id ?id)(man_meaning ?man_mng3))
+; (final_align (anu_id ?id)(man_meaning ?man_mng3))
  (parser_align (anu_id ?id)(man_meaning ?man_mng4))
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
@@ -1349,7 +1335,7 @@
  (print_parser_align_row   ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
- (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1373,7 +1359,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- (final_align (anu_id ?id)(man_meaning ?man_mng3))
+; (final_align (anu_id ?id)(man_meaning ?man_mng3))
  (parser_align (anu_id ?id)(man_meaning ?man_mng4))
  (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
@@ -1412,7 +1398,7 @@
  (print_parser_align_row   ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
- (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1435,7 +1421,7 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? ? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng ?id $? ? - ? ?man_mng1)
  (alignment (anu_id ?id)(man_meaning ?man_mng2))
- (final_align (anu_id ?id)(man_meaning ?man_mng3))
+; (final_align (anu_id ?id)(man_meaning ?man_mng3))
  (parser_align (anu_id ?id)(man_meaning ?man_mng4))
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ? ?man_mng_tmp)
  (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
@@ -1474,7 +1460,7 @@
  (print_parser_align_row   ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng4 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
- (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))

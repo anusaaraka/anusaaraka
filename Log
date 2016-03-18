@@ -43,7 +43,9 @@
 	run_stanford-gui-pcfg.sh	run_sentence_ol.sh	run_sentence_stanford_align_man.sh
 	run_stanford-gui-factored.sh	run_sentence_stanford_minion.sh
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
- 10. Added dependency_alignment folder
+ 10. Added 
+	dependency_alignment folder
+	phrasal_alignment/modify_anu_output.clp
  11. Modified the following files to add dependency info
         dic_compile.sh				Anusaaraka_alignment.sh		 run_alignment.sh
 	create_eng_align_html_phrasal.clp	phrasal_alignment.css		phrasal_alignment.js

@@ -7,6 +7,17 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
+(defrule rm_score_with_same_wt
+(declare (salience 100))
+?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
+?f2<-(score (anu_id ?aid1)(man_id ?mid)(weightage_sum ?score))
+(test (neq ?aid ?aid1))
+=>
+	(retract ?f1 ?f2)
+)
+
+
+
 ;================================== alignment using score ============================
 ;Ex for Not: We see [leaves] falling from trees and water flowing down a dam. 
 ;Anu: hama bAzXa kama bahawe_hue pedoM Ora pAnI se girawe_hue pawwiyoM ko xeKawe hEM.
@@ -16,11 +27,11 @@
 ?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
 (not (score (weightage_sum ?score1&:(> ?score1 ?score))))
 (id-Apertium_output ?aid $?a_mng)
-?f0<-(manual_word_info (head_id ?mid) (group_ids $?ids))
+?f0<-(manual_word_info (group_ids $?d ?mid $?d1))
 (not (aligned_anu_id ?aid))
 =>
         (retract ?f0 ?f1)
-        (assert (alignment (anu_id ?aid)(man_id ?mid)(anu_meaning $?a_mng)(man_meaning $?ids)))
+        (assert (alignment (anu_id ?aid)(man_id ?mid)(anu_meaning $?a_mng)(man_meaning $?d ?mid $?d1)))
 	(assert (aligned_anu_id ?aid))
 	(assert (aligned_man_id ?mid))
 )

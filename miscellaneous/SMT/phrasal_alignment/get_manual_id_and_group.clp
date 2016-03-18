@@ -48,6 +48,8 @@
 ;Added by Shirisha Manju 2-07-15
 ;The national standard of time interval 'second' as well as the frequency is maintained through four cesium atomic clocks.
 ;cAra sIjiyama paramANu GadiyoM [ke mAXyama se], samaya-anwarAla ke rARtrIya mAnaka 'sekanda' kA anurakRaNa kiyA jAwA hE.
+;;The electrons would be moving in orbits about the nucleus just as the planets do around the sun.
+;ilektroYna, [nABika ke cAroM ora] kakRA meM cakkara lagAwe hEM, TIka Ese hI jEse [sUrya ke cAroM ora] graha cakkara lagAwe hEM.
 (defrule get_multi_vib_3_from_dic
 (declare (salience 710))
 (database_info (components ?mng&ke|kI|se ?mng1 ?mng2))
@@ -84,21 +86,18 @@
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
-; ke_cAroM_ora 
-;The electrons would be moving in orbits about the nucleus just as the planets do around the sun.
-;ilektroYna, [nABika ke cAroM ora] kakRA meM cakkara lagAwe hEM, TIka Ese hI jEse [sUrya ke cAroM ora] graha cakkara lagAwe hEM.
+; cAroM_ora 
+;Humans have always been curious about the world around them.
+;mAnava kI saxEva apane [cAroM ora] PEle viSva ke bAre meM jAnane kI jijFAsA rahI hE .
 (defrule multi_vib0
 (declare (salience 700))
-(manual_id-word ?id1 ?w1&kA|ke)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w2&cAroM)
-(manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?w3&ora)
+(manual_id-word ?id1 ?w2&cAroM)
+(manual_id-word ?id3&:(=(+ ?id1 1) ?id3) ?w3&ora)
 (not (mng_has_been_grouped ?id1))
-(not (mng_has_been_grouped ?id2))
 (not (mng_has_been_grouped ?id3))
 =>
-	(assert (ids-multi_vib ?id1 ?id2 ?id3 - ?w1 ?w2 ?w3)) 
+	(assert (ids-multi_vib ?id1 ?id3 - ?w2 ?w3)) 
         (assert (mng_has_been_grouped ?id1))
-        (assert (mng_has_been_grouped ?id2))
         (assert (mng_has_been_grouped ?id3))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -166,7 +165,7 @@
 (defrule ke_[word]
 (declare (salience 650))
 (manual_id-word ?id1 ke)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -310,12 +309,28 @@
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
+(defrule multi_word_2_with_anu
+(declare (salience 580))
+(id-HM-source ? ?mng ?mng1 ?)
+(manual_id-word ?id0 ?mng&~ke&~kI&~se)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)
+(man_word-root-cat ?m ?mng1 ?c&~v)
+(not (mng_has_been_grouped ?id0))
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+=>
+        (assert (manual_word_info (head_id ?id1) (word ?mng ?m)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
 ;mAnava prAgEwihAsika kAla se [AXunika kAla] waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM baDawI AvaSyakawAoM kI pUrwi ho sake.
 ;[Similarly], we can argue that it lies on the median MQ and NR.
 ;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
 (defrule multi_word_2_with_dic
-(declare (salience 580))
+(declare (salience 575))
 (database_info (components ?mng ?mng1 ))
 (manual_id-word ?id0 ?mng&~ke&~kI&~se)
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)
@@ -384,11 +399,11 @@
 ;inake awirikwa anya saBI BOwika rASiyoM ke mAwrakoM ko mUla mAwrakoM ke saMyojana xvArA vyakwa kiyA jA sakawA hE.
 ;The little flats in such houses always have bells that ring like that. 
 ;isa waraha ke [Cote-Cote] [PlEtoM kI] GaNtiyAz hameSA isI waraha kI AvAja karawI hEM .
-;jEse ki,  inake bAxa, isa prakAra, isI prakAra , isI waraha
+;jEse ki,  inake bAxa, isa prakAra, isI prakAra , isI waraha, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI))
-?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane))
+?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
 	(modify ?f (head_id ?mid) (word ?p ?w $?d)(group_ids ?mid ?mid1 $?ids))
@@ -407,7 +422,22 @@
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id1))
 )
-
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
+(defrule wOra_para
+(declare (salience 570))
+(manual_id-word ?id0 ?n)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) wOra)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) para)
+(not (mng_has_been_grouped ?id0))
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+	(assert (manual_word_info (head_id ?id0) (word ?n wOra para)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
 
 ;====================================== Default Word Grouping =======================================
 (defrule get_default_group
@@ -435,7 +465,7 @@
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen)
 (manual_id-word ?id2 @PUNCT-ClosedParen)
 (test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
-?f3<-(manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka|hI)
+?f3<-(manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|jEsI|xvArA|waka|hI)
 (not (mng_has_been_grouped ?id3))
 (not (vib_added ?h))
 =>
@@ -470,7 +500,7 @@
 (declare (salience 540))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
 (test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
 (test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
 (not (chunk_name-chunk_ids VGF $? ?mid0 $?))
 (not (vib_added ?id0))

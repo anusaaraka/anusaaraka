@@ -22,48 +22,6 @@
                         )
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
-;------------------------------ modifying anu output -----------------------------------------------------
- (defrule del_@PropN_in_aper_out
- (declare (salience 2001))
- ?f0<-(id-Apertium_output ?id ?mng $?w)
- (test (neq (str-index "@PropN" (implode$ (create$ ?mng))) FALSE))
- =>
-        (retract ?f0)
-        (bind ?mng (implode$ (create$ ?mng)))
-        (bind ?mng (string-to-field (sub-string 9 (- (length ?mng) 6) ?mng))) ;Ex: \@PropN-newton-PropN
-        (bind ?mng (string-to-field (str-cat "@" (upcase (sub-string 1 1 ?mng)) (sub-string 2 (length ?mng) ?mng)))) ;Ex:Newton
-        (assert (id-Apertium_output ?id ?mng $?w))
- )
- ;-----------------------------------------------------------------------------------------------------------
- ;What can you conclude from these observations?
- ;Apa ina prekRaNa se kyA [niRkarRa_nikAla] sakawe hEM?
- (defrule rm_underscore_in_aper_op
- (declare (salience 2000))
- ?f<-(id-Apertium_output ?a_id $?a_grp)
- (not (id_aper_op_modified ?a_id))
- =>
-        (retract ?f)
-        (bind ?a_op "")
-       (bind ?a_op (remove_character "\\@" (implode$ (create$  $?a_grp)) " "))
-       (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))
-        (bind ?a_op (remove_character "-" (implode$ (create$  ?a_op)) " "))
-        (bind ?a_op (remove_character "_" (implode$ (create$  ?a_op)) " "))
-        (assert (id-Apertium_output ?a_id  ?a_op))
-        (assert (id_aper_op_modified ?a_id))
- )
- ;-------------------------------------------------------------------------------------------------
- (defrule rm_underscore_in_hindi_mng
- (declare (salience 2000))
- ?f<-(id-HM-source   ?id   ?hmng&~-   ?src)
- (not (id_hmng_modified ?id))
- =>
-        (retract ?f)
-        (bind ?new_mng (remove_character "_" ?hmng " "))
-        (bind ?new_mng (remove_character "-" (implode$ (create$  ?new_mng)) " "))
-       (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
-        (assert (id-HM-source ?id ?new_mng ?src))
-        (assert (id_hmng_modified ?id))
- )
 ;================================================== verb rules =============================================
 (defrule get_verb_chunk_cp
 (declare (salience 1000))
@@ -110,12 +68,12 @@
 (declare (salience 850))
 ?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
 (manual_word_info (head_id ?mid) (word ?w))
-(man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
-(manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word))
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa|le v|modified_cat)
+(manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word)(group_ids $?ids))
 (database_info (components $?word $? ?r) (root ?root))
 =>
        (retract ?f0 )
-       (assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - $?word $?mng))
+       (assert (chunk_name-chunk_ids-words ?chnk  $?ids ?mid $?gids - $?word $?mng))
        (assert (id-man_root ?mid1 $?word ?r))	
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -135,6 +93,24 @@
        (assert (chunk_name-chunk_ids-words ?chnk $?p ?mid1 ?mid $?gids - $?word ?v $?mng))
        (assert (id-man_root ?mid1 $?word ?v ?r))
 )
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 19-11-15
+;Eng: It is important to note that displacement vector is the straight line joining the initial and final positions and [does not depend] on the actual path undertaken by the object between the two positions.
+;yahAz yaha bAwa mahawvapUrNa hE ki 'visWApana saxiSa' ko eka sarala reKA se vyakwa karawe hEM jo vaswu kI anwima sWiwi ko usakI prAramBika sWiwi se jodawI hE waWA yaha usa vAswavika paWa para [nirBara nahIM karawA] jo vaswu xvArA biMxuoM ke maXya calA jAwA hE .
+(defrule check_nahIM_prev_word_for_kara_or_ho_or_xe_using_dic1
+(declare (salience 835))
+?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?id ?mid $?gids -  $?mng)
+(manual_word_info (head_id ?id) (word nahIM))
+(manual_word_info (head_id ?mid) (word ?w))
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
+(manual_word_info (head_id ?mid1&:(= (- ?id 1) ?mid1)) (word $?word))
+(database_info (components $?word ?r) (root ?root))
+=>
+       	(retract ?f0 )
+	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?id ?mid $?gids - $?word $?mng))
+       	(assert (id-man_root ?mid1 $?word ?r))
+)
+
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 12-2-15
 ;if there is no entry in database then check for the mng in WSD
@@ -161,7 +137,7 @@
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 02-06-15
 (defrule get_verb_chunk_with_root
-(declare (salience 802))
+(declare (salience 810))
 ?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd $?r_mng)
 ?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd $?))
 (test (member$ ?mid $?gids))
@@ -175,21 +151,18 @@
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 23-09-15
 ;usane vyAvahArika mahawva ke viRayoM ke lie upasWiwa howA huA ki [Coda xiyA] WA; usane karane ke lie saBI icCA KoI WI.
+;pahuFcA xiyA = pahuFcA xe
 (defrule get_vb_root_for_chunker_info
-(declare (salience 801))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd ?m $?r_mng)
-(man_word-root-cat ?m ?r&kara|ho|xe|raha|bana v)
-(or (database_info (components ?man_wrd ?r) )(id-HM-source ? $? ?man_wrd ?r ?))
-?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd $?))
-(test (member$ ?mid $?gids))
-(not (manual_word_info (group_ids $?gids)))
+(declare (salience 805))
+(or(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd ?m)(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd $? ?m))
+(man_word-root-cat ?m&~hE&~kI ?r&kara|ho|xe|raha|bana v)
+?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd $?r_mng)(group_ids $?gids))
+(not (root_decided ?mid))
 =>
-	(bind $?new_mng (create$ ?man_wrd ?m $?r_mng))
-        (modify ?f1 (word $?new_mng)(root ?man_wrd ?r)(root_components ?man_wrd ?r) (group_ids $?gids))
+        (modify ?f1 (root ?man_wrd ?r)(root_components ?man_wrd ?r) (group_ids $?gids))
         (assert (root_decided ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------
-
 ;Ex for not:This is mainly because most of the electrical energy sold by power companies is transmitted and distributed as alternating current.
 ;isakA muKya kAraNa yaha hE ki aXikAMSa vixyuwa kampaniyoM xvArA becI jA rahI vixyuwa UrjA prawyAvarwI XArA ke rUpa meM hI sampreRiwa evaM [viwariwa howI hE].
 (defrule get_verb_chunk1
@@ -229,6 +202,7 @@
 ?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?tam&karawA|howA|karawI|howI|karawe|howe|karanA ?tam1&hE|hEM)(group_ids ?id1 ?id2))
 (man_word-root-cat ?tam ?root&kara|ho v)
 (not (replaced_tam_with_root_tam ?id0))
+(not (id-Apertium_output ? ?iwa_word))
 =>
         (retract ?f2)
 	(modify ?f1 (word $?noun $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2))
@@ -242,12 +216,15 @@
 ;jaba yaha takkara prawyAsWa howI hE wo vega kA parimANa aparivarwiwa [rahawA] [hE].
 ;We can also observe that the employment level in different production units also goes up or down together.
 ;hama Binna-Binna uwpAxana ikAiyoM meM rojagAra ke swara ko BI eka sAWa Gatawe yA [baDawe hue] xeKa sakawe hEM .
+;In West Begal's Jailpaiguri district's Alipurdwar prison, a young prisoner Prajit Das had died under mysterious circumstances in March.
+;paScima bafgAla ke jalapAIgudI ke alIpuraxvAra jela meM mArca mahIne pahale prAjiwa xAsa nAma ke eka yuvA kExI kI rahasyamaya parisWiwiyoM meM mOwa ho gaI WI .
 (defrule group_WA_hEM
 (declare (salience 730))
 ?f1<-(manual_word_info (word $?noun ?m1)(group_ids $?grp_ids ?mid))
-(test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")(eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wA")))
-?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM|hue|huI|WI))
+(test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")(eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wA")(eq ?m1 gaI)(eq (sub-string (- (length ?m1) 2) (length ?m1) ?m1  ) "wIM")))
+?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM|hue|huI|WI|WA|We|WIM))
 (not (id-Apertium_output ? ?m1)) ;The lengths of the line segments representing these vectors are proportional to the magnitude of the vectors.
+(chunk_name-chunk_ids ~NP $? ?mid $?);yUz wo hara wIrWa badZA Ora ahama hE , lekina sAwa sWAnoM kI badZI mahawwA Ora [mAnyawA] hE .
 =>
         (retract ?f2)
 	(modify ?f1 (word $?noun ?m1 ?m2)(vibakthi wA ?m2)(group_ids $?grp_ids ?mid ?id))
@@ -263,10 +240,11 @@
 (defrule group_kara
 (declare (salience 640))
 ?f0<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(group_ids $?ids))
-(man_word-root-cat ?m1	?r&kara|xe|raha	v)
+(man_word-root-cat ?m1	?r&kara|xe|raha|ho	v)
 ?f1<-(manual_word_info (head_id ?id1) (word ?m)(group_ids ?id1))
 (database_info (components ?m ?r))
 (not (id-Apertium_output ? ?m1 $?mng));The [work] [done] by the spring force in a cyclic process is zero. awaH spriMga bala xvArA kisI cakrIya prakrama meM [kiyA gayA] [kArya] SUnya howA hE.  dic -- kArya_kara
+(test (< ?id1 ?id0))
 =>
         (retract ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
@@ -307,7 +285,7 @@
                (assert (root_decided ?id))
        else
                (bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-	       (if (neq ?tam ne) then	;lene ke paScAwa
+	       (if (eq (integerp (member$ ?tam (create$ ne ke nA EOF jie gI gA))) FALSE) then	;lene ke paScAwa ,karake, lijie,hogI
                		(modify ?f (root ?root)(vibakthi ?tam $?wrds ))
 		else
 			(modify ?f (root ?root))
@@ -436,7 +414,9 @@
 ?f1<-(chunk_name-chunk_ids ?c ?id $?d)
 =>
         (retract ?f0 ?f1)
-	(assert (chunk_name-chunk_ids ?c $?d))
+	(if (neq (length $?d) 0) then
+		(assert (chunk_name-chunk_ids ?c $?d))
+	)
         (assert (chunk_name-chunk_ids-words VGF  ?id $?ids $?vids  - ?id $?ids $?wrds))
 )
 
@@ -479,7 +459,7 @@
 (defrule rm_jnk_from_vib
 (declare (salience -12))
 ?f0<-(manual_word_info (head_id ?id0) (vibakthi ?j $?vib))
-(test (eq (integerp (member$ ?j (create$ e EOF M))) TRUE))
+(test (eq (integerp (member$ ?j (create$ e EOF M Mge z I kara))) TRUE))
 =>
 	(if (eq (length $?vib) 0) then
 		(modify ?f0 (vibakthi 0))
@@ -502,7 +482,7 @@
 	(if (eq ?c VGF) then
 		(modify ?f0 (word ?m $?mng)(root ho)(vibakthi $?vib))
 	else
-		(modify ?f0 (word ho)(root ho)(vibakthi $?vib))
+		(modify ?f0 (word ?m)(root ho)(vibakthi $?vib))
 	)
 	(assert (vib_modified ?id0))
 )
