@@ -1,4 +1,4 @@
- 17-03-16
+ 26-03-16
  ========
   1. hindi_meaning.clp:
 	Added: mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
@@ -30,7 +30,9 @@
 	list_SMT
 	list_Anu_data_domain
 	list_Anu_data_multi_domain
-  8. Updated Stanford version 3.4.1 to 3.6.0
+  8. Updated following Stanford versions 3.4.1 to 3.6.0
+	Stanford Parser
+	Stanford Tregex
   9. Following files are modified accordingly:
 	constituency_to_dependency.sh	stanford-parser/README	get_latest_version_stanford_parser.sh
 	run_lexicalize.sh		run_stanford.sh		run_multiple_parse_penn.sh
@@ -43,6 +45,7 @@
 	run_stanford-gui-pcfg.sh	run_sentence_ol.sh	run_sentence_stanford_align_man.sh
 	run_stanford-gui-factored.sh	run_sentence_stanford_minion.sh
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
+	std_tregex/README		std_tregex/run_tregex.sh	std_tregex/run_tregex_for_multiparse.sh
  10. Added 
 	dependency_alignment folder
 	phrasal_alignment/modify_anu_output.clp
@@ -53,12 +56,14 @@
  12. Added following files for dependency debug
         dep_align_debug.sh	print_dependency_matrix.py
  13. Updated following lex files:
-	tagger.lex -> Modified pattern for sent end.
+	tagger.lex		-> Modified pattern for sent end.
+	stnford_relations.lex	-> Handled patterns when punctuations and -LRB- , -RRB- etc cases
  14. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm
 	view_trees.sh				-> Updated according to new std version
 	run_logon_parser.sh			-> Modified -d to -s to check file exists inside 'if loop'
+	phrasal_alignment/compile.sh
  15. Updated following dictionaries:
 	changes_in_databas
 	provisional_multi_word_dictionary.txt

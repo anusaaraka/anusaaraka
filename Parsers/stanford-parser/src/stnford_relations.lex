@@ -7,25 +7,25 @@ FILE *fp;
 
 %%
 
-[A-Za-z:_]*\([A-Za-z0-9'-\.]*[-][0-9]*[,][ ][A-Za-z0-9'-\.]*[-][0-9]*\)\n      {  
+[A-Za-z:_]*\([A-Za-z0-9'-\.]*[-][0-9]*[,][ ][A-Za-z0-9',!;:``?\-\.]*[-][0-9]*\)\n      {  
 				                              len=strcspn(yytext,"(");
                                                               strncpy(str,yytext,len);
                                                               str[len]='\0';
 
                                                               s1=strchr(yytext,',')-4; //id of word will not exceed 3 digits 
-                                                              s2=strchr(s1,'-')+1;  
+                                                              s2=strchr(s1,'-')+1;
                                                               len1=strcspn(s2,",");
                                                               strncpy(str1,s2,len1);
                                                               str1[len1]='\0';
  
                                                               s3=strchr(s2,')')-4; //id of word will not exceed 3 digits.         Ex:When the dollar is in a free-fall, even central banks can not stop it.
      		                                              s4=strchr(s3,'-')+1;
+							      if(strchr(s4, '-')) 
+							      s4=strchr(s3,'-')+2; //Assuming there are only two consecutive '-' Ex: -LRB--2 so modifying s4 variable again. 
                                                               len2=strcspn(s4,")");
                                                               strncpy(str2,s4,len2);
-                                                              str2[len2]='\0';
- 
-                                                              fprintf(fp,"(%s %s P%s P%s)\n",str3,str,str1,str2);
-
+                                                              str2[len2]='\0'; 
+							      fprintf(fp,"(%s %s P%s P%s)\n",str3,str,str1,str2); 
                                                           }
 
 [ ]                             { }
