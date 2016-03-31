@@ -30,6 +30,7 @@
  (deffunction print_dic_mng(?gdbm ?word ?root ?new_mng ?dic_type $?grp_ids)
         (bind ?count 0)
         (bind ?word (string-to-field ?word))
+        (bind ?word1 ?word)
 	(if (eq (numberp ?word) FALSE) then
 		(bind ?word (remove_character "_" ?word " "))
 	)
@@ -46,7 +47,7 @@
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
                         (if (eq ?dic_type multi) then
                                 (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
-                                (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)(group_ids $?grp_ids)))
+                                (assert (database_info (root ?word1)(meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)(group_ids $?grp_ids)))
                         else
                                 (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
                                 (assert (database_info (meaning ?org_mng)(components ?new_mng1)(root ?root)(database_name ?gdbm)(database_type single)(group_ids $?grp_ids)))
@@ -63,7 +64,7 @@
                 (bind ?count (+ ?count 1))
                 (if (eq ?dic_type multi) then
                         (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
-                        (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)(group_ids $?grp_ids)))
+                        (assert (database_info (root ?word1)(meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)(group_ids $?grp_ids)))
                 else
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
            	       (assert (database_info (meaning ?org_mng)(components ?new_mng1)(root ?root)(database_name ?gdbm)(database_type single)(group_ids $?grp_ids)))

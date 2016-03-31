@@ -689,6 +689,30 @@
         	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match lookup_man_word_in_hindi_wordnet))
         )
 )
+;---------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Koje  hEM <==> DUzDanA
+(defrule lookup_man_root_in_hindi_wordnet
+(declare (salience 820))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (root ?h_root)(vibakthi $?vib))
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) "FALSE"))
+(or (database_info (meaning ?mng) (group_ids $? ?aid $?))(id-Apertium_output ?aid ?mng))
+(not (pada_info (preposition ?aid)))
+(id-word ?aid ?)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
+(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
+(not (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet ?))
+=>
+        (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root)))))
+        (if (neq ?dic_val "FALSE") then
+                (assert (anu_id-man_id-type ?aid ?mid  hindi_wordnet_match))
+                (assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match lookup_man_word_in_hindi_wordnet))
+        )
+)
+
+
+
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;Similarly, we can argue that it lies on the median MQ and NR.
