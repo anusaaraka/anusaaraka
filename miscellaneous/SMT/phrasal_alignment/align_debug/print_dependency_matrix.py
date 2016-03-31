@@ -34,7 +34,10 @@ for line in open(sys.argv[1]):
                 anu_sent = ' '.join(line.split())
     if '_info' in line:
 		lst = line.strip().split('\t')
-		align_info[int(lst[0][:-5])] = int(lst[1])
+		if int(lst[0][:-5]) not in align_info: 
+			align_info[int(lst[0][:-5])] = lst[1]
+		else:  #If multiple mngs in one single row
+			align_info[int(lst[0][:-5])] =  align_info[int(lst[0][:-5])] + '/' + lst[1] 
     if 'No match found' in line:
 		lst = line.strip().split('=')
 		no_match_lst.append(lst[1].strip())
@@ -63,10 +66,14 @@ for i in range(0, len(eng_par_file)):
 		if i == j:
 			e_wrd_lst = e_parser_file_wrd[j].strip().split('\t')
 			e_wrds = e_wrd_lst[3][:-2]
-			key = e_wrd_lst[1] + '-' + lst[2]
+		#	print e_wrds
+			key = e_wrd_lst[1] + '-' + lst[2] + '\t' + lst[3][:-1]
+#			print key
 			#e_wrd_dic[key] = ids + '\t' + e_wrds + '\t{' +  e_wrd_lst[1] + ' ' +  e_wrd_lst[2] + '}'
-			e_wrd_dic[key] = ids + '\t' + e_wrds + '\t' +  e_wrd_lst[1] + '\t' +  e_wrd_lst[2] 
+			e_wrd_dic[key] = ids + '\t' + e_wrds + '\t' +  e_wrd_lst[1] + '\t' +  e_wrd_lst[2]
 
+#for key in sorted(e_wrd_dic):
+#	print key, e_wrd_dic[key]
 
 #============ Displaying row info ==================================
 h_wrds = {}
@@ -107,8 +114,11 @@ for r in sorted(h_wrds):
 	else:
 		utf_wrd1 = convert_wx_to_utf(lst[3])
 	if len(ls) != 1:
-		utf_wrd2 = convert_wx_to_utf(ls[1])
-		new_lst = ls[0]+ ':' + utf_wrd2
+		if ls[1] != 'poss' and ls[1] != 'relcl':
+			utf_wrd2 = convert_wx_to_utf(ls[1])
+			new_lst = ls[0]+ ':' + utf_wrd2
+		else:
+			new_lst = ls[0]+ ':' + ls[1]
 	else :
 		new_lst = ls[0]
 		
@@ -119,9 +129,15 @@ for r in sorted(h_wrds):
 		if int(lst[0]) == key:
 			for eng_key in sorted(e_wrd_dic):
 				eng_key_lst = e_wrd_dic[eng_key].split('\t')
-				if align_info[key] == int(eng_key_lst[0]):
-					print '<b><FONT COLOR=brown>' +  eng_key_lst[1] + '  {</FONT>' + '<FONT COLOR=blue>' +  eng_key_lst[2] + '</FONT>' + '  <FONT COLOR=brown>' + eng_key_lst[3] + '}</FONT></b>',
-					flag = 1
+				val = align_info[key].split('/')
+				for i in range(0, len(val)):
+					if val[i]  == eng_key_lst[0]:
+						if i == 0 or i == len(val):
+							print '<b><FONT COLOR=brown>' +  eng_key_lst[1] + '  {</FONT>' + '<FONT COLOR=blue>' +  eng_key_lst[2] + '</FONT>' + '  <FONT COLOR=brown>' + eng_key_lst[3] + '}</FONT></b>',
+							flag = 1
+						else:
+							print '<b><FONT COLOR=brown>' +  eng_key_lst[1] + '  {</FONT>' + '<FONT COLOR=blue>' +  eng_key_lst[2] + '</FONT>' + '  <FONT COLOR=brown>' + eng_key_lst[3] + '}/</FONT></b>',
+							flag = 1
 	if flag != 1:
 		print '.', 
 	print
@@ -133,7 +149,6 @@ for key in sorted(e_wrd_dic):
 	eng_key_lst = e_wrd_dic[key].split('\t')
 	if no_match_lst != []:
 		for each in no_match_lst:
-#			print each, eng_key_lst[0]
 			if eng_key_lst[0] == each:
 				print '<th colspan="' + str(cols) + '">' + '<style type="text/css"> div {text-align: left;}</style><div>' + '<FONT COLOR=red>' + 'no_match_found : </FONT><FONT COLOR=brown><b>' + eng_key_lst[1] + ' {</FONT>' + '<FONT COLOR=blue>' +  eng_key_lst[2] + '</FONT>' + '<FONT COLOR=brown>  ' + eng_key_lst[3] + '}</b></div> </th>'
 

@@ -16048,7 +16048,7 @@ in_succession_to	ke_uwwarAXikAra_meM#ke_uwwarAXikAra_meM#noun#3#RM
 in_supersession_of	kA_aXikramapra_karawe_hue#kA_aXikramapra_karawe_hue#noun#2#RM
 in_support_of	ke_samarwana_meM#ke_samarwana_meM#noun#2#RM
 in_supression_of	kA_aXikramapra_karawe_hue#kA_aXikramapra_karawe_hue#noun#2#RM
-in_terms_of	ke_anusAra#ke_anusAra#noun#2#RM
+in_terms_of	ke_anusAra/ke_paxoM_meM#ke_anusAra/ke_paxoM_meM#noun#2#RM
 in_that_behalf	waxviRayaka#waxviRayaka#noun#3#RM
 in_that_respect	usa_bAre_meM#usa_bAre_meM#noun#3#RM
 in_the_act_of	kAma_karawe_hue#kAma_karawe_hue#noun#3#RM
@@ -33805,3 +33805,4 @@ much_more	Ora_aXika#Ora_aXika#adverb#2#RM
 more_commonly	aXikawara#aXikawara#abverb#2#RM
 biology_based	jIva_vijFAna_AXAriwa#jIva_vijFAna_AXAriwa#noun#2#RM
 date_palm_fruit	KajUra_ke_Pala#KajUra_ke_Pala#noun#3#RM
+production_units	uwpAxana_viBAga#uwpAxana_viBAga#noun#2#RM

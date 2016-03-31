@@ -43,11 +43,11 @@
   (defrule PropN_rule_from_NER
   (declare (salience 12))
   (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
-  (parserid-word P1 ?word)
-  ?f0<-(id-sd_cat   P1 ?)
+  (parserid-word ?id ?word)
+  ?f0<-(id-sd_cat  ?id ?)
   =>
-        (assert (parser_id-cat_coarse P1 PropN))
-        (assert (parser_id-cat P1 proper_noun))
+        (assert (parser_id-cat_coarse ?id PropN))
+        (assert (parser_id-cat ?id proper_noun))
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -55,13 +55,13 @@
   (defrule PropN_rule_from_NER1
   (declare (salience 12))
   (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
-  (parserid-word P1's ?wrd)
-  ?f0<-(id-sd_cat   P1's ?)
+  (parserid-word ?id's ?wrd)
+  ?f0<-(id-sd_cat   ?id's ?)
   (test (neq (str-index "'s" ?wrd) FALSE))
   (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
   =>
-        (assert (parser_id-cat_coarse  P1's PropN))
-        (assert (parser_id-cat P1's proper_noun))
+        (assert (parser_id-cat_coarse  ?id's PropN))
+        (assert (parser_id-cat ?id's proper_noun))
 	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
