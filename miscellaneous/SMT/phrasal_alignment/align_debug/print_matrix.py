@@ -67,7 +67,7 @@ for line in file(sys.argv[1]):
 		man_length = lst1[1]
 		
 count = 1
-while (count < int(man_length)):
+while (count <= int(man_length)):
 	str1 = str(count)+"_info"
 	for line in file(sys.argv[1]):
 		if line.startswith(str1):

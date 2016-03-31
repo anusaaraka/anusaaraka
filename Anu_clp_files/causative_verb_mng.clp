@@ -52,6 +52,7 @@
  (assert (dir_name-file_name-rule_name-id-wsd_viBakwi))
  (assert (dir_name-file_name-rule_name-id-domain_type))
  (assert (dir_name-file_name-rule_name-id-tam_type))
+ (assert (dir_name-file_name-rule_name-id-eng_src))
  (assert (id-HM-source-grp_ids))
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
@@ -165,9 +166,10 @@
  ;Added 'physics_Glossary' in not condition by Roja(31-07-14).Ex: The line connecting the two [charges] defines a [direction] in [space].
  (defrule get_rule_info
  (declare (salience 600))
- (id-HM-source ?id ?hmng ?src&~physics_Glossary&~agriculture_Glossary)
+ (id-HM-source ?id ?hmng ?src&~physics_Glossary&~agriculture_Glossary&~social_science_Glossary)
  (or (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ? ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ? ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ? ?file_name ?rule_name $?ids ?))
  ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
+ (test (neq (integerp (member$ ?id $?ids)) FALSE))
  =>
 	(retract ?f0)
 	(bind ?str (str-cat ?src ",rule_name::"  ?rule_name))
