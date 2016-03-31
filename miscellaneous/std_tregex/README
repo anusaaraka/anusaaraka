@@ -1,10 +1,10 @@
   Steps to use Stanford Tregex:
   ============================
   1. Download stanford tregex latest version from following link:
-	nlp.stanford.edu/software/stanford-tregex-2014-08-27.zip
+	nlp.stanford.edu/software/stanford-tregex-2015-12-09.zip
   2. Copy the downloaded zip file in following folder:
 	$HOME_anu_test/miscellaneous/std_tregex/
-  3. unzip stanford-tregex-2014-08-27.zip 
+  3. unzip stanford-tregex-2015-12-09.zip
 
   Run ::
   ===
