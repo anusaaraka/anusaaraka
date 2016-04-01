@@ -13,18 +13,18 @@
  /*below entries is for no comments and no condition found*/
 
 \tlwg__neg\t	{	printf("\tneg\t");  	}
-\tsent_adv\t	{	printf("\tadvcl\t");	}
+\tsent-adv\t	{	printf("\tadvcl\t");	}
 \tk7tu\t	{	printf("\tnmod\t");	}
 \tnmod\t	{	printf("\tamod\t");	}
 \tundef\t	{	printf("\tdep\t");	}
 \tlwg__rp\t	{	printf("\tdep\t");	}
-\tlwg_unk\t	{	printf("\tdep\t");	
+\tlwg__unk\t	{	printf("\tdep\t");	
 
 /* conditions given but no change in rel name entries*/ }
 \tk4a\t		{	printf("\tnsubj\t");	}
 \tpk1\t		{	printf("\tnsubj\t");	}
-\tlwg_intf\t	{	printf("\tadvmod\t");	}
-\tjjmod_intf\t	{	printf("\tadvmod\t");	}
+\tlwg__intf\t	{	printf("\tadvmod\t");	}
+\tjjmod__intf\t	{	printf("\tadvmod\t");	}
 \tjjmod\t	{	printf("\tadvmod\t");	}
 \trh\t		{	printf("\tadvcl\t");	}
 \trt\t		{	printf("\tadvcl\t");	}
@@ -36,8 +36,8 @@
 \tk7\t		{	printf("\tnmod\t");	}
 \tk7a\t		{	printf("\tnmod\t");	}
 \tk7p\t		{	printf("\tnmod\t");	}
-\tk7t\t		{	printf("\tnmod\t");	}
-\tr6\t		{	printf("\tnmod\t");	}
+\tk7t\t		{	printf("\tnmod\t");/*	}
+\tr6\t		{	printf("\tnmod\t");*/	}
 \tr6-k1\t	{	printf("\tnmod\t");	}
 \tr6-k2\t	{	printf("\tnmod\t");	}
 \tr6v\t		{	printf("\tnmod\t");	}
@@ -51,8 +51,8 @@
 \trs\t		{	printf("\tacl\t");	}
 \tpof\t		{	printf("\tcompound\t");	}
 \tpof__cn\t	{	printf("\tcompound\t");	}
-\tpof__redup\t	{	printf("\tcompound\t");	}
-\tnmod__adj\t	{	printf("\tnmod\t");	}
+\tpof__redup\t	{	printf("\tcompound\t");/*	}
+\tnmod__adj\t	{	printf("\tamod\t");*/	}
 \tlwg__nst\t	{	printf("\tcase\t");	}
 \tlwg__psp\t	{	printf("\tcase\t");	}
 \tadv\t		{	printf("\tadvmod\t"); /* doubt ?  
@@ -60,7 +60,7 @@
  instance  not found cases -- need to verify */ }
 \tnmod__neg\t	{	printf("\tneg\t");	}
 \trbmod\t	{	printf("\tadvmod\t");	}
-\tvmod_adv\t	{	printf("\tadvmod\t");	}
+\tvmod__adv\t	{	printf("\tadvmod\t");	}
 \trtu\t		{       printf("\tadvcl\t");	}
 \tjk1\t		{       printf("\tnmod\t");	}
 \tmk1\t		{       printf("\tdobj\t");	}
@@ -86,5 +86,5 @@
 \tenm\t		{       printf("\tdep\t");	}
 \tpsp__cl\t	{       printf("\tcase\t");	}
 \tvmod\t	{       printf("\tparataxis\t");}
-\tk1s\t		{	printf("\troot:k1s\t");	}
+\tk1s\t		{	printf("\troot_k1s\t");	}
 

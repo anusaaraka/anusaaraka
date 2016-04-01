@@ -198,12 +198,12 @@
  (declare (salience 950))
  (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
  (not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?x ?obj_id))
- (id-root ?obj_id ?obj_mng)
+ (id-word ?obj_id ?obj_mng)
  (id-root ?root_id ~have)
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
  =>
-        (if (or (eq ?obj_mng you)(eq ?obj_mng You)) then
+        (if (eq ?obj_mng you) then
                 (retract ?f0)
 		(modify ?f1 (vibakthi ko))
 		(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	word_you )" crlf )
@@ -223,7 +223,6 @@
  (declare (salience 950))
  (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
  (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?x ?obj_id)
- (id-root ?x ?obj_mng)
  (id-root ?root_id ~have)
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
@@ -369,7 +368,7 @@
  ; These are the boy 's books . These are children 's books .
  (defrule prefix_vib_rule
  (declare (salience 701))
- ?f0<-(id-original_word ?id ?word)
+ ?f0<-(id-word ?id ?word)
  (test (eq (numberp ?word) FALSE)) ;Added by Roja(02-05-11) To avoid join network errors.
                                    ;Ex: We lost 30 minutes in the traffic jam. 
  (test (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s"))
@@ -424,7 +423,7 @@
  (defrule default_ko_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  ?w&him|Him|them|Them|me|Me)
+ (id-word ?pada_id  ?w&him|them|me)
  ?f1<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f1)
@@ -437,7 +436,7 @@
  (defrule default_kA_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  ?w&his|His|our|Our|mine|my|ours|your|yours|their|Their)
+ (id-word ?pada_id  ?w&his|her|our|mine|my|ours|your|yours|their)
  ?f1<-(pada_control_fact ?pada_id)
  =>
         (retract ?f1)
@@ -466,7 +465,7 @@
 (defrule ko_vib_for_every
 (declare (salience 440))
 ?f0<-(pada_info (group_head_id ?hid)(group_cat PP)(vibakthi 0))
-(id-root ?hid sunday|monday|tuesday|wednesday|thursday|friday|saturday)
+(id-word ?hid sunday|monday|tuesday|wednesday|thursday|friday|saturday)
 (id-root =(- ?hid 1) every)
 ?f1<-(pada_control_fact ?hid)
 =>
@@ -480,7 +479,7 @@
 (defrule ko_vib_using_kAlavAcI
 (declare (salience 440))
 (prep_id-relation-anu_ids - kriyA-kAlavAcI ? ?day)
-(id-root ?day sunday|monday|tuesday|wednesday|thursday|friday|saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)
+(id-word ?day sunday|monday|tuesday|wednesday|thursday|friday|saturday)
 ?f0<-(pada_info (group_head_id ?day)(group_cat PP)(vibakthi 0))
 ?f1<-(pada_control_fact ?day)
 =>
@@ -495,7 +494,7 @@
 (declare (salience 400))
 ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib))
 (test (neq ?vib 0))
-(id-original_word ?pada_id ?w&and|or)
+(id-word ?pada_id ?w&and|or)
 (conj_head-left_head-right_head ?pada_id ? ?rh)
 ?f1<-(pada_info (group_head_id ?rh)(vibakthi 0))
 =>
@@ -522,4 +521,18 @@
 	(modify ?f0 (vibakthi 0))
         (printout ?*vib_debug_file* "(id-vib-source     "?sam_id"       "?v"  saMjFA_vib_to_saMjFA_samA_vibakthi) " crlf )
  )
+
+ ;---------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 16-03-2016 Suggested by Chaitanya Sir
+ ;One [kind of response] from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature.
+ 
+ (defrule of_vib_movement
+ (declare (salience 300))
+ ?f0<-(pada_info (group_head_id ?h)(vibakthi 0) (preposition 0))
+ (id-root ?h kind|variety|type)
+ ?f1<-(pada_info (vibakthi ?v) (preposition =(+ ?h 1)))
+ =>
+	(modify ?f0 (vibakthi ?v) (preposition =(+ ?h 1)))
+	(modify ?f1 (vibakthi 0)(preposition 0))
+)
 

@@ -17,6 +17,6 @@ for line in open(sys.argv[1]):
 			tam = '-'
 		else:
 			tam = lst2[1]
-#		print tam
-		if lst[1] != '(' and lst[1] != ')' and lst[1] != ',' and lst[1] != '.'  :	
+#		print lst[2][0]
+		if lst[2][0] != '&':  # to avoid punct info
 			fr.write('(id-word-root-tam	' + lst[0] + '\t' + lst[1] + '\t' + lst[2] + '\t' + tam + ')\n')

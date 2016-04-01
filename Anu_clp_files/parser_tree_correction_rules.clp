@@ -25,6 +25,7 @@
  (word-morph (original_word  ?word)(category verb)(suffix ?s&en|ing))
  (word-morph (original_word  ?word)(category adjective))
  ?f3<-(id-sd_cat  ?id  ?cat)
+ (not (modified_cat_with_dic ?id)) ; Humans have always been [curious] about the world around them.
  =>
 	(retract  ?f0 ?f1 ?f2 ?f3)
 	(if (eq ?s en) then (bind ?cat VBN)
@@ -160,6 +161,42 @@
 	(assert (Node-Category ?jj JJ))
 	(assert (Head-Level-Mother-Daughters terminal ?l1 ?jj ?id))
 	(assert (id-sd_cat  ?id JJ))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ; Suggested by Chaitanya Sir (09-09-15)
+ ;The subconscious mind is a composite of everything one sees, hears and any information the mind collects that it cannot otherwise [consciously]process to make meaningful sense.
+ (defrule modify_VB_as_RB
+ ?f1<-(Head-Level-Mother-Daughters consciously ?l ?VB ?id)
+ ?f2<-(Node-Category ?VB VB)
+ ?f3<-(id-sd_cat ?id VB)
+ ?f<-(Head-Level-Mother-Daughters consciously ?l1 ?mot $?p ?VB $?po)
+ =>
+	(retract ?f ?f1 ?f2 ?f3)
+	(bind ?rb (get_no ?VB VB RB))
+	(assert (Head-Level-Mother-Daughters consciously ?l ?rb ?id ))
+	(assert (Node-Category ?rb RB))
+	(assert (id-sd_cat  ?id RB))
+	(assert (Head-Level-Mother-Daughters consciously ?l1 ?mot $?p ?rb $?po))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ; Suggested by Chaitanya Sir (02-03-16)
+ ;Humans have always been curious about the world around them.
+ (defrule modify_VBN_as_JJ
+ ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?VP ?VBN $?d)
+ (Node-Category ?VP VP)
+ ?f1<-(Node-Category ?VBN VBN)
+ ?f2<-(Head-Level-Mother-Daughters ?h ?l ?VBN $?post ?id)
+ (word-morph (original_word ?head) (root ?root) )
+ (test (eq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?root) "_verb")) "FALSE"))
+ ?f3<-(id-sd_cat  ?id  ?cat1)
+ =>
+        (retract ?f0 ?f1 ?f2 ?f3 )
+        (bind ?s (get_no ?VBN VBN JJ))
+        (assert (Node-Category ?s JJ))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?VP ?s $?d))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?s $?post ?id))
+	(assert (id-sd_cat  ?id JJ))
+	(assert (modified_cat_with_dic ?id))
  )
 
  ;======================================= LWG correction rules ===================================================

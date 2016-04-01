@@ -27785,7 +27785,7 @@ expired_adjective	gawAvaXika
 expires_UNDEFINED	samApwa_honA
 expiring_UNDEFINED	samApwa_honA
 expiry_noun	samApwi
-explain_verb	samaJA/vivaraNa_xe/vivaraNa_kara/varaNa_kara/spaRta_kara/spaRta_ho/saPAI_xe/sapRta_kara/kAraNa_bawA/javAba_xe/byorA_xe/bawA/bawalA/vyAKyA_kara
+explain_verb	samaJA/vivaraNa_xe/vivaraNa_kara/varaNa_kara/spaRta_kara/spaRta_ho/saPAI_xe/spaRtIkaraNa_kara/kAraNa_bawA/javAba_xe/byorA_xe/bawA/bawalA/vyAKyA_kara
 explained_UNDEFINED	samaJAnA
 explaining_UNDEFINED	samaJAnA
 explains_UNDEFINED	samaJAnA
@@ -39612,7 +39612,7 @@ in-tray_noun	intre
 in_adjective	vEyakwika/upalabXa/sawwArUDa/pracaliwa/pahane_hue/jalawI_huI/ina/in/BIwarI/anxara_kA/anwarika
 in_adverb	anxara/ina/in/BIwara
 in_noun	sawwArUDa_rAjanIwika_xala_kA_saxasya/praBuwva
-in_preposition	prawi/meM/kI_waraPa_se/ke_samaya_meM/ke_samaya/ke_anxara/se/kA
+in_preposition	prawi/meM/kI_waraPa_se/ke_samaya_meM/ke_samaya/ke_anxara/se/kA/ke_anwargawa
 inabilities_UNDEFINED	asAmarWya
 inability_noun	asAmarWya/ayogyawA/asamarWawA
 inaccessibilities_UNDEFINED	agamyawA

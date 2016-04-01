@@ -311,6 +311,25 @@
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  RaRTI_kA_vib_rule1 )" crlf)
  )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (16-03-16) Suggested by Chaitanya Sir
+ ; [One kind of response] from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature.
+ ; [eka prakAra kI prawikriyA]
+ (defrule movement_of_kA_vib
+ (declare (salience 1000))
+ (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI  ?pada_id ?foll_pada_id)
+ (id-word ?pada_id kind|kinds|type|types|variety)
+ ?f0<-(id-HM-source ?pada_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM&~Ora ?)
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
+ (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (test (member$ ?foll_pada_id $?f_ids))
+ (id-word ?pada_id ?w&~and&~or);Now try generating random text in the style of an inaugural address or an internet chat room.
+  =>
+       (retract ?f0)
+       (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
+       (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  movement_of_kA_vib )" crlf)
+ )
+
  ;======================================= KA vibakthi (kriyA_id-object_viBakwi) rules =====================================
  ; added kriyA_id-subject_viBakwi -- suggested by Sukhada 05-05-2015 
  ; Bansal is being hailed for saving a young child from drowning.
