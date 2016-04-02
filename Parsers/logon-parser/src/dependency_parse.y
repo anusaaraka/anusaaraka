@@ -27,7 +27,10 @@ int yywrap()
 
 %%
 
-start		: SENT {strcpy(sent,$1);} OPEN_BRKT EVENT {strcpy(sent_head,$4);} relations CLOSE_BRKT;
+start           : SENT {strcpy(sent,$1);} OPEN_BRKT type {strcpy(sent_head,$4);} relations CLOSE_BRKT; 
+
+type		: EVENT   /*Added this 'type' rule by Roja (28-03-16) Ex: Do not shut the door.(ex: {i10:). As the dependency parse also starts with ITYPE giving separate rule for type. Replaced EVENT in start condition rule with type*/ 
+		| ITYPE
 
 relations : relations relation1
           | relation1;
@@ -48,15 +51,21 @@ args            : args args1
 
 args1		: ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
 		| BV  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
+		| BV  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} ITYPE {strcpy(args[index1][index2],$3);                         /*This pattern added by Roja (28-03-16) Ex: How many people did you see? _2:which_q<0:3>[BV i9] */ }
 		| ARG  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}
 		| ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} UNDERSCORE_ID {strcpy(args[index1][index2],$3);}
 		| ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} ITYPE {strcpy(args[index1][index2],$3);}
-                | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               | RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               | LHNDL EVENT
+                | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               
+		| RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}              
+		| LHNDL EVENT
                 | RHNDL EVENT
                 | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
                 | RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
                 | LHNDL SELF
-                | RHNDL SELF;
+                | RHNDL SELF
+		| LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} ITYPE {strcpy(args[index1][index2],$3);}
+		| RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} ITYPE {strcpy(args[index1][index2],$3);}
+                | RHNDL ITYPE /*Added LINDEX, RINDEX and RHNDL ITYPE by Roja(28-03-16) Ex: He smiled and said, Good morning! */;  
 
 %%
 

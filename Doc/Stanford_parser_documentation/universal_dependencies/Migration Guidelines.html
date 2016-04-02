@@ -1,0 +1,942 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="wf-liberationsans-n4-active wf-ptsanscaption-n4-active wf-active" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" lang="en-GB"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Migration Guidelines</title>
+    <link rel="root" href=""> <!-- for JS -->
+    <link rel="stylesheet" href="Migration%20Guidelines_files/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="Migration%20Guidelines_files/jquery-ui-redmond.css">
+    <link rel="stylesheet" type="text/css" href="Migration%20Guidelines_files/style.css">
+    <link rel="stylesheet" type="text/css" href="Migration%20Guidelines_files/style-vis.css">
+    <link rel="stylesheet" type="text/css" href="Migration%20Guidelines_files/hint.css">
+    <script src="Migration%20Guidelines_files/analytics.js" async=""></script><script type="text/javascript" src="Migration%20Guidelines_files/head.js"></script>
+<!--     <link rel="shortcut icon" href="favicon.ico"/> --><link href="Migration%20Guidelines_files/PT_Sans-Caption-Web-Regular.ttf" rel="stylesheet"><link href="Migration%20Guidelines_files/Liberation_Sans-Regular.ttf" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <div id="main" class="center">
+
+      <div id="hp-header">
+	
+          <span class="header-text"><a href="http://universaldependencies.github.io/docs/#language-en">home</a></span>
+
+          <span class="header-text"><a href="https://github.com/universaldependencies/docs/edit/pages-source/_en-overview/migration-guidelines.md" target="#">edit page</a></span>
+          <span class="header-text"><a href="https://github.com/universaldependencies/docs/issues">issue tracker</a></span>
+      </div>
+
+      <hr>
+
+      <div id="content">
+	<noscript>
+	  <div id="noscript">
+	    It appears that you have Javascript disabled.
+	    Please consider enabling Javascript for this page to see the visualizations.
+	  </div>
+	</noscript>
+
+          <h1 id="migration-guidelines">Migration Guidelines</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<h2 id="changes-affecting-the-tree-structure">Changes Affecting the Tree Structure</h2>
+
+<p>This section lists the changes to the represenation that affect the structure of dependency trees.</p>
+
+<h3 id="treatment-of-copular-constructions">Treatment of Copular Constructions</h3>
+
+<p>The first difference between between Universal Dependencies and 
+Stanford Dependencies is the treatment of copular constructions. While 
+only nominal and adjectival predicates were treated as heads of copular 
+constructions in the Stanford Dependencies represtnation, we also treat 
+prepositional and adverbial predicates as the head of <a title="en-dep cop" class="doclink" href="http://universaldependencies.org/docs/en/dep/cop.html">copular</a> constructions in the Universal Dependencies represenation.</p>
+
+<pre class="embedding"><code data-embednum="1" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-1-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-1-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-1-tabs"><div id="embedded-1">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-1-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-1-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-1-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-1-2"><textarea id="embedded-1-in" class="embedded-brat-data">ROOT He is in the house .
+cop(house, is)
+root(ROOT, house)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-1-3"><textarea id="embedded-1-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "ROOT He is in the house . ",
+    "entities": [
+        [ "embedded-1-T1", "token", [ [ 0, 4 ] ] ],
+        [ "embedded-1-T2", "token", [ [ 5, 7 ] ] ],
+        [ "embedded-1-T3", "token", [ [ 8, 10 ] ] ],
+        [ "embedded-1-T4", "token", [ [ 11, 13 ] ] ],
+        [ "embedded-1-T5", "token", [ [ 14, 17 ] ] ],
+        [ "embedded-1-T6", "token", [ [ 18, 23 ] ] ],
+        [ "embedded-1-T7", "token", [ [ 24, 25 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-1-R1", "cop", [ [ "arg1", "embedded-1-T6" ], [ "arg2", "embedded-1-T3" ] ] ],
+        [ "embedded-1-R2", "root", [ [ "arg1", "embedded-1-T1" ], [ "arg2", "embedded-1-T6" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "1" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-1-4"><textarea id="embedded-1-log" disabled="disabled" class="embedded-brat-data">SD parse done: 7 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-1-vis"><svg class="" style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="37" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="16" y="56" x="65"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="56" x="85"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="56" x="99.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="56" x="114"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="35" y="56" x="136"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="177.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">ROOT </tspan><tspan data-chunk-id="1" y="67" x="65">He </tspan><tspan data-chunk-id="2" y="67" x="85">is </tspan><tspan data-chunk-id="3" y="67" x="99.5">in </tspan><tspan data-chunk-id="4" y="67" x="114">the </tspan><tspan data-chunk-id="5" y="67" x="136">house </tspan><tspan data-chunk-id="6" y="67" x="177.5">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="13.5"></rect><text fill="#000000" y="-19" x="18.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 18.5,-11.5 18.5,-15.5C18.5,-11.5 37,-15.5 37,-11.5"></path></g></g><g transform="translate(65, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="3.5"></rect><text fill="#000000" y="-19" x="8.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 8.5,-11.5 8.5,-15.5C8.5,-11.5 16,-15.5 16,-11.5"></path></g></g><g transform="translate(85, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(99.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(114, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(136, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="12.5"></rect><text fill="#000000" y="-19" x="17.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 17.5,-11.5 17.5,-15.5C17.5,-11.5 35,-15.5 35,-11.5"></path></g></g><g transform="translate(177.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-1-T7" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-1-T3" data-from="embedded-1-T6"><text data-arc-ed="embedded-1-R1" data-arc-target="embedded-1-T3" data-arc-origin="embedded-1-T6" data-arc-role="cop" fill="black" y="-37.25" x="122">cop</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M109.5,-40.5L108.5,-40.5Q102,-40.5 95.5,-28.5"></path><path style="stroke: black" d="M131.5,-40.5L133.5,-40.5Q141,-40.5 148.5,-23"></path></g><g data-to="embedded-1-T6" data-from="embedded-1-T1"><text data-arc-ed="embedded-1-R2" data-arc-target="embedded-1-T6" data-arc-origin="embedded-1-T1" data-arc-role="root" fill="black" y="-46.25" x="98">root</text><path style="stroke: black" d="M87.5,-49.5L62.5,-49.5Q55,-49.5 47.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M111.5,-49.5L133.5,-49.5Q141,-49.5 148.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">1</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<pre class="embedding"><code data-embednum="2" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-2-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-2-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-2-tabs"><div id="embedded-2">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-2-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-2-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-2-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-2-2"><textarea id="embedded-2-in" class="embedded-brat-data">ROOT She is here .
+cop(here, is)
+root(ROOT, here)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-2-3"><textarea id="embedded-2-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "ROOT She is here . ",
+    "entities": [
+        [ "embedded-2-T1", "token", [ [ 0, 4 ] ] ],
+        [ "embedded-2-T2", "token", [ [ 5, 8 ] ] ],
+        [ "embedded-2-T3", "token", [ [ 9, 11 ] ] ],
+        [ "embedded-2-T4", "token", [ [ 12, 16 ] ] ],
+        [ "embedded-2-T5", "token", [ [ 17, 18 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-2-R1", "cop", [ [ "arg1", "embedded-2-T4" ], [ "arg2", "embedded-2-T3" ] ] ],
+        [ "embedded-2-R2", "root", [ [ "arg1", "embedded-2-T1" ], [ "arg2", "embedded-2-T4" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "2" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-2-4"><textarea id="embedded-2-log" disabled="disabled" class="embedded-brat-data">SD parse done: 5 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 62px;" id="embedded-2-vis"><svg style="width: 970px; height: 62px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="60" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="37" y="47" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="23" y="47" x="65"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="47" x="92"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="25" y="47" x="128"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="47" x="159.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="58" x="24">ROOT </tspan><tspan data-chunk-id="1" y="58" x="65">She </tspan><tspan data-chunk-id="2" y="58" x="92">is </tspan><tspan data-chunk-id="3" y="58" x="128">here </tspan><tspan data-chunk-id="4" y="58" x="159.5">.</tspan></text></g><g transform="translate(0, 58)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-2-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="13.5"></rect><text fill="#000000" y="-19" x="18.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 18.5,-11.5 18.5,-15.5C18.5,-11.5 37,-15.5 37,-11.5"></path></g></g><g transform="translate(65, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-2-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 23,-15.5 23,-11.5"></path></g></g><g transform="translate(92, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-2-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(128, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-2-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="7.5"></rect><text fill="#000000" y="-19" x="12.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 12.5,-11.5 12.5,-15.5C12.5,-11.5 25,-15.5 25,-11.5"></path></g></g><g transform="translate(159.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-2-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-2-T3" data-from="embedded-2-T4"><text data-arc-ed="embedded-2-R1" data-arc-target="embedded-2-T3" data-arc-origin="embedded-2-T4" data-arc-role="cop" fill="black" y="-25.25" x="119">cop</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M106.5,-28.5L105.5,-28.5Q104,-28.5 102.5,-28.5"></path><path style="stroke: black" d="M128.5,-28.5L129.5,-28.5Q132.5,-28.5 135.5,-23"></path></g><g data-to="embedded-2-T4" data-from="embedded-2-T1"><text data-arc-ed="embedded-2-R2" data-arc-target="embedded-2-T4" data-arc-origin="embedded-2-T1" data-arc-role="root" fill="black" y="-37.25" x="91.5">root</text><path style="stroke: black" d="M81,-40.5L62.5,-40.5Q55,-40.5 47.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M105,-40.5L120.5,-40.5Q128,-40.5 135.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="58" x="18">2</text></a><path style="display: inline;" d="M20,0L20,62"></path></g></svg></div></code></pre>
+
+<pre class="embedding"><code data-embednum="3" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-3-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-3-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-3-tabs"><div id="embedded-3">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-3-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-3-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-3-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-3-2"><textarea id="embedded-3-in" class="embedded-brat-data">ROOT She is a lawyer .
+cop(lawyer, is)
+root(ROOT, lawyer)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-3-3"><textarea id="embedded-3-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "ROOT She is a lawyer . ",
+    "entities": [
+        [ "embedded-3-T1", "token", [ [ 0, 4 ] ] ],
+        [ "embedded-3-T2", "token", [ [ 5, 8 ] ] ],
+        [ "embedded-3-T3", "token", [ [ 9, 11 ] ] ],
+        [ "embedded-3-T4", "token", [ [ 12, 13 ] ] ],
+        [ "embedded-3-T5", "token", [ [ 14, 20 ] ] ],
+        [ "embedded-3-T6", "token", [ [ 21, 22 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-3-R1", "cop", [ [ "arg1", "embedded-3-T5" ], [ "arg2", "embedded-3-T3" ] ] ],
+        [ "embedded-3-R2", "root", [ [ "arg1", "embedded-3-T1" ], [ "arg2", "embedded-3-T5" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "3" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-3-4"><textarea id="embedded-3-log" disabled="disabled" class="embedded-brat-data">SD parse done: 6 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-3-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="37" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="23" y="56" x="65"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="56" x="92"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="7" y="56" x="107.75"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="37" y="56" x="122"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="165.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">ROOT </tspan><tspan data-chunk-id="1" y="67" x="65">She </tspan><tspan data-chunk-id="2" y="67" x="92">is </tspan><tspan data-chunk-id="3" y="67" x="107.75">a </tspan><tspan data-chunk-id="4" y="67" x="122">lawyer </tspan><tspan data-chunk-id="5" y="67" x="165.5">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-3-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="13.5"></rect><text fill="#000000" y="-19" x="18.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 18.5,-11.5 18.5,-15.5C18.5,-11.5 37,-15.5 37,-11.5"></path></g></g><g transform="translate(65, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-3-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 23,-15.5 23,-11.5"></path></g></g><g transform="translate(92, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-3-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(107.75, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-3-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-0.5"></rect><text fill="#000000" y="-19" x="3.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 3.5,-11.5 3.5,-15.5C3.5,-11.5 7,-15.5 7,-11.5"></path></g></g><g transform="translate(122, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-3-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="13.5"></rect><text fill="#000000" y="-19" x="18.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 18.5,-11.5 18.5,-15.5C18.5,-11.5 37,-15.5 37,-11.5"></path></g></g><g transform="translate(165.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-3-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-3-T3" data-from="embedded-3-T5"><text data-arc-ed="embedded-3-R1" data-arc-target="embedded-3-T3" data-arc-origin="embedded-3-T5" data-arc-role="cop" fill="black" y="-37.25" x="119">cop</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M106.5,-40.5L105.5,-40.5Q104,-40.5 102.5,-28.5"></path><path style="stroke: black" d="M128.5,-40.5L129.5,-40.5Q132.5,-40.5 135.5,-23"></path></g><g data-to="embedded-3-T5" data-from="embedded-3-T1"><text data-arc-ed="embedded-3-R2" data-arc-target="embedded-3-T5" data-arc-origin="embedded-3-T1" data-arc-role="root" fill="black" y="-46.25" x="91.5">root</text><path style="stroke: black" d="M81,-49.5L62.5,-49.5Q55,-49.5 47.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M105,-49.5L120.5,-49.5Q128,-49.5 135.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">3</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<p>Note that this change is currently only partially implemented in the Stanford Parser. In copular
+constructions with an adverbial predicate the copula verb is still treated as the head. The change
+will be completely implemented in future versions of the parser.</p>
+
+<h3 id="treatment-of-prepositional-phrases">Treatment of Prepositional Phrases</h3>
+
+<p>Another major difference between Universal Dependencies and Stanford 
+Dependencies is the treatment of prepositional phrases. In the Stanford 
+Dependencies representation the preposition is always being treated the 
+head of the prepositional phrase while in the Universal Dependencies 
+represenation the head of a prepositional phrase is always a content 
+word – either a noun phrase or the main predicate of a clause introduced
+ by a preposition. The preposition itself is attached to the head of the
+ prepositional phrase with the case <a title="en-dep case" class="doclink" href="http://universaldependencies.org/docs/en/dep/case.html">case</a> or a <a title="en-dep mark" class="doclink" href="http://universaldependencies.org/docs/en/dep/mark.html">marker</a> relation.</p>
+
+<p>If the prepositional phrase only consists of a preposition followed by a noun phrase we use the <a title="en-dep nmod" class="doclink" href="http://universaldependencies.org/docs/en/dep/nmod.html">nmod</a> relation between the head of the prepositional phrase and the noun or predicate which it modifies.</p>
+
+<h4 id="examples">Examples:</h4>
+
+<pre class="embedding"><code data-embednum="4" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-4-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-4-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-4-tabs"><div id="embedded-4">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-4-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-4-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-4-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-4-2"><textarea id="embedded-4-in" class="embedded-brat-data">The office of the chair .
+case(chair-5, of-3)
+nmod(office-2, chair-5)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-4-3"><textarea id="embedded-4-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "The office of the chair . ",
+    "entities": [
+        [ "embedded-4-T1", "token", [ [ 0, 3 ] ] ],
+        [ "embedded-4-T2", "token", [ [ 4, 10 ] ] ],
+        [ "embedded-4-T3", "token", [ [ 11, 13 ] ] ],
+        [ "embedded-4-T4", "token", [ [ 14, 17 ] ] ],
+        [ "embedded-4-T5", "token", [ [ 18, 23 ] ] ],
+        [ "embedded-4-T6", "token", [ [ 24, 25 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-4-R1", "case", [ [ "arg1", "embedded-4-T5" ], [ "arg2", "embedded-4-T3" ] ] ],
+        [ "embedded-4-R2", "nmod", [ [ "arg1", "embedded-4-T2" ], [ "arg2", "embedded-4-T5" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "4" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-4-4"><textarea id="embedded-4-log" disabled="disabled" class="embedded-brat-data">SD parse done: 6 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-4-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="22" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="32" y="56" x="50"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="11" y="56" x="86"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="56" x="101"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="28" y="56" x="123"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="157.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">The </tspan><tspan data-chunk-id="1" y="67" x="50">office </tspan><tspan data-chunk-id="2" y="67" x="86">of </tspan><tspan data-chunk-id="3" y="67" x="101">the </tspan><tspan data-chunk-id="4" y="67" x="123">chair </tspan><tspan data-chunk-id="5" y="67" x="157.5">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-4-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 22,-15.5 22,-11.5"></path></g></g><g transform="translate(50, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-4-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="11.5"></rect><text fill="#000000" y="-19" x="16.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 16.5,-11.5 16.5,-15.5C16.5,-11.5 32,-15.5 32,-11.5"></path></g></g><g transform="translate(86, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-4-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 11,-15.5 11,-11.5"></path></g></g><g transform="translate(101, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-4-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(123, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-4-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="9.5"></rect><text fill="#000000" y="-19" x="14.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 14.5,-11.5 14.5,-15.5C14.5,-11.5 28,-15.5 28,-11.5"></path></g></g><g transform="translate(157.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-4-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-4-T3" data-from="embedded-4-T5"><text data-arc-ed="embedded-4-R1" data-arc-target="embedded-4-T3" data-arc-origin="embedded-4-T5" data-arc-role="case" fill="black" y="-37.25" x="114.5">case</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M101,-40.5L100,-40.5Q98.25,-40.5 96.5,-28.5"></path><path style="stroke: black" d="M125,-40.5L126,-40.5Q129.25,-40.5 132.5,-23"></path></g><g data-to="embedded-4-T5" data-from="embedded-4-T2"><text data-arc-ed="embedded-4-R2" data-arc-target="embedded-4-T5" data-arc-origin="embedded-4-T2" data-arc-role="nmod" fill="black" y="-46.25" x="102">nmod</text><path style="stroke: black" d="M87.5,-49.5L86.5,-49.5Q79,-49.5 71.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M119.5,-49.5L120.5,-49.5Q126.5,-49.5 132.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">4</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<pre class="embedding"><code data-embednum="5" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-5-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-5-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-5-tabs"><div id="embedded-5">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-5-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-5-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-5-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-5-2"><textarea id="embedded-5-in" class="embedded-brat-data">There is a ball on the table .
+case(table-7, on-5)
+nmod(is-2, table-7)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-5-3"><textarea id="embedded-5-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "There is a ball on the table . ",
+    "entities": [
+        [ "embedded-5-T1", "token", [ [ 0, 5 ] ] ],
+        [ "embedded-5-T2", "token", [ [ 6, 8 ] ] ],
+        [ "embedded-5-T3", "token", [ [ 9, 10 ] ] ],
+        [ "embedded-5-T4", "token", [ [ 11, 15 ] ] ],
+        [ "embedded-5-T5", "token", [ [ 16, 18 ] ] ],
+        [ "embedded-5-T6", "token", [ [ 19, 22 ] ] ],
+        [ "embedded-5-T7", "token", [ [ 23, 28 ] ] ],
+        [ "embedded-5-T8", "token", [ [ 29, 30 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-5-R1", "case", [ [ "arg1", "embedded-5-T7" ], [ "arg2", "embedded-5-T5" ] ] ],
+        [ "embedded-5-R2", "nmod", [ [ "arg1", "embedded-5-T2" ], [ "arg2", "embedded-5-T7" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "5" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-5-4"><textarea id="embedded-5-log" disabled="disabled" class="embedded-brat-data">SD parse done: 8 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-5-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="33" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="56" x="61"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="7" y="56" x="76"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="20" y="56" x="89.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="14" y="56" x="113.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="56" x="131.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="28" y="56" x="153.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="188"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">There </tspan><tspan data-chunk-id="1" y="67" x="61">is </tspan><tspan data-chunk-id="2" y="67" x="76">a </tspan><tspan data-chunk-id="3" y="67" x="89.5">ball </tspan><tspan data-chunk-id="4" y="67" x="113.5">on </tspan><tspan data-chunk-id="5" y="67" x="131.5">the </tspan><tspan data-chunk-id="6" y="67" x="153.5">table </tspan><tspan data-chunk-id="7" y="67" x="188">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="11.5"></rect><text fill="#000000" y="-19" x="16.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 16.5,-11.5 16.5,-15.5C16.5,-11.5 33,-15.5 33,-11.5"></path></g></g><g transform="translate(61, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(76, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-0.5"></rect><text fill="#000000" y="-19" x="3.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 3.5,-11.5 3.5,-15.5C3.5,-11.5 7,-15.5 7,-11.5"></path></g></g><g transform="translate(89.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="5.5"></rect><text fill="#000000" y="-19" x="10.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 10.5,-11.5 10.5,-15.5C10.5,-11.5 20,-15.5 20,-11.5"></path></g></g><g transform="translate(113.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="2.5"></rect><text fill="#000000" y="-19" x="7.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 7.5,-11.5 7.5,-15.5C7.5,-11.5 14,-15.5 14,-11.5"></path></g></g><g transform="translate(131.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(153.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T7" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="9.5"></rect><text fill="#000000" y="-19" x="14.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 14.5,-11.5 14.5,-15.5C14.5,-11.5 28,-15.5 28,-11.5"></path></g></g><g transform="translate(188, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-5-T8" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-5-T5" data-from="embedded-5-T7"><text data-arc-ed="embedded-5-R1" data-arc-target="embedded-5-T5" data-arc-origin="embedded-5-T7" data-arc-role="case" fill="black" y="-37.25" x="144.5">case</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M131,-40.5L130,-40.5Q128,-40.5 126,-28.5"></path><path style="stroke: black" d="M155,-40.5L156,-40.5Q159.5,-40.5 163,-23"></path></g><g data-to="embedded-5-T7" data-from="embedded-5-T2"><text data-arc-ed="embedded-5-R2" data-arc-target="embedded-5-T7" data-arc-origin="embedded-5-T2" data-arc-role="nmod" fill="black" y="-46.25" x="117.25">nmod</text><path style="stroke: black" d="M102.75,-49.5L86.5,-49.5Q79,-49.5 71.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M134.75,-49.5L148,-49.5Q155.5,-49.5 163,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">5</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<p>If the prepositional phrase consists of a preposition followed by a clause we either use the <a title="en-dep nmod" class="doclink" href="http://universaldependencies.org/docs/en/dep/nmod.html">acl</a> or <a title="en-dep advcl" class="doclink" href="http://universaldependencies.org/docs/en/dep/advcl.html">advcl</a> relation between the head of the prepositional phrase and the noun or predicate it modifies. <code>acl</code> is being used whenever the prepositional phrase modifies a noun unless it is a predicate in a <a title="en-dep cop" class="doclink" href="http://universaldependencies.org/docs/en/dep/cop.html">copular</a> construction. <code>advcl</code>
+ is being used whenever the prepositional phrase modifies a verb, 
+adjective or nominal predicate in a copular construction. The 
+preposition is attached as a <a title="en-dep mark" class="doclink" href="http://universaldependencies.org/docs/en/dep/mark.html">marker</a>.</p>
+
+<h4 id="examples-1">Examples:</h4>
+
+<pre class="embedding"><code data-embednum="6" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-6-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-6-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-6-tabs"><div id="embedded-6">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-6-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-6-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-6-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-6-2"><textarea id="embedded-6-in" class="embedded-brat-data">The accident happened as the night was falling .
+mark(falling, as)
+advcl(happened, falling)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-6-3"><textarea id="embedded-6-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "The accident happened as the night was falling . ",
+    "entities": [
+        [ "embedded-6-T1", "token", [ [ 0, 3 ] ] ],
+        [ "embedded-6-T2", "token", [ [ 4, 12 ] ] ],
+        [ "embedded-6-T3", "token", [ [ 13, 21 ] ] ],
+        [ "embedded-6-T4", "token", [ [ 22, 24 ] ] ],
+        [ "embedded-6-T5", "token", [ [ 25, 28 ] ] ],
+        [ "embedded-6-T6", "token", [ [ 29, 34 ] ] ],
+        [ "embedded-6-T7", "token", [ [ 35, 38 ] ] ],
+        [ "embedded-6-T8", "token", [ [ 39, 46 ] ] ],
+        [ "embedded-6-T9", "token", [ [ 47, 48 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-6-R1", "mark", [ [ "arg1", "embedded-6-T8" ], [ "arg2", "embedded-6-T4" ] ] ],
+        [ "embedded-6-R2", "advcl", [ [ "arg1", "embedded-6-T3" ], [ "arg2", "embedded-6-T8" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "6" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-6-4"><textarea id="embedded-6-log" disabled="disabled" class="embedded-brat-data">SD parse done: 9 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-6-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="22" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="49" y="56" x="50"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="56" y="56" x="103"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="14" y="56" x="163"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="56" x="181"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="28" y="56" x="203"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="23" y="56" x="235"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="34" y="56" x="262"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="302.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">The </tspan><tspan data-chunk-id="1" y="67" x="50">accident </tspan><tspan data-chunk-id="2" y="67" x="103">happened </tspan><tspan data-chunk-id="3" y="67" x="163">as </tspan><tspan data-chunk-id="4" y="67" x="181">the </tspan><tspan data-chunk-id="5" y="67" x="203">night </tspan><tspan data-chunk-id="6" y="67" x="235">was </tspan><tspan data-chunk-id="7" y="67" x="262">falling </tspan><tspan data-chunk-id="8" y="67" x="302.5">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 22,-15.5 22,-11.5"></path></g></g><g transform="translate(50, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="19.5"></rect><text fill="#000000" y="-19" x="24.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 24.5,-11.5 24.5,-15.5C24.5,-11.5 49,-15.5 49,-11.5"></path></g></g><g transform="translate(103, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="23.5"></rect><text fill="#000000" y="-19" x="28.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 28.5,-11.5 28.5,-15.5C28.5,-11.5 56,-15.5 56,-11.5"></path></g></g><g transform="translate(163, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="2.5"></rect><text fill="#000000" y="-19" x="7.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 7.5,-11.5 7.5,-15.5C7.5,-11.5 14,-15.5 14,-11.5"></path></g></g><g transform="translate(181, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(203, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="9.5"></rect><text fill="#000000" y="-19" x="14.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 14.5,-11.5 14.5,-15.5C14.5,-11.5 28,-15.5 28,-11.5"></path></g></g><g transform="translate(235, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T7" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 23,-15.5 23,-11.5"></path></g></g><g transform="translate(262, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T8" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="12.5"></rect><text fill="#000000" y="-19" x="17.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 17.5,-11.5 17.5,-15.5C17.5,-11.5 34,-15.5 34,-11.5"></path></g></g><g transform="translate(302.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-6-T9" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-6-T4" data-from="embedded-6-T8"><text data-arc-ed="embedded-6-R1" data-arc-target="embedded-6-T4" data-arc-origin="embedded-6-T8" data-arc-role="mark" fill="black" y="-37.25" x="225">mark</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M210,-40.5L190.5,-40.5Q183,-40.5 175.5,-28.5"></path><path style="stroke: black" d="M237,-40.5L259.5,-40.5Q267,-40.5 274.5,-23"></path></g><g data-to="embedded-6-T8" data-from="embedded-6-T3"><text data-arc-ed="embedded-6-R2" data-arc-target="embedded-6-T8" data-arc-origin="embedded-6-T3" data-arc-role="advcl" fill="black" y="-46.25" x="205.5">advcl</text><path style="stroke: black" d="M192.5,-49.5L151.5,-49.5Q144,-49.5 136.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M221.5,-49.5L259.5,-49.5Q267,-49.5 274.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">6</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<p>In this example the prepositional phrase modifies a verb, namely <em>happened</em>, and therefore we use <code>advcl</code>.</p>
+
+<pre class="embedding"><code data-embednum="7" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-7-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-7-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-7-tabs"><div id="embedded-7">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-7-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-7-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-7-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-7-2"><textarea id="embedded-7-in" class="embedded-brat-data">I am just very nervous after watching the movie .
+mark(watching, after)
+advcl(nervous, watching)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-7-3"><textarea id="embedded-7-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "I am just very nervous after watching the movie . ",
+    "entities": [
+        [ "embedded-7-T1", "token", [ [ 0, 1 ] ] ],
+        [ "embedded-7-T2", "token", [ [ 2, 4 ] ] ],
+        [ "embedded-7-T3", "token", [ [ 5, 9 ] ] ],
+        [ "embedded-7-T4", "token", [ [ 10, 14 ] ] ],
+        [ "embedded-7-T5", "token", [ [ 15, 22 ] ] ],
+        [ "embedded-7-T6", "token", [ [ 23, 28 ] ] ],
+        [ "embedded-7-T7", "token", [ [ 29, 37 ] ] ],
+        [ "embedded-7-T8", "token", [ [ 38, 41 ] ] ],
+        [ "embedded-7-T9", "token", [ [ 42, 47 ] ] ],
+        [ "embedded-7-T10", "token", [ [ 48, 49 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-7-R1", "mark", [ [ "arg1", "embedded-7-T7" ], [ "arg2", "embedded-7-T6" ] ] ],
+        [ "embedded-7-R2", "advcl", [ [ "arg1", "embedded-7-T5" ], [ "arg2", "embedded-7-T7" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "7" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-7-4"><textarea id="embedded-7-log" disabled="disabled" class="embedded-brat-data">SD parse done: 10 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 62px;" id="embedded-7-vis"><svg style="width: 970px; height: 62px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="60" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="47" x="26.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="47" x="38"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="21" y="47" x="60"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="25" y="47" x="85"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="46" y="47" x="114"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="26" y="47" x="164"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="51" y="47" x="200"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="47" x="255"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="35" y="47" x="277"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="47" x="318.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="58" x="26.5">I </tspan><tspan data-chunk-id="1" y="58" x="38">am </tspan><tspan data-chunk-id="2" y="58" x="60">just </tspan><tspan data-chunk-id="3" y="58" x="85">very </tspan><tspan data-chunk-id="4" y="58" x="114">nervous </tspan><tspan data-chunk-id="5" y="58" x="164">after </tspan><tspan data-chunk-id="6" y="58" x="200">watching </tspan><tspan data-chunk-id="7" y="58" x="255">the </tspan><tspan data-chunk-id="8" y="58" x="277">movie </tspan><tspan data-chunk-id="9" y="58" x="318.5">.</tspan></text></g><g transform="translate(0, 58)"><g></g><g transform="translate(26.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g transform="translate(38, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(60, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="5.5"></rect><text fill="#000000" y="-19" x="10.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 10.5,-11.5 10.5,-15.5C10.5,-11.5 21,-15.5 21,-11.5"></path></g></g><g transform="translate(85, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="7.5"></rect><text fill="#000000" y="-19" x="12.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 12.5,-11.5 12.5,-15.5C12.5,-11.5 25,-15.5 25,-11.5"></path></g></g><g transform="translate(114, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="18.5"></rect><text fill="#000000" y="-19" x="23.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 23.5,-11.5 23.5,-15.5C23.5,-11.5 46,-15.5 46,-11.5"></path></g></g><g transform="translate(164, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="8.5"></rect><text fill="#000000" y="-19" x="13.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 13.5,-11.5 13.5,-15.5C13.5,-11.5 26,-15.5 26,-11.5"></path></g></g><g transform="translate(200, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T7" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="20.5"></rect><text fill="#000000" y="-19" x="25.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 25.5,-11.5 25.5,-15.5C25.5,-11.5 51,-15.5 51,-11.5"></path></g></g><g transform="translate(255, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T8" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(277, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T9" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="12.5"></rect><text fill="#000000" y="-19" x="17.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 17.5,-11.5 17.5,-15.5C17.5,-11.5 35,-15.5 35,-11.5"></path></g></g><g transform="translate(318.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-7-T10" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-7-T6" data-from="embedded-7-T7"><text data-arc-ed="embedded-7-R1" data-arc-target="embedded-7-T6" data-arc-origin="embedded-7-T7" data-arc-role="mark" fill="black" y="-25.25" x="201.5">mark</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M186.5,-28.5L185.5,-28.5Q184,-28.5 182.5,-28.5"></path><path style="stroke: black" d="M213.5,-28.5L214.5,-28.5Q217.5,-28.5 220.5,-23"></path></g><g data-to="embedded-7-T7" data-from="embedded-7-T5"><text data-arc-ed="embedded-7-R2" data-arc-target="embedded-7-T7" data-arc-origin="embedded-7-T5" data-arc-role="advcl" fill="black" y="-37.25" x="181.5">advcl</text><path style="stroke: black" d="M168.5,-40.5L157.5,-40.5Q150,-40.5 142.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M197.5,-40.5L205.5,-40.5Q213,-40.5 220.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="58" x="18">7</text></a><path style="display: inline;" d="M20,0L20,62"></path></g></svg></div></code></pre>
+
+<p>In this example the prepositional phrase modifies an adjectival predicate, namely <em>nervous</em>, and therefore we use <code>advcl</code>.</p>
+
+<pre class="embedding"><code data-embednum="8" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-8-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-8-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-8-tabs"><div id="embedded-8">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-8-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-8-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-8-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-8-2"><textarea id="embedded-8-in" class="embedded-brat-data">We have no information on whether users are experiencing problems .
+mark(experiencing, on)
+acl(information, experiencing)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-8-3"><textarea id="embedded-8-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "We have no information on whether users are experiencing problems . ",
+    "entities": [
+        [ "embedded-8-T1", "token", [ [ 0, 2 ] ] ],
+        [ "embedded-8-T2", "token", [ [ 3, 7 ] ] ],
+        [ "embedded-8-T3", "token", [ [ 8, 10 ] ] ],
+        [ "embedded-8-T4", "token", [ [ 11, 22 ] ] ],
+        [ "embedded-8-T5", "token", [ [ 23, 25 ] ] ],
+        [ "embedded-8-T6", "token", [ [ 26, 33 ] ] ],
+        [ "embedded-8-T7", "token", [ [ 34, 39 ] ] ],
+        [ "embedded-8-T8", "token", [ [ 40, 43 ] ] ],
+        [ "embedded-8-T9", "token", [ [ 44, 56 ] ] ],
+        [ "embedded-8-T10", "token", [ [ 57, 65 ] ] ],
+        [ "embedded-8-T11", "token", [ [ 66, 67 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-8-R1", "mark", [ [ "arg1", "embedded-8-T9" ], [ "arg2", "embedded-8-T5" ] ] ],
+        [ "embedded-8-R2", "acl", [ [ "arg1", "embedded-8-T4" ], [ "arg2", "embedded-8-T9" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "8" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-8-4"><textarea id="embedded-8-log" disabled="disabled" class="embedded-brat-data">SD parse done: 11 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-8-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="19" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="28" y="56" x="47"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="14" y="56" x="79"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="64" y="56" x="97"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="14" y="56" x="165"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="45" y="56" x="183"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="32" y="56" x="232"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="56" x="268"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="73" y="56" x="290"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="53" y="56" x="367"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="426.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">We </tspan><tspan data-chunk-id="1" y="67" x="47">have </tspan><tspan data-chunk-id="2" y="67" x="79">no </tspan><tspan data-chunk-id="3" y="67" x="97">information </tspan><tspan data-chunk-id="4" y="67" x="165">on </tspan><tspan data-chunk-id="5" y="67" x="183">whether </tspan><tspan data-chunk-id="6" y="67" x="232">users </tspan><tspan data-chunk-id="7" y="67" x="268">are </tspan><tspan data-chunk-id="8" y="67" x="290">experiencing </tspan><tspan data-chunk-id="9" y="67" x="367">problems </tspan><tspan data-chunk-id="10" y="67" x="426.5">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 19,-15.5 19,-11.5"></path></g></g><g transform="translate(47, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="9.5"></rect><text fill="#000000" y="-19" x="14.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 14.5,-11.5 14.5,-15.5C14.5,-11.5 28,-15.5 28,-11.5"></path></g></g><g transform="translate(79, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="2.5"></rect><text fill="#000000" y="-19" x="7.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 7.5,-11.5 7.5,-15.5C7.5,-11.5 14,-15.5 14,-11.5"></path></g></g><g transform="translate(97, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="27.5"></rect><text fill="#000000" y="-19" x="32.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 32.5,-11.5 32.5,-15.5C32.5,-11.5 64,-15.5 64,-11.5"></path></g></g><g transform="translate(165, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="2.5"></rect><text fill="#000000" y="-19" x="7.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 7.5,-11.5 7.5,-15.5C7.5,-11.5 14,-15.5 14,-11.5"></path></g></g><g transform="translate(183, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="17.5"></rect><text fill="#000000" y="-19" x="22.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 22.5,-11.5 22.5,-15.5C22.5,-11.5 45,-15.5 45,-11.5"></path></g></g><g transform="translate(232, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T7" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="11.5"></rect><text fill="#000000" y="-19" x="16.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 16.5,-11.5 16.5,-15.5C16.5,-11.5 32,-15.5 32,-11.5"></path></g></g><g transform="translate(268, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T8" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(290, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T9" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="31.5"></rect><text fill="#000000" y="-19" x="36.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 36.5,-11.5 36.5,-15.5C36.5,-11.5 73,-15.5 73,-11.5"></path></g></g><g transform="translate(367, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T10" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="21.5"></rect><text fill="#000000" y="-19" x="26.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 26.5,-11.5 26.5,-15.5C26.5,-11.5 53,-15.5 53,-11.5"></path></g></g><g transform="translate(426.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-8-T11" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-8-T5" data-from="embedded-8-T9"><text data-arc-ed="embedded-8-R1" data-arc-target="embedded-8-T5" data-arc-origin="embedded-8-T9" data-arc-role="mark" fill="black" y="-37.25" x="249.5">mark</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M234.5,-40.5L192.5,-40.5Q185,-40.5 177.5,-28.5"></path><path style="stroke: black" d="M261.5,-40.5L306.5,-40.5Q314,-40.5 321.5,-23"></path></g><g data-to="embedded-8-T9" data-from="embedded-8-T4"><text data-arc-ed="embedded-8-R2" data-arc-target="embedded-8-T9" data-arc-origin="embedded-8-T4" data-arc-role="acl" fill="black" y="-46.25" x="228">acl</text><path style="stroke: black" d="M220.5,-49.5L149.5,-49.5Q142,-49.5 134.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M238.5,-49.5L306.5,-49.5Q314,-49.5 321.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">8</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<p>In this example the prepositional phrase modifies a noun phrase, namely <em>information</em>, and therefore we use <code>acl</code>.</p>
+
+<pre class="embedding"><code data-embednum="9" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-9-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-9-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-9-tabs"><div id="embedded-9">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-9-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-9-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-9-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-9-2"><textarea id="embedded-9-in" class="embedded-brat-data">The war was a long way from being over .
+cop(way, was)
+mark(over, from)
+advcl(war, over)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-9-3"><textarea id="embedded-9-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "The war was a long way from being over . ",
+    "entities": [
+        [ "embedded-9-T1", "token", [ [ 0, 3 ] ] ],
+        [ "embedded-9-T2", "token", [ [ 4, 7 ] ] ],
+        [ "embedded-9-T3", "token", [ [ 8, 11 ] ] ],
+        [ "embedded-9-T4", "token", [ [ 12, 13 ] ] ],
+        [ "embedded-9-T5", "token", [ [ 14, 18 ] ] ],
+        [ "embedded-9-T6", "token", [ [ 19, 22 ] ] ],
+        [ "embedded-9-T7", "token", [ [ 23, 27 ] ] ],
+        [ "embedded-9-T8", "token", [ [ 28, 33 ] ] ],
+        [ "embedded-9-T9", "token", [ [ 34, 38 ] ] ],
+        [ "embedded-9-T10", "token", [ [ 39, 40 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-9-R1", "cop", [ [ "arg1", "embedded-9-T6" ], [ "arg2", "embedded-9-T3" ] ] ],
+        [ "embedded-9-R2", "mark", [ [ "arg1", "embedded-9-T9" ], [ "arg2", "embedded-9-T7" ] ] ],
+        [ "embedded-9-R3", "advcl", [ [ "arg1", "embedded-9-T2" ], [ "arg2", "embedded-9-T9" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "9" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-9-4"><textarea id="embedded-9-log" disabled="disabled" class="embedded-brat-data">SD parse done: 10 tokens, 3 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-9-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="22" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="20" y="56" x="50"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="23" y="56" x="74"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="7" y="56" x="101.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="24" y="56" x="115"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="23" y="56" x="143"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="26" y="56" x="170"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="31" y="56" x="200"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="25" y="56" x="235"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="4" y="56" x="266.5"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">The </tspan><tspan data-chunk-id="1" y="67" x="50">war </tspan><tspan data-chunk-id="2" y="67" x="74">was </tspan><tspan data-chunk-id="3" y="67" x="101.5">a </tspan><tspan data-chunk-id="4" y="67" x="115">long </tspan><tspan data-chunk-id="5" y="67" x="143">way </tspan><tspan data-chunk-id="6" y="67" x="170">from </tspan><tspan data-chunk-id="7" y="67" x="200">being </tspan><tspan data-chunk-id="8" y="67" x="235">over </tspan><tspan data-chunk-id="9" y="67" x="266.5">.</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 22,-15.5 22,-11.5"></path></g></g><g transform="translate(50, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="5.5"></rect><text fill="#000000" y="-19" x="10.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 10.5,-11.5 10.5,-15.5C10.5,-11.5 20,-15.5 20,-11.5"></path></g></g><g transform="translate(74, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 23,-15.5 23,-11.5"></path></g></g><g transform="translate(101.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-0.5"></rect><text fill="#000000" y="-19" x="3.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 3.5,-11.5 3.5,-15.5C3.5,-11.5 7,-15.5 7,-11.5"></path></g></g><g transform="translate(115, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="7.5"></rect><text fill="#000000" y="-19" x="12.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 12.5,-11.5 12.5,-15.5C12.5,-11.5 24,-15.5 24,-11.5"></path></g></g><g transform="translate(143, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 23,-15.5 23,-11.5"></path></g></g><g transform="translate(170, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T7" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="8.5"></rect><text fill="#000000" y="-19" x="13.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 13.5,-11.5 13.5,-15.5C13.5,-11.5 26,-15.5 26,-11.5"></path></g></g><g transform="translate(200, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T8" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="10.5"></rect><text fill="#000000" y="-19" x="15.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 15.5,-11.5 15.5,-15.5C15.5,-11.5 31,-15.5 31,-11.5"></path></g></g><g transform="translate(235, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T9" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="7.5"></rect><text fill="#000000" y="-19" x="12.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 12.5,-11.5 12.5,-15.5C12.5,-11.5 25,-15.5 25,-11.5"></path></g></g><g transform="translate(266.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-9-T10" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="-2.5"></rect><text fill="#000000" y="-19" x="2.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 2.5,-11.5 2.5,-15.5C2.5,-11.5 4,-15.5 4,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-9-T3" data-from="embedded-9-T6"><text data-arc-ed="embedded-9-R1" data-arc-target="embedded-9-T3" data-arc-origin="embedded-9-T6" data-arc-role="cop" fill="black" y="-37.25" x="120">cop</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M107.5,-40.5L105.5,-40.5Q98,-40.5 90.5,-28.5"></path><path style="stroke: black" d="M129.5,-40.5L134.5,-40.5Q142,-40.5 149.5,-23"></path></g><g data-to="embedded-9-T7" data-from="embedded-9-T9"><text data-arc-ed="embedded-9-R2" data-arc-target="embedded-9-T7" data-arc-origin="embedded-9-T9" data-arc-role="mark" fill="black" y="-37.25" x="215.5">mark</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M200.5,-40.5L199.5,-40.5Q194,-40.5 188.5,-28.5"></path><path style="stroke: black" d="M227.5,-40.5L228.5,-40.5Q235.5,-40.5 242.5,-23"></path></g><g data-to="embedded-9-T9" data-from="embedded-9-T2"><text data-arc-ed="embedded-9-R3" data-arc-target="embedded-9-T9" data-arc-origin="embedded-9-T2" data-arc-role="advcl" fill="black" y="-46.25" x="154">advcl</text><path style="stroke: black" d="M141,-49.5L80.5,-49.5Q73,-49.5 65.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M170,-49.5L227.5,-49.5Q235,-49.5 242.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">9</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<p>In this example the prepositional phrase modifies a nominal predicate in a copular construction, namely <em>war</em>, and therefore we use <code>advcl</code>. Also note that the prepositional phrase does also contain a copular construction and therefore the adverbial predicate <em>over</em> is the head of the prepositional phrase.</p>
+
+<h3 id="multi-word-expressions">Multi-Word Expressions</h3>
+
+<p>There are two differences regarding the treatment of multi-word 
+expressions in Universal Dependencies as compared to Stanford 
+Dependencies. First, multi-word expressions are now always head-inital 
+and all other words in the expression depend on the first word. Second, 
+the list of expressions which are being treated as multi-word 
+expressions changed. See the description of the <a title="en-dep mwe" class="doclink" href="http://universaldependencies.org/docs/en/dep/mwe.html">mwe relation</a> for a complete list of multi-word expressions in UD.</p>
+
+<h2 id="mapping-of-stanford-dependencies-to-universal-dependencies">Mapping of Stanford Dependencies to Universal Dependencies</h2>
+
+<p>The following list provides for each relation in the original 
+Stanford Dependencies representation the name of
+the equivalent relation in the Universal Dependencies representation. 
+For some relations there doesn’t exist
+a 1:1 mapping. In these cases you’ll find a description of how different
+ instances of the relation are treated
+in the UD representation. The list also provides the name of the 
+GrammaticalRelation object as defined
+in Stanford CoreNLP and the Stanford Parser. Relations that were 
+renamed, folded into other relations or changed otherwise are 
+highlighted in <b>red</b>.</p>
+
+<h3 id="bacomp-xcompb"><b><code>acomp</code>: <code>xcomp</code></b></h3>
+
+<p><code>acomp</code> no longer exists as a relation in UD and has been folded into <a title="en-dep xcomp" class="doclink" href="http://universaldependencies.org/docs/en/dep/xcomp.html"><code>xcomp</code></a>.</p>
+
+<h4 id="grammaticalrelation-object">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.XCLAUSAL_COMPLEMENT</code></p>
+
+<h3 id="badvcl-advclb"><b><code>advcl</code>: <code>advcl</code></b></h3>
+
+<p><code>advcl</code> relations in SD are still annotated as <a title="en-dep advcl" class="doclink" href="http://universaldependencies.org/docs/en/dep/advcl.html"><code>advcl</code></a> in UD.</p>
+
+<p>Note, however, that this relation is now also used for prepositional phrases modifying a predicate (some instances of <code>pcomp</code> and <code>prepc</code> in SD) and for reduced non-finite verbal modifiers that modify a predicate (some instances of <code>vmod</code> in SD).</p>
+
+<h4 id="grammaticalrelation-object-1">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.ADV_CLAUSE_MODIFIER</code></p>
+
+<h3 id="badvmod-advmodb"><b><code>advmod</code>: <code>advmod</code></b></h3>
+
+<p><code>advmod</code> relations in SD are still annotated as <a title="en-dep advmod" class="doclink" href="http://universaldependencies.org/docs/en/dep/advmod.html"><code>advmod</code></a> in UD.</p>
+
+<p>Note, however, that this relation is now also used for quantifier phrase modifiers (<code>quantmod</code> in SD).</p>
+
+<h4 id="grammaticalrelation-object-2">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.ADVERBIAL_MODIFIER</code></p>
+
+<h3 id="bagent-nmodagentb"><b><code>agent</code>: <code>nmod:agent</code></b></h3>
+
+<p>This relation has been renamed to <code>nmod:agent</code>.</p>
+
+<h4 id="grammaticalrelation-object-3">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.AGENT</code></p>
+
+<h3 id="amod-amod"><code>amod</code>: <code>amod</code></h3>
+
+<p><code>amod</code> relations in SD are still annotated as <a title="en-dep amod" class="doclink" href="http://universaldependencies.org/docs/en/dep/amod.html"><code>amod</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-4">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.ADJECTIVAL_MODIFIER</code></p>
+
+<h3 id="appos-appos"><code>appos</code>: <code>appos</code></h3>
+
+<p><code>appos</code> relations in SD are still annotated as <a title="en-dep appos" class="doclink" href="http://universaldependencies.org/docs/en/dep/appos.html"><code>appos</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-5">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.APPOSITIONAL_MODIFIER</code></p>
+
+<h3 id="aux-aux"><code>aux</code>: <code>aux</code></h3>
+
+<p><code>aux</code> relations in SD are still annotated as <a title="en-dep aux" class="doclink" href="http://universaldependencies.org/docs/en/dep/aux_.html"><code>aux</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-6">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.AUX_MODIFIER</code></p>
+
+<h3 id="auxpass-auxpass"><code>auxpass</code>: <code>auxpass</code></h3>
+
+<p><code>auxpass</code> relations in SD are still annotated as <a title="en-dep auxpass" class="doclink" href="http://universaldependencies.org/docs/en/dep/auxpass.html"><code>auxpass</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-7">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.AUX_PASSIVE_MODIFIER</code></p>
+
+<h3 id="cc-cc"><code>cc</code>: <code>cc</code></h3>
+
+<p><code>cc</code> relations in SD are still annotated as <a title="en-dep cc" class="doclink" href="http://universaldependencies.org/docs/en/dep/cc.html"><code>cc</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-8">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.COORDINATION</code></p>
+
+<h3 id="ccomp-ccomp"><code>ccomp</code>: <code>ccomp</code></h3>
+
+<p><code>ccomp</code> relations in SD are still annotated as <a title="en-dep ccomp" class="doclink" href="http://universaldependencies.org/docs/en/dep/ccomp.html"><code>ccomp</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-9">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CLAUSAL_COMPLEMENT</code></p>
+
+<h3 id="bconj-conjb"><b><code>conj</code>: <code>conj</code></b></h3>
+
+<p><code>conj</code> relations in SD are still annotated as <a title="en-dep conj" class="doclink" href="http://universaldependencies.org/docs/en/dep/conj.html"><code>conj</code></a> in UD.</p>
+
+<p>Note that in the <em>enhanced</em> representation (formerly known as <em>CCprocessed</em> representation), the 
+relation name and the coordinating conjunction are now separated by <code>:</code> instead of <code>_</code>, e.g. 
+<code>conj:and</code> instead of <code>conj_and</code>.</p>
+
+<h4 id="grammaticalrelation-object-10">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CONJUNCT</code></p>
+
+<h3 id="bcop-copb"><b><code>cop</code>: <code>cop</code></b></h3>
+
+<p><code>cop</code> relations in SD are still annotated as <a title="en-dep cop" class="doclink" href="http://universaldependencies.org/docs/en/dep/cop.html"><code>cop</code></a> in UD.</p>
+
+<p>Unlike in the SD representation, prepositional phrases and adverbial phrases are also 
+treated as the head of copular constructions in UD as illustrated in the following examples:</p>
+
+<pre class="embedding"><code data-embednum="10" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-10-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-10-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-10-tabs"><div id="embedded-10">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-10-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-10-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-10-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-10-2"><textarea id="embedded-10-in" class="embedded-brat-data">ROOT She is here
+cop(here, is)
+root(ROOT, here)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-10-3"><textarea id="embedded-10-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "ROOT She is here ",
+    "entities": [
+        [ "embedded-10-T1", "token", [ [ 0, 4 ] ] ],
+        [ "embedded-10-T2", "token", [ [ 5, 8 ] ] ],
+        [ "embedded-10-T3", "token", [ [ 9, 11 ] ] ],
+        [ "embedded-10-T4", "token", [ [ 12, 16 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-10-R1", "cop", [ [ "arg1", "embedded-10-T4" ], [ "arg2", "embedded-10-T3" ] ] ],
+        [ "embedded-10-R2", "root", [ [ "arg1", "embedded-10-T1" ], [ "arg2", "embedded-10-T4" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "10" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-10-4"><textarea id="embedded-10-log" disabled="disabled" class="embedded-brat-data">SD parse done: 4 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 62px;" id="embedded-10-vis"><svg style="width: 970px; height: 62px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="60" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="37" y="47" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="23" y="47" x="65"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="47" x="92"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="25" y="47" x="128"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="58" x="24">ROOT </tspan><tspan data-chunk-id="1" y="58" x="65">She </tspan><tspan data-chunk-id="2" y="58" x="92">is </tspan><tspan data-chunk-id="3" y="58" x="128">here</tspan></text></g><g transform="translate(0, 58)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-10-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="13.5"></rect><text fill="#000000" y="-19" x="18.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 18.5,-11.5 18.5,-15.5C18.5,-11.5 37,-15.5 37,-11.5"></path></g></g><g transform="translate(65, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-10-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="6.5"></rect><text fill="#000000" y="-19" x="11.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 11.5,-11.5 11.5,-15.5C11.5,-11.5 23,-15.5 23,-11.5"></path></g></g><g transform="translate(92, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-10-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(128, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-10-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="7.5"></rect><text fill="#000000" y="-19" x="12.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 12.5,-11.5 12.5,-15.5C12.5,-11.5 25,-15.5 25,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-10-T3" data-from="embedded-10-T4"><text data-arc-ed="embedded-10-R1" data-arc-target="embedded-10-T3" data-arc-origin="embedded-10-T4" data-arc-role="cop" fill="black" y="-25.25" x="119">cop</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M106.5,-28.5L105.5,-28.5Q104,-28.5 102.5,-28.5"></path><path style="stroke: black" d="M128.5,-28.5L129.5,-28.5Q132.5,-28.5 135.5,-23"></path></g><g data-to="embedded-10-T4" data-from="embedded-10-T1"><text data-arc-ed="embedded-10-R2" data-arc-target="embedded-10-T4" data-arc-origin="embedded-10-T1" data-arc-role="root" fill="black" y="-37.25" x="91.5">root</text><path style="stroke: black" d="M81,-40.5L62.5,-40.5Q55,-40.5 47.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M105,-40.5L120.5,-40.5Q128,-40.5 135.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="58" x="18">10</text></a><path style="display: inline;" d="M20,0L20,62"></path></g></svg></div></code></pre>
+
+<pre class="embedding"><code data-embednum="11" style="display: inline;" class="language-sdparse embedded-wrapper"><div id="embedded-11-sh" class="show-hide-div"><button style="display: none;" aria-disabled="false" role="button" id="embedded-11-toggle" class="show-hide-toggle ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">edit</span></button></div><div style="display: none;" class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="embedded-11-tabs"><div id="embedded-11">
+  <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#embedded-11-2">input</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-11-3">brat</a></li>
+    <li class="ui-state-default ui-corner-top"><a href="#embedded-11-4">info</a></li>
+  </ul>
+</div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="embedded-11-2"><textarea id="embedded-11-in" class="embedded-brat-data">ROOT He is in the house
+cop(house, is)
+root(ROOT, house)</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-11-3"><textarea id="embedded-11-brat" disabled="disabled" class="embedded-brat-data">{
+    "text": "ROOT He is in the house ",
+    "entities": [
+        [ "embedded-11-T1", "token", [ [ 0, 4 ] ] ],
+        [ "embedded-11-T2", "token", [ [ 5, 7 ] ] ],
+        [ "embedded-11-T3", "token", [ [ 8, 10 ] ] ],
+        [ "embedded-11-T4", "token", [ [ 11, 13 ] ] ],
+        [ "embedded-11-T5", "token", [ [ 14, 17 ] ] ],
+        [ "embedded-11-T6", "token", [ [ 18, 23 ] ] ]
+    ],
+    "relations": [
+        [ "embedded-11-R1", "cop", [ [ "arg1", "embedded-11-T6" ], [ "arg2", "embedded-11-T3" ] ] ],
+        [ "embedded-11-R2", "root", [ [ "arg1", "embedded-11-T1" ], [ "arg2", "embedded-11-T6" ] ] ]
+    ],
+    "attributes": [],
+    "error": false,
+    "sentlabels": [ "11" ]
+}</textarea></div><div class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide" id="embedded-11-4"><textarea id="embedded-11-log" disabled="disabled" class="embedded-brat-data">SD parse done: 6 tokens, 2 dependencies.
+</textarea></div></div><div class="hasSVG" style="display: block; height: 71px;" id="embedded-11-vis"><svg style="width: 970px; height: 71px;" version="1.1"><!-- document: undefined/undefined --><defs><filter id="Gaussian_Blur"><fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur></filter><marker class="drag_fill" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="drag_arrow"><polyline points="0,0 5,2.5 0,5 0.2,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="5" refY="2.5" refX="5" id="arrow_triangle_5_black"><polyline points="0,0 5,2.5 0,5 0.4166666666666667,2.5"></polyline></marker><marker fill="black" markerUnits="strokeWidth" orient="auto" markerHeight="5" markerWidth="3" refY="2.5" refX="3" id="arrow_triangle_3_5_black"><polyline points="0,0 3,2.5 0,5 0.25,2.5"></polyline></marker></defs><g class="background"><rect class="background0" height="69" width="970" y="4" x="0"></rect></g><g class="glow"></g><g class="highlight"><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="37" y="56" x="24"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="16" y="56" x="65"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="56" x="85"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="10" y="56" x="99.5"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="18" y="56" x="114"></rect><rect ry="3" rx="3" fill="#e5ecfe" height="14" width="35" y="56" x="136"></rect></g><g class="text"><text y="0" x="0"><tspan data-chunk-id="0" y="67" x="24">ROOT </tspan><tspan data-chunk-id="1" y="67" x="65">He </tspan><tspan data-chunk-id="2" y="67" x="85">is </tspan><tspan data-chunk-id="3" y="67" x="99.5">in </tspan><tspan data-chunk-id="4" y="67" x="114">the </tspan><tspan data-chunk-id="5" y="67" x="136">house</tspan></text></g><g transform="translate(0, 67)"><g></g><g transform="translate(24, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-11-T1" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="13.5"></rect><text fill="#000000" y="-19" x="18.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 18.5,-11.5 18.5,-15.5C18.5,-11.5 37,-15.5 37,-11.5"></path></g></g><g transform="translate(65, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-11-T2" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="3.5"></rect><text fill="#000000" y="-19" x="8.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 8.5,-11.5 8.5,-15.5C8.5,-11.5 16,-15.5 16,-11.5"></path></g></g><g transform="translate(85, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-11-T3" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(99.5, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-11-T4" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="0.5"></rect><text fill="#000000" y="-19" x="5.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 5.5,-11.5 5.5,-15.5C5.5,-11.5 10,-15.5 10,-11.5"></path></g></g><g transform="translate(114, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-11-T5" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="4.5"></rect><text fill="#000000" y="-19" x="9.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 9.5,-11.5 9.5,-15.5C9.5,-11.5 18,-15.5 18,-11.5"></path></g></g><g transform="translate(136, 0)"><g></g><g class="span"><rect data-fragment-id="0" data-span-id="embedded-11-T6" ry="1" rx="2" stroke="#002998" fill="#7fa2ff" class="span_token span_default" height="13" width="10" y="-29.5" x="12.5"></rect><text fill="#000000" y="-19" x="17.5">&nbsp;&nbsp;</text><path stroke="#000000" class="curly" d="M0,-11.5C0,-15.5 17.5,-11.5 17.5,-15.5C17.5,-11.5 35,-15.5 35,-11.5"></path></g></g><g class="arcs"><g data-to="embedded-11-T3" data-from="embedded-11-T6"><text data-arc-ed="embedded-11-R1" data-arc-target="embedded-11-T3" data-arc-origin="embedded-11-T6" data-arc-role="cop" fill="black" y="-37.25" x="122">cop</text><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M109.5,-40.5L108.5,-40.5Q102,-40.5 95.5,-28.5"></path><path style="stroke: black" d="M131.5,-40.5L133.5,-40.5Q141,-40.5 148.5,-23"></path></g><g data-to="embedded-11-T6" data-from="embedded-11-T1"><text data-arc-ed="embedded-11-R2" data-arc-target="embedded-11-T6" data-arc-origin="embedded-11-T1" data-arc-role="root" fill="black" y="-46.25" x="98">root</text><path style="stroke: black" d="M87.5,-49.5L62.5,-49.5Q55,-49.5 47.5,-23"></path><path style="stroke: black" marker-start="url(#arrow_triangle_3_5_black)" marker-end="url(#arrow_triangle_5_black)" d="M111.5,-49.5L133.5,-49.5Q141,-49.5 148.5,-28.5"></path></g></g></g><path visibility="hidden" fill="none" class="drag_stroke" marker-end="url(#drag_arrow)"></path><g class="sentnum"><a xlink:href="#undefined?focus=sent%7E1"><text style="display: inline;" data-sent="1" y="67" x="18">11</text></a><path style="display: inline;" d="M20,0L20,71"></path></g></svg></div></code></pre>
+
+<p>Note that this change is currently only partially implemented in the Stanford Parser. In copular
+constructions with an adverbial predicate the copula verb is still treated as the head. The change
+will be completely implemented in future versions of the parser.</p>
+
+<h4 id="grammaticalrelation-object-11">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.COPULA</code></p>
+
+<h3 id="csubj-csubj"><code>csubj</code>: <code>csubj</code></h3>
+
+<p><code>csubj</code> relations in SD are still annotated as <a title="en-dep csubj" class="doclink" href="http://universaldependencies.org/docs/en/dep/csubj.html"><code>csubj</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-12">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CLAUSAL_SUBJECT</code></p>
+
+<h3 id="csubjpass-csubjpass"><code>csubjpass</code>: <code>csubjpass</code></h3>
+
+<p><code>csubjpass</code> relations in SD are still annotated as <a title="en-dep csubjpass" class="doclink" href="http://universaldependencies.org/docs/en/dep/csubjpass.html"><code>csubjpass</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-13">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CLAUSAL_PASSIVE_SUBJECT</code></p>
+
+<h3 id="dep-dep"><code>dep</code>: <code>dep</code></h3>
+
+<p><code>dep</code> relations in SD are still annotated as <a title="en-dep dep" class="doclink" href="http://universaldependencies.org/docs/en/dep/dep.html"><code>dep</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-14">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.GrammaticalRelation.DEPENDENT</code></p>
+
+<h3 id="discourse-discourse"><code>discourse</code>: <code>discourse</code></h3>
+
+<p><code>discourse</code> relations in SD are still annotated as <a title="en-dep discourse" class="doclink" href="http://universaldependencies.org/docs/en/dep/discourse.html"><code>discourse</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-15">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.DISCOURSE_ELEMENT</code></p>
+
+<h3 id="dobj-dobj"><code>dobj</code>: <code>dobj</code></h3>
+
+<p><code>dobj</code> relations in SD are still annotated as <a title="en-dep dobj" class="doclink" href="http://universaldependencies.org/docs/en/dep/dobj.html"><code>dobj</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-16">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.DIRECT_OBJECT</code></p>
+
+<h3 id="bexpl-explb"><b><code>expl</code>: <code>expl</code></b></h3>
+
+<p><code>expl</code> relations in SD are still annotated as <a title="en-dep expl" class="doclink" href="http://universaldependencies.org/docs/en/dep/expl.html"><code>expl</code></a> in UD.</p>
+
+<p>According to the UD guidelines the pleonastic <em>it</em> should also have the <code>expl</code> relation. This is the
+case in the manually annotated treebank but the Stanford Parser currently does not treat instances
+of the pleonastic <em>it</em> differently.</p>
+
+<h4 id="grammaticalrelation-object-17">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.EXPLETIVE</code></p>
+
+<h3 id="goeswith-goeswith"><code>goeswith</code>: <code>goeswith</code></h3>
+
+<p><code>goeswith</code> relations in SD are still annotated as <a title="en-dep goeswith" class="doclink" href="http://universaldependencies.org/docs/en/dep/goeswith.html"><code>goeswith</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-18">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.GOES_WITH</code></p>
+
+<h3 id="iobj-iobj"><code>iobj</code>: <code>iobj</code></h3>
+
+<p><code>iobj</code> relations in SD are still annotated as <a title="en-dep iobj" class="doclink" href="http://universaldependencies.org/docs/en/dep/iobj.html"><code>iobj</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-19">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.INDIRECT_OBJECT</code></p>
+
+<h3 id="mark-mark"><code>mark</code>: <code>mark</code></h3>
+
+<p><code>mark</code> relations in SD are still annotated as <a title="en-dep mark" class="doclink" href="http://universaldependencies.org/docs/en/dep/mark.html"><code>mark</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-20">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.MARKER</code></p>
+
+<h3 id="bmwe-mweb"><b><code>mwe</code>: <code>mwe</code></b></h3>
+
+<p><code>mwe</code> relations in SD are still annotated as <a title="en-dep mwe" class="doclink" href="http://universaldependencies.org/docs/en/dep/mwe.html"><code>mwe</code></a> in UD.</p>
+
+<p>However, the list of expressions which are considered multi-word expressions has changed. See the 
+description of the <a title="en-dep mwe" class="doclink" href="http://universaldependencies.org/docs/en/dep/mwe.html"><code>mwe</code> relation</a> for the list of multi-word expressions.</p>
+
+<h4 id="grammaticalrelation-object-21">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.MULTI_WORD_EXPRESSION</code></p>
+
+<h3 id="neg-neg"><code>neg</code>: <code>neg</code></h3>
+
+<p><code>neg</code> relations in SD are still annotated as <a title="en-dep neg" class="doclink" href="http://universaldependencies.org/docs/en/dep/neg.html"><code>neg</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-22">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NEGATION_MODIFIER</code></p>
+
+<h3 id="bnn-compoundb"><b><code>nn</code>: <code>compound</code></b></h3>
+
+<p>The <code>nn</code> relation in SD has been renamed to <a title="en-dep compound" class="doclink" href="http://universaldependencies.org/docs/en/dep/compound.html"><code>compound</code></a> in UD.</p>
+
+<p>This relation is now also used for elements of compound numbers instead of the <code>number</code> relation in SD.</p>
+
+<h4 id="grammaticalrelation-object-23">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.COMPOUND_MODIFIER</code></p>
+
+<h3 id="bnpadvmod-nmodnpmodb"><b><code>npadvmod</code>: <code>nmod:npmod</code></b></h3>
+
+<p>The <code>npadvmod</code> relation in SD has been renamed to <a title="failed to link to entry in any collection" style="color: red;" href="http://universaldependencies.org/docs/en/overview/en-dep/nmod-npmod"><code>nmod:npmod</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-24">GrammaticalRelation object:</h4>
+<p>`edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NP_ADVERBIAL_MODIFIER</p>
+
+<h3 id="nsubj-nsubj"><code>nsubj</code>: <code>nsubj</code></h3>
+
+<p><code>nsubj</code> relations in SD are still annotated as <a title="en-dep nsubj" class="doclink" href="http://universaldependencies.org/docs/en/dep/nsubj.html"><code>nsubj</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-25">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NOMINAL_SUBJECT</code></p>
+
+<h3 id="nsubjpass-nsubjpass"><code>nsubjpass</code>: <code>nsubjpass</code></h3>
+
+<p><code>nsubjpass</code> relations in SD are still annotated as <a title="en-dep nsubj" class="doclink" href="http://universaldependencies.org/docs/en/dep/nsubj.html"><code>nsubjpass</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-26">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NOMINAL_PASSIVE_SUBJECT</code></p>
+
+<h3 id="bnum-nummodb"><b><code>num</code>: <code>nummod</code></b></h3>
+
+<p>The <code>num</code> relation in SD has been renamed to <a title="en-dep nummod" class="doclink" href="http://universaldependencies.org/docs/en/dep/nummod.html"><code>nummod</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-27">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NUMERIC_MODIFIER</code></p>
+
+<h3 id="bnumber-compoundb"><b><code>number</code>: <code>compound</code></b></h3>
+
+<p>The <code>number</code> relation in SD no longer exists as a relation in UD and has been folded into <a title="en-dep compound" class="doclink" href="http://universaldependencies.org/docs/en/dep/compound.html"><code>compound</code></a>.</p>
+
+<h4 id="grammaticalrelation-object-28">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.COMPOUND</code></p>
+
+<h3 id="parataxis-parataxis"><code>parataxis</code>: <code>parataxis</code></h3>
+
+<p><code>parataxis</code> relations in SD are still annotated as <a title="en-dep parataxis" class="doclink" href="http://universaldependencies.org/docs/en/dep/parataxis.html"><code>parataxis</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-29">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NOMINAL_PASSIVE_SUBJECT</code></p>
+
+<h3 id="bposs-nmodpossb"><b><code>poss</code>: <code>nmod:poss</code></b></h3>
+
+<p>The <code>poss</code> relation in SD has been renamed to <a title="failed to link to entry in any collection" style="color: red;" href="http://universaldependencies.org/docs/en/overview/en-dep/nmod-poss"><code>nmod:poss</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-30">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.POSSESSION_MODIFIER</code></p>
+
+<h3 id="bpossesive-caseb"><b><code>possesive</code>: <code>case</code></b></h3>
+
+<p>The <code>possesive</code> relation in SD no longer exists as a relation in UD and has been folded into <a title="en-dep case" class="doclink" href="http://universaldependencies.org/docs/en/dep/case.html"><code>case</code></a>.</p>
+
+<h4 id="grammaticalrelation-object-31">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CASE_MARKER</code></p>
+
+<h3 id="bpcomp-acl-or-advclb"><b><code>pcomp</code>: <code>acl</code> or <code>advcl</code></b></h3>
+
+<p>Prepositional phrases are treated differently in UD and therefore the <code>pcomp</code> relation no longer exists.
+See the section <a href="#treatment-of-prepositional-phrases">Treatment of Prepositional Phrases</a> for more details on when to use <code>acl</code> or <code>advcl</code>.</p>
+
+<h4 id="grammaticalrelation-object-32">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CLAUSAL_MODIFIER</code> (<code>acl</code>)</p>
+
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.ADV_CLAUSE_MODIFIER</code> (<code>advcl</code>)</p>
+
+<h3 id="bpobj-nmodb"><b><code>pobj</code>: <code>nmod</code></b></h3>
+
+<p>The <code>pobj</code> relation in SD has been renamed to <a title="en-dep nmod" class="doclink" href="http://universaldependencies.org/docs/en/dep/nmod.html"><code>nmod</code></a> in UD.</p>
+
+<p>Note that prepositional phrases are treated differently in UD and not only the name of this relation
+but also the tree structure changed. See the section <a href="#treatment-of-prepositional-phrases">Treatment of Prepositional Phrases</a> for more details on the new treatment of prepositional phrases.</p>
+
+<h4 id="grammaticalrelation-object-33">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.NOMINAL_MODIFIER</code></p>
+
+<h3 id="bpreconj-conjpreconjb"><b><code>preconj</code>: <code>conj:preconj</code></b></h3>
+
+<p>The <code>preconj</code> relation in SD has been renamed to <a title="failed to link to entry in any collection" style="color: red;" href="http://universaldependencies.org/docs/en/overview/en-dep/conj-preconj"><code>conj:preconj</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-34">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.PRECONJUNCT</code></p>
+
+<h3 id="bpredet-detpredetb"><b><code>predet</code>: <code>det:predet</code></b></h3>
+
+<p>The <code>predet</code> relation in SD has been renamed to <a title="failed to link to entry in any collection" style="color: red;" href="http://universaldependencies.org/docs/en/overview/en-dep/det-predet"><code>det:predet</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-35">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.PREDETERMINER</code></p>
+
+<h3 id="bprep-case-or-markb"><b><code>prep</code>: <code>case</code> or <code>mark</code></b></h3>
+
+<p>Prepositional phrases are treated differently in UD. See the section <a href="#treatment-of-prepositional-phrases">Treatment of Prepositional Phrases</a> for more details on the new treatment of prepositional phrases.</p>
+
+<p>The various <code>prep_&lt;PREPOSITION&gt;</code> relations in the <em>collapsed</em> and <em>CCprocessed</em> SD representations 
+have been replaced with <code>nmod:&lt;PREPOSITION&gt;</code> relations in the UD <em>enhanced</em> representation.</p>
+
+<h4 id="grammaticalrelation-object-36">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CASE_MARKER</code></p>
+
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.MARKER</code></p>
+
+<h3 id="bprepc-acl-or-advclb"><b><code>prepc</code>: <code>acl</code> or <code>advcl</code></b></h3>
+
+<p>The <code>prepc_&lt;PREPOSITION&gt;</code> relations in the <em>collapsed</em> and <em>CCprocessed</em> SD representations have been 
+replaced with <code>acl:&lt;PREPOSITION&gt;</code> and <code>advcl:&lt;PREPOSITION&gt;</code> relations in the UD <em>enhanced</em> representation.</p>
+
+<p>See the section <a href="#treatment-of-prepositional-phrases">Treatment of Prepositional Phrases</a> for more details.</p>
+
+<h3 id="bprt-compoundprtb"><b><code>prt</code>: <code>compound:prt</code></b></h3>
+
+<p>The <code>prt</code> relation in SD has been renamed to <a title="failed to link to entry in any collection" style="color: red;" href="http://universaldependencies.org/docs/en/overview/en-dep/compound-prt"><code>compound:prt</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-37">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.PHRASAL_VERB_PARTICLE</code></p>
+
+<h3 id="punct-punct"><code>punct</code>: <code>punct</code></h3>
+
+<p><code>punct</code> relations in SD are still annotated as <a title="en-dep punct" class="doclink" href="http://universaldependencies.org/docs/en/dep/punct.html"><code>punct</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-38">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.PUNCTUATION</code></p>
+
+<h3 id="bquantmod-advmodb"><b><code>quantmod</code>: <code>advmod</code></b></h3>
+
+<p>The <code>quantmod</code> relation in SD no longer exists as a relation in UD and has been folded into <a title="en-dep advmod" class="doclink" href="http://universaldependencies.org/docs/en/dep/advmod.html"><code>advmod</code></a>.</p>
+
+<h4 id="grammaticalrelation-object-39">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.ADVERBIAL_MODIFIER</code></p>
+
+<h3 id="ref-ref"><code>ref</code>: <code>ref</code></h3>
+
+<p><code>ref</code> relations in SD are still annotated as <code>ref</code> in UD.</p>
+
+<p>Note that referents are only part of the <em>enhanced</em> UD representation.</p>
+
+<h4 id="grammaticalrelation-object-40">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.REFERENT</code></p>
+
+<h3 id="root-root"><code>root</code>: <code>root</code></h3>
+
+<p><code>root</code> relations in SD are still annotated as <a title="en-dep punct" class="doclink" href="http://universaldependencies.org/docs/en/dep/punct.html"><code>root</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-41">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.GrammaticalRelation.ROOT</code></p>
+
+<h3 id="btmod-nmodtmodb"><b><code>tmod</code>: <code>nmod:tmod</code></b></h3>
+
+<p>The <code>tmod</code> relation in SD has been renamed to <a title="failed to link to entry in any collection" style="color: red;" href="http://universaldependencies.org/docs/en/overview/en-dep/nmod-tmod"><code>nmod:tmod</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-42">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.TEMPORAL_MODIFIER</code></p>
+
+<h3 id="bvmod-acl-or-advclb"><b><code>vmod</code>: <code>acl</code> or <code>advcl</code></b></h3>
+
+<p>The <code>vmod</code> relation in SD no longer exists as a relation in UD and has been folded into the <a title="en-dep acl" class="doclink" href="http://universaldependencies.org/docs/en/dep/acl.html"><code>acl</code></a> and <a title="en-dep advcl" class="doclink" href="http://universaldependencies.org/docs/en/dep/advcl.html"><code>advcl</code></a> relations in UD.</p>
+
+<p>The <code>acl</code> relation is used for clauses that modify a noun unless the noun is a predicate in a copular 
+construction. The <code>advcl</code> relation is used for clauses that modify a verb or any other predicate.</p>
+
+<p>See the section <a href="#treatment-of-prepositional-phrases">Treatment of Prepositional Phrases</a> for more details on when to use
+<code>acl</code> or <code>advcl</code>.</p>
+
+<h4 id="grammaticalrelation-object-43">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.CLAUSAL_MODIFIER</code> (<code>acl</code>)</p>
+
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.ADV_CLAUSE_MODIFIER</code> (<code>advcl</code>)</p>
+
+<h3 id="xcomp-xcomp"><code>xcomp</code>: <code>xcomp</code></h3>
+
+<p><code>xcomp</code> relations in SD are still annotated as <a title="en-dep xcomp" class="doclink" href="http://universaldependencies.org/docs/en/dep/xcomp.html"><code>xcomp</code></a> in UD.</p>
+
+<h4 id="grammaticalrelation-object-44">GrammaticalRelation object:</h4>
+<p><code>edu.stanford.nlp.trees.UniversalEnglishGrammaticalRelations.XCLAUSAL_COMPLEMENT</code></p>
+
+<h2 id="new-relations">New Relations</h2>
+
+<p>The UD represenation also introduces the following new relations which did not exist in SD.</p>
+
+<ul>
+  <li><a title="en-dep dislocated" class="doclink" href="http://universaldependencies.org/docs/en/dep/dislocated.html"><code>dislocated</code></a></li>
+  <li><a title="en-dep foreign" class="doclink" href="http://universaldependencies.org/docs/en/dep/foreign.html"><code>foreign</code></a></li>
+  <li><a title="en-dep list" class="doclink" href="http://universaldependencies.org/docs/en/dep/list.html"><code>list</code></a></li>
+  <li><a title="en-dep remnant" class="doclink" href="http://universaldependencies.org/docs/en/dep/remnant.html"><code>remnant</code></a></li>
+  <li><a title="en-dep vocative" class="doclink" href="http://universaldependencies.org/docs/en/dep/vocative.html"><code>vocative</code></a></li>
+</ul>
+
+<h2 id="enhanced-universal-depencies"><em>Enhanced</em> Universal Depencies</h2>
+
+<p>Apart from the the basic representation, the Stanford parser also provided several post-processed representations including the <em>collapsed</em> and <em>CCprocessed</em> representations. The main purpose of the <em>collapsed</em> representation was to collapse prepositions to get direct dependencies between content words. Considering the new <a href="#treatment-of-prepositional-phrases">treatment of prepositional phrases</a> the basic representation already has direct dependencies between content words which makes the <em>collapsed</em>
+ representation largely obsolete. On the other hand, the propagation of 
+conjunt dependencies still adds useful dependencies in UD.</p>
+
+<p>For these reasons we decided to reduce the total number of representations to the following three:</p>
+
+<ul>
+  <li><em>basic</em> representation</li>
+  <li><em>enhanced</em> representation</li>
+  <li><em>enhanced-tree</em> representation preserving a tree structure</li>
+</ul>
+
+<p>The <em>basic</em> representation uses the dependencies defined above, and forms a tree structure. Each
+word in the sentence is the dependent of exactly one thing, either another word in the sentence or the
+distingushed <em>ROOT</em> token.</p>
+
+<p>The <em>enhanced</em> representation roughly corresponds to the <em>CCprocessed</em> representation in SD. However, there are two main differences:</p>
+
+<ul>
+  <li>The delimiter between the original relation name and the conjunction or the preposition was changed from <code>_</code> to <code>:</code>. For example, what used to be <code>conj_and</code> is now <code>conj:and</code>, or <code>prep_in_front_of</code> is now <code>nmod:in_front_of</code>.</li>
+  <li>We no longer delete words in the <em>enhanced</em> representation.</li>
+</ul>
+
+
+
+      </div>
+
+<!-- support for embedded visualizations -->
+<script type="text/javascript">
+    var root = '../../'; // filled in by jekyll
+    head.js(
+        // External libraries
+        root + 'lib/ext/jquery.min.js',
+        root + 'lib/ext/jquery.svg.min.js',
+        root + 'lib/ext/jquery.svgdom.min.js',
+        root + 'lib/ext/jquery-ui.min.js',
+        root + 'lib/ext/waypoints.min.js',
+        root + 'lib/ext/jquery.address.min.js',
+
+        // brat helper modules
+        root + 'lib/brat/configuration.js',
+        root + 'lib/brat/util.js',
+        root + 'lib/brat/annotation_log.js',
+        root + 'lib/ext/webfont.js',
+        // brat modules
+        root + 'lib/brat/dispatcher.js',
+        root + 'lib/brat/url_monitor.js',
+        root + 'lib/brat/visualizer.js',
+
+        // embedding configuration
+        root + 'lib/local/config.js',
+        // project-specific collection data
+        root + 'lib/local/collections.js',
+
+        // NOTE: non-local libraries
+        'https://spyysalo.github.io/annodoc/lib/local/annodoc.js',
+        'https://spyysalo.github.io/conllu.js/conllu.js'
+    );
+
+    var webFontURLs = [
+//        root + 'static/fonts/Astloch-Bold.ttf',
+        root + 'static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+        root + 'static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+    var setupAccordions = function() {
+        // standard jQuery UI "accordion" element initialization
+	$(".jquery-ui-accordion").accordion({
+	    collapsible: true,
+	    active: false
+	});
+    };
+
+    var setupTabs = function() {
+        // standard jQuery UI "tabs" element initialization
+        $(".jquery-ui-tabs").tabs({ heightStyle: "auto" });
+
+        // use jQuery address to preserve tab state
+        // (see https://github.com/UniversalDependencies/docs/issues/65,
+        // http://stackoverflow.com/a/3330919)
+        if ($(".jquery-ui-tabs").length > 0) {
+            $.address.change(function(event){
+	        $(".jquery-ui-tabs").tabs("select", window.location.hash)
+	    });
+	    $(".jquery-ui-tabs").bind("tabsselect", function(event, ui) { 
+	        window.location.hash = ui.tab.hash;
+	    });
+        }
+    };
+
+    head.ready(function() {
+        // set up UI tabs on page
+        setupTabs();
+        setupAccordions();
+
+        // mark current collection (filled in by Jekyll)
+        Collections.listing['_current'] = 'en-overview';
+
+	// perform all embedding and support functions
+	Annodoc.activate(Config.bratCollData, Collections.listing);
+    });
+</script>
+
+
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55233688-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+      <div id="footer">
+	  <p class="footer-text">© 2014 
+	    <a href="http://universaldependencies.github.io/docs/introduction.html#contributors" style="color:gray">Universal Dependencies contributors</a>. 
+	    Site powered by <a href="http://spyysalo.github.io/annodoc" style="color:gray">Annodoc</a> and <a href="http://brat.nlplab.org/" style="color:gray">brat</a></p>.
+      </div>
+    </div><div id="commentpopup"></div>
+  
+
+</body><script src="Migration%20Guidelines_files/jquery.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/jquery_003.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/jquery_004.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/jquery-ui.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/waypoints.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/jquery_002.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/configuration.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/util.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/annotation_log.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/webfont.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/dispatcher.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/url_monitor.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/visualizer.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/config.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/collections.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/annodoc.js" type="text/javascript"></script><script src="Migration%20Guidelines_files/conllu.js" type="text/javascript"></script></html>
