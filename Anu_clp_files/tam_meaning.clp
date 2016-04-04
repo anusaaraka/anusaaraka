@@ -58,6 +58,7 @@
  (assert (dir_name-file_name-rule_name-id-domain_type))
  (assert (dir_name-file_name-rule_name-id-tam_type))
  (assert (default-iit-bombay-shabdanjali-dic.gdbm))
+ (assert (language))
  )
 
  ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE
@@ -222,6 +223,7 @@
  (id-TAM ?head_id ?tam)
  ?f2<-(pada_info (group_head_id ?head_id))
  ?f1<-(meaning_to_be_decided ?head_id)
+ (language ?lang&hindi)
  =>
 	(bind ?tam (implode$ (create$  ?tam)))
 	(bind ?def_tam (gdbm_lookup "hindi_default_tam.gdbm" ?tam))  ;?def_tam = nA_padA-ko-0

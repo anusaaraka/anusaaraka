@@ -21,6 +21,7 @@
  (declare (salience 7000))
  (id-cat_coarse ?id adjective)
  (not (file_loaded ?file))
+ (language ?lang&hindi)
  =>
 	(bind ?file (str-cat ?*path* "/Anu_clp_files/adjective.clp"))
 	(load* ?file)
@@ -76,7 +77,7 @@
  (not (meaning_has_been_decided ?id))
  ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14).If mng not decided by orig_wrd then to check word and root, commented this fact
  =>
-        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word ".clp"))
+        (bind ?file (str-cat ?*wsd_path* "/canonical_form_wsd_rules/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )
@@ -89,7 +90,7 @@
  (not (meaning_has_been_decided ?id))
 ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14). If mng not decided by orig_wrd then to check word and root, commented this fact
  =>
-	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word ".clp"))        
+	(bind ?file (str-cat ?*wsd_path* "/canonical_form_wsd_rules/" ?word ".clp"))
 	(if (neq (load* ?file) FALSE) then
         	(assert (file_loaded ?id))
 	)
@@ -102,7 +103,7 @@
  (not (meaning_has_been_decided ?id))
 ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14). If mng not decided by orig_wrd and word then to check root, commented this fact
  =>
-        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?root ".clp"))
+        (bind ?file (str-cat ?*wsd_path* "/canonical_form_wsd_rules/" ?root ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )

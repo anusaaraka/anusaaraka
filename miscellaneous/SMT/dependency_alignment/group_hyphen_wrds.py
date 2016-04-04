@@ -50,17 +50,17 @@ for i in range(0, len(fr)):
 				map_dic[int(nxt_lst[0])] = '\t'.join(nxt_lst)
 				grouped_id_lst.append(prev_lst[0])
 			elif prev_lst[0] == nxt_lst[6] :
-				count += 2
 				if int(prev_lst[0]) == 1:
 					dic[int(prev_lst[0])] = int(prev_lst[0]) #kaBI - kaBI
 				else:
-					dic[int(prev_lst[0])] = int(prev_lst[0]) - count
+					dic[int(prev_lst[0])] = int(prev_lst[0]) - count #yaxA - kaxA 
 				wrd = prev_lst[1] + lst[1] + nxt_lst[1]
 				root = prev_lst[2] + lst[1] + nxt_lst[2]
 				prev_lst[1] = wrd
 				prev_lst[2] = root
 				map_dic[int(prev_lst[0])] = '\t'.join(prev_lst)
 				grouped_id_lst.append(nxt_lst[0])
+				count += 2
 			elif lst[0] == prev_lst[6] and lst[0] == nxt_lst[6]: #jEse - jEse
 				count += 1   #here '-' is head so decreasing count only 1 to get prev id
 				dic[int(lst[0])] = int(lst[0]) - count

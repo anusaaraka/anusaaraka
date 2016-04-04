@@ -42,6 +42,7 @@
  (assert (id-wsd_viBakwi))
  (assert (id-HM-source))
  (assert (id-domain_type))
+ (assert (language))
  )
 
  ;------------------------------------------ Functions ---------------------------------------------------------
@@ -67,6 +68,17 @@
  )
 
  ;-------------------------------------------- Rules ------------------------------------------------------------
+ ;Added by Shirisha Manju
+ ;get dictionary name according to Language
+ (defrule get_dic_name
+ (declare (salience 9901))
+ (language ?lang)
+ =>
+        (if (eq ?lang hindi) then
+		(assert (dic_name default-iit-bombay-shabdanjali-dic.gdbm))
+        )
+ )
+ ;---------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  ;remove control fact for template meanings and compound meanings
  (defrule mng_decided
@@ -120,14 +132,15 @@
  (declare (salience 9600))
  (id-cat_coarse ?id PropN)
  ?f<-(meaning_to_be_decided ?id)
- (id-original_word ?id ?wrd)
+ (id-word ?id ?wrd)
  (test (neq (gdbm_lookup "proper_noun_dic.gdbm" ?wrd) "FALSE"))
  =>
         (bind ?mng (gdbm_lookup "proper_noun_dic.gdbm" ?wrd ))
-        (if (neq ?mng "FALSE") then
-                (retract ?f)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   proper_noun_dic)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   proper_noun_dic "?id")" crlf)
+	(if (neq ?mng "FALSE") then
+		(retract ?f)
+		(bind ?f_mng (get_wsd_first_mng ?mng))
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   proper_noun_dic)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   proper_noun_dic "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -139,9 +152,10 @@
  ?mng<-(meaning_to_be_decided ?id)
  (id-word =(- ?id 1) the)
  (id-root ?id ?rt)
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?rt) "_noun")) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat (lowcase ?rt) "_noun")) "FALSE"))
  =>
-        (bind ?f_mng (get_first_mng (lowcase ?rt) noun default-iit-bombay-shabdanjali-dic.gdbm))
+        (bind ?f_mng (get_first_mng (lowcase ?rt) noun ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
@@ -370,6 +384,8 @@
  ?f0<-(meaning_to_be_decided ?id)
  =>
         (retract ?f0)
+	(printout ?*hin_mng_file* "(id-HM-source   "?id"   -   Word)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -   Word "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Rule re-modified by Roja (01-08-12). 
@@ -382,9 +398,10 @@
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id ?cat)
  (test (neq (numberp ?rt) TRUE))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat ?rt "_" ?cat)) "FALSE"))
  =>
-	(bind ?f_mng (get_first_mng ?rt ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+	(bind ?f_mng (get_first_mng ?rt ?cat ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
@@ -400,9 +417,10 @@
  (id-cat_coarse ?id ?cat)
  (id-original_word ?id ?org_wrd)
  (test (neq (numberp ?org_wrd) TRUE))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat ?org_wrd "_" ?cat)) "FALSE"))
  =>
-        (bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
@@ -422,9 +440,10 @@
  (test (neq (numberp ?rt) TRUE))
  (default-cat ?cat1)
  (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat1)) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat ?rt "_" ?cat1)) "FALSE"))
  =>
-	(bind ?f_mng (get_first_mng ?rt ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+	(bind ?f_mng (get_first_mng ?rt ?cat1 ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
@@ -432,24 +451,6 @@
 	        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
         )
  )
- ;--------------------------------------------------------------------------------------------------------------
-; ;Added by Roja (24-05-14).
-; ;Getting Hindi meaning from default dictionary with original word same category
-; (defrule default_hindi_mng-same-cat_with_org_wrd
-; (declare (salience 7500))
-; ?mng<-(meaning_to_be_decided ?id)
-; (id-cat_coarse ?id ?cat)
-; (id-original_word ?id ?org_wrd)
-; (test (neq (numberp ?org_wrd) TRUE))
-; (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
-; =>
-;        (bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
-;        (if (neq ?f_mng "FALSE") then
-;                (retract ?mng)
-;                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-;                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-;        )
-; )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (24-05-14).
  ;Getting Hindi meaning from default dictionary with original word when there is a different category.
@@ -463,9 +464,10 @@
  (default-cat ?cat1)
  (test (neq (numberp ?org_wrd) TRUE))
  (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
  =>
-        (bind ?f_mng (get_first_mng ?org_wrd ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat1 ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
@@ -498,13 +500,36 @@
  (id-cat_coarse ?id ?cat)
  (id-original_word ?id ?org_wrd)
  (test (neq (numberp ?org_wrd) TRUE))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?org_wrd) "_" ?cat)) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat (lowcase ?org_wrd) "_" ?cat)) "FALSE"))
  =>
-        (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju Suggested by Chaitanya Sir (06-10-15)
+ ;Three or four [door-keepers] were employed on the building.
+ (defrule default_mng_without_s_for_noun
+ (declare (salience 7150))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-original_word ?id ?wrd)
+ (test (neq (numberp ?wrd) TRUE))
+ (test (neq (str-index "-" ?wrd) FALSE))
+ (test (eq (sub-string (length ?wrd) (length ?wrd) ?wrd) "s"))
+ (id-cat_coarse ?id noun)
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat (sub-string 1 (- (length ?wrd) 1) ?wrd) "_noun")) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng (sub-string 1 (- (length ?wrd) 1) ?wrd) noun ?dname))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_without_s "?id"  " ?wrd")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -520,9 +545,10 @@
  (default-cat ?cat1)
  (test (neq (numberp ?org_wrd) TRUE))
  (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?org_wrd) "_" ?cat1)) "FALSE"))
+ (dic_name ?dname)
+ (test (neq (gdbm_lookup ?dname (str-cat (lowcase ?org_wrd) "_" ?cat1)) "FALSE"))
  =>
-        (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+        (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat1 ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)

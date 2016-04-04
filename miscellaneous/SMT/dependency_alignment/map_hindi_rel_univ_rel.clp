@@ -41,7 +41,7 @@
 ;------------------------------------------------------------------------
 (defrule map_conj
 (relation_name-rel_ids cc ?h ?cc)
-?f0<-(relation_name-rel_ids ?r&~conj ?cc ?id1)
+?f0<-(relation_name-rel_ids ?r&~conj&~cc ?cc ?id1)
 =>
 	(retract ?f0)
 	(assert (relation_name-rel_ids conj ?h ?id1))
@@ -74,6 +74,7 @@
 (defrule map_cop
 ?f0<-(relation_name-rel_ids  root_k1s  ?h  ?id)
 ?f1<-(relation_name-rel_ids  ?r&root|acl 	?in  ?h)
+(id-word-root-tam ?h hE|WA ? ?)
 =>
 	(retract ?f0 ?f1)
 	(if (eq ?r acl) then
