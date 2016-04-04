@@ -352,7 +352,7 @@
  (test (neq ?gen -))
  =>
         (modify ?f1 (gender ?gen))
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id " gender_for_hyphen  "?gen " "?gen_src ")" crlf)
+        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id " gender_for_hyphen  "?gen " group_id )" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ; Sita and Gita came here .

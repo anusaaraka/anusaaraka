@@ -1274,7 +1274,7 @@ makadA	0
 madarA	0
 mudaka	0
 muda	0
-ragada	0
+#ragada	0 # [it is both sa.kri and a.kri but a.kri is rare]
 rabada	0
 lazgadA	0
 lada	0

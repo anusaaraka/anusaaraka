@@ -11,6 +11,27 @@
  (assert (id-original_word))
  (assert (id-cat_coarse))
  (assert (id-cat))
+ (assert (language))
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;To get female dictionary name for any language
+ (defrule get_f_gen_dic_name
+ (declare (salience 1001))
+ (language ?lang)
+ =>
+        (if (eq ?lang hindi) then
+        	(assert (f_gen_dic_name female_list.gdbm))
+        )
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;To get male dictionary name for any language
+ (defrule get_m_gen_dic_name
+ (declare (salience 1001))
+ (language ?lang)
+ =>
+        (if (eq ?lang hindi) then
+        	(assert (m_gen_dic_name male_list.gdbm))
+        )
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule retract_id_with_no_hin_mng
@@ -43,7 +64,8 @@
  (id-HM-source ?id ?h_mng ?)
  (id-cat_coarse ?id ~verb);For example, the same law of gravitation ([given] by Newton) describes the fall of an apple to the ground, the motion of the moon around the earth and the motion of planets around the sun.
  ?mng<-(meaning_to_be_decided ?id)
- (test (neq (gdbm_lookup "female_list.gdbm" ?h_mng) "FALSE"))
+ (f_gen_dic_name ?f_dic)
+ (test (neq (gdbm_lookup ?f_dic ?h_mng) "FALSE"))
  =>
 	(printout ?*gen-file* "(id-gender-src "?id"   f	Female_list_gdbm)" crlf)
        	(retract ?mng)
@@ -56,11 +78,12 @@
  (id-HM-source ?id ?h_mng ?)
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id verb)
+ (f_gen_dic_name ?f_dic)
  (test (neq (str-index "_" ?h_mng) FALSE))
  =>
 	(bind ?index (str-index "_" ?h_mng))
 	(bind ?str (sub-string 1 (- ?index 1) ?h_mng))
-        (bind ?b (gdbm_lookup "female_list.gdbm" ?str))
+        (bind ?b (gdbm_lookup ?f_dic ?str))
        	(if (neq ?b "FALSE") then
        		(printout ?*gen-file* "(id-gender-src "?id"  f	Female_list_gdbm)" crlf)
                 (retract ?mng)
@@ -72,11 +95,12 @@
  (declare (salience 800))
  (id-HM-source ?id ?h_mng ?)
  ?mng<-(meaning_to_be_decided ?id)
+ (f_gen_dic_name ?f_dic)
  (test (neq (str-index "_" ?h_mng) FALSE))
  =>
 	(bind ?index (str-index "_" ?h_mng))
 	(bind ?str (sub-string (+ ?index 1) 1000 ?h_mng))
-       	(bind ?b (gdbm_lookup "female_list.gdbm" ?str))
+       	(bind ?b (gdbm_lookup ?f_dic ?str))
 	(if (neq ?b "FALSE") then
 		(printout ?*gen-file* "(id-gender-src "?id"  f	Female_list_gdbm)" crlf)
         	(retract ?mng)
@@ -88,7 +112,8 @@
  (id-HM-source ?id ?h_mng ?)
  (id-cat_coarse ?id ~verb);For example, the same law of gravitation ([given] by Newton) describes the fall of an apple to the ground, the motion of the moon around the earth and the motion of planets around the sun.
  ?mng<-(meaning_to_be_decided ?id)
- (test (neq (gdbm_lookup "male_list.gdbm" ?h_mng) "FALSE"))
+ (m_gen_dic_name ?m_dic)
+ (test (neq (gdbm_lookup ?m_dic ?h_mng) "FALSE"))
  =>
  	(printout ?*gen-file* "(id-gender-src "?id"  m	Male_list_gdbm)" crlf)
         (retract ?mng)
@@ -101,11 +126,12 @@
  (id-HM-source ?id ?h_mng ?)
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id verb)
+ (m_gen_dic_name ?m_dic)
  (test (neq (str-index "_" ?h_mng) FALSE))
  =>
         (bind ?index (str-index "_" ?h_mng))
         (bind ?str (sub-string 1 (- ?index 1) ?h_mng))
-        (bind ?b (gdbm_lookup "male_list.gdbm" ?str))
+        (bind ?b (gdbm_lookup ?m_dic ?str))
         (if (neq ?b "FALSE") then
                 (printout ?*gen-file* "(id-gender-src "?id"  m	Male_list_gdbm)" crlf)
                 (retract ?mng)
@@ -117,11 +143,12 @@
  (declare (salience 650))
  (id-HM-source ?id ?h_mng ?)
  ?mng<-(meaning_to_be_decided ?id)
+ (m_gen_dic_name ?m_dic)
  (test (neq (str-index "_" ?h_mng) FALSE))
  =>
 	(bind ?index (str-index "_" ?h_mng))
 	(bind ?str (sub-string (+ ?index 1) 1000 ?h_mng))
-        (bind ?b (gdbm_lookup "male_list.gdbm" ?str))
+        (bind ?b (gdbm_lookup ?m_dic ?str))
 	(if (neq ?b "FALSE") then
 		(printout ?*gen-file* "(id-gender-src "?id"  m	Male_list_gdbm)" crlf)
         	(retract ?mng)

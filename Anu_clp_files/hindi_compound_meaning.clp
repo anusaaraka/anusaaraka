@@ -41,6 +41,7 @@
  (assert (id-wsd_viBakwi))
  (assert (id-HM-source))
  (assert (id-domain_type))
+ (assert (language))
  )
  ;-------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (21-03-13)
@@ -322,6 +323,7 @@
  (id-root ?id1 ?rt1)
  ?mng<-(meaning_to_be_decided ?id)
  ?mng1<-(meaning_to_be_decided ?id1)
+ (language hindi)
  =>
         (bind ?vrb_phrase (str-cat ?rt "_" ?rt1))
         (bind ?a (gdbm_lookup "Phrv.gdbm" ?vrb_phrase))
