@@ -248,7 +248,7 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ;Decorate with stucco work. There was one bathroom with a shower stall in the corner.
  ;if group_id is considered as the main meaning
- (defrule Compound_mng_with_grpid_head
+ (defrule Compound_root_mng_with_grpid_head
  (declare (salience 1003))
  ?f1<-(id-HM-source ?pada_id - Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $? ?grpid ?pada_id)(vibakthi ?vib)(number ?num)(case ?case)(gender ?gen))
@@ -263,6 +263,26 @@
         )
         (printout ?*aper_debug-file* "(id-Rule_name  " ?grpid " Compound_mng_with_grpid_head )" crlf)
  )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ; One kind of response from the [earliest times] has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature.
+ ;if group_id is considered as the main meaning
+ (defrule Compound_word_mng_with_grpid_head
+ (declare (salience 1004))
+ ?f1<-(id-HM-source ?pada_id - Database_compound_phrase_word_mng|WSD_compound_phrase_word_mng|provisional_Database_compound_phrase_word_mng)
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $? ?grpid ?pada_id)(vibakthi ?vib)(number ?num)(case ?case)(gender ?gen))
+ ?f0<-(id-HM-source ?grpid ?mng&~- Database_compound_phrase_word_mng|WSD_compound_phrase_word_mng|provisional_Database_compound_phrase_word_mng)
+ =>
+        (retract ?f0 ?f1)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " )" crlf)
+        (if (neq ?vib 0) then
+		(printout ?*A_fp5* "(id-Apertium_input "?grpid " "?mng " " ?vib")" crlf)
+        else
+                (printout ?*A_fp5* "(id-Apertium_input "?grpid " "?mng  ")"  crlf)
+        )
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?grpid " Compound_word_mng_with_grpid_head )" crlf)
+ )
+
+
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added 'provisional_Database_compound_phrase_root_mng' and 'provisional_Database_compound_phrase_word_mng' in the list by Roja(20-02-14)
  (defrule Compound_mng_with_Prep_id
