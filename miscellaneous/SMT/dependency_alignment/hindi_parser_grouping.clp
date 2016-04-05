@@ -37,26 +37,23 @@
 ;---------------------------------------------------------------------------
 (defrule grp_compound
 (declare (salience 940))
-?f0<-(hnd_rel_name-h_id-c_ids ?o ?r $?v - ?h ?c )
 ?f1<-(hnd_rel_name-h_id-c_ids ? compound $? - ?c ?id)
 =>
 	(retract ?f1)
-;	(retract ?f0 ?f1)
 	(assert (id-modified_id ?c ?id ?c))
-;	(assert (hnd_rel_name-h_id-c_ids ?o ?r $?v - ?h ?id ?c))
 )
 ;---------------------------------------------------------------------------
 ;rAwri ke AkASa meM ; camakane vAle => rAwri ke AkASa meM camakane vAle
-(defrule grp_compound1
-(declare (salience 890))
-?f1<-(hnd_rel_name-h_id-c_ids ?o compound $? - ?h ?c $?cids)
-?f0<-(hnd_rel_name-h_id-c_ids ?id ?rel $?v - ?h $?ids)
-(test (neq ?o ?id))
-=>
-	(retract ?f1 ?f0)
-	(assert (hnd_rel_name-h_id-c_ids ?id ?rel $?v - ?h ?c $?ids $?cids))
-	(assert (id-modified_id ?h ?c $?cids ?h))
-)
+;(defrule grp_compound1
+;(declare (salience 890))
+;?f1<-(hnd_rel_name-h_id-c_ids ?o compound $? - ?h ?c $?cids)
+;?f0<-(hnd_rel_name-h_id-c_ids ?id ?rel $?v - ?h $?ids)
+;(test (neq ?o ?id))
+;=>
+;	(retract ?f1 ?f0)
+;	(assert (hnd_rel_name-h_id-c_ids ?id ?rel $?v - ?h ?c $?ids $?cids))
+;	(assert (id-modified_id ?h ?c $?cids ?h))
+;)
 ;---------------------------------------------------------------------------
 ;BOwikI ke anwargawa hama viviXa BOwika pariGatanAoM kI [vyAKyA] kuCa safkalpanAoM evaM niyamoM ke paxoM meM [karane kA] prayAsa karawe hEM .
 (defrule grp_kara
@@ -65,6 +62,7 @@
 (manual_word_info (group_ids $?d ?fid ?gid $?ids)(root $? kara|ho))
 ?f0<-(hnd_rel_name-h_id-c_ids ?id1 ? - ? ?fid)
 (not (id_modified ?id))
+(test (neq ?fid ?h))
 =>
         (retract ?f0 ?f)
         (assert (hnd_rel_name-h_id-c_ids ?id ?rel $?ids - ?h ?fid ?gid $?ids ))
@@ -74,12 +72,17 @@
 ;---------------------------------------------------------------------------
 (defrule grp_nmod_conj
 (declare (salience 920))
-?f0<-(hnd_rel_name-h_id-c_ids ? ?r $?v - ?h ?cc $?ids)
+?f0<-(hnd_rel_name-h_id-c_ids ? ?r&~cc $?v - ?h ?cc $?ids)
 ?f1<-(hnd_rel_name-h_id-c_ids ? cc - ?cc ?cw)
 ?f2<-(hnd_rel_name-h_id-c_ids ? conj $? - ?cc $?conj)
+(manual_id-word ?cc ?w)
 =>
 	(retract ?f0 ?f1 ?f2)
-	(assert (hnd_rel_name-h_id-c_ids ?cw ?r $?v - ?h ?cw $?conj $?ids ?cc))
+	(if (eq (integerp (member$ ?w (create$ evaM waWA Ora aWavA))) TRUE) then
+		(assert (hnd_rel_name-h_id-c_ids ?cw ?r $?v - ?h ?cw $?conj ?cc $?ids))
+	 else
+		(assert (hnd_rel_name-h_id-c_ids ?cw ?r $?v - ?h ?cw $?conj $?ids ?cc))
+	)
 )
 ;---------------------------------------------------------------------------
 (defrule grp_mark
@@ -100,7 +103,7 @@
 (test (neq ?h ?h1))
 =>
 	(retract ?f0 ?f1)
-	(assert (hnd_rel_name-h_id-c_ids ?id1 ?r $?d - ?in $?ids ?id1 $?d1 ?id $?d2 ))
+	(assert (hnd_rel_name-h_id-c_ids ?h ?r $?d - ?in $?ids ?id1 $?d1 ?id $?d2 ))
 )
 ;---------------------------------------------------------------------------
 (defrule grp_det
@@ -110,17 +113,31 @@
 (not (id_modified ?h))
 =>
         (retract ?f0 ?f1)
-        (assert (hnd_rel_name-h_id-c_ids ?id1 ?r $?d - ?in $?ids ?id1 $?d1 ?id $?d2))
+        (assert (hnd_rel_name-h_id-c_ids ?h ?r $?d - ?in $?ids ?id1 $?d1 ?id $?d2))
 )
 ;---------------------------------------------------------------------------
-(defrule grp_aux
+;(defrule grp_aux
+;(declare (salience 910))
+;?f0<-(hnd_rel_name-h_id-c_ids ?h root $?d - ?in $?d1 ?id1)
+;?f1<-(hnd_rel_name-h_id-c_ids ? aux|auxpass - ?id1 $?ids )
+;(not (id_modified ?h))
+;=>
+;        (retract ?f0 ?f1)
+;        (assert (hnd_rel_name-h_id-c_ids ?h root $?d $?ids - ?in $?d1 ?id1 $?ids))
+;)
+;---------------------------------------------------------------------------
+(defrule grp_aux1
 (declare (salience 910))
-?f0<-(hnd_rel_name-h_id-c_ids ? root $?d - ?in $?d1 ?id1)
-?f1<-(hnd_rel_name-h_id-c_ids ?h aux|auxpass - ?id1 $?ids)
+?f0<-(hnd_rel_name-h_id-c_ids ?id ?r $?d - ?h ?c $?d)
+?f1<-(hnd_rel_name-h_id-c_ids ? aux|auxpass $?v  - ?c ?id1 $?v)
 (not (id_modified ?h))
-=>
-        (retract ?f0 ?f1)
-        (assert (hnd_rel_name-h_id-c_ids ?id1 root $?d $?ids - ?in $?d1 ?id1 $?ids))
+=>	
+	(retract ?f0 ?f1)
+	(if (neq (integerp (subsetp $?d $?v)) FALSE) then
+		(assert (hnd_rel_name-h_id-c_ids ?id ?r $?d ?id1 $?v - ?h ?c $?d ?id1 $?v))
+	else
+		(assert (hnd_rel_name-h_id-c_ids ?id ?r ?id1 $?v - ?h ?c ?id1 $?v))
+	)
 )
 ;---------------------------------------------------------------------------
 (defrule grp_noun

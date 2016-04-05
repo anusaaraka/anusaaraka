@@ -74,7 +74,7 @@
 (manual_id-word ?mid ?mw1)
 (id-word ?aid ?aw1)
 =>
-        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod1 1))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod 1))
         (printout ?*hnd_rel_debug_f* "(rel_name-eng_h-hnd_h-eng_c-hnd_c "?r"  " ?aw"  "?mw"   "?aw1"  " ?mw1 " )" crlf)
 )
 ;---------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@
 (manual_id-word ?mid ?mw1)
 (id-word ?aid ?aw1)
 =>
-        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod1 1))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod 1))
         (printout ?*hnd_rel_debug_f* "(rel_name-eng_h-hnd_h-eng_c-hnd_c "?r"  " ?aw"  "?mw"   "?aw1"  " ?mw1 " )" crlf)
 )
 ;---------------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@
 (manual_id-word ?mid ?mw1)
 (id-word ?aid ?aw1)
 =>
-        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod1 1))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod 1))
         (printout ?*hnd_rel_debug_f* "(rel_name-eng_h-hnd_h-eng_c-hnd_c "?r"  " ?aw"  "?mw"   "?aw1"  " ?mw1 " )" crlf)
 )
 ;---------------------------------------------------------------------------------------------
@@ -117,7 +117,7 @@
 (not (man_id_decided ?mid))
 (not (anu_id_decided ?aid))
 =>
-        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod1 1))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r1 align_nmod 1))
         (printout ?*hnd_rel_debug_f* "(rel_name-eng_h-hnd_h-eng_c-hnd_c "?r"  " ?aw"  "?mw"   "?aw1"  " ?mw1 " )" crlf)
 )
 ;---------------------------------------------------------------------------------------------
@@ -131,6 +131,7 @@
 (test (eq ?root (string-to-field (sub-string (+ (str-index ":" ?r) 1)(length ?r) ?r))))
 (test (eq ?mng (string-to-field (sub-string (+ (str-index ":" ?r1) 1)(length ?r1) ?r1))))
 (not (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ? align_nmod_with_dic ?))
+(not (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ? align_nmod ?))
 (not (man_id_decided ?mid))
 (not (anu_id_decided ?aid))
 =>
@@ -204,7 +205,20 @@
 	(printout ?*hnd_rel_debug_f* "(rel_name-eng_h-hnd_h-eng_c-hnd_c	"?rel"	" ?aw"	"?mw"	"?aw1"	" ?mw1 " )" crlf)
 )
 ;---------------------------------------------------------------------------------------------
-;---------------------------------------------------------------------------------------------
+(defrule align_with_dic
+(declare (salience 90))
+(rel_name-grouped_rel_eids ? ?h ?c)
+(database_info (components $?cmng)(group_ids ?c))
+(database_info (components $?hmng)(group_ids ?h))
+(manual_word_info (word $?cmng)(group_ids $?ids ?mc))
+(rel_name-grouped_rel_hids ?rel ?mh $?ids ?mc)
+(manual_word_info (word $?hmng)(group_ids $? ?mh $?))
+(not (man_id_decided ?mid))
+=>
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ?rel align_with_dic 2))
+)
+
+
 (defrule check_root_align
 (declare (salience 50))
 (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid $?)

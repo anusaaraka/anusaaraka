@@ -1,8 +1,9 @@
- 02-04-16
+ 04-04-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
+					      default_mng_without_s_for_noun
   2. create_eng_ord_html.clp	:  Modified :  print_caution_row function
-  3. prepare_apertium_input.clp :  Added    : movement_of_kA_vib
+  3. prepare_apertium_input.clp :  Added    : movement_of_kA_vib and Compound_word_mng_with_grpid_head
   4. sd_relation_correction.clp :  Modified : change_obj_head
   5. parser_tree_correction_rules.clp :   Added    : modify_VB_as_RB      modify_VBN_as_JJ
   6. H_ordering_rules.clp       :  Modified : dont_reverse_NP (added kind)
@@ -57,36 +58,43 @@
 	run_stanford-gui-factored.sh	run_sentence_stanford_minion.sh
 	sd_combining_apostrophe.clp	sd_relation_rules.clp	stnford_relations.lex
 	std_tregex/README		std_tregex/run_tregex.sh	std_tregex/run_tregex_for_multiparse.sh
- 20. Added 
+ 20.  Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
+        gender_info.clp                 run_modules_std.bat     run_sentence_stanford.sh
+        hindi_meaning.clp               run_modules_logon.bat   run_sentence_logon.sh
+        tam_meaning.clp                 run_modules_ace.bat     run_sentence_ace.sh
+        wsd_meaning.clp                 run_modules_ol.bat      run_sentence_ol.sh
+        wsd_tam_meaning.clp
+        hindi_compound_meaning.clp
+ 21. Added 
 	dependency_alignment folder
 	phrasal_alignment/modify_anu_output.clp
- 21. Modified the following files to add dependency info
+ 22. Modified the following files to add dependency info
         dic_compile.sh				Anusaaraka_alignment.sh		 run_alignment.sh
 	create_eng_align_html_phrasal.clp	phrasal_alignment.css		phrasal_alignment.js
 	run_H_gen_sen_eng.bat
- 22. Added following files for dependency debug
+ 23. Added following files for dependency debug
         dep_align_debug.sh	print_dependency_matrix.py
- 23. Updated following lex files:
+ 24. Updated following lex files:
 	tagger.lex		-> Modified pattern for sent end.
 	stnford_relations.lex	-> Handled patterns when punctuations and -LRB- , -RRB- etc cases
 	dependency_parse.l	-> Handled syntax errors
 	dependency_parse.y	-> 	"
 	derivation_parse.l	->	"
- 24. Updated following shell files:
+ 25. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm
 	view_trees.sh				-> Updated according to new std version
 	run_logon_parser.sh			-> Modified -d to -s to check file exists inside 'if loop'
 	phrasal_alignment/compile.sh
- 25. Updated the following files 
+ 26. Updated the following files 
 	run_modules_ace.bat             print-pos-info.py
         run_modules_link.bat               
         run_modules_logon.bat                
         run_modules_ol.bat              
- 26. Updated following dictionaries:
+ 27. Updated following dictionaries:
 	changes_in_databas
 	provisional_multi_word_dictionary.txt
- 27. Updated Log.
+ 28. Updated Log.
 
  19-11-15
  ========
