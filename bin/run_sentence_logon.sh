@@ -73,7 +73,7 @@
 
  grep "Warning:" $1.error > error.txt
  sort -u error.txt > errors.txt
- grep -B2 "FALSE" $1.error >> errors.txt
+ grep -B2 "FALSE\|halted" $1.error >> errors.txt
 
  cat errors.txt
 

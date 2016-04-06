@@ -57,7 +57,7 @@
 (defrule print_chunk
 (declare (salience 75))
 ?f<-(Head-Level-Mother-Daughters  ?  ?  ?mot  $?child)
-(Node-Category ?mot ?cat&ADVP|VP|NP|ADJP|IN|TO|CC|WHNP|VB|VBG|PRT|WHADVP|PP)
+(Node-Category ?mot ?cat&ADVP|VP|NP|ADJP|IN|TO|CC|WHNP|VB|VBG|PRT|WHADVP|PP|TO_VP|Inf_VP)
 =>
      (if (or (eq ?cat IN)(eq ?cat TO)) then
      (assert (chunk-ids  PP $?child))
@@ -69,9 +69,11 @@
      (assert (chunk-ids  ADJP $?child))
      else (if (or (eq ?cat VB)(eq ?cat VBG)) then
      (assert (chunk-ids  VP $?child))
+     else (if (or (eq ?cat TO_VP)(eq ?cat Inf_VP)) then ;Added else if by Roja(05-04-16).Suggested by Chaitanya Sir.
+     (assert (chunk-ids  Inf_VP $?child))
      else
      (assert (chunk-ids  ?cat $?child))
-     )))))
+     ))))))
      (loop-for-count (?i 1 (length $?child))
                      (bind ?val (nth$ ?i $?child))
                      (assert (chunk_has_been_decided ?val)))

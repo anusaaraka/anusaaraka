@@ -429,18 +429,18 @@ for i in range(0,len(dire)):
 				tmp.append(j)
 				tmp.append("#")
 				dic1.append(tmp)
-		#print dic1
 		#print check
 		#print maxi
 		dic1.sort()
 		flag=0
+		#print dic1
 		for j in range(0,len(dic1)):
 			if(flag==1):
 				flag=0
 				continue
 			if(j!=len(dic1)-1 and dic1[j][0]==dic1[j+1][0]):
 				tmp = []
-				val = dic1[j+1][1].find("tam")
+				val = dic1[j+1][1].find("_tam") #Modified by Roja(04-04-16) 'tam' to '_tam' Counter Ex: stamp. 
 				if(val!=-1):
 					tmp.append(dic1[j][1])
 					tmp.append(dic1[j+1][1])
