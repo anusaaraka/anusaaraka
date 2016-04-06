@@ -14,3 +14,5 @@
  	sed "s/position-eng-hnd-eng_ids/position_hi_en-eng-hnd-eng_ids/g" mapped3-hi-en.dat > mapped3-hi-en1.dat
  	cat facts_for_eng_html English_sentence.dat word-alignment.dat word-alignment-hi-en.dat word_alignment_tmp.dat word_alignment.dat parser_alignment.dat manual_hindi_sen.dat mapped3.dat mapped3-hi-en1.dat >> facts_for_eng_align_html
  fi
+ grep -B2 "FALSE\|halted" $2.error > err_msg 
+ cat err_msg

@@ -19,7 +19,7 @@ extern YYSTYPE yylval;
 [x][0-9]*[:,]*		{yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';if(yytext[yyleng-1]==':'||yytext[yyleng-1]==',')*(yylval+yyleng-1)='\0';  return SELF;}
 [0-9]*[:][0-9]*   {yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return ID;}
 ARG[0-9]*		{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return ARG;}
-[a-zA-Z0-9_\-\/\+]*		{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return REL;}
+[a-zA-Z0-9_\-\/\+\.]*		{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return REL;/*Added . in the list by Roja (05-04-16). Ex: For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, [etc.].*/}
 [_][0-9]*[:]		{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return UNDERSCORE_ID;}
 [_][0-9]*/[,\]]		{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return UNDERSCORE_ID;}
 BV/[ ]		{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return BV;}
