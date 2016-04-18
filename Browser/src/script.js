@@ -19,7 +19,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 function register_keys ()
 {
-	enable_keyboard_shortcuts ();
+//	enable_keyboard_shortcuts (); Commented this by Roja(13-04-16). When CTRL+F is pressed , F layer also opens. To stop this commenting this line.
 	
 	var input_fields = document.getElementsByTagName("INPUT");
 	for (i=0; i < input_fields.length; i++)

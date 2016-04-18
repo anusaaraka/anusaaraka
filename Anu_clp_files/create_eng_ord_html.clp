@@ -85,8 +85,8 @@
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"(implode$ $?idiom_des)"\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type catastrophe) then
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_"?p_id"_"?s_id"_"?w_id"_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
- else (if (eq ?sen_type Default_mng_with_different_category) then 
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
+ else (if (eq ?sen_type Default_mng_with_different_category) then ;Modified caution symbol to warning symbol by Roja(14-04-16) 
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9888;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type Mixed_domain_mng_with_different_category) then ;Added else if by Roja(12-01-16) 
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Mixed_domain_mng_with_different_category\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else

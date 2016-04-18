@@ -72,10 +72,20 @@ for i in range(0, len(fr)):
 				grouped_id_lst.append(prev_lst[0])
 				grouped_id_lst.append(nxt_lst[0])
 				count += 1 #as we decrease two ids so increamenting count again.
-			else:# hE - samAna
-				dic[int(prev_lst[0])] = int(prev_lst[0]) - count
-				map_dic[int(prev_lst[0])] = '\t'.join(prev_lst)
-				dic[int(lst[0])] = int(lst[0]) - count
-				map_dic[int(lst[0])] = '\t'.join(lst)
+			else:
+				if prev_lst[3] != 'v':
+					dic[int(prev_lst[0])] = int(prev_lst[0]) - count #bahu - sAMskqwika
+					wrd = prev_lst[1] + lst[1] + nxt_lst[1]
+					root = prev_lst[2] + lst[1] + nxt_lst[2]
+					prev_lst[1] = wrd
+					prev_lst[2] = root
+					map_dic[int(prev_lst[0])] = '\t'.join(prev_lst)
+					grouped_id_lst.append(nxt_lst[0])
+					count += 2
+				else: # hE - samAna
+					dic[int(prev_lst[0])] = int(prev_lst[0]) - count
+					map_dic[int(prev_lst[0])] = '\t'.join(prev_lst)
+					dic[int(lst[0])] = int(lst[0]) - count
+					map_dic[int(lst[0])] = '\t'.join(lst)
 			
 			

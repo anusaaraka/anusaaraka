@@ -66,8 +66,7 @@ for i in range(0, len(eng_par_file)):
 		if i == j:
 			e_wrd_lst = e_parser_file_wrd[j].strip().split('\t')
 			e_wrds = e_wrd_lst[3][:-2]
-		#	print e_wrds
-			key = e_wrd_lst[1] + '-' + lst[2] + '\t' + lst[3][:-1]
+			key = e_wrd_lst[1] + '-' + lst[2] + '\t' + ids
 #			print key
 			#e_wrd_dic[key] = ids + '\t' + e_wrds + '\t{' +  e_wrd_lst[1] + ' ' +  e_wrd_lst[2] + '}'
 			e_wrd_dic[key] = ids + '\t' + e_wrds + '\t' +  e_wrd_lst[1] + '\t' +  e_wrd_lst[2]
@@ -131,8 +130,9 @@ for r in sorted(h_wrds):
 				eng_key_lst = e_wrd_dic[eng_key].split('\t')
 				val = align_info[key].split('/')
 				for i in range(0, len(val)):
-					if val[i]  == eng_key_lst[0]:
-						if i == 0 or i == len(val):
+					if val[i]  == eng_key_lst[0]:  
+						#Attaching '/' based on below conditions
+						if (i == 0 and len(val) == 1) or i == len(val)-1:
 							print '<b><FONT COLOR=brown>' +  eng_key_lst[1] + '  {</FONT>' + '<FONT COLOR=blue>' +  eng_key_lst[2] + '</FONT>' + '  <FONT COLOR=brown>' + eng_key_lst[3] + '}</FONT></b>',
 							flag = 1
 						else:
@@ -147,6 +147,7 @@ print
 
 for key in sorted(e_wrd_dic):
 	eng_key_lst = e_wrd_dic[key].split('\t')
+	
 	if no_match_lst != []:
 		for each in no_match_lst:
 			if eng_key_lst[0] == each:

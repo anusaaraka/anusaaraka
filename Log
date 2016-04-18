@@ -1,4 +1,4 @@
- 13-04-16
+ 18-04-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -32,11 +32,14 @@
  16. Browser/src/style.css:
 	Added colour for Inf_VP and
 	Modified colour for VP
- 17. Added unique_entries.py 
- 18. Added '...' in punctuations list in following files:
+ 17. script.js:
+	Commented enable_keyboard_shortcuts() line
+ 18. Added unique_entries.py 
+ 19. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
 	multi_word_expression_for_domain.c		multi_word_expression.c	
- 19. Added following new single and multi domain dics and Updated in changes_in_databases:
+ 20. Added documentation of universal_dependencies in Doc/Stanford_parser_documentation
+ 21. Added following new single and multi domain dics and Updated in changes_in_databases:
 	administrative_dic.txt		administrative_multi_dic.txt
 	civil_dic.txt			civil_multi_dic.txt
 	electrical_dic.txt		electrical_multi_dic.txt
@@ -50,17 +53,16 @@
 	account_dic.txt			account_multi_dic.txt	
 	banking_dic.txt			banking_multi_dic.txt
 	computer_dic.txt		computer_multi_dic.txt		wsd_dictionary.txt
- 20. Added documentation of universal_dependencies in Doc/Stanford_parser_documentation
- 21. Modified following files to add above dics to get canonical form and mixed domain dic: 
+ 22. Modified following files to add above dics to get canonical form and mixed domain dic: 
 	get_dictionary_in_canonical_form.sh
 	list-right
 	list_SMT
 	list_Anu_data_domain
 	list_Anu_data_multi_domain
- 22. Updated following Stanford versions 3.4.1 to 3.6.0
+ 23. Updated following Stanford versions 3.4.1 to 3.6.0
 	Stanford Parser
 	Stanford Tregex
- 23. Following files are modified accordingly:
+ 24. Following files are modified accordingly:
 	constituency_to_dependency.sh	stanford-parser/README	get_latest_version_stanford_parser.sh
 	run_lexicalize.sh		run_stanford.sh		run_multiple_parse_penn.sh
 	run_penn-factored.sh		run_penn-pcfg.sh	run_penn-rnn.sh
@@ -75,42 +77,42 @@
 	std_tregex/README		std_tregex/run_tregex.sh	std_tregex/run_tregex_for_multiparse.sh
 	run_alignment.sh		run_sentence_ace.sh	run_sentence_stanford.sh
 	run_sentence_stanford_minion.sh
- 24.  Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
+ 25.  Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
         gender_info.clp                 run_modules_std.bat     run_sentence_stanford.sh
         hindi_meaning.clp               run_modules_logon.bat   run_sentence_logon.sh
         tam_meaning.clp                 run_modules_ace.bat     run_sentence_ace.sh
         wsd_meaning.clp                 run_modules_ol.bat      run_sentence_ol.sh
         wsd_tam_meaning.clp		hindi_compound_meaning.clp
- 25. Added: 
+ 26. Added: 
 	dependency_alignment folder
 	phrasal_alignment/modify_anu_output.clp
- 26. Modified the following files to add dependency info
+ 27. Modified the following files to add dependency info
         dic_compile.sh				Anusaaraka_alignment.sh		 run_alignment.sh
 	create_eng_align_html_phrasal.clp	phrasal_alignment.css		phrasal_alignment.js
 	run_H_gen_sen_eng.bat
- 27. Added following files for dependency debug
+ 28. Added following files for dependency debug
         dep_align_debug.sh	print_dependency_matrix.py
- 28. Updated following lex files:
+ 29. Updated following lex files:
 	tagger.lex		-> Modified pattern for sent end.
 	stnford_relations.lex	-> Handled patterns when punctuations and -LRB- , -RRB- etc cases
 	dependency_parse.l	-> Handled syntax errors
 	dependency_parse.y	-> 	"
 	derivation_parse.l	->	"
- 29. Updated following shell files:
+ 30. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm
 	view_trees.sh				-> Updated according to new std version
 	run_logon_parser.sh			-> Modified -d to -s to check file exists inside 'if loop'
 	phrasal_alignment/compile.sh
- 30. Updated the following files 
+ 31. Updated the following files 
 	run_modules_ace.bat             print-pos-info.py
         run_modules_link.bat               
         run_modules_logon.bat                
         run_modules_ol.bat              
- 31. Updated following dictionaries:
+ 32. Updated following dictionaries:
 	changes_in_databases
 	provisional_multi_word_dictionary.txt
- 32. Updated Log.
+ 33. Updated Log.
  
  19-11-15
  ========
