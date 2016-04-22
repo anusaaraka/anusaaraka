@@ -76,17 +76,17 @@
  (printout fp "<td class=\"number\">"?p_id"."?s_id".A<a name=\"sentence_"?p_id"_"?s_id"_"?w_id"\" id=\"sentence_"?p_id"_"?s_id"_"?w_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td>"crlf"</tr>" crlf)
  )
 
- (deffunction print_caution_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
+ (deffunction print_caution_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type $?idiom_des) ;Modified ?idiom_des from single field to multifield by Roja(13-04-16)
  (printout fp "<tr class=\"row2\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B"))
  (if (or (eq ?sen_type truncated) (eq ?sen_type noun_absolute))then
  (printout fp "<a onclick=\"javascript: caution_"?sen_type"('"?sen_type"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_eliptical\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_"?w_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a></td> <td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
   else (if (eq ?sen_type idiom) then
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"(implode$ $?idiom_des)"\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type catastrophe) then
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_"?p_id"_"?s_id"_"?w_id"_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
- else (if (eq ?sen_type Default_mng_with_different_category) then 
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
+ else (if (eq ?sen_type Default_mng_with_different_category) then ;Modified caution symbol to warning symbol by Roja(14-04-16) 
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9888;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type Mixed_domain_mng_with_different_category) then ;Added else if by Roja(12-01-16) 
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Mixed_domain_mng_with_different_category\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else
@@ -506,7 +506,7 @@
  (defrule test_for_catastrophe_symbol
  (declare (salience 1900))
  (id-word ?id ?wrd)
- (not (sen_type-id-phrase ? ?id ?) )
+ (not (sen_type-id-phrase ? ?id $?) ) ;Modified phrase from single field to multifield by Roja(13-04-16)
  =>
  (assert (sen_type-id-phrase NONE ?id -))
  )
@@ -653,13 +653,13 @@
  (id-Apertium_output ?head_id ?apertium_output)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
- (sen_type-id-phrase ?sen_type ?id ?phrase)
+ (sen_type-id-phrase ?sen_type ?id $?phrase) ;Modified phrase from single field to multifield by Roja(13-04-16)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
- (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
+; (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase));Commented by Roja(13-04-16).Instead of phrase loading phrase value from idioms.clp
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type $?phrase)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -708,13 +708,13 @@
  (id-left_punctuation  ?id ?l_punc )
  (test (and (neq ?vib 0) (neq ?pp_id 0)))
  (test (member$ ?id $?g_ids))
- (sen_type-id-phrase ?sen_type ?id ?phrase)
+ (sen_type-id-phrase ?sen_type ?id $?phrase);Modified phrase from single field to multifield by Roja(13-04-16)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
- (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
+; (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase)) ;Commented by Roja(13-04-16).Instead of phrase loading phrase value from idioms.clp
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type $?phrase)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -755,14 +755,14 @@
  (id-left_punctuation  ?pp_id ?l_punc )
  (pada_info (group_head_id ?id)(vibakthi ?vib)(preposition $?pre ?pp_id $?pos))
  (test (and (neq ?vib 0) (neq ?pp_id 0)))
- (sen_type-id-phrase ?sen_type ?pp_id ?phrase)
+ (sen_type-id-phrase ?sen_type ?pp_id $?phrase);Modified phrase from single field to multifield by Roja(13-04-16)
  =>
  (retract ?f)
  (bind ?sign (- ?id ?pp_id))
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
- (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))  
- (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type ?idiom_des)
+; (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase)) ;Commented by Roja(13-04-16).Instead of phrase loading phrase value from idioms.clp 
+ (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type $?phrase)
  (print_padasutra_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_cat ?pp_padasuthra)
  (print_root_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?pp_suf ?pp_num)
  (print_dictionary_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?pp_cat ?pp_root)
@@ -797,13 +797,13 @@
  (id-Apertium_output ?id ?apertium_output)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
- (sen_type-id-phrase ?sen_type ?id ?phrase)
+ (sen_type-id-phrase ?sen_type ?id $?phrase);Modified phrase from single field to multifield by Roja(13-04-16)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
- (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
+; (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase)) ;Commented by Roja(13-04-16).Instead of phrase loading phrase value from idioms.clp
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type $?phrase)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -833,13 +833,13 @@
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
  (not (No complete linkages found))
- (sen_type-id-phrase ?sen_type ?id ?phrase)
+ (sen_type-id-phrase ?sen_type ?id $?phrase);Modified phrase from single field to multifield by Roja(13-04-16)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
- (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
+; (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase)) ;Commented by Roja(13-04-16).Instead of phrase loading phrase value from idioms.clp
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type $?phrase)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -867,14 +867,14 @@
  (id-padasuthra ?id ?padasuthra)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
- (sen_type-id-phrase ?sen_type ?id ?phrase)
+ (sen_type-id-phrase ?sen_type ?id $?phrase);Modified phrase from single field to multifield by Roja(13-04-16)
  (No complete linkages found)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
- (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
+; (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase)) ;Commented by Roja(13-04-16).Instead of phrase loading phrase value from idioms.clp
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type $?phrase)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
