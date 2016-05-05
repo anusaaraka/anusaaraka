@@ -76,25 +76,26 @@
 
  $HOME_anu_test/Anu_src/split_file.out hnd_parser_relns.txt dir_names.txt hindi_parser_rel_ids_tmp.dat
  $HOME_anu_test/Anu_src/split_file.out hnd_root_and_tam_info.txt dir_names.txt hindi_root_and_tam_info.dat
- #$HOME_anu_test/Anu_src/split_file.out hnd_parser_cat.txt dir_names.txt hnd_parser_cat.dat
+ #$HOME_anu_test/Anu_src/split_file.out hnd_parser_cat.txt dir_names.txt hindi_parser_cat.dat
 
-#rm -f */total-left-over.dat
+rm -f */total-left-over.dat
 #python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/get_omitted_sent_info.py $4 $5
 
 
  cd $PHRASAL_PATH
  while read line
  do
+#	echo $line
 	if [ "$3" == "general" ] ; then
         	cd $HOME_anu_test/bin 
-		sh run_alignment.sh $MYPATH/$line $1 $3 
+	timeout 500 sh run_alignment.sh $MYPATH/$line $1 $3 
 		cd $PHRASAL_PATH
 	else	
 	 
 	sh run_alignment.sh $MYPATH/$line $3
 	sh run_alignment-hi-en.sh $MYPATH/$line $3
         cd $HOME_anu_test/bin 
-	sh run_alignment.sh $MYPATH/$line $1 $line
+	timeout 500 sh run_alignment.sh $MYPATH/$line $1 $line
 	cd $PHRASAL_PATH
 	fi
  done < $MYPATH/dir_names.txt
