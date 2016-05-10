@@ -26,7 +26,7 @@ sample output :-
 %{
 #include <stdio.h>
 #include<string.h>
-char word[1000],root[1000],cat[100],tam[100];
+char word[1000],root[1000],cat[100],tam[100], vib[100];
 FILE *fp,*fp1;
 int len=0;
 char *ptr;
@@ -36,7 +36,7 @@ char *ptr;
 
 %%
 
-[\^][A-Za-z0-9]*		{	ptr=yytext;ptr=ptr+1;len=strlen(ptr);
+[\^][A-Za-z0-9 ]*		{	ptr=yytext;ptr=ptr+1;len=strlen(ptr);
 					strncpy(word,ptr,len);word[len]='\0';
 				}
 
@@ -44,7 +44,7 @@ char *ptr;
 [A-Za-z0-9]*[/][*][A-Za-z0-9]*[$]  { fprintf(fp,"(man_word-root-cat	%s	%s	dummy_cat)\n",word,word);//words which don't have morph information here we are printing dummy root as word itself and category as dummy_cat
 				   }
 
-[A-Za-z0-9]*<cat:[a-z]*>		{	ptr=yytext;
+[A-Za-z0-9 ]*<cat:[a-z]*>		{	ptr=yytext;
 					len=strcspn(ptr,"<");
 					strncpy(root,ptr,len);
 					root[len]='\0';
@@ -57,7 +57,7 @@ char *ptr;
 					fprintf(fp,"(man_word-root-cat	%s	%s	%s)\n",word,root,cat);
 			  	}
 
-[<]tam:[a-zA-Z0_]+[>]		{	ptr=strchr(yytext, ':')+1;
+[<]tam:[a-zA-Z01_]+[>]		{	ptr=strchr(yytext, ':')+1;
 					len=strlen(ptr);
 					strncpy(tam, ptr, len-1); tam[len-1]='\0';
 					fprintf(fp1,"(man_word-cat-tam      %s      %s      %s)\n",word,cat,tam);		
@@ -65,6 +65,12 @@ char *ptr;
 
 [\n]				{	fprintf(fp,";~~~~~~~~~~\n");
 					fprintf(fp1,";~~~~~~~~~~\n");
+				}
+
+[<]parsarg:[a-zA-Z0_]+[>]	{	ptr=strchr(yytext, ':')+1;
+					len=strlen(ptr);
+					strncpy(vib, ptr, len-1); vib[len-1]='\0';
+					fprintf(fp,"(man_word-root-vib-cat  %s      %s      %s	%s)\n",word,root,vib,cat);
 				}
 
 %%

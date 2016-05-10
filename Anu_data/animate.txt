@@ -76,7 +76,6 @@ bandit	1
 animal	1
 audience	1 
 hunter	1
-government	1
 college	1
 president	1
 chairperson	1
@@ -182,3 +181,4 @@ someone	1
 poor	1
 government	1
 messenger	1
+servant	1
