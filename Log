@@ -1,4 +1,4 @@
- 09-05-16
+ 11-05-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -98,13 +98,18 @@
 	dependency_parse.l	-> Handled syntax errors
 	dependency_parse.y	-> 	"
 	derivation_parse.l	->	"
+	add_snt_mrkr.lex	-> To avoid warnings in Ubuntu 14.04 and higher versions fixed bugs
+	constituency_parse.y	-> 	"
+	rasp_constituency_parse.y ->	"
+	wx_utf8.lex		->	"
  30. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
-	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm
+	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm and 
+						   compilation of non_canonical_form.lex
 	view_trees.sh				-> Updated according to new std version
 	run_logon_parser.sh			-> Modified -d to -s to check file exists inside 'if loop'
 	phrasal_alignment/compile.sh
-	check-existence-for-clp-file.sh		
+	check-existence-for-clp-file.sh	
  31. Updated the following files 
 	run_modules_ace.bat             print-pos-info.py
         run_modules_link.bat               

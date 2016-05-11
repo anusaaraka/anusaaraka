@@ -35,7 +35,7 @@ oY	{	printf("ऑ");	}
 <consonant>O	{	printf("ौ");	BEGIN INITIAL;	}
 <consonant>U	{	printf("ू");	BEGIN INITIAL;	}
 <consonant>Q	{	printf("ॄ");	BEGIN INITIAL;	}
-<consonant>a	{	printf("");	BEGIN INITIAL;	}
+<consonant>a	{		BEGIN INITIAL;	}
 <consonant>e	{	printf("े");	BEGIN INITIAL;	}
 <consonant>i	{	printf("ि");	BEGIN INITIAL;	}
 <consonant>o	{	printf("ो");	BEGIN INITIAL;	}
