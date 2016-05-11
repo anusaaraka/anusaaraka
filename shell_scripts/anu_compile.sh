@@ -13,6 +13,7 @@
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
  $HOME_anu_test/Anu_src/comp.sh canonical_form_correction
  $HOME_anu_test/Anu_src/comp.sh canonical_to_conventional
+ $HOME_anu_test/Anu_src/comp.sh non_canonical_form
 
  echo "Generating Canonical form WSD rules"
  cd $HOME_anu_test/WSD/wsd_rules/

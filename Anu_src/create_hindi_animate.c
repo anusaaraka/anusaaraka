@@ -1,7 +1,7 @@
 /* Program written by Roja 06-02-16 
 *  To create hindi animate list from english animate dictionary using default dictionary   
 *  RUN: ./create_hindi_animate.out dict.gdbm  eng_animate.txt  > hnd_animate.txt	
-* 	Ex: ./create_hindi_animate.out default-iit-bombay-shabdanjali-dicg.gdbm  eng-animate-list.txt  > hnd_animate.txt
+* 	Ex: ./create_hindi_animate.out default-iit-bombay-shabdanjali-dic.gdbm  eng-animate-list.txt  > hnd_animate.txt
 *********************************************************************/
 
 #include<stdio.h>
@@ -55,7 +55,7 @@
 				printf("%s\t1\n",value); 
 		}
       }
-      line=NULL;  
+      line=NULL;  value=NULL;
   }
   fclose(fp);
   gdbm_close(dbf);

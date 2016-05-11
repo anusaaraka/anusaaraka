@@ -68,7 +68,9 @@ expression: LEFT_PAREN {found=0;my_level++;current_sub_level[my_level]++;
                          strcpy(token,$3);
 
                          my_token_count++;
-			 sprintf(str2,"%d\0",my_token_count);strcat($3,str2);
+			 //sprintf(str2,"%d\0",my_token_count); strcat($3,str2);
+			 //Modified above step as shown below by Roja(11-05-16). To avoid warnings in Ubuntu 14.04 and above
+			 sprintf(str2,"%d",my_token_count); str2[strlen(str2)] = '\0';  strcat($3,str2); 
                          strcpy(my_mother[my_level][current_sub_level[my_level]],$3);
                          sprintf(str3,"(Node-Category\t%s\t%s)\n",$3,token); 
                          strcpy(node_cat[count],str3);
@@ -101,13 +103,17 @@ sub_expression:
 	|
 	STRING { strcat(my_temp[my_level],$1); strcat(my_temp[my_level]," ");
                    count1=count1+1;
-        	           sprintf(buffer,"P%d\0",count1);
+        	           //sprintf(buffer,"P%d\0",count1);
+			   //Modified above step as shown below by Roja(11-05-16). To avoid warnings in Ubuntu 14.04 and above
+        	           sprintf(buffer,"P%d",count1); buffer[strlen(buffer)]='\0';
                  strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
               }
 	|
 	sub_expression STRING {strcat(my_temp[my_level],$2);strcat(my_temp[my_level]," ");
                                      count1=count1+1;
-                                     sprintf(buffer,"P%d\0",count1);
+        	           	     //sprintf(buffer,"P%d\0",count1);
+	  			     //Modified above step as shown below by Roja(11-05-16). To avoid warnings in Ubuntu 14.04 and above
+                                     sprintf(buffer,"P%d",count1); buffer[strlen(buffer)]='\0';
                                strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
                               }
 	;

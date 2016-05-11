@@ -19,7 +19,10 @@
 #  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 ##############################################################################
-
+*/
+/*Comments with Org:: are commented by Roja to fix the bugs in print statements.
+Original print statements are stored in comments with 'Org::'. These patterns need to be
+tested so storing the original info in comments 
 */
  #include<string.h>
  int i;
@@ -28,15 +31,15 @@
 %%
 [\.\?\!]\n		{printf("%c</s>\n<s>",yytext[0]); BEGIN ABSORB;}
 [\.\?\!]["']\n		{printf("%c%c</s>\n<s>",yytext[0],yytext[1]); BEGIN ABSORB;}
-<ABSORB>\n		{printf("");BEGIN 0;}
+<ABSORB>\n		{BEGIN 0;}
 <ABSORB>.		{printf("%c",yytext[0]);BEGIN 0;}
 [\.\?\!]["')]?[ ][ ]\n	{printf("%c</s>\n<s>",yytext[0]); BEGIN ABSORB;}
 [\.\?\!]["')]?[ ][ ]	{printf("%c</s>\n<s>",yytext[0]);}
-ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>",yytext[0]);}
+ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>"); /*Org:: printf("ABBR</s>\n<s>",yytext[0]);      */}
 
 
-[\)'][ ]\.		{printf("%c%c</s>",yytext[0],yytext[2],yytext[3]); BEGIN ABSORB; }   
-[\)'][ ]\.[ ][ ]	{printf("%c%c</s>\n<s>",yytext[0],yytext[2],yytext[3]); BEGIN ABSORB; }
+[\)'][ ]\.		{printf("%c%c</s>",yytext[0],yytext[2]);/*Org::printf("%c%c</s>",yytext[0],yytext[2],yytext[3]);*/ BEGIN ABSORB; }   
+[\)'][ ]\.[ ][ ]	{printf("%c%c</s>\n<s>",yytext[0],yytext[2]);/*Org::printf("%c%c</s>\n<s>",yytext[0],yytext[2],yytext[3]);*/ BEGIN ABSORB; }
 \.[ ][0-9]		{printf("%c</s>\n<s>%c",yytext[0],yytext[2]); BEGIN ABSORB; }
 [ ][A-Za-z][.][ ][A-Za-z][.]    {printf("%c%c%c%c%c",yytext[0],yytext[1],yytext[2],yytext[4],yytext[5]); }
 [ ][A-Za-z][.][ ][A-Za-z][.][ ][A-Z]	{printf("%c%c%c%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[2],yytext[4],yytext[5],yytext[7]); }
