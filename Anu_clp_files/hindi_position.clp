@@ -37,6 +37,7 @@
  (assert (No complete linkages found))
  (assert (id-word))
  (assert (root-verbchunk-tam-chunkids))
+ (assert (meaning_to_be_decided))
  )
  
  ;---------------------------------------------------------------------------------------------------------------
@@ -643,3 +644,5 @@
 	(printout  ?*debug*  "(Rule_name-before_movement-after_movement id_order_for_NCL_with_no_relations  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?ids))"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
+  
+
