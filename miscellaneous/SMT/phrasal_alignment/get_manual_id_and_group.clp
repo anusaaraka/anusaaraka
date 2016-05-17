@@ -522,4 +522,33 @@
 =>
 	(modify ?f0 (word SYMBOL-SLASH))
 )
+;==================================== get hyphen word inf0 ==============================
+;Added by Shirisha Manju
+;In a good number of situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error.
+;vAswavika jIvana meM [bahuwa-sI] sWiwiyoM meM vaswuoM ke AmApa (sAija) kI upekRA kI jA sakawI hE Ora binA aXika wruti ke unheM eka [biMxu-vaswu] mAnA jA sakawA hE .
+;not modified in manual_word_info bcoz we are not modifying phrasal info
+(defrule cp_man_hypen_word
+(declare (salience 100))
+(or (manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?v))(id-word-vib ?mid - ?mng - $?v))
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "-" ?mng) FALSE))
+(not (id-hyphen_word-vib ?mid $?))
+=>
+        (bind ?new_mng (remove_character "-" (implode$ (create$  ?mng)) " "))
+        (assert (id-hyphen_word-vib ?mid - ?new_mng - $?v))
+        (bind ?new_mng1 (remove_character " " (implode$ (create$  ?new_mng)) ""))
+        (assert (id-hyphen_word-vib ?mid - ?new_mng1 - $?v))
+)
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;ex : man: praXAnamanwrI dic : praXAna manwrI 
+(defrule cp_man_fact
+(declare (salience 100))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi ?v))
+(or (id-Apertium_output ? ?m ?m1) (id-Apertium_output ? ?m ?m1 ?v&ko|ke|se))
+(test (eq (numberp ?mng) FALSE))
+(test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+=>
+        (assert (id-hyphen_word-vib ?mid - ?m ?m1 - ?v))
+)
 

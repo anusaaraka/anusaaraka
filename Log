@@ -1,4 +1,4 @@
- 11-05-16
+ 13-05-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -12,6 +12,7 @@
                                                   (instead of first id consider any id for PropN)
   8. sd_pada.clp                :  Modified : get_tam_type (added has_been_en)
   9. vibakthi.clp               :  Added    : of_vib_movement
+				   Modified : animate_vibakthi_rule (added test condition)
                                    Modified rules to use word fact instead original word and root
  10. causative_verb_mng.clp 	:  Modified : get_rule_info  [added test condition]
  11. sd_chunker.clp		:  Modified : print_chunk (handled Inf_VP)
@@ -82,7 +83,8 @@
         hindi_meaning.clp               run_modules_logon.bat   run_sentence_logon.sh
         tam_meaning.clp                 run_modules_ace.bat     run_sentence_ace.sh
         wsd_meaning.clp                 run_modules_ol.bat      run_sentence_ol.sh
-        wsd_tam_meaning.clp		hindi_compound_meaning.clp
+        wsd_tam_meaning.clp		run_modules_link.bat	run_sentence_link.sh
+	hindi_compound_meaning.clp
  26. Added: 
 	dependency_alignment folder
 	phrasal_alignment/modify_anu_output.clp
@@ -110,15 +112,14 @@
 	run_logon_parser.sh			-> Modified -d to -s to check file exists inside 'if loop'
 	phrasal_alignment/compile.sh
 	check-existence-for-clp-file.sh	
+	Anusaaraka_link.sh
  31. Updated the following files 
-	run_modules_ace.bat             print-pos-info.py
-        run_modules_link.bat               
-        run_modules_logon.bat                
-        run_modules_ol.bat              
+	print-pos-info.py		Dictionaries/Readme
  32. Updated following dictionaries:
 	changes_in_databases
 	provisional_multi_word_dictionary.txt
 	apertium-en-hi.en.metadix
+	apertium_hn.dix
  33. Updated Log.
 
  

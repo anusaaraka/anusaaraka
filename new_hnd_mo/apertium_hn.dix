@@ -16517,9 +16517,9 @@
 <e lm="lAda"><i>lAda</i><par n="kroXa/__n"/></e>
 <e lm="lada"><i>lad</i><par n="uT/a__v"/></e>
 <e lm="ladaKadA"><i>ladaKadA</i><par n="KA/__v"/></e>
-<e lm="ladakAdAhata"><i>ladakAdAhata</i><par n="BIda/__n"/></e>
-<e lm="ladakAdA"><i>ladakAdA</i><par n="KA/__v"/></e>
-<e lm="ladakA"><i>ladak</i><par n="regular__adj-noun"/></e>
+<e lm="ladaKadAhata"><i>ladaKadAhata</i><par n="BIda/__n"/></e>
+<!-- <e lm="ladaKadA"><i>ladaKadA</i><par n="KA/__v"/></e> 
+<e lm="ladakA"><i>ladak</i><par n="regular__adj-noun"/></e> -->
 <e lm="ladakA"><i>ladak</i><par n="regular__adj-noun"/></e>
 <e lm="ladakApana"><i>ladakApan</i><par n="Gar/a__n"/></e>
 <e lm="ladakI"><i>ladak</i><par n="ladak/I__n"/></e>

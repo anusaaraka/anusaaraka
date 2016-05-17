@@ -14,6 +14,7 @@
         (retract ?f)
         (bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 2) ?word) "a")))
         (assert (man_word-root-cat ?word ?root modified_cat))
+	(printout t "Warning: morph root missing " ?word crlf)
 )
 ;-------------------------------------------------------------------------------------
 ;karezge = kara ; xeKezge = xeKa
@@ -31,6 +32,7 @@
         (retract ?f0)
 	(bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 4) ?word) "a")))
         (assert (man_word-root-cat  ?word ?root v))
+	(printout t "Warning: morph root missing " ?word crlf)
 )
 ;-------------------------------------------------------------------------------------
 ;Then, the dimension of λ A is the product of the dimensions of λ and A.
@@ -44,20 +46,21 @@
         (retract ?f)
         (bind ?root (string-to-field (sub-string 1 (- (length ?word) 2) ?word) ))
         (assert (man_word-root-cat ?word ?root modified_cat))
+	(printout t "Warning: morph root missing " ?word crlf)
 )
 ;-------------------------------------------------------------------------------------
 ;kaBI-kaBI hamArI kuCa Ese ajanabiyoM se mulAkAwa ho jAwI hE jinameM hameM eka Sabxa bAwacIwa ke binA BI pahale pala se hI xilacaspI pExA ho jAwI hE .
 ;ajanabiyoM => ajanabi
-(defrule modify_morph_root3
-(declare (salience 1100))
-?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
-(test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "yoM"))
-=>
-        (retract ?f)
-        (bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 4) ?word) "I" )))
-        (assert (man_word-root-cat ?word ?root modified_cat))
-)
-
+;(defrule modify_morph_root3
+;(declare (salience 1100))
+;?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+;(test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "yoM"))
+;=>
+;        (retract ?f)
+;        (bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 4) ?word) "I" )))
+;        (assert (man_word-root-cat ?word ?root modified_cat))
+;)
+;
 
 ;==================================== Modify chunk info ==================================
 

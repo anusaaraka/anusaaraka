@@ -8,9 +8,11 @@
 
  cd $MYPATH/$1_tmp/$2
  echo "(defglobal ?*path* = $HOME_anu_test)" > global_path.clp
+ echo "(defglobal ?*wsd_path* = $HOME_anu_test/WSD/wsd_rules)" >> global_path.clp
  echo "(defglobal ?*provisional_wsd_path* = $HOME_anu_provisional_wsd_rules)" >> global_path.clp
  echo "(Parser_used Link-Parser)" >> parser_type.dat
  echo "(Domain $5)" >> domain.dat
+ echo "(language hindi)" >> language.dat
 
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_link.bat >  $1.error
  #Following two files are added to handle PropN fact and SYMBOL facts in layered o/p 

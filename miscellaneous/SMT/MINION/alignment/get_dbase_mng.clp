@@ -208,6 +208,7 @@
  (id-original_word ?id ?word)
  (id-cat_coarse ?id ?cat)
  (id-word ?id ?w)
+ (test (neq (numberp ?word) TRUE))
  =>
 		(retract ?f0)
 		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?word ?cat)
@@ -228,6 +229,7 @@
  (id-original_word ?id ?word)
  (id-root ?id ?root)
  (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?root) TRUE))
  =>
 
 		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat)
@@ -271,6 +273,7 @@
  (id-cat_coarse ?id ?cat)
  (default-cat ?cat1)
  (test (neq ?cat ?cat1))
+ (test (neq (numberp ?root) TRUE))
  =>
 
                 (dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat1)
@@ -358,6 +361,7 @@
  ;Added by Shirisha Manju (10-4-13)
  (defrule get_mngs_for_right_word
  ?f0<-(right_word ?id ?rw)
+ (id-cat_coarse ?id ~number)
  =>
         (get_possible_mngs ?id ?rw right)
  )
@@ -365,6 +369,7 @@
  ;Added by Shirisha Manju (10-4-13)
  (defrule get_mngs_for_left_word
  ?f0<-(left_word ?id ?lw)
+ (id-cat_coarse ?id ~number)
  =>
         (get_possible_mngs ?id ?lw left)
  )
