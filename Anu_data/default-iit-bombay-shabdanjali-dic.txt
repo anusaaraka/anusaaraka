@@ -3833,7 +3833,7 @@ adumbration_noun	rUpareKA/pUrvABAsa
 advance_UNDEFINED	PElanA
 advance_adjective	pUrva/agrima
 advance_noun	vqxXi/vikAsa/unnawi/suJAva/prayAsa/praswAva/pragawi/peSagI/mUlyavqxXi/agrima_Xana/agrima_rASi/agragawi/PElAva/vikAsa{xIrGakAlIna_ga/agrimarASi/baDawa/xoswI/pyAra_jawAne_kI_koSiSa/pahale_hI/agragAmI
-advance_verb	warakkI_kara/vikAsa_kara/vikAsa_ho/unnawi_ho/suJAva_xe/praswuwa_kara/pragawi_kara/niSciwa_samaya_se_pUrva_kara/baDAvA_xe/baDA/baDa/agrima_xe/agrasara_ho/agrAnIwa_kara/Age_lA/Age_kara/Age_baDA/Age_baDa/Age_baD/Age_baDa[baDAnA]/agrima_rASi_xe/vicAra_yA_suJAva_xe
+advance_verb	warakkI_kara/vikAsa_kara/vikAsa_ho/unnawi_ho/suJAva_xe/praswuwa_kara/pragawi_kara/niSciwa_samaya_se_pUrva_kara/baDAvA_xe/baDA/baDa/agrima_xe/agrasara_ho/agrAnIwa_kara/Age_lA/Age_kara/Age_baDA/Age_baDa/agrima_rASi_xe/vicAra_yA_suJAva_xe
 advanced_adjective	unnawa/vikasiwa/pragawiSIla/agrima/ucca_SreNI_ke/nayA/aBI_waka_sAmAnya_rUpa_se_svIkqwi_nA_milA_huA/baDA_huA
 advanced_verb	Age_raKa
 advanceder_UNDEFINED	ucca_SreNI_ke
@@ -4998,7 +4998,7 @@ alternator_noun	prawyAvarwi/prawyAvarwaka
 alternators_UNDEFINED	prawyAvarwi
 alternet_UNDEFINED	Eltaraneta
 alters_UNDEFINED	baxala_jAnA
-although_conjunction	yaxyapi/hAlAfki
+although_conjunction	yaxyapi/hAlAfki/yUz_wo
 altimeter_noun	UzcAI_nApane_kA_eka_yanwra/wufgawAmApI
 altimeters_UNDEFINED	UzcAI_nApane_kA_eka_yanwra
 altitude_noun	UzcAI/UzcA_sWAna
@@ -7736,7 +7736,7 @@ awake_adjective	jAgarUka/jagA_huA/jAge_hue
 awake_verb	jAga/jAgarUka_kara/jagA
 awaked_UNDEFINED	jagAnA
 awaken_UNDEFINED	jAga_jA
-awaken_verb	uTA/jAgqwa_kara/jAga/jagA/jAga_jA[jagA_xenA]
+awaken_verb	uTA/jAgqwa_kara/jAga/jagA/jAga_jA/jagA_xe
 awakened_UNDEFINED	jAga_jAnA
 awakening_noun	jAgqwi/uxboXana/jAganA
 awakenings_UNDEFINED	jAgqwi
@@ -7933,7 +7933,7 @@ back-ups_UNDEFINED	prawilipi
 back_adjective	ultA/pqRTa/pICalA/piCalA/pICadA_huA/pArSva/pICe_kA
 back_adverb	vApasa/punaH/Pira/pICe_kI_waraPa/pICe_kI_ora/pICe/pahale/javAba_meM/baxale_meM/awIwa_kAla_meM/niyanwraNa_meM
 back_noun	pITa/rIDa_kI_haddI/rakRAwmaka_sahayoga/rakRA_pafkwi_kA_KilAdI/rakRA/pqRTaBUmi/pqRTa_BAga/pICe_kA_KilAdI/PICe/pICe/piCavAde/piCavAdA/pICalA_hissA/pICalA_Asana/bEka/piCalA_hissA
-back_verb	vApasa_lOta/samarWana_kara/sahAyawA_kara/sAbiwa_kara/PICe_le/pICe_le/pICe_hata/pICe_calA/piCavAde_ho/para_xAzva_lagA/para_bAjI_lagA/bAjI_lagA/pICe_honA`/samarWana_xe[pAnA]/sahArA_xe
+back_verb	vApasa_lOta/samarWana_kara/sahAyawA_kara/sAbiwa_kara/PICe_le/pICe_le/pICe_hata/pICe_calA/piCavAde_ho/para_xAzva_lagA/para_bAjI_lagA/bAjI_lagA/pICe_ho/samarWana_xe[pAnA]/sahArA_xe
 backache_noun	pITa_xarxa/pITa-xarxa
 backaches_UNDEFINED	pITa_xarxa
 backbit_UNDEFINED	pITa_pICe_ninxA_karanA
@@ -21233,8 +21233,7 @@ demystified_UNDEFINED	rahasya_hatAnA
 demystifies_UNDEFINED	rahasya_hatAnA
 demystify_verb	rahasya_hatA
 demystifying_UNDEFINED	rahasya_hatAnA
-den_UNDEFINED	mAzda
-den_noun	nijI_kamarA/mAzxa/manoraFjana-kakRa/Koha/addA
+den_noun	mAzxa/nijI_kamarA/manoraFjana-kakRa/Koha/addA
 denationalisation_UNDEFINED	virARtrIkaraNa
 denationalisations_UNDEFINED	virARtrIkaraNa
 denationalise_UNDEFINED	virARtrIkaraNa_karanA
@@ -24247,7 +24246,7 @@ draw-bridge_noun	KIFca_kara_pula_ko_bazxa_karane_vAlA_waKwA
 draw-string_noun	karRaNa_dorI/WElA_Axi_bazxa_karane_kI_dorI
 draw-up_verb	KAkA_wEyAra_kara/Akara_ruka
 draw_noun	niRkAsana/drA/citrAmkana/lAtarI/nambara_nikalanA/droY{prawiyogiwA_jisakI_hAra_jIwa_kA_nirNaya_na_ho}/BIda_ko_ekawriwa_karane_hewu_kArya_yA_GatanA/xerI_se_kisI_vaswu_ko_samaJa_pAnA
-draw_verb	ciwra_banA/XUzvA_nikAla/wEyAra_kara/varNana_kara/prApwa_kara/nikAl/nikAlanA/nikAla/nikala/mila/liKa/le/le_jA/lABa_kamA/KulavA/KIFc/KIFca/KIFca_le/KIFca_kara_le_jA/kAta/kasa_mAra/kara/grahaNa_kara/ciwriwa_kara/citra_banA/cAha/bawA/Bara/banA/bahA/Azwe_nikAla/anirNiwa_kara/anirniwa_kara/A/AkqRta_kara/AkarRiwa_kara/AkarRaNa/[bAhara]_nikAla/KIFca_kara_nikAla/niRkarRa_nikAla/ekawriwa_kara/nambara_yA_kArda_yA_tikata_uTA_kara_vijayI_GoRiwa_kara/gaharI_sAzsa_le/nirASa_ho_jA/eka_sWAna_para_sImiwa_raKa/pAnI_kI_niSciwa_sawaha/KIFcakara_baDA
+draw_verb	ciwra_banA/XUzvA_nikAla/wEyAra_kara/varNana_kara/prApwa_kara/nikAla/nikala/mila/liKa/le/le_jA/lABa_kamA/KulavA/KIFca/KIFca_le/KIFca_kara_le_jA/kAta/kasa_mAra/kara/grahaNa_kara/ciwriwa_kara/citra_banA/cAha/bawA/Bara/banA/bahA/Azwe_nikAla/anirNiwa_kara/anirniwa_kara/A/AkqRta_kara/AkarRiwa_kara/AkarRaNa/bAhara_nikAla/KIFca_kara_nikAla/niRkarRa_nikAla/ekawriwa_kara/nambara_yA_kArda_yA_tikata_uTA_kara_vijayI_GoRiwa_kara/gaharI_sAzsa_le/nirASa_ho_jA/eka_sWAna_para_sImiwa_raKa/pAnI_kI_niSciwa_sawaha/KIFcakara_baDA
 draw_verbal_noun	kasa_mAra
 drawback_noun	kamI
 drawbacks_UNDEFINED	kamI
@@ -29204,7 +29203,7 @@ fevered_adjective	buKAra_se_graswa/jvara_se_wapwa/cinwAmaya/awi_uwwejiwa_honA
 fevereder_UNDEFINED	awi_uwwejiwa_honA
 feveredest_UNDEFINED	awi_uwwejiwa_honA
 fevering_UNDEFINED	uwwejanA
-feverish_adjective	halkA_buKAra_honA/uwwejiwa/jvarajanya/jvaragraswa/aXika_uwwejanA_honA
+feverish_adjective	halkA_buKAra_honA/uwwejiwa/jvarajanya/jvaragraswa/aXika_uwwejanA_honA/uwwejiwa_ho_kara
 feverisher_UNDEFINED	aXika_uwwejanA_honA
 feverishest_UNDEFINED	aXika_uwwejanA_honA
 feverishly_adverb	uwwejiwa_avasWA_meM/uwwejanApUrvaka
@@ -35013,8 +35012,7 @@ guttering_noun	nikAsa-vyavasWA
 gutters_UNDEFINED	CotI_CotI_nAliyAz_banAnA
 gutting_UNDEFINED	anwadI
 guttural_adjective	kaNTya
-guy_UNDEFINED	puruRa
-guy_noun	rassA/gAI_Paksa_kA_puwalA/AxamI/purURa
+guy_noun	puruRa/AxamI/rassA/gAI_Paksa_kA_puwalA
 guy_verb	majAka_udA/hazsI_udA
 guyed_UNDEFINED	purURa
 guying_UNDEFINED	purURa
@@ -35788,8 +35786,6 @@ hardboard_noun	kaTora_gawwA/motA_xaPwI
 hardboards_UNDEFINED	motI_xaPwI
 harden_UNDEFINED	kadA_ho_jA
 harden_verb	xqDa_banA/saKwa_kara/saKwa_banA/pakkA_banA/kaTora_kara/kaTora_banA/kadA_kara
-hardened_UNDEFINED	kadA_karanA
-hardening_UNDEFINED	kadA_karanA
 hardening_noun	kaTorIkaraNa
 hardens_UNDEFINED	kadA_karanA
 harder_UNDEFINED	kaTina
@@ -36451,7 +36447,7 @@ hebraic_noun	yahUxI
 hebrew_noun	yahUxI
 heck_noun	JallAhata_kI_aBivyakwi
 heckle_UNDEFINED	bIca_bIca_meM_toka
-heckle_verb	praSnoM_se_wafga_kara/bIca_bIca_meM[praSnoM_se]_toka
+heckle_verb	praSnoM_se_wafga_kara/bIca_bIca_meM_praSnoM_se_toka
 heckled_UNDEFINED	bIca_bIca_meM_tokanA
 heckler_noun	praSna_pUCane_vAlA/wafga_karane_vAlA
 hecklers_UNDEFINED	praSna_pUCane_vAlA
@@ -43613,7 +43609,7 @@ keep-on_verb	jArI_raha[raKanA]/makAna_raKa/nOkarI_meM_raKa
 keep-oneself-in_verb	lagAwAra/paryApwa_lewe_raha
 keep-out_verb	xUra_raha[raKanA]
 keep-to-oneself_verb	apane_meM_raha
-keep-to_verb	rAswe_para_raha[raKanA]
+keep-to_verb	rAswe_para_raha/rAswe_para_raKa
 keep-under_verb	xabAkara_raKa/nIce_raKa
 keep-up-with_verb	samAna_gawi_se_cala/samparka_raKa
 keep-up_verb	jArI_raha{acCA_mOsama}
@@ -48497,7 +48493,7 @@ melodramatically_adverb	awinAtakIyawA_se/awinAtakIya_Dafga_se
 melody_noun	maXura_safgIwa/maXura_gIwa
 melon_noun	warabUja
 melons_UNDEFINED	warabUja
-melt_verb	piGalA/XIre-XIre_Gula_jA/XIre-XIre_AzKoM_se_oJala_ho/piGal/piGala/kama_ho/gala/piGalA[piGalanA]
+melt_verb	piGalA/XIre-XIre_Gula_jA/XIre-XIre_AzKoM_se_oJala_ho/piGala/kama_ho/gala
 meltdown_noun	paramANu_xurGatanA
 melted_UNDEFINED	piGalAnA
 melting-point_noun	galanAfka/wApamAna_jisa_para_paxArWa_piGalawA_hE
@@ -48718,7 +48714,7 @@ mescalines_UNDEFINED	eka_waraha_kI_naSIlI_xavA
 mescalins_UNDEFINED	eka_waraha_kI_naSIlI_xavA
 mesdemoiselles_UNDEFINED	kumArI
 mesh_noun	jAlI/jAla
-mesh_verb	Pita_ho/Pazsa/jAla_meM_Pazsa[PazsAnA]
+mesh_verb	Pita_ho/Pazsa/jAla_meM_Pazsa/jAla_meM_PazsA
 meshed_UNDEFINED	jAla
 meshed_adjective	jAlInumA/eka-xUsare_meM_PazsA_huA
 meshes_UNDEFINED	jAla
@@ -57457,7 +57453,7 @@ personator_UNDEFINED	CaxmaveSI
 personification_noun	mAnavIkaraNa/sAkAra_rUpa
 personifications_UNDEFINED	mAnavIkaraNa
 personified_UNDEFINED	vicAra_prakata_karanA
-personified_adjective	sAkRAwa
+personified_adjective	mAnavIkqwa/sAkRAwa
 personifies_UNDEFINED	vicAra_prakata_karanA
 personify_verb	mAnavIkaraNa_kara/mUrwa_rUpa_ho/vicAra_prakata_kara
 personifying_UNDEFINED	vicAra_prakata_karanA
@@ -93568,7 +93564,6 @@ trypsin_noun	kloma-rasa/tripsina
 anaphylactic_adjective	wIvragAhiwA_saMbaMXI
 immobilization_noun	nisaMcAlana
 feverish_noun	halkA_buKAra
-feverish_adjective	uwwejiwa_ho_kara
 dismayingly_adverb	nirASAwmaka_rUpa_se
 one-favoured_adjective	EsA_hI_eka
 north-south_adjective	uwwara-xakRiNa

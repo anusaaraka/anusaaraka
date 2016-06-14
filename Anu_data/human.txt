@@ -155,3 +155,4 @@ someone	1
 poor	1
 government	1
 servant	1
+cousin	1

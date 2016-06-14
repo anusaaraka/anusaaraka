@@ -8912,6 +8912,7 @@
 <e lm="Barga"><i>Barga</i><par n="kroXa/__n"/></e>
 <e lm="baricCA"><i>baricCA</i><par n="ASA/__n"/></e>
 <e lm="barI"><i>barI</i><par n="ajAwI/__adj"/></e>
+<e lm="BArI"><i>BArI</i><par n="ajAwI/__adj"/></e>
 <e lm="BArIjala"><i>BArIjala</i><par n="kroXa/__n"/></e>
 <e lm="bArIka"><i>bArIka</i><par n="amIra/__adj"/></e>
 <e lm="BARika"><i>BARika</i><par n="amIra/__adj"/></e>
@@ -21917,6 +21918,7 @@
 <e lm="pIwa"><i>pIwa</i><par n="amIra/__adj"/></e>
 <e lm="piwA"><i>piwA</i><par n="rAjA/__n"/></e>
 <e lm="PIwA"><i>PIw</i><par n="regular__adj-noun"/></e>
+<e lm="piwAjI"><i>piwAjI</i><par n="pAnI/__n"/></e>
 <e lm="pIwala"><i>pIwala</i><par n="BIda/__n"/></e>
 <e lm="piwAmaha"><i>piwAmah</i><par n="Gar/a__n"/></e>
 <e lm="piwAmahI"><i>piwAmah</i><par n="ladak/I__n"/></e>
@@ -24436,6 +24438,7 @@
 <e lm="saBAgqha"><i>saBAgqha</i><par n="kroXa/__n"/></e>
 <e lm="sabaiMspektara"><i>sabaiMspektara</i><par n="kroXa/__n"/></e>
 <e lm="saba"><i>saba</i><par n="amIra/__adj"/></e>
+<e lm="saba"><i>saba</i><par n="Apa/__p"/></e>
 <e lm="saBA"><i>saBA</i><par n="ASA/__n"/></e>
 <e lm="sabajaja"><i>sabajaja</i><par n="kroXa/__n"/></e>
 <e lm="sabajI"><i>sabajI</i><par n="AjAxI/__n"/></e>

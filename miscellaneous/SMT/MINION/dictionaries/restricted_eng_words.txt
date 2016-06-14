@@ -65,7 +65,7 @@ following	agalA/sahAyaka/nimnAfkiwa/nimnaliKiwa/anugAmI/AgAmI/Age_xiyA_huA/SiRya
 for	kyofki/ke_lie/ke_liye/kI_ora_se/ke_hisAba_se/waka
 from	se/ke/ke_yahAz_se
 given	AxI/viSeRa/nirXAriwa/niSciwa/xeKawe_hue/pUrvAnumAna/xe
-gone	raKA_jAnA/xivafgawa/mqwa
+#gone	raKA_jAnA/xivafgawa/mqwa
 he	usane/unhoMne/vaha/usa/yaha
 her	usakA/vaha/usakI/use/usako/yaha
 hers	usa_swrI_kA/usakI

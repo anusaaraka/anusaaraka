@@ -8,7 +8,7 @@ aside_from	1
 as_per	1
 as_to	1
 as_well_as	1
-away_from	1
+#away_from	1  7 miles away from the Mughal Sarai Station on the main railway line going from Mughal Sarai to Amritsar and Dehradun there is Kashi . mugala sarAya se amqwasara waWA xeharAxUna jAne vAlI muKya relave lAina para mugala sarAya steSana se 7 mIla xUra kASI hE .
 because_of	1
 but_for	1
 by_means_of	1
