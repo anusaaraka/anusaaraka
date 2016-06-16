@@ -3,7 +3,7 @@
  (deffunction never-called ()
  (assert (id-sd_cat))
  (assert (parserid-word))
- (assert (word-nertype))
+ (assert (word-wordid-nertype))
  )
 
  (defglobal ?*cat_fp* = sd_cat_fp)
@@ -38,11 +38,10 @@
 	(assert (has_been_modified ?pid))
   )
   ;------------------------------------------------------------------------------------------
-  ;Modified fact (word-wordid-nertype) to (word-nertype) 
   ;Modified this rule by Roja (06-06-13) Suggested by Chaitanya sir
   (defrule PropN_rule_from_NER
   (declare (salience 12))
-  (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
+  ((word-wordid-nertype ?word&~of ?id PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
   (parserid-word ?id ?word)
   ?f0<-(id-sd_cat  ?id ?)
   =>
@@ -54,7 +53,7 @@
   ;Added by Roja(13-06-13) ;Ex: John's family is renovating their kitchen.
   (defrule PropN_rule_from_NER1
   (declare (salience 12))
-  (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
+  (word-wordid-nertype ?wrd ?id PERSON|LOCATION|ORGANIZATION)
   (parserid-word ?id's ?wrd)
   ?f0<-(id-sd_cat   ?id's ?)
   (test (neq (str-index "'s" ?wrd) FALSE))

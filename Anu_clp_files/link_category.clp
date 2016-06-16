@@ -9,7 +9,7 @@
  (assert (id-word_cap_info))
  (assert (No complete linkages found))
  (assert (parser_id-cat_coarse))
- (assert (word-nertype))
+ (assert (word-wordid-nertype))
  )
  
  (deffunction string_to_integer (?parser_id)
@@ -389,8 +389,7 @@
   ?f0<-(parser_id-cat_coarse ?pid noun/pronoun)
   (parserid-wordid  ?pid ?id)
   (parserid-word ?pid ?lword)
-;  (word-wordid-nertype ?word ?id PERSON|LOCATION|ORGANIZATION)
-  (word-nertype  ?word ?id PERSON|LOCATION|ORGANIZATION) ;Modified by Roja(13-07-13) 
+  (word-wordid-nertype ?lword ?id PERSON|LOCATION|ORGANIZATION)
   (test (eq ?lword ?word))
   =>
         (retract ?f0)
