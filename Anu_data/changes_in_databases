@@ -540,6 +540,9 @@
         government      (       "     14anu-ban-04       25-04-15 ) Ex: Deposition of government is not in the interest of the country.
 	messenger	(	"     14anu-ban-02	 26-02-16 ) Ex: He is a sure messenger.	
 
+	Added 14897 entries extracted from wordnet by Mudit Mittal (11-06-16)
+		aalii	to  zygote  
+
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -592,6 +595,9 @@
  24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
  25.	bAzyA		kAl/A__adj		(By roja Suggested by Chaitanya Sir 01-07-14)
  26.    pariGatanA	ASA/__n			(By Manju Suggested by Chaitanya Sir 20-10-14)
+ 27.    saba		Apa/__p			(By Manju			09-06-16)
+ 28.    piwAjI		pAnI/__n		(Suggested by Shivanjali        14-06-16)
+ 29.    BArI		ajAwI/__adj		(Suggested by Soma Mam		14-06-16)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -1785,6 +1791,9 @@ Nandini ji LTRC 	27-11-13)
 	172. improve_verb    		saMSoXana		(	"	"		17-02-16)
 	173. welfare_noun    		samvqxXi		(Suggested by Manasa		01-03-16)
 					Ex: The State shall strive to promote the welfare of the people by securing and protecting.
+	174. personified_adjective   	mAnavIkqwa		(Suggested by Chaitanya Sir     14-06-16)
+					Ex: This worship of the personified powers of nature with a view to material benefits gradually hardened
+					    into a series of rites to be performed by the priesthood.
 					
 	
     5. Modifying first meaning from the list :
@@ -2224,6 +2233,8 @@ Nandini ji LTRC 	27-11-13)
 	200. clemency_noun   	anukUlawA		as	xayA		(Suggested by manasa bomma      11-02-16)
 				Ex: petitions for clemency were all rejected.
 	201. mathematical_adjective  gaNiwa_sambanXI	as	gaNiwIya	(Suggested by manasa bomma	16-02-16)
+	202. guy_noun		rassA			as	puruRa		(Suggested by Chaitanya Sir     04-06-16)
+				Ex: He is a very shy guy.
 	
 
     6. Removed meaning from existing list:
@@ -2331,6 +2342,9 @@ Nandini ji LTRC 	27-11-13)
 	51. persian_UNDEFINED	PArasI_BARA_yA_PArasI			(Suggested by Anita ji LTRC 	01-07-14)
 	52. raindrops_UNDEFINED	varRA_kI_eka_bUnxa			(Suggested by Chaitanya Sir	24-07-14)
 	53. footings_UNDEFINED	sanwulana				(	"	"	"	11-08-14)
+	54. den_noun	        mAzda					(	"	"	"	18-05-16)
+	55. hardened_UNDEFINED      kadA_karanA				(	"	"	"	04-06-16)
+ 	56. hardening_UNDEFINED     kadA_karanA				(	"	"	"	04-06-16)
 
 
     8. Modified category:
@@ -3519,6 +3533,7 @@ Nandini ji LTRC 	27-11-13)
         someone         (       "        "                  "     ) Ex: Someone had been poisoning his food.
 	poor    	(	"     Jagriti Banasthali 10-03-14 )
 	government      (	"     14anu-ban-04	 25-04-15 ) Ex: Deposition of government is not in the interest of the country. 
+	cousin		(By 	Manju     		 14-06-16 ) Ex: She is my cousin.
 
  changes in named_entities.txt
  =============================

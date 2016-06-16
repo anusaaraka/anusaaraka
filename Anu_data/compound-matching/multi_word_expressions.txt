@@ -33194,6 +33194,9 @@ moral_giants	nEwika_xqRti_se_mahAna_vyakwi#nEwika_xqRti_se_mahAna_vyakwi#noun#2#
 path_of_righteousness	nEwika_paWa#nEwika_paWa#noun#3#RM
 perfect_detachment	pUrNa_alipwawA#pUrNa_alipwawA#noun#2#RM
 opera_glass	xUrabIna#xUrabIna#noun#2#WM
+talk_show	anOpacArika_bAwacIwa_kAryakrama#anOpacArika_bAwacIwa_kAryakrama#noun#2#RM
+#New Entries
+#-----------
 in_case_of	ke_saMxarBa_meM#ke_saMxarBa_meM#noun#2#WM
 in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM
 fairly_soon	jalxI_hI#jalxI_hI#adverb#2#RM
@@ -33215,7 +33218,6 @@ similar_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM
 relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM
 orphaned_children	anAWa_baccA#anAWa_baccA#noun#2#RM
-talk_show	anOpacArika_bAwacIwa_kAryakrama#anOpacArika_bAwacIwa_kAryakrama#noun#2#RM
 interest_rate	byAja_xara#byAja_xara#noun#1#RM
 dry_fruit	mevA#mevA#noun#2#RM
 half_dead	aXamarA#aXamarA#adjective#2#RM
@@ -33272,9 +33274,17 @@ curative_petition	nirNaya_saMSoXana_nivexanapawra#nirNaya_saMSoXana_nivexanapawr
 in_many_ways	kaI_mAyanoM_meM/kaI_warIke_se#kaI_mAyanoM_meM/kaI_warIke_se#noun#3#RM
 very_first	pahale_hI#pahale_hI#noun#2#RM
 old_woman	buDZiyA/vqxXA#buDZiyA/vqxXA#noun#2#RM
+a_summer_day	garamI_kA_eka_xina/grIRmakAla#garamI_kA_eka_xina/grIRmakAla#noun#2#RM
+a_hot_summer_day	garamI_kA_eka_xina/grIRmakAla#garamI_kA_eka_xina/grIRmakAla#noun#2#RM
+#It was a hot summer day.    Suggested by Chaitanya Sir (19-05-16)
+here_and_there	iXara-uXara#iXara-uXara#adverb#3#WM
+#He came out of his den and searched here and there. Suggested by Chaitanya Sir (19-05-16)
+that_way	usa_ora#usa_ora#noun#2#WM
+#As the lion was about to kill the hare, a deer ran that way.  Suggested by Chaitanya Sir (19-05-16)
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
+#-------------------
 Free_Alongside_Ship	jahAja_waka_niHSulka#jahAja_waka_niHSulka#noun#3#RM
 Free_On_Board	jahAja_se_mAlaDulAI/jahAja_para_niHSulka#jahAja_se_mAlaDulAI/jahAja_para_niHSulka#adverb#3#RM
 Have_a_nice_time	samaya_acCA_bIwe/KuSa_raho#samaya_acCA_bIwe/KuSa_raho#noun#4#RM
@@ -33434,6 +33444,7 @@ zone_freight_rate 	kRewraSaH_BAdZA_xara#kRewraSaH_BAdZA_xara#noun#3#RM
 zone_pricing	kRewraSaH_kA_mUlya_nirXAraNa/kRewraSaH_kImawa_nirXAraNa#kRewraSaH_kA_mUlya_nirXAraNa/kRewraSaH_kImawa_nirXAraNa#noun#2#RM
 zone_rate	kRewraSaH_xara#kRewraSaH_xara#noun#2#RM
 #By Anita ji (LTRC)
+#==================
 Easter_bunny	Istara_wyOhAra_kA_banI/KaragoSa_ke_lie_pyAra_kA_Sabxa#Istara_wyOhAra_kA_banI/KaragoSa_ke_lie_pyAra_kA_Sabxa#noun#2#RM
 Field_Marshal	PIlda_mArSala/senA_kA_sarvocca_ohaxA#PIlda_mArSala/senA_kA_sarvocca_ohaxA#noun#2#RM
 Good_morning	supraBAwa/namaskAra#supraBAwa/namaskAra#noun#2#RM
@@ -33607,6 +33618,7 @@ least_resistance	AsAna_warIkA#AsAna_warIkA#noun#2#RM
 sweet_shop	miTAI_kI_xukAna#miTAI_kI_xukAna#noun#2#RM
 rock_group	rAka_grupa#rAka_grupa#noun#2#RM
 #By Alpana ji (LTRC)
+#===================
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM
 accounting_and_finance	leKAMkana_eMva_viwwa#leKAMkana_eMva_viwwa#noun#3#RM
@@ -33765,6 +33777,7 @@ zebra_crossing	pExala_pArapaWa#pExala_pArapaWa#noun#2#RM
 zero_hour	SUnyakAla/niyawa_samaya#SUnyakAla/niyawa_samaya#noun#2#RM
 zip_code	pinakoda#pinakoda#noun#2#RM
 #By Nandini ji LTRC
+#------------------
 credit_card	kredita_kArda#kredita_kArda#noun#2#RM
 credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM
 training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM
@@ -33774,6 +33787,7 @@ name_plate	nAma_pattikA#nAma_pattikA#noun#2#RM
 monal_feathers	monal_paMCI_ke_paMKa#monal_paMCI_ke_paMKa#noun#2#RM
 as_much_as	jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM
 #By Preeti ji LTRC
+#------------------
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 copper_plate	wAmrapawra#wAmrapawra#noun#2#RM
 character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
@@ -33781,6 +33795,7 @@ any_day	kisI_BI_xina#kisI_BI_xina#noun#2#RM
 chink_of_light	prakASa_kI_kiraNa#prakASa_kI_kiraNa#noun#2#RM
 back_yard	piCavAdZA#piCavAdZA#2#RM
 #By Krithika ji LTRc
+#-------------------
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM
 youth_council	yuvA_pariRax/nOjavAnoM_kI_samiwi#yuvA_pariRax/nOjavAnoM_kI_samiwi#noun#2#RM 
 state_secretary	rAjya_saciva#rAjya_saciva#noun#2#RM

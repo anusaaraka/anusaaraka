@@ -12,11 +12,11 @@ char str[1000], *s1, *s2;
 
 %%
 
-([Ff]igs?|[Ee]qs?|[Vv]izs?|[Cc]h|abbrv|USA|distt|[Rr]s|approx|cent)\)[ ]\([.][ ][.]\)	{	len=strcspn(yytext, ")");
+[ ]([Ff]igs?|[Ee]qs?|[Vv]izs?|[Cc]h|abbrv|USA|distt|[Rr]s|approx|cent)\)[ ]\([.][ ][.]\)	{	len=strcspn(yytext, ")");
 										strncpy(str, yytext, len);
 										str[len]='\0';
 										
-										printf("%s.)", str);
+										printf(" %s.)", str);
 										/*Ex: (NNP Fig) (. .) */
 									}
 %%

@@ -132,7 +132,7 @@
 [a-zA-Z]'[sS][^a-zA-Z]	{printf("%s",yytext);}
 o'clock		{printf("%s",yytext);}
 Hon'ble		{ printf("Honourable");	}
-[a-zA-Z]'[a-zA-Z]	{printf("%cQUOTE%c",yytext[0],yytext[2]);}
+[a-zA-Z]'[a-zA-Z]	{printf("%cABBR-SingleQuote%c",yytext[0],yytext[2]);}
 [cC]annot	{printf("%can not",yytext[0]);}
 %%
 main()
