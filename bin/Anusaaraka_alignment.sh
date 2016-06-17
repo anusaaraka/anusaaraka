@@ -6,7 +6,12 @@
 
   cp $4 $MYPATH/    #ilparser
 
-  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $2 $MYPATH/hnd1
+  #Running below command temporarily . As of now o/p from champollion is in canonical form.
+  #If input is from other source then comment the below line and modify the shell accordingly.
+  #Ex: karezge . This is stored in dic as 'kareMge'. To get root and tam info etc. doing below step
+  $HOME_anu_test/Anu_data/canonical_form_dictionary/non_canonical_form.out   < $2  >  $MYPATH/hnd_non_canonical_form
+
+  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/hnd_non_canonical_form  $MYPATH/hnd1
   sed -i  '1iparIkRaNa .' $MYPATH/hnd1
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
 
