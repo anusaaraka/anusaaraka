@@ -3,7 +3,7 @@
  (deffunction never-called ()
  (assert (id-sd_cat))
  (assert (parserid-word))
- (assert (word-nertype))
+ (assert (word-wordid-nertype))
  )
 
  (defglobal ?*cat_fp* = sd_cat_fp)
@@ -28,6 +28,11 @@
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;Parser fails in identifying the following words.
+  ;[Birds] lay their eggs in the nest.          [Sun] rises in the east.
+  ;[Health] is more important than money.       [Safety] is our highest priority.
+  ;[Childhood] is the best time of life.        [Teaching] is considered an apt calling for women.
+  ;[Queen] victoria opened blackfriars bridge in november 1869.
   (defrule NNP_to_NN
   (declare (salience 13))
   ?f0<-(id-sd_cat   ?pid NNP)
@@ -38,30 +43,31 @@
 	(assert (has_been_modified ?pid))
   )
   ;------------------------------------------------------------------------------------------
-  ;Modified fact (word-wordid-nertype) to (word-nertype) 
   ;Modified this rule by Roja (06-06-13) Suggested by Chaitanya sir
   (defrule PropN_rule_from_NER
   (declare (salience 12))
-  (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
-  (parserid-word ?id ?word)
-  ?f0<-(id-sd_cat  ?id ?)
+  (word-wordid-nertype ?word&~of ?id PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
+  (parserid-wordid   ?pid  ?id)
+  (parserid-word ?pid ?word)
+  ?f0<-(id-sd_cat  ?pid ?)
   =>
-        (assert (parser_id-cat_coarse ?id PropN))
-        (assert (parser_id-cat ?id proper_noun))
+        (assert (parser_id-cat_coarse ?pid PropN))
+        (assert (parser_id-cat ?pid proper_noun))
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;Added by Roja(13-06-13) ;Ex: John's family is renovating their kitchen.
   (defrule PropN_rule_from_NER1
   (declare (salience 12))
-  (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
-  (parserid-word ?id's ?wrd)
-  ?f0<-(id-sd_cat   ?id's ?)
+  (word-wordid-nertype ?word ?id PERSON|LOCATION|ORGANIZATION)
+  (parserid-wordid   ?pid's  ?id)
+  (parserid-word ?pid's ?wrd)
+  ?f0<-(id-sd_cat   ?pid's ?)
   (test (neq (str-index "'s" ?wrd) FALSE))
   (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
   =>
-        (assert (parser_id-cat_coarse  ?id's PropN))
-        (assert (parser_id-cat ?id's proper_noun))
+        (assert (parser_id-cat_coarse  ?pid's PropN))
+        (assert (parser_id-cat ?pid's proper_noun))
 	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------

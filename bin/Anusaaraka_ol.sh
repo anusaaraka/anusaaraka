@@ -122,6 +122,7 @@
   $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
   $HOME_anu_test/Anu_src/split_file.out proper_noun_dic.txt  dir_names.txt  proper_noun_dic.dat
   $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
+  $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner.dat
 
   if [ "$4" != "general" -a "$4" != "" ]; then
   $HOME_anu_test/Anu_src/split_file.out domain_multi_word_expressions.txt  dir_names.txt  domain_multi_word_expressions.dat
@@ -137,7 +138,6 @@
  do
     echo "Hindi meaning using Open Logos" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
     timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

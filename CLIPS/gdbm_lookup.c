@@ -19,10 +19,10 @@ char * gdbm_lookup(char *dbm,char *word)
    /*=================================*/
 
    if (ArgCountCheck("gdbm_lookup",EXACTLY,2) == -1)
-   { return(AddSymbol("")); }
+   { return(AddSymbol("FALSE"));} //Returning "FALSE" instead of empty string. Modified by Roja(14-06-16)
 
    if (ArgTypeCheck("gdbm_lookup",2,SYMBOL_OR_STRING,&temp) == 0)
-    { return(AddSymbol(""));} 
+    { return(AddSymbol("FALSE"));} //Returning "FALSE" instead of empty string. Modified by Roja(14-06-16) 
 
    /*=================================*/
    /* To open the gdbm file.          */
@@ -48,7 +48,7 @@ char * gdbm_lookup(char *dbm,char *word)
 //   PrintRouter(WDISPLAY,"\n");
 //   PrintRouter(WDISPLAY,RtnLexeme(2));
 //   PrintRouter(WDISPLAY,"\n");
-   return(AddSymbol(""));}
+   return(AddSymbol("FALSE"));}  //Returning "FALSE" instead of empty string. Modified by Roja(14-06-16)
 
    
 /*==========================================================================================*/
