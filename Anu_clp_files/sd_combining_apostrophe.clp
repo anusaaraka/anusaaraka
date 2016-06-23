@@ -39,25 +39,6 @@
         (assert (id-Modified_id ?rnode ?lnd))
  )
  ;-------------------------------------------------------------------------------------------------------------------
- ;I read about the train accident in today's paper. 
- (defrule word_rule_4_possessive
- (declare (salience 100))
- (rel_name-sids possessive|case ?lnode ?rnode)
- ?f1<-(parserid-word ?lnode ?wrd)
- ?f2<-(parserid-word ?rnode ?rwrd)
- ?f3<-(parser_numeric_id-word ?lid ?wrd1)
- ?f4<-(parser_numeric_id-word ?rid  ?word&'s)
- (test (= (string_to_integer ?lnode) ?lid))
- (test (= (string_to_integer ?rnode) ?rid))
-  =>
-        (retract ?f2 ?f3 ?f4)
-        (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?lid "  "?wrd1 ?word "  " ?word")" crlf)
-        (printout ?*l_wrd_fp* "(parserid-word  "?lnode ?word" "?wrd1 ?word ")" crlf)
-        (bind ?wrd1 (str-cat ?lnode ?word))
-        (bind ?lnd (explode$ ?wrd1))
-        (assert (id-Modified_id ?lnode ?lnd))
- )
- ;-------------------------------------------------------------------------------------------------------------------
  (defrule word_rule
  (declare (salience 50))
  (parserid-word  ?pid ?word)
@@ -73,15 +54,16 @@
  ;-------------------------------------------------------------------------------------------------------------------
  ; The parents documented every step of their child's development .
  ; The Big Board's Mr. Grasso said, "Our systemic performance was good."
+ ; Mathura station is on the North-Eastern Railway's line going to Gorakhpur from Agra Fort and on the Western Railway's Mumbai-Kota-Delhi line.
  (defrule rel_lnode
  (declare (salience 91))
  ?f0<-(rel_name-sids ?lname ?lnode ?rnode)
  (id-Modified_id ?lnode ?lnd)
- (not (modified_lid ?lname))
+ (not (modified_lid ?rnode))
  =>
        (retract ?f0)
         (assert (modified_rel_name-lnode-rnode ?lname ?lnd ?rnode))
-        (assert (modified_lid ?lname))
+        (assert (modified_lid ?rnode))
  )
  ;------------------------------------------------------------------------------------------------------------------- 
  ;These are children's books.

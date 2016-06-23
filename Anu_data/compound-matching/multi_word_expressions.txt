@@ -33281,7 +33281,30 @@ here_and_there	iXara-uXara#iXara-uXara#adverb#3#WM
 #He came out of his den and searched here and there. Suggested by Chaitanya Sir (19-05-16)
 that_way	usa_ora#usa_ora#noun#2#WM
 #As the lion was about to kill the hare, a deer ran that way.  Suggested by Chaitanya Sir (19-05-16)
-################################################################################################################
+twin_otter_plane	tvina_otara_vimAna#tvina_otara_vimAna#noun#3#RM	  
+#Suggested by sheetla prassd tiwari (18-06-16)
+otter_plane	otara_vimAna#otara_vimAna#noun#2#RM
+#But this twin otter plane of 12-15 seats is undoubtedly the best for sightseeing an archipelago (island group) like Maldives. 
+#Suggested by sheetla prassd tiwari (18-06-16)
+different_shades	viBinna_prakAra_ke_raMga#viBinna_prakAra_ke_raMga#noun#2#RM
+#All the time your eyes keep looking down out of the window - gazing at resort islands of Maldives in blue water of different shades and coral islands. Suggested by sheetla prassd tiwari (21-06-16)
+solar_powered	sOraurjA_cAliwa#sOraurjA_cAliwa#adjective#2#RM
+#GITMO was solar powered and had wind mills, maybe it would have been successful.  Suggested by sheetla prassd tiwari (21-06-16)
+powered_wheelchair	svacAliwa_kursI#svacAliwa_kursI#noun#2#RM
+#powered wheelchair send signals to a computer that's programmed to control a robotic arm, a powered wheelchair, even a voice generator. Suggested by sheetla prassd tiwari (21-06-16)
+a_day_before	eka_xina_pahale#eka_xina_pahale#noun#2#WM
+#All salesmen were listening carefully the speech given by president Mohammad Nasheed in World climate conference a day before in Copenhagen. 
+#Suggested by sheetla prassd tiwari (21-06-16)
+speed_boat	spIda_bota#spIda_bota#noun#2#RM
+#One does not come to know when it rise in air while running like speed boat on the surface water. Suggested by Rajini (21-06-16)
+powered_down	akRama#akRama#adjective#1#WM
+#When these drives are powered down and thrown into the scrap heap in a few years. [COCA] Suggested by sheetla prassd tiwari (21-06-16)
+powered_up	cAlU#cAlU#adjective#1#WM
+#Unplugging the Amplifier when the system is powered up will force Windows to shut down. [COCA] Suggested by sheetla prassd tiwari (21-06-16)
+incumbent_upon	AvaSyaka#AvaSyaka#noun#1#RM
+#But when there is a question of the very existence of a unique creation of earth then this much seriousness was incumbent upon. 
+#Suggested by sheetla prassd tiwari (21-06-16)
+###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
 #-------------------

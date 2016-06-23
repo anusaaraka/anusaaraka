@@ -13,7 +13,7 @@ a.j.liebling	A.J.Liebling
 a.l.guerard	A.L.Guerard
 a.lincoln	A.Lincoln
 a.m	a.m
-a.m.	e._ema./maXyAhna waka
+a.m.	e._ema./maXyAhna_waka
 a.m.schlesinger	A.M.Schlesinger
 a.n.i.	E._ena._AI.
 a.n.whitehead	A.N.Whitehead
@@ -161,6 +161,7 @@ aid	sahAyawA
 aids	eAIdIesa/edsa
 ailet	eleta
 ain	Ena
+airport	erporta
 aishbagh	ESabAGa
 aishwarya	ESvaryA
 aitbaar	EwabAra
@@ -228,11 +229,11 @@ alipur	alIpura
 alipurduar	alIpuraxuAra
 alka	alakA
 allah	allAha
-allahabad	IlAhAbAxa
+allahabad	IlAhAbAxa/ilAhAbAxa
 allawalpur	alAvalapura
 allegro	Allegro
 alliance	saMXi
-allies	miwra rARtroM
+allies	miwra_rARtroM
 almora	almorA
 almore	almora
 alnawar	alnAvara
@@ -421,7 +422,7 @@ arakkonam	arAkkonama
 arambam	arambama
 arati	ArawI
 archana	arcanA
-archangel	praXAna xevaxUwa
+archangel	praXAna_xevaxUwa
 archisha	arciRA
 archita	arciwA
 arcot	arakota
@@ -434,6 +435,7 @@ arizona	erijonA
 arjun	arjuna
 arkady	arkAxI
 arkansas	arkAMsasa
+arkonam	arkonama
 arlab	arlaba
 armaan	aramAna
 armageddon	ArmAgedana
@@ -594,7 +596,7 @@ babu	bAbu
 baby	bebI
 bach	bAKa
 bachchan	baccana
-bacon	sUara kA mAMsa
+bacon	sUara_kA_mAMsa
 badal	bAxala
 badam	baxAma
 badanikai	baxAnikaI
@@ -680,7 +682,9 @@ baliarsing	bAlIarasiMga
 balinese	bAlI
 baliputia	bAlIputiyA
 baljinder	balajiMxara
+ballabh	ballaBa
 ballabhgarh	ballaBagaDZa
+ballabhpur	ballaBpura
 ballak	bAllaka
 ballia	balliyA
 balmaa	balamA
@@ -774,7 +778,7 @@ bbmb	bIbIemabI
 bbq	kAra
 bc	bIsI/I.pU.
 bcci	bIsIsIAI
-bce	IsA pUrva
+bce	IsA_pUrva
 beas	vyAsa
 beatles	bItalsa
 beawar	beavara
@@ -828,7 +832,7 @@ betaabi	bewAbI
 bethany	beWAnI
 betul	bIwula
 bewafa	bevaPA
-bey	wurkiswAna ke SAsaka kI upAXi
+bey	wurkiswAna_ke_SAsaka_kI_upAXi
 bezubaan	bejubAna
 bhadra	Baxra
 bhadrak	Baxraka
@@ -877,6 +881,7 @@ bhat	Bata
 bhati	BattI
 bhatia	BAtiyA
 bhatnagar	BatanAgara
+bhatni	BatanI
 bhatt	Batta
 bhatta	BawwA
 bhattacharjee	BattAcArjI
@@ -995,7 +1000,7 @@ bolivia	boliviyA
 bolt	bolta
 bombay	boYmbe/bambaI
 bombblast	bomba_blAsta
-bonbon	boYna boYna
+bonbon	boYna_boYna
 bond	boMda
 bones	haddiyoM
 bongaigaon	bonagaIgAzva
@@ -1021,7 +1026,7 @@ borpatragohain	borapawarAgohEna
 boruah	boruH
 bose	bosa
 bosnia	bosniyA
-bosnia-herzegovina	bosniyA harjegovinA
+bosnia-herzegovina	bosniyA_harjegovinA
 boston	bostAna
 boswell	bosavela
 botswana	bowsvAnA
@@ -1055,7 +1060,7 @@ bsf	bI_esa_EYPZa/bIesaEYPZa
 bsp	bI_esa_pI/bIesapI
 budapest	budApesta
 buddhadev	buxXaxeva
-buddhism	buxXa Xarma
+buddhism	buxXa_Xarma
 buddhists	bOxXa
 budget	bajata
 budtameez	buxwAmIjZa
@@ -1069,7 +1074,7 @@ buniyaad	buniyAxa
 buragohain	bUrAgohena
 bureau	byUro
 burewala	burevAlA
-burke	manA karanA
+burke	manA_karanA
 burkina	burkinA
 burma	barmA
 burundi	buruMdI
@@ -1096,11 +1101,10 @@ c.w.shumaker	C.W.Shumaker
 caesar	sIjZara/sIjara
 cain	kEna
 calcutta	kalakawA/kalakawwA
-calf	gAya kA baccA
+calf	gAya_kA_baccA
 calicut	kAlIkata
 california	kEliPorniyA
 caliphate	KalIPA
-call	pu kA ra nA
 cambay	kEmabeya
 cambodia	kambodiyA/kaMbodiyA
 cambridge	kEMbrija
@@ -1126,7 +1130,7 @@ cash	kESa
 cathedral	kEWedrala
 cather	Cather
 catholic	kEWolika
-catholicism	romana kEWolika IsAI
+catholicism	romana_kEWolika_IsAI
 cauvery	kAuverI
 cbi	sI._bI._AI.
 cd	sIdI
@@ -1136,12 +1140,14 @@ celsius	selsIyasa
 censor	seMsara
 center	keMxra
 centigrade	seMtIgreda
-ceo	sI I o
-ceos	muKya kAryakArI aXikAriyoM
+central	keMxrIya
+ceo	sI_I_o
+ceos	muKya_kAryakArI_aXikAriyoM
 cerberus	Cerberus
 ch	sIeca
 chaahat	cAhawa
 chaalbaaz	cAlabAjZa
+chaar	cAra
 chabilee	CabIlI
 chabra	CAbarA
 chabungbam	cAbuMgabAma
@@ -1267,6 +1273,7 @@ chehru	ceharU
 chekavan	cekAvana
 chekavar	cekAvara
 cheney	cenI
+chengalpat	ceMgalapata
 chennai	cennaI
 chetan	cewana
 chetia	cewiyA
@@ -1281,6 +1288,7 @@ chhal	Cala
 chhalia	CaliyA
 chhangte	CaMgawe
 chhanzo	CaMjo
+chhapra	CaparA
 chhatarpur	Cawarapura
 chhatre	Cawre
 chhavvi	Cavi
@@ -1363,9 +1371,9 @@ chot	cota
 chovan	cOvana
 chowgule	covgule
 chozhangaraayar	cojahanagarAyara
-christ	IsA masIha
-christendom	IsAI jagawa
-christianity	IsAI Xarma
+christ	IsA_masIha
+christendom	IsAI_jagawa
+christianity	IsAI_Xarma
 christians	IsAI
 christmas	krisamasa
 chuangeng	cuMgeMga
@@ -1428,6 +1436,8 @@ contract	kAMtrekta
 contractor	konwraktora
 coolie	kulI
 coonoor	konUra
+corbett	kArbeta
+corbetts	kArbetsa
 cornol	karnala
 corporate	koYraporeta
 corrections	suXAra
@@ -1435,13 +1445,13 @@ corsica	korsikA
 coulomb	kUlamba
 court	nyAyAlaya/korta
 coventry	koventrI
-cox-1	koYksa 1
-cox-2	koYksa -2
+cox-1	koYksa_1
+cox-2	koYksa_-2
 cranbury	Cranbury
 criminal	kriminala
 crist	krista
 croatia	kroatiyA/kroeSiyA
-cross	pAra karanA
+cross	pAra_karanA
 crown	wAja
 crpf	sIArapIEYPZa
 cse	sIesaI
@@ -1607,6 +1617,7 @@ dehradun	xeharAxUna
 dehuri	xeharI
 deka	xekA
 delaware	delAveyara
+delhi	xillI
 delhi-6	xillI-6
 dementyev	Dementyev
 democrat	prajAwaMwravAxI
@@ -1654,6 +1665,7 @@ dewas	xevAsa
 dewey	devI
 dey	xe
 dhaal	DAla
+dhaam	XAma
 dhadkan	XadZakana
 dhaduk	XAxuka
 dhamaal	XamAla
@@ -1698,6 +1710,7 @@ dhaular	XOlara
 dhaval	Xavala
 dhawan	Xavana
 dhekial	Xekiala
+dhikuli	Dikuli
 dhillon	DilloM
 dhinsa	XiMsA
 dhiren	XIrena
@@ -1939,6 +1952,7 @@ fahd	Pahaxa
 fahim	PahIma
 fahrenheit	PArenahAita
 fainsod	Fainsod
+fair	melA
 faisalabad	PEsalAbAxa
 faislabad	PEsalAbAxa
 faizabad	PEjAbAxa
@@ -2011,6 +2025,7 @@ florence	PloreMsa
 florida	PloridA
 footpath	PUtapAWa
 ford	pAyAba
+fort	Porta
 fouad	POaxa
 fox	Poksa
 fpo	EYPZapIo
@@ -2020,7 +2035,6 @@ franklin	PreMkalina
 french	PreMca
 frenchified	Frenchified
 friday	SukravAra
-fridays	SukravAra ko
 frost	TaMDa
 fuad	PuAxa
 fulhu	PulhU
@@ -2043,7 +2057,7 @@ gabale	gAbale
 gaban	gabana
 gabbi	gabbI
 gabir	gAbira
-gable	makAna kA konA
+gable	makAna_kA_konA
 gabon	gAbona/gAboM
 gabr	gabara
 gadaba	gaxAbA
@@ -2066,6 +2080,7 @@ gaitonde	gEtoMxe
 gajanan	gajAnana
 gajendra	gajenxra
 gajjar	gajjara
+gajraula	gajrOla
 galal	galAla
 galilei	gElilI
 galileo	gElIliyo
@@ -2111,6 +2126,8 @@ gardish	garxiSa
 garfield	gAraPIlda
 garg	garga
 gargi	gArgI
+garh	gaDa
+garhmukteshwar	gaDa-mukweSvara
 garhnayak	gaDZanAyaka
 garhwali	gaDZavAlI
 garima	garimA
@@ -2138,7 +2155,7 @@ gaytri	gAyawrI
 gaza	gAjA
 gazal	gZajZala
 gbsa	jIbIesaE
-gdp	jIdIpI/sakala GarelU uwpAxa meM
+gdp	jIdIpI/sakala_GarelU_uwpAxa_meM
 ge	jII
 ge90	jII90
 gedekar	gedZekara
@@ -2153,7 +2170,7 @@ georgia	jIorajiyA/joYrjiyA
 geraftaar	griPwAra
 german	jarmana
 germanic	yuropIya
-germans	jarmanI ke
+germans	jarmanI_ke
 germany	jarmanI
 germer	jarmara
 gh	jIeca
@@ -2423,9 +2440,10 @@ haobam	hobama
 haobijam	hobijama
 haokip	hokipa
 hapsburg	Hapsburg
+hapud	hApuda
 haq	haka
 haqeeqat	hakIkawa
-harbor	ASraya xenA
+harbor	ASraya_xenA
 harda	haraxA
 hardoi	haraxoI
 hardy	sAhasI
@@ -2565,6 +2583,7 @@ himmatwala	himmawavAlA
 hinda	hinxA
 hindostan	hinxoswAna
 hindu	hinxU
+hinduism	hiMxU_Xarma
 hindus	hiMxuoM
 hindustan	hiMxuswAna
 hindustani	hinxuswAnI
@@ -2706,7 +2725,7 @@ imphal	imPAla
 impressionism	praBAvavAxa
 imtihan	imwihAna
 inayat	inAyawa
-indeed	vAswava meM
+indeed	vAswava_meM
 indeever	inxIvara
 independence	AjAxI
 india	BArawa/iMdiyA
@@ -2735,7 +2754,7 @@ ingudam	inguxama
 injel	injela
 inkaar	InakAra
 inkeles	Inkeles
-inquisition	nyAyika jAMca
+inquisition	nyAyika_jAMca
 insaaf	InsAPa
 insaan	iMsAna
 insan	insAna
@@ -3001,7 +3020,7 @@ jr.	jUniyara
 juaari	juArI
 juda	juxA
 judaai	juxAI
-judaism	yahUxI Xarma
+judaism	yahUxI_Xarma
 judwaa	judavA
 jugaad	jugAdZa
 juhi	jUhI/juhI
@@ -3082,6 +3101,7 @@ kakyenlakpam	kAkaeMlAkapama
 kala	kAlA/kalA
 kalaakaar	kalAkAra
 kalabagh	kAlAbAga
+kaladhungi	kAlADufgI
 kalal	kalAla
 kalam	kalama
 kalamazoo	Kalamazoo
@@ -3144,7 +3164,7 @@ kanha	kAnhA
 kani	kAnI
 kanikkar	kAnikkara
 kanitkar	kaniwkara
-kanjivaram	kAMjIvarama
+kanjivaram	kAMjIvarama/kAFjIvarama
 kanker	kaNakera
 kannur	kannUra
 kanoon	kAnUna
@@ -3315,6 +3335,7 @@ khanpur	KAnapura
 kharagpur	Karagapura
 kharangpur	KAraMgapura
 kharche	Karce
+khardungla	KAraxUfgalA
 kharge	Karage
 kharian	Kariyana
 kharibam	KArIbama
@@ -3556,6 +3577,7 @@ laad	lAda
 laadla	lAdalA
 laawaris	lAvArisa
 lad	ladZa
+ladakh	laxxAKa
 ladhak	laxAka
 ladi	lAdI
 ladowal	lAdovAla
@@ -3730,6 +3752,7 @@ ludhianana	luXiyAnA
 ludhianvi	lukrama
 lukram	lUWarA
 luthra	luwmaMga
+luxar	laksara
 luxembourg	luksembOrga/lagjZamabarga
 lyman	lImana
 m.d.u.	ema._dI._yU.
@@ -3779,7 +3802,7 @@ madhusudhana	maXusuXanA/maXusooxana
 madikeri	maxikarI
 mading	maxiMga
 madivalar	maxivAlara
-madonna	mEdonA/IsA kI mAwA
+madonna	mEdonA/IsA_kI_mAwA
 madras	maxrAsa
 madurai	maxuraI
 maduri	mAXurI
@@ -3870,7 +3893,9 @@ malavika	mAlavikA
 malawi	malAvI
 malayaman	malAyAmana
 malaysia	maleSiyA
+maldive	mAlaxIva
 maldives	moYlaxivasa/mAlaxIva
+maldivian	mAlaxIviyana
 malegaon	mAlegAMva
 malhan	malhana
 malhar	malhAra
@@ -3999,7 +4024,7 @@ market	mArketa
 marmagao	maramagAo
 marmeladov	mArmelAxova
 marriage	SAxI
-mars	maMgala graha
+mars	maMgala_graha
 marsden	mArsadana
 marsh	mArSa
 martand	mArwaMda
@@ -4035,6 +4060,7 @@ matrika	mawrikA
 matsendra	mawseMxra
 mattam	mawwama
 matthew	mEWyU
+mau	mahU
 maugham	Maugham
 maulik	mOlika
 maurier	Maurier
@@ -4043,6 +4069,7 @@ mauritius	mOriSiyasa/moriSiyasa
 maurya	mOryA
 mausam	mOsama
 mausumi	mOsumI
+mavilevaru	mAvIlevArU
 mawaali	mavAlI
 mawlsawm	mavlsavma
 max	mEksa
@@ -4242,6 +4269,7 @@ mudiraj	muxirAja
 muduli	muxulI
 mudum	muxuma
 mugdha	mugXA
+mughal	mugala
 mughal-e-azam	mugZala_e_AjZama
 mughalsarai	mugZalasarAye
 muhammad	muhammaxa
@@ -4254,6 +4282,7 @@ mukhopadhyaya	muKopAXyAya
 mukhtar	muKZwAra
 mukka	mukkA
 mukta	mukwA
+mukteshwar	mukweSvara
 mukti	mukwi
 mukul	mukula
 mukunda	mukuMxA
@@ -4267,6 +4296,8 @@ multan	mulwAna
 multani	mulwAnI
 mulzim	mulajima
 mumbai	muMbaI
+mumbai-bhopal-delhi	mumbaI-BopAla-xillI
+mumbai-kota-delhi	mumbaI-kotA-xillI
 mumford	mamaPorda
 mumtaj	mumawAja
 munde	muMde
@@ -4417,11 +4448,12 @@ narsimhapur	narasimhApura
 narsinghgarh	narasiMGagaDZa
 nartana	narwanA
 naseeb	nasIba
+nasheed's	naSIxa
 nashik	nAsika
 nasir	nAsira
 naskar	naskara
 nath	nAWa
-nations	rARtra kA
+nations	rARtra_kA
 nattar	nawwara
 naugai	nOgAI
 nauker	nOkara
@@ -4553,7 +4585,10 @@ nongthombam	noMgWombama
 noorie	nUrI
 noorkhan	nUrKana
 north	uwwara
-northeast	ISAna koNa
+north-eastern	pUrvowwara
+northeast	ISAna_koNa
+northeastern	uwwara_pUrvI
+northern	uwwara
 norway	norve/noYrve
 november	navaMbara
 nse	enaesai
@@ -4617,7 +4652,7 @@ osama	osAmA
 owlt	OWLT
 oxford	oYksaPorda
 oza	ojA
-p.a	prawi varRa
+p.a	prawi_varRa
 p.a.c.	pI._e._sI.
 p.a.u.	pI._e._yU.
 p.b.	pI._bI.
@@ -4627,7 +4662,7 @@ p.c.o.	pI._sI._o.
 p.d.f.	pI._dI._EYPZa.
 p.d.p.	pI._dI._pI.
 p.h.lang	P.H.Lang
-p.m.	pI._ema./maXyAhna ke bAxa
+p.m.	pI._ema./maXyAhna_ke_bAxa
 p.n.b.	pI._ena._bI.
 p.p.bliss	P.P.Bliss
 p.s.e.b.	pI._esa._I._bI.
@@ -4729,6 +4764,7 @@ parampara	paraMparA
 paramshetti	paramSewwi
 paranjape	parAMjape
 paras	pArasa
+parashuram	paraSurAma
 parasmani	pArasamaNi
 paratwada	parawavAdA
 pardava	paraxavA
@@ -4818,6 +4854,7 @@ peas	pesa
 pebam	pebama
 pednekar	pexnekara
 peermada	pIramAdA
+pegong	pegoYMga
 pehchaan	pahacAna
 pendharkar	peMDArakara
 pendse	peMdase
@@ -5029,7 +5066,7 @@ prohibition	niReXa
 provoked	provokda
 psalms	Bajana
 pseb	pIesaIbI
-psychiatry	mAnasika rogoM kI cikiwsA
+psychiatry	mAnasika_rogoM_kI_cikiwsA
 pti	pItIAI
 ptolemy	toYlemI
 pu	pIyU
@@ -5123,6 +5160,7 @@ rai	rAi
 raichur	rAyacUra
 raigarh	rAyagaDZa
 raikar	rekAra
+railway	relave
 rain	rena
 raina	rEnA
 raincoat	renakota
@@ -5188,6 +5226,7 @@ rameshwaram	rAmeSvarama
 rameshwari	rAmeSvarI
 ramgarh	rAmagaDa
 ramita	ramiwA
+ramnagar	ramnagara
 rampur	rAmapura
 ramsay	rAmase
 ramu	rAmU
@@ -5199,6 +5238,7 @@ ranchi	rAMcI
 randhari	raMXArI
 rane	rANe
 rang	raMga
+rangali	raMgalI
 ranganekar	raMganekara
 rangeela	raMgIlA
 rangoli	raMgolI
@@ -5259,7 +5299,7 @@ rehgurzar	rahagurajZAra
 reich	rEha
 rekha	reKA/reKA
 rembrandt	Rembrandt
-renaissance	punarjAgaraNa kAla
+renaissance	punarjAgaraNa_kAla
 renghang	reMGaMga
 rengngo	reMgngo
 rengsi	reMgsI
@@ -5272,6 +5312,7 @@ republicans	ripablikana
 republics	gaNarAjyoM
 reserve	rijZarva
 reshma	reSmA
+resort	risoYrta
 reunion	rIyUniyana
 revankar	revaMkara
 revati	revawI
@@ -5328,7 +5369,7 @@ romance	romAMsa
 romania	romAniyA/rumAniyA
 romanovna	romanovnA
 romans	romanoM
-romantic	prema prasaMgayukwa
+romantic	prema_prasaMgayukwa
 rome	roma
 romeo	romiyo
 ronaldo	ronAldo
@@ -5383,7 +5424,7 @@ ruslaan	rusalAna
 russell	rasela
 russia	rusa/rUsa
 russian	rUsI
-russians	rUsa ke
+russians	rUsa_ke
 rutajit	ruwAjiwa
 rutherford	raxaraPorda
 rutujit	ruwujiwa
@@ -5418,9 +5459,9 @@ saawariya	sAvariyA
 saaya	sAyA
 saaz	sAjZa
 saazish	sAjZiSa
-sabaoth	yaxi senAoM
+sabaoth	yaxi_senAoM
 sabat	sAbawa
-sabbath	viSrAma kA samaya
+sabbath	viSrAma_kA_samaya
 sabbatum	Sabbatum
 saboot	sabUwa
 sachaai	sacAI
@@ -5591,10 +5632,11 @@ saphaw	saPAva
 sapna	sapanA
 sapnay	sapane
 sapoot	sapUwa
+saptapuris	sapwapuriyoM
 saptpuris	sapwapuriyoM
 saputrara	sApUwarAra
 sarabhai	sArABAI
-sarai	sAre
+sarai	sAre/sarAya
 sarajevo	sArAjevo
 sarala	saralA
 sarang	sAraMga
@@ -5606,6 +5648,7 @@ sarasvat	sArasvawa
 sarasvati	sarasvawI
 saraswati	sarasvawI
 saravati	sArAvawI
+sarayu	sarayU
 sarbhan	sarBana
 sardar	saraxAra
 sardarshahar	saraxAraSahara
@@ -5632,7 +5675,7 @@ saryu	sarayU
 sashi	sASI
 sastri	SAswrI
 sasural	sasurAla
-sat	bETa gayA
+sat	bETa_gayA
 satam	sAwama
 satan	SEwAna
 satara	sawArA
@@ -5718,9 +5761,10 @@ sensharma	senaSarmA
 senthang	seMWaMga
 seoni	seonI
 sept	GarAnA
+september	siwambara
 seram	sarama
 serbia	sarbiyA
-sergeant	ucca SreNI kA vakIla
+sergeant	ucca_SreNI_kA_vakIla
 servai	servAI
 servaia	serviyA
 service	sarvisa
@@ -5865,6 +5909,7 @@ shiv	Siva
 shiva	Siva
 shivani	SivAnI
 shivdesani	SivaxesAnI
+shivi	Siva
 shiwde	SivadZe
 shobha	SoBA
 shobhna	SoBanA
@@ -5886,6 +5931,7 @@ shri	SrI
 shrian	Sriyana
 shrigonda	SrIgoMdA
 shrijani	Srqjani
+shrikrishna	SrIkqRNa
 shrimali	SrImAlI
 shrirampur	SrIrAmapura
 shrivardhan	SrIvarXana
@@ -5984,6 +6030,7 @@ snehal	snehala
 snehlata	snehalawA
 snigdha	sanigXA
 snip	snipa
+snorkelling	snoYrkelliMga
 soch	soca
 society	samAja
 socrates	sukarAwa
@@ -6033,7 +6080,7 @@ south	xakRiNa
 southampton	sAuWemptana
 soyam	soyama
 sp	esapI
-spades	kukma ke pawwe
+spades	kukma_ke_pawwe
 spain	spena
 spanish	speniSa
 spc	esapIsI
@@ -6162,6 +6209,7 @@ suratgarh	sUrawagaDZa
 suravinda	suravinxA
 surendra	sureMxra
 surendranagar	sureMxranagara
+surendranagar-okha	sureMxranagara-oKA
 suresh	sureSa
 suri	sUrI
 suriname	surinAme/sUrInAma
@@ -6322,6 +6370,7 @@ tejas	wejasa
 tejaswini	wejasvinI
 tellicherry	willI_cerrI
 tembe	wemabe
+temple	manxira
 tenali	wenAlI
 tendulkar	weMxulakara
 tennessee	tenesI
@@ -6398,7 +6447,7 @@ thursdays	guruvAra
 tickoo	tikkU
 tiff	tIPaPa
 tijara	wijArA
-tijarah	 wijArA
+tijarah	_wijArA
 tikamgarh	tIkamagaDZa
 tiku	tikU
 tilak	wilaka
@@ -6445,6 +6494,7 @@ torongbam	woroMgbama
 toshkhani	woSKAnI
 toss	toYsa
 toujam	wOjama
+trans	troYnsa
 treasury	KZajZAnA
 tree	pedZa
 trichur	wricura
@@ -6498,7 +6548,7 @@ tyaagi	wyAgI
 tyagi	wyAgI
 u.a.e.	yU._e._i
 u.k.	yU._ke.
-u.n.	saMyukwa rARtra ke
+u.n.	saMyukwa_rARtra_ke
 u.p.	yU.pI.
 u.s	yU.esa.
 u.s.	yU.esa./amerikA
@@ -6861,6 +6911,7 @@ web	veba
 wednesday	buXavAra
 welcome	velkome
 west	paScima
+western	paScima
 westerns	pAScAwya
 whigs	vhigsa
 whitewater	vhAitavoYtara
@@ -6909,7 +6960,7 @@ yashpal	yaSapAla
 yashwant	yaSavaMwa
 yasir	yAsira
 yasser	yassera
-yat-sen	yAwa sena
+yat-sen	yAwa_sena
 yateem	yawIma
 yatin	yawina
 yatra	yAwrA

@@ -9341,7 +9341,7 @@ bespectacled_UNDEFINED	caSmA_lagAe_hue
 bespectacled_adjective	caSmAXArI/caSmA_lagAyA_huA
 best-selling_UNDEFINED	sabase_jJyAxA_bikane_vAl
 best-selling_adjective	sabase_jyAxA_bikane_vAlA/bahuwa_lokapriya
-best_adjective	sarvowwama/sarvowkqRta/sarvaSreRTa/sabase_acCA/awyAXika_praBAvaSAlI
+best_adjective	sarvowwama/sarvowkqRta/sarvaSreRTa/sabase_acCA/awyAXika_praBAvaSAlI/SreRTa/uwwama
 best_adverb	saba_se_acCA/bahuwa_accI_waraha_se/sabase_acCA
 best_noun	sarvowwama/yogya_kImawa/SuBakAmanAez/SreRTawA/sarvowwama_bAwe/sarvaSreRTa_vyakwi/sabase_acCA_prayAsa/hArxika_sammAna/baDiyA_kapade
 best_verb	parAswa_kara/harA_x/harA
@@ -44651,7 +44651,7 @@ larger_UNDEFINED	vyApaka
 larges_UNDEFINED	vyApaka
 largess_noun	xAna_kI_xana-rASi/uxArawA
 largesse_noun	uxAra_xAna/xAna_kI_xana-rASi/uxArawA
-largest_UNDEFINED	vyApaka
+largest_UNDEFINED	vyApaka/sabase_badA
 largish_adjective	KAsA_badA
 lark_noun	eka_pakRI/wulikA/majAka/Barawa_pakRI/Amoxa-pramoxa/krIdA-kOwuka
 lark_verb	Soragula_macAwe_hue_Kela

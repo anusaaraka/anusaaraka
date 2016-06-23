@@ -44,9 +44,11 @@
   )
   ;------------------------------------------------------------------------------------------
   ;Modified this rule by Roja (06-06-13) Suggested by Chaitanya sir
+  ;of  ex: The Zongle [of] Bongle Dongle resigned today. 
+  ;the ex: Ayodhya Station is at a distance of 128 miles from the Mughal Sarai Station [of] [the] Northern Railway's Mughal Sarai-Lucknow line .
   (defrule PropN_rule_from_NER
   (declare (salience 12))
-  (word-wordid-nertype ?word&~of ?id PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
+  (word-wordid-nertype ?word&~of&~the ?id PERSON|LOCATION|ORGANIZATION) 
   (parserid-wordid   ?pid  ?id)
   (parserid-word ?pid ?word)
   ?f0<-(id-sd_cat  ?pid ?)

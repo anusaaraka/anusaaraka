@@ -328,6 +328,7 @@
 (defrule acomp+nsubj
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
 (rel_name-sids xcomp|acomp ?kriyA ?samA)
+(parser_id-root ?kriyA look|appear|seem|set|become)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	acomp+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	

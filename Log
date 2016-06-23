@@ -1,4 +1,4 @@
- 16-06-16
+ 23-06-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -9,41 +9,51 @@
   5. parser_tree_correction_rules.clp :   Added    : modify_VB_as_RB      modify_VBN_as_JJ
   6. H_ordering_rules.clp       :  Modified : dont_reverse_NP (added kind)
   7. sd_category.clp            :  Modified : PropN_rule_from_NER  PropN_rule_from_NER1
-                                                  (instead of first id consider any id for PropN)
+                                              (instead of first id consider any id for PropN) , added 'the' in the list
 					      '(word-nertype)' to '(word-wordid-nertype)' 
   8. sd_pada.clp                :  Modified : get_tam_type (added has_been_en)
-  9. vibakthi.clp               :  Added    : of_vib_movement
-				   Modified : animate_vibakthi_rule (added test condition)
+  9. vibakthi.clp               :  Added    : of_vib_movement and animate_vibakthi_rule_from_NER
+				   Modified : animate_vibakthi_rule (added test condition) ,
+					      get_vib_for_hid_from_wsd, get_vib_for_kriyA_mUla -- added control fact
                                    Modified rules to use word fact instead original word and root
  10. causative_verb_mng.clp 	:  Modified : get_rule_info  [added test condition]
+					      combine_viSeRya-viSeRaNa_mng_with_vib -- added NN in the list
  11. sd_chunker.clp		:  Modified : print_chunk (handled Inf_VP)
  12. idioms.clp			:  Renamed  : print to print_idiom
 				   Modified : chk_for_idiom, print_idiom
  13. link_category.clp		:  Modified : '(word-nertype)' to '(word-wordid-nertype)'
-
- 14. logon_relation_rules.clp	:  Added functions:  remove_character, get_prep_info, get_prep_id_nd_wrd
+ 
+ 14. root_rule.clp		:  Modified : default_rule 	-- considered org_word as root and added warning msg
+					      samAsa_root, morph_root-parser_cat    -- added not condition for '-'
+ 15. sd_combining_apostrophe.clp:  Removed  : word_rule_4_possessive
+				   Modified : rel_lnode 	-- modified not condition.
+ 16. sd_relation_rules.clp	:  Modified : acomp+nsubj  -- restricted rule with specific kriyA's
+ 17. logon_relation_rules.clp	:  Added functions:  remove_character, get_prep_info, get_prep_id_nd_wrd
 			           Modified : get_category_info, kriyA_sub_rule, kriyA_obj_rule, kriyA_obj_rule1, kriyA-vAkyakarma_rule, 
 					      kriyA-kriyA_viSeRaNa_rule, viSeRya-viSeRaNa_rule, viSeRya-viSeRaNa_rule2, 
 					      subject-subject_samAnAXikaraNa_rule1,  subject-subject_samAnAXikaraNa_rule2, 
 					      viSeRya-prep_saMbanXI_rule, viSeRya-prep_saMbanXI_rule1, kriyA-upasarga_rule,
 					      kriyA-prep_saMbanXI_rule, kriyA-aBihiwa_rule, passive-kriyA-sub-by_saMbanXI_rule, 
 					      kriyA-prep_saMbanXI_rule1, kriyA-prep_saMbanXI_rule2, 
- 15. run_modules_std.bat        :  Loaded root_tmp.dat file in sd_relation_correction module
-                                   Removed sen_phrase.dat multi_word_expressions.dat lwg_info.dat files in hindi_meaning module
-                                   Loaded word.dat in vibakthi module
- 16. this1.py			:  Added code to open mixed domain dictionary file,
+ 18. run_modules_std.bat        :  Loaded : root_tmp.dat file in sd_relation_correction module
+                                   Removed: sen_phrase.dat multi_word_expressions.dat lwg_info.dat files in hindi_meaning module
+                                   Loaded :  word.dat in vibakthi module
+				   Loaded : root_tmp.dat file in sd_relation_rules module
+				   Loaded : ner.dat  file in WSD and vibakthi modules
+				   Loaded : punctuation_info.dat file in WSD_TAM_MODULE				   
+ 19. this1.py			:  Added code to open mixed domain dictionary file,
 				   Fixed bug to handle displaying of tam file info
- 17. Browser/src/style.css:
+ 20. Browser/src/style.css:
 	Added colour for Inf_VP and
 	Modified colour for VP
- 18. script.js:
+ 21. script.js:
 	Commented enable_keyboard_shortcuts() line
- 19. Added unique_entries.py 
- 20. Added '...' in punctuations list in following files:
+ 22. Added unique_entries.py 
+ 23. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
 	multi_word_expression_for_domain.c		multi_word_expression.c	
- 21. Added documentation of universal_dependencies in Doc/Stanford_parser_documentation
- 22. Added following new single and multi domain dics and Updated in changes_in_databases:
+ 24. Added documentation of universal_dependencies in Doc/Stanford_parser_documentation
+ 25. Added following new single and multi domain dics and Updated in changes_in_databases:
 	administrative_dic.txt		administrative_multi_dic.txt
 	civil_dic.txt			civil_multi_dic.txt
 	electrical_dic.txt		electrical_multi_dic.txt
@@ -57,13 +67,13 @@
 	account_dic.txt			account_multi_dic.txt	
 	banking_dic.txt			banking_multi_dic.txt
 	computer_dic.txt		computer_multi_dic.txt		wsd_dictionary.txt
- 23. Modified following files to add above dics to get canonical form and mixed domain dic: 
+ 26. Modified following files to add above dics to get canonical form and mixed domain dic: 
 	get_dictionary_in_canonical_form.sh
 	list-right
 	list_SMT
 	list_Anu_data_domain
 	list_Anu_data_multi_domain
- 24. Following files are modified accordingly:
+ 27. Following files are modified accordingly:
 	constituency_to_dependency.sh	stanford-parser/README	get_latest_version_stanford_parser.sh
 	run_lexicalize.sh		run_stanford.sh		run_multiple_parse_penn.sh
 	run_penn-factored.sh		run_penn-pcfg.sh	run_penn-rnn.sh
@@ -78,23 +88,23 @@
 	std_tregex/README		std_tregex/run_tregex.sh	std_tregex/run_tregex_for_multiparse.sh
 	run_alignment.sh		run_sentence_ace.sh	run_sentence_stanford.sh
 	run_sentence_stanford_minion.sh
- 25. Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
+ 28. Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
         gender_info.clp                 run_modules_std.bat     run_sentence_stanford.sh
         hindi_meaning.clp               run_modules_logon.bat   run_sentence_logon.sh
         tam_meaning.clp                 run_modules_ace.bat     run_sentence_ace.sh
         wsd_meaning.clp                 run_modules_ol.bat      run_sentence_ol.sh
         wsd_tam_meaning.clp		run_modules_link.bat	run_sentence_link.sh
 	hindi_compound_meaning.clp
- 26. Added: 
+ 29. Added: 
 	dependency_alignment folder
 	phrasal_alignment/modify_anu_output.clp
- 27. Modified the following files to add dependency info
+ 30. Modified the following files to add dependency info
         dic_compile.sh				Anusaaraka_alignment.sh		 run_alignment.sh
 	create_eng_align_html_phrasal.clp	phrasal_alignment.css		phrasal_alignment.js
 	run_H_gen_sen_eng.bat
- 28. Added following files for dependency debug
+ 31. Added following files for dependency debug
         dep_align_debug.sh	print_dependency_matrix.py
- 29. Updated following lex files:
+ 32. Updated following lex files:
 	tagger.lex		-> Modified pattern for sent end.
 	stnford_relations.lex	-> Handled patterns when punctuations and -LRB- , -RRB- etc cases
 	dependency_parse.l	-> Handled syntax errors
@@ -106,7 +116,7 @@
 	wx_utf8.lex		->	"
 	enclitics.lex		->    modified quote as ABBR-SingleQuote
 	handling_abbrevations.lex ->  fixed the bug to handle Ch.
- 30. Updated following shell files:
+ 33. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm and 
 						   compilation of non_canonical_form.lex
@@ -115,23 +125,24 @@
 	phrasal_alignment/compile.sh
 	check-existence-for-clp-file.sh	
 	Anusaaraka_link.sh
- 31. Updated the following files 
+	stdenglish.sh	
+ 34. Updated the following files 
 	print-pos-info.py		Dictionaries/Readme
- 32. gdbm_lookup.c:
+ 35. gdbm_lookup.c:
 	Fixed bug to return 'FALSE' when database is empty or not found case
- 33. Splitted NER data into sentence wise in following files:
+ 36. Splitted NER data into sentence wise in following files:
 	run-ner.pl
 	run-ner.sh
 	Anusaaraka_stanford.sh
- 34. Updated following dictionaries:
+ 37. Updated following dictionaries:
 	changes_in_databases
 	provisional_multi_word_dictionary.txt
 	apertium-en-hi.en.metadix
 	apertium_hn.dix
- 35. Updated following Stanford versions 3.4.1 to 3.6.0
+ 38. Updated following Stanford versions 3.4.1 to 3.6.0
         Stanford Parser
         Stanford Tregex
- 36. Updated Log.
+ 39. Updated Log.
 
  
  19-11-15

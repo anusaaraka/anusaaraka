@@ -50,6 +50,11 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ #=====================Check whether i/p file contains <TITLE> or not ..If not present adding it=====
+ #Check whether i/p file contains <TITLE> or not ... If not present adding it.
+ $HOME_anu_test/Anu_src/check_for_TITLE.out $PRES_PATH/$1 $MYPATH/tmp/$1_tmp/$1
+
+
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
@@ -60,7 +65,7 @@
 # sh run_transliteration.sh $MYPATH/tmp $1
 
 
- cd $PRES_PATH
+ cd $MYPATH/tmp/$1_tmp
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH $5

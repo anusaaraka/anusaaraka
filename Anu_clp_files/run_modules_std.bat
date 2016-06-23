@@ -142,6 +142,7 @@
  (load-facts "lwg_info_tmp.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "parser_pos_cat.dat")
+ (load-facts "root_tmp.dat")
  (open "relations_tmp.dat" open-file "w")
  (open "relations_debug.dat" debug_fp "w")
  (open "word.dat" open-word "a")
@@ -234,7 +235,7 @@
  (close hmng_fp1)
  (close open-word1)
  (clear)
- ;----------------------------------------------------------------------
+ ;================================ TRANSFER MODULE ===================================================
  ; Across paxa ordering
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/H_ordering_rules.clp"))
@@ -253,7 +254,7 @@
  (save-facts "hindi_id_order_tmp.dat" local hindi_id_order)
  (save-facts "meaning_to_be_decided.dat" local meaning_to_be_decided)
  (clear)
- ;================================ TRANSFER MODULE ===================================================
+ ;----------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/template_before_mng.clp"))
  (load ?*path*)
@@ -287,6 +288,7 @@
  (load-facts "hindi_meanings_tmp.dat")
  (load-facts "tam_id.dat")
  (load-facts "language.dat")
+ (load-facts "ner.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))
@@ -359,12 +361,13 @@
  (load-facts "domain.dat")
  (load-facts "template_tam_meaning.dat")
  (load-facts "wsd_facts_output.dat") 
+ (load-facts "punctuation_info.dat")
  (defmodule WSD_TAM_MODULE (export ?ALL)
                        (import MAIN ?ALL))
  (set-current-module WSD_TAM_MODULE)
  (bind ?path1 (str-cat ?*path* "/Anu_clp_files/wsd_tam_meaning.clp"))
  (bind ?prov_path (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/"))
- (bind ?wsd_path (str-cat ?*wsd_path* "/canonical_form_wsd_rules/"))
+ (bind ?wsd_path (str-cat ?*wsd_path*  "/canonical_form_wsd_rules/"))
  (defglobal ?*prov_dir* = ?prov_path)
  (defglobal ?*wsd_dir* = ?wsd_path)
  (load ?path1)
@@ -511,6 +514,7 @@
  (load-facts "multi_word_expressions.dat")
  (load-facts "word.dat")
  (load-facts "revised_root.dat")
+ (load-facts "ner.dat")
  (open "vib_debug.dat" vib_debug_fp "w")
  (open "pada_control_fact.dat" p_c_fact "a")
  (run)
