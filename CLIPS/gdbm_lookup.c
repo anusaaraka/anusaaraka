@@ -21,7 +21,8 @@ char * gdbm_lookup(char *dbm,char *word)
    if (ArgCountCheck("gdbm_lookup",EXACTLY,2) == -1)
    { return(AddSymbol("FALSE"));} //Returning "FALSE" instead of empty string. Modified by Roja(14-06-16)
 
-   if (ArgTypeCheck("gdbm_lookup",2,SYMBOL_OR_STRING,&temp) == 0)
+
+  if (ArgTypeCheck("gdbm_lookup",2,SYMBOL_OR_STRING,&temp) == 0)
     { return(AddSymbol("FALSE"));} //Returning "FALSE" instead of empty string. Modified by Roja(14-06-16) 
 
    /*=================================*/
@@ -44,10 +45,10 @@ char * gdbm_lookup(char *dbm,char *word)
   /* Check for database. 1.Empty  OR  2.File not found */
   /*===================================================*/
   if (dbf == NULL)
- { PrintRouter(WDISPLAY,"Warning :: Database Not Found ----- OR ----- Database Is Empty.\n");
+ { PrintRouter(WDISPLAY,"Warning :: Database Not Found ----- OR ----- Database Is Empty.  ");
 //   PrintRouter(WDISPLAY,"\n");
-//   PrintRouter(WDISPLAY,RtnLexeme(2));
-//   PrintRouter(WDISPLAY,"\n");
+   PrintRouter(WDISPLAY,RtnLexeme(1));
+   PrintRouter(WDISPLAY,"\n");
    return(AddSymbol("FALSE"));}  //Returning "FALSE" instead of empty string. Modified by Roja(14-06-16)
 
    
