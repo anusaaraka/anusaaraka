@@ -186,8 +186,7 @@
  (Node-Category ?VP VP)
  ?f1<-(Node-Category ?VBN VBN)
  ?f2<-(Head-Level-Mother-Daughters ?h ?l ?VBN $?post ?id)
- (word-morph (original_word ?head) (root ?root) )
- (test (eq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?root) "_verb")) "FALSE"))
+ (not (word-morph (original_word ?head) (root ?root)(category	verb) ))
  ?f3<-(id-sd_cat  ?id  ?cat1)
  =>
         (retract ?f0 ?f1 ?f2 ?f3 )

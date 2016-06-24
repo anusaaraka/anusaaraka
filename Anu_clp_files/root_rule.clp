@@ -120,7 +120,8 @@
  ?f1<-(parser_id-cat_coarse ?pid ?cat1)
  (parserid-wordid  ?pid ?wid)
  (id-original_word ?wid ?word)
- (word-morph (original_word ?word)(morph_word ?morph_wrd)(root ?root)(category ?cat)(suffix ?suf)(number ?num))
+ (word-morph (original_word ?word)(morph_word ?morph_wrd)(root ?root&~-)(category ?cat)(suffix ?suf)(number ?num))
+ (test (neq ?cat ?cat1))
  ?f<-(morph_analysis_to_be_choosen ?wid)  
  =>
         (retract ?f ?f1)
@@ -128,6 +129,7 @@
         (printout ?*root_fp* "(parser_id-root "?pid" "?root")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;Modified by Shirisha manju (15-06-2016) Suggested by Chaitanya Sir -- to get orgiginal word insteadof '-' and added warning message
  ;Added by Roja(04-03-13)
  ;Default rule . If original word and morph original word mismatches then assign "-" for root.
  ;Note: As of now there is no example sentence.For testing purpose comment (gram flour) pattern in morph.pl
@@ -140,8 +142,9 @@
  (test (neq ?org_word ?m_org_word))
  =>
 	(retract ?f0)
-        (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  -   -  -   -)" crlf)
-        (printout ?*root_fp*  "(parser_id-root "?pid" - )" crlf)
+        (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?org_word"  -  -   -)" crlf)
+        (printout ?*root_fp*  "(parser_id-root "?pid" "?org_word ")" crlf)
+	(printout t "Warning: root missing for " ?org_word crlf)
  )
  ;-------------------------------------ADDITIONAL RULES FOR OPEN LOGOS PARSER------------------------------------------------
  ;Added by Roja (31-03-11)
@@ -151,7 +154,7 @@
  (parserid-wordid ?pid $?ids)
  (id-original_word ?id ?word)
  (parser_id-cat_coarse ?pid ?cat)
- (word-morph (original_word ?word)(morph_word ?morph_wrd)(root ?root)(category ?cat1)(suffix ?suf)(number ?num))
+ (word-morph (original_word ?word)(morph_word ?morph_wrd)(root ?root&~-)(category ?cat1)(suffix ?suf)(number ?num))
  ?f0<-(morph_analysis_to_be_choosen ?id)
  (test (member$ ?id $?ids))
  =>

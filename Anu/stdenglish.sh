@@ -13,15 +13,11 @@ else
     cd $PATH2/tmp_stdenglish
   fi
 
-#========================================Check whether i/p file contains <TITLE> or not ..If not present adding it=====
-#Check whether i/p file contains <TITLE> or not ... If not present adding it.
-$HOME_anu_test/Anu_src/check_for_TITLE.out $2/$1 $1.tmp_tmp
-
 #========================================Processing Symbols============================================================
 # Below three files are for handling different types of Symbols.
 
 # Replacing Non-ASCII characters within ASCII range with ASCII characters.  Ex: “ is replaced with "
-$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $1.tmp_tmp  > $1.tmp_tmp1 
+$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $PATH2/$1_tmp/$1  > $1.tmp_tmp1 
 
 # Replacing Symbols with their linguistic name. Mapped name is sent to the Parser. Ex: = is replaced as SYMBOL-EQUAL-TO
 $PATH1/mapping-symbols.out  < $1.tmp_tmp1 > $1.tmp_tmp2

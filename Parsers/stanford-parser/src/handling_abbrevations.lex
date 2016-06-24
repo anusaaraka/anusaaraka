@@ -7,13 +7,14 @@
 %{
 #include <string.h>
 int len;
-char str[1000], *s1, *s2;
+char str[1000], *s1;
 %}
 
 %%
 
-[ ]([Ff]igs?|[Ee]qs?|[Vv]izs?|[Cc]h|abbrv|USA|distt|[Rr]s|approx|cent)\)[ ]\([.][ ][.]\)	{	len=strcspn(yytext, ")");
-										strncpy(str, yytext, len);
+[ ]([Ff]igs?|[Ee]qs?|[Vv]izs?|[Cc]h|abbrv|USA|distt|[Rr]s|approx|cent)\)[ ]\([.][ ][.]\)	{	s1 = strchr(yytext, ' ')+1;
+										len=strcspn(s1, ")");
+										strncpy(str, s1, len);
 										str[len]='\0';
 										
 										printf(" %s.)", str);

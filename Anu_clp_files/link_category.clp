@@ -390,7 +390,7 @@
   (parserid-wordid  ?pid ?id)
   (parserid-word ?pid ?lword)
   (word-wordid-nertype ?lword ?id PERSON|LOCATION|ORGANIZATION)
-  (test (eq ?lword ?word))
+;  (test (eq ?lword ?word))
   =>
         (retract ?f0)
         (printout ?*link_cat-file* "(parser_id-cat_coarse  " ?pid "    PropN)" crlf)

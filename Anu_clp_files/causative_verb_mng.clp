@@ -120,7 +120,7 @@
  (defrule combine_viSeRya-viSeRaNa_mng_with_vib
  (declare (salience 710))
  ?f<-(Head-Level-Mother-Daughters  ? ? ?mot $? ?NN ?NNS)
- (and (Node-Category ?NN NN) (Node-Category ?NNS NNS))
+ (and (Node-Category ?NN NN) (Node-Category ?NNS NNS|NN))
  (Head-Level-Mother-Daughters  ? ?  ?NN  ?id)
  (Head-Level-Mother-Daughters  ? ?  ?NNS  ?id1)
  ?f0<-(id-HM-source ?id ?mng ?s&WSD_root_mng|Default_meaning)

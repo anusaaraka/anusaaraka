@@ -45,6 +45,7 @@
  (assert (id-wsd_viBakwi))
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
+ (assert (word-wordid-nertype))
  )
  ;---------------------------------------------------------------------------------------------------------------
  (deffunction remove_character(?char ?str ?replace_char)
@@ -232,6 +233,20 @@
         (modify ?f1 (vibakthi ko))
 	(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	object_as_jo_samAnAXikaraNa )" crlf )
  )
+ ;-------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya sir (15-06-16)
+ ;Sue asked George to respond to her offer. 
+ (defrule animate_vibakthi_rule_from_NER
+ (declare (salience 940))
+ (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
+ (word-wordid-nertype	?obj_id	PERSON)
+ ?f0<-(pada_control_fact ?obj_id)
+ ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
+ =>
+        (retract ?f0)
+        (modify ?f1 (vibakthi ko))
+        (printout ?*vib_debug_file* "(id-vib-source     "?obj_id"       ko      animate_vibakthi_rule_from_NER)" crlf )
+ )
  ;---------------------------------------- vib from wsd -------------------------------------------------------------
  ;Suggested by Sukhada (4-03-14)
  ;Most of the inexpensive budget accommodation is in taj ganj.
@@ -254,7 +269,9 @@
  (declare (salience 900))
  (id-wsd_viBakwi ?id ?vib)
  ?f0<-(pada_info (group_head_id ?id)(vibakthi 0) )
+ ?f1<-(pada_control_fact ?id)
  =>
+	(retract ?f1)
         (modify ?f0 (vibakthi ?vib))
 	(printout ?*vib_debug_file* "(id-vib-source	"?id"	"?vib "  get_vib_for_hid_from_wsd )" crlf )
  )
@@ -263,15 +280,17 @@
  ;Others conspired to keep Thomas off the original Dream Team.
  ;अन्यों ने मूल ड्रीम टीम से टॉमस को दूर रखने का षडयन्त्र रचा.
  (defrule get_vib_for_kriyA_mUla
- (declare (salience 900))
+ (declare (salience 890))
  (id-HM-source ?id ?hm ? )
  (prep_id-relation-anu_ids ? kriyA-kriyArWa_kriyA|kriyA-kqxanwa_karma ?id ?vn) 
  (make_verbal_noun ?vn)
  (test (neq (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hm) "FALSE"))
  ?f0<-(pada_info (group_head_id ?vn)(vibakthi ?vib) (H_tam ?tam))
  (test (neq ?vib kA))
+ ?f1<-(pada_control_fact ?vn)
  =>
 ;        (modify ?f0 (vibakthi kA) (H_tam kA))
+	(retract ?f1)
         (modify ?f0 (vibakthi kA) )
         (printout ?*vib_debug_file* "(id-vib-source     "?vn"   kA   get_vib_for_kriyA_mUla )" crlf )
  )
