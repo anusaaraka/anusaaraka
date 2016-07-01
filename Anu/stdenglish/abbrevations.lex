@@ -32,7 +32,7 @@ int len=0;
                                                                       else
                                                                       printf("%sABBR-Dot\n", str);
                                                               } 
-[\n{\[( ]+((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh])|([Aa][.][Mm][.])|([Pp][.][Mm][.]))[\n, ] 		 				   {    *str='\0';
+[\n{\[( ]+((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh][.]?)|([Aa][.][Mm][.])|([Pp][.][Mm][.])|([Mm][.][Tt][Ee][[Cc][Hh][.]?))[\n, ] 		 				   {    *str='\0';
 			                                           while((len=strcspn(yytext,".")) < strlen(yytext))
                         				           {
 			                                               strncat(str,yytext,len);
@@ -43,7 +43,7 @@ int len=0;
                                         strncat(str,yytext,len);
                                         printf("%s", str);
                                   }
-^((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh])|([Aa][.][Mm][.])|([Pp][.][Mm][.]))[\n, ]                                                 		{    *str='\0';
+^((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh])|([Aa][.][Mm][.])|([Pp][.][Mm][.])|([Mm][.][Tt][Ee][[Cc][Hh][.]))[\n, ]                                                 		{    *str='\0';
                                         while((len=strcspn(yytext,".")) < strlen(yytext))
                                         {
                                                strncat(str,yytext,len);
