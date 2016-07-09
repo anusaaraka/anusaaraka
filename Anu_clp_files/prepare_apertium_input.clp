@@ -811,6 +811,8 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  we_hue_rule )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
+  ;The Master said, if I did not go, how would you ever see?
+  ;mAlika ne kahA, ki yaxi mEM [nahIM gayA WA], wo kEse Apa kaBI BI xeKeMge?
   (defrule VP_rule_for_jA
   (declare (salience 700))
   (pada_info (group_head_id ?pada_id)(group_cat VP)(number ?num)(gender ?gen)(person ?per)(H_tam ?H_tam)(preceeding_part_of_verb ?vib))
@@ -825,69 +827,42 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_jA )" crlf)
   )
   ;--------------------------------------------------------------------------------------------------------------------------
-  ;I went there with my mother . Having finished the book, she went to school.
+  ;I went there with my mother . mEM merI mAz ke sAWa vahAz para [gayA].
+  ;He had gone into his room, and gone out again almost immediately.  vaha usake kamare meM [gayA WA], Ora wawkAla BI lagaBaga [bAhara gayA WA].
+  ;One kind of response from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature. 
+  ;Having finished the book, she went to school.
+  ;He left in the morning .
   (defrule VP_rule_for_jA1
-  (declare (salience 650))
+  (declare (salience 640))
   (pada_info (group_head_id ?pada_id)(group_cat VP)(number ?num)(gender ?gen)(person ?per)(H_tam ?H_tam))
   (yA-tam  ?H_tam)
-  ?f0<-(id-HM-source ?pada_id jA ?)
+  ?f0<-(id-HM-source ?pada_id ?h_mng ?)
   =>
-        (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:jA,tam:yA1,gen:"?gen",num:"?num ",per:"?per")"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_jA1 )" crlf)
+	(bind ?hmng ?h_mng)
+	(if (neq (str-index "_" ?h_mng) FALSE) then
+               (bind ?index (str-index "_" ?h_mng))
+               (while (neq ?index FALSE) ;Run the loop till the last "_" found, Added by S.Mahalaxmi (16-01-10)
+                       (bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
+                       (bind ?index (str-index "_" ?h_mng))
+               )
+        )
+       	(if (eq (string-to-field ?h_mng) jA) then
+	       	(retract ?f0)
+		(if (neq (str-index "_" ?H_tam) FALSE) then
+                	(bind ?index1 (str-index "_" ?H_tam))
+                	(bind ?str (sub-string (+ ?index1 1) 1000 ?H_tam))
+        	else
+                	(bind ?str ?H_tam)
+        	)
+		(if (eq ?str yA) then
+	        	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?hmng",tam:yA1,gen:"?gen",num:"?num ",per:"?per")"  crlf)
+		else
+                        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?hmng",tam:yA1_"?str",gen:"?gen",num:"?num ",per:"?per")"  crlf)
+		)	
+        	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_jA1 )" crlf)
+	)
   )
  ;---------------------------------------------------------------------------------------------------------------------------
- ; The answer is no because the direction could be changing
- ; He left in the morning . The boy saw an elephant in the forest .
-  (defrule VP_rule_for_jA_and_yA-tam
-  (declare (salience 640))
-  (pada_info (group_head_id ?pada_id)(group_cat VP)(number ?num)(case ?case)(gender ?gen)(person ?per)(H_tam ?H_tam))
-  (yA-tam  ?H_tam)
-  ?f0<-(id-HM-source ?pada_id ?h_mng ?)
-  =>
-       (bind ?hmng ?h_mng)
-        (if (neq (str-index "_" ?h_mng) FALSE) then
-               (bind ?index (str-index "_" ?h_mng))
-               (while (neq ?index FALSE) ;Run the loop till the last "_" found, Added by S.Mahalaxmi (16-01-10)
-                (bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
-                (bind ?index (str-index "_" ?h_mng))
-                )
-                (if (eq ?h_mng "jA") then
-                        (retract ?f0)
-                        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?hmng",tam:yA1,gen:"?gen",num:"?num ",per:"?per")"  crlf)
-                        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_jA_and_yA-tam )" crlf)
-                )
-        )
-  )
-  ;--------------------------------------------------------------------------------------------------------------------------
-  ; Added by sriram: same as above rule but handles tam having more than one word ( yA_WA ).
-  ; The answer is no because the direction could be changing
-  ; He left in the morning . The boy saw an elephant in the forest .
-  (defrule VP_rule_for_jA_and_yA-tam-multi
-  (declare (salience 650))
-  (pada_info (group_head_id ?pada_id)(group_cat VP)(number ?num)(case ?case)(gender ?gen)(person ?per)(H_tam ?H_tam))
-  (yA-tam  ?H_tam)
-  ?f0<-(id-HM-source ?pada_id ?h_mng ?)
-  =>
-     (if (neq (str-index "_" ?H_tam) FALSE) then
-        (bind ?index1 (str-index "_" ?H_tam))
-        (bind ?str (sub-string (+ ?index1 1) 1000 ?H_tam))
-
-       (bind ?hmng ?h_mng)
-        (if (neq (str-index "_" ?h_mng) FALSE) then
-               (bind ?index (str-index "_" ?h_mng))
-               (while (neq ?index FALSE) ;Run the loop till the last "_" found, Added by S.Mahalaxmi (16-01-10)
-                (bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
-                (bind ?index (str-index "_" ?h_mng))
-                )
-                (if (eq ?h_mng "jA") then
-                        (retract ?f0)
-                        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?hmng",tam:yA1_"?str",gen:"?gen",num:"?num ",per:"?per")"  crlf)
-                        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_jA_and_yA-tam-multi )" crlf)
-                )
-        ))
-  )
-  ;--------------------------------------------------------------------------------------------------------------------------
   ;Be careful, she said.
   (defrule VP_rule_for_imper
   (declare (salience 650))

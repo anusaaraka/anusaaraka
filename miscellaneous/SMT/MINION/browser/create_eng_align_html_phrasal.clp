@@ -88,7 +88,7 @@
  )
 
  (deffunction print_caution_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
- (printout fp "<tr class=\"row2\">" crlf)
+ (printout fp "<tr class=\"row16\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B"))
  (if (or (eq ?sen_type truncated) (eq ?sen_type noun_absolute))then
  (printout fp "<a onclick=\"javascript: caution_"?sen_type"('"?sen_type"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_eliptical\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_"?w_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a></td> <td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
@@ -97,13 +97,15 @@
  else (if (eq ?sen_type catastrophe) then
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_"?p_id"_"?s_id"_"?w_id"_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type Default_mng_with_different_category) then 
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
- else
- (printout fp "</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)))))
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9888;</blink></a></td>" crlf "</tr>" crlf)
+ else (if (eq ?sen_type hindi_order_for_of) then
+	 (printout fp "</td><td class=\""?chnk_fr_htm"\"> <--- </td>" crlf "</tr>" crlf)
+ else	
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf))))))
  )
 
  (deffunction print_padasutra_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
- (printout fp "<tr class=\"row3\">" crlf)
+ (printout fp "<tr class=\"row2\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".C</td>"))
  (if (eq ?cat PropN) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?padasuthra" </td>" crlf "</tr>" crlf)
@@ -112,7 +114,7 @@
  )
 
  (deffunction print_dictionary_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?pos ?root)
- (printout fp "<tr class=\"row5\">" crlf)
+ (printout fp "<tr class=\"row4\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".E</td>"))
  (bind ?root (implode$ (create$ ?root)))
  (if (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic_firefox.gdbm" ?root) "FALSE") then
@@ -141,7 +143,7 @@
 
  (deffunction print_root_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (bind ?suf -)(bind ?num -) ;the values of suffix and number are made (-), this is temporarily and kept for discussion about how to show the morph information in that row [especially for pronouns].
- (printout fp "<tr class=\"row4\">" crlf)
+ (printout fp "<tr class=\"row3\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".D</td>"))
  (if (and (neq ?suf -)(neq ?num -)) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?root (implode$ (create$ ?r_punc)) " {suf:"?suf",num:"?num"} </td>" crlf "</tr>" crlf)
@@ -154,18 +156,18 @@
  )
  
  (deffunction print_pos_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?cat)
- (printout fp "<tr class=\"row6\">" crlf)
+ (printout fp "<tr class=\"row5\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".F</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?cat" </td>" crlf "</tr>" crlf)
  )
 
  (deffunction print_chunker_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?chunk_type)
- (printout fp "<tr class=\"row7\">" crlf)
+ (printout fp "<tr class=\"row6\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".G</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?chunk_type" </td>" crlf "</tr>" crlf))
 
  (deffunction print_lwg_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra ?h_tam ?id_type)
- (printout fp "<tr class=\"row8\">" crlf)
+ (printout fp "<tr class=\"row7\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".H</td>"))
  (if (eq ?id_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?padasuthra"{tam:"?h_tam"}" (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
@@ -178,7 +180,7 @@
  )
 
  (deffunction print_sense_disambiguation_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam ?id_type ?mng_src ?tam_src)
- (printout fp "<tr class=\"row9\">" crlf)
+ (printout fp "<tr class=\"row8\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".I</td>"))
  (if (eq ?id_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "(implode$ (create$ ?l_punc)) ?h_mng" <span>"?mng_src"</span></a></a><a class=\"tooltip\" href=\"#\"> {tam:"?h_tam"}"(implode$ (create$ ?r_punc))" <span>"?tam_src "</span></a></td>" crlf "</tr>" crlf)
@@ -195,7 +197,7 @@
  )
 
  (deffunction print_prep-movement_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam ?id_type ?sign)
- (printout fp "<tr class=\"row10\">" crlf)
+ (printout fp "<tr class=\"row9\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".J</td>"))
  (if (eq ?id_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?h_mng"{tam:"?h_tam"}" (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
@@ -212,7 +214,7 @@
  )
 
  (deffunction print_hindi-generation_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?lwg_type)
- (printout fp "<tr class=\"row11\">" crlf ) 
+ (printout fp "<tr class=\"row10\">" crlf ) 
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".K</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
@@ -223,7 +225,7 @@
  )
 
  (deffunction print_manual_ouput_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row12\">" crlf )
+ (printout fp "<tr class=\"row11\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".L</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)
@@ -234,7 +236,7 @@
  )
 
  (deffunction print_manual_ouput_row1(?p_id ?s_id ?w_id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row13\">" crlf )
+ (printout fp "<tr class=\"row12\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".M</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)
@@ -245,7 +247,7 @@
  )
 
  (deffunction print_parser_align_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row14\">" crlf )
+ (printout fp "<tr class=\"row13\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".N</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
@@ -256,7 +258,7 @@
  )
 
  (deffunction print_manual_ouput_row2(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row15\">" crlf )
+ (printout fp "<tr class=\"row14\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".O</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
@@ -267,7 +269,7 @@
  )
 
  (deffunction print_manual_ouput_row3(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row16\">" crlf )
+ (printout fp "<tr class=\"row15\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".P</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
@@ -1092,7 +1094,6 @@
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -1109,6 +1110,7 @@
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 MAIN_VERB)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp MAIN_VERB)
 ; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 MAIN_VERB)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB) 
  else
  (print_lwg_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_tam ?padasuthra AUX_VERB)
@@ -1121,6 +1123,7 @@
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 AUX_VERB)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp AUX_VERB)
 ; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 AUX_VERB)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output AUX_VERB)) 
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1179,7 +1182,6 @@
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -1195,6 +1197,7 @@
  (print_manual_ouput_row2 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
 ; (print_manual_ouput_row4 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1252,7 +1255,6 @@
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))  
- (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_cat ?pp_padasuthra)
  (print_root_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?pp_suf ?pp_num)
  (print_dictionary_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?pp_cat ?pp_root)
@@ -1272,6 +1274,7 @@
  (print_manual_ouput_row2  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
 ; (print_manual_ouput_row4  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+ (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc "~" -) 
  
  (assert (id-index (+ ?pp_id 1) (- ?n_words 1)))
@@ -1320,7 +1323,6 @@
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -1336,6 +1338,7 @@
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
 ; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1383,7 +1386,6 @@
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -1399,6 +1401,7 @@
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
 ; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1445,7 +1448,6 @@
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm ?cat ?root)
@@ -1461,6 +1463,7 @@
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng_tmp -)
 ; (print_manual_ouput_row4  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1495,7 +1498,6 @@
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
  (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
- (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -s)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm - -)
@@ -1509,6 +1511,7 @@
  (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en - -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
+ (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -s)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))

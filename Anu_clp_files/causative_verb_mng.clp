@@ -184,7 +184,7 @@
  ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
  =>
         (retract ?f0)
-        (bind ?str (str-cat ?src ",rule_name::Default_meaning_for_adjective"))
+        (bind ?str (str-cat "Default_meaning_for_adjective"))
         (printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?str" "(implode$ $?ids)")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------

@@ -34,8 +34,11 @@
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
 
 ## python $HOME_anu_test/Anu_src/hindi_sentence.py  $MYPATH/$1_tmp/$2/hindi_id_order.dat  $MYPATH/$1_tmp/$2/hindi_punctuation.dat $MYPATH/$1_tmp/$2/id_Apertium_output.dat > $MYPATH/$1_tmp/$2/hindi_sentence_tmp.dat
+
+ echo ";~~~~~~~~~~" > splitter 
+
+ cat  word.dat splitter relations.dat splitter root.dat splitter cat_consistency_check.dat splitter tam_id.dat splitter punctuation_info.dat splitter sd_chunk.dat splitter padasuthra.dat splitter revised_preferred_morph.dat splitter parserid_wordid_mapping.dat splitter lwg_info.dat splitter hindi_meanings.dat splitter GNP_agmt_info.dat splitter id_Apertium_output.dat splitter hindi_id_order.dat splitter position.dat splitter hindi_punctuation.dat splitter catastrophe.dat splitter English_sentence.dat splitter para_sent_id_info.dat splitter original_word.dat >>$MYPATH/$1_tmp/$2/all_facts
  
- cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat >>$MYPATH/$1_tmp/$2/all_facts
 
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat lwg_info.dat hindi_meanings_with_grp_ids.dat GNP_agmt_info.dat id_Apertium_output.dat catastrophe.dat  >>$MYPATH/$1_tmp/$2/facts_for_eng_html 
 

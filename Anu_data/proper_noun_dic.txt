@@ -105,6 +105,7 @@ adigaman	axigamana
 adige	edIja
 adikal	AxikAla
 adilabad	axilAbAxa
+adinath	AxinAWa
 adipur	Axipura
 adishree	AxiSrI
 adison	edisana
@@ -243,6 +244,7 @@ alpa	alpA
 alphonso	alPoMso
 alps	Alpasa
 alva	alvA
+alvar	alvara
 alwar	alavara
 alyona	alyonA
 am	eema/AM
@@ -418,6 +420,7 @@ apurva	apUrvA
 ara	ara
 arabia	araba
 aradhana	ArAXanA
+arahanath	arahanAWa
 arakkonam	arAkkonama
 arambam	arambama
 arati	ArawI
@@ -466,6 +469,7 @@ arzoo	ArajU
 as'ad	aSaxa
 asaan	asAna
 asambhahav	asaMBava
+asandhivat	asanXivawa
 asansol	Asanasola
 aseem	asIma
 aseen	asina
@@ -638,6 +642,7 @@ bahraich	baharEca
 bahrain	baharIna/bAharEna
 bahram	baharAma
 bahu	bAU
+bahubali	bAhubalI
 bahudur	bahuxura
 bahurani	bahurAnI
 baidya	bExya
@@ -842,6 +847,7 @@ bhadur	bahAxura
 bhagalpur	BAgalapura
 bhagat	Bagawa
 bhagavad-gita	BAgavax-gIwA
+bhagawan	BagavAna
 bhaggmati	BAggmawI
 bhagirath	BAgIraWa
 bhagirathi	BAgIraWI
@@ -959,6 +965,7 @@ bidar	bIxara
 bidika	bidikA
 bierce	Bierce
 bight	KalIja
+bihari	bihArI
 bijapur	bIjApura
 bijnaur	bijanOra
 bijnor	bijanora
@@ -1039,6 +1046,7 @@ bradley	brAdalI
 brahma	brahmA
 brahmachari	brahmacArI
 brahmacharimayum	brahmacArImAyuma
+brahmasthal	brahmasWala
 brajabashimayum	barAjAbaSImAyuma
 brar	barAra
 bravo	brAvo
@@ -1204,8 +1212,10 @@ chandigarh	caMdIgaDZa
 chandika	caMdikA
 chandni	cAMxanI
 chandosi	caMxosI
-chandra	caMxrA/canxra
+chandra	caMxrA/canxra/canxrA
 chandradasan	caMxraxAsana
+chandradeva	canxraxeva
+chandragiri	canxragirI
 chandrahas	caMxrahAsa
 chandrak	caMxraka
 chandrakar	caMxrAkara
@@ -1233,6 +1243,7 @@ chapra	CaparA
 charak	cAraka
 charan	caraNa
 charanjit	caraNajIwa
+charanpaduka	caraNapAxukA
 charas	carasa
 charitraheen	cariwrahIna
 charkhari	caraKarI
@@ -1323,6 +1334,7 @@ chinese	cInI
 chingaari	ciMgArI
 chingakham	cingAkhama
 chingangbam	ciMgaaMgabama
+chingitarai	ciMgIwarAI
 chingsubam	ciMgasubaM
 chingtham	cingWama
 chiniot	ciniowa
@@ -1613,6 +1625,8 @@ defoe	dePo
 degree	upAXi
 dehgam	xehagAma
 dehoroad	xehuroda
+dehra	xeharA
+dehra-tijara	xeharA-wijArA
 dehradun	xeharAxUna
 dehuri	xeharI
 deka	xekA
@@ -1741,6 +1755,7 @@ dickens	SEwAna
 didcot	didkoYta
 didi	xIxI
 dig	dIAIjI
+digambar	xigambara
 digamber	xigambara
 dil	xila
 dil-e-nadaan	xila-E-nAxAna
@@ -1925,6 +1940,7 @@ ernst	arnesta
 erode	iroda
 eshwar	ISvara
 espn	iesapIena
+estate	esteta
 estonia	IstoniyA/estoniyA
 etawah	itAvA
 ethiopia	IWiyopiyA
@@ -2080,6 +2096,7 @@ gaitonde	gEtoMxe
 gajanan	gajAnana
 gajendra	gajenxra
 gajjar	gajjara
+gajpur	gajapura
 gajraula	gajrOla
 galal	galAla
 galilei	gElilI
@@ -2490,7 +2507,7 @@ hassan	hassana/hassana
 hassy	hassI
 hasti	haswI
 hastin	haswina
-hastinapur	haswInApura
+hastinapur	haswInApura/haswinApura
 hathiwala	haWivAlA
 hathras	hAWarasa
 hathyaar	haWyAra
@@ -3124,6 +3141,7 @@ kalpana	kalpanA/kalZpanA
 kalra	kAlarA
 kalsangrah	kalasAna_graha
 kalyan	kalyANa
+kalyanaks	kalyANaka
 kalyug	kalayuga
 kamadev	kAmaxeva
 kamakhya	kAmaKyA
@@ -3165,7 +3183,7 @@ kani	kAnI
 kanikkar	kAnikkara
 kanitkar	kaniwkara
 kanjivaram	kAMjIvarama/kAFjIvarama
-kanker	kaNakera
+kanker	kaNakera/kAfkera
 kannur	kannUra
 kanoon	kAnUna
 kanphade	kanaPeda
@@ -3237,6 +3255,7 @@ kasauti	kasOtI
 kashap	kaRapa
 kashi	kASI
 kashikar	kASIkara
+kashmere	kaSmIrI
 kashmir	kaSmIra
 kashmiri	kaSmIrI
 kasoor	kasUra
@@ -3258,6 +3277,7 @@ kattimani	kattImaNi
 kaul	kOla
 kaumudi	kOmuxI
 kaur	kOra
+kauravas	kOrava
 kausauli	koYsOlI
 kaushal	kOSala
 kaushalya	kOSalyA
@@ -3511,6 +3531,7 @@ krodhi	kroXI
 krrish	kriSa
 kshama	kRamA
 kshatriya	kRawriya
+kshetra	kRewra
 kshetrimayum	kRewrimayuma
 ku	keyU
 kubzaa	kubjA
@@ -3519,6 +3540,7 @@ kudart	kuxarawa
 kudeshia	kuxeSiyA
 kufri	kuParI
 kuhuk	kuhuka
+kujarpur	kujArapura
 kukaar	kukAra
 kukian	kukiM
 kukkad	kukkadZa
@@ -3547,6 +3569,7 @@ kundal	kuMdala
 kunder	kuMxara
 kundu	kuMdU
 kunju	kuMjU
+kunthanath 	kunWanAWa
 kunwara	kuMvArA
 kurali	kurAlI
 kurbaan	kurbAna
@@ -3912,6 +3935,7 @@ mallammanavar	mallAmmAnAvara
 mallick	mallicka
 mallika	mallikA
 mallikarjun	mallikArjuna
+malliknath	malliknaWa
 malout	malOta
 maloya	maloyA
 malta	mAltA
@@ -3921,6 +3945,7 @@ mamata	mamawA
 mammon	kubera
 mamoori	mAmUrI
 mamta	mamawA
+man-stambh	mAna-swamBa
 manager	menejara
 manasi	mAnasI
 manavadar	mAnavAxara
@@ -4300,8 +4325,10 @@ mumbai-bhopal-delhi	mumbaI-BopAla-xillI
 mumbai-kota-delhi	mumbaI-kotA-xillI
 mumford	mamaPorda
 mumtaj	mumawAja
+munagabahar	munagAbahAra
 munde	muMde
 muneem	munIma
+muni	muni
 munim	munIma
 munir	munIra
 muniyarayar	muniyArAyara
@@ -4686,6 +4713,7 @@ padhi	pAXI
 padma	paxmA
 padmajai	paxmajI
 padmanabh	paxmanABa
+padmasan	paxmAsana
 padmini	paxminI
 padosan	padZosana
 padukone	paxukone
@@ -4729,6 +4757,7 @@ panchkula	paMcakulA
 pancholi	paMcolI
 panda	paMdA
 pandala	panxAlA
+pandavas	pANdava
 pandey	pANdeya
 pandharpur	paMDarapura
 pandit	paMdiwa
@@ -4796,6 +4825,7 @@ parmaatma	paramAwmA
 parnassus	kaviwA
 parnika	parNikA/parnikA
 parnita	parNiwA
+parswanath	pArSvanAWa
 parte	parawe
 parth	pArWa
 partha	parWa/pArWA
@@ -4929,6 +4959,7 @@ plaza	plAjA
 pleistocene	Pleistocene
 pm	pIema/PM
 pnb	pIenabI
+podanpur	poxanapura
 poddar	poxxAra
 poe	po
 pokaran	poKarana
@@ -5024,6 +5055,7 @@ pratosh	prawoRa
 pravar	pravara
 praveen	pravINa
 prayag	prayAga
+preachings	pravacana
 preeti	prIwi
 preetish	prIwiSa
 prem	prema
@@ -5180,6 +5212,7 @@ rajani	rajanI
 rajanigandha	rajanIgaMXA
 rajanikant	rajanIkAMwa
 rajanpur	rAjanapura
+rajasthan	rAjasWAna
 rajata	rAjawA
 rajawat	rAjAvawa
 raje	rAje
@@ -5576,6 +5609,7 @@ samjhauta	samaJOwA
 samoa	samoyA/sEmoA
 samom	samoma
 samoothiri	samUWirI
+samosaran	samosarana
 sampat	saMpawa
 sampriti	samprIwi
 samraat	samrAta
@@ -5825,6 +5859,8 @@ shangwan	sAMgavAna/SaMgavana
 shankar	SaMkara
 shanta	SAMwA
 shanti	SAMwi
+shantinagar	SAnwinagara
+shantinath	SAnwinAWa
 shanubhogue	SAnuBogue
 shapath	SapaWa
 shaquille	Sakuille
@@ -6107,6 +6143,8 @@ ssp	esaesapI
 st	esatI/seMta
 stalin	stAlina
 stalingrad	stelinagrAxa
+stambh	swamBa
+stambha	swamBa
 star	stAra/wArA
 starrett	Starrett
 state	rAjya
@@ -6231,6 +6269,7 @@ susila	suSIlA
 sutaria	suwAriyA
 suthar	suWara
 suvarna	suvarNa
+suvrat	suvrawa
 suvrata	suvrawA/suvrawa
 sviet	esa_vI_AI_I_tI
 swades	svaxesa
@@ -6464,6 +6503,10 @@ tinku	tiMkU
 tinsukia	winasukiyA
 tipawm	wipavma
 tiranga	wiraMgA
+tirathdev	wIraWaxeva
+tirathgarh	wIraWagaDa
+tirthankar	wIrWafkara
+tirthankaras	wIrWafkara
 tiruchirappalli	wirucirAppallI/wirucIrAppallI
 tirunelveli	wirunelavelYI
 tirupathi	wirupawi
@@ -6510,6 +6553,7 @@ trinity	trinitI
 tripathi	wripATI
 trishna	wqRNA/wqRnA
 trishul	wriSUla
+tritiya	wqwIyA
 trivandrum	wrivEnaxruma
 trivedi	wrivexI
 trollope	Trollope
@@ -6674,6 +6718,7 @@ valiathan	valiaWAna
 valiyaveetil	valiyAvIwila
 vallabh	vallaBa
 vallavaraiyar	vallAvArEyara
+valley	vElI
 vallika	vallIkA
 valodi	valoxI
 valsad	valasAda
@@ -6913,6 +6958,7 @@ welcome	velkome
 west	paScima
 western	paScima
 westerns	pAScAwya
+wetten	vettena
 whigs	vhigsa
 whitewater	vhAitavoYtara
 wilets	Wilets

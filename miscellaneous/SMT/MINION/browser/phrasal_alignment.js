@@ -12,7 +12,7 @@ var rows_visibility = [
 0, // row7
 0, // row8
 0, // row9
-0, // row10
+1, // row10
 1, // row11
 1, // row12
 1, // row13
@@ -24,7 +24,6 @@ var rows_visibility = [
 
 var row_labels = [
 "English (A)",
-"Cautionary Signs (B)",
 "Hindi padasutra (C)",
 "Root (D)",
 "Dictionary (E)",
@@ -39,12 +38,12 @@ var row_labels = [
 "English and Hindi Parsers align  (N) ",
 "Alignment with different sources (Anu, Dic, Wordnet)  (O) ",
 "Manual meaning  (P) ",
+"Cautionary Signs (B)",
 "Suggestions (Q)"
 ];
 
 var row_descriptions = [
 "Original English text",
-"Shows the cautionary sign for a word indicating a condition requiring special attention",
 "Gives the Hindi gloss of English word",
 "Shows root word(s) corresponding to the English word",
 "Shows iit_bombay and shabdanjali dictionary meanings",
@@ -59,5 +58,6 @@ var row_descriptions = [
 "Shows the manual aligned meaning with eng and hnd rel huristics",
 "Shows the manual aligned meaning after applying huristics",
 "Shows the manual aligned meaning after applying huristics",
+"Shows the cautionary sign for a word indicating a condition requiring special attention",
 "Shows the user suggestion"
 ];

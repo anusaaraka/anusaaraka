@@ -1,10 +1,12 @@
- 23-06-16
+ 01-07-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
   2. create_eng_ord_html.clp	:  Modified : print_caution_row function, test_for_catastrophe_symbol, id_rule0, apertium_output_with_pp_id0,
 					      apertium_output_with_pp_id1, id_rule4, id_rule5, id_rule6
   3. prepare_apertium_input.clp :  Added    : movement_of_kA_vib and Compound_word_mng_with_grpid_head
+				   Removed  : VP_rule_for_jA_and_yA-tam and VP_rule_for_jA_and_yA-tam-multi
+				   Modified : VP_rule_for_jA1  [merged above rules condition]
   4. sd_relation_correction.clp :  Modified : change_obj_head
   5. parser_tree_correction_rules.clp :   Added    : modify_VB_as_RB      modify_VBN_as_JJ
   6. H_ordering_rules.clp       :  Modified : dont_reverse_NP (added kind)
@@ -18,6 +20,7 @@
                                    Modified rules to use word fact instead original word and root
  10. causative_verb_mng.clp 	:  Modified : get_rule_info  [added test condition]
 					      combine_viSeRya-viSeRaNa_mng_with_vib -- added NN in the list
+					       get_rule_info1 -- modified tooltip for default adjective mng
  11. sd_chunker.clp		:  Modified : print_chunk (handled Inf_VP)
  12. idioms.clp			:  Renamed  : print to print_idiom
 				   Modified : chk_for_idiom, print_idiom
@@ -48,7 +51,8 @@
 	Modified colour for VP
  21. script.js:
 	Commented enable_keyboard_shortcuts() line
- 22. Added unique_entries.py 
+ 22. Added 
+	unique_entries.py  	run_anu.sh
  23. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
 	multi_word_expression_for_domain.c		multi_word_expression.c	
@@ -116,6 +120,7 @@
 	wx_utf8.lex		->	"
 	enclitics.lex		->    modified quote as ABBR-SingleQuote
 	handling_abbrevations.lex ->  fixed the bug to handle Ch.
+	abbrevations.lex 	-> added M.Tech to the list
  33. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm and 
@@ -126,6 +131,7 @@
 	check-existence-for-clp-file.sh	
 	Anusaaraka_link.sh
 	stdenglish.sh	
+	run_sentence_stanford.sh   -> added splitter after each file in all_facts file and changed the order of facts
  34. Updated the following files 
 	print-pos-info.py		Dictionaries/Readme
  35. gdbm_lookup.c:
