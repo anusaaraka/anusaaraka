@@ -61,5 +61,5 @@
 
  cat errors.txt
 
- #myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
- #mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
+ myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
+ mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
