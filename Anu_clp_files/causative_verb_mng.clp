@@ -117,6 +117,7 @@
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (06-02-15) Suggested by Chaitanya Sir
  ;He is solving the problems in the [chapter sets].
+ ;Trans Maldivian is one of them which has 20 [sea planes].
  (defrule combine_viSeRya-viSeRaNa_mng_with_vib
  (declare (salience 710))
  ?f<-(Head-Level-Mother-Daughters  ? ? ?mot $? ?NN ?NNS)
@@ -129,9 +130,9 @@
  (id-original_word ?id1 ?w1)
  =>
         (retract ?f ?f0 ?f1)
-	(assert (id-HM-source ?id -  ?s))
+	(assert (id-HM-source ?id -  NN_NN_compound_rule))
         (bind ?n_mng (string-to-field (str-cat ?mng "_" ?mng1)))
-	(assert (id-HM-source ?id1 ?n_mng ?s1))
+	(assert (id-HM-source ?id1 ?n_mng NN_NN_compound_rule))
 	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
@@ -189,10 +190,48 @@
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
+ (defrule get_r_name_for_generated_comp
+ (declare (salience 450))
+ (id-HM-source ?id ? NN_NN_compound_rule)
+ ?f0<-(id-HM-source-grp_ids ?id ? ?s $?)
+ (or (dir_name-file_name-rule_name-id-wsd_root_mng ? ? ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ? ? ?rule_name $?ids ?))
+ (test (neq (integerp (member$ ?id $?ids)) FALSE))
+ =>
+	(retract ?f0)
+	(assert (id-rule_name ?id ?rule_name))
+
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-05-14)
+ (defrule get_r_name_for_generated_comp1
+ (declare (salience 440))
+ (id-HM-source ?id ? NN_NN_compound_rule)
+ ?f0<-(id-HM-source-grp_ids ?id ? ?s $?)
+ =>
+        (retract ?f0)
+        (assert (id-rule_name ?id ?s))
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-05-14)
+ ;Trans Maldivian is one of them which has 20 sea planes.
+ ;(id-HM-source-grp_ids  11  samuxra_samawala   NN_NN_compound_rule::Default_meaning,plane3 10 11)
+ (defrule get_info_for_generated_compound
+ (declare (salience 430))
+ (id-HM-source ?id - NN_NN_compound_rule)
+ (id-HM-source ?id1 ?hmng&~- ?)
+ ?f<-(id-rule_name ?id ?s)
+ ?f1<- (id-rule_name ?id1 ?s1)
+ =>
+	(retract ?f ?f1)
+	(bind ?str (str-cat "NN_NN_compound_rule::"?s","?s1))
+	(printout ?*h_mng_file* "(id-HM-source-grp_ids  "?id1"  "?hmng"   "?str" " ?id" " ?id1 ")" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-05-14)
  (defrule get_rule_info2
  (declare (salience 400))
  (id-HM-source ?id ?hmng ?src)
- ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
+ ?f0<-(id-HM-source-grp_ids  ?id  ? ? $?ids)
  =>
         (retract ?f0)
         (printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?src" "(implode$ $?ids)")" crlf)

@@ -1,4 +1,6 @@
 if [ "$1" == "-h" ]; then
+	echo "	USAGE :: view_facts.sh  dictionary"	
+	echo "			[OR]"  
 	echo "	USAGE :: view_facts.sh  <file_name> <sen-no> [<fact_file_name>]"
 	echo 
 	echo "	fact_file_name :"
@@ -12,20 +14,23 @@ if [ "$1" == "-h" ]; then
 	echo
 	echo " By default it dispalys all facts information  "
  	exit
-
 else
+   if [ "$1" == "dictionary" ]; then
+	gedit $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic.txt &
+	exit
+   else
 	cd $HOME_anu_tmp/tmp/$1_tmp/$2
 	if [ "$3" == "category" ]; then
 		cat cat_consistency_check.dat
 	elif [ "$3" == "root" ]; then
 		cat root.dat
-        elif [ "$3" == "tam" ]; then
-	  	cat tam_id.dat
-        elif [ "$3" == "ner" ]; then
+	elif [ "$3" == "tam" ]; then
+		cat tam_id.dat
+	elif [ "$3" == "ner" ]; then
 		cat ner.dat
-        elif [ "$3" == "gender" ]; then
-		cat word.dat gender.dat 
-        elif [ "$3" == "vibakthi" ]; then
+	elif [ "$3" == "gender" ]; then
+		cat hindi_meanings.dat  gender.dat 
+	elif [ "$3" == "vibakthi" ]; then
 		cat vib_debug.dat
 	elif [ "$3" == "relations" ]; then
 		echo  " 1. Parser relations  "
@@ -33,7 +38,7 @@ else
 		echo -n	"Enter your choice (1 or 2) and press [ENTER]: "
 		read number
 		if [ $number == 1 ]; then
-		       	cat sd-original-relations.dat
+	       		cat sd-original-relations.dat
 		else		
 			echo
 			sed '1,6d' $HOME_anu_tmp/tmp/$1_$2_user_wsd_info.dat | sed 's/(id-word-root-category\(.*\)//g' | sed 's/id, word\(.*\)//g' | sed 's/-----\(.*\)//g'| sed '/^$/d' > rel
@@ -41,5 +46,6 @@ else
 		fi
 	else  gedit all_facts &	
 	fi
+   fi
 fi
 

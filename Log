@@ -1,4 +1,4 @@
- 16-07-16
+ 18-07-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -22,7 +22,8 @@
                                    Modified rules to use word fact instead original word and root
  10. causative_verb_mng.clp 	:  Modified : get_rule_info  [added test condition]
 					      combine_viSeRya-viSeRaNa_mng_with_vib -- added NN in the list
-					       get_rule_info1 -- modified tooltip for default adjective mng
+					      get_rule_info1 -- modified tooltip for default adjective mng
+				   Added    : get_r_name_for_generated_comp, get_r_name_for_generated_comp1, get_info_for_generated_compound
  11. sd_chunker.clp		:  Modified : print_chunk (handled Inf_VP)
  12. idioms.clp			:  Renamed  : print to print_idiom
 				   Modified : chk_for_idiom, print_idiom
