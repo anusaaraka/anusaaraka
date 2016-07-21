@@ -548,11 +548,14 @@
  
  (defrule of_vib_movement
  (declare (salience 300))
- ?f0<-(pada_info (group_head_id ?h)(vibakthi 0) (preposition 0))
+ (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?h ?id)
  (id-root ?h kind|variety|type)
- ?f1<-(pada_info (vibakthi ?v) (preposition =(+ ?h 1)))
+ ?f0<-(pada_info (group_head_id ?h)(vibakthi ?v) )
+ ?f1<-(pada_info (group_head_id ?id)(vibakthi ?v1)) 
+ (not (modified_vib ?h))
  =>
-	(modify ?f0 (vibakthi ?v) (preposition =(+ ?h 1)))
-	(modify ?f1 (vibakthi 0)(preposition 0))
+	(modify ?f0 (vibakthi ?v1) )
+	(modify ?f1 (vibakthi ?v))
+ 	(assert (modified_vib ?h))
 )
 

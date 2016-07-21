@@ -30,7 +30,12 @@
  (assert (compound_meaning_decided))
  (assert (prep_id-relation-anu_ids))
  (assert (conjunction-components))
+ (assert (conj_head-left_head-right_head))
  )
+
+ (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+
 
  ; Added by Roja.(06-11-10)
  ; Stanford parser, Number information was taken from morph(apertium).
@@ -65,9 +70,9 @@
  ;Rama ate some SWEETS.
  (defrule get_num_frm_morph
  (declare (salience 950))
- (id-word ?id ?wrd)
+ ?f2<-(id-word ?id ?wrd)
  ?f1<-(id-number-src ?id ?num Default)
- ?f2<-(id-root-category-suffix-number  ?id ? ? ? ?num1)
+ (id-root-category-suffix-number  ?id ? ? ? ?num1)
  (test (neq ?num1 -))
  =>
        (assert (id-number-src ?id  ?num1  Morph))
@@ -136,6 +141,19 @@
                (retract ?f)
         )
  )
+ ;-----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju Suggested by Chaitanya Sir 09-07-16
+ ;It was in Hastinapur that [twelve Kalyanaks] of Shree Shantinath Prabhu, Kunthanath Prabhu and Shri Arahanath Prabhu occurred.
+ (defrule get_num_from_numerals
+ (declare (salience 700))
+ ?f<-(id-number-src ?h - ?)
+ (pada_info (group_head_id ?h) (group_ids $? ?id ?h))
+ (id-root-category-suffix-number ?id ?w&~one&~1 number ? ?) 
+ ?f0<-(id-word ?h ?)
+ =>
+	(retract ?f ?f0)
+	(assert (id-number-src ?h p number))
+ )	
  ;-----------------------------------------------------------------------------------------------------------
  ;printing the number info into a file.
  (defrule  default_number

@@ -446,9 +446,8 @@
 	(bind ?f_mng (get_first_mng ?rt ?cat1 ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-	        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -470,9 +469,8 @@
         (bind ?f_mng (get_first_mng ?org_wrd ?cat1 ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -551,9 +549,8 @@
         (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat1 ?dname))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
