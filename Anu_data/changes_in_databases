@@ -542,7 +542,8 @@
 	messenger	(	"     14anu-ban-02	 26-02-16 ) Ex: He is a sure messenger.	
 
 	Added 14897 entries extracted from wordnet by Mudit Mittal (11-06-16)
-		aalii	to  zygote  
+		aalii	to  zygote 
+	monkey		(By Roja 26-07-2016) Ex: The monkeys bunched together in their cage.	 
 
 
   Changes in total-paxasUwra.txt 
@@ -599,6 +600,10 @@
  27.    saba		Apa/__p			(By Manju			09-06-16)
  28.    piwAjI		pAnI/__n		(Suggested by Shivanjali        14-06-16)
  29.    BArI		ajAwI/__adj		(Suggested by Soma Mam		14-06-16)
+ 30.	<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>	(By Rajini 26-07-16)
+	<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>	(	"	   )
+	
+
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -1800,6 +1805,8 @@ Nandini ji LTRC 	27-11-13)
 	176. best_adjective		SreRTa/uwwama		(Suggested by Chaitanya Sir     21-06-16)
 					Ex: But this twin otter plane of 12-15 seats is undoubtedly the best for sightseeing an archipelago 
 					    (island group) like Maldives.
+	177. father_noun		piwAjI			(Suggested by Soma Mam	26-07-16)
+	178. mother_noun		mAwAjI			(	"	"	"	)
 					
 	
     5. Modifying first meaning from the list :
