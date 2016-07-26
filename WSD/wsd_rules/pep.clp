@@ -105,7 +105,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id joSa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pinch.clp 	pep5   "  ?id "  joSa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pep.clp 	pep5   "  ?id "  joSa )" crlf))
 )
 
 ;@@@ Added by Sonam Gupta MTech IT Banasthali 19-3-2014

@@ -27,6 +27,6 @@
 (assert (id-wsd_root_mng ?id loga))
 ;(assert (id-wsd_number ?id p))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " person.clp    person1  "  ?id "   loga  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " people.clp    people1  "  ?id "   loga  )" crlf))
 )
 

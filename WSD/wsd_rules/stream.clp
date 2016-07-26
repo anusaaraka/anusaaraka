@@ -121,7 +121,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id baha))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stream.clp 	stream3   "  ?id "  baha )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stream.clp 	stream5   "  ?id "  baha )" crlf))
 )
 
 ;@@@ Added by Jagriti

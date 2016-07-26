@@ -86,7 +86,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id iswemAla_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  eat.clp 	eat3   "  ?id "  iswemAla_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  eat.clp 	eat4   "  ?id "  iswemAla_ho )" crlf))
 )
 
 ;@@@ Added by Pramila(Banasthali University) on 06-12-2013

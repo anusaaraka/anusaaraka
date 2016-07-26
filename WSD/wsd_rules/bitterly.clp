@@ -12,7 +12,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id burI_waraha_se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp    bitterly0   "  ?id "  burI_waraha_se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitterly.clp    bitterly0   "  ?id "  burI_waraha_se )" crlf))
 )
 
 

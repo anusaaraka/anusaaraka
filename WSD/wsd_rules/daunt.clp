@@ -62,5 +62,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id BayaBIwa_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  daunt.clp 	daunt2   "  ?id "  BayaBIwa_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  daunt.clp 	daunt3   "  ?id "  BayaBIwa_ho )" crlf))
 )

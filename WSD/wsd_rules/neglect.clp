@@ -50,7 +50,7 @@
 (assert (id-wsd_root_mng ?id upekRA_kara))
 (assert (kriyA_id-object_viBakwi ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  neglect.clp   neglect2   "  ?id "  upekRA_kara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  neglect.clp   neglect02   "  ?id "  upekRA_kara )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  neglect.clp      neglect02   "  ?id " kA )" crlf)
 )
 )

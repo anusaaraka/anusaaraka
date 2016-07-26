@@ -82,7 +82,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id prawiropaNa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  transplant.clp 	transplant43  "  ?id " prawiropaNa)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  transplant.clp 	transplant3  "  ?id " prawiropaNa)" crlf))
 )
 
 ;;@@@   ---Added by Prachi Rathore

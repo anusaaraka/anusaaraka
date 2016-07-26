@@ -25,7 +25,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id lapasI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fritter.clp 	fritter0   "  ?id "  lapasI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fritter.clp 	fritter1   "  ?id "  lapasI )" crlf))
 )
 
 ;"fritter","N","1.lapasI"
@@ -40,7 +40,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id gazvA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fritter.clp 	fritter1   "  ?id "  gazvA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fritter.clp 	fritter2   "  ?id "  gazvA )" crlf))
 )
 
 ;"fritter","VT","1.gazvAnA"

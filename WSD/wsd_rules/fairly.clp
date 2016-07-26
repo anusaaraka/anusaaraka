@@ -90,7 +90,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kAPI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fairly.clp 	fairly4   "  ?id " kAPI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fairly.clp 	fairly2   "  ?id " kAPI )" crlf))
 )
 
 
@@ -102,5 +102,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id uciwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fairly.clp 	fairly5   "  ?id "  uciwa)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fairly.clp 	fairly3   "  ?id "  uciwa)" crlf))
 )

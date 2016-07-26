@@ -12,7 +12,7 @@
 ;(assert (affecting_id-affected_ids-wsd_group_root_mng  ?id   =(- ?id 1)  =(- ?id 2)  =(+ ?id 1)  kI_BAzwi ))
 (assert (affecting_id-affected_ids-wsd_group_root_mng  ?id   =(- ?id 1)  =(- ?id 2)  kI_BAzwi ))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " sort.clp  of_the_sort0  " ?id "    "  (- ?id 1) "  " (- ?id 2) "    kI_BAzwi  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " sort.clp  of_the_sort_in0  " ?id "    "  (- ?id 1) "  " (- ?id 2) "    kI_BAzwi  )" crlf))
 )
 
 

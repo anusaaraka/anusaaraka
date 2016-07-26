@@ -125,7 +125,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id PeMka_xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  discard.clp 	discard5   "  ?id "  PeMka_xe)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  discard.clp 	discard6   "  ?id "  PeMka_xe)" crlf))
 )
 
 

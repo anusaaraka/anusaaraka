@@ -25,7 +25,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id parivarwanaSIla))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  variable.clp 	variable0   "  ?id "  parivarwanaSIla )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  variable.clp 	variable1   "  ?id "  parivarwanaSIla )" crlf))
 )
 
 ;"variable","Adj","1.parivarwanaSIla"

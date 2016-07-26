@@ -16,7 +16,7 @@
 (assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  gobble.clp	gobble_down1  "  ?id "  " ?id1 "  nigala )" crlf))
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  gobble.clp  gobble0   "  ?id " ko )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  gobble.clp  gobble_down1   "  ?id " ko )" crlf)
 )
 
 ;____________________________________________________

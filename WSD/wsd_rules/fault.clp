@@ -20,7 +20,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kamI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fault.clp 	fault6   "  ?id "  kamI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fault.clp 	fault1   "  ?id "  kamI )" crlf))
 )
 
 ;default_sense && category=noun	BUla	0

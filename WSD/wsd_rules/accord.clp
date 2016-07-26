@@ -43,10 +43,10 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xe))
-(assert (kriyA_id-object_1_viBakwi ?id ko))
+(assert (kriyA_id-object1_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  accord.clp    accord5   "  ?id " xe   )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_1_viBakwi   " ?*wsd_dir* " accord.clp    accord5   "  ?id " ko )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object1_viBakwi   " ?*wsd_dir* " accord.clp    accord5   "  ?id " ko )" crlf)
 )
 )
 

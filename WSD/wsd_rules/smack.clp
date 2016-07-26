@@ -79,7 +79,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id cataKAre_le_kara_KA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  smack.clp 	smack2   "  ?id "  cataKAre_le_kara_KA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  smack.clp 	smack3   "  ?id "  cataKAre_le_kara_KA )" crlf))
 )
 ;I ran smack into the back of a parked truck.[oxford dict]
 ;मैं एक खड़ी ट्रक के पीछे सीधे भागा . 

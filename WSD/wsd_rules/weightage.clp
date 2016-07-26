@@ -11,7 +11,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id mahawva))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make27   "  ?id "  mahawva )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  weightage.clp      weightage0   "  ?id "  mahawva )" crlf))
 )
 ;Some schools do not give weightage to extracurricular activities .
 

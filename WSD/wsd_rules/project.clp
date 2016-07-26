@@ -78,7 +78,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pariyojanA_ke_anurUpa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " project.clp	project19  "  ?id "  " ?id1 "  pariyojanA_ke_anurUpa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " project.clp	project4  "  ?id "  " ?id1 "  pariyojanA_ke_anurUpa  )" crlf))
 )
 
 

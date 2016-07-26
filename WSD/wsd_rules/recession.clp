@@ -24,5 +24,5 @@
 (retract ?mng)
 (assert  (id-wsd_root_mng ?id GatAva))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng    " ?*wsd_dir* " recession  .clp       recession1  "  ?id "   GatAva  )" crlf)))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng    " ?*wsd_dir* " recession.clp       recession1  "  ?id "   GatAva  )" crlf)))
 ;The gradual recession of flood waters brought relief to the people.

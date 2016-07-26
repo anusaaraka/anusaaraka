@@ -29,7 +29,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id saMxUka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  chest.clp 	;chest1   "  ?id "  saMxUka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  chest.clp 	chest1   "  ?id "  saMxUka )" crlf))
 )
 
 ;Below example sentence added by Preeti(18-12-13)

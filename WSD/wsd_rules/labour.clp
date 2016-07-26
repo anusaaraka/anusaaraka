@@ -39,7 +39,7 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id prayAsapUrNa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  labour.clp  	;labour2   "  ?id "  prayAsapUrNa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  labour.clp  	labour2   "  ?id "  prayAsapUrNa )" crlf))
 )
 
 ;"laboured","Adj","1.prayAsapUrNa"
@@ -104,7 +104,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 muSkiloM_se_cala))
 (if ?*debug_flag* then
-(printout wsd_fp "(affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " cut.clp	lobour5  "  ?id "  " ?id1 "  muSkiloM_se_cala)" crlf))
+(printout wsd_fp "(affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " labour.clp	labour5  "  ?id "  " ?id1 "  muSkiloM_se_cala)" crlf))
 )
 
 ;@@@ Added by Nandini(9-1-14)

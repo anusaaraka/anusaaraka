@@ -47,7 +47,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vicAra_vimarSa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " tap.clp 	tap5  "  ?id "  " ?id1 "  vicAra_vimarSa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " interchange.clp 	interchange1  "  ?id "  " ?id1 "  vicAra_vimarSa )" crlf))
 )
 ;xxxxxxxxxxxx Default Rule xxxxxxxxxx
 ;@@@ Added by Prachi Rathore[1-2-14]

@@ -25,9 +25,9 @@
 (id-word =(- ?id 1) an)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1)  pahacAna))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (- ?id 1)  pahacAna))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye1  " ?id " " =( - ?id 1)  " pahacAna  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye1  " ?id " " ( - ?id 1)  " pahacAna  )" crlf))
 )
 
 ;@@@ Added by Pramila(BU) on 12-02-2014
@@ -83,7 +83,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id (- ?id 1)  saBI_kI_najZara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye4  "?id " " =( - ?id 1)  " saBI_kI_najZara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye4  "?id " " ( - ?id 1)  " saBI_kI_najZara  )" crlf))
 )
 
 
@@ -135,9 +135,9 @@
 (id-word =(- ?id 1) an)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1)  najZara))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (- ?id 1)  najZara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye7  " ?id " " =( - ?id 1)  " najZara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye7  " ?id " " ( - ?id 1)  " najZara  )" crlf))
 )
 
 ;@@@ Added by Pramila(BU) on 12-02-2014

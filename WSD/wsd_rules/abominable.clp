@@ -9,6 +9,6 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id GinOnA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  let.clp       let14   "  ?id "  GinOnA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  abominable.clp       abominable0    "  ?id "  GinOnA )" crlf))
 )
 

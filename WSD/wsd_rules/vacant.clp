@@ -82,7 +82,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aBivykwirahiwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " sub_samA_vacant01" ?id " aBivykwirahiwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " vacant.clp    sub_samA_vacant01 " ?id " aBivykwirahiwa )" crlf))
 )
 
 ;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
@@ -96,5 +96,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aBivykwirahiwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " obj_samA_vacant01" ?id " aBivykwirahiwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " vacant.clp   obj_samA_vacant01" ?id " aBivykwirahiwa )" crlf))
 )

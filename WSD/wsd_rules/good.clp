@@ -26,6 +26,6 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) =(+ ?id 2) kisI_kAma_kA_nahIM))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " into.clp	into5  "  ?id "  " (+ ?id 1) "   "  (+ ?id 2)  "  kissi_kaam_ka_nahi )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " good.clp	  good2  "  ?id "  " (+ ?id 1) "   "  (+ ?id 2)  "  kisI_kAma_kA_nahIM )" crlf))
 )
 
