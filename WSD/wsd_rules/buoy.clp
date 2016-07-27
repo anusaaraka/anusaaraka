@@ -30,7 +30,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 baDZA_xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow9  "  ?id "  " ?id1 "  baDZA_xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " buoy.clp	  buoy3  "  ?id "  " ?id1 "  baDZA_xe )" crlf))
 )
 
 

@@ -63,7 +63,7 @@
 (assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lace.clp 	lace1   "  ?id "  PIwA_bAzXa )" crlf))
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  word.clp  word-rull-number   "  ?id " ko )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  lace.clp   lace1   "  ?id " ko )" crlf)
 )
 
 ;Modified by Nandini (27-11-13)

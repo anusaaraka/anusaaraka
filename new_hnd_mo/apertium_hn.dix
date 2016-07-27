@@ -572,6 +572,10 @@
 <e><p><l>IjiyegA</l><r>ara<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>ariegA</l><r>ara<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>areMgI</l><r>ara<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<!--suggested 'kareM' by Rajini -->
+<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>
+<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>
+
 </pardef> 
 <pardef n="l/e__v">
 

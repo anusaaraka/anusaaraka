@@ -66,7 +66,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sunA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  declaim.clp 	declaim2   "  ?id " sunA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  declaim.clp 	declaim3   "  ?id " sunA )" crlf))
 )
 
 

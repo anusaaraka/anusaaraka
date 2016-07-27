@@ -9,7 +9,7 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id aXika))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  excessively.clp          excessively0   "  ?id "  aXika )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  excessively.clp          excessively1   "  ?id "  aXika )" crlf))
 )
 
 

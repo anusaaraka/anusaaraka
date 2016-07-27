@@ -24,7 +24,7 @@
 (declare (salience 3000))
 (id-root ?id core)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?noun)
+(id-cat_coarse ?id ?noun)
 (viSeRya-of_saMbanXI  ?id ?id1)
 (id-word ?id1 problem|argument|organization)
 =>
@@ -41,9 +41,9 @@
 ?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id aMwarBAg))
+(assert (id-wsd_root_mng ?id aMwarBAga))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  core.clp       core1   "  ?id "  aMwarBAg )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  core.clp       core1   "  ?id "  aMwarBAga )" crlf))
 ) 
 
 ;They are cutting back production of some of their core products.
@@ -69,9 +69,9 @@
 ?mng <-(meaninig_to_be_decided ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bIjakoRa_nikAl))
+(assert (id-wsd_root_mng ?id bIjakoRa_nikAla))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  core.clp       core3   "  ?id "  bIjakoRa_nikAl )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  core.clp       core3   "  ?id "  bIjakoRa_nikAla )" crlf))
 ) 
 
 ;*************************************************** MEANINGS ********************************************************************************

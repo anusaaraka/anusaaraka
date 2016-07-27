@@ -46,7 +46,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kArnara_kIka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  corner.clp        corner3   "  ?id "  kArnara_kIka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  corner.clp        corner4   "  ?id "  kArnara_kIka )" crlf))
 )
 
 ;@@@ Added by Preeti(9-12-13)

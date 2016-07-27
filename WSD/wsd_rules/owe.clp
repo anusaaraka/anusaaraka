@@ -33,8 +33,8 @@
 (assert (kriyA_id-object1_viBakwi ?id kA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  owe.clp       owe1   "  ?id "  uXAra_raha )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  owe.clp      owe0   "  ?id " para )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object1_viBakwi   " ?*wsd_dir* "  owe.clp      owe0   "  ?id " kA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  owe.clp      owe1   "  ?id " para )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object1_viBakwi   " ?*wsd_dir* "  owe.clp      owe1   "  ?id " kA )" crlf)
 )
 )
 

@@ -313,7 +313,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id awyaMwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deep.clp 	deep12   "  ?id "  awyaMwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deep.clp 	deep15   "  ?id "  awyaMwa )" crlf))
 )
 
 
@@ -329,7 +329,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id awyaMwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " deep.clp   sub_samA_deep12   "   ?id " awyaMwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " deep.clp   sub_samA_deep15   "   ?id " awyaMwa )" crlf))
 )
 
 ;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
@@ -344,5 +344,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id awyaMwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " deep.clp   obj_samA_deep12   "   ?id " awyaMwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " deep.clp   obj_samA_deep15   "   ?id " awyaMwa )" crlf))
 )

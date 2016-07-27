@@ -23,7 +23,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id hEro))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  harrow.clp 	harrow0   "  ?id "  hEro )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  harrow.clp 	harrow1   "  ?id "  hEro )" crlf))
 )
 
 ;"harrow","N","1.hEro{Kewa_meM_DZele_wodZane_kA_xAzwexAra_upakaraNa}"

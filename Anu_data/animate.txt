@@ -182,3 +182,4 @@ poor	1
 government	1
 messenger	1
 servant	1
+monkey	1

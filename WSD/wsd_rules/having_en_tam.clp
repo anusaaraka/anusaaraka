@@ -41,7 +41,7 @@
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id having_en ne_para))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  have_en_tam.clp        having_en_tam1  "  ?id "  ne_para )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  having_en_tam.clp        having_en_tam1  "  ?id "  ne_para )" crlf))
 )
 
                                                 

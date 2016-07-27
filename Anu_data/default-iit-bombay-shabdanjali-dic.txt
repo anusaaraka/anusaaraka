@@ -28648,7 +28648,7 @@ fathead_noun	bevakUPa
 fatheaded_adjective	bevakUPa
 father-figure_noun	vayaska_AxamI
 father-in-law_noun	sasura
-father_noun	piwA/pUrvaja/praNewA/pAxarI/janaka/bApa
+father_noun	piwA/pUrvaja/praNewA/pAxarI/janaka/bApa/piwAjI
 father_verb	janma_xe/piwA_bana
 fathered_UNDEFINED	piwA_bananA
 fatherhood_noun	piwqwva
@@ -50645,7 +50645,7 @@ mother-tincture_noun	mUlArWa
 mother-to-be_noun	garBavawI_mahilA/garBavawI_swrI
 mother-tongue_noun	mAwqBARA
 mother-wit_noun	sahaja_buxxi
-mother_noun	mAz/mAwqBUmi/mAwA/jananI
+mother_noun	mAz/mAwqBUmi/mAwA/jananI/mAwAjI
 mother_verb	mAz_kI_waraha_xeKaBAla_kara
 motherboard_UNDEFINED	ux_gama_patala
 mothered_UNDEFINED	jananI

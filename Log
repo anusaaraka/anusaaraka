@@ -1,4 +1,4 @@
- 18-07-16
+ 26-07-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -57,13 +57,27 @@
 	Modified colour for VP
  24. script.js:
 	Commented enable_keyboard_shortcuts() line
- 25. Added 
+ 25. Corrected printout statements in following wsd files:
+	abominable.clp		accord.clp		aider.clp		approve.clp
+	awkwardly.clp		bitterly.clp		body.clp		buoy.clp
+	capable.clp		chest.clp		core.clp		corner.clp
+	daunt.clp		declaim.clp		deep.clp		discard.clp
+	eat.clp			encroach.clp		english.clp		excessively.clp
+	eye.clp			fairly.clp		fault.clp		fritter.clp
+	gobble.clp		good.clp		harrow.clp		having_en_tam.clp
+	interchange.clp		known.clp		labour.clp		lace.clp
+	neglect.clp		owe.clp			people.clp		pep.clp
+	pint.clp		print.clp		project.clp		recession.clp
+	severely.clp		smack.clp		sort.clp		stream.clp
+	terminate.clp		transplant.clp		vacant.clp		variable.clp
+	weightage.clp		wobbling.clp	
+ 26. Added 
 	unique_entries.py  	run_anu.sh	view_facts.sh
- 26. Added '...' in punctuations list in following files:
+ 27. Added '...' in punctuations list in following files:
 	multi_word_expression_for_proper_nouns.c	multi_word_expression_for_prov.c
 	multi_word_expression_for_domain.c		multi_word_expression.c	
- 27. Added documentation of universal_dependencies in Doc/Stanford_parser_documentation
- 28. Added following new single and multi domain dics and Updated in changes_in_databases:
+ 28. Added documentation of universal_dependencies in Doc/Stanford_parser_documentation
+ 29. Added following new single and multi domain dics and Updated in changes_in_databases:
 	administrative_dic.txt		administrative_multi_dic.txt
 	civil_dic.txt			civil_multi_dic.txt
 	electrical_dic.txt		electrical_multi_dic.txt
@@ -77,13 +91,13 @@
 	account_dic.txt			account_multi_dic.txt	
 	banking_dic.txt			banking_multi_dic.txt
 	computer_dic.txt		computer_multi_dic.txt		wsd_dictionary.txt
- 29. Modified following files to add above dics to get canonical form and mixed domain dic: 
+ 30. Modified following files to add above dics to get canonical form and mixed domain dic: 
 	get_dictionary_in_canonical_form.sh
 	list-right
 	list_SMT
 	list_Anu_data_domain
 	list_Anu_data_multi_domain
- 30. Following files are modified accordingly:
+ 31. Following files are modified accordingly:
 	constituency_to_dependency.sh	stanford-parser/README	get_latest_version_stanford_parser.sh
 	run_lexicalize.sh		run_stanford.sh		run_multiple_parse_penn.sh
 	run_penn-factored.sh		run_penn-pcfg.sh	run_penn-rnn.sh
@@ -98,23 +112,23 @@
 	std_tregex/README		std_tregex/run_tregex.sh	std_tregex/run_tregex_for_multiparse.sh
 	run_alignment.sh		run_sentence_ace.sh	run_sentence_stanford.sh
 	run_sentence_stanford_minion.sh
- 31. Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
+ 32. Modified the following files for generalization (to run any lang Ex: telugu, marathi etc)
         gender_info.clp                 run_modules_std.bat     run_sentence_stanford.sh
         hindi_meaning.clp               run_modules_logon.bat   run_sentence_logon.sh
         tam_meaning.clp                 run_modules_ace.bat     run_sentence_ace.sh
         wsd_meaning.clp                 run_modules_ol.bat      run_sentence_ol.sh
         wsd_tam_meaning.clp		run_modules_link.bat	run_sentence_link.sh
 	hindi_compound_meaning.clp
- 32. Added: 
+ 33. Added: 
 	dependency_alignment folder
 	phrasal_alignment/modify_anu_output.clp
- 33. Modified the following files to add dependency info
+ 34. Modified the following files to add dependency info
         dic_compile.sh				Anusaaraka_alignment.sh		 run_alignment.sh
 	create_eng_align_html_phrasal.clp	phrasal_alignment.css		phrasal_alignment.js
 	run_H_gen_sen_eng.bat
- 34. Added following files for dependency debug
+ 35. Added following files for dependency debug
         dep_align_debug.sh	print_dependency_matrix.py
- 35. Updated following lex files:
+ 36. Updated following lex files:
 	tagger.lex		-> Modified pattern for sent end.
 	stnford_relations.lex	-> Handled patterns when punctuations and -LRB- , -RRB- etc cases
 	dependency_parse.l	-> Handled syntax errors
@@ -124,10 +138,10 @@
 	constituency_parse.y	-> 	"
 	rasp_constituency_parse.y ->	"
 	wx_utf8.lex		->	"
-	enclitics.lex		->    modified quote as ABBR-SingleQuote
+	enclitics.lex		->    modified quote as ABBR-SingleQuote, handling both patterns didn't and didn 't, added n't pattern
 	handling_abbrevations.lex ->  fixed the bug to handle Ch.
 	abbrevations.lex 	-> added M.Tech to the list
- 36. Updated following shell files:
+ 37. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm and 
 						   compilation of non_canonical_form.lex
@@ -138,23 +152,23 @@
 	Anusaaraka_link.sh
 	stdenglish.sh	
 	run_sentence_stanford.sh   -> added splitter after each file in all_facts file and changed the order of facts
- 37. Updated the following files 
+ 38. Updated the following files 
 	print-pos-info.py		Dictionaries/Readme
- 38. gdbm_lookup.c:
+ 39. gdbm_lookup.c:
 	Fixed bug to return 'FALSE' when database is empty or not found case
- 39. Splitted NER data into sentence wise in following files:
+ 40. Splitted NER data into sentence wise in following files:
 	run-ner.pl
 	run-ner.sh
 	Anusaaraka_stanford.sh
- 40. Updated following dictionaries:
+ 41. Updated following dictionaries:
 	changes_in_databases
 	provisional_multi_word_dictionary.txt
 	apertium-en-hi.en.metadix
 	apertium_hn.dix
- 41. Updated following Stanford versions 3.4.1 to 3.6.0
+ 42. Updated following Stanford versions 3.4.1 to 3.6.0
         Stanford Parser
         Stanford Tregex
- 42. Updated Log.
+ 43. Updated Log.
 
  
  19-11-15

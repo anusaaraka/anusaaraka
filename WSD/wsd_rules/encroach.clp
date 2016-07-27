@@ -33,7 +33,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id3 meM_anAXikAra_praveSa_kara_le))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " encroach.clp	encroach1  "  ?id "  " ?id1 "  meM_anAXikAra_praveSa_kara_le  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " encroach.clp	encroach0  "  ?id "  " ?id1 "  meM_anAXikAra_praveSa_kara_le  )" crlf))
 )
 
 

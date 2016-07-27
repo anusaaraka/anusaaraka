@@ -47,7 +47,7 @@
 )
 
 
-;@@@Added by Sonam Gupta MTech IT Banasthali 2013
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2013
 ;These are supposed to be the prints of Rama's sandals to which Bharat paid homage.  [Gyannidhi]
 ;ये राम के चप्पल के रेखा चित्र हैं जिन्हें भरत ने श्रद्दाञ्जलि अर्पित की . 
 (defrule print3
@@ -60,7 +60,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id reKA_ciwra))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  print.clp 	print2   "  ?id "  reKA_ciwra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  print.clp 	print3   "  ?id "  reKA_ciwra )" crlf))
 )
 ;"print","V","1.CApanA"
 ;story books are printed on a great scale.

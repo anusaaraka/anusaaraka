@@ -10,6 +10,6 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id gaMBIra_rUpa_se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  severely.clp          severely0   "  ?id "  gaMBIra_rUpa_se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  severely.clp          severely1   "  ?id "  gaMBIra_rUpa_se )" crlf))
 )
 

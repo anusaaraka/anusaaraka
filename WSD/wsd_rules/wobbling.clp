@@ -11,7 +11,7 @@
 (assert (id-wsd_root_mng ?id asaMwulana))
 ;(assert (kriyA_id-subject_viBakwi ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  wobble.clp    wobble0   "  ?id " asaMwulana )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  wobbling.clp    wobbling0   "  ?id " asaMwulana )" crlf)
 ;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp    have49   "  ?id " kA )" crlf))
 )
 )

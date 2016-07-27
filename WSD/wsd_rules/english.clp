@@ -9,5 +9,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aMgrejZI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  native.clp    english0   "  ?id " aMgrejZI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  english.clp    english0   "  ?id " aMgrejZI )" crlf))
 )
