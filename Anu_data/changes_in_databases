@@ -542,8 +542,7 @@
 	messenger	(	"     14anu-ban-02	 26-02-16 ) Ex: He is a sure messenger.	
 
 	Added 14897 entries extracted from wordnet by Mudit Mittal (11-06-16)
-		aalii	to  zygote 
-	monkey		(By Roja 26-07-2016) Ex: The monkeys bunched together in their cage.	 
+		aalii	to  zygote  
 
 
   Changes in total-paxasUwra.txt 
@@ -603,7 +602,6 @@
  30.	<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>	(By Rajini 26-07-16)
 	<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>	(	"	   )
 	
-
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -1102,6 +1100,7 @@ Nandini ji LTRC 	27-11-13)
 	130. tendency_noun   		pravqwi		as	pravqwwi	(Suggested by Chaitanya Sir 20-08-15    )
 	131. misbehave_verb  		burA_vyahavAra_kara  as 
 	132. say_verb        		baw		as	bawA		(   By Shirisha Manju     	31-10-15)
+	133. tusk_noun			hAWI_yA_sUara_kA_xAzwa as hAWI_kA_xAzwa/sUara_kA_xAzwa	(Suggested by Rajini 25-6-16)
 
     3. Added new entry:
        ---------------
@@ -1805,8 +1804,11 @@ Nandini ji LTRC 	27-11-13)
 	176. best_adjective		SreRTa/uwwama		(Suggested by Chaitanya Sir     21-06-16)
 					Ex: But this twin otter plane of 12-15 seats is undoubtedly the best for sightseeing an archipelago 
 					    (island group) like Maldives.
-	177. father_noun		piwAjI			(Suggested by Soma Mam	26-07-16)
-	178. mother_noun		mAwAjI			(	"	"	"	)
+	177. moon_noun       		canxra			(Suggested by Rajini 		20-07-16)
+					Ex: Crores of years ago the rocks of the down side river formed of moon-ruins due to some earthquake 
+					   sloped down.
+	178. father_noun		piwAjI			(Suggested by Soma Mam	26-07-16)
+	179. mother_noun		mAwAjI			(	"	"	"	)
 					
 	
     5. Modifying first meaning from the list :
@@ -2248,6 +2250,10 @@ Nandini ji LTRC 	27-11-13)
 	201. mathematical_adjective  gaNiwa_sambanXI	as	gaNiwIya	(Suggested by manasa bomma	16-02-16)
 	202. guy_noun		rassA			as	puruRa		(Suggested by Chaitanya Sir     04-06-16)
 				Ex: He is a very shy guy.
+	203. ablution_noun   	prakRAlana_jala		as	prakRAlana	(Suggested by Chaitanya Sir     14-07-16)
+				Ex: The time of ablution and prayer in Hastinapur is from 8 o'clock in the morning to 5 o'clock in the evening. 
+	204. stinky_adjective  	bekAra			as	baxabUxAra	(Suggested by Chaitanya Sir     22-07-16)
+				Ex: They make teeth dirty and breath stinky.	
 	
 
     6. Removed meaning from existing list:
@@ -2549,7 +2555,7 @@ Nandini ji LTRC 	27-11-13)
 				    translation has been a target goal.
 	machine_translation     yaMwra_anuvAxa	   as	yAMwrika_anuvAxa	(Suggested by Chaitanya Sir 15-09-15)
 				Ex: above sentence
-		
+			
     Added new entry:
     ----------------
     	1. straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
@@ -2920,6 +2926,7 @@ Nandini ji LTRC 	27-11-13)
                                 Ex: That is why Haridwar is also called the Gate of the Ganges .
 	14. security_guard  	paharexAra		(Suggested by 14anu-ban-01      18-02-15)
 				Ex: The thief broke into the office while his accomplice stalled off the security guard.
+	15. never_mind		koI_bAwa_nahIM		(Suggested by Bhagyashri	(22-07-16)
 
 
    Modifying the head id:

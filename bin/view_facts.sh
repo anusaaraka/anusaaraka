@@ -11,6 +11,9 @@ if [ "$1" == "-h" ]; then
 	echo "		ner		: Displays ner information in facts format"
 	echo "		vibakthi	: Displays source of vibakthi "
 	echo "		gender		: Displays gender information in facts format"
+	echo "		number		: Displays number information in facts format"
+	echo " 		gnp		: Displays gender,number, person, vibakthi, tam and case information of a pada in facts format"
+	echo " 		parser_debug	: Dispalys parsers alignment in html file "
 	echo
 	echo " By default it dispalys all facts information  "
  	exit
@@ -44,7 +47,14 @@ else
 			sed '1,6d' $HOME_anu_tmp/tmp/$1_$2_user_wsd_info.dat | sed 's/(id-word-root-category\(.*\)//g' | sed 's/id, word\(.*\)//g' | sed 's/-----\(.*\)//g'| sed '/^$/d' > rel
 			cat rel
 		fi
-	else  gedit all_facts &	
+	elif [ "$3" == "number" ]; then
+		cat number.dat
+	elif [ "$3" == "gnp" ]; then
+		cat GNP_agmt_info.dat
+	elif [ "$3" == "" ]; then  gedit all_facts &	
+	elif [ "$3" == "parser_debug" ]; then
+		cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/align_debug
+		sh dep_align_debug.sh $1 $2
 	fi
    fi
 fi

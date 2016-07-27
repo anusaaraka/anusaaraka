@@ -21182,7 +21182,7 @@ neutral_transmission	uxAsIna_saMcaraNa#uxAsIna_saMcaraNa#noun#2#RM
 neutron_bomb	nyUtrona_bama#nyUtrona_bama#noun#2#RM
 never_again	kaBI_nahIM#kaBI_nahIM#noun#2#RM
 never_fear	mawa_daro#mawa_daro#noun#2#RM
-never_mind	jAne_xo#jAne_xo#noun#2#RM
+never_mind	koI_bAwa_nahIM/jAne_xo#koI_bAwa_nahIM/jAne_xo#noun#2#RM
 new_borrower	nayA_qprI_IXArakarwA#nayA_qprI_IXArakarwA#noun#2#RM
 new_branches	nayI_SAKAeM#nayI_SAKAeM#noun#2#RM
 new_contrant	navAgawa#navAgawa#noun#2#RM
@@ -33304,6 +33304,21 @@ powered_up	cAlU#cAlU#adjective#1#WM
 incumbent_upon	AvaSyaka#AvaSyaka#noun#1#RM
 #But when there is a question of the very existence of a unique creation of earth then this much seriousness was incumbent upon. 
 #Suggested by sheetla prassd tiwari (21-06-16)
+on_the_way	rAswe_meM#rAswe_meM#noun#3#WM
+# Kaladhungi is thirty kilometres far whereas Corbetts lie on the way of fall. Suggested by Rajini (25-06-16)
+half_past_twelve	sADe_bAraha#noun#3#WM 
+# It struck half past twelve while returning back.			       Suggested by Rajini (25-06-16)
+safari_gypsy	saPArI_jipsI#noun#2#WM 
+# On reaching Resort safari gypsy was waiting for us.			       Suggested by Rajini (25-06-16)
+number_one	nambara_eka/praWama_koti_kA#number#2#WM
+# It was told that facility of siting was done in number one site Bijraani there. Suggested by Rajini (25-06-16)
+tusker_elephant	xAzwa_vAlA_hAWI#noun#2#RM
+#We saw two tusker elephants inside who had very long tusks.			Suggested by Rajini (25-06-16)
+amidst_all_this	ina_saba_ke_xOrAna#preposition#1#WM
+# Amidst all this the guide began to track tiger.				Suggested by Rajini (25-06-16)
+just_like_that	Ese_hI#adverb#1#WM
+# I called him just like that only. 						Suggested by Rajini (25-06-16)
+state_of_mind	manoxaSA#manoxaSA#noun#3#RM
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

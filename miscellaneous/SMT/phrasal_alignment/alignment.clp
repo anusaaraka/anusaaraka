@@ -7,18 +7,80 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
+;=============================== modify/remove score fact for same weight ================
+
+(defrule modify_score_with_punct
+(declare (salience 102))
+?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?sum))
+?f1<-(id-right_punctuation  ?aid PUNCT-ClosedParen)
+(manual_id-word =(+ ?mid 1) @PUNCT-ClosedParen)
+=>
+	(retract ?f1)
+	(bind ?sum (+ ?sum 1))
+        (modify ?f0 (weightage_sum ?sum))
+)
+;-----------------------------------------------------------------------------------
+(defrule modify_score_for_same_wt
+(declare (salience 101))
+?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?score) )
+?f1<-(score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score) )
+(test (> (fact-index ?f0) (fact-index ?f1)))
+(or (id-HM-source ?aid $?m ?)(id-Apertium_output ?aid $?m))
+(manual_word_info (head_id ?mid) (word $?m))
+=>
+	(bind ?score (+ ?score 1))
+	(modify ?f0 (weightage_sum ?score))
+)
+;-----------------------------------------------------------------------------------
+;a biennial life cycle. eka xvivArRika jIvana cakra
 (defrule rm_score_with_same_wt
 (declare (salience 100))
 ?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
 ?f2<-(score (anu_id ?aid1)(man_id ?mid)(weightage_sum ?score))
 (test (neq ?aid ?aid1))
+(id-Apertium_output ?aid $?m)
+(id-Apertium_output ?aid1 $?m1)
+(manual_word_info (head_id ?mid) (word $?m $?m1))
+(not (aligned_anu_id ?aid))
+=>
+        (retract ?f1)
+        (assert (removed_aid ?aid))
+)
+;-----------------------------------------------------------------------------------
+(defrule rm_score_with_same_wt1
+(declare (salience 100))
+?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
+?f2<-(score (anu_id ?aid1)(man_id ?mid)(weightage_sum ?score))
+(test (neq ?aid ?aid1))
+(not (score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score1&:(> ?score1 ?score))))
+(not (score (anu_id ?aid1) (man_id ?mid1) (weightage_sum ?score1&:(> ?score1 ?score))))
+(not (aligned_anu_id ?aid))
 =>
 	(retract ?f1 ?f2)
+	(assert (removed_aid ?aid))
 )
-
-
-
+;-----------------------------------------------------------------------------------
+;We see leaves falling from trees and water flowing down a dam.
+;hama pedoM se girawe hue pawwoM ko waWA bAzXa se bahawe hue pAnI ko xeKawe hEM .
+(defrule rm_wrong_score_fact
+(declare (salience 110))
+?f0<-(score (anu_id ?aid))
+(or (aligned_anu_id ?aid) (removed_aid ?aid))
+=>
+        (retract ?f0)
+)
+;-----------------------------------------------------------------------------------
+;I hope I can remember the words.
+;mEM una SabxoM ko yAxa kara sakawA hUM.
+(defrule rm_wrong_score_fact1
+(declare (salience 110))
+?f0<-(score (man_id ?mid))
+(aligned_man_id ?mid)
+=>
+        (retract ?f0)
+)
 ;================================== alignment using score ============================
+
 ;Ex for Not: We see [leaves] falling from trees and water flowing down a dam. 
 ;Anu: hama bAzXa kama bahawe_hue pedoM Ora pAnI se girawe_hue pawwiyoM ko xeKawe hEM.
 ;Man: hama pedoM se girawe hue [pawwoM ko] waWA bAzXa se bahawe hue pAnI ko xeKawe hEM .
@@ -53,27 +115,9 @@
         (assert (aligned_anu_id ?aid))
         (assert (aligned_man_id ?mid))
 )
-;-----------------------------------------------------------------------------------
-;We see leaves falling from trees and water flowing down a dam.
-;hama pedoM se girawe hue pawwoM ko waWA bAzXa se bahawe hue pAnI ko xeKawe hEM .
-(defrule rm_wrong_score_fact
-(declare (salience 40))
-?f0<-(score (anu_id ?aid))
-(aligned_anu_id ?aid)
-=>
-        (retract ?f0)
-)
-;-----------------------------------------------------------------------------------
-;I hope I can remember the words.
-;mEM una SabxoM ko yAxa kara sakawA hUM.
-(defrule rm_wrong_score_fact1
-(declare (salience 40))
-?f0<-(score (man_id ?mid))
-(aligned_man_id ?mid)
-=>
-        (retract ?f0)
-)
-;-----------------------------------------------------------------------------------
+
+;================================= replace id with word ==============================
+
 (defrule replace_id_with_word_for_nos
 (declare (salience -500))
 ?f<-(alignment (anu_id ?aid)(man_id ?mid)(anu_meaning $?anu_mng)(man_meaning $?pre ?id $?pos))
@@ -98,7 +142,7 @@
         )
 )
 
-;==================== to get left over ids info =======================================
+;==================== get left over ids info =======================================
 
 (defglobal ?*lids* = (create$ )) 
 
@@ -106,7 +150,6 @@
 (declare (salience -502))
 ?f0<-(manual_id-word ?id ?mng)
 (manual_word_info (head_id ?id)) 
-;(test (eq (integerp (member$ ?mng (create$ @PUNCT-QuestionMark @PUNCT-Comma .))) FALSE))
 =>
 	(retract ?f0)
 	(bind ?*lids* (create$  ?*lids* ?id))

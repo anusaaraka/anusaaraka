@@ -219,7 +219,8 @@
 (defrule anu_exact_match1
 (declare (salience 905))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))(id-hyphen_word-vib ?mid - $?mng - $?vib))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))(id-hyphen_word-vib ?mid - $?mng - $?vib)
+					(id-hyphen_word-vib ?mid - $?mng $?vib - 0)) ;sabane == saba ne
 (id-Apertium_output ?aid $?mng $?vib)
 (test (neq (length $?vib) 0))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match))
@@ -395,9 +396,7 @@
 (id-word ?aid ?)
 (not (pada_info (preposition ?aid)))
 (not (anu_id-man_id-src-rule_name ? ?mid ?  man_word_and_vib_match_using_dic))
-;(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_and_vib_match_using_dic))
 (not (anu_id-man_id-src-rule_name ? ?mid ?  man_root_and_vib_match_using_dic))
-(not (anu_id-man_id-src-rule_name ? ?mid ?  man_word_match_using_dic))
 ;(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_root_and_vib_match_using_dic))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
@@ -411,7 +410,7 @@
 (defrule man_hyphen_wrd_match_using_dic
 (declare (salience 839))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng sA|sI|se)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng sA|sI|se - 0))
+(or (id-hyphen_word-vib ?mid - $?mng sA|sI|se - 0)(id-hyphen_word-vib ?mid - $?mng - 0))
 (database_info (components $?mng)(group_ids $? ?aid $?))
 (id-word ?aid ?)
 (not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_and_vib_match_using_dic))
@@ -420,6 +419,24 @@
 =>
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match man_hyphen_wrd_match_using_dic))
+)
+;---------------------------------------------------------------------------
+;Added by Shirisha Manju
+;When the Prince Shreyanshkumar came to know of this he remembered the tradition of his ancestors to abandon [food and water] .
+;rAjakumAra SreyaMRakumAra ko jaba isa bAwa kA jFAna huA wo unheM apane pUrvajoM kI [anna-jala] wyAgane kI praWA kA smaraNa ho AyA .
+(defrule man_hyphen_wrd_match_using_dic_for_conj
+(declare (salience 839))
+(current_id ?mid)
+(id-hyphen_word-vib ?mid - ?m ?m1 - 0)
+(database_info (components ?m)(group_ids $? ?aid $?))
+(database_info (components ?m1)(group_ids $? ?aid1 $?))
+(conjunction-components ?conj ?aid ?aid1)
+(not (anu_id-man_id-src-rule_name ?aid1 ?mid ?  man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid1 ?mid ?  man_root_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid1 ?mid ?  man_word_match_using_dic))
+=>
+        (assert (anu_id-man_id-type ?aid1 ?mid  dictionary_match))
+        (assert (anu_id-man_id-src-rule_name ?aid1 ?mid dictionary_match man_hyphen_wrd_match_using_dic_for_conj))
 )
 ;---------------------------------------------------------------------------
 (defrule man_root_match_using_dic
@@ -486,11 +503,11 @@
 ;The great eruption of krakatau must have taken place around 416 ad, as reported in ancient javanese scriptures.
 ;ANU: krakatau kA badA uxaBexana 416 krIswa paScAwa lagaBaga, [huA hogA] jEsA ki prAcIna joYvanIja XarmagranWoM meM praswuwa kiyA.
 ;MAN: krakatU kA viSAla visPot lagaBaga 416 IsvI meM [huA] ,jEsA ki prAcIna jAvanIja SAswroM meM xarja hE .
-(defrule partial_word_match_with_anu
+(defrule partial_match_with_anu
 (declare (salience 811))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word ?mng $? ))
-(id-Apertium_output ?aid ?mng $?)
+(or (id-Apertium_output ?aid ?mng $?)(id-HM-source ?aid ?mng ?))
 (not (got_wsd_align ?aid ?mid))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match1))
@@ -502,17 +519,17 @@
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  partial_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_word_match_with_anu))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_match_with_anu))
 )
 ;---------------------------------------------------------------------------
 ;Added by Shirisha Manju
-(defrule partial_word_match_with_anu1
+(defrule partial_match_with_anu1
 (declare (salience 810))
 (current_id ?mid)
 (or (manual_word_info (head_id ?mid) (word $? ?mng $? ))(manual_word_info (head_id ?mid)(word $? ?mng $? ?v&se|ko|ke)))
-(id-Apertium_output ?aid $? ?mng $?)
 (man_word-root-cat ?mng ?r ?)
 (test (and (eq (integerp (member$ ?mng (create$ WI WA kI kara hE ho hue huI huA hEM hI vajaha se jEsA))) FALSE)(eq (integerp (member$ ?r (create$ WA kara ho))) FALSE)))
+(or (id-Apertium_output ?aid $? ?mng $?)(id-Apertium_output ?aid $? ?r $?))
 (not (got_wsd_align ?aid ?mid))                
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match)) 
@@ -525,7 +542,7 @@
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu1))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  partial_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_word_match_with_anu1))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_match_with_anu1))
 )
 ;---------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -538,16 +555,15 @@
 (defrule partial_word_match_with_dic
 (declare (salience 834))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $? ?mng $? ))(manual_word_info (head_id ?mid)(word $? ?mng $? ?v&se|ko|ke)))
-(man_word-root-cat ?mng&~lIjie ?r ?c&~p&~prsg)
-(test (eq (integerp (member$ ?r (create$ se sA WI WA kI kara raha pada jA hE ho hue huI huA hI hEM howA))) FALSE))
-(or (database_info (components $? ?mng $?)(group_ids ?aid))(database_info (components $? ?r $?)(group_ids ?aid))) 
+(or (manual_word_info (head_id ?mid) (word $? ?mng $? ))(manual_word_info (head_id ?mid)(word $? ?mng $? ?v&se|ko|ke))(id-hyphen_word-vib ?mid - ?mng ? - ?))
+(man_word-root-cat ?mng&~lIjie ?r ?c&~p&~prsg&~sh)
+(test (eq (integerp (member$ ?r (create$ se sA WI WA kI kA kara raha pada jA hE ho hue huI huA hI hEM howA))) FALSE))
+(or (database_info (components $? ?mng $?)(group_ids ?aid))(database_info (components $? ?r $?)(group_ids ?aid))(id-left_word-possible_mngs ?aid ? $? ?mng $?)) 
 (id-word ?aid ?)
 (not (pada_info (preposition $? ?aid $?)))
 (not (got_wsd_align ?aid ?mid))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match))
+(not (anu_id-man_id-src-rule_name ? ?mid ? man_word_match_using_dic|man_root_match_using_dic|anu_exact_match|anu_exact_match1|man_root_and_vib_match_using_dic))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match1))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_wsd_match))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_without_vib))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_without_vib1))
@@ -555,14 +571,34 @@
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu1))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_dic))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? man_root_match_using_dic))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? man_word_match_using_dic))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? man_root_and_vib_match_using_dic))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? man_word_and_vib_match_using_dic))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  partial_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_word_match_with_dic))
 )
+
+(defrule partial_word_match_for_hyphen_word
+(declare (salience 834))
+(current_id ?mid)
+(id-hyphen_word-vib ?mid - ?mng ? - ?)
+(or (database_info (components $? ?mng $?)(group_ids ?aid))(id-left_word-possible_mngs ?aid ? $? ?mng $?))
+(not (pada_info (preposition $? ?aid $?)))
+(not (got_wsd_align ?aid ?mid))
+(not (anu_id-man_id-src-rule_name ? ?mid ? man_word_match_using_dic|man_root_match_using_dic|anu_exact_match|anu_exact_match1|man_root_and_vib_match_using_dic|man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_wsd_match))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_without_vib1))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_without_vib2))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_anu1))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? partial_word_match_with_dic))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_word_match_with_dic))
+)
+
+
 
 ;=================================   verb rules =================================================
 ;Check for manual verb[root] and tam match in the dictionary
@@ -726,7 +762,7 @@
 (test (neq ?mid ?mid1))
 (or (id-Apertium_output ?aid $?mng ?v&ke ?v1) (id-Apertium_output ?aid $?mng ?v))
 (or (manual_word_info (head_id ?mid) (word $?mng) (vibakthi ?v1)) (manual_word_info (head_id ?mid) (word $?mng) (vibakthi ?v ?v1))(manual_word_info (head_id ?mid) (word $?mng) (vibakthi ?v)))
-(not (anu_id-man_id-src-rule_name ?aid ?mid tam_dict ?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid hindi_tam_match ?))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  hindi_tam_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_tam_match tam_match1))
@@ -881,7 +917,7 @@
 (current_id ?mid)
 (anu_id-man_id-src-rule_name ?aid ?mid $?)
 (or (anu_id-man_id-src-rule_name ?aid1 =(- ?mid 1) $?)(anu_id-man_id-src-rule_name ?aid1 =(+ ?mid 1) $?))
-(pada_info (group_ids $?grp))
+(pada_info (group_cat ~VP)(group_ids $?grp))
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
 (not (anu_id-man_id-src-rule_name ? ?mid $? scope $?))
