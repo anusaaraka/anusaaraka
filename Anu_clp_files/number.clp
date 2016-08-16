@@ -70,13 +70,13 @@
  ;Rama ate some SWEETS.
  (defrule get_num_frm_morph
  (declare (salience 950))
- ?f2<-(id-word ?id ?wrd)
+ (id-word ?id ?wrd)
  ?f1<-(id-number-src ?id ?num Default)
  (id-root-category-suffix-number  ?id ? ? ? ?num1)
  (test (neq ?num1 -))
  =>
        (assert (id-number-src ?id  ?num1  Morph))
-       (retract ?f1 ?f2)
+       (retract ?f1)
  )
  ;-----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (suggested by sukhada )
@@ -110,22 +110,22 @@
  ;inake spektrama meM camakIlI reKAoM kI eka [SqfKalA] xiKAI xewI hE .
  (defrule get_num_using_det
  (declare (salience 950))
- ?f1<-(id-root-category-suffix-number  ?id ? ? ? p)
- ?f2<- (id-number-src ?id ? ?)
+ (id-root-category-suffix-number  ?id ? ? ? p)
+ ?f2<- (id-number-src ?id ? ?s&~Word)
  (id-word =(- ?id 1) a)
  =>
-        (retract ?f1 ?f2)
+        (retract ?f2)
         (assert (id-number-src ?id  s  Word))
  )
  ;-----------------------------------------------------------------------------------------------------------
  ;The Danes are nice people.
  (defrule get_num_for_sub
  (declare (salience 900))
- ?f1<-(id-word ?kri are|were)
- (verb_agrmt-subject_id-head_id  subject  ?sub  ?kri)
+ (id-word ?kri are|were)
+ ?f<-(verb_agrmt-subject_id-head_id  subject  ?sub  ?kri)
  ?f2<- (id-number-src ?sub ? ?)
  =>
-	(retract ?f1 ?f2)
+	(retract ?f ?f2)
 	(assert (id-number-src ?sub  p  OL))
  )
  ;-----------------------------------------------------------------------------------------------------------
@@ -149,19 +149,19 @@
  ?f<-(id-number-src ?h - ?)
  (pada_info (group_head_id ?h) (group_ids $? ?id ?h))
  (id-root-category-suffix-number ?id ?w&~one&~1 number ? ?) 
- ?f0<-(id-word ?h ?)
+ (id-word ?h ?)
  =>
-	(retract ?f ?f0)
+	(retract ?f)
 	(assert (id-number-src ?h p number))
  )	
  ;-----------------------------------------------------------------------------------------------------------
  ;printing the number info into a file.
- (defrule  default_number
- (declare (salience 100))
- (id-number-src ?wid  ?num  ?src)
- ?f0<-(id-word ?wid ?)
- =>
-	(retract ?f0)
-	(assert (id-number-src ?wid  ?num  ?src))
- )
+; (defrule  default_number
+; (declare (salience 100))
+; (id-number-src ?wid  ?num  ?src)
+; ?f0<-(id-word ?wid ?)
+; =>
+;	(retract ?f0)
+;	(assert (id-number-src ?wid  ?num  ?src))
+; )
  ;----------------------------------------------------------------------------------------------------------- 

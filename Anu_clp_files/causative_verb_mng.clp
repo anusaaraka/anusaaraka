@@ -57,6 +57,21 @@
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
  )
+
+ (deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+ )
+
+
  ;----------------------------------------------------------------------------------------------------------------
 
  ; I am going to remarry when you die
@@ -115,10 +130,43 @@
 	)
   )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (22-07-16)
+ ;Prince Shreyanshkumar urged Adinatha Prabhu to accept [sugar cane juice] for ending the fast which he accepted .
+ (defrule get_comp3_ids
+ (declare (salience 711))
+ (Head-Level-Mother-Daughters  ?  ?  ?  ?NN1 ?NN2 ?NN3)
+ (and (Node-Category ?NN1 NN) (Node-Category ?NN2 NNS|NN)(Node-Category ?NN3 NNS|NN))
+ (Head-Level-Mother-Daughters  ?  ?  ?NN1  ?id)
+ (Head-Level-Mother-Daughters  ?  ?  ?NN2  ?id1)
+ (Head-Level-Mother-Daughters  ?  ?  ?NN3  ?id2)
+ ?f0<-(id-HM-source ?id ?mng ?)
+ ?f1<-(id-HM-source ?id1 ?mng1 ?)
+ ?f2<-(id-HM-source ?id2 ?mng2 ?s&WSD_root_mng|Default_meaning)
+ (id-original_word ?id ?w)
+ (id-original_word ?id1 ?w1)
+ (id-original_word ?id2 ?w2)
+ =>
+	(retract ?f0 ?f1 ?f2)
+	(assert (id-HM-source ?id -  NN_NN_compound_rule))
+	(assert (id-HM-source ?id1 -  NN_NN_compound_rule))
+	(if (eq ?mng -) then
+	        (bind ?n_mng (string-to-field (str-cat ?mng1"_"?mng2)))
+		(assert (id-comp_mng ?id2 ?id1 ?id2))
+	else
+	        (bind ?n_mng (string-to-field (str-cat ?mng"_"?mng1"_"?mng2)))
+		(assert (id-comp_mng ?id2 ?id ?id1 ?id2))
+	)
+	(assert (id-HM-source ?id2 ?n_mng NN_NN_compound_rule))
+;	(printout t "Warning: Compound Meaning is missing for:	" ?w " "?w1" "?w2 crlf)
+        (bind ?n_w (string-to-field (str-cat ?w "_" ?w1"_"?w2)))
+	(printout t "suggested_compound" ?n_w"	"?n_mng crlf)
+	(assert (id-comp_ids ?id2 ?id ?id1 ?id2))
+ )	
+ ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (06-02-15) Suggested by Chaitanya Sir
  ;He is solving the problems in the [chapter sets].
  ;Trans Maldivian is one of them which has 20 [sea planes].
- (defrule combine_viSeRya-viSeRaNa_mng_with_vib
+ (defrule get_comp2_ids
  (declare (salience 710))
  ?f<-(Head-Level-Mother-Daughters  ? ? ?mot $? ?NN ?NNS)
  (and (Node-Category ?NN NN) (Node-Category ?NNS NNS|NN))
@@ -133,7 +181,11 @@
 	(assert (id-HM-source ?id -  NN_NN_compound_rule))
         (bind ?n_mng (string-to-field (str-cat ?mng "_" ?mng1)))
 	(assert (id-HM-source ?id1 ?n_mng NN_NN_compound_rule))
-	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
+;	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
+        (bind ?n_w (string-to-field (str-cat ?w"_"?w1)))
+	(printout t "suggested_compound" ?n_w"	"?n_mng crlf)
+	(assert (id-comp_mng ?id1 ?id ?id1 ))
+	(assert (id-comp_ids ?id1 ?id ?id1 ))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Ex. She was asked about the pay increase but made no comment.
@@ -192,24 +244,29 @@
  ;Added by Shirisha Manju (31-05-14)
  (defrule get_r_name_for_generated_comp
  (declare (salience 450))
+ ?f0<-(id-comp_mng ?h $?p ?id $?p1)
  (id-HM-source ?id ? NN_NN_compound_rule)
- ?f0<-(id-HM-source-grp_ids ?id ? ?s $?)
+ ?f1<-(id-HM-source-grp_ids ? ? ?s $? ?id $?)
  (or (dir_name-file_name-rule_name-id-wsd_root_mng ? ? ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ? ? ?rule_name $?ids ?))
  (test (neq (integerp (member$ ?id $?ids)) FALSE))
  =>
-	(retract ?f0)
-	(assert (id-rule_name ?id ?rule_name))
-
+	(retract ?f0 ?f1)
+	(bind ?srcs (create$ Database_compound_phrase_root_mng Database_compound_phrase_word_mng provisional_Database_compound_phrase_root_mng provisional_Database_compound_phrase_word_mng))
+	(if (eq (integerp (member$ ?s ?srcs)) FALSE) then
+		(assert (id-comp_mng ?h $?p ?rule_name $?p1))
+	else
+		(assert (id-comp_mng ?h $?p ?s $?p1))
+	)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
  (defrule get_r_name_for_generated_comp1
  (declare (salience 440))
- (id-HM-source ?id ? NN_NN_compound_rule)
- ?f0<-(id-HM-source-grp_ids ?id ? ?s $?)
+ ?f0<-(id-comp_mng ?h $?p ?id $?p1)
+ ?f1<-(id-HM-source-grp_ids ? ? ?s $? ?id $?)
  =>
-        (retract ?f0)
-        (assert (id-rule_name ?id ?s))
+        (retract ?f0 ?f1)
+	(assert (id-comp_mng ?h $?p ?s $?p1))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
@@ -217,14 +274,20 @@
  ;(id-HM-source-grp_ids  11  samuxra_samawala   NN_NN_compound_rule::Default_meaning,plane3 10 11)
  (defrule get_info_for_generated_compound
  (declare (salience 430))
- (id-HM-source ?id - NN_NN_compound_rule)
- (id-HM-source ?id1 ?hmng&~- ?)
- ?f<-(id-rule_name ?id ?s)
- ?f1<- (id-rule_name ?id1 ?s1)
+ ?f<-(id-comp_mng ?h $?r)
+ ?f1<-(id-comp_ids ?h $?ids)
+ (id-HM-source ?h ?mng NN_NN_compound_rule)
  =>
 	(retract ?f ?f1)
-	(bind ?str (str-cat "NN_NN_compound_rule::"?s","?s1))
-	(printout ?*h_mng_file* "(id-HM-source-grp_ids  "?id1"  "?hmng"   "?str" " ?id" " ?id1 ")" crlf)
+  	(bind ?s (implode$ (remove_character " " (implode$ (create$ $?r)) ",")))	
+	(bind ?len (length $?ids))
+	(if (eq ?len 2) then
+		(bind ?str (str-cat "NN_NN_compound_rule::" ?s))
+	else
+		(bind ?str (str-cat "NN_NN_NN_compound_rule::" ?s))
+	)
+		
+	(printout ?*h_mng_file* "(id-HM-source-grp_ids  "?h"  "?mng"   "?str" " (implode$ $?ids) ")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
@@ -236,3 +299,12 @@
         (retract ?f0)
         (printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?src" "(implode$ $?ids)")" crlf)
  )
+
+ ;Added by Shirisha Manju (12-08-16)
+ (defrule get_template_rule_info
+ (declare (salience 400))
+ (id-HM-source ?id ?hmng Template_root_mng)
+ =>
+        (printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    Template_root_mng " ?id ")" crlf)
+ )
+

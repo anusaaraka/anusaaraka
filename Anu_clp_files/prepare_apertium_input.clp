@@ -862,7 +862,22 @@
         	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_jA1 )" crlf)
 	)
   )
- ;---------------------------------------------------------------------------------------------------------------------------
+  ;---------------------------------------------------------------------------------------------------------------------------
+  ;Keep doing small physical activities like climbing stairs, gardening, small domestic works or dancing.
+  ;Keep doing light physical activities.
+  (defrule VP_rule_for_imper_ing
+  (declare (salience 651))
+  (pada_info (group_head_id ?h)(group_cat VP)(number ?num)(gender ?gen)(H_tam ?tam)(preceeding_part_of_verb 0))
+  (root-verbchunk-tam-chunkids ? ? imper_ing $? ?h)
+  (impr_request imper ?req)
+  ?f0<-(id-HM-source ?h ?hmng ?)
+  =>
+        (retract ?f0)
+	(bind ?mng (str-cat ?hmng ?tam))
+        (printout ?*A_fp5* "(id-Apertium_input "?h " root:"?mng",tam:imper,gen:"?gen",num:"?num ",per:"?req")"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?h "  VP_rule_for_imper_ing )" crlf)
+  )
+  ;---------------------------------------------------------------------------------------------------------------------------
   ;Be careful, she said.
   (defrule VP_rule_for_imper
   (declare (salience 650))

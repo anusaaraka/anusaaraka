@@ -45,6 +45,7 @@
  (declare (salience 1702))
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 ?VP2 $?pos1)
  ?f3<-(Node-Category ?VP2 VP)
+ (Node-Category ?VP1 VP) ; added by manju counter ex :Keep doing light physical activities.
  =>
         (assert (dont_replace_VP ?VP1))
  )
@@ -129,13 +130,14 @@
 ; (defrule replace_VP1
 ; (declare (salience 1600))
 ; ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot ?pre ?S)
+; (parser_id-root-category-suffix-number ?head keep $?)
 ; (Node-Category ?Mot VP)
 ; (Node-Category ?S S)
 ; ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S ?VP)
 ; (Node-Category ?VP VP)
 ; ?f2<-(Head-Level-Mother-Daughters_lwg ?h ?l ?VP ?node $?daut)
-; (test (neq (length $?daut) 0));I like running. I have started working
-; (not (Node-Category ?node TO));Jumma masjid is considered to be one of the most beautiful mosques in western india.
+; (test (neq (length $?daut) 0))I like running. I have started working
+; (not (Node-Category ?node TO))Jumma masjid is considered to be one of the most beautiful mosques in western india.
 ; (not (dont_replace_VP ?Mot))
 ; (not (dont_replace_VP ?VP))
 ; =>
@@ -153,22 +155,27 @@
  ;That is the way business used to be done and that is the way business needs to be done.
  ;Positive thinking needs to be inculcated. [needs]
  ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb. Ex: He got so drunk that he passed out.
+ ;Added 'keep' in the list by Shirisha Manju (26-07-16) Ex: Keep doing light physical activities. 
+ ;Modified the rule to check root instead of word by Shirisha Manju (26-07-16).
  (defrule replace_S
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
- (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|needs) 
+ (parser_id-root-category-suffix-number ?head ?r&get|have|had|has|having|make|need|keep $?)
+; (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|needs) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (parserid-word ?head1 ~that);As they drew near the bungalow they could make out that something important had happened.
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
  (Node-Category ?pre_node VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
+ (not (dont_replace_VP ?S)) ; You may keep your teeth clean and breath fresh by the help of some easy tips given here.
  =>
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node $?daut  $?pos))
         (printout ?*lwg_debug_file* "	(rule_name - replace_S" crlf
                          "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node" "?S" "(implode$ $?pos)")" crlf
                          "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
+	(assert (dont_replce_S))
  )
 ;--------------------------------------------------------------------------
  ;Replacing a VP mother whose child is  S|SBAR on checking the head word "Let".
@@ -198,10 +205,11 @@
  ;;If air resistance is neglected, the object [is said to be] in free fall.
  ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb.
  ;Added 'used' in the list by Shirisha Manju (13-02-14) Ex: Asutosh himself frequently presided over the "moot courts" and he also used to deliver lectures to the Law students.
+ 
  (defrule replace_S1
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
- (parserid-word ?head ?w&are|Are|is|was|were|said|used)
+ (parser_id-root-category-suffix-number ?head ?r&be|say|use $?)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (parserid-word ?head1 ?w1&to)
  (Node-Category ?Mot VP)
@@ -273,24 +281,25 @@
  ;Replacing all the nodes with there child
  ;Here it look like,
  ;(root-verbchunk-tam-parser_chunkids - is making feed - s ing 0 - P2 P3 P6)
+ ;Used root to check words insted of word by Shirisha Manju (26-07-16)
  (defrule replace_nodes_for_aux
  (declare (salience 60))
  ?f<-(root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre ?node $?post ?main_verb)
  (Head-Level-Mother-Daughters ?h_id ? ?node $?child)
  (parserid-word ?h_id ?head)
  (Node-Category ?node ?cat)
- (parser_id-root-category-suffix-number  ?h_id  ? ? ?suf ?)
+ (parser_id-root-category-suffix-number  ?h_id  ?root ? ?suf ?)
  =>
 	
 	(retract ?f)(printout t "node :: "?node "---  head:: "?head crlf)
-        (printout ?*lwg_debug_file* "	(rule_name - replace_nodes" crlf
+        (printout ?*lwg_debug_file* "	(rule_name - replace_nodes_for_aux" crlf
                          "			Before    - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?pre)" "?node" "(implode$ $?post)" "?main_verb ")" crlf)
 
         (bind $?chunkid  (create$ $?pre ?node $?post))
         (bind ?pos (member$ ?node $?chunkid))
         (bind ?head (lowcase ?head))
-        (if (and (member$ ?head (create$ make made get making let am being do does doing need can could ought might must should been had may will be is are has shall would were was did to have used use )) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
-        ;(if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
+;        (if (and (member$ ?head (create$ make made get making let am being do does doing need can could ought might must should been had may will be is are has shall would were was did to have used use keeps keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
+        (if (and (member$ ?root (create$ make get let do need ought may must can could would should be been had has have will shall to use keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
         (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
         (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
           (if (eq ?cat VBG) then 
@@ -329,7 +338,7 @@
  =>
 
         (retract ?f)(printout t "node :: "?node "---  head:: "?head crlf)
-        (printout ?*lwg_debug_file* "   (rule_name - replace_nodes" crlf
+        (printout ?*lwg_debug_file* "   (rule_name - replace_nodes_for_main_verb" crlf
                          "                      Before    - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?pre)" "?node" )" crlf)
 
         (bind $?chunkid  (create$ $?pre ?node))
@@ -519,7 +528,7 @@
  (declare (salience -10))
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids ?last)
  (Head-Level-Mother-Daughters ?not ? ?RB ?p_id)
- (parserid-word ?not not)
+ (parserid-word ?not not|n't) ;You did n't even notice.
  (Node-Category ?RB RB)
  (cntrl_fact_for_testing_not)
  (test (eq (member$ ?p_id $?ids) FALSE))
@@ -643,22 +652,24 @@
 
 ;--------------------------------------------------------------------------
  ;Identifying and modifying the TAM for IMPERATIVE sentences ,
- ;Ex:-Please enclose a curriculum vitae with your letter of application. 
+ ;INTJ Ex: Please enclose a curriculum vitae with your letter of application. 
  ;SBAR Ex: When they go out shut the door.
+ ;S    Ex: Taking a spoon of salt pour three to four drops of lemon juice in that. 
  (defrule check_for_imper1 
  (declare (salience -20))
  (Head-Level-Mother-Daughters ? ? ?ROOT ?S $?)
  (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
  (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP $?)
- (Node-Category ?INTJ INTJ|ADVP|PP|CC|SBAR)
+ (Node-Category ?INTJ INTJ|ADVP|PP|CC|SBAR|S)
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
- (parserid-word ?h ?w&~Let&~let);Now let her see.
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids)
-  (not (lwgids_imper_checked ?first $?ids))
+ (parserid-word ?first ?w&~Let&~let);Now let her see.
+ (parser_id-root-category-suffix-number ?first ?w verb ? ?) ; counter example for not imperative : But knew it was not possible. 
+ (not (lwgids_imper_checked ?first $?ids))
  =>
         (retract ?f)
-	(printout ?*lwg_debug_file* "   (rule_name - check_for_CC_imper" crlf
+	(printout ?*lwg_debug_file* "   (rule_name - check_for_CC_imper1" crlf
                          "                      Before    - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?tam" "?first" "(implode$ $?ids)")" crlf)
         (bind ?pos (length (create$ ?first $?ids)))
         (bind ?count 0)
@@ -691,7 +702,7 @@
  ;(root-verbchunk-tam-parser_chunkids make_feed is_making_feed is_ing P2 P3 P6)
  ;(verb_type-verb-causative_verb-tam causative P3 P6 is_ing)
  (defrule check_for_causitive
- (declare (salience -20))
+ (declare (salience -21))
  ?f0<-(root-verbchunk-tam-parser_chunkids  ?R  ?vc  ?tam  $?ids ?id ?id1)
  (parserid-word ?id ?w&make|made|get|making)
  ?f1<-(parser_id-root-category-suffix-number  ?id  ?root ?cat ?suf $?)

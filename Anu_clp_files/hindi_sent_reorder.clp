@@ -274,6 +274,7 @@
  ;May I go outside ? Are you going? Did you take your breakfast?
  (defrule yes-no_question
  ?f1<-(id-word 1 did|do|does|may|can|could|would|will|are|is|was|were|am|shall|has|have|had|should)
+ (id-cat_coarse 2 ~verb) ;Do clean the mouth every time with water after eating.
  ?f0 <- (hindi_id_order  $?sent )
  (not (prep_id-relation-anu_ids ? AjFArWaka_kriyA ?kri) )
  =>
