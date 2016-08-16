@@ -131,8 +131,8 @@
 
 [a-zA-Z][ ]*'[sS][^a-zA-Z]	{printf("%s",yytext);}
 o[ ]*'clock		{printf("%s",yytext);}
-Hon[ ]*'ble		{ printf("Honourable");	}
-[a-zA-Z][ ]*'[a-zA-Z]	{printf("%cABBR-SingleQuote%c",yytext[0],yytext[2]);}
+Hon[ ]*'ble		{ printf("Honourable");	/*}
+[a-zA-Z][ ]*'[a-zA-Z]	{printf("%c ABBR-SingleQuote%c",yytext[0],yytext[3]); */}
 [cC]annot	{printf("%can not",yytext[0]);}
 [ ]n't		{printf(" not"); /* You did n't even notice. */}
 

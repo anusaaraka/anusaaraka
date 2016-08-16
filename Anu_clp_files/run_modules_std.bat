@@ -548,6 +548,7 @@
  (load-facts "wsd_facts_output.dat")
  (load-facts "lwg_info.dat")
  (load-facts "relations_tmp1.dat")
+ (load-facts "vibakthi_info.dat")
  (assert (std-parser-num))
  (run)
  (save-facts "number.dat" local id-number-src)

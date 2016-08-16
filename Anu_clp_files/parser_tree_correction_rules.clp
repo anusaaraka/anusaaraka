@@ -178,7 +178,7 @@
 	(assert (id-sd_cat  ?id RB))
 	(assert (Head-Level-Mother-Daughters consciously ?l1 ?mot $?p ?rb $?po))
  )
- ;------------------------------------------------------------------------------------------------------------------------
+ ;======================================= LWG correction rules ===================================================
  ; Suggested by Chaitanya Sir (02-03-16)
  ;Humans have always been curious about the world around them.
  (defrule modify_VBN_as_JJ
@@ -197,9 +197,7 @@
 	(assert (id-sd_cat  ?id JJ))
 	(assert (modified_cat_with_dic ?id))
  )
-
- ;======================================= LWG correction rules ===================================================
-
+ ;------------------------------------------------------------------------------------------------------------------------
  ;The mother calmed the angry son.The jet zoomed across the sky.
  ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
  (defrule modify_VBN_as_VBD
@@ -272,6 +270,55 @@
         (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
         (assert (id-sd_cat  P1  VB))
  )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (11-08-16)
+ ;VBP EX: They are educated.    VBZ Ex: Ice gets formed.
+ (defrule modify_cat_as_verb_or_adj_with_get_word
+ (declare (salience 5))
+ ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?V ?ADJP)
+ (and (Node-Category ?Mot VP) (Node-Category ?V VBZ|VBP))
+ ?f1<-(Node-Category ?ADJP ADJP)
+ ?f2<-(Head-Level-Mother-Daughters ?h ?l ?ADJP ?VBN)
+ ?f3<-(Node-Category ?VBN VBN)
+ ?f4<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
+ ?f5<-(id-sd_cat  ?id  VBN)
+  =>
+	(if (eq (integerp (member$ ?head (create$ gets get getting))) TRUE) then ;Ice gets formed.
+		(retract ?f0 ?f1 ?f2)
+		(bind ?VP (get_no ?ADJP ADJP VP))
+		(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?V ?VP))
+		(assert (Node-Category ?VP VP))
+		(assert (Head-Level-Mother-Daughters ?h ?l ?VP ?VBN))
+	else ;They are educated.
+		(retract ?f2 ?f3 ?f4 ?f5)
+		(bind ?JJ (get_no ?VBN VBN JJ))
+		(assert (Head-Level-Mother-Daughters ?h ?l ?ADJP ?JJ))
+		(assert (Node-Category ?JJ JJ))
+		(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?JJ ?id))
+		(assert (id-sd_cat  ?id  JJ))
+	)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ;Suggested by Sukhada (12-08-16)
+  ;She got the work done.
+  (defrule modify_NN_as_VP
+  ?f0<-(Head-Level-Mother-Daughters ?head&get|got|getting ?lvl ?Mot ?V ?NP)
+  (and (Node-Category ?Mot VP) (Node-Category ?V VBD|VBZ))
+  ?f1<-(Node-Category ?NP NP)
+  ?f2<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 ?VP)
+  (Node-Category ?VP VP)
+  (Head-Level-Mother-Daughters ? ? ?VP ?VBN)
+  (Node-Category ?VBN VBN)
+  =>
+	(retract ?f0 ?f1 ?f2)
+	(bind ?vp (get_no ?NP NP VP))
+	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?V ?vp))
+	(assert	(Node-Category ?vp VP))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?vp ?NP1 ?VP))
+  )
+
+
+
  ;==============================================================================================
  ;Suggested by Chaitanya Sir (24-03-14)
  ;There can be some confusion [regarding] the trailing zeros.

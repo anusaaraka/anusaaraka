@@ -96,26 +96,12 @@
   (id-word_cap_info ?id&~1  first_cap|all_caps)
   (parserid-wordid   ?pid  ?id)
   ?f0<-(id-sd_cat  ?pid ?)
-  (parserid-word ?pid ?w&~I) ;You are lucky I am here.
+  (parserid-word ?pid ?w&~I&~Let) ;You are lucky I am here. Aditya said, Let us look at it carefully first.
   (test (eq (str-index "SYMBOL-" ?w) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
    =>
         (assert (parser_id-cat_coarse ?pid PropN))
         (assert (parser_id-cat ?pid proper_noun))
         (retract ?f0)
-  )
-  ;------------------------------------------------------------------------------------------
-  ;Suggested by Chaitanya Sir 04-06-14 
-  ;They are [educated]. 
-  (defrule modify_VBN_cat
-  (declare (salience 5))
-  ?f0<-(id-sd_cat  ?id  VBN)
-  (Head-Level-Mother-Daughters ?id ? ?ADJP ?VBN)
-  (Node-Category ?ADJP ADJP)
-  (Node-Category ?VBN VBN)
-  =>
-        (assert (parser_id-cat_coarse ?id adjective))
-        (assert (parser_id-cat ?id adjective))
-   	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;Suggested by Soma JI 08-08-15 

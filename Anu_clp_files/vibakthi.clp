@@ -200,7 +200,8 @@
  (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
  (not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?x ?obj_id))
  (id-word ?obj_id ?obj_mng)
- (test (neq (numberp ?obj_mng) TRUE))
+ (id-root ?obj_id ?root)
+ (test (neq (numberp ?root) TRUE))
  (id-root ?root_id ~have)
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
@@ -210,7 +211,7 @@
 		(modify ?f1 (vibakthi ko))
 		(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	word_you )" crlf )
         else
-                (bind ?animate (gdbm_lookup "animate.gdbm" ?obj_mng))
+                (bind ?animate (gdbm_lookup "animate.gdbm" ?root))
                 (if (eq ?animate "1") then
                         (retract ?f0) 
 			(modify ?f1 (vibakthi ko))
