@@ -9,8 +9,8 @@ BI	also/too/even
 ki	that
 isa	the/this/such/that
 eka	a/an/one
-koI	a/an/any
-kisI	a/an/any
+koI	a/an/any/no/some
+kisI	a/an/any/some
 kisI_BI	a/an/any
 hE	is/have/are/be/has/am
 #apane	his/its/our
@@ -19,9 +19,10 @@ hE	is/have/are/be/has/am
 usakI	his/its/him/her/he
 usake	his/its
 unakA	them/their
-unake	them/their
+unake	them/their/him
+#him added for number plural , honorophic
 merA	i/me/my/mine
-vaha	she/he/the/her/him/they/them/that
+vaha	she/he/the/her/him/they/them/that/those
 yahAz	here
 yaha	the/that/this/it/he/him/his/her/she/these/they/such/similar
 isakA	the/it/its/this/he/him/his

@@ -338,6 +338,7 @@
 (not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
+(not (and (id-HM-source ?aid ?mng ?)(id-HM-source =(+ ?aid 1) ?mng1 ?))) ;a biennial life cycle. eka xvivArRika jIvana cakra
 =>
         (assert (manual_word_info (head_id ?id1) (word ?mng ?m)(group_ids ?id0 ?id1)))
         (assert (mng_has_been_grouped ?id0))
@@ -359,6 +360,25 @@
 	(assert (manual_word_info (head_id ?id1) (word ?m ?m1) (group_ids ?id ?id1)))
         (assert (mng_has_been_grouped ?id))
         (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;a black-and-white TV -- eka kAle Ora saPexa tI vI.
+(defrule get_hypen_word_grp1
+(declare (salience 570))
+(id-left_word-possible_mngs ?aid $? ?m $?)
+(id-right_word-possible_mngs ?aid $? ?m1 $?)
+(or (manual_id-word ?id ?m) (and (manual_id-word ?id ?w)(man_word-root-cat ?w ?m n)))
+(manual_id-word ?id1&:(=(+ ?id 1) ?id1) ?o&Ora|yA)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?m1)
+(not (mng_has_been_grouped ?id))
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        (assert (manual_word_info (head_id ?id1) (word ?m ?o ?m1) (group_ids ?id ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -398,15 +418,15 @@
 ;The units of all other physical quantities can be expressed as combinations of the base units.
 ;inake awirikwa anya saBI BOwika rASiyoM ke mAwrakoM ko mUla mAwrakoM ke saMyojana xvArA vyakwa kiyA jA sakawA hE.
 ;The little flats in such houses always have bells that ring like that. 
-;isa waraha ke [Cote-Cote] [PlEtoM kI] GaNtiyAz hameSA isI waraha kI AvAja karawI hEM .
+;[isa waraha ke] Cote-Cote PlEtoM kI GaNtiyAz hameSA isI waraha kI AvAja karawI hEM .
 ;jEse ki,  inake bAxa, isa prakAra, isI prakAra , isI waraha, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane))
-?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake))
+?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
-	(modify ?f (head_id ?mid) (word ?p ?w $?d)(group_ids ?mid ?mid1 $?ids))
+	(modify ?f (head_id ?mid) (word ?p )(vibakthi ?w $?d)(group_ids ?mid ?mid1 $?ids))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 
@@ -496,11 +516,12 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen [ke] [lie] Binna - Binna howA hE @PUNCT-Dot
 ;The average velocity can be positive or negative depending upon the sign of the displacement.
 ;Osawa vega [kA] qNAwmaka yA XanAwmaka honA visWApana ke cihna para nirBara karawA hE .
+;evaM isase banI [sIDZI numA] [GAtI ne] isa manorama jalaprapAwa kA sqjana kiyA hogA .
 (defrule single_vib1
 (declare (salience 540))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
-(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
+(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye karane ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA)(group_ids $?grp_ids1))
 (test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
 (not (chunk_name-chunk_ids VGF $? ?mid0 $?))
 (not (vib_added ?id0))
@@ -544,11 +565,25 @@
 ;ex : man: praXAnamanwrI dic : praXAna manwrI 
 (defrule cp_man_fact
 (declare (salience 100))
-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi ?v))
-(or (id-Apertium_output ? ?m ?m1) (id-Apertium_output ? ?m ?m1 ?v&ko|ke|se))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib))
+(or (id-Apertium_output ? ?m ?m1) (id-Apertium_output ? ?m ?m1 ?v&ko|ke|se)(database_info (components ?m ?m1 )))
 (test (eq (numberp ?mng) FALSE))
 (test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+(not (id-hyphen_word-vib ?mid $?))
 =>
-        (assert (id-hyphen_word-vib ?mid - ?m ?m1 - ?v))
+        (assert (id-hyphen_word-vib ?mid - ?m ?m1 - $?vib))
+)
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;ex : man: praXAna manwrI dic : praXAnamanwrI 
+(defrule cp_man_fact1
+(declare (salience 100))
+(manual_word_info (head_id ?mid) (word ?m ?m1)(vibakthi $?vib))
+(or (id-Apertium_output ? ?mng) (id-Apertium_output ? ?mng ?v&ko|ke|se)(database_info (components ?mng)))
+(test (eq (numberp ?mng) FALSE))
+(test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+(not (id-hyphen_word-vib ?mid $?))
+=>
+        (assert (id-hyphen_word-vib ?mid - ?mng - $?vib))
 )
 

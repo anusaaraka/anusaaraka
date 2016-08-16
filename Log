@@ -1,4 +1,4 @@
- 26-07-16
+ 27-07-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -141,6 +141,7 @@
 	enclitics.lex		->    modified quote as ABBR-SingleQuote, handling both patterns didn't and didn 't, added n't pattern
 	handling_abbrevations.lex ->  fixed the bug to handle Ch.
 	abbrevations.lex 	-> added M.Tech to the list
+	mapping-hindi_rel-univ_rel.lex -> modified \t as [ \t]
  37. Updated following shell files:
 	get_dictionary_in_canonical_form.sh	-> Added code to generate mixed domain dictionary
 	anu_compile.sh				-> Added code to generate mixed domain dictionary gdbm and 
@@ -154,21 +155,24 @@
 	run_sentence_stanford.sh   -> added splitter after each file in all_facts file and changed the order of facts
  38. Updated the following files 
 	print-pos-info.py		Dictionaries/Readme
- 39. gdbm_lookup.c:
+ 39. Updated following alignment files
+	alignment.clp	alignment1.clp	get_heuristics.clp	get_manual_id_and_group.clp	modify_chunk_and_morph_info.clp
+	get_verb_and_phrasal_grp.clp	get_dbase_mng.clp
+ 40. gdbm_lookup.c:
 	Fixed bug to return 'FALSE' when database is empty or not found case
- 40. Splitted NER data into sentence wise in following files:
+ 41. Splitted NER data into sentence wise in following files:
 	run-ner.pl
 	run-ner.sh
 	Anusaaraka_stanford.sh
- 41. Updated following dictionaries:
+ 42. Updated following dictionaries:
 	changes_in_databases
 	provisional_multi_word_dictionary.txt
 	apertium-en-hi.en.metadix
 	apertium_hn.dix
- 42. Updated following Stanford versions 3.4.1 to 3.6.0
+ 43. Updated following Stanford versions 3.4.1 to 3.6.0
         Stanford Parser
         Stanford Tregex
- 43. Updated Log.
+ 44. Updated Log.
 
  
  19-11-15

@@ -9,7 +9,7 @@
 
 (deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 
-
+(deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
  ;Added by Mahalaxmi
  (deffunction remove_character(?char ?str ?replace_char)
@@ -201,34 +201,12 @@
  	)
  )
  ;--------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (08-4-13)
- (defrule get_mng_from_all_dic
- (declare (salience 160))
- ?f0<-(id-root ?id -)
- (id-original_word ?id ?word)
- (id-cat_coarse ?id ?cat)
- (id-word ?id ?w)
- (test (neq (numberp ?word) TRUE))
- =>
-		(retract ?f0)
-		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "numbers_dic.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "inferred_dic.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
-		(dic_lookup "physics_dic.gdbm" ?id ?w ?w ?cat)
-		(dic_lookup "agriculture_dic.gdbm" ?id ?w ?w ?cat)
-		(dic_lookup "social_science_dic.gdbm" ?id ?w ?w ?cat)
-		(dic_lookup "wsd_dic.gdbm" ?id ?w ?w ?cat)
- )
- ;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic1
  (declare (salience 155))
  (id-original_word ?id ?word)
  (id-root ?id ?root)
  (id-cat_coarse ?id ?cat)
+ (id-word ?id ?w)
  (test (neq (numberp ?root) TRUE))
  =>
 
@@ -238,11 +216,12 @@
 		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat)
-		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "proper_noun_dic.gdbm" ?id ?w ?w ?cat)
 		(dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "wsd_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "crude_equivalent_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 
@@ -289,6 +268,17 @@
 		(dic_lookup "wsd_dic.gdbm" ?id ?word ?root ?cat1)
  )
  ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ ;broken, break
+ (defrule get_mng_for_adj_with_verb_root
+ (declare (salience 150))
+ (id-original_word ?id ?org_wrd)
+ (id-cat_coarse ?id adjective)
+ (word-morph (original_word  ?org_wrd)(root ?root)(category verb))
+ =>
+	(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?org_wrd ?root verb)
+ )
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  (defrule check_for_single_tam
  (declare (salience 90))
@@ -300,7 +290,7 @@
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  (defrule get_mng_for_verb_lwg
- (or (root-verbchunk-tam-chunkids ? ? ?tam $?chunkids)(get_tam_mng_for ?tam))
+ (or (root-verbchunk-tam-chunkids ? ? ?tam&~0 $?chunkids)(get_tam_mng_for ?tam&~0))
  (test (neq ?tam tam_to_be_decided))
  =>
 	(bind ?new_mng "")
@@ -354,6 +344,13 @@
  =>
         (bind ?lw (string-to-field (sub-string 1 (- (str-index "-" ?word) 1) ?word)))
         (bind ?rw (string-to-field (sub-string (+ (str-index "-" ?word) 1) (length ?word) ?word)))
+	(if  (eq (numberp ?rw) FALSE) then
+		(if (neq (str-index "-" ?rw) FALSE)  then
+			(if (eq (sub-string 1 (- (str-index "-" ?rw) 1) ?rw) "and") then ; black-and-white
+	        		(bind ?rw (string-to-field (string-to-field (sub-string (+ (str-index "-" ?rw) 1) (length ?rw) ?rw))))
+			)
+		)
+	)
         (assert (left_word ?id ?lw))
         (assert (right_word ?id ?rw))
  )
@@ -361,7 +358,7 @@
  ;Added by Shirisha Manju (10-4-13)
  (defrule get_mngs_for_right_word
  ?f0<-(right_word ?id ?rw)
- (id-cat_coarse ?id ~number)
+ (test (eq (numberp ?rw) FALSE))
  =>
         (get_possible_mngs ?id ?rw right)
  )
@@ -369,7 +366,7 @@
  ;Added by Shirisha Manju (10-4-13)
  (defrule get_mngs_for_left_word
  ?f0<-(left_word ?id ?lw)
- (id-cat_coarse ?id ~number)
+ (test (eq (numberp ?lw) FALSE))
  =>
         (get_possible_mngs ?id ?lw left)
  )

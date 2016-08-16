@@ -131,7 +131,7 @@ saving	bacAva/bacawa
 several	viBinna/prakAra/nijI/nAnA_prakAra/kaI/Binna/bahuwa/alaga-alaga/alaga/aneka
 she	usane/vaha/mAxA/aOrawa/swrI/yaha
 since	waba_se/se/kyofki/uparAnwa/cUfki
-some	kuCa/WodA_sA/viSiRta/koI/kai/bahuwa_baDiyA/pUrNawayA/lagaBaga/kuCa_loga
+some	kuCa/WodA_sA/viSiRta/koI/kai/bahuwa_baDiyA/pUrNawayA/lagaBaga/kuCa_loga/kisI
 somebody	koI/koI_vyakwi
 someone	koI/badA_AxamI/koI_vyakwi
 something	kuCa/koI_cIja/koI_bAwa/koI
@@ -146,7 +146,7 @@ there	vahAz/vaha
 these	ye/ina/yaha/inheM
 they	unheM/ve_loga/ve/unhoMne/ye/unameM
 this	yaha/isa/isese/iwanA/isake_lie/isakA/ise
-those	ve/jo/ina
+those	ve/jo/ina/una
 through	SurU_se_anwa_waka/sIXA/pUrNa/lagAwAra/KulA/eka_se_xUsare_waka/xvArA/SurU_se_AkIra_waka/se/pUrI_waraha_se/baxOlawa/acCI_waraha_se/eka_ora_se_xUsarI_ora/prawibanXa_ko_wodawe_hue/anwa_waka/meM_se/meM/ke_xvArA/ke_mAXyama_se/ke_jarie/se_waka/Suru_se_anwa_waka/ke_kAraNa
 throughout	SurU_se_anwa_waka/Suru_se_anwa_waka/pUrNawayA/pUre/Bara_meM/meM/pUre_meM
 thru	sIXA

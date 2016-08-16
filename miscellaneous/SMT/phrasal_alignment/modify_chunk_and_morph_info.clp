@@ -171,4 +171,19 @@
 		(assert (chunk_name-chunk_ids NP ?id))
 	)
 )
-	
+;----------------------------------------------------------------------------------------------------------
+
+;haswinApura meM prakRAla Ora [pUjA-arcanA] kA samaya subaha 8 baje se SAma 5 baje waka hE .
+(defrule combine_roots_for_hyphen
+(manual_id-word ?id ?mng)
+(test (neq (numberp ?mng) TRUE))
+(test (neq (str-index "-" ?mng) FALSE))
+?f0<-(man_word-root-cat ?m1 ?root1 ?)
+?f1<-(man_word-root-cat ?m2 ?root2 ?c)
+(test (and (eq (string-to-field (sub-string 1  (- (str-index "-" ?mng) 1) ?mng)) ?m1)(eq (string-to-field (sub-string (+ (str-index "-" ?mng) 1) (length ?mng) ?mng)) ?m2)))
+=>
+	(retract ?f0 ?f1)
+	(bind ?r (string-to-field (str-cat ?m1"-"?root2)))
+	(assert (man_word-root-cat ?mng ?r ?c))
+)
+

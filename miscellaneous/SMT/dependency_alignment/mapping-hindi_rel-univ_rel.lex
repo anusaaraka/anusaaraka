@@ -1,90 +1,90 @@
 %%
 
-\tfragof\t	{	printf("\tdislocated\t");/*	}			
-\tpunct	{	printf("\trsym\t");*/	}
-\trsym\t	{	printf("\tpunct\t");	}
-\trad\t		{	printf("\tvocative\t");	}
-\tk4\t		{	printf("\tiobj\t");	}
-\tk2\t		{	printf("\tdobj\t");	}
-\tnmod__k1inv\t	{	printf("\tacl\t");	}
-\tnmod__k2inv\t	{	printf("\tacl\t");	}
-\tmod__wq\t	{	printf("\tdet\t");	}			
+[ \t]fragof[ \t]	{	printf("\tdislocated\t");/*	}			
+[ \t]punct	{	printf("\trsym\t");*/	}
+[ \t]rsym[ \t]	{	printf("\tpunct\t");	}
+[ \t]rad[ \t]		{	printf("\tvocative\t");	}
+[ \t]k4[ \t]		{	printf("\tiobj\t");	}
+[ \t]k2[ \t]		{	printf("\tdobj\t");	}
+[ \t]nmod__k1inv[ \t]	{	printf("\tacl\t");	}
+[ \t]nmod__k2inv[ \t]	{	printf("\tacl\t");	}
+[ \t]mod__wq[ \t]	{	printf("\tdet\t");	}			
 
  /*below entries is for no comments and no condition found*/
 
-\tlwg__neg\t	{	printf("\tneg\t");  	}
-\tsent-adv\t	{	printf("\tadvcl\t");	}
-\tk7tu\t	{	printf("\tnmod\t");	}
-\tnmod\t	{	printf("\tamod\t");	}
-\tundef\t	{	printf("\tdep\t");	}
-\tlwg__rp\t	{	printf("\tdep\t");	}
-\tlwg__unk\t	{	printf("\tdep\t");	
+[ \t]lwg__neg[ \t]	{	printf("\tneg\t");  	}
+[ \t]sent-adv[ \t]	{	printf("\tadvcl\t");	}
+[ \t]k7tu[ \t]	{	printf("\tnmod\t");	}
+[ \t]nmod[ \t]	{	printf("\tamod\t");	}
+[ \t]undef[ \t]	{	printf("\tdep\t");	}
+[ \t]lwg__rp[ \t]	{	printf("\tdep\t");	}
+[ \t]lwg__unk[ \t]	{	printf("\tdep\t");	
 
 /* conditions given but no change in rel name entries*/ }
-\tk4a\t		{	printf("\tnsubj\t");	}
-\tpk1\t		{	printf("\tnsubj\t");	}
-\tlwg__intf\t	{	printf("\tadvmod\t");	}
-\tjjmod__intf\t	{	printf("\tadvmod\t");	}
-\tjjmod\t	{	printf("\tadvmod\t");	}
-\trh\t		{	printf("\tadvcl\t");	}
-\trt\t		{	printf("\tadvcl\t");	}
-\tk1u\t		{	printf("\tnmod\t");	}
-\tk2p\t		{	printf("\tnmod\t");	}
-\tk2u\t		{	printf("\tnmod\t");	}
-\tk3\t		{	printf("\tnmod\t");	}
-\tk5\t		{	printf("\tnmod\t");	}
-\tk7\t		{	printf("\tnmod\t");	}
-\tk7a\t		{	printf("\tnmod\t");	}
-\tk7p\t		{	printf("\tnmod\t");	}
-\tk7t\t		{	printf("\tnmod\t");/*	}
-\tr6\t		{	printf("\tnmod\t");*/	}
-\tr6-k1\t	{	printf("\tnsubj\t");	}
-\tr6-k2\t	{	printf("\tdobj\t");	}
-\tr6v\t		{	printf("\tnmod\t");	}
-\tras-k1\t	{	printf("\tnmod\t");	}
-\tras-k2\t	{	printf("\tnmod\t");	}
-\tras-k7\t	{	printf("\tnmod\t");	}
-\tras-neg\t	{	printf("\tnmod\t");	}
-\trd\t		{	printf("\tnmod\t");	}
-\trsp\t		{	printf("\tnmod\t");	}
-\tnmod__relc\t	{	printf("\tacl\t");	}
-\trs\t		{	printf("\tacl\t");	}
-\tpof\t		{	printf("\tcompound\t");	}
-\tpof__cn\t	{	printf("\tcompound\t");	}
-\tpof__redup\t	{	printf("\tcompound\t");/*	}
-\tnmod__adj\t	{	printf("\tamod\t");*/	}
-\tlwg__nst\t	{	printf("\tcase\t");	}
-\tlwg__psp\t	{	printf("\tcase\t");	}
-\tadv\t		{	printf("\tadvmod\t"); /* doubt ?  
+[ \t]k4a[ \t]		{	printf("\tnsubj\t");	}
+[ \t]pk1[ \t]		{	printf("\tnsubj\t");	}
+[ \t]lwg__intf[ \t]	{	printf("\tadvmod\t");	}
+[ \t]jjmod__intf[ \t]	{	printf("\tadvmod\t");	}
+[ \t]jjmod[ \t]	{	printf("\tadvmod\t");	}
+[ \t]rh[ \t]		{	printf("\tadvcl\t");	}
+[ \t]rt[ \t]		{	printf("\tadvcl\t");	}
+[ \t]k1u[ \t]		{	printf("\tnmod\t");	}
+[ \t]k2p[ \t]		{	printf("\tnmod\t");	}
+[ \t]k2u[ \t]		{	printf("\tnmod\t");	}
+[ \t]k3[ \t]		{	printf("\tnmod\t");	}
+[ \t]k5[ \t]		{	printf("\tnmod\t");	}
+[ \t]k7[ \t]		{	printf("\tnmod\t");	}
+[ \t]k7a[ \t]		{	printf("\tnmod\t");	}
+[ \t]k7p[ \t]		{	printf("\tnmod\t");	}
+[ \t]k7t[ \t]		{	printf("\tnmod\t");/*	}
+[ \t]r6[ \t]		{	printf("\tnmod\t");*/	}
+[ \t]r6-k1[ \t]	{	printf("\tnsubj\t");	}
+[ \t]r6-k2[ \t]	{	printf("\tdobj\t");	}
+[ \t]r6v[ \t]		{	printf("\tnmod\t");	}
+[ \t]ras-k1[ \t]	{	printf("\tnmod\t");	}
+[ \t]ras-k2[ \t]	{	printf("\tnmod\t");	}
+[ \t]ras-k7[ \t]	{	printf("\tnmod\t");	}
+[ \t]ras-neg[ \t]	{	printf("\tnmod\t");	}
+[ \t]rd[ \t]		{	printf("\tnmod\t");	}
+[ \t]rsp[ \t]		{	printf("\tnmod\t");	}
+[ \t]nmod__relc[ \t]	{	printf("\tacl\t");	}
+[ \t]rs[ \t]		{	printf("\tacl\t");	}
+[ \t]pof[ \t]		{	printf("\tcompound\t");	}
+[ \t]pof__cn[ \t]	{	printf("\tcompound\t");	}
+[ \t]pof__redup[ \t]	{	printf("\tcompound\t");/*	}
+[ \t]nmod__adj[ \t]	{	printf("\tamod\t");*/	}
+[ \t]lwg__nst[ \t]	{	printf("\tcase\t");	}
+[ \t]lwg__psp[ \t]	{	printf("\tcase\t");	}
+[ \t]adv[ \t]		{	printf("\tadvmod\t"); /* doubt ?  
  
  instance  not found cases -- need to verify */ }
-\tnmod__neg\t	{	printf("\tneg\t");	}
-\trbmod\t	{	printf("\tadvmod\t");	}
-\tvmod__adv\t	{	printf("\tadvmod\t");	}
-\trtu\t		{       printf("\tadvcl\t");	}
-\tjk1\t		{       printf("\tnmod\t");	}
-\tmk1\t		{       printf("\tdobj\t");	}
-\tk3u\t		{       printf("\tnmod\t");	}
-\tk4u\t		{       printf("\tnmod\t");	}
-\tk7pu\t	{       printf("\tnmod\t");	}
-\tk7u\t		{       printf("\tnmod\t");	}
-\tras-k1u\t	{       printf("\tnmod\t");	}
-\tras-k4\t	{       printf("\tnmod\t");	}
-\tras-k4a\t	{       printf("\tnmod\t");	}
-\tras-k7p\t	{       printf("\tnmod\t");	}
-\tras-pof\t	{       printf("\tnmod\t");	}
-\tras-r6\t	{       printf("\tnmod\t");	}
-\tras-r6-k2\t	{       printf("\tnmod\t");	}
-\tras-rt\t	{       printf("\tnmod\t");	}
-\tnmod__emph\t	{       printf("\tnmod\t");	}
-\tk2g\t		{       printf("\tacl\t");	}
-\trbmod__relc\t	{       printf("\tacl\t");	}
-\tpof_inv\t	{       printf("\tcompound\t");	}
-\tnmod__pofinv\t	{       printf("\tcompound\t");	}
-\tlwg__rdp\t	{       printf("\tcompound\t");	}
-\tlwg__vm\t	{       printf("\tcompound\t");	}
-\tenm\t		{       printf("\tdep\t");	}
-\tpsp__cl\t	{       printf("\tcase\t");	}
-\tvmod\t	{       printf("\tparataxis\t");}
-\tk1s\t		{	printf("\troot_k1s\t");	}
+[ \t]nmod__neg[ \t]	{	printf("\tneg\t");	}
+[ \t]rbmod[ \t]	{	printf("\tadvmod\t");	}
+[ \t]vmod__adv[ \t]	{	printf("\tadvmod\t");	}
+[ \t]rtu[ \t]		{       printf("\tadvcl\t");	}
+[ \t]jk1[ \t]		{       printf("\tnmod\t");	}
+[ \t]mk1[ \t]		{       printf("\tdobj\t");	}
+[ \t]k3u[ \t]		{       printf("\tnmod\t");	}
+[ \t]k4u[ \t]		{       printf("\tnmod\t");	}
+[ \t]k7pu[ \t]	{       printf("\tnmod\t");	}
+[ \t]k7u[ \t]		{       printf("\tnmod\t");	}
+[ \t]ras-k1u[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-k4[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-k4a[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-k7p[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-pof[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-r6[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-r6-k2[ \t]	{       printf("\tnmod\t");	}
+[ \t]ras-rt[ \t]	{       printf("\tnmod\t");	}
+[ \t]nmod__emph[ \t]	{       printf("\tnmod\t");	}
+[ \t]k2g[ \t]		{       printf("\tacl\t");	}
+[ \t]rbmod__relc[ \t]	{       printf("\tacl\t");	}
+[ \t]pof_inv[ \t]	{       printf("\tcompound\t");	}
+[ \t]nmod__pofinv[ \t]	{       printf("\tcompound\t");	}
+[ \t]lwg__rdp[ \t]	{       printf("\tcompound\t");	}
+[ \t]lwg__vm[ \t]	{       printf("\tcompound\t");	}
+[ \t]enm[ \t]		{       printf("\tdep\t");	}
+[ \t]psp__cl[ \t]	{       printf("\tcase\t");	}
+[ \t]vmod[ \t]	{       printf("\tparataxis\t");}
+[ \t]k1s[ \t]		{	printf("\troot_k1s\t");	}
 

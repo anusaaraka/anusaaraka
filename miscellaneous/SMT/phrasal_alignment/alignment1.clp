@@ -1,6 +1,7 @@
 ;This file is written by Shirisha Manju
 
 (defglobal ?*lf-f* = lf)
+(defglobal ?*catastrophe_file* = catas_fp)
 
 (deftemplate score (slot anu_id (default 0))(slot man_id (default 0))(slot weightage_sum (default 0))(multislot heuristics (default 0))(multislot rule_names (default 0)))
 
@@ -22,6 +23,36 @@
                         )
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
+
+(defrule get_man_poss_roots
+(declare (salience 2003))
+(man_word-root-cat ?word ?root ?c)
+(man_word-root-cat ?word ?root1 ?)
+(test (neq ?root ?root1))
+(not (man_word-poss_roots $? ?root $?))
+=>
+	(assert (man_word-poss_roots ?word ?root ?root1))
+)
+
+(defrule get_man_poss_roots1
+(declare (salience 2004))
+?f0<-(man_word-poss_roots ?word $?roots)
+(man_word-root-cat ?word ?root ?)
+(test (eq (member$ ?root $?roots) FALSE))
+=>
+	(retract ?f0)
+	(assert (man_word-poss_roots ?word $?roots ?root))
+)
+
+(defrule get_man_poss_roots2
+(declare (salience 2002))
+(man_word-root-cat ?word ?root ?)
+(not (man_word-poss_roots $? ?root $?))
+=>
+        (assert (man_word-poss_roots ?word ?root))
+)
+
+
 
 ;============================  get_restricted word/mng info ====================
 
@@ -54,7 +85,8 @@
 (defrule get_hnd_dic
 (declare (salience 2001))
 (manual_word_info (head_id ?mid) (word ?mng))
-(man_word-root-cat ?mng ?root ?)
+(man_word-poss_roots ?mng $? ?root $?)
+;(man_word-root-cat ?mng ?root ?)
 (test (eq (numberp (implode$ (create$ ?mng))) FALSE ))
 (test (or (neq (gdbm_lookup "restricted_hnd_words.gdbm" ?mng) "FALSE")(neq (gdbm_lookup "restricted_hnd_words.gdbm" ?root) "FALSE")))
 =>
@@ -102,17 +134,26 @@
 (declare (salience 450))
 (anu_id-word-possible_mngs ?aid ?w $?pos_mngs)
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?mid $?)
-(manual_word_info (head_id ?mid) (word $?m ?mng))
-(man_word-root-cat ?mng ?root ?)
-(test (eq (integerp (member$ ?root $?pos_mngs)) FALSE))
-(test (eq (subsetp (create$ $?m ?mng) $?pos_mngs) FALSE))
+(manual_word_info (head_id ?mid) (word ?mng )(root $?root)) 
+(man_word-poss_roots ?mng $?roots)
+(test (and (eq (member$ ?mng $?pos_mngs) FALSE)(eq (member$ $?root $?pos_mngs) FALSE)))
 ?f1<-(left_over_ids $?ids)
 (not (added_emphatic ?mid))
 (not (pronoun_align ?aid ?mid))
+(not (score (anu_id ?aid) (man_id ?mid) (heuristics $? anu_exact_match $?)))
 =>
-	(retract ?f0 ?f1)
-        (assert (removed_man_id_with-anu_id ?mid ?aid))
-	(assert (left_over_ids $?ids ?mid))
+	(bind ?c 0)
+	(loop-for-count (?i 1 (length $?roots))
+		(if (neq (member$ (nth$ ?i $?roots) $?pos_mngs) FALSE) then
+			(bind ?c (+ ?c 1))
+		)
+	)
+	(if (eq ?c 0) then
+		(retract ?f0 ?f1)
+	        (assert (removed_man_id_with-anu_id ?mid ?aid))
+		(bind $?ids (sort > (create$ $?ids ?mid)))
+		(assert (left_over_ids $?ids))
+	)
 )
 ;----------------------------------------------------------------------------------------------
 (defrule rm_unrelated_wrds_from_hnd_restrict
@@ -124,10 +165,12 @@
 ?f1<-(left_over_ids $?ids)
 (not (added_emphatic ?mid))
 (not (pronoun_align ?aid ?mid))
+;(not (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?s&:(> ?s 10))))
 =>
         (retract ?f0 ?f1)
         (assert (removed_man_id_with-anu_id ?mid ?aid))
-        (assert (left_over_ids $?ids ?mid))
+	(bind $?ids (sort > (create$ $?ids ?mid)))
+        (assert (left_over_ids $?ids))
 )
 ;----------------------------------------------------------------------------------------------
 ;The night sky with its bright celestial objects [has fascinated] humans since time immemorial.
@@ -138,12 +181,14 @@
 (declare (salience 450))
 (root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?h)
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - ?mid $?mng)
-(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM hogA avaSya))) FALSE))
+(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM hogA avaSya nahIM jarUra))) FALSE))
 ?f1<-(left_over_ids $?ids)
 (id-word ?id ~let)
 =>
         (retract ?f ?f1)
-        (assert (left_over_ids $?ids ?mid))
+	(printout t $?mng crlf)
+	(bind $?ids (sort > (create$ $?ids ?mid)))
+        (assert (left_over_ids $?ids))
         (assert (removed_man_id_with-anu_id ?mid ?id))
 )
 ;----------------------------------------------------------------------------------------------
@@ -158,7 +203,8 @@
 ?f1<-(left_over_ids $?ids)
 =>
         (retract ?f ?f1)
-        (assert (left_over_ids $?ids ?mid))
+	(bind $?ids (sort > (create$ $?ids ?mid)))
+        (assert (left_over_ids $?ids))
         (assert (removed_man_id_with-anu_id ?mid ?id))
 )
 ;----------------------------------------------------------------------------------------------
@@ -174,7 +220,8 @@
 ?f1<-(left_over_ids $?ids)
 =>
         (retract ?f ?f1)
-        (assert (left_over_ids $?ids ?mid1))
+	(bind $?ids (sort > (create$ $?ids ?mid1)))
+        (assert (left_over_ids $?ids))
         (assert (removed_man_id_with-anu_id ?mid1 ?id1))
 )
 ;----------------------------------------------------------------------------------------------
@@ -186,7 +233,8 @@
 ?f1<-(left_over_ids $?ids)
 =>
 	(retract ?f0 ?f1)
-	(assert (left_over_ids $?ids ?mid))
+	(bind $?ids (sort > (create$ $?ids ?mid)))
+	(assert (left_over_ids $?ids))
         (assert (removed_man_id_with-anu_id ?mid ?id))
 )
 ;----------------------------------------------------------------------------------------------
@@ -200,7 +248,8 @@
 ?f<-(left_over_ids $?ids)
 =>
         (retract ?f ?f0 ?f1)
-        (assert (left_over_ids $?ids ?mid))
+	(bind $?ids (sort > (create$ $?ids ?mid)))
+        (assert (left_over_ids $?ids))
         (assert (removed_man_id_with-anu_id ?mid ?to))
 )
 
@@ -240,13 +289,13 @@
 (declare (salience 400))
 ?f<-(left_over_ids $?p ?id $?p1)
 (manual_word_info (head_id ?id)(word jI)(vibakthi ?v)) 
-?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid&:(=(- ?id 1) ?mid) $?m_mng)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid&:(=(- ?id 1) ?mid) $?m_mng)
 =>
         (retract ?f ?f0)
 	(if (eq ?v 0) then	
-	        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid $?m_mng jI))
+	        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid $?m_mng jI))
 	else
-	        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid $?m_mng jI ?v))
+	        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid $?m_mng jI ?v))
 	)
         (assert (left_over_ids $?p $?p1))
 )
@@ -303,6 +352,7 @@
         (retract ?f ?f0)
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid ?m $?mng))
         (assert (left_over_ids $?p $?p0))
+	(assert (added_emphatic ?mid))
 )
 ;------------------------------------------------------------------
 ;It would be interesting to know what it is men are most afraid of.
@@ -355,12 +405,13 @@
 	else
 		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?a1 $?am - ?id $?mng))
 	)
+	(assert (left_over_ids))
 )
 ;------------------------------------------------------------------
 ;Three or four door-keepers were employed on the building.
 ;Man: [wIna-cAra] xarabAna BI paharA xene ke lie We.
 ;Anu: [wIna] yA [cAra] door-keepers imArawa para kAma_para lagAyA gayA WA.
-(defrule split_hyphen_word
+(defrule split_and_align_hyphen_word
 (declare (salience 400))
 ?f0<-(left_over_ids $?p ?id $?p1)
 (id-hyphen_word-vib ?id - ?w ?w1 - ?v)
@@ -379,6 +430,19 @@
 		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?w1 - ?id ?w1 ?v))
 	)
 	(assert (left_over_ids $?p $?p1))
+)
+;------------------------------------------------------------------
+;[food and water] <=> anna-jala
+(defrule rm_slot_for_conj_aligned_hyphen_word
+(declare (salience 400))
+(id-hyphen_word-vib ?id $?)
+(score (anu_id ?aid) (man_id ?mid)(rule_names $? man_hyphen_wrd_match_using_dic_for_conj $?))
+?f0<-(id-Apertium_output ?a1 $?)
+?f<-(id-Apertium_output ?c ?)
+?f1<-(id-Apertium_output ?aid pAnI)
+(conj_head-left_head-right_head ?c ?a1 ?aid)
+=>
+	(retract ?f0 ?f ?f1)
 )
 
 ;=============================== Align 'rUpa' =============================
@@ -467,7 +531,8 @@
 =>
         (retract ?f0 ?f1 ?f2)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng - ?mid $?mng ?v))
-	(assert (left_over_ids $?l ?mid1))
+	(bind $?l (sort > (create$ $?l ?mid1)))
+	(assert (left_over_ids $?l))
 )
 ;------------------------------------------------------------------
 ;Why does a [railway track] have a particular shape like I?
@@ -499,7 +564,6 @@
 (or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(id-HM-source-grp_ids ? $? physics_WSD_compound_phrase_root_mng|WSD_compound_phrase_root_mng $?ids))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - ?mid  $?m1)
 (test (eq (integerp (member$ ?id $?ids)) TRUE))
-;?f<-(id-Apertium_output ?id )
 ?f<-(id-Apertium_output ?id1 $?a ?m $?a1)
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
 (not (modified_mwe_slot ?mid))
@@ -529,17 +593,38 @@
 (defrule rm_mwe_alignment
 (declare (salience 370))
 (or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
-?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid  $?m1)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid  $?)
 (test (eq (integerp (member$ ?aid $?ids)) TRUE))
 (or (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?m - ?mid1 $?)(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?m ?v - ?mid1  $?))
 (test (eq (integerp (member$ ?aid1 $?ids)) TRUE))
 (test (neq ?aid ?aid1))
-(or (manual_word_info (head_id ?mid1) (word $?m))(id-hyphen_word-vib ?mid1 - $?m - ?v))
+(or (manual_word_info (head_id ?mid1) (word $?m)) (id-hyphen_word-vib ?mid1 - $?m - ?v)
+(and (manual_word_info (head_id ?mid1) (word ?m1 ?m2))(test (eq (create$ (string-to-field (str-cat ?m1 ?m2))) $?m))))
 ?f<-(left_over_ids $?l)
 =>
 	(retract ?f ?f1)
-	(assert (left_over_ids $?l ?mid))
+	(bind $?l (sort > (create$ $?l ?mid)))
+	(assert (left_over_ids $?l ))
 )
+;------------------------------------------------------------------
+;Prince Shreyanshkumar urged Adinatha Prabhu to accept [sugar cane] juice for ending the fast which he accepted.
+;rAjakumAra SreyaMRakumAra ne AxinAWa praBu se vrawa ke samApana ke lie [ikRu] rasa grahaNa karane kI prArWanA kI jise unhoMne svIkAra kiyA .
+;rAjakumAra shreyanshkumar ne adinatha praBu vaha weja jise usane svIkAra kiyA samApwa ho ke lie [gannA] rasa svIkAra karane ke lie ukasAyA.
+(defrule rm_mwe_alignment_using_wordnet
+(declare (salience 365))
+(ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)
+?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid ?mng)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid1 $?)
+(test (and (eq (integerp (member$ ?aid $?ids)) TRUE) (eq (integerp (member$ ?aid1 $?ids)) TRUE)))
+(score (anu_id ?aid) (man_id ?mid) (heuristics $? hindi_wordnet_match $?))
+?f1<-(id-Apertium_output ?aid)
+?f2<-(left_over_ids $?l)
+=>
+	(retract ?f0 ?f ?f1 ?f2)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid ?mng))
+	(bind $?l (sort > (create$ $?l ?mid1)))
+	(assert (left_over_ids $?l ))
+)		
 ;------------------------------------------------------------------
 ;He first wants to show it to the prime Minister.
 ;vaha pahalI bAra [praXAna manwrI ko] isako xiKAnA cAhawA hE.
@@ -601,7 +686,8 @@
 ?f0<-(left_over_ids $?ids)
 =>
 	(retract ?f ?f0)
-	(assert (left_over_ids $?ids ?mid))
+	(bind $?ids (sort > (create$ $?ids ?mid)))
+	(assert (left_over_ids $?ids ))
         (assert (removed_man_id_with-anu_id ?mid ?id))
 )
 ;---------------------------------------------------------------------------------
@@ -633,7 +719,8 @@
 =>
         (retract ?f0 ?f2 ?f3)
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?a ?m $?a1 - ?mid  ?m $?m1))
-	(assert (left_over_ids $?pre ?mid1))
+	(bind $?pre (sort > (create$ $?pre ?mid1)))
+	(assert (left_over_ids $?pre))
 )
 ;---------------------------------------------------------------------------------
 (defrule modify_inf_to_align
@@ -658,7 +745,8 @@
 ?f3<-(left_over_ids $?pre )
 =>
 	(retract ?f1 ?f3)
-	(assert (left_over_ids $?pre ?mid))
+	(bind $?pre (sort > (create$ $?pre ?mid)))
+	(assert (left_over_ids $?pre))
 )
 ;---------------------------------------------------------------------------------
 (defrule rm_aux_or_particle_id
@@ -746,12 +834,13 @@
 (defrule group_verb_if-noun_aligned
 (declare (salience 300))
 ?f<-(left_over_ids $?p ?id $?p1)
-(manual_word_info (head_id ?mid) (group_ids $? =(- ?id 1) $?))
+(manual_word_info (head_id ?lid) (group_ids $? ?id $?)(word $?mng1 ?w)(vibakthi ?vib $?v))
+(manual_word_info (head_id ?mid) (group_ids $? =(- ?lid 1) $?))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid  $?mng ?m )
 (test (neq (integerp (member$ ?m (create$ WIM WA We WI hE hEM hue huI lie karanA kI kareM kareMge))) TRUE))
 (id-cat_coarse ?aid verb)
 (chunk_name-chunk_ids JJP|NP|VGNF|VGNN $? ?mid $?)
-(manual_word_info (head_id ?id) (word $?mng1 ?w)(vibakthi ?vib $?v))
+;(manual_word_info (head_id ?id) (word $?mng1 ?w)(vibakthi ?vib $?v))
 (or (chunk_name-chunk_ids ?c&VGF|VGNN|VGNF $? ?id $?) (chunk_name-chunk_ids-words ?c&VGF|VGNN|VGNF $? ?id $?))
 =>
         (retract ?f ?f0)
@@ -931,7 +1020,7 @@
 (or (and (chunk_name-chunk_ids ? $?grp)(test (and (integerp (member$ ?mid $?grp)) (integerp (member$ ?id $?grp)))))
     (and (chunk_name-chunk_ids ?ch&~VGF&~VGNF ?id $?)(chunk_name-chunk_ids ? $? ?mid $?)))
 ?f1<-(id-Apertium_output ?aid1&:(= (+ ?aid 1) ?aid1) $?am)
-(id-cat_coarse ?aid1 ?c&~verb&~preposition&~wh-determiner&~conjunction)
+(id-cat_coarse ?aid1 ?c&~verb&~preposition&~wh-determiner&~conjunction&~pronoun)
 (id-cat_coarse ?aid ?c1&~verb&~preposition&~wh-determiner&~determiner&~conjunction)
 (id-word ?aid1 ?w&~the&~a&~to&~there&~and)
 (id-word ?aid ?w1&~that)
@@ -1138,7 +1227,29 @@
 )
 
 ;========================== Alignment with phrasal ===================================
-
+;In Hastinapur, Shree Adinath Prabhu, the first among the twenty four Tirthankaras of [Jainism], had ended his four hundred day fast by having juice of sugar cane from Shreyansh Kumar's hand.
+;haswinApura meM [jEna Xarma ke] cObIsa wIrWaMkaroM meM se sabase pahale wIrWaMkara SrI AxinAWa praBu ne apane cAra sO xinoM ke vrawa ke paScAwa SreyaMRakumAra ke hAWoM se ganne kA rasa grahaNa kara apane vrawa kA samApana kiyA WA 
+(defrule group_multi_word_with_phrasal
+(declare (salience 81))
+?f<-(left_over_ids $?p ?id ?id1 $?p1)
+(manual_word_info (head_id ?id) (word $?mng  ?m))
+(manual_word_info (head_id ?id1) (word $?mng1  ?m1)(vibakthi ?v $?vib))
+(or (eng_id-eng_wrd-man_wrd ?aid ? $?pmng) (anu_id-anu_mng-man_mng ?aid ? $?pmng))
+(test (eq (create$ $?mng  ?m $?mng1  ?m1) $?pmng))
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
+?f1<-(id-Apertium_output ?aid $?am)
+(not (removed_man_id_with-anu_id ?id ?aid))
+(id-cat_coarse ?aid ~determiner)
+=>
+        (retract ?f ?f1)
+        (assert (left_over_ids $?p $?p1))
+        (if (or (eq ?v 0) (member$ ?m1 (create$ ?v $?vib))) then
+                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?id1 $?mng ?m $?mng1 ?m1))
+        else
+                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?id $?mng ?m $?mng1 ?m1 ?v $?vib))
+        )
+)
+;---------------------------------------------------------------------------------
 ;The young man, left standing alone in the [middle] of the room, listened inquisitively, thinking.
 ;kamare ke [maXya meM] akelA KadA honA calA jAyA, yuvaka ne, socawA huA jijFAsApUrvaka, sunA.
 ;nOjavAna kamare ke [bIcoMbIca] akelA raha gayA.
@@ -1181,6 +1292,7 @@
 (not (msg_printed))
 =>
         (retract ?f ?f0)
+	(assert (left_over_ids))
         (if (> ?mid ?id) then
 	                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid ?mng1 ?m $?mng))
         else
@@ -1219,47 +1331,61 @@
 (or (chunk_name-chunk_ids NP $? ?id1 ?id $?) (and (chunk_name-chunk_ids NP ?id $?)(chunk_name-chunk_ids NP $? ?id1&:(= (- ?id 1) ?id1))))
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a ?v $?vib - ?id1 ?m)
 (or (manual_word_info (head_id ?id) (word ?m1) (vibakthi ?v $?vib) )(manual_word_info (head_id ?id) (word ?m1) (vibakthi ?v $?vib1) ))
+(not (msg_printed))
 =>
        (retract ?f ?f1)
        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a ?v $?vib - ?id1 ?m ?m1 ?v $?vib))
+       (assert (left_over_ids))
 )
 
 ;============================== get leftover_anu_ids ==========================
-
 (defrule rm_aligned_anu_ids
-(declare (salience 10))
-(or (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $?)(id-cat_coarse ?id determiner|preposition|pronoun)(id-word ?id the|as))
-(left_over_ids ? $?)
+(declare (salience 11))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $?)
 ?f<-(hindi_id_order $?pre ?id $?po)
+=>
+        (retract ?f)
+        (assert (hindi_id_order $?pre $?po))
+)
+;---------------------------------------------------------------------------------
+(defrule get_left_over_ids
+(declare (salience 10))
+?f<-(hindi_id_order $?pre ?id $?po)
+(not (id-Apertium_output ?id $?))
 =>
         (retract ?f)
 	(assert (hindi_id_order $?pre $?po))
 )
 ;---------------------------------------------------------------------------------
-
-(defrule get_left_over_ids
+;[The imagination] of eating food sitting on decorated tables there was thrilling in itself. 
+;vahAz sajI mejoM para bETakara KAne kI [kalpanA] hI apane Apa meM behaxa romAFciwa kara xene vAlI WI .
+(defrule rm_det_id
 (declare (salience 9))
-?f<-(hindi_id_order $?pre ?id $?po)
-(not (id-Apertium_output ?id $?))
-(left_over_ids ? $?)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?mid $?)
+(pada_info (group_head_id ?aid) (group_ids ?det ?aid))
+(id-word ?det the)
+(manual_word_info (group_ids ?mid))
+?f<-(hindi_id_order $?pre ?det $?po)
 =>
-        (retract ?f)
-	(assert (hindi_id_order $?pre $?po))
+	(retract ?f)
+        (assert (hindi_id_order $?pre $?po))
 )
 
 ;==================================  Align single_anu_id with single_man_id ========================
 (defrule align_single_id
 (declare (salience 7))
 ?f<-(left_over_ids ?id)
-(manual_id-wrd-cat ?id ? ~PRP)
 ?f1<-(hindi_id_order ?aid)
 (id-Apertium_output ?aid $?amng)
+(id-cat_coarse ?aid ~determiner)
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi ?v $?vib))
+(man_word-root-cat ?w ? ~p) 
 (test (eq (integerp (member$ ?w (create$ awaH wo yaha vaha jise jisakA))) FALSE))
 (not (msg_printed))
 (not (removed_man_id_with-anu_id ?id ?aid))
 =>
 	(retract ?f ?f1)
+	(assert (left_over_ids))
 	(if (or (eq ?v 0)(member$ ?w (create$ ?v $?vib))) then
 		(if (eq (length $?amng) 0) then
 			(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?id @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN $?mng ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
@@ -1288,11 +1414,12 @@
 ?f<-(left_over_ids ?id)
 ?f1<-(hindi_id_order)
 ?f2<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?id1&:(=(- ?id 1) ?id1) $?m)
+(test (neq (create$ ?a $?amng) $?m))
 (test (eq (integerp (member$ ?a (create$ ki jise yahAM ))) FALSE))
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi ?v1 $?vib))
-(test (neq (integerp (member$ ?w (create$ evaM wo ki waWA yaha yahAz vaha usake usakA isa isakI koI kisI))) TRUE))
+(test (neq (integerp (member$ ?w (create$ inhIM evaM wo ki waWA yaha yahAz vaha usake usakA isa isakI koI kisI eka))) TRUE))
 (not (msg_printed))
-(id-cat_coarse ?aid ~verb)
+(id-cat_coarse ?aid ?cat&~verb&~determiner&~pronoun)
 =>
 	(retract ?f ?f1 ?f2)
 	(if (or (eq ?v1 0) (member$ ?w (create$ ?v1 $?vib)))  then
@@ -1300,22 +1427,31 @@
 	else
 		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?id1 ?m @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN $?mng ?w ?v1 $?vib @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
 	)
+	(assert (left_over_ids ))
 )	
 
 ;================== to print left over info in html ====================
-;
-(defrule print_info
+(defrule save_left_over_facts
 (declare (salience 5))
+(left_over_ids $?d)
+(not (msg_printed))
+=>
+	(save-facts "left_over_ids1.dat" local left_over_ids)
+)
+
+(defrule print_info
+(declare (salience 4))
 (left_over_ids ?id $?)
 (not (msg_printed))
 =>
-       (printout ?*lf-f* "Final layer Un-assigned words:  " )
+       (printout ?*lf-f* "Un-assigned Hindi words:  " )
        (assert (msg_printed))
+       (printout t "hnd_msg_printed")
 )
 ;---------------------------------------------------------------------------------
 
 (defrule print_single_left_over_wrd
-(declare (salience 4))
+(declare (salience 3))
 ?f0<-(left_over_ids ?id)
 (manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib) )
 (chunk_name-chunk_ids ?c $? ?id $?)
@@ -1330,7 +1466,7 @@
 ;---------------------------------------------------------------------------------
 
 (defrule print_left_over_wrd
-(declare (salience 3))
+(declare (salience 2))
 ?f0<-(left_over_ids ?id $?p ?lid)
 (manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib))
 (chunk_name-chunk_ids ?c $? ?id $?)
@@ -1352,10 +1488,11 @@
 (defrule add_punct
 (declare (salience -1))
 ?f<-(manual_id-word ?mid ?w&{|@PUNCT-OpenParen)
-?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid1&:(= (+ ?mid 1) ?mid1) $?mng)
+(manual_word_info (head_id ?h) (group_ids $? =(+ ?mid 1) $?))
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?h $?mng)
  =>
 	(retract ?f ?f1)
-	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid1 ?w $?mng))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?h ?w $?mng))
 )
 ;---------------------------------------------------------------------------------
 
@@ -1366,5 +1503,56 @@
  =>
         (retract ?f ?f1)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid1 $?mng ?w))
+)
+
+;===================== caution for hindi order ==================================
+
+(defrule get_cautionary_fact_for_of
+(declare (salience -10))
+(pada_info (group_head_id ?h)(preposition ?pid) )
+(id-word ?pid of)
+=>
+	(printout ?*catastrophe_file* "(sen_type-id-phrase hindi_order_for_of "?h"  prep)" crlf)
+)
+
+;=================== Get english lef over info ==================================
+
+(defrule rm_det_if_no_man_left
+(declare (salience -9))
+(left_over_ids )
+?f0<-(hindi_id_order $?pre ?id $?po)
+(id-cat_coarse ?id determiner)
+=>
+	(retract ?f0)
+	(assert (hindi_id_order $?pre $?po))
+)
+
+(defrule print_eng_info
+(declare (salience -10))
+(hindi_id_order ?id $?)
+(not (eng_msg_printed))
+=>
+       (printout ?*lf-f* "Un-assigned English words:  " )
+       (assert (eng_msg_printed))
+       (printout t eng_msg_printed)
+)
+
+(defrule print_eng_left_over
+(declare (salience -11))
+?f0<-(hindi_id_order ?id )
+(id-word ?id ?word)
+=>
+	(retract ?f0)
+	(printout ?*lf-f* ?word crlf)
+)
+
+(defrule print_eng_left_over1
+(declare (salience -12))
+?f0<-(hindi_id_order ?id $?p ?lid)
+(id-word ?id ?word)
+=>
+        (retract ?f0)
+	(printout ?*lf-f* ?word ", " )
+        (assert (hindi_id_order $?p ?lid))
 )
 

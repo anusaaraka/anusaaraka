@@ -71,6 +71,7 @@
 (man_word-root-cat ?w ?r&kara|ho|xe|raKa|le v|modified_cat)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word)(group_ids $?ids))
 (database_info (components $?word $? ?r) (root ?root))
+(not (id-Apertium_output ? $?word))
 =>
        (retract ?f0 )
        (assert (chunk_name-chunk_ids-words ?chnk  $?ids ?mid $?gids - $?word $?mng))
@@ -382,6 +383,7 @@
 (anu_id-anu_mng-man_mng ? ? ?m ?m1 $?m2)
 ?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m&~kyA)(group_ids $?ids1))
 ?f1<-(chunk_name-chunk_ids ? ?id)
+(not (id-Apertium_output ? ?m))
 =>
 	(retract ?f ?f0 ?f1 ?f2)
 	(modify ?f (head_id ?id)(word ?m ?m1 $?mng)(root ?m $?r)(group_ids $?ids1 ?id0 $?ids))

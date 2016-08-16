@@ -2455,7 +2455,7 @@ ablepharia_noun	sahajavarwmahInawA
 abler_UNDEFINED	cawura
 ablest_UNDEFINED	cawura
 abloom_adjective	KilA_huA
-ablution_noun	prakRAlana_jala/prakRAlana/apamArjana_jala/apamArjana
+ablution_noun	prakRAlana/apamArjana/prakRAlana_jala/apamArjana_jala
 ablutionary_adjective	prokRaNa/prakRAlana/apamArjana
 ablutions_noun	prakRAlana
 ably_UNDEFINED	samarWa_rUpa_se
@@ -26088,7 +26088,7 @@ end-to-end_adjective	KadEYe_bala
 end-to-end_adverb	SurU_se_anwa_waka/AxyopAnwa
 end-user_noun	eNda-yUjara
 end_noun	anwa/Xyeya/uxxeSya/tukadA/sirA/sImA/samApwi/pariNAma/nawijA/murwyu/mOwa/mawalaba/Cora/anwima_BAga/aBiprAya
-end_verb	sire_para_A/samApwa_kara/nipatA/Kwma_kara/Kawama_ho/anwa_kara
+end_verb	sire_para_A/samApwa_kara/nipatA/Kawma_kara/Kawama_ho/anwa_kara
 endanger_verb	Kaware_meM_dAla
 endangered_UNDEFINED	Kaware_meM_dAla
 endangered_adjective	safkatApanna/safkatagraswa
@@ -50376,7 +50376,7 @@ moon-beam_noun	canxrakiraNa
 moon-blind_adjective	niSAnXA
 moon-curser_noun	waskara
 moon-flower_noun	canxrakAnwi
-moon_noun	canxramA/upagraha/mAsa/cAzxa
+moon_noun	canxramA/upagraha/mAsa/cAzxa/canxra
 moon_verb	samaya_naRta_kara/niruwsAha_GUmanA-Pira
 moonbeam_noun	canxrakiraNa
 moondrop_noun	canxrakAnwamaNi
@@ -76438,7 +76438,7 @@ stinkinger_UNDEFINED	burA
 stinkingest_UNDEFINED	burA
 stinkpot_noun	kamInA_AxamI
 stinks_UNDEFINED	baxabU_mAranA
-stinky_adjective	bekAra/baxabUxAra
+stinky_adjective	baxabUxAra/bekAra
 stint_noun	titaharI/kAryAvaXi/kAma_karane_kA_samaya
 stint_verb	kaFjUsI_kara/sImiwa_Aya_para_raha
 stinted_UNDEFINED	kaFjUsI_karanA
@@ -77845,7 +77845,7 @@ sugar-cane_noun	gannA
 sugar-coated_adjective	luBAvanA/cInI_pagA
 sugar-daddy_noun	Sugara_dEdI
 sugar-lump_noun	cInI_kA_DelA
-sugar_noun	cInI/SarkarA/Sakkara/riSvawa_kA_pEsA/priya/nakalI_nota
+sugar_noun	cInI/SarkarA/Sakkara/riSvawa_kA_pEsA/priya/nakalI_nota/Sugara
 sugar_verb	cInI_dAla
 sugarcane_UNDEFINED	IKa
 sugared_UNDEFINED	cInI
@@ -83905,7 +83905,7 @@ turtler_noun	kaCuA_pakadane_vAlA
 turtles_UNDEFINED	kaCuA
 turtling_UNDEFINED	kaCuA
 tush_noun	piCAdI
-tusk_noun	hAWI_yA_sUara_kA_xAzwa/xIrGaxanwa/gajaxanwa
+tusk_noun	hAWI_kA_xAzwa/sUara_kA_xAzwa/xIrGaxanwa/gajaxanwa
 tusk_verb	xAnwa_se_cIra_xe/xAnwa_nikAla_xe
 tusked_UNDEFINED	hAWI_yA_sUara_kA_xAzwa
 tusker_noun	xIrGaxanwI
