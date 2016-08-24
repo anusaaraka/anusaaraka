@@ -31,6 +31,7 @@
  mkdir $MYPATH/tmp/$1_tmp
  mkdir $MYPATH1/help
 
+ PRES_PATH=`pwd`
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
@@ -38,14 +39,17 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
- PRES_PATH=`pwd`
- cp $1 $MYPATH/tmp/$1_tmp/
+ #=====================Check whether i/p file contains <TITLE> or not ..If not present adding it=====
+ #Check whether i/p file contains <TITLE> or not ... If not present adding it.
+ $HOME_anu_test/Anu_src/check_for_TITLE.out $PRES_PATH/$1 $MYPATH/tmp/$1_tmp/$1
+
+
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
  sh run-ner.sh $1
 
- cd $PRES_PATH
+ cd $MYPATH/tmp/$1_tmp
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -131,7 +135,7 @@
  do
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    $HOME/timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
+    timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
