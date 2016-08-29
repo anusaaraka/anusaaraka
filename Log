@@ -1,4 +1,4 @@
- 16-08-16
+ 24-08-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat
 					      default_mng_without_s_for_noun
@@ -804,6 +804,7 @@
 	remove_out-files.sh		-> 		"                              . to remove run_tregex_for_multiparse.sh
 	anu_compile.sh			-> Modified to copy run_tregex_for_multiparse.sh in anusaaraka/bin/
 	ClipsToAnu_browser_intfc.sh	-> Added '$HOME_anu_provisional_wsd_rules' and mail.js as a variable to run this1.py programe.
+					   Replaced $HOME/timeout to timeout  
         run_anu_browser.sh 		-> Added mail.js file in Browser related code
 	stdenglish.sh			-> Modified path for generating 'generate_ABBR-Dot.lex' file.
 	remove_out-files.sh 
