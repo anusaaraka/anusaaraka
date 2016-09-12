@@ -1,5 +1,6 @@
-  changes in male_list.txt
-  ========================
+# 
+# changes in male_list.txt
+#  ========================
   1. Removed  :   miwra  
                   vaha  
 		  Cada	      Suggested by Chaitanya Sir (04-11-13) 
@@ -7,8 +8,8 @@
   2. Added    :   mEca        Suggested by sukhada 	(24.2.11)  Ex: There was a football match in the school yesterday.
                   prabaMXaka  Added by Meena		(28.7.11)  Ex: But fund managers say they are ready.
 
-  changes in female_list.txt
-  ========================
+#  changes in female_list.txt
+#  ========================
   1. Modified :
 	1. paraCAIM	as	paraCAI
 	2. baMxi	as  	baMxI   	(by Roja 17-07-12)
@@ -87,8 +88,8 @@
 	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
 	24. kAPI    	Suggested by Sukhada 	    (02-09-14)  Eg: I used to be pretty good.
 
-  changes in Phrv.txt 
-  ===================
+#  changes in Phrv.txt 
+#  ===================
   1.  Added
 	divide_up       bAzta_xe
 	come back       vApasa_AnA		(Suggested by Rajini 20.01.12) Ex : Let Abraham come back.
@@ -100,8 +101,8 @@
 	"nA" in hindi meanings.
 
 
-  changes in hindi_tam_rules.clp (tam.csv)
-  ========================================
+#  changes in hindi_tam_rules.clp (tam.csv)
+#  ========================================
   1. Added
        		 eng_tam                                           hin_tam
 
@@ -120,9 +121,12 @@
 	   decided_not_to_0		ne_kA_niScaya_kiyA    pre-vb -nahIM	
            can_not_afford_to_0		ne_kI_sWiwi_meM_ho    pre-vb -nahIM
            want_to_0			nA_cAhawA_hE
+
+  3. Modified 
+	may_have_en     yA_hogA-ne-0	as	yA_hogA-0-0
  
-  changes in hindi_cat.txt
-  ========================
+#  changes in hindi_cat.txt
+#  ========================
   1. Added
 	paDa		T
 	lAiseMsa_xe	T
@@ -134,8 +138,8 @@
   3. Removed
 	pAsa		(By Shirisha Manju 29-01-14, Suggested by Chaitanya Sir)
 
-  changes in kriyA_mUla-gender.txt
-  ================================
+#  changes in kriyA_mUla-gender.txt
+#  ================================
   1. Added  :
 	ASA_kara        f
 	upekRA_kara     f
@@ -166,12 +170,12 @@
 	parawa_uwAra      f	Suggested by Sukhada (05-05-15)	Ex: They scale the fish to cook.
 	jayajayakAra_kara f	Suggested by Sukhada (05-05-15) Ex: Bansal is being hailed for saving a young child from drowning. 
 	golI_calA         f	"			"	Ex: The police opened fire on the public.
-
+	SoBA_baDA       f	Suggested by Bhagyashri Kulkarni (6-9-16) Ex: Beautiful paintings adorned the walls of the palace. 
 	
 
 
-  changes in compound_phrase.txt  (samAsa.txt)
-  =========================
+#  changes in compound_phrase.txt  (samAsa.txt)
+#  =========================
   1. Added 
 	 train accident              ----  rela_xurGatanA
 	 damn shame                  ----  awyanwa_lajjAspaxa
@@ -284,8 +288,8 @@
  22. crystal_clear   susaWaupaRta#susaWaupaRta#noun#2#RM    as   suspaRta#suspaRta#noun#2#RM  (Suggested by Chaitanya Sir 30--03-12)
 
  
- changes in Complete_sentence.txt
- ================================
+# changes in Complete_sentence.txt
+# ================================
   1. Added  
          Chinmaya International Foundation  ----  cinmaya_anwarrARtrIya_saMsWA  (Added by Sriram (02-11-09))
          Welcome you all                    ----  Apa_saba_kA_svAgata           (Added by Sriram (02-11-09))
@@ -295,8 +299,8 @@
 	 so far so good 		    ----  yahAz_waka_wo_saba_sahI_hE 	(Added by Manju Suggested by Chaitanya Sir (02-10-12))
 	 Have you any idea    		    ----  kyA_Apa_ko_pawA_hE		(Added by Manju Suggested by Rajini (21-06-14))
                    
-  changes in AllTam.txt
-  =====================
+#  changes in AllTam.txt
+#  =====================
    Added :
 	0_jAyegA     (Suggested by Meenaji Eg: There is still a ray of hope that the missing child will be found .)
 	yA_jAwA_WA   (Meena(18.2.11) Ex: Ayodhya during ancient times was known as kaushaldesa.
@@ -331,15 +335,15 @@
 	nA_cAhiye	yA_jAnA_cAhiye		nA_hE			nA_hogA
 	 
   
-  changes in animate_list.txt
-  ===========================
+#  changes in animate_list.txt
+#  ===========================
   1. Added      vixyArWI  ----  By Manju Eg: The school admits only 50 students at a time .
 		saba	  ----  By Roja ( 08-08-12 )
 			
   2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
 
-  changes in inanimate.txt
-  ===========================
+#  changes in inanimate.txt
+#  ===========================
   1. Added
 	flower   	----  Suggested by Sukhada (20-01-11)
    	book		----  Suggested by Pramila Banasthali (16-08-13) Ex:This book deals with incest.
@@ -378,8 +382,8 @@
 							  any of its charge, contrary to the process of charging by contact.
 
 
-  changes in not_ne_verb_list.txt
-  ===============================
+#  changes in not_ne_verb_list.txt
+#  ===============================
   1. Added
 	howA, howe, howI (Suggested by Meenaji -- 23-03-10)
                              Eg: If you were a middle-class American without a job , who would you vote for .
@@ -390,8 +394,8 @@
 	pA		(Suggested by Sukhada 19-06-14) Ex: I scraped a pass in the exam.
   3. Modified : -siXAra as siXAra	
 	
-  changes in PropN.txt
-  ==================== 
+#  changes in PropN.txt
+#  ==================== 
   Added   	Rama    m
 		Gita    f
 		John    m
@@ -404,8 +408,8 @@
 		Mary    f	(By Shirisha Manju	19-06-12)
 		Sundari	f	(By Roja		16-10-13) 
 
-  Changes in animate.txt
-  ========================
+#  Changes in animate.txt
+#  ========================
   Added  
 	they    
 	Mohan   
@@ -545,8 +549,8 @@
 		aalii	to  zygote  
 
 
-  Changes in total-paxasUwra.txt 
-  ==============================
+#  Changes in total-paxasUwra.txt 
+#  ==============================
   Modified:
   "delicately      nAjZukawA[>kuSalawA]~pUrvaka\"  to  "delicately      nAjZukawA[>kuSalawA]~pUrvaka"
    (removed "/" at the  end. Due to this we get problem in loading this in Clips. Eg: The delicately lyrical tone of the cello contrasted with the fiercely percussive piano chords.)
@@ -557,12 +561,12 @@
 	       John's		jOYna~kA	as	joYna~kA
    perch	addA{cidZiyoM~Axi~ke~bETane~kA}	as	addA{cidZiyoM~Axi~ke~bETane~kA}{adde_para}(by Chaitanya Sir 22-07-13)
 	
-  Changes in verbal_adj.txt
-  =========================
+#  Changes in verbal_adj.txt
+#  =========================
   Added :  sWiwa	1 (suggested by Meena 04-03-11)
   
- Changes in apertium_hn.dix
- ==========================
+# Changes in apertium_hn.dix
+# ==========================
  Added  :
   1.	uMgalI		ladak/I__n		(by Roja Suggested by Meenaji	12-01-11)
   2.	giranA		ladak/A__n		(   "    	"		13-01-11)
@@ -659,8 +663,8 @@ Modified :
 		
 
 
- Changes in apertium-en-hi.en.metadix 
- =====================================
+# Changes in apertium-en-hi.en.metadix 
+# =====================================
  Added  :
         lie		d/ie__vblex		(By Roja  23-02-11)
         spot		admit__vblex		(     "	  14-03-11)
@@ -874,13 +878,13 @@ Removed:
 	<e lm="wrapped"><i>wrapped</i><par n="accept__vblex"/></e>		("		02-10-14)
 	<e lm="stocks"><i>stocks</i><par n="access__n"/></e>			("		26-02-15)
 
- Changes in ol_parser_unused_words.txt
- =====================================
+# Changes in ol_parser_unused_words.txt
+# =====================================
  Added :
          and   1  (Added by Manju)
 
- Changes in time.txt:
- ===================
+# Changes in time.txt:
+# ===================
   Added:
          time	1  (By Sukhada 13-02-11) 
          year	1  (        "                )
@@ -891,8 +895,8 @@ Removed:
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
 
 
- changes in place.txt
- ====================
+# Changes in place.txt
+# ====================
  Added   :
 	himalayas       (Added by Sukhada 19-12-11)
 	plains 	 	(Added by Sukhada 19-12-11)
@@ -910,8 +914,8 @@ Removed:
 	wood		(Suggested by 14anu-ban-04 21-03-15)
 
 
- Changes in hindi_default_tam.txt
- ==================================
+# Changes in hindi_default_tam.txt
+# ==================================
     Modified :
     --------
     1. may_need_to_0	nA_kI_jarUWawa_pada_sakawI_hE-0-0    as    ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)
@@ -945,8 +949,8 @@ Removed:
 		let_us_0        subj-0-caliye_hama
 		get_en		0_ho_jAwA_hE-0-0 (Suggested by Garima Banasthali 11-02-14)
 
- Changes in default-iit-bombay-shabdanjali-dic.txt
- =================================================
+# Changes in default-iit-bombay-shabdanjali-dic.txt
+# =================================================
     1. Modifying pattern/spelling for the whole file:
        ---------------------------------------------
 	1. Replaced 'mez'  with 'meM'    Ex: recently_UNDEFINED  hAla_mez  as  hAla_meM (Suggested by Chaitanya Sir 16-08-11)
@@ -1101,6 +1105,10 @@ Nandini ji LTRC 	27-11-13)
 	131. misbehave_verb  		burA_vyahavAra_kara  as 
 	132. say_verb        		baw		as	bawA		(   By Shirisha Manju     	31-10-15)
 	133. tusk_noun			hAWI_yA_sUara_kA_xAzwa as hAWI_kA_xAzwa/sUara_kA_xAzwa	(Suggested by Rajini 25-6-16)
+	134. start_noun      		SurUAwa		as	SuruAwa		(   By Shirisha Manju           19-08-16)
+	135. gardening_noun  		bAgabAnI	as	bAgavAnI	(Suggested by Bhagyashri Kulkarni 25-8-16)
+	136. garden_verb     		bAgabAnI_kara	as	bAgavAnI_kara	(	"	"		  25-8-16)
+	137. gum_noun        		masUDA		as	masUdA		(Suggested by Chaitanya Sir      01-09-16)
 
     3. Added new entry:
        ---------------
@@ -1448,6 +1456,22 @@ Nandini ji LTRC 	27-11-13)
 					Ex: But beggary, honoured sir, beggary is a vice. 
 	170. sub-categories_noun      	upa-SreNiyA			(Suggested by Manasa 		01-03-16)
 					Ex: The last section  describes the various sub-categories of national income.
+	171. left-over_noun  		bacA_huA			(Suggested by Bhagyashri Kulkarni 19-08-16)
+					Ex: By drinking plenty of water not only the left-over pieces of food gets cleaned but saliva also gets
+					    formed.
+	172. loose-motion_noun		xaswa				(Suggested by Bhagyashri Kulkarni 19-08-16)
+					Ex: In case of vomiting and loose-motion feed the O.R.S. or mixture of salt and sugar.
+	173. ice-cream_noun		AisakrIma			(Suggested by Bhagyashri Kulkarni 19-08-16)
+					Ex: Do not feed children fast food, kurkure, ice-cream.
+	174. kurkure_noun		kurakure			(Suggested by Bhagyashri Kulkarni 19-08-16)
+					Ex: Do not feed children fast food, kurkure, ice-cream.
+	175. six-year_noun		CeH_sAla			(Suggested by Rajini	25-8-16)
+					Ex: This has been testified in the six-year study by the American National Eye Institute that this
+					    element saves old people from blindness.
+	176. bilberry_noun		bilberrI			(Suggested by Rajini    25-8-16)
+					Ex: Bilberry or blackberry anthocyanin saves from blindness or cataract.
+	177. etcetera_adverb		Axi				(Suggested by Rajini    25-8-16)
+					Ex: The use of dry fruits etcetera in Indian cuisines has been continuing for centuries.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1809,7 +1833,29 @@ Nandini ji LTRC 	27-11-13)
 					   sloped down.
 	178. father_noun		piwAjI			(Suggested by Soma Mam	26-07-16)
 	179. mother_noun		mAwAjI			(	"	"	"	)
-					
+	180. vomiting_noun   		kE			(Suggested by Bhagyashri Kulkarni 19-08-16)
+	181. mucus_noun			balagama		(	"	"		  30-08-16)
+	182. aware_adjective 		jAgarUka		(	"	"		    "	  )
+					Ex: How much aware are you about the care of your eyes. 
+
+		words extracted automatically from alignment and verified by Rajini:
+
+		essential_adjective	jarUrI		immune_adjective	prawiroXaka	tablet_noun	tebaleta
+		and_conjunction		va/evaM		important_adjective	KAsa		then_adverb	wo
+		again_adverb		Pira		normal_adjective	nArmala		unprotected_adjective	asurakRiwa
+		fever_noun		PIvara		not_adverb		na		virus_noun	vAyarasa
+		health_noun		sehawa		pinch_noun		cutakI		week_noun	haPwA
+		if_conjunction		wo		relief_noun		CutakArA
+		sex_noun		yOna		spread_noun		PElAva
+
+		words extracted automatically from alignment and verified by Bhagyashri Kulkarni:
+
+		affected_adjective	praBAviwa	immune_adjective	prawirakRaNa
+		consequence_noun	xuRpariNAma	important_adjective	mahawvapUrNa
+		detail_noun		vivaraNa	laparoscopy_adjective	lEparoskopika
+		diarrhoea_noun		dAyariyA	most_adjective		jyAxAwara
+		harm_noun		nukasAna
+		hiatus_noun		hAyAtasa
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2254,6 +2300,10 @@ Nandini ji LTRC 	27-11-13)
 				Ex: The time of ablution and prayer in Hastinapur is from 8 o'clock in the morning to 5 o'clock in the evening. 
 	204. stinky_adjective  	bekAra			as	baxabUxAra	(Suggested by Chaitanya Sir     22-07-16)
 				Ex: They make teeth dirty and breath stinky.	
+	205. ratio_noun      	sambanXa		as	anupAwa		(	"	"		16-08-16)
+				Ex: Fruits and vegetables have a ratio like this.
+	206. yourself_pronoun   wuma_Kuxa		as	Apane_Apa_ko	(	"	"		  "	)
+				Ex: You keep yourself far from many diseases by eating less fatty and fibered food. 
 	
 
     6. Removed meaning from existing list:
@@ -2382,8 +2432,8 @@ Nandini ji LTRC 	27-11-13)
 	12. english_UNDEFINED	as	english_noun		( Suggested by Chaitanya Sir     04-11-14)
 
 	
- changes in preposition.txt
- ==========================
+# Changes in preposition.txt
+# ==========================
  Added  :
 	as_before 		---	Suggested by Rajini (25-02-12)
 	in_terms_of     	---	Suggested by Chaitanya Sir (25-05-12) 
@@ -2409,8 +2459,8 @@ Nandini ji LTRC 	27-11-13)
 	at_the_behest_of	---	(		"		"   )
 	till_after		---	(		"	    21-07-15)	
 
-  proper_noun-common_noun_compounds.txt 
-  =====================================
+#  Changes in proper_noun-common_noun_compounds.txt 
+#  ================================================
     Modifications on whole file:
     ----------------------------
 	1. Modified "gAzXI" 	as      "gAMXI"    Ex: Rajiv_Gandhi    rAjIva_gAzXI  =>  Rajiv_Gandhi    rAjIva_gAMXI
@@ -2452,8 +2502,8 @@ Nandini ji LTRC 	27-11-13)
 						Ex: These may or may not include materials listed on the Organic Materials Review Institute. 
 
     
- multi_word_expressions.txt
- ==========================
+# Changes in multi_word_expressions.txt
+# =====================================
     Modifications on whole file:
     ----------------------------
 	1. Modified "vixxayuwa"	as  	"vixyuwa"	 Ex: electric_cell  vixxayuwa_sela   as  vixyuwa_sela  	
@@ -2555,7 +2605,9 @@ Nandini ji LTRC 	27-11-13)
 				    translation has been a target goal.
 	machine_translation     yaMwra_anuvAxa	   as	yAMwrika_anuvAxa	(Suggested by Chaitanya Sir 15-09-15)
 				Ex: above sentence
-			
+	any_longer		Ora_jZyAxA_nahIM   as	Ora_jZyAxA		(Suggested by Chaitanya Sir 19-08-16)
+				Ex: Unfortunately, no crow had joined yet, but they could not wait any longer.
+				
     Added new entry:
     ----------------
     	1. straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
@@ -2936,8 +2988,8 @@ Nandini ji LTRC 	27-11-13)
 	sort_of									---  #3#    ==>	#1#	(By Manju 19-08-13)
 
 
- changes in phy_dictionary.txt
- =============================
+# Changes in phy_dictionary.txt
+# =============================
     Added new entry :
     ---------------
 	nonuniform		asamAna
@@ -3229,8 +3281,8 @@ Nandini ji LTRC 	27-11-13)
 		to
 	isothermal_noun   samawApIya
 
- changes in phy_eng_multi_word_dic.txt
- =====================================
+# Changes in phy_eng_multi_word_dic.txt
+# =====================================
     Modified :
     --------
 	frame_of_reference      nirxeSa-waMwra	as	nirxeSa_waMwra
@@ -3328,19 +3380,19 @@ Nandini ji LTRC 	27-11-13)
         scalar_product_or_dot		axiSa_guNanapaPala#axiSa_guNanapaPala#noun#2#RM         	(       "       	)
 
 
- changes in causative_verb_mng.txt
- =================================
+# Changes in causative_verb_mng.txt
+# =================================
  Added
 	jA      Beja	(Suggested by Sukhada  29-05-13)
 
- changes in multi_word_expressions_from_iit_bombay.txt
- =====================================================
+# Changes in multi_word_expressions_from_iit_bombay.txt
+# =====================================================
  Modified:
  --------
 	calendar_month	paMcAMga_samayaa	as	paMcAMga_samaya		(By Roja 20-06-13)
 
- changes in proper_noun_dic.txt
- ==============================
+# Changes in proper_noun_dic.txt
+# ==============================
   Added : 
 	Mahabharata	mahABArawa	(Suggested by Chaitanya Sir 22-08-13    )
 	Ramayana	rAmAyaNa	(		"		"       )
@@ -3461,7 +3513,14 @@ Nandini ji LTRC 	27-11-13)
 	Following entries are added from  wiki sentences by Shirisha Manju
 	Chidambaram     cixaMbarama	to	Sathasivam      sawyaSivama
 	shimla  	SimalA		(By Shirisha Manju  tourism corpus   24-11-15	)	
-	
+
+	Following entries are Suggested by Rajini
+	sarah   	sArA		joan    	jona		lama    lAmA
+	margaret        mArgreta	golconda        golakondA	bengal  beMgAla
+	dow     	dava		verma   	varmA		jane    jena
+	kerala		kerala		karnataka       karnataka	louise  lUsI
+	gabriel		gEbriyala	toms    	toYma		billy   billI
+		
 
    Modified:
    ---------
@@ -3470,8 +3529,8 @@ Nandini ji LTRC 	27-11-13)
 	Dalhousie	dalahOjZI	as	dalhojI		(Suggested by Chaitanya Sir  03-06-14)
 
 
- changes in kriyA_object_vib.txt
- ==============================
+# Changes in kriyA_object_vib.txt
+# ==============================
  Added :
    1. prakASiwa_kara  	ko     	(Suggested by Chaitanya Sir 28-09-13) Ex: Standing in the middle of the great epic like a lighthouse, it 
 									  illuminates the whole of the epic.
@@ -3480,8 +3539,8 @@ Nandini ji LTRC 	27-11-13)
 									  achieve their very best.
    4. preriwa_kara    	ko	(	"	"		"   )
 
- changes in human.txt
- ===================
+# Changes in human.txt
+# ===================
    Added :
 	officer		( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.
 	woman	  	(	"	    06-11-13) Ex: I know a woman who has two children.
@@ -3553,10 +3612,16 @@ Nandini ji LTRC 	27-11-13)
         someone         (       "        "                  "     ) Ex: Someone had been poisoning his food.
 	poor    	(	"     Jagriti Banasthali 10-03-14 )
 	government      (	"     14anu-ban-04	 25-04-15 ) Ex: Deposition of government is not in the interest of the country. 
-	cousin		(By 	Manju     		 14-06-16 ) Ex: She is my cousin.
 
- changes in named_entities.txt
- =============================
+	Added following by Manju on 01-09-16
+
+	cousin		dentist 	typist  	virgin  	widow   	winner  	
+	administrator	adviser		agent		american	astrologer	writer
+	baker		banker		tourist 	tailor		umpire  	warden  
+	  
+
+# Changes in named_entities.txt
+# =============================
   Modified :
 	1. 'RR' is replaced with 'R' 
 		Ex: anwarrARRtrIya_vikAsa_ejeMsI	as	anwarrARtrIya_vikAsa_ejeMsI	(by Roja 08-10-13)
@@ -3564,13 +3629,13 @@ Nandini ji LTRC 	27-11-13)
   Added :
 	1. National_youth_wing    rARtrIya_yuvA_morcA#rARtrIya_yuvA_morcA#noun#3#RM	(Suggested by Anita ji LTRC	01-09-14)
 
- changes in restricted_eng_words.txt:
- ===================================
+# Changes in restricted_eng_words.txt:
+# ===================================
  Added:
 	be	ho/raha		(Suggested by Chaitanya Sir 11-08-14)
 
- changes in agriculture_multi_dic.txt:
- =====================================
+# Changes in agriculture_multi_dic.txt:
+# =====================================
   Added:
   ------
 	1. peanut_soup	mUzgaPalI_se_banA_SorabA#mUzgaPalI_se_banA_SorabA#noun#2#RM 	(Suggested by 14anu-ban-09 12-11-14)
@@ -3607,8 +3672,8 @@ Nandini ji LTRC 	27-11-13)
 			Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food 
 			source from higher arthropod populations.
 
- changes in agriculture_dic.txt:
- ==============================
+# Changes in agriculture_dic.txt:
+# ==============================
     Modified:
     ---------
 	1. biological_noun 	jOvika		as	jEvika				(Suggested by 14anu-ban-02 27-11-14)
@@ -3666,14 +3731,14 @@ Nandini ji LTRC 	27-11-13)
                                     social consequences and is applicable to most agricultural, public health and amenity pest management 
 				    situations.
 
- changes in transliterate_meaning.txt :
- ==================================== 
+# Changes in transliterate_meaning.txt :
+# ==================================== 
   Removed :
 
 	tube	tUba			(Suggested by Chaitanya Sir     13-11-14 )
 
- changes in provisional_multi_word_dictionary.txt:
- ===============================================
+# Changes in provisional_multi_word_dictionary.txt:
+# ===============================================
   Removed:
   -------
 	following_morning       agale_xina_subaha#agale_xina_subaha#noun#2#RM	(Suggested by Chaitanya Sir	10-03-15)
@@ -3687,19 +3752,35 @@ Nandini ji LTRC 	27-11-13)
  -----------------------
         1. surface_water	BUwala_jala     as	sawahI_jala		(Suggested by sheetla prassd tiwari 21-06-16)
 
- changes in hindi_wordnet_dic1.txt
- =================================
+ Added new meaning to the existing word
+ --------------------------------------
+	1. sample_sentence	uxAharaNa_vAkya					(Suggested by Chaitanya Sir     02-09-16)
+
+# Changes in hindi_wordnet_dic1.txt
+# =================================
    Removed :
 	    2894     hI				(Suggested by Chaitanya Sir)
 
- changes in hindi_wordnet_dic2.txt
- =================================
+# Changes in hindi_wordnet_dic2.txt
+# =================================
   Removed :
 		hI	2894			(Suggested by Chaitanya Sir)
-				
 
- Added new files:
- ===============
+# Changes in uncountable.txt
+# ==========================
+	Added the following entries from http://grammar.ccc.commnet.edu/grammar/noncount.htm
+	advice		glass		sugar
+	air		hair		wine
+	aluminum	heat		wood
+	beer		leather		wool
+	boating		meat
+	cake		metal
+	cheese		plastic
+	chinese		reading
+	cloth		danish
+
+# Added new files:
+# ===============
  1. ol_parser_unused_words.txt                  (Added by Roja 06-11-10 suggested by Chaitanya sir)
  2. month_day.txt                               (Added by Roja 20-11-10 suggested by Meena ji)
  3. place.txt                                   (Added by Roja 11-02-11. suggested by Sukhada)

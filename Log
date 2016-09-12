@@ -1,3 +1,16 @@
+ 12-09-16
+ ========
+ 1. hindi_sent_reorder.clp:  Modified: ki_rule4
+ 2. template_after_mng.clp:  Added   : modify_than_se_prep
+ 3. run_H_gen_sen.bat
+	Loaded GNP_agmt_info.dat file in template_after_mng module
+ 4. Updated following files:
+        changes_in_databases
+        provisional_multi_word_dictionary.txt
+	sd_verified(876)
+ 5. Updated Log	
+
+
  24-08-16
  ========
   1. hindi_meaning.clp		:  Added    : mixed_dom_hindi_mng-same-cat, mixed_domain_hindi_mng-different-cat

@@ -1136,3 +1136,4 @@ parawa_uwAra	f
 jayajayakAra_kara	f
 golI_calA	f
 ullafGana_kara	m
+SoBA_baDA	f
