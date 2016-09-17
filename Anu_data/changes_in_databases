@@ -407,6 +407,7 @@
 		Louise  f	(By Shirisha Manju	17-05-12)
 		Mary    f	(By Shirisha Manju	19-06-12)
 		Sundari	f	(By Roja		16-10-13) 
+		Rita    f	(By Shirisha Manju      16-09-16)
 
 #  Changes in animate.txt
 #  ========================
@@ -1472,6 +1473,16 @@ Nandini ji LTRC 	27-11-13)
 					Ex: Bilberry or blackberry anthocyanin saves from blindness or cataract.
 	177. etcetera_adverb		Axi				(Suggested by Rajini    25-8-16)
 					Ex: The use of dry fruits etcetera in Indian cuisines has been continuing for centuries.
+	178. disease-carrier_noun	rogavAhaka			(Suggested by Bhagyashri Kulkarni 13-09-16)
+					Ex: Immune system identifies the disease-carrier or external invaders' like virus, bacteria, etc and 
+                                            kills them.
+	179. blood-circulation_noun  	rakwapravAha			(Suggested by Bhagyashri Kulkarni 13-09-16)	
+					Ex: With the division in the CD-4 cells many viruses enter into the blood-circulation.
+	180. kurkure_noun		kurakure			(By Shirisha Manju		  14-09-16)
+					Do not feed children fast food, kurkure, ice-cream.
+	181. paracetamol_PropN		pErAsItAmola			(	"			    "	  )
+					If fever is more than 100 give a pill of paracetamol and take suggestions from a medicine specialist 
+					doctor.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -3744,9 +3755,9 @@ Nandini ji LTRC 	27-11-13)
 	following_morning       agale_xina_subaha#agale_xina_subaha#noun#2#RM	(Suggested by Chaitanya Sir	10-03-15)
 
   Modified:
-	following_morning       agalI_subaha#agalI_subaha#noun#1#RM		(Suggested by Chaitanya Sir     10-03-15)
-			to
-	following_morning       agalI_subaha#agalI_subaha#noun#2#RM
+	1. following_morning       agalI_subaha#noun#1#RM	as	agalI_subaha#noun#2#RM	    (Suggested by Chaitanya Sir 10-03-15)
+	2. Government_of_India     BArawa_sarakAra#noun#2#RM	as	BArawa_sarakAra#noun#1#RM   (By Manju       13-09-16)
+	3. paper_form      	   kAgaja_rUpa			as	kAgajI_rUpa		    (Suggested by Bhagyashri Kulkarni 16-9-16)
 
  Modified first meaning:
  -----------------------
@@ -3755,6 +3766,8 @@ Nandini ji LTRC 	27-11-13)
  Added new meaning to the existing word
  --------------------------------------
 	1. sample_sentence	uxAharaNa_vAkya					(Suggested by Chaitanya Sir     02-09-16)
+	2. blood_pressure  	blada_preSara					(By Manju			13-09-16)
+	3. video_game		vIdiyo_gema					(Suggested by Bhagyashri Kulkarni 17-9-16)
 
 # Changes in hindi_wordnet_dic1.txt
 # =================================

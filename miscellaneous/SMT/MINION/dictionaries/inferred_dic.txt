@@ -1,6 +1,5 @@
 critically	awyanwa
 needed	AvaSyaka
-and	va
 or	yA_Pira
 release	mukwa_ho
 unravelling	sulaJAnA
@@ -49,3 +48,5 @@ before	ke_pUrva
 macroeconomics	samaRti_arWaSAswra
 macroeconomic	samaRti_arWaSAswrIya
 microeconomics	vyaRti_arWaSAswra
+your	wU
+yes	jI

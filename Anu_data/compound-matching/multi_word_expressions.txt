@@ -33361,6 +33361,10 @@ fibered_food	waMwumaya_AhAra#waMwumaya_AhAra#noun#2#RM
 #You keep yourself far from many diseases by eating less fatty and fibered food. (Suggested by Bhagyashri Kulkarni 03-09-16)
 road_sides	sadaka_kA_kinArA#sadaka_kA_kinArA#noun#2#RM
 #Do not eat stale food and the things being sold at road sides.			 (	"	"			"  ) 
+#like_this	EsA/isake_jEsA#EsA/isake_jEsA#determiner#2#RM
+#Fruits and vegetables have a ratio like this.					 (Suggested by Chaitanya Sir 13-09-16)
+surgical_operation	Salya_cikiwsA#Salya_cikiwsA#noun#2#RM			 (Suggested by Bhagyashri Kulkarni 16-09-16)
+#In comparison with the traditional surgical operation this method has many advantages.
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

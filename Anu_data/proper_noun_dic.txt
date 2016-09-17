@@ -159,7 +159,7 @@ ahsaas	ahasAsa
 ahuja	AhUjA
 aich	Ica
 aid	sahAyawA
-aids	eAIdIesa/edsa
+aids	edsa/eAIdIesa
 ailet	eleta
 ain	Ena
 airport	erporta
@@ -7127,3 +7127,9 @@ louise	lUsI
 gabriel	gEbriyala
 toms	toYma
 billy	billI
+h.i.v.	ec.AI.vI.
+cd-4	sIdI_4
+anti-allergic	eNtIelarjika
+m.r.i.	em_Ara_AI
+rita	rItA
+hiv	ec.AI.vI.

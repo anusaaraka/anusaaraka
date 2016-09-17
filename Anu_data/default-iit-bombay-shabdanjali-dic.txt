@@ -66237,7 +66237,7 @@ restraining_UNDEFINED	svawanwrawA_kA_hanana_karanA
 restrains_UNDEFINED	svawanwrawA_kA_hanana_karanA
 restraint_noun	roka/saMyama/avaroXa/prawibanXa/sImAfkana
 restraints_UNDEFINED	prawibanXa
-restrict_verb	parimiwa/sImiwa_kara/bAXiwa_kara/Restrict_your_self_to_one_cup_of_tea_a_day
+restrict_verb	parimiwa/sImiwa_kara/bAXiwa_kara
 restricted_adjective	sImiwa/prawibanXiwa/niRixXa/Apa_logoM_ke_liye_varjiwa
 restricteder_UNDEFINED	Apa_logoM_ke_liye_varjiwa
 restrictedest_UNDEFINED	Apa_logoM_ke_liye_varjiwa
@@ -93591,3 +93591,9 @@ etcetera_adverb	Axi
 sand-fly_noun	marUmakRikA
 laparoscopy_adjective	lEparoskopika
 sugar-free_noun	cInI_virahiwa
+Kalajar_noun	kAlAjAra
+disease-carrier_noun	rogavAhaka
+blood-circulation_noun	rakwapravAha
+kurkure_noun	kurakure
+paracetamol_PropN	pErAsItAmola
+blood-stream_noun	rakwapravAha

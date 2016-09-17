@@ -5485,3 +5485,7 @@ Hawa_mahal	havA_mahala#havA_mahala#PropN#2#RM
 Nobel_Prize	nobala_puraskAra#nobala_puraskAra#PropN#2#RM
 Democratic_National_Convention	prajAwAnwrika_rARtrajana_sammelana#prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM
 Organic_Materials_Review_Institute	jEvika_paxArWa_samIkRA_saMsWAna#jEvika_paxArWa_samIkRA_saMsWAna#noun#4#RM
+button_hole_surgery	batana_hola_sarjarI#batana_hola_sarjarI#noun#3#RM
+#Today one small hole is sufficient to remove several diseases of the abdomen and the chest and this method is known as Laparoscopic surgery' or key hole' or button hole surgery' .				(Suggested by Bhagyashri Kulkarni  15-9-16)
+peptic_ulcer	peptika_alsara#peptika_alsara#noun#2#RM
+#To ward off the disease of peptic ulcer. 			(	"	"		    "    )
