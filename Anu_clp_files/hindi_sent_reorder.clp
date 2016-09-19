@@ -360,7 +360,7 @@
  (test (neq ?kri ?kri1))
  ?f0 <-(hindi_id_order $?pre ?kri1 ?id $?d ?v_k $?post)
  (not (ki_asserted ?kri1))
- (not (id-HM-source ?id ki ?));It was obvious that he would do it.
+ (not (id-HM-source ?id ki|ke_lie ?));It was obvious that he would do it.
  (not (prep_id-relation-anu_ids - kriyA-vAkya_viBakwi ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
   =>
         (retract ?f0)

@@ -3479,7 +3479,7 @@ antitrust_case	aviSvAsa_kA_mAmalA#aviSvAsa_kA_mAmalA#noun#2#RM
 antivirus_program	prawi_viRANu_progrAma#prawi_viRANu_progrAma#noun#2#RM
 anxiety_disorder	cinwA_vikAra#cinwA_vikAra#noun#2#RM
 any_and_all_bid	kampanI_para_aXikAra_pAne_kI_ceRtA_meM_sAre_Seyara_KZarIxane_kA_praswAva_raKanA#kampanI_para_aXikAra_pAne_kI_ceRtA_meM_sAre_Seyara_KZarIxane_kA_praswAva_raKanA#noun#4#RM
-any_longer	Ora_jZyAxA_nahIM#Ora_jZyAxA_nahIM#noun#2#RM
+any_longer	Ora_jZyAxA#Ora_jZyAxA#noun#2#RM
 any_time	kisI_BI_samaya#kisI_BI_samaya#noun#2#RM
 anybody_else	koI_anya#koI_anya#noun#2#RM
 anything_else	kisI_Ora_cIja#kisI_Ora_cIja#noun#1#RM
@@ -33319,6 +33319,52 @@ amidst_all_this	ina_saba_ke_xOrAna#preposition#1#WM
 just_like_that	Ese_hI#adverb#1#WM
 # I called him just like that only. 						Suggested by Rajini (25-06-16)
 state_of_mind	manoxaSA#manoxaSA#noun#3#RM
+far_from	se_xUra#se_xUra#preposition#2#RM				
+#You keep yourself far from many diseases by eating less fatty and fibered food. Suggested by Chaitanya sir (16-08-16)
+fast_food	PAsta_PUda#PAsta_PUda#noun#2#RM
+#Do not feed children fast food, kurkure, ice-cream.				(Suggested by Bhagyashri Kulkarni 19-08-16)
+ice_cream	AisakrIma#AisakrIma#noun#2#RM
+#Do not feed children fast food, kurkure, ice-cream.				(Suggested by Bhagyashri Kulkarni 19-08-16)
+urine_culture	yUrIna_kalcara#yUrIna_kalcara#noun#2#RM				
+#Drink plenty of water and get urine culture done.				(Suggested by Bhagyashri Kulkarni 25-08-16)
+bone_TB	bona_tIbI#bona_tIbI#noun#2#WM					
+#What is the identification of bone TB, and what is its treatment.		(Suggested by Bhagyashri Kulkarni 25-08-16)
+not_only_this	yahI_nahIM#yahI_nahIM#determiner#3#WM 				
+#Not only this, it saves you from dry eye syndrome.				(Suggested by Rajini 25-08-16)
+dry_fruits	meve#meve#noun#2#WM
+#The use of dry fruits etcetera in Indian cuisines has been continuing for centuries. (Suggested by Rajini 25-08-16)
+in_the_form_of	ke_rUpa_meM#ke_rUpa_meM#noun#3#WM 
+#Therefore everybody should eat hundred grams of green vegetables in the form of salad. (Suggested by Rajini 25-08-16)
+blackberry_anthocyanin	blAkberrI_aMWosiyanina#blAkberrI_aMWosiyanina#noun#2#RM
+# Bilberry or blackberry anthocyanin saves from blindness or cataract.			(Suggested by Rajini 25-08-16)
+cashew_nut	kAjU#kAjU#noun#2#RM
+#But do you know that all the dry fruits such as almond, cashew nut, walnut, raisins etcetera are also very beneficial for eyes besides being nutritious.										(Suggested by Rajini 25-08-16)
+prickly_heat	GamorIyAz#GamorIyAz#noun#2#WM					(Suggested by Bhagyashri Kulkarni 30-08-16)
+#Children are suffering from prickly heat, what to do.
+home_treatment	GarelU_upacAra#GarelU_upacAra#noun#2#RM				(		"		"	" )
+#What is the home treatment of diarrhoea.
+sand_fly	marUmakRikA#marUmakRikA#noun#2#RM				(		"		"	" )
+#Kalajar is caused by the sting of sand fly.
+more_than_common	sAmenya_se_bahuwa_jyAxA#sAmenya_se_bahuwa_jyAxA#noun#3#WM 		(Suggested by Rajini  30-08-16)
+# The meaning of Atishay is more than common.
+during_his_regime	apane_SAsana_kAla_ke_xOrAna#apane_SAsana_kAla_ke_xOrAna#noun#3#WM	(    "		"	"     )
+#A descendant of the Emperor Ashoka also got many Jain temples made during his regime.
+in_the_memory_of	kI_smqwi_meM#kI_smqwi_meM#noun#3#WM					(    "		"	"     ) 
+# Ratna Stambha was built in the memory of Shreyansh Kumar.
+left_over	bace_hue#bace_hue#adjective#1#RM				
+#By drinking plenty of water not only the left over pieces of food gets cleaned but saliva also gets formed. (Suggested by Bhagyashri Kulkarni 19-08-16)
+sugar_free	cInI_virahiwa#cInI_virahiwa#noun#2#RM
+#Chew the sugar free chewing gum.						(Suggested by Bhagyashri Kulkarni 03-09-16)
+food_habits	KAne_kI_Axawa#KAne_kI_Axawa#noun#2#RM
+#But you can keep yourself healthy by paying attention to your food habits and by bringing a little change in your lifestyle. ( "  "  ")
+fibered_food	waMwumaya_AhAra#waMwumaya_AhAra#noun#2#RM
+#You keep yourself far from many diseases by eating less fatty and fibered food. (Suggested by Bhagyashri Kulkarni 03-09-16)
+road_sides	sadaka_kA_kinArA#sadaka_kA_kinArA#noun#2#RM
+#Do not eat stale food and the things being sold at road sides.			 (	"	"			"  ) 
+#like_this	EsA/isake_jEsA#EsA/isake_jEsA#determiner#2#RM
+#Fruits and vegetables have a ratio like this.					 (Suggested by Chaitanya Sir 13-09-16)
+surgical_operation	Salya_cikiwsA#Salya_cikiwsA#noun#2#RM			 (Suggested by Bhagyashri Kulkarni 16-09-16)
+#In comparison with the traditional surgical operation this method has many advantages.
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -11,3 +11,4 @@ Sanskrit	f
 Louise	f
 Mary	f
 Sundari	f
+Rita	f

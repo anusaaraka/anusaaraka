@@ -15,6 +15,7 @@
  (load-facts "word.dat")
  (load-facts "id_Apertium_output.dat")
  (load-facts "hindi_id_order.dat")
+ (load-facts "GNP_agmt_info.dat")
  (run)
  (save-facts "id_Apertium_output.dat" local id-Apertium_output)
  (clear)

@@ -61,7 +61,7 @@ except	sirPa/ko_Codakara/ko_Coda_kara/SAmila_nahiM_kara/Coda_xe/Coda
 excepting	CodanA
 excluding	Coda_xenA
 few	kuCa/xo_cAra/Wode_hI/kuCa_hI/kama/kaI/alpa/WodA
-following	agalA/sahAyaka/nimnAfkiwa/nimnaliKiwa/anugAmI/AgAmI/Age_xiyA_huA/SiRya-samuxAya/hone_para
+following	agalA/sahAyaka/nimnAfkiwa/nimnaliKiwa/anugAmI/AgAmI/Age_xiyA_huA/SiRya-samuxAya/hone_para/nimna
 for	kyofki/ke_lie/ke_liye/kI_ora_se/ke_hisAba_se/waka
 from	se/ke/ke_yahAz_se
 given	AxI/viSeRa/nirXAriwa/niSciwa/xeKawe_hue/pUrvAnumAna/xe
@@ -145,7 +145,7 @@ themselves	Kuxa/svayaM
 there	vahAz/vaha
 these	ye/ina/yaha/inheM
 they	unheM/ve_loga/ve/unhoMne/ye/unameM
-this	yaha/isa/isese/iwanA/isake_lie/isakA/ise
+this	yaha/isa/isese/iwanA/isake_lie/isakA/ise/EsA
 those	ve/jo/ina/una
 through	SurU_se_anwa_waka/sIXA/pUrNa/lagAwAra/KulA/eka_se_xUsare_waka/xvArA/SurU_se_AkIra_waka/se/pUrI_waraha_se/baxOlawa/acCI_waraha_se/eka_ora_se_xUsarI_ora/prawibanXa_ko_wodawe_hue/anwa_waka/meM_se/meM/ke_xvArA/ke_mAXyama_se/ke_jarie/se_waka/Suru_se_anwa_waka/ke_kAraNa
 throughout	SurU_se_anwa_waka/Suru_se_anwa_waka/pUrNawayA/pUre/Bara_meM/meM/pUre_meM
