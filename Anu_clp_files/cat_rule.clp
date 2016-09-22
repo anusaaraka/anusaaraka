@@ -14,10 +14,9 @@
  (declare (salience 150))
  ?f1<-(parser_id-cat  ?pid  ?cat)
  (parserid-wordid  ?pid ?id)
- ?f0<-(id-cat ?id $?)
  =>
 	(printout ?*cat_fp* "(parser_id-cat "?pid" " ?cat")"crlf)
-	(retract ?f0 ?f1)
+	(retract ?f1)
  )
  ;-----------------------------------------------------------------------------------------------------------------
  ; link cat  

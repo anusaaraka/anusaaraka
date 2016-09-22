@@ -20,7 +20,7 @@
  (defrule cp_facts_for_lwg
  (declare (salience 1701))
  (Head-Level-Mother-Daughters ?h ?l ?M $?daut)
- (Node-Category ?M S|SQ|VP|SBAR|and-VB|or-VB|and-MD|and-VBD);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
+ (Node-Category ?M S|SQ|VP|SBAR|and-VB|or-VB|and-MD|and-VBD|SINV);Added and-VB|or-VB|and-MD|and-VBD|SINV in the list by Manju
  (Head-Level-Mother-Daughters ? ? ?Mot $? ?M $?);Added by Manju (29-07-13)
  (not (Node-Category ?Mot Inf_VP));The Republic of Ireland has introduced a blanket ban on smoking to protect public health and reduce illness. 
  =>
@@ -108,11 +108,12 @@
 
 ;--------------------------------------------------------------------------
  ;Replacing a VP|SQ mother whose child is again a VP .
+ ;SINV EX: Had you met Rohit anywhere before?
  (defrule replace_VP
  (declare (salience 1700))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?VP $?pos)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP $?daut)
- (Node-Category ?Mot VP|SQ)
+ (Node-Category ?Mot VP|SQ|SINV)
  (Node-Category ?VP VP)
  (not (dont_replace_VP ?Mot))
  (not (dont_replace_VP ?VP))
@@ -148,6 +149,8 @@
 ;                         "                      After     - "?head1" "?lvl" "?Mot" "?pre"  "?node" "(implode$ $?daut)")" crlf)
 ; )
 ;--------------------------------------------------------------------------
+ ;Modified the rule to check root instead of word by Shirisha Manju (26-07-16).
+ ;Added 'keep' in the list by Shirisha Manju (26-07-16) Ex: Keep doing light physical activities. 
  ;Replacing a VP mother whose child is  S|SBAR|SQ on checking the head word .
  ;Ex:-A fat boy [had to eat] fruits. 
  ;Ex:-She made the girl feed the child.[made_feed]
@@ -155,17 +158,15 @@
  ;That is the way business used to be done and that is the way business needs to be done.
  ;Positive thinking needs to be inculcated. [needs]
  ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb. Ex: He got so drunk that he passed out.
- ;Added 'keep' in the list by Shirisha Manju (26-07-16) Ex: Keep doing light physical activities. 
- ;Modified the rule to check root instead of word by Shirisha Manju (26-07-16).
  (defrule replace_S
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
  (parser_id-root-category-suffix-number ?head ?r&get|have|had|has|having|make|need|keep $?)
-; (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|needs) 
- ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
- (parserid-word ?head1 ~that);As they drew near the bungalow they could make out that something important had happened.
- (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
+ (Node-Category ?Mot VP)
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
+ (parserid-word ?head1 ?word&~that);As they drew near the bungalow they could make out that something important had happened. 
+ (parserid-word ?head ~keeping); There is no better solution but to eat fish for keeping eyes healthy if you are a non-vegetarian.
  (Node-Category ?pre_node VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  (not (dont_replace_VP ?S)) ; You may keep your teeth clean and breath fresh by the help of some easy tips given here.
@@ -205,11 +206,11 @@
  ;;If air resistance is neglected, the object [is said to be] in free fall.
  ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb.
  ;Added 'used' in the list by Shirisha Manju (13-02-14) Ex: Asutosh himself frequently presided over the "moot courts" and he also used to deliver lectures to the Law students.
- 
+ ;Added 'ought' Ex:  We ought to love our youngers
  (defrule replace_S1
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
- (parser_id-root-category-suffix-number ?head ?r&be|say|use $?)
+ (parser_id-root-category-suffix-number ?head ?r&be|say|use|ought $?)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (parserid-word ?head1 ?w1&to)
  (Node-Category ?Mot VP)
@@ -242,13 +243,14 @@
  )
 
 ;--------------------------------------------------------------------------
+ ;SINV EX: Had you met Rohit anywhere before?
  ;Creating a lwg facts for all verbs
  ;Here it look like,
  ;(root-verbchunk-tam-parser_chunkids - VBZ6 VBG8 NP10 VB14 NP15 - VBZ6 VBG8 NP10 VB14 NP15 - VBZ6 VBG8 NP10 VB14 NP15)
  (defrule get_lwg
  (declare (salience 70))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP ?VP1 $?dau)
- (Node-Category ?VP VP|SQ)
+ (Node-Category ?VP VP|SQ|SINV)
  (Node-Category ?VP1 ?cat&~TO)
  (not (dont_replace_VP ?VP))
  =>
@@ -299,7 +301,7 @@
         (bind ?pos (member$ ?node $?chunkid))
         (bind ?head (lowcase ?head))
 ;        (if (and (member$ ?head (create$ make made get making let am being do does doing need can could ought might must should been had may will be is are has shall would were was did to have used use keeps keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
-        (if (and (member$ ?root (create$ make get let do need ought may must can could would should be been had has have will shall to use keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
+        (if (and (member$ ?root (create$ make get let do need ought may might must can could would should be been had has have will shall to use keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
         (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
         (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
           (if (eq ?cat VBG) then 
@@ -552,9 +554,10 @@
                 (if (eq ?count (- ?pos 1)) then
                     (bind ?new_vrb_chunk (sym-cat (sub-string 1 ?index1 ?cp_vrb_chunk) "not" (sub-string ?index1 (length ?cp_vrb_chunk) ?cp_vrb_chunk)))
                  
+		   (printout t  ?index1 ?cp_tam)
                     (bind ?new_tam (sym-cat (sub-string 1 ?index1 ?cp_tam) "not" (sub-string ?index1 (length ?cp_tam) ?cp_tam)))
                )
-               ;(printout t " new_vrb_chunk " ?new_vrb_chunk " new_tam " ?new_tam " " ?index " " ?count " " ?pos " " ?index1 crlf)
+;               (printout t " new_vrb_chunk " ?new_vrb_chunk " new_tam " ?new_tam " " ?index " " ?count " " ?pos " " ?index1 crlf)
                (bind ?vrb_chunk (sub-string (+ ?index 1) 1000 ?vrb_chunk)) 
                (bind ?index (str-index "_" ?vrb_chunk))
     )
@@ -564,17 +567,18 @@
 
  ;--------------------------------------------------------------------------
  ;Identifying and modifying the TAM for IMPERATIVE sentences,
+ ;SINV Ex: Do not feed children fast food, kurkure, ice-cream.
  ;Ex:- Do not shut the door. 
  ;(root-verbchunk-tam-parser_chunkids shut do_not_shut do_not_0 P1 P2 P3)===>
  ;(root-verbchunk-tam-parser_chunkids shut do_not_shut imper_not_0 P1 P2 P3)
  (defrule check_for_imper
  (declare (salience -20))
  (Head-Level-Mother-Daughters ? ? ?ROOT ?S $?)
- (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
+ (and (Node-Category ?ROOT ROOT) (Node-Category ?S S|SINV))
  (Head-Level-Mother-Daughters ? ? ?S ?VP $?)
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
- (parserid-word ?h ~Let)
+ (parserid-word ?h ?w&~Let&~May&~Can) ;May I come in Sir? 
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids)
   (not (lwgids_imper_checked ?first $?ids))
  =>
@@ -605,6 +609,7 @@
  )
 ;--------------------------------------------------------------------------
  ;Identifying and modifying the TAM for IMPERATIVE sentences with conjunction,
+ ;SBAR EX: If fever is more than 100 [give] a pill of paracetamol and [take] suggestions from a medicine specialist doctor. 
  ;Ex:-Go straight and take a right turn.
  ;(root-verbchunk-tam-parser_chunkids root_to_be_decided go tam_to_be_decided P1)==>
  ;(root-verbchunk-tam-parser_chunkids root_to_be_decided go imper P1)
@@ -614,7 +619,8 @@
  (declare (salience -20))
  (Head-Level-Mother-Daughters ? ? ?ROOT ?S $?)
  (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
- (Head-Level-Mother-Daughters ? ? ?S ?VP $?)
+ (or (Head-Level-Mother-Daughters ? ? ?S ?VP $?)
+     (and (Head-Level-Mother-Daughters ? ? ?S ?SBAR ?VP $?)(Node-Category ?SBAR SBAR)))
  (Head-Level-Mother-Daughters ? ? ?VP $? ?VP1 ?CC $? ?VP2 $?)
  (Node-Category ?CC CC)
  (or (Head-Level-Mother-Daughters ? ? ?VP1 ?verb $?)(Head-Level-Mother-Daughters ? ? ?VP2 ?verb $?))
@@ -704,7 +710,7 @@
  (defrule check_for_causitive
  (declare (salience -21))
  ?f0<-(root-verbchunk-tam-parser_chunkids  ?R  ?vc  ?tam  $?ids ?id ?id1)
- (parserid-word ?id ?w&make|made|get|making)
+ (parserid-word ?id ?w&make|made|get|making|Get)
  ?f1<-(parser_id-root-category-suffix-number  ?id  ?root ?cat ?suf $?)
  ?f2<-(parser_id-root-category-suffix-number ?id1 ?root1 ?cat1 ?suf1 $?)
  =>
@@ -714,9 +720,9 @@
         (bind ?pos (length (create$ $?ids ?id ?id1)))
 	(bind ?count 0)
 	(bind ?cp_tam ?tam)
+	(bind ?new_tam ?tam)
         (printout t ?tam crlf) 
     	(bind ?index (str-index "_" ?tam))
-    
         (while (neq ?index FALSE)
                 (bind ?count (+ ?count 1))
                 (if (eq ?count (- ?pos 2)) then
@@ -725,7 +731,7 @@
                (bind ?tam (sub-string (+ ?index 1) 1000 ?tam))
                (bind ?index (str-index "_" ?tam))
         )
-        (bind ?r (string-to-field (str-cat ?root"_"?root1)))
+	(bind ?r (string-to-field (str-cat ?root"_"?root1)))
         (if (neq (length $?ids) 0) then
         	(bind ?new_tam (sym-cat ?new_tam ?suf))
                 (assert (root-verbchunk-tam-parser_chunkids  ?r ?vc ?new_tam $?ids ?id ?id1))
@@ -733,8 +739,12 @@
                 (assert (verb_type-verb-causative_verb-tam causative ?id ?id1 ?new_tam))
 		(printout ?*lwg_debug_file* "			After   - (verb_type-verb-causative_verb-tam causative "?id" "?id1" "?new_tam")" crlf)
         else
-                (assert (root-verbchunk-tam-parser_chunkids  ?r ?vc tam_to_be_decided ?id ?id1))
-		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?r" "?vc" tam_to_be_decided "?id" "?id1")" crlf)
+		(if (or (eq ?cp_tam imper_ed)(eq ?cp_tam imper_en)) then
+			(assert (root-verbchunk-tam-parser_chunkids  ?r ?vc imper ?id ?id1))
+		else
+	                (assert (root-verbchunk-tam-parser_chunkids  ?r ?vc tam_to_be_decided ?id ?id1))
+			(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?r" "?vc" tam_to_be_decided "?id" "?id1")" crlf)
+		)
                 (assert (verb_type-verb-causative_verb-tam causative ?id ?id1 tam_to_be_decided))
 		(printout ?*lwg_debug_file* "			After   - (verb_type-verb-causative_verb-tam causative "?id" "?id1" tam_to_be_decided)" crlf)
         )

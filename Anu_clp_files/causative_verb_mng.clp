@@ -125,10 +125,30 @@
 	(if (neq ?a "FALSE") then
 		(retract ?f0)
 		(assert (id-HM-source ?causative_vrb_id  (explode$ ?a) ?src))
-		(assert (id-HM-source ?vrb_id  ?hmng ?src1))
+;		(assert (id-HM-source ?vrb_id  ?hmng ?src1))
 		(assert (modified_mng ?vrb_id))
-	)
-  )
+	else	;jAzca_kara == jAzca_karavA
+		(if (neq (str-index "_" ?h_mng) FALSE) then
+                        (bind ?len 0)
+                        (bind ?str1 ?h_mng)
+                        (bind ?str_len (length ?h_mng))
+                        (while (neq (str-index "_" ?h_mng) FALSE)
+                                (bind ?index (str-index "_" ?h_mng))
+                                (bind ?h_mng (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
+                                (bind ?len (+ ?index ?len))
+                        )
+                        (bind ?b (gdbm_lookup "causative_verb_mng.gdbm" ?h_mng))
+			(if (neq ?b "FALSE") then
+                                (retract ?f0)
+				(bind ?str2 (sub-string 1 (+ (length ?h_mng) 1) ?str1))
+				(bind ?h_mng (explode$ (str-cat ?str2"_"?b)))
+				(printout t ?h_mng) 
+				(assert (id-HM-source ?causative_vrb_id  ?h_mng ?src))
+				(assert (modified_mng ?vrb_id))
+			)
+		)
+  	)
+ )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (22-07-16)
  ;Prince Shreyanshkumar urged Adinatha Prabhu to accept [sugar cane juice] for ending the fast which he accepted .

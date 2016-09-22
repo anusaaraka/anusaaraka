@@ -138,7 +138,8 @@
  (declare (salience 1400))
  ?f0<-(id-HM-source ?id ?mng ?)
  (pada_info (group_ids $? ?id $? ?h))
- (test (eq (sub-string 1 1 ?mng) "@")) 
+ (id-cat_coarse ?id ?cat)
+ (test (or (eq (sub-string 1 1 ?mng) "@") (eq ?cat PropN))) 
  =>
 	(retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  )" crlf)
@@ -146,9 +147,10 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
  ;What is the purpose of Dharma? He wrote the biography of Tagore.
+ ;We went to Paris on Sarah's advice. hama [sArA kI] salAha para perisa gaye.
  (defrule print_org_word_mng_with_kA_vib
  (declare (salience 1400))
- ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng)
+ ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng|proper_noun_dic)
  (pada_info (group_head_id ?id) (vibakthi kA))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
  (pada_info (number ?n)(case ?c)(gender ?g)(group_ids $?f_ids))
@@ -166,7 +168,9 @@
  (declare (salience 1300))
  ?f0<-(id-HM-source ?id ?mng ?s)
  (pada_info (group_head_id ?id) (vibakthi ?vib&~kA)(number ?n)(case ?c)(gender ?g))
- (test (eq (sub-string 1 1 ?mng) "@"))
+ (id-cat_coarse ?id ?cat)
+; (test (eq (sub-string 1 1 ?mng) "@"))
+ (test (or (eq (sub-string 1 1 ?mng) "@") (eq ?cat PropN))) 
  =>
         (retract ?f0)
 	(if (eq ?vib 0) then
@@ -297,6 +301,23 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_mng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id )" crlf)
  )
+ ;==================================== add yaha as root if 1st mng starts with ke =========================================
+ ;Besides it is close to our house.  before : ke awirikwa yaha hamAre Gara ke nikata hE. after: isake awirikwa yaha hamAre Gara ke nikata hE.
+ ;Besides he is a personal friend.   before : ke awirikwa vaha eka vEyakwika miwra hE.   after: isake awirikwa vaha eka vEyakwika miwra hE. 
+ (defrule add_yaha_as_root
+ (declare (salience 1002))
+ (hindi_id_order 1 $?post)
+ ?f0<-(id-HM-source 1 ?mng ?)
+ (test (eq (sub-string 1 2 ?mng) "ke"))
+ (pada_info (group_head_id 1)(number ?num)(person ?per))
+ =>
+	(retract ?f0)
+	(bind ?index (str-index "_" ?mng))
+        (bind ?v (sub-string 1 (- ?index 1) ?mng))
+        (bind ?vib1 (sub-string (+ ?index 1) (length ?mng) ?mng))
+        (printout ?*A_fp5* "(id-Apertium_input 1 ^yaha<cat:p><case:o><parsarg:"?v"><gen:m><num:"?num"><per:"?per ">$ ^" ?vib1   "<cat:prsg>$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  1   add_yaha )" crlf)
+ )
  ;======================================== KA vibakthi (viSeRya-RaRTI_viSeRaNa) rules =====================================
  ; Ex: He was awakened at dawn by the sound of crying .
  ;     She awakened to the sound of birds' singing .
@@ -316,9 +337,26 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  RaRTI_kA_vib_rule_for_verbal_noun  )"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (20-08-16) Suggested by Chaitanya Sir
+ ;Clean the teeth with the mixture of lemon and salt. 
+ ;[nIMbU Ora namaka ke] miSraNa ke sAWa xAzwa sAPa kIjie.
+ (defrule RaRTI_kA_vib_rule_for_conj
+ (declare (salience 1001))
+ (conj_head-left_head-right_head  ? ?pada_id $? ?last_id)
+ (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI  ?foll_pada_id ?pada_id)
+ ?f0<-(id-HM-source ?last_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM&~Ora ?)
+ (pada_info (group_head_id ?last_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
+ (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (test (member$ ?foll_pada_id $?f_ids))
+  =>
+       (retract ?f0)
+       (printout ?*A_fp5* "(id-Apertium_input "?last_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
+       (printout ?*aper_debug-file* "(id-Rule_name  "?last_id "  RaRTI_kA_vib_rule )" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
  ; These are children's books. Mohan fell from the top of the house.
- (defrule RaRTI_kA_vib_rule1
+ (defrule RaRTI_kA_vib_rule
  (declare (salience 1000))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI  ?foll_pada_id ?pada_id)
  ?f0<-(id-HM-source ?pada_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM&~Ora ?)
@@ -718,10 +756,12 @@
   ;------------------------------------------------------------------------------------------------------------------------ 
   ;These are few sentences for Link Parser. ;But why did you send him that nasty note.
   ;It is good to eat less food these days.
+  ;I want them to go. 
+  ;mEM cAhawA hUz ve jAez.
   (defrule PP_pronoun_rule_without_vib
   (declare (salience 931))
   (pada_info (group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi 0)(group_ids $?ids))
-  (id-word ?pada_id that|this|these)
+  (id-word ?pada_id that|this|these|them)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (test (member$ ?pada_id $?ids))
   =>
@@ -865,6 +905,7 @@
   ;---------------------------------------------------------------------------------------------------------------------------
   ;Keep doing small physical activities like climbing stairs, gardening, small domestic works or dancing.
   ;Keep doing light physical activities.
+  ;Get the teeth checked up with the dentists regularly.
   (defrule VP_rule_for_imper_ing
   (declare (salience 651))
   (pada_info (group_head_id ?h)(group_cat VP)(number ?num)(gender ?gen)(H_tam ?tam)(preceeding_part_of_verb 0))

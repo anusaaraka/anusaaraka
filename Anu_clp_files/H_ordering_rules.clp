@@ -175,11 +175,12 @@
 ;xarjana laKapawiyoM ke
 ;Such program trades, which can involve the purchase or sale of [millions of dollars] of stock, occur in a matter of seconds.
 ;One kind of response from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature.
+;Drink plenty of water. -- bahuwa sArA pAnI pIjie.
 (defrule dont_reverse_NP
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
 (Node-Category  ?Mot  NP)(Node-Category  ?PP  PP)
-(id-original_word ?head ?wrd&lot|most|number|spot|kinds|kind|set|sort|whole|dozens|some|millions|type|tens|hundreds|thousands|billions|dollars)
+(id-original_word ?head ?wrd&lot|most|number|spot|kinds|kind|set|sort|whole|dozens|some|millions|type|tens|hundreds|thousands|billions|dollars|plenty)
 (Head-Level-Mother-Daughters ?h ? ?PP ?IN $? ?NP2)
 (id-root ?h of)
 (not (Mother  ?mot))

@@ -16,6 +16,9 @@ am_ing	0_rahA_hE-0-0
 # I am playing a dangerous game. <=> mEM eka KawaranAka Kela Kela rahA hUM.
 # He is playing the best golf of his life. <=> vaha apne jIvana kA sabase acCA golf Kela rahA hE.
 am_not_being_en	yA_jA_rahA_hE-ko-nahIM
+# I definitely am not being paid the same amount.
+# muJe (ko) niScIwa rUpa se samAna rASI kA BugawAna nahIM kiyA jA rahA hE.
+# I am not being given that opportunity. <=> muJe vaha mOkA/avasara nahIM diyA jA rahA hE.
 am_not_en	yA_hE-0-nahIM
 am_not_going_to_0	ne_vAlA_hE-0-nahIM
 am_not_ing	0_rahA_hE-0-nahIM
@@ -33,36 +36,55 @@ are_being_en	yA_jA_rahA_hE-0-0
 # The right steps are being taken. <=>  sahI kadama uTAye jA raheM hEM.
 are_en_born	yA_hE-0-0
 are_en	yA_gayA_hE-0-0
+# His answers are wrtten down on the paper. <=> usake uwwara kAgajaz para liKA gayA hE.
 are_going_to_0	ne_vAlA_hE-0-0
 are_ing	0_rahA_hE-0-0
+# Hungry dogs are runnning everywhere. <=> BUKe kuwwe sabjagaha xOdaz raheM hEM.
 are_not_being_en	yA_jA_rahA_hE-0-nahIM
+# My decisions are not being taken seriously. <=> mere nirNayoM ko gamBIrawA se nahIM liyA jA rahA hE.
 are_not_en	yA_hE-0-nahIM
+# We are not given the opportunity to see. <=> hame xeKane ke lie avasara nahIM xiyA hE.
 are_not_going_to_0	ne_vAlA_hE-0-nahIM
 are_not_ing	0_rahA_hE-0-nahIM
+# We are not changing our policy.  <=> hama apanI nIwI nahIM badala raheM hEM
 are_not_to_0	ne_vAlA_hE-0-nahIM
+# They are not to do this. 	<=>  ve ise nahIM karane vAle hEM.
 are_not_to_be_en	yA_jAnA_hE-0-nahIM
+# They are not to be given back to the people.  <=> logoM ke liye una logoM ko wApasa nahIM xiyA jAnA hE.
 are_to_0	ne_vAlA_hE-0-0
+# They are to go with someone.  <=>  ve kuCa logoM ke sAWa jAne vAle hEM.
 are_to_be_en	yA_jAnA_hE-0-0
+# These projects are to be done differently.  <=> ina pariyojanAoM ko alaga warike/Dazga se kiyA jAnA hE.
 are_unable_to_0	0_pAwA_hE-0-nahIM
 before_ing	ne_ke_pahale-0-0
 being_en	yA_jA_rahA-0-0
 between_ing	ne_ke_bIca-0-0
 beyond_ing	ne_ke_pare-0-0
+#The culprit had gone beyond thinking (about a bomb). <=> aparAXI socane ke pare calA gayA WA ( eka bama ke bAre mEM.)
 by_ing	0_kara-0-0
 can_0	0_sakawA_hE-0-0
+# He can do without losing his own life. <=>  vaha apanA jIvana Koye binA hI kara sakawA hE.
 can_be_en	yA_jA_sakawA_hE-0-0
+# Some medicins can be given with food. <=> kuCa xavAiMyoM ko KAne ke sATa xiyA jA sakawA hE.
 can_have_en	yA_hogA-0-0
 can_never_0	0_sakawA_hE-0-kaBI_nahIM
+# We can never go back.		<=>   hama vApasa kaBI nahIM jA sakaweM hEM.
 can_never_have_en	0_sakawA-0-kaBI_nahIM
 can_not_0	0_sakawA_hE-0-nahIM
 cannot_0	0_sakawA_hE-0-nahIM
 can_not_be_en	yA_jA_sakawA_hE-0-nahIM
+# comparable studies can not be done with human research subjects
+# wulaniya paDzAI mAnava anusanDAna viRayoM ke sAWa nahIM kiyA jA sakawA hE.
 cannot_be_en	yA_jA_sakawA_hE-0-nahIM
 can_not_have_en	yA_hogA-0-nahIM
 cannot_have_en	yA_hogA-0-nahIM
 can_not_help_ing	raha_sakawA-ko-yA_binA+nahIM
 could_0	0_sakA-0-0
+# Joan could buy her paracetamol over the counter at very low cost.
+# jona bahuwa apanA pErasiwamOla kama kimawa para kAunwara se Karixa sakI.
 could_be_en	yA_jA_sakawA_hE-0-0
+#They could be given a new problem in the examination. <=> una logoM ko parikRA meM eka naI samasyA xI jA sakawI hE.
+#
 ##################    Manually corrected by " Ruchi " ###########################
 could_have_been_en	yA_jA_sakawA_WA-0-0
 # Effective measures could have been taken at every stage of the crisis.
@@ -233,30 +255,45 @@ NEG_PRES	nahIM-0-0
 never_0	0-0-kaBI_nahIM
 not_en	yA_huA-0-nahIM
 not_having_en	nA_ke_kAraNa-0-nahIM
+######################## Manually corrected by " Shubhra " #######################
 not_to_0	nA-0-nahIM
+# I tried not to think about it.  <=>  mEne usa bAre meM nahIM socane kI koSiSa kI.
 of_ing	ne_ke_bAre_meM-0-0
 on_ing	ne_para-0-0
+# Congratulations on making it to the finals. <=> PZAinala waka pahuMcane para baXAI ho.
 ought_not_to_0	nA_cAhiye-ko-nahIM
 ought_not_to_be_en	yA_jAnA_cAhiye-ko-nahIM
 ought_not_to_have_en	nA_cAhiye_WA-ko-nahIM
 ought_to_0	nA_cAhiye-ko-0
 ought_to_be_en	yA_jAnA_cAhiye-ko-0
 ought_to_have_en	nA_cAhiye_WA-ko-0
+# Petya ought to have known that he was in the forest. <=> pewyA ko pawA honA cAhiye WA ki wo jaMgala meM WA.
 shall_0	gA-0-0
+# They shall say I ought to have known better. <=> ve kaheMge muJe behawara pawA honA cAhiye WA.
 shall_be_en	yA_jAyegA-0-0
+# The crooked places shall be made straight, and the rough places smooth.
+# teDZe-meDZe jagahoM ko sIXA banA xiyA jAyegA, Ora ubadZa-kAbadZa rAstoM ko mulAyama.
 shall_be_ing	wA_rahegA-0-0
 shall_have_to_0	nA_hogA-0-0
+# I shall have to see your apartments. <=> muJe wumalogoM kI PZlEteM xeKanI hoMgI.
 shall_not_0	gA-0-nahIM
+# I shall not live to see another dawn. <=> mEM eka Ora subaha xeKane ke liye nahIM jiuzgA.
 should_0	nA_cAhiye-ko-0
+# I think you should take your kids out. <=> mEM socawA huz/muJe lagawA hE wumheM apane baccoM ko bAhara/GumAne le jAnA cAhiye.
 should_be_en	yA_jAnA_cAhiye-0-0
 should_be_ing	nA_cAhiye-0-0
 should_be_to_0	nA_kA_cAhiye_honA-ko-0
 should_have_been_en	nA_cAhiye_WA-ko-0
 should_have_been_ing	wA_rahanA_cAhiye_WA-ko-0
 should_have_en	nA_cAhiye_WA-ko-0
+# I do not think President Obama should have gone on this bus tour.
+# muJe nahIM lagawA ki rARtrapawI obAmA ko isa basa yAwrA para jAnA cAhiye WA.
 should_like_to_0	nA_pasanxa_kara_gA-0-0
 should_never_0	nA_cAhiye-ko-kaBI_nahIM
+# You should never say never because you don't know what God will do in your life.
+# wumheM kaBI nahIM kaBI nahIM kahanA cAhiye kyoMki wuma nahIM jAnawe BagavAna wumhArI jZiMxagI meM kyA kareMge.
 should_not_0	nA_cAhiye-ko-nahIM
+# They should not give crazy people guitars. <=> (unheM) pAgala logoM ko gitAra nahIM xenA cAhiye.
 should_not_be_en	0_jAnA_cAhiye-ko-nahIM
 should_not_be_ing	nA_cAhiye-0-nahIM
 should_not_be_to_0	nahIM_cAhiye_honA_kA_nA-0-0
@@ -265,26 +302,39 @@ should_not_have_been_ing	wA_rahanA_cAhiye_WA-ko-nahIM
 should_not_have_en	nA_cAhiye_WA-ko-nahIM
 subj	subj-0-0
 s	wA_hE-0-0
+# She sleeps on the couch.  <=> vaha soPZe para sowI hE.
 to_be_en	yA_huA_honA-0-0
 to_be_ing	wA_huA-0-0
+# It appears to be going upwards. <=> vaha Upara jAwA huA prawIwa howA hE.
 TO_INF	nA-0-0
 towards_ing	ne_ke_liye-0-0
 used_to_0	yA_karawA_WA-0-0
+# I used to think she was extremely talented. <=> mEM socA karawA WA vaha awyaMwa prawiBAvAna hE.
 was_able_to_0	0_pAwA_wA-0-0
 was_being_en	yA_jA_rahA_WA-0-0
+# When I woke up I was being carried from the car to a house. <=> jaba mEM jAgI muJe gAdZI se Gara meM le jAyA jA rahA WA.
+# He was being treated for heart problems.  <=> usakA upacAra hqixaya saMbaMXI rogoM ke liye kiyA jA rahA WA.
 was_en_born	yA_WA-0-0
 was_en	yA_gayA_WA-0-0
+# Brenda was gone and Michelle was back. <=> breMdA calI gayI Ora miSela wApasa A gayI WI.
 was_going_to_0	ne_vAlA_WA-0-0
+#Oh, she wasn't ill, but she was going to die. <=> vaha bImAra nahIM WI lekina vaha marane vAlI WI.
 was_ing	0_rahA_WA-0-0
+# It wasn't like he was trying to hide.  <=> EsA nahI WA ki vaha Cupane kI koSiSa kara rahA WA.
 was_never_en	yA_gayA_WA-0-kaBI_nahIM
 was_not_being_en	yA_jA_rahA_WA-0-nahIM
 was_not_en	yA_WA-0-nahIM
 was_not_going_to_0	ne_vAlA_WA-0-nahIM
+# That was not going to happen in Iran.  <=> vaha IrAna meM nahIM hone vAlA WA.
 was_not_ing	0_rahA_WA-0-nahIM
+# I was not looking at anyone.  <=> mEM kisI ko nahIM xeKa rahA WA.
 was_not_to_0	ne_vAlA_WA-0-nahIM
 was_not_to_be_en	yA_jAnA_WA-0-nahIM
+# I thought that it was not to be trusted.  <=> mEne socA ki isapara BarosA nahIM kiyA jAnA WA.
+# This was not to be confused with fascism alone. <=> yaha sirPZa PZAsistavAxa ke sAWa hI nahIM ulaJAyA jAnA WA.
 was_to_0	ne_vAlA_WA-0-0
 was_to_be_en	yA_jAnA_WA-0-0
+#  All was to be taken, nothing given back. <=> sabakuCa le liyA jAnA WA, kuCa BI wApasa nahIM xiyA jAnA WA.
 was_unable_to_0	0_pAwA_wA-0-nahIM
 ################# Manually corrected by " Neha " ########################
 were_able_to_0	0_pAwA_wA-0-0
@@ -363,12 +413,18 @@ would_have_been_ing	0_rahA_howA-0-0
 would_have_en	yA_howA-0-0
 #Three years ago I would have given a different answer.	 <=> wIna sAla pahale mE eka xusarA uwwara xiyA howA.
 would_have_to_0	nA_hogA-ko-0
+# I knew we would have to wait and see.  <=> mE jAnawA hUM hameM inwajAra karanA hogA Ora deKanA hogA.
 would_have_to_be_en	nA_hogA-0-0
+# I think it would have to be changed substantially.  <=> mE socawA hUM ise kAPI haxa waka bawalanA hogA.
 would_like_to_0	nA_pasanxa_kara_gA-0-0
 would_never_0	gA-0-kaBI_nahIM
+# You would never kill me.   <=>  wuma muJe kaBI nahIM mAroge.
 would_not_0	gA-0-nahIM
+# Jenkins made it clear that he would not take any medication.
+# jenakinsa ne ise spaSta kiyA kI vo koi ORaXI nahIM leMge.
 would_not_be_en	yA_jAyegA-0-nahIM
 would_not_be_ing	0_rahA_hogA-0-nahIM
+# she would not be coming with me.   <=>  vo mere sAWa nahIM A rahI hogI.
 would_not_have_been_en	yA_hogA-0-nahIM
 # Winn would not have been surprised to see shades of himself.  <=> vIna apnI CAyA xeKa ke AScaryacakIwa nahIM huA hogA.
 would_not_have_en	yA_howA-0-nahIM
@@ -385,6 +441,10 @@ imper_en	yA-0-0
 is_used_to_0	yA_jAwA_hE-0-0
 # It is used for students to solve problems . 	Suggested by Bhagyashri Kulkarni (12-9-16) 
 # vixyArWiyoM ke lie samasyAoM ko hala karane ke lie isakA prayoga kiyA jAwA hE .
+shall_have_been_ing	0_rahA_hogA-0-0
+#Ex: No, probably I shall have been studying at this time. <=> nahIM, SAyaxa mEM isa samayapaDZa rahA houMgA.
+will_have_been_ing	0_rahA_hogA-0-0
+#Ex: Will you have been sleeping at this time tomorrow? <=> kyA kala wuma isa samaya so rahe hoge?
 ############################### tams with examples #############################################
 #are_to_be_en	nA_ke_liye_hE-0-0  Ex: All these fruits are to be eaten.
 #were_to_be_en   nA_ke_liye_WA-0-0  Ex: All these fruits were to be eaten.

@@ -294,6 +294,24 @@
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;[Besides] he is a personal friend.
+  (defrule IN_rule1 
+  (declare (salience -1))
+  ?f0<-(id-sd_cat        ?id     IN)
+  (Head-Level-Mother-Daughters ? ? ?IN ?id)
+  (Head-Level-Mother-Daughters ? ? ?Mot $? ?IN $?)
+  (Node-Category ?Mot ?cat)
+  =>
+        (if (eq ?cat ADVP) then
+                (assert (parser_id-cat_coarse ?id adverb))
+                (assert (parser_id-cat ?id adverb))
+        else
+                (assert (parser_id-cat_coarse ?id preposition))
+                (assert (parser_id-cat ?id preposition))
+        )
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
   ;[All] these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four.
   ;[Such] a dilemma does not occur in the wave picture of light.
   (defrule DT_rule
