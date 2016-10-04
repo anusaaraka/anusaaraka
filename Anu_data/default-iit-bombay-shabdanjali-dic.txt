@@ -93597,3 +93597,4 @@ blood-circulation_noun	rakwapravAha
 kurkure_noun	kurakure
 paracetamol_PropN	pErAsItAmola
 blood-stream_noun	rakwapravAha
+moti_noun	mowI
