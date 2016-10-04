@@ -1376,7 +1376,11 @@
  (hindi_id_order $? ?id $?)
  =>
         (retract ?f1)
-        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?h_word ")" crlf)
+	(if (eq ?h_word -) then
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id " )" crlf)
+	else
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?h_word ")" crlf)
+	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_hnd_mng_rule)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------

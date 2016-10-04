@@ -100,14 +100,13 @@
  ;Your cat keeps on rubbing itself against my leg.
  (defrule tam_mng_from_template
  (declare (salience 7001))
- (id-E_tam-H_tam_mng ?id  ?E_tam ?H_tam)
- (id-tam-src ?id ?E_tam  ?src)
+ (id-E_tam-H_tam_template_mng ?id  ?E_tam ?H_tam)
  (id-cat_coarse ?id verb)
  ?f1<-(pada_info (group_head_id ?id))
  ?mng<-(meaning_to_be_decided ?id)
  =>
         (retract ?mng)
-        (modify ?f1 (H_tam ?H_tam)(tam_source ?src))
+        (modify ?f1 (H_tam ?H_tam)(tam_source Template))
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
@@ -133,6 +132,7 @@
  ?f1<-(pada_info (group_head_id ?id))
  (test (neq (str-index "_" ?vib)  FALSE))
  (test (member$ (string-to-field (sub-string 1 (- (str-index "_" ?vib) 1) ?vib)) (create$ kA kI ke meM)))
+ (not (compound_meaning_decided ?id))
  =>
         (retract ?f0)
         (modify ?f1 (vibakthi ?vib))
@@ -146,6 +146,7 @@
  ?f0<-(id-H_vib_mng ?id ?vib&~0)
  ?f1<-(pada_info (group_head_id ?id))
  (test (member$ ?vib (create$ ne ko se kA kI ke meM para vAlA)))
+ (not (compound_meaning_decided ?id))
  =>
         (retract ?f0)
         (modify ?f1 (vibakthi ?vib))
@@ -159,6 +160,7 @@
  (id-cat_coarse ?id verb)
  ?f1<-(pada_info (group_head_id ?id))
  ?mng<-(meaning_to_be_decided ?id)
+ (not (compound_meaning_decided ?id))
  =>
  	(retract ?mng)
         (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
@@ -223,10 +225,16 @@
  (id-TAM ?head_id ?tam)
  ?f2<-(pada_info (group_head_id ?head_id))
  ?f1<-(meaning_to_be_decided ?head_id)
- (language ?lang&hindi)
+ (language ?lang)
  =>
 	(bind ?tam (implode$ (create$  ?tam)))
-	(bind ?def_tam (gdbm_lookup "hindi_default_tam.gdbm" ?tam))  ;?def_tam = nA_padA-ko-0
+	(if (eq ?lang hindi) then
+		(bind ?def_tam (gdbm_lookup "hindi_default_tam.gdbm" ?tam))  ;?def_tam = nA_padA-ko-0
+	else
+		(if (eq ?lang marathi) then
+			(bind ?def_tam (gdbm_lookup "marathi_tam.gdbm" ?tam))  ;?def_tam = nA_padA-ko-0
+		)
+	)
         (if (neq ?def_tam "FALSE") then
 	    (retract ?f1)
             (bind ?i (str-index "-" ?def_tam))   ;?i = 8

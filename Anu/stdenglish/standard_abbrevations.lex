@@ -38,14 +38,17 @@ int len=0;
 {SPC}e\.g\.{SPC}	{printf("%cABBR-Example%c",yytext[0],yytext[5]);}
 
 (L[.]T[.]|n[.]m[.]|B[.]C[.]|A[.]D[.]|B[.]C[.]E[.]|C[.]E[.]|B[.]A[.]|B[.]S[.])[ ] 	{
+							*str='\0';
 							while((len=strcspn(yytext,".")) < strlen(yytext))
                  		                        {
                                   			     	strncat(str,yytext,len);
 			                                     	yytext=yytext+len+1;
                                        				strcat(str,"ABBR-Dot");
 							}
+							len=strlen(yytext);
 		                                        strncat(str,yytext,len);
-                                       			printf("%s",str);strcpy(str,"\0");
+                                       			printf("%s",str);
+							//strcpy(str,"\0");
                                        		}
 
 ^[{\[(]*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Sun|Mon|Tu|Tue|Tues|Wed|Th|Thu|Thur|Thurs|Fri|Sat|sec|min|hr|wk|mo|yr|cent|Acad|bbl|cu|doz|F|fl|ft|gal|gr|gro|in|kt|lb|mi|oz|pt|qt|sq|T|tbsp|tsp|yd|alt|apt|Assn|Ave|Blvd|ctr|c|ca|circ|Cpl|Corp|Ct|dept|div|ed|Ft|Gen|Gov|hwy|in|Lk|Ln|lat|lib|Lt|Ltd|long|mt|mus|no|No|pl|pop|Rd|Sta|St|ste|Ter|Tpk|Univ|vol|wt|viz|etc|approx|fig|Inc|inc)[.] { /* Removed p from the list. By Roja (05-04-14)

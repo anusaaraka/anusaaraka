@@ -96,14 +96,24 @@ could_not_0	0_sakA-0-nahIM
 could_not_be_en	yA_jA_sakA-0-nahIM
 # They sprang together and could not be pulled apart.	ve sAWa uge Ora unheM alaga nahIM kiyA jA sakA.
 could_not_have_been_en	yA_jA_sakawA_WA-0-nahIM
+# You really believe he could not have been stopped any other way?
+# wumheM saca meM viSvAsa hE ki use kisI Ora warIke se rokA nahIM jA sakawA WA.
 could_not_have_been_ing	wA_ho-0-ho_sakawA_hE_nahIM
 could_not_have_en	0_sakawA_WA-0-nahIM
+# You could not have shocked me any more. <=>  wuma muJe isase jZyAxA AScaryacakiwa nahIM kara sakawe WE.
 could_not_help_ing	raha_sakA-ko-yA_binA+nahIM
 dare_0	nA_kI_himmawa_hE-meM-0
 did_0	yA_WA-0-0
+#  Your ignorance did this. <=>  wumhArI nAxAnI ne ye kiyA.
 did_dare_0	nA_kI_himmawa_WI-meM-0
+# .................(rare use only 7)
+# I did dare to tell the judge. <=>  muJameM nyAyAXISa se bolane kI himmawa WI.
+# He did dare do it.   <=>  usameM ise karane kI himmawa WI.
 did_have_to_0	nA_padA-ko-0
+# I did have to stop and think. <=>  muJe ruka kara socanA pada.
+# He did have to find his own way. <=> use apanA rAswA Kuxa KojanA padA.
 did_have_to_be_en	nA_padawA_WA-0-0
+#  But we did have to be careful.  <=>  lekina hameM sAvaXAna rahanA padawA WA.
 did_not_0	yA_WA-0-nahIM
 did_not_dare_0	WI-meM-nA_kI_himmawa+nahIM
 did_not_have_to_0	nahIM_padA-ko-nA
@@ -111,48 +121,77 @@ did_not_have_to_be_en	nahIM_padawA_WA-0-nA
 did_not_like_to_0	nA_pasanxa_nahIM_karawA_WA-0-0
 did_not_use_to_0	yA_karawA_WA-0-nahIM
 do_0	wA_hE-0-0
+# We do see the uncommon things.  <=> hama asAmAnya cIjZeM xeKawe hEM.
 does_0	wA_hE-0-0
+# Does one person have a lot of influence? <=>  kyA eka AxamI bahuwa praBavaSAlI ho sakawA hE.
+# Their study does support the added difficulty. <=> unakA aXyayana awirikwa samasyAoM kA samarWana karawA hE.
 does_dare_0	hE-meM-nA_kI_himmawa+nahIM
 does_have_to_0	nA_padegA-ko-0
+# Ailes really does have to win every fight. <=> Ailsa ko saBI mukAbale jIwane padZeMge.
 does_have_to_be_en	nA_padegA-ko-0
+# The administration does have to be involved. <=> praSAsana ko SAmila honA hI padZegA.
+# That does have to be the last word.  <=> use AKirI Sabxa honA hI padegA.
 does_not_0	wA_hE-0-nahIM
+# it does not directly help.  <=> yaha siXe maxaxa nahI karawA hE.
 does_not_dare_0	WI-meM-nA_kI_himmawa+nahIM
 does_not_have_to_0	nA_hE-ko-nahIM
 does_not_have_to_be_en	ne_kI_jZarUrawa_nahIM_hE-0-0
+# This does not have to be complicated.  <=> ise pecIxA hone kI jZarUrawa nahIM hE.
 does_not_like_to_0	nA_pasanxa_nahIM_karawA_hE-0-0
 do_have_to_0	nA_padegA-ko-0
 do_have_to_be_en	nA_padegA`-ko-0
 do_not_0	wA_hE-0-nahIM
+# We do not provide instructions. <=> hama nirxeSa nahIM xewe hEM.
 do_not_dare_0	nA_kI_himmahE-meM-0
 do_not_have_to_0	nA_hE-ko-nahIM
 do_not_have_to_be_en	ne_kI_jZarUrawa_nahIM_hE-0-0
 do_not_like_to_0	nA_pasanxa_nahIM_karawA_hE-0-0
 ed_en	yA_[huA]-0-0
 ed	yA-0-0
+# I gave it back.  <=> mEMne ise vApasa xiyA.
 en	yA_huA-0-0
+# Given the depth of this research area. <=> isa SoXa kRewra kI xI huI gaharAI.
 from_ing	ne_se-0-0
 get_en	yA_jAwA_hE-0-0
-gets_en	0_ho_jAwA_hE-0-0
+# I don't get paid enough to be standing here. <=> muJe yahA KadZe rahane ke liye paryApwa pEse nahIM xiye jAwe hEM.
+#gets_en	0_ho_jAwA_hE-0-0
 gets_en	yA_jAwA_hE-0-0
+# Nothing gets done. <=>  kuCa nahIM kiyA jAwA hE.
+# That's the way business gets done. <=>  isa warIke se vyApAra kiyA jAwA hE.
 got_en	yA_gayA-0-0
+# He got caught up in the moment. <=> vaha kRaNa Bara meM pakadZA gayA.
 had_been_en	yA_gayA_WA-0-0
+# It had been taken three years earlier. <=> yaha wIna sAla pahale hI liyA gayA WA.
 had_been_ing	wA_rahA_WA-0-0
 had_en	yA_WA-0-0
+# She had taken her car that day. <=>  vaha usa xina apanI gAdZI le gayI WI.
 #had_en	0_cukA_WA-0-0
 had_got_to_be_en	0_xenA_padA-0-0
 had_just_en	yA_hI_WA-0-0
 had_not_been_en	yA_gayA_WA-0-nahIM
+# They had not been seen publicly. <=>  ve KuleAma nahIM xeKe gaye We.
 had_not_been_ing	0_rahA_WA-0-nahIM
+# They had not been paying attention to the small changes. <=>  ve Cote baxalAvoM para XyAna nahIM xe rahe We.
+################## Manually corrected by " Manish " ##################################
 had_not_en	0_cukA_WA-0-nahIM
 had_not_got_to_be_en	0_xenA_padA-0-nahIM
 had_not_to_be_en	nA1_padegA_WA-0-nahIM
 had_to_0	nA_padA-ko-0
+#The child had to make a guess before the red screen appeared. <=> screen Ko lAla hone Se pahale bacco ko eka anUmAna lagAnA pADA.
 had_to_be_en	nA_hI_WA-0-0
+#We regret the camp had to be removed. <=> hameM Kexa hE kEmpa hatAnA hI WA.
 has_been_en	yA_gayA_hE-0-0
+# Great progress has been made in providing solutions to this problem.
+# isa samasyA kA samAXAna upalabXa karAne meM mahawvapUrNa pragawI kI gayI hE.
 has_been_ing	wA_rahA_hE-0-0
+# Photovoltaic electricity production has been growing steadily over the past decade.
+# piCale kuCa xaSakoM mE prakASa vEDyutIkI viDyuta ke utapAxa meM niraMwara baDowwtari howI rahI hE.
 has_en	yA_hE-0-0
+# PhishTank has received close to four million votes from volunteers.
+# fiStEMka ne svayMSevakoM xvArA cAra laKa ke Asa pAsa mawo ko pqAptA kiyA hE.
 #has_en	0_cukA_hE-0-0
 has_got_to_be_en	yA_hI_jAnA_hE-0-0
+# something has got to be done. <=> kuCa kIyA hI jAnA hE.
 has_never_en	0_cukA_hE-0-kaBI_nahIM
 has_never_en	0_cukA_hE-0-nahIM
 has_not_been_en	yA_gayA_hE-0-nahIM
@@ -161,8 +200,12 @@ has_not_en	0_cukA_hE-0-nahIM
 has_not_got_to_be_en	yA_jAnA_hE-0-hI_nahIM
 has_not_to_be_en	nA1_padegA-0-nahIM
 has_to_0	nA_hE-ko-0
+# Everyone has to do the laundry. <=> saBi ko  DulAI karanA hE.
 has_to_be_en	nA_hI_hE-0-0
+#A job has to be done. <=> yaha kArya karanA hI hE.
 have_been_en	yA_gayA_hE-0-0
+# Techniques have been developed to help people identify the sites.
+# logOM ko sAita ko pahacanane meM sahAyawA ke liyE wakanika banAyI gayI hE.
 have_been_ing	wA_rahA_hE-0-0
 # what we have been doing. <=>  hama kyA karawE rahE hE.
 have_en	0_cukA_hE-0-0

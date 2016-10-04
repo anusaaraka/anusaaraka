@@ -10,8 +10,7 @@
  ;Added by Shirisha Manju 14-5-14 -- removes control fact if tam meaning is decided from template
  (defrule rm_cntl_fact_for_template_tam_mng
  (declare (salience 1050))
- (id-E_tam-H_tam_mng ?id ?tam ?)
- (id-tam-src ?id ?tam Template)
+ (id-E_tam-H_tam_template_mng ?id ?tam ?)
  ?f0<-(id-TAM ?id ?tam)
  =>
 	(retract ?f0)

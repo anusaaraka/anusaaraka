@@ -1,4 +1,4 @@
- 22-09-16
+ 04-10-16
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -13,6 +13,7 @@
 		Modified: print_org_word_mng_for_head_id, print_org_word_mng_with_kA_vib and print_org_word_mng_for_grp_id
                           (added 'PropN' condition)
                           PP_pronoun_rule_without_vib -- added them
+		  	  default_hnd_mng_rule (added if condition to check mng is '-')
  7. sd_relation_rules.clp :  Modified: AjFArWaka_vAkya (added 'Does|May')
  8. sd_lwg_rules.clp
 		Modified: cp_facts_for_lwg , replace_VP, get_lwg -- added 'SINV' in the list
@@ -24,14 +25,27 @@
  9. sd_category.clp : Added: IN_rule1
  10. cat_rule.clp : Modified: fine_cat -- removed apertium cat fact
  11. causative_verb_mng : Modified : causative_verb_mng added loop to check last word in dictionary
- 12. Updated Log
- 13. run_H_gen_sen.bat
+ 12. sd_combining_apostrophe.clp: Modified: word_rule_for_poss (added nmod:'s)
+ 13. tam_meaning.clp
+	Modified: vib_mng_from_wsd_[word/root]_file and vib_mng_from_wsd_[word/root]_file1 -- added not condition of compound
+ 14. template_before_mng.clp
+	Added :   decide_tag_question_mng and decide_tag_question_mng1
+ 15. run_H_gen_sen.bat
 	Loaded GNP_agmt_info.dat file in template_after_mng module
- 14. Updated following files:
+ 16. run_modules_std.bat  
+		Loaded lwg_info.dat and punctuation_info.dat files in template_before_mng module
+		moved tam meaning module to execute after hindi_meaning module
+            Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat and run_modules_link.bat
+ 17. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
- 15. Updated Log	
+ 18. Updated following lex files:
+	abbrevations.lex --> Added:   HIV, MRI, PA, OK, UP and NIIT in the list
+			     Removed: May
+	initialisms.lex -->  Added :I.A.S. M.Sc. B.Sc.
+	standard_abbrevations.lex --> fixed the bug (Ex: B.A)
+ 19. Updated Log	
 
 
  24-08-16

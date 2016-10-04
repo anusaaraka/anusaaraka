@@ -19,11 +19,12 @@
  (defglobal ?*l_cat_fp* = l_c_fp)
 
  ;-------------------------------------------------------------------------------------------------------------------
+ ; Added "nmod:'s" by Shirisha Manju 27-9-16 Ex: Before the day was through, her basket was filled, crowded down, and piled, and she had several times put largely into Tom's.
  ; These are children's books.
  ; The parents documented every step of their child's development .
  (defrule word_rule_for_poss
  (declare (salience 100))
- (rel_name-sids nmod:poss|nummod|conj:and|conj:or|poss|num|conj_and|conj_or|dep ?lnode ?rnode)
+ (rel_name-sids nmod:poss|nummod|conj:and|conj:or|poss|num|conj_and|conj_or|dep|nmod:'s ?lnode ?rnode)
  ?f1<-(id-sd_cat ?rnode ?c)
  ?f2<-(parserid-word ?rnode ?wrd)
  ?f3<-(parser_numeric_id-word ?rid ?wrd1)

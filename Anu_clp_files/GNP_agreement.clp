@@ -29,7 +29,7 @@
  (assert (id-cat))
  (assert (id-cat_coarse)) 
  (assert (id-E_tam-H_tam_mng))
- (assert (id-tam-src))
+ (assert (id-E_tam-H_tam_template_mng))
  )
 
  (deffunction print_debug_info(?id ?rule_name ?g ?g_src ?n ?n_src ?p ?p_src ?c ?c_src)

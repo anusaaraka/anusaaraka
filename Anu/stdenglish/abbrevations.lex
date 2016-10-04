@@ -9,7 +9,7 @@ int len=0;
 
 %%
 
-[\n{\[( ]+(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Mm][Aa][Yy])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|distt|([Ee][Qq][Ss]?)|Ill|([Ff][Ii][Gg][Ss]?)|([M][t])|([Ee][Tt][Cc])|([Rr][Ss])|([Cc][Hh])|([Ss][tT][dD])|([Ee][Xx])|[a-z])[.][\n, ]		{       	*str='\0';
+[\n{\[( ]+(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|distt|([Ee][Qq][Ss]?)|Ill|([Ff][Ii][Gg][Ss]?)|([M][t])|([Ee][Tt][Cc])|([Rr][Ss])|([Cc][Hh])|([Ss][tT][dD])|([Ee][Xx])|[a-z])[.][\n, ]		{       	*str='\0';
                                                                       len=strlen(yytext);
                                                                       strncpy(str,yytext,len-2);
                                                                       str[len-2]='\0';
@@ -21,7 +21,7 @@ int len=0;
                                                                       printf("%sABBR-Dot\n", str);
 							      }
 
-^(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Mm][Aa][Yy])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|distt|([Ee][Qq][Ss]?)|Ill|([Ff][Ii][Gg][Ss]?)|([M][t])|([Ee][Tt][Cc])|([Rr][Ss])|([Cc][Hh])|([Ss][tT][dD])|([Ee][Xx])|[a-z])[.][\n, ]            		{       *str='\0';
+^(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|distt|([Ee][Qq][Ss]?)|Ill|([Ff][Ii][Gg][Ss]?)|([M][t])|([Ee][Tt][Cc])|([Rr][Ss])|([Cc][Hh])|([Ss][tT][dD])|([Ee][Xx])|[a-z])[.][\n, ]            		{       *str='\0';
                                                                       len=strlen(yytext);
                                                                       strncpy(str,yytext,len-2);
                                                                       str[len-2]='\0';
@@ -32,7 +32,7 @@ int len=0;
                                                                       else
                                                                       printf("%sABBR-Dot\n", str);
                                                               } 
-[\n{\[( ]+((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh][.]?)|([Aa][.][Mm][.])|([Pp][.][Mm][.])|([Mm][.][Tt][Ee][[Cc][Hh][.]?))[\n, ] 		 				   {    *str='\0';
+[\n{\[( ]+((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh][.]?)|([Aa][.][Mm][.])|([Pp][.][Mm][.])|([Mm][.][Tt][Ee][[Cc][Hh][.]?)|([Hh][.][Ii][.][Vv][.]?)|([Mm][.][Rr][.][I][.]?)|([Pa][.][Aa][.])|([Oo][.][Kk][.])|([Uu][.][Pp][.])|(Nn[.][Ii][.][Ii][.][Tt][.]))[\n, ] 		 				   {    *str='\0';
 			                                           while((len=strcspn(yytext,".")) < strlen(yytext))
                         				           {
 			                                               strncat(str,yytext,len);
@@ -43,7 +43,7 @@ int len=0;
                                         strncat(str,yytext,len);
                                         printf("%s", str);
                                   }
-^((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh])|([Aa][.][Mm][.])|([Pp][.][Mm][.])|([Mm][.][Tt][Ee][[Cc][Hh][.]))[\n, ]                                                 		{    *str='\0';
+^((i[.]e[.])|(e[.]g[.])|([aA][.][dD][.])|([bB][.][cC][.])|(m[.]g[.])|(I[.]M[.]E)|(M[.]G[.]Road)|([Bb][.][Tt][Ee][[Cc][Hh])|([Aa][.][Mm][.])|([Pp][.][Mm][.])|([Mm][.][Tt][Ee][[Cc][Hh][.])|([Hh][.][Ii][.][Vv][.])|([Mm][.][Rr][.][I][.]?)|([Pa][.][Aa][.])|([Oo][.][Kk][.])|([Uu][.][Pp][.])|(Nn[.][Ii][.][Ii][.][Tt][.]))[\n, ]                                                 		{    *str='\0';
                                         while((len=strcspn(yytext,".")) < strlen(yytext))
                                         {
                                                strncat(str,yytext,len);
