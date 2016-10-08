@@ -1,4 +1,4 @@
- 04-10-16
+ 08-10-16
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -45,7 +45,12 @@
 			     Removed: May
 	initialisms.lex -->  Added :I.A.S. M.Sc. B.Sc.
 	standard_abbrevations.lex --> fixed the bug (Ex: B.A)
- 19. Updated Log	
+ 19. Updated the following files
+        print-pos-info.py
+ 20. Updated following alignment files
+        alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
+        get_verb_and_phrasal_grp.clp
+ 21. Updated Log	
 
 
  24-08-16

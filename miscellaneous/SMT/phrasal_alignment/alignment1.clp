@@ -614,16 +614,22 @@
 (declare (salience 365))
 (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid ?mng)
-?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid1 $?)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid1 $?m)
+(test (neq ?aid ?aid1))
 (test (and (eq (integerp (member$ ?aid $?ids)) TRUE) (eq (integerp (member$ ?aid1 $?ids)) TRUE)))
 (score (anu_id ?aid) (man_id ?mid) (heuristics $? hindi_wordnet_match $?))
 ?f1<-(id-Apertium_output ?aid)
 ?f2<-(left_over_ids $?l)
 =>
-	(retract ?f0 ?f ?f1 ?f2)
-	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid ?mng))
-	(bind $?l (sort > (create$ $?l ?mid1)))
-	(assert (left_over_ids $?l ))
+	(retract ?f0 ?f ?f1)
+	(if (eq (integerp (member$ ?mng $?m)) FALSE) then
+		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid1 ?mng $?m))
+	else
+		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid1 ?mng))
+	)
+;	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?amng - ?mid ?mng))
+;	(bind $?l (sort > (create$ $?l ?mid1)))
+;	(assert (left_over_ids $?l ))
 )		
 ;------------------------------------------------------------------
 ;He first wants to show it to the prime Minister.
@@ -1362,14 +1368,29 @@
 (defrule rm_det_id
 (declare (salience 9))
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?mid $?)
-(pada_info (group_head_id ?aid) (group_ids ?det ?aid))
-(id-word ?det the)
-(manual_word_info (group_ids ?mid))
+(pada_info (group_head_id ?aid) (group_ids ?det $? ?aid))
+(id-word ?det the|a)
+;(manual_word_info (group_ids ?mid))
 ?f<-(hindi_id_order $?pre ?det $?po)
 =>
 	(retract ?f)
         (assert (hindi_id_order $?pre $?po))
 )
+;============================================================================================
+(defrule align_special_words_after_kA
+(declare (salience 8))
+(hindi_id_order)
+?f0<-(left_over_ids $?p ?id $?p1)
+(manual_id-word ?id ?m&sevana|samaya)
+(manual_word_info (head_id ?mid)(vibakthi kA)(group_ids $? =(- ?id 1)))
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?a - ?mid $?mng)
+(not (msg_printed))
+=>
+	(retract ?f0 ?f1)
+	(assert (left_over_ids $?p $?p1))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?a - ?mid $?mng ?m))
+)
+
 
 ;==================================  Align single_anu_id with single_man_id ========================
 (defrule align_single_id
@@ -1380,7 +1401,7 @@
 (id-cat_coarse ?aid ~determiner)
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi ?v $?vib))
 (man_word-root-cat ?w ? ~p) 
-(test (eq (integerp (member$ ?w (create$ awaH wo yaha vaha jise jisakA))) FALSE))
+(test (eq (integerp (member$ ?w (create$ awaH wo yaha vaha jise jisakA kyA))) FALSE))
 (not (msg_printed))
 (not (removed_man_id_with-anu_id ?id ?aid))
 =>
@@ -1402,6 +1423,97 @@
 	)
 	(printout t "single alignment" crlf)
 )
+;---------------------------------------------------------------------------------
+;By drinking plenty of water not only [the left-over] pieces of food gets cleaned, but saliva also gets formed.
+;KUba pAnI pIne se na kevala KAne ke [bace - Kuce] tukadZe sAPa ho jAwe hEM , balki lAra BI banawI hE .
+(defrule align_single_id1
+(declare (salience 7))
+?f<-(left_over_ids ?id)
+?f1<-(hindi_id_order ?det ?aid)
+(pada_info (group_head_id ?aid) (group_cat PP) (group_ids ?det ?aid))
+(id-Apertium_output ?aid $?amng)
+(manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi ?v $?vib))
+(man_word-root-cat ?w ? ~p)
+(test (eq (integerp (member$ ?w (create$ awaH wo yaha vaha jise jisakA kyA))) FALSE))
+(not (msg_printed))
+(not (removed_man_id_with-anu_id ?id ?aid))
+=>
+        (retract ?f ?f1)
+        (assert (left_over_ids))
+        (if (or (eq ?v 0)(member$ ?w (create$ ?v $?vib))) then
+                (if (eq (length $?amng) 0) then
+                        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?id @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN $?mng ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+                else
+                        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN $?mng ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+                )
+        else
+                (if (eq (length $?amng) 0) then
+                        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?id @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN $?mng ?w ?v $?vib @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+                else
+                        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN $?mng ?w ?v $?vib @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+                )
+        )
+        (printout t "single alignment" crlf)
+)
+
+;=================== Align single anu verb_id and man_id ==============================
+
+;Saliva destroys those bacteria which [create] stink in breath.
+;lAra una bEktIriyA ko naRta karawI hE jo sAzsoM meM baxabU [pExA] [karawe hEM]  .
+(defrule align_single_verb
+(declare (salience 6))
+?f<-(left_over_ids ?id ?id1)
+?f1<-(hindi_id_order ?aid)
+(id-Apertium_output ?aid $?amng)
+(id-cat_coarse ?aid verb)
+(manual_word_info (head_id ?id1) (word $?mng)(root kara|ho))
+(manual_word_info (head_id ?id) (word ?w)(vibakthi 0))
+(not (msg_printed))
+(not (removed_man_id_with-anu_id ?id ?aid))
+(test (= (- ?id1 ?id) 1))
+=>
+        (retract ?f ?f1)
+        (assert (left_over_ids))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id1 @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w $?mng  @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+        (printout t "single alignment" crlf)
+)
+
+;[Eat] less fatty food. kama vasAyukwa AhAra kA [kareM sevana]  .
+(defrule align_single_verb1
+(declare (salience 6))
+?f<-(left_over_ids ?id ?id1)
+?f1<-(hindi_id_order ?aid)
+(id-Apertium_output ?aid $?amng)
+(id-cat_coarse ?aid verb)
+(manual_word_info (head_id ?id) (word ?w)(root kara)(vibakthi 0))
+(manual_word_info (head_id ?id1) (word ?mng&sevana))
+(not (msg_printed))
+(not (removed_man_id_with-anu_id ?id ?aid))
+(test (= (- ?id1 ?id) 1))
+=>
+        (retract ?f ?f1)
+        (assert (left_over_ids))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id1 @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w ?mng  @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+        (printout t "single alignment" crlf)
+)
+
+;He might have come here. 
+;[SAyaxa] vaha yahAM [AyA hogA] .
+(defrule group_aux_with_anu
+(declare (salience 6))
+?f<-(left_over_ids ?id)
+(hindi_id_order )
+(manual_word_info (head_id ?id0) (word $?mng)(group_ids $?ids))
+(id-Apertium_output ?aid ?m $?mng)
+(test (member$ ?m (create$ SAyaxa)))
+(manual_word_info (head_id ?id) (word ?m) (group_ids ?id))
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?m $?mng - ?id0 $?mng)
+=>
+	(retract ?f ?f1)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?m $?mng - ?id0 ?m $?mng))
+	(assert (left_over_ids ))
+)
+
 
 ;==================== Align single man_id when no anu_id left  ========================
 
@@ -1410,7 +1522,7 @@
 ;The connection between physics, technology and society can be seen in many examples.
 ;BOwikI, prOxyogikI waWA samAja ke bIca [pArasparika sambanXoM ko] bahuwa se uxAharaNoM meM xeKA jA sakawA hE.
 (defrule align_single_id_for_no_slot_left
-(declare (salience 6))
+(declare (salience 5))
 ?f<-(left_over_ids ?id)
 ?f1<-(hindi_id_order)
 ?f2<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?id1&:(=(- ?id 1) ?id1) $?m)
@@ -1430,9 +1542,31 @@
 	(assert (left_over_ids ))
 )	
 
+;cabAez Sugara rahiwa [cuiMga gama]
+(defrule align_single_id_for_no_slot_left_for_mwe
+(declare (salience 6))
+?f<-(left_over_ids ?id)
+?f1<-(hindi_id_order)
+?f2<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?m - ?id1&:(=(+ ?id 1) ?id1) ?m)
+(test (neq (length $?amng) 0))
+(id-HM-source-grp_ids ?aid $? ? ?aid  ?aid1)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
+(manual_word_info (head_id ?id) (word ?w)(vibakthi 0))
+(test (neq (integerp (member$ ?w (create$ inhIM evaM wo ki waWA yaha yahAz vaha usake usakA isa isakI koI kisI eka))) TRUE))
+(not (msg_printed))
+(id-cat_coarse ?aid ?cat&~verb&~determiner&~pronoun)
+=>
+        (retract ?f ?f1 ?f2)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?m - ?id1 @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN ?m))
+        (assert (left_over_ids ))
+)
+
+
+
+
 ;================== to print left over info in html ====================
 (defrule save_left_over_facts
-(declare (salience 5))
+(declare (salience 4))
 (left_over_ids $?d)
 (not (msg_printed))
 =>
@@ -1440,7 +1574,7 @@
 )
 
 (defrule print_info
-(declare (salience 4))
+(declare (salience 3))
 (left_over_ids ?id $?)
 (not (msg_printed))
 =>
@@ -1451,7 +1585,7 @@
 ;---------------------------------------------------------------------------------
 
 (defrule print_single_left_over_wrd
-(declare (salience 3))
+(declare (salience 2))
 ?f0<-(left_over_ids ?id)
 (manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib) )
 (chunk_name-chunk_ids ?c $? ?id $?)
@@ -1466,7 +1600,7 @@
 ;---------------------------------------------------------------------------------
 
 (defrule print_left_over_wrd
-(declare (salience 2))
+(declare (salience 1))
 ?f0<-(left_over_ids ?id $?p ?lid)
 (manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib))
 (chunk_name-chunk_ids ?c $? ?id $?)
@@ -1521,7 +1655,7 @@
 (declare (salience -9))
 (left_over_ids )
 ?f0<-(hindi_id_order $?pre ?id $?po)
-(id-cat_coarse ?id determiner)
+(or (id-cat_coarse ?id determiner|conjunction|preposition)(id-word ?id there))
 =>
 	(retract ?f0)
 	(assert (hindi_id_order $?pre $?po))

@@ -6,6 +6,13 @@
 
 
 ;============================================== Modify Morph root ==========================
+(defrule get_yaha_root
+?f<-(man_word-root-cat  ?word&yahIM|yahI ?word  dummy_cat)
+=>
+	(retract ?f)
+	(assert (man_word-root-cat ?word yaha modified_cat))
+)
+;-------------------------------------------------------------------------------------
 ;saxiSoM ==> saxiSa      kareM ==> kara 
 (defrule modify_morph_root
 ?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
@@ -49,6 +56,19 @@
 	(printout t "Warning: morph root missing " ?word crlf)
 )
 ;-------------------------------------------------------------------------------------
+;[solahavIM] SawAbxI se yUropa meM vijFAna ke kRewra meM awyaXika pragawi huI.
+(defrule modify_cat_for_number
+?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+(test (eq (numberp ?word) FALSE))
+(test (eq (sub-string (- (length ?word) 2) (length ?word)  ?word) "vIM"))
+=>
+        (retract ?f)
+        (bind ?root (string-to-field (sub-string 1 (- (length ?word) 3) ?word)))
+        (assert (man_word-root-cat  ?word  ?root  modified_cat))   
+	(printout t "Warning: morph root missing " ?word crlf)
+)
+
+;-------------------------------------------------------------------------------------
 ;kaBI-kaBI hamArI kuCa Ese ajanabiyoM se mulAkAwa ho jAwI hE jinameM hameM eka Sabxa bAwacIwa ke binA BI pahale pala se hI xilacaspI pExA ho jAwI hE .
 ;ajanabiyoM => ajanabi
 ;(defrule modify_morph_root3
@@ -82,7 +102,7 @@
 (defrule rm_mng_after_hE_from_verb_chunk
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNF|VGNN $?pre ?mid ?lid)
 (manual_word_info (group_ids $? ?mid $?))
-(manual_id-word ?mid  hE|hEM|lie|karake|xeMge)
+(manual_id-word ?mid  hE|hEM|lie|karake|xeMge|karane)
 ;(manual_word_info (head_id ?mid) (word $? hEM|gaI))
 =>
         (retract ?f)
@@ -124,6 +144,7 @@
 (man_word-root-cat ?word ?rt v)
 (not (man_word-root-cat ?word ? n))
 (not (man_word-root-cat ?word ? adj))
+(manual_id-word =(+ ?id 1) ?w&~se) ;xo se 
 =>
 	(retract ?f)
 	(assert (chunk_name-chunk_ids NP  $?p))
@@ -183,7 +204,7 @@
 (test (and (eq (string-to-field (sub-string 1  (- (str-index "-" ?mng) 1) ?mng)) ?m1)(eq (string-to-field (sub-string (+ (str-index "-" ?mng) 1) (length ?mng) ?mng)) ?m2)))
 =>
 	(retract ?f0 ?f1)
-	(bind ?r (string-to-field (str-cat ?m1"-"?root2)))
+	(bind ?r (string-to-field (str-cat ?root1"-"?root2)))
 	(assert (man_word-root-cat ?mng ?r ?c))
 )
 

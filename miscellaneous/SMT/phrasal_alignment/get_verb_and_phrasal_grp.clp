@@ -157,10 +157,11 @@
 (declare (salience 805))
 (or(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd ?m)(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd $? ?m))
 (man_word-root-cat ?m&~hE&~kI ?r&kara|ho|xe|raha|bana v)
+(man_word-root-cat ?man_wrd ?r1&~kara ?)
 ?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd $?r_mng)(group_ids $?gids))
 (not (root_decided ?mid))
 =>
-        (modify ?f1 (root ?man_wrd ?r)(root_components ?man_wrd ?r) (group_ids $?gids))
+	(modify ?f1 (root ?man_wrd ?r)(root_components ?man_wrd ?r) (group_ids $?gids))
         (assert (root_decided ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -243,9 +244,11 @@
 ?f0<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(group_ids $?ids))
 (man_word-root-cat ?m1	?r&kara|xe|raha|ho	v)
 ?f1<-(manual_word_info (head_id ?id1) (word ?m)(group_ids ?id1))
-(database_info (components ?m ?r))
+(database_info (root ~do) (components ?m ?r))
 (not (id-Apertium_output ? ?m1 $?mng));The [work] [done] by the spring force in a cyclic process is zero. awaH spriMga bala xvArA kisI cakrIya prakrama meM [kiyA gayA] [kArya] SUnya howA hE.  dic -- kArya_kara
 (test (< ?id1 ?id0))
+(not (id-Apertium_output ? ?m));Keep doing small physical activities like climbing stairs, gardening, small domestic [works] or dancing.
+(not (and (id-Apertium_output ? ?a)(man_word-root-cat ?a  ho v)))
 =>
         (retract ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
@@ -286,7 +289,7 @@
                (assert (root_decided ?id))
        else
                (bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-	       (if (eq (integerp (member$ ?tam (create$ ne ke nA EOF jie gI gA))) FALSE) then	;lene ke paScAwa ,karake, lijie,hogI
+	       (if (eq (integerp (member$ ?tam (create$ ne ke nA EOF jie gI gA we))) FALSE) then	;lene ke paScAwa ,karake, lijie,hogI
                		(modify ?f (root ?root)(vibakthi ?tam $?wrds ))
 		else
 			(modify ?f (root ?root))

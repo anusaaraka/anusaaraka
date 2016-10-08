@@ -158,6 +158,7 @@
 (defrule print_left_over_ids
 (declare (salience -503))
 =>
-	(assert (left_over_ids  ?*lids*))
+	(bind $?ids (sort > ?*lids*))
+	(assert (left_over_ids  $?ids))
 )
 
