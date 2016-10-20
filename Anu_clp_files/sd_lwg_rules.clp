@@ -481,9 +481,10 @@
                 (retract ?f0)
 		(printout ?*lwg_debug_file* "	(root-verbchunk-tam-parser_chunkids  "?r" "?v" "?t" "?id")" crlf)
  )
+
 ;--------------------------------------------------------------------------
  (defrule print_for_debugging7
- (declare (salience 5))
+ (declare (salience 3))
  =>
  (printout ?*lwg_debug_file* crlf " Identifying and Modifying the tam information for QUESTIONARY , IMPERATIVE , CAUSITIVE and NEGATION verbs" crlf)
  (printout ?*lwg_debug_file* " ==============================================================================================================" crlf crlf)
@@ -659,13 +660,15 @@
 ;--------------------------------------------------------------------------
  ;Identifying and modifying the TAM for IMPERATIVE sentences ,
  ;INTJ Ex: Please enclose a curriculum vitae with your letter of application. 
+ ;	   Thank you, Please get it repaired fast.
  ;SBAR Ex: When they go out shut the door.
  ;S    Ex: Taking a spoon of salt pour three to four drops of lemon juice in that. 
  (defrule check_for_imper1 
  (declare (salience -20))
  (Head-Level-Mother-Daughters ? ? ?ROOT ?S $?)
  (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
- (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP $?)
+ (or (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP $?)
+     (and (Head-Level-Mother-Daughters ? ? ?S ? ?INTJ ?VP $?)(Node-Category ?INTJ INTJ)))
  (Node-Category ?INTJ INTJ|ADVP|PP|CC|SBAR|S)
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
@@ -798,7 +801,7 @@
  ;(root-verbchunk-tam-parser_chunkids - VBD15 - VBD15 - VBD15)
  ;Remove fact containg nodes
  (defrule rem_fact_with_nodes
- (declare (salience -160))
+ (declare (salience 3))
  ?f<-(root-verbchunk-tam-parser_chunkids - $? ?node $? - $? - $?)
  (Node-Category ?node ?)
  =>

@@ -1,4 +1,4 @@
- 08-10-16
+ 20-10-16
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -22,35 +22,39 @@
 			  check_for_imper -- added 'SINV' in the list , added 'May|Can' in the list
 			  check_for_CC_imper -- added or condition to allow SBAR  
 			  check_for_causitive -- added 'Get' in the list
+			  check_for_imper1 -- handled (INTJ ? VP) pattern
  9. sd_category.clp : Added: IN_rule1
  10. cat_rule.clp : Modified: fine_cat -- removed apertium cat fact
- 11. causative_verb_mng : Modified : causative_verb_mng added loop to check last word in dictionary
- 12. sd_combining_apostrophe.clp: Modified: word_rule_for_poss (added nmod:'s)
- 13. tam_meaning.clp
+ 11. causative_verb_mng : Modified : causative_verb_mng -- added loop to check last word in dictionary
+				     get_rule_info      -- modified tooltip for WSD
+ 12. hindi_sentence.clp: Modified: rm_repeated_mng_from_sentence -- added waraha|hAz to the list
+ 13. sd_combining_apostrophe.clp: Modified: word_rule_for_poss (added nmod:'s)
+ 14. tam_meaning.clp
 	Modified: vib_mng_from_wsd_[word/root]_file and vib_mng_from_wsd_[word/root]_file1 -- added not condition of compound
- 14. template_before_mng.clp
+	          change_tam_source_for_WSD -- modified tooltip for WSD
+ 15. template_before_mng.clp
 	Added :   decide_tag_question_mng and decide_tag_question_mng1
- 15. run_H_gen_sen.bat
+ 16. run_H_gen_sen.bat
 	Loaded GNP_agmt_info.dat file in template_after_mng module
- 16. run_modules_std.bat  
+ 17. run_modules_std.bat  
 		Loaded lwg_info.dat and punctuation_info.dat files in template_before_mng module
 		moved tam meaning module to execute after hindi_meaning module
             Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat and run_modules_link.bat
- 17. Updated following files:
+ 18. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
- 18. Updated following lex files:
+ 19. Updated following lex files:
 	abbrevations.lex --> Added:   HIV, MRI, PA, OK, UP and NIIT in the list
 			     Removed: May
 	initialisms.lex -->  Added :I.A.S. M.Sc. B.Sc.
 	standard_abbrevations.lex --> fixed the bug (Ex: B.A)
- 19. Updated the following files
+ 20. Updated the following files
         print-pos-info.py
- 20. Updated following alignment files
+ 21. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp
- 21. Updated Log	
+ 22. Updated Log	
 
 
  24-08-16

@@ -264,9 +264,13 @@
  (defrule change_tam_source_for_WSD
  (declare (salience -100))
  ?f<-(pada_info (group_head_id ?head_id)(tam_source WSD))
- (dir_name-file_name-rule_name-id-H_tam_mng ?  ? ?rule_name  ?head_id  ?)
+ (dir_name-file_name-rule_name-id-H_tam_mng ?dir_name  ? ?rule_name  ?head_id  ?)
  =>
-   (bind ?str (str-cat "WSD,rule_name::" ?rule_name))
-   (modify ?f (tam_source ?str))
+	(if (eq (str-index "provisional_wsd_rules" ?dir_name) FALSE) then
+   		(bind ?str (str-cat "WSD,rule_name::" ?rule_name))
+	else
+		(bind ?str (str-cat "Prov_WSD,rule_name::" ?rule_name))
+	)
+	(modify ?f (tam_source ?str))
  )
 

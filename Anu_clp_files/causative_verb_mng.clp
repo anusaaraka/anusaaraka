@@ -140,7 +140,7 @@
                         (bind ?b (gdbm_lookup "causative_verb_mng.gdbm" ?h_mng))
 			(if (neq ?b "FALSE") then
                                 (retract ?f0)
-				(bind ?str2 (sub-string 1 (+ (length ?h_mng) 1) ?str1))
+				(bind ?str2 (sub-string 1 (- (length ?str1) (+ (length ?h_mng)1)) ?str1))
 				(bind ?h_mng (explode$ (str-cat ?str2"_"?b)))
 				(printout t ?h_mng) 
 				(assert (id-HM-source ?causative_vrb_id  ?h_mng ?src))
@@ -240,12 +240,16 @@
  (defrule get_rule_info
  (declare (salience 600))
  (id-HM-source ?id ?hmng ?src&~physics_Glossary&~agriculture_Glossary&~social_science_Glossary)
- (or (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ? ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ? ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ? ?file_name ?rule_name $?ids ?))
+ (or (dir_name-file_name-rule_name-id-wsd_root_mng ?dir_name ?file_name ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ?dir_name ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ?dir_name ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ?dir_name ?file_name ?rule_name $?ids ?))
  ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
  (test (neq (integerp (member$ ?id $?ids)) FALSE))
  =>
 	(retract ?f0)
-	(bind ?str (str-cat ?src ",rule_name::"  ?rule_name))
+	(if (eq (str-index "provisional_wsd_rules" ?dir_name) FALSE) then
+		(bind ?str (str-cat ?src ",rule_name::"  ?rule_name))
+	else
+		(bind ?str (str-cat "Prov_"?src ",rule_name::"  ?rule_name))
+	)
  	(printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?str" "(implode$ $?ids)")" crlf)	
  )
  ;----------------------------------------------------------------------------------------------------------------
