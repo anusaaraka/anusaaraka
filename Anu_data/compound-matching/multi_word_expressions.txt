@@ -15911,7 +15911,7 @@ in_bold_letters	mote_akRaroM_meM#mote_akRaroM_meM#noun#3#RM
 in_built_system_of_internal_check	AMwarika_jAMca_kI_svanirmiwa_praprAlI#AMwarika_jAMca_kI_svanirmiwa_praprAlI#noun#3#RM
 in_camera	baMxa_kamare_meM#baMxa_kamare_meM#noun#2#RM
 in_case	agara#agara#noun#2#RM
-in_case_of	kI_xaSA_meM#kI_xaSA_meM#noun#2#RM
+in_case_of	ke_saMxarBa_meM/kI_xaSA_meM#ke_saMxarBa_meM/kI_xaSA_meM#noun#2#RM
 in_cash	nakZaxa#nakZaxa#noun#2#RM
 in_charge	praBArI#praBArI#noun#2#RM
 in_collaboration_with	ke_sahayoga_se#ke_sahayoga_se#noun#3#RM
@@ -33197,7 +33197,6 @@ opera_glass	xUrabIna#xUrabIna#noun#2#WM
 talk_show	anOpacArika_bAwacIwa_kAryakrama#anOpacArika_bAwacIwa_kAryakrama#noun#2#RM
 #New Entries
 #-----------
-in_case_of	ke_saMxarBa_meM#ke_saMxarBa_meM#noun#2#WM
 in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM
 fairly_soon	jalxI_hI#jalxI_hI#adverb#2#RM
 washing_line	kapadZe_suKAne_kI_rassI#kapadZe_suKAne_kI_rassI#noun#2#RM
@@ -33306,17 +33305,17 @@ incumbent_upon	AvaSyaka#AvaSyaka#noun#1#RM
 #Suggested by sheetla prassd tiwari (21-06-16)
 on_the_way	rAswe_meM#rAswe_meM#noun#3#WM
 # Kaladhungi is thirty kilometres far whereas Corbetts lie on the way of fall. Suggested by Rajini (25-06-16)
-half_past_twelve	sADe_bAraha#noun#3#WM 
+half_past_twelve	sADe_bAraha#sADe_bAraha#noun#3#WM 
 # It struck half past twelve while returning back.			       Suggested by Rajini (25-06-16)
-safari_gypsy	saPArI_jipsI#noun#2#WM 
+safari_gypsy	saPArI_jipsI#saPArI_jipsI#noun#2#WM 
 # On reaching Resort safari gypsy was waiting for us.			       Suggested by Rajini (25-06-16)
-number_one	nambara_eka/praWama_koti_kA#number#2#WM
+number_one	nambara_eka/praWama_koti_kA#nambara_eka/praWama_koti_kA#number#2#WM
 # It was told that facility of siting was done in number one site Bijraani there. Suggested by Rajini (25-06-16)
-tusker_elephant	xAzwa_vAlA_hAWI#noun#2#RM
+tusker_elephant	xAzwa_vAlA_hAWI#xAzwa_vAlA_hAWI#noun#2#RM
 #We saw two tusker elephants inside who had very long tusks.			Suggested by Rajini (25-06-16)
-amidst_all_this	ina_saba_ke_xOrAna#preposition#1#WM
+amidst_all_this	ina_saba_ke_xOrAna#ina_saba_ke_xOrAna#preposition#1#WM
 # Amidst all this the guide began to track tiger.				Suggested by Rajini (25-06-16)
-just_like_that	Ese_hI#adverb#1#WM
+just_like_that	Ese_hI#Ese_hI#adverb#1#WM
 # I called him just like that only. 						Suggested by Rajini (25-06-16)
 state_of_mind	manoxaSA#manoxaSA#noun#3#RM
 far_from	se_xUra#se_xUra#preposition#2#RM				
@@ -33345,12 +33344,12 @@ home_treatment	GarelU_upacAra#GarelU_upacAra#noun#2#RM				(		"		"	" )
 #What is the home treatment of diarrhoea.
 sand_fly	marUmakRikA#marUmakRikA#noun#2#RM				(		"		"	" )
 #Kalajar is caused by the sting of sand fly.
-more_than_common	sAmenya_se_bahuwa_jyAxA#sAmenya_se_bahuwa_jyAxA#noun#3#WM 		(Suggested by Rajini  30-08-16)
-# The meaning of Atishay is more than common.
-during_his_regime	apane_SAsana_kAla_ke_xOrAna#apane_SAsana_kAla_ke_xOrAna#noun#3#WM	(    "		"	"     )
-#A descendant of the Emperor Ashoka also got many Jain temples made during his regime.
-in_the_memory_of	kI_smqwi_meM#kI_smqwi_meM#noun#3#WM					(    "		"	"     ) 
-# Ratna Stambha was built in the memory of Shreyansh Kumar.
+more_than_common	sAmenya_se_bahuwa_jyAxA#sAmenya_se_bahuwa_jyAxA#noun#3#WM 		
+# The meaning of Atishay is more than common.							(Suggested by Rajini  30-08-16)
+during_his_regime	apane_SAsana_kAla_ke_xOrAna#apane_SAsana_kAla_ke_xOrAna#noun#3#WM	
+#A descendant of the Emperor Ashoka also got many Jain temples made during his regime.		(    "		"	"   )
+in_the_memory_of	kI_smqwi_meM#kI_smqwi_meM#noun#3#WM					 
+# Ratna Stambha was built in the memory of Shreyansh Kumar.					(    "		"	"    )
 left_over	bace_hue#bace_hue#adjective#1#RM				
 #By drinking plenty of water not only the left over pieces of food gets cleaned but saliva also gets formed. (Suggested by Bhagyashri Kulkarni 19-08-16)
 sugar_free	cInI_virahiwa#cInI_virahiwa#noun#2#RM
@@ -33363,8 +33362,24 @@ road_sides	sadaka_kA_kinArA#sadaka_kA_kinArA#noun#2#RM
 #Do not eat stale food and the things being sold at road sides.			 (	"	"			"  ) 
 like_this	EsA/isake_jEsA#EsA/isake_jEsA#determiner#2#RM
 #Fruits and vegetables have a ratio like this.					 (Suggested by Chaitanya Sir 13-09-16)
-surgical_operation	Salya_cikiwsA#Salya_cikiwsA#noun#2#RM			 (Suggested by Bhagyashri Kulkarni 16-09-16)
-#In comparison with the traditional surgical operation this method has many advantages.
+surgical_operation	Salya_cikiwsA#Salya_cikiwsA#noun#2#RM			
+#In comparison with the traditional surgical operation this method has many advantages. (Suggested by Bhagyashri Kulkarni 16-09-16)
+Fine_,_thank_you	jI_TIka_hUz#jI_TIka_hUz#noun#1#WM
+# Fine, thank you.											  (Suggested by Rajini  15-10-16)
+a_variety_of	waraha_waraha_ke#waraha_waraha_ke#noun#2#WM
+#There are a variety of computer courses offered by Delhi University and various other computer institutes.(	"          "	   "	)
+job_prospects	nOkariyoM kI samBAvanAeM#nOkariyoM kI samBAvanAeM#noun#2#WM
+#Besides, Aptech, Uptron and Brilliant also offer diploma couses with good job prospects.		   (	"	   "	   "	)
+Yes_of_course	hAz_hAz_kyoM_nahIM#hAz_hAz_kyoM_nahIM#noun#3#WM
+#Yes of course.												   (	"	   "       "    )
+sun_facing_house	sUraja_kI_ora_xaravAjA_vAlA_Gara#sUraja_kI_ora_xaravAjA_vAlA_Gara#noun#3#WM
+#I want airy and sun facing house in a good neighbourhood.						   (	"	   "       "	)
+yes_,_yes	hAz_,_hAz#hAz_,_hAz#adverb#1#WM
+#Yes, Yes. Do not worry at all.										   (	"	   "	   "	)
+in_a_day_or_two	eka_xo_xina_meM#eka_xo_xina_meM#noun#3#WM
+#I will get back to you in a day or two.								   (	"	   "	   "	)
+anyone_and_everyone	hara_koI#hara_koI#noun#3#WM			
+#													   ( Suggested by Chaitanya Sir)   
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -614,6 +614,26 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_with_vib_for_his )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
+  ; No, I will wait for you at home.  nahIM, mEM Gara meM ApakI prawIkRA karUzgA.
+  (defrule PP_pronoun_rule_with_kriyA_mUla
+  (declare (salience 942))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
+  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+  (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(group_cat VP)(group_ids $?f_ids))
+  (test (member$ ?foll_pada_id $?f_ids))
+  (id-word ?h ?word)
+  (id-HM-source ?foll_pada_id ?hmng&~Ora ?)
+  =>
+        (bind ?gen1 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng))
+        (if (neq ?gen1 "FALSE") then
+                (retract ?f0)
+                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
+                (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_kriyA_mUla )" crlf)
+        )
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
   ; vib kA -- for He,I,She ,They 
   ; Ex:  I asked him a question . She carefully prepared the dinner.
   ;      Discuss it among yourselves first . The leopard seizes its kill and begins to eat . 

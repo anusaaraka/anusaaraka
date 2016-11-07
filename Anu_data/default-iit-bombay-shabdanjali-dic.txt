@@ -11974,7 +11974,7 @@ busily_UNDEFINED	vyaswawA_pUrvaka
 busily_adverb	vyaswawApUrvaka
 business-like_UNDEFINED	vyAvahArika
 business_adjective	vyAparika
-business_noun	uxyoga/xuRkar_kArya/vyavasAya/vyApAra/viRaya/uxayoga/sambanXa/prakaraNa/peSA/mAmalA/kaTina_kArya/kaTinAI/kAryakrama/kArya_kI_gawiviXi/karwavya/kArobAra/kAma-kAja/kAma/hAvaBAva/haka/afga-vikRIpa/XanXA
+business_noun	vyApAra/uxyoga/xuRkar_kArya/vyavasAya/viRaya/uxayoga/sambanXa/prakaraNa/peSA/mAmalA/kaTina_kArya/kaTinAI/kAryakrama/kArya_kI_gawiviXi/karwavya/kArobAra/kAma-kAja/kAma/hAvaBAva/haka/afga-vikRIpa/XanXA
 businesses_UNDEFINED	uxyoga
 businesslike_adjective	vyAvahArika
 businessman_noun	vyApArI/vyavasAyI/sOxAgara
@@ -28421,7 +28421,7 @@ familiarly_UNDEFINED	jAnI-mAnI_waraha_se
 familiars_UNDEFINED	pariciwa
 families_UNDEFINED	kutumba
 family_adjective	parivAra/sahalakRaNIya
-family_noun	parivAra/varga_kA_upaviBAga/varga/pUrvaja/OlAxa/mAPiyA_parivAra/kutumba/kula/jAwi
+family_noun	parivAra/varga_kA_upaviBAga/varga/pUrvaja/OlAxa/mAPiyA_parivAra/kutumba/kula/jAwi/bAla-bacce
 familyless_adjective	parivArahIna/kutumbahIna
 famine-relief_noun	akAla_nivAraNa
 famine_noun	akAla
@@ -31488,7 +31488,7 @@ four-wheeled_adjective	cOpahiyA
 four-wheeler_noun	cOpahiyA_vAhana/cOpahiyA
 four-year_adjective	cAra-varRIya
 four_adjective	cAra
-four_noun	cOkA/cAra_kA_samUha
+four_noun	cAra/cOkA/cAra_kA_samUha
 fourfold_adjective	cOgunA/cOharA/cAra_gunA
 fourfold_adverb	cOgunA
 fourfolder_UNDEFINED	cOgunA
@@ -61514,7 +61514,7 @@ proper-noun_noun	vyakwivAcaka_saFjFA
 proper_adjective	uciwa/vyakwi_vAcaka/TIka/Tika
 properer_UNDEFINED	uciwa
 properest_UNDEFINED	uciwa
-properly_adverb	uciwa_Dafga_se/TIka_se
+properly_adverb	TIka_se/uciwa_Dafga_se
 properness_noun	Ociwya/maryAxAa
 propers_UNDEFINED	uciwa
 propertied-classess_noun	XanI
@@ -93598,3 +93598,4 @@ kurkure_noun	kurakure
 paracetamol_PropN	pErAsItAmola
 blood-stream_noun	rakwapravAha
 moti_noun	mowI
+non-medical_adjective	gEra_cikiwsIya

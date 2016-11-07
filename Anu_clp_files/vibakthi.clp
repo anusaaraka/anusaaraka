@@ -149,19 +149,25 @@
  )
  ;---------------------------------------------------------------------------------------------------------------
  ;Suggested by Chaitanya Sir (22-06-12)
- ;I abhor terrorism. I abrogate our plan to visit Bhopal.
+ ;I abhor terrorism. I abrogate our plan to visit Bhopal. Could you convert my dollars into pounds?
  (defrule dbase_kriyA_obj_vibakthi_rule
  (declare (salience 990))
  (prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id)
+ (id-root ?root_id ?root)
  (id-HM-source	?root_id ?mng ?)
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP)(vibakthi 0))
- (test (neq (gdbm_lookup "kriyA_object_vib.gdbm" ?mng) "FALSE")) 
+ (test (neq (gdbm_lookup "kriyA_object_vib.gdbm" (str-cat ?root "_" ?mng)) "FALSE")) 
  =>
-	(bind ?vib (gdbm_lookup "kriyA_object_vib.gdbm" ?mng))
+	(bind ?vib (gdbm_lookup "kriyA_object_vib.gdbm" (str-cat ?root "_" ?mng)))
 	(if (neq ?vib "FALSE") then
 		(retract ?f0)
-        	(modify ?f1 (vibakthi ?vib))
+		(if (neq (str-index "/" ?vib) FALSE) then
+                        (bind ?vib (sub-string  1 (- (str-index "/" ?vib) 1) ?vib))
+		else
+			(bind ?vib ?vib)
+                )
+	       	(modify ?f1 (vibakthi ?vib))
 		(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	"?vib"	kriyA_object_vib.gdbm )" crlf )
 	)
  )

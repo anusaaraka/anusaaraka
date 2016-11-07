@@ -1,4 +1,4 @@
- 20-10-16
+ 07-11-16
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -9,7 +9,7 @@
  5. parser_tree_modification_rules.clp
 		Modified: rename_VP_for_To -- added 'ought' in the list
  6. prepare_apertium_input.clp
-		Added   : add_yaha_as_root and RaRTI_kA_vib_rule_for_conj
+		Added   : add_yaha_as_root, RaRTI_kA_vib_rule_for_conj and PP_pronoun_rule_with_kriyA_mUla
 		Modified: print_org_word_mng_for_head_id, print_org_word_mng_with_kA_vib and print_org_word_mng_for_grp_id
                           (added 'PropN' condition)
                           PP_pronoun_rule_without_vib -- added them
@@ -23,7 +23,8 @@
 			  check_for_CC_imper -- added or condition to allow SBAR  
 			  check_for_causitive -- added 'Get' in the list
 			  check_for_imper1 -- handled (INTJ ? VP) pattern
- 9. sd_category.clp : Added: IN_rule1
+ 9. sd_category.clp : Added: IN_rule1 , CD_rule1
+		      Modified: PropN_rule --added 'But, It'  in not condition
  10. cat_rule.clp : Modified: fine_cat -- removed apertium cat fact
  11. causative_verb_mng : Modified : causative_verb_mng -- added loop to check last word in dictionary
 				     get_rule_info      -- modified tooltip for WSD
@@ -36,25 +37,28 @@
 	Added :   decide_tag_question_mng and decide_tag_question_mng1
  16. run_H_gen_sen.bat
 	Loaded GNP_agmt_info.dat file in template_after_mng module
- 17. run_modules_std.bat  
+ 17. vibakthi.clp:    Modified: dbase_kriyA_obj_vibakthi_rule  -- lookup root_mng instead mng
+ 18. hindi_meaning.clp: Added: get_meaning_for_number 
+		     Modified the rules to remove the condition to check FALSE for dbase meaning in action part
+ 19. run_modules_std.bat  
 		Loaded lwg_info.dat and punctuation_info.dat files in template_before_mng module
 		moved tam meaning module to execute after hindi_meaning module
             Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat and run_modules_link.bat
- 18. Updated following files:
+ 20. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
- 19. Updated following lex files:
+ 21. Updated following lex files:
 	abbrevations.lex --> Added:   HIV, MRI, PA, OK, UP and NIIT in the list
 			     Removed: May
 	initialisms.lex -->  Added :I.A.S. M.Sc. B.Sc.
 	standard_abbrevations.lex --> fixed the bug (Ex: B.A)
- 20. Updated the following files
+ 22. Updated the following files
         print-pos-info.py
- 21. Updated following alignment files
+ 23. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp
- 22. Updated Log	
+ 24. Updated Log	
 
 
  24-08-16

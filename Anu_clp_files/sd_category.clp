@@ -96,7 +96,7 @@
   (id-word_cap_info ?id&~1  first_cap|all_caps)
   (parserid-wordid   ?pid  ?id)
   ?f0<-(id-sd_cat  ?pid ?)
-  (parserid-word ?pid ?w&~I&~Let) ;You are lucky I am here. Aditya said, Let us look at it carefully first.
+  (parserid-word ?pid ?w&~I&~Let&~But&~It) ;You are lucky I am here. Aditya said, Let us look at it carefully first.
   (test (eq (str-index "SYMBOL-" ?w) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
    =>
         (assert (parser_id-cat_coarse ?pid PropN))
@@ -382,13 +382,34 @@
   )
   ;------------------------------------------------------------------------------------------
   ;Added by Roja(17-07-13)
-  ;Hence, all the [three] will have negative signs. 
+  ;Shivaji was one of the most powerful rulers in [1600].
   (defrule CD_rule
+  (declare (salience 1))
   ?f0<-(id-sd_cat        ?id     CD)
+  (parserid-word ?id ?w)
+  (test (eq (numberp ?w) TRUE))
   =>
-         (assert (parser_id-cat_coarse ?id number))
-         (assert (parser_id-cat ?id cardinal_number))
-         (retract ?f0)
+        (assert (parser_id-cat ?id cardinal_number))
+        (assert (parser_id-cat_coarse ?id number))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Hence, all the [three] will have negative signs. 
+  ;[Seventy] words per minute.
+  ;Shivaji was [one] of the most powerful rulers in 1600.
+  (defrule CD_rule1
+  ?f0<-(id-sd_cat        ?id     CD)
+  (parserid-word ?id ?w)
+  =>
+	(assert (parser_id-cat_coarse ?id number))
+	(bind ?w1 (string-to-field (sub-string (- (length ?w) 1) (length ?w) ?w)))
+	(if (or (neq (integerp (member$ ?w (create$ first second third))) FALSE) 
+                (eq (integerp (member$ ?w1 (create$ th st nd rd))) TRUE)) then
+		(assert (parser_id-cat ?id ordinal_number))
+	else
+		(assert (parser_id-cat ?id cardinal_number))
+	)
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;Added by Roja(17-07-13)

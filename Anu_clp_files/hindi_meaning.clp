@@ -135,13 +135,11 @@
  (id-word ?id ?wrd)
  (test (neq (gdbm_lookup "proper_noun_dic.gdbm" ?wrd) "FALSE"))
  =>
+	(retract ?f)
         (bind ?mng (gdbm_lookup "proper_noun_dic.gdbm" ?wrd ))
-	(if (neq ?mng "FALSE") then
-		(retract ?f)
-		(bind ?f_mng (get_wsd_first_mng ?mng))
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   proper_noun_dic)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   proper_noun_dic "?id")" crlf)
-        )
+	(bind ?f_mng (get_wsd_first_mng ?mng))
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   proper_noun_dic)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   proper_noun_dic "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;The guard made Dipu halt, and helped the Princess off his back.
@@ -155,12 +153,10 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat (lowcase ?rt) "_noun")) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng (lowcase ?rt) noun ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
  )
  ;====================================== Generate default category ================================================
  ;Added by Roja (01-08-12). 
@@ -228,12 +224,10 @@
  (test (neq (numberp ?rt) TRUE))
  (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat ?rt "_" ?cat)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng ?rt ?cat (str-cat ?domain"_dic.gdbm")))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; In [Kinematics], we study ways to describe motion without going into the causes of motion. 
@@ -247,13 +241,11 @@
  (test (neq (numberp ?rt) TRUE))
  (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat (lowcase ?rt) "_noun")) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng (lowcase ?rt) noun (str-cat ?domain"_dic.gdbm")))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
+ 	(printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; Commented by Manju Suggested by Chaitanya Sir . (28-02-15) need to add the word in dic
@@ -291,12 +283,10 @@
  (test (neq (numberp ?org_wrd) TRUE))
  (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat ?org_wrd "_" ?cat)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng ?org_wrd ?cat (str-cat ?domain"_dic.gdbm")))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; Commented by Manju Suggested by Chaitanya Sir . (28-02-15) need to add the word in dic
@@ -401,12 +391,10 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat ?rt "_" ?cat)) "FALSE"))
  =>
+        (retract ?mng)
 	(bind ?f_mng (get_first_mng ?rt ?cat ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (24-05-14).
@@ -420,8 +408,30 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat ?org_wrd "_" ?cat)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng ?org_wrd ?cat ?dname))
-        (if (neq ?f_mng "FALSE") then
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-10-16)
+ ;[Seventy] words per minute. 
+ ;if cat coarse is 'number' and cat is 'cardinal_number' then lookup with 'noun' else if cat is 'ordinal_number' then lookup with adjective
+ (defrule get_meaning_for_number
+ (declare (salience 7550))
+ (id-root ?id ?rt)
+ (test (neq (numberp ?rt) TRUE))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id number)
+ (id-cat ?id ?cat)
+ (dic_name ?dname)
+ =>
+	(if (eq ?cat cardinal_number) then
+		(bind ?f_mng (get_first_mng ?rt noun ?dname))
+	else
+		(bind ?f_mng (get_first_mng ?rt adjective ?dname))
+	)
+	(if (neq ?f_mng FALSE) then
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
@@ -443,12 +453,10 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat ?rt "_" ?cat1)) "FALSE"))
  =>
+        (retract ?mng)
 	(bind ?f_mng (get_first_mng ?rt ?cat1 ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (24-05-14).
@@ -466,12 +474,10 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng ?org_wrd ?cat1 ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-7-14)
@@ -482,12 +488,10 @@
  (test (neq (numberp ?word) TRUE))
  (test (neq (gdbm_lookup "transliterate_meaning.gdbm" ?word ) "FALSE"))
  =>
+        (retract ?f)
         (bind ?mng (gdbm_lookup "transliterate_meaning.gdbm" ?word ))
-        (if (neq ?mng "FALSE") then
-                (retract ?f)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
-        )
+ 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (24-05-14).
@@ -501,12 +505,10 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat (lowcase ?org_wrd) "_" ?cat)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju Suggested by Chaitanya Sir (06-10-15)
@@ -522,13 +524,11 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat (sub-string 1 (- (length ?wrd) 1) ?wrd) "_noun")) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng (sub-string 1 (- (length ?wrd) 1) ?wrd) noun ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_without_s "?id"  " ?wrd")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_without_s "?id"  " ?wrd")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (24-05-14).
@@ -546,12 +546,10 @@
  (dic_name ?dname)
  (test (neq (gdbm_lookup ?dname (str-cat (lowcase ?org_wrd) "_" ?cat1)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat1 ?dname))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning_with_different_category)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning_with_different_category "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (12-01-16).
@@ -566,14 +564,11 @@
  (test (neq (numberp ?wrd) TRUE))
  (test (neq (gdbm_lookup "mixed_domain_dic.gdbm" (str-cat ?wrd "_" ?cat)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng ?wrd ?cat mixed_domain_dic.gdbm))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Mixed_domain_dic_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Mixed_domain_dic_meaning "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Mixed_domain_dic_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Mixed_domain_dic_meaning "?id")" crlf)
  )
-
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (12-01-16).
  ;Getting Hindi meaning from default dictionary with word when there is a different category.
@@ -589,13 +584,11 @@
  (test (neq ?cat ?cat1))
  (test (neq (gdbm_lookup "mixed_domain_dic.gdbm" (str-cat ?wrd "_" ?cat1)) "FALSE"))
  =>
+        (retract ?mng)
         (bind ?f_mng (get_first_mng ?wrd ?cat1 mixed_domain_dic.gdbm))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Mixed_domain_dic_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Mixed_domain_dic_meaning "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Mixed_domain_mng_with_different_category "?id"  " ?wrd")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Mixed_domain_dic_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Mixed_domain_dic_meaning "?id")" crlf)
+        (printout ?*catastrophe_file* "(sen_type-id-phrase Mixed_domain_mng_with_different_category "?id"  " ?wrd")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
   ;Getting meaning for Proper noun 

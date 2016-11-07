@@ -1,7 +1,7 @@
 I	I/eka/AI/mEM/muJe
 a	eka/koI/prawi/kisI/eka_EsI/a
 aboard	savAra/xala_meM/samUha_meM/ke_pAsa/para_savAra
-about	PElA_huA/calawA-PirawA/cAro_ora/yahAz-vahAz/pICe/pAsa/lagaBaga/kramAnusAra/jahAz-wahAz/iXara-uXara/iwaswawaH/cArOM_waraPa/cAroM_ora/Asa-pAsa/iXara_uXara/bahuwa_ho_gayA/ke_bAre_meM/Asa_pAsa/wakarIbana
+about	PElA_huA/calawA-PirawA/cAro_ora/yahAz-vahAz/pICe/pAsa/lagaBaga/kramAnusAra/jahAz-wahAz/iXara-uXara/iwaswawaH/cArOM_waraPa/cAroM_ora/Asa-pAsa/iXara_uXara/bahuwa_ho_gayA/ke_bAre_meM/Asa_pAsa/wakarIbana/karIba
 above	uparyukwa/Upara_kahA_huA/Upara_kA/UzcA/Upara/se_Upara/ke_Upara/isase_Upara
 across	ArapAra/waraPa/sAmane/ora/meM_sarvawra/usa_pAra/koI_eka_xiSA_meM/saBI_ora/usa_pAra_se/ke_Upara_yA_sAmane/vahAz_se_yahAz
 after	bAxa_kA/bAxa_meM/pICe/eka_ke_bAxa_eka/bAxa/ke_bAxa/kI_ora/ke_bAre_meM/ke_anusaraNa_para
@@ -53,7 +53,7 @@ during	ke_xOrAna/meM/ke_samaya_meM/ke_samaya
 each	hara/prawyeka/hara_eka/haraeka/eka-eka/eka_eka/prawyeka_ke_lie/hara_eka_lie/eka_sAWa/praweka
 either	yA_wo/xonoM_meM_se_eka/xonoM/koI-eka/hara/anyawara/yaha_yA_vaha/BI/yA/xo_meM_se_koI-eka
 even	BI/Ora
-every	prawyeka/kula/hara_eka/hara/saBI
+every	prawyeka/kula/hara_eka/hara/saBI/hareka
 everybody	prawyeka_vyakwi/saBa_loga/hara_koI
 everyone	saBI/saba/hara_eka/prawyeka_vyakwi/prawEka_vyakwi/prawEka/hara_koI
 everything	saba_kuCa/sArA/saba/prawyeka
@@ -89,7 +89,7 @@ like	usI_warAha/usI_waraha/usI_prakAra/samAna/jEsA/eka-sA/eka_se/usI_DMaja_se/wa
 little	WodA/WodA_sA/woda/nAtA/kuCa/kama/CotI/CotA/mahawvahIna
 many	bahuwa_se/kiwane/kaI/jiwanA/iwane/Dera_SAre/bahuwa_sAre/aneka/bahuwa_sI
 me	muJa/muJako/mEM
-mine	merA/surafga_kRetra/surafga_bama/surafga/KAna/jvAlAmuKI_bisPota/bArUxI_bama/BaNdAra/surafga_laga/surafga_Koxa/surafga_ban/KAna_se_prapwa_kara/KAna_Kox/KAna_Koxa/bila_KoxanAa
+mine	merA/surafga_kRetra/surafga_bama/surafga/KAna/jvAlAmuKI_bisPota/bArUxI_bama/BaNdAra/surafga_laga/surafga_Koxa/surafga_ban/KAna_se_prapwa_kara/KAna_Kox/KAna_Koxa/bila_KoxanAa/mEM
 minus	nyUnawama/kamI/GatAva/ke_binA/GatA
 more	aXika/Ora_aXika/Ora/KUba/bahuwa/aXikawara/aXikAMSa/jyAxA/aXika_mAwrA_meM/awyaXika
 most	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa/lagaBaga/awyaXika/sabase_jyAxA
