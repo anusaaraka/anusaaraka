@@ -447,10 +447,8 @@
 (database_info (components $?m ?root)(group_ids $? ?aid $?))
 (id-word ?aid ?w&~the)
 (not (pada_info (preposition ?aid)))
-(not (anu_id-man_id-src-rule_name ? ?mid ?  man_word_and_vib_match_using_dic))
-(not (anu_id-man_id-src-rule_name ? ?mid ?  man_root_and_vib_match_using_dic))
-(not (anu_id-man_id-src-rule_name ? ?mid ?  man_word_match_using_dic))
-(not (anu_id-man_id-src-rule_name ? ?mid ?  man_root_match_using_dic))
+(not (anu_id-man_id-src-rule_name ? ?mid ?  man_word_and_vib_match_using_dic|man_word_match_using_dic))
+(not (anu_id-man_id-src-rule_name ? ?mid ?  man_root_and_vib_match_using_dic|man_root_match_using_dic))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match man_root_match_using_dic))
@@ -960,6 +958,18 @@
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  manual_scope))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid manual_scope get_verb_scope))
+)
+;-------------------------------------------------------------------------------------
+(defrule rm_aux_score_fact
+(declare (salience 250))
+(root-verbchunk-tam-chunkids ? ? ? $? ?aux ?h)
+(anu_id-man_id-src-rule_name ?h ?mid single_verb_match single_verb_match_with_anu)
+(anu_id-man_id-src-rule_name ?m ?mid ? ?)
+(anu_id-man_id-type ?m ?mid ?t)
+(manual_id-word ?mid hE)
+(test (neq ?m ?h))
+=>
+        (assert (info_created ?m ?mid ?t))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju

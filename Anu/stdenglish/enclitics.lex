@@ -135,6 +135,7 @@ Hon[ ]*'ble		{ printf("Honourable");	/*}
 [a-zA-Z][ ]*'[a-zA-Z]	{printf("%c ABBR-SingleQuote%c",yytext[0],yytext[3]); */}
 [cC]annot	{printf("%can not",yytext[0]);}
 [ ]n't		{printf(" not"); /* You did n't even notice. */}
+[mM]a'am	{printf("%cadam",yytext[0]);}
 
 %%
 main()

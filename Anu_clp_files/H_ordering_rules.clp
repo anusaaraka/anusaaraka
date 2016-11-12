@@ -125,11 +125,11 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (29-11-11) -- Suggested by Sukhada.
-;They accused him of the crime.
+;They accused him of the crime. Could you convert my dollars into pounds?
 (defrule dont_rev_if_VP_head_accused
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?verb $?d)
-(id-original_word ?head accused)
+(id-original_word ?head accused|convert)
 (Node-Category  ?Mot VP)
 (not (Mother  ?Mot))
 =>
@@ -140,6 +140,21 @@
         (printout ?*order_debug-file* "(rule_name - dont_rev_if_VP_head_accused " ?*count* " " crlf
                          "              Before    - "?head" "?l" "?Mot" "?verb" "(implode$ $?d) crlf
                          "              After     - "?head" "?l" "?Mot" "(implode$ $?d)" "?verb ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;May I come in Sir? May I attend Bal Sabha, Sir? 
+(defrule dont_reverse_VP_if_ends_with_sir
+(declare (salience 1400))
+(Head-Level-Mother-Daughters ? ?l ?Mot $?d ?S)
+(and (Node-Category  ?Mot VP)(Node-Category  ?S S))
+(Head-Level-Mother-Daughters ?head ? ?S $?)
+(id-original_word ?head sir|Sir)
+(not (Mother  ?Mot))
+=>
+	(assert (Mother  ?Mot))
+	(printout ?*order_debug-file* "(rule_name - dont_reverse_VP_if_ends_with_sir " ?*count* " " crlf
+                         "              Before    - "?head" "?l" "?Mot" "(implode$  $?d)" "?S crlf
+                         "              After     - "?head" "?l" "?Mot" "(implode$ $?d)" "?S ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (26-07-14) -- Suggested by Sukhada.
@@ -179,7 +194,7 @@
 (defrule dont_reverse_NP
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
-(Node-Category  ?Mot  NP)(Node-Category  ?PP  PP)
+(Node-Category  ?mot  NP)(Node-Category  ?PP  PP)
 (id-original_word ?head ?wrd&lot|most|number|spot|kinds|kind|set|sort|whole|dozens|some|millions|type|tens|hundreds|thousands|billions|dollars|plenty)
 (Head-Level-Mother-Daughters ?h ? ?PP ?IN $? ?NP2)
 (id-root ?h of)
@@ -495,6 +510,36 @@
         (printout ?*order_debug-file* "(rule_name - first_RB_in_NP_to_last " ?*count* crlf
                          "              Before    - "?h" "?l" "?Mot" "?RB"  "(implode$ $?d) crlf
                          "              After     - "?h" "?l" "?Mot"  "(implode$ $?d)" "?RB")" crlf crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(03-10-16) Suggested by Rajini
+;You think yourself very clever, do not you?  <prp> <verb> <prp> <sen> <==> <prp> <prp> <sen> <verb> 
+;Before: Apa socawe hEM Apane Apa ko awyanwa cawura hE nA ?
+;After:  Apa Apane Apa ko awyanwa cawura socawe hEM, hE nA ?
+(defrule get_prps_together
+(declare (salience 800))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?S ?NP ?VP)
+(and (Node-Category ?S S)(Node-Category ?NP NP)(Node-Category ?VP VP))
+(Head-Level-Mother-Daughters ? ? ?NP ?PRP)
+(Node-Category ?PRP PRP)
+?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP ?VB ?S1)
+(and (Node-Category ?S1 S)(Node-Category ?VB VB|VBD|VBP))
+?f2<-(Head-Level-Mother-Daughters ?h2 ?l2 ?S1 ?NP1 $?post)
+(Head-Level-Mother-Daughters ? ? ?NP1 ?PRP1)
+(Node-Category ?PRP1 PRP)
+=>
+	(bind ?*count* (+ ?*count* 1))
+	(retract ?f0 ?f1 ?f2)
+	(assert (Head-Level-Mother-Daughters ?h ?l ?S ?NP ?S1))
+	(assert (Head-Level-Mother-Daughters ?h2 ?l2 ?S1 ?NP1 $?post ?VP))
+	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?VP ?VB ))
+        (printout ?*order_debug-file* "(rule_name - get_prps_together " ?*count* crlf
+			"		Before	- " ?h" " ?l" " ?S" " ?NP" " ?VP crlf
+			"			  " ?h1" "?l1" "?VP" "?VB" "?S1 crlf
+			"			  " ?h2" "?l2" "?S1" "?NP1" "(implode$ $?post) crlf
+			"		After 	- " ?h" "?l " "?S" " ?NP" "?S1   crlf
+			"			  " ?h1" "?l1" "?VP" "?VB crlf
+			"			  " ?h2" "?l2" "?S1" "?NP1" "(implode$ $?post)" " ?VP crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;The;Assumptions while writing this rule:

@@ -2,6 +2,7 @@
 
 (defglobal ?*lf-f* = lf)
 (defglobal ?*catastrophe_file* = catas_fp)
+(defglobal ?*w-align* = w_fp)
 
 (deftemplate score (slot anu_id (default 0))(slot man_id (default 0))(slot weightage_sum (default 0))(multislot heuristics (default 0))(multislot rule_names (default 0)))
 
@@ -165,7 +166,7 @@
 ?f1<-(left_over_ids $?ids)
 (not (added_emphatic ?mid))
 (not (pronoun_align ?aid ?mid))
-;(not (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?s&:(> ?s 10))))
+(not (score (anu_id ?aid) (man_id ?mid) (heuristics single_verb_match)))
 =>
         (retract ?f0 ?f1)
         (assert (removed_man_id_with-anu_id ?mid ?aid))
@@ -815,7 +816,23 @@
 )
 
 ;================================== verb rules =======================================
-
+;Is there a computer course, where this ability of mine [can be utilized]?
+;kyA koI EsA kampyUtara korsa hE jisameM mere isa tEleMta kA iswemAla [ho sakawA hE]
+(defrule align_2nd_verb_if_first_is_exact_match
+(declare (salience 310))
+(man_verb_count-verbs ?c ?mf ?mid)
+(anu_verb_count-verbs ?c ?af ?aid)
+(score (anu_id ?af) (man_id ?mf)(heuristics $? anu_exact_match $?))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?af $? - ?mf $?)
+(manual_word_info (head_id ?mid) (word $?mng))
+?f0<-(id-Apertium_output ?aid $?amng)
+?f1<-(left_over_ids $?pre ?mid $?po)
+=>
+	(retract ?f0 ?f1)
+	(assert (left_over_ids $?pre $?po))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid  $?amng - ?mid  $?mng))
+)
+;---------------------------------------------------------------------------------
 ;Extensive security arrangements have been made by the administration for the festival and it does not want to leave anything to chance.
 ;Man : mahowsava kI surakRA vyavasWA ko lekara praSAsana ke xvArA kade iMwajAma kie gaye hEM Ora vaha kisI BI waraha kI kowAhI [nahIM barawanA cAhawA].
 ;Anu: viswqwa surakRA_ke iMwajAma wyOhAra ke lie praSAsana se banAe gaye hEM Ora samBAvanA ko kuCa BI CodanA [nahIM cAhawA hE].
@@ -1460,7 +1477,7 @@
 
 ;Saliva destroys those bacteria which [create] stink in breath.
 ;lAra una bEktIriyA ko naRta karawI hE jo sAzsoM meM baxabU [pExA] [karawe hEM]  .
-(defrule align_single_verb
+(defrule align_single_verb_with_kara_or_ho
 (declare (salience 6))
 ?f<-(left_over_ids ?id ?id1)
 ?f1<-(hindi_id_order ?aid)
@@ -1479,7 +1496,7 @@
 )
 
 ;[Eat] less fatty food. kama vasAyukwa AhAra kA [kareM sevana]  .
-(defrule align_single_verb1
+(defrule align_single_verb
 (declare (salience 6))
 ?f<-(left_over_ids ?id ?id1)
 ?f1<-(hindi_id_order ?aid)

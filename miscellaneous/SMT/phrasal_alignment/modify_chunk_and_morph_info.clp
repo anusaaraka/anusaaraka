@@ -6,11 +6,15 @@
 
 
 ;============================================== Modify Morph root ==========================
-(defrule get_yaha_root
-?f<-(man_word-root-cat  ?word&yahIM|yahI ?word  dummy_cat)
+(defrule get_pronoun_root
+?f<-(man_word-root-cat  ?word&yahIM|yahI|wumane ?word  dummy_cat)
 =>
 	(retract ?f)
-	(assert (man_word-root-cat ?word yaha modified_cat))
+	(if (eq ?word wumane) then
+		(assert (man_word-root-cat ?word wU modified_cat))
+	else
+		(assert (man_word-root-cat ?word yaha modified_cat))
+	)
 )
 ;-------------------------------------------------------------------------------------
 ;saxiSoM ==> saxiSa      kareM ==> kara 
@@ -114,13 +118,17 @@
 ;yaxi vicArAXIna vaswueMz xo relagAdiyAz hEM wo usa vyakwi ke lie jo kisI eka relagAdI meM bETA hE, xUsarI relagAdI bahuwa weja calawI [huI prawIwa howI hE] .
 ;if first mng is aux and already one more aux present then remove the first aux
 ;Ex: huI prawIwa howI hE  ==> prawIwa howI hE
+; kala ravivAra [hogA, hE] nA ? [hogA, hE] ==> [hogA] [hE]
 (defrule rm_first_aux_mng_from_verb_chunk
-?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid ?lid)
-(manual_word_info (head_id ?mid) (word $? howI|howA $?))
-(manual_word_info (head_id ?fid) (word huI ))
+?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid)
+(manual_id-word ?mid  hE|hEM)
+;?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid ?lid)
+;(manual_word_info (head_id ?mid) (word $? howI|howA $?))
+(manual_word_info (head_id ?fid) (word hogA ))
 =>
         (retract ?f)
-        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid ?lid))
+;        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid ?lid))
+        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid))
         (assert (chunk_name-chunk_ids VGNN ?fid))
 )
 ;----------------------------------------------------------------------------------------------------------
