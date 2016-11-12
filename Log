@@ -1,8 +1,10 @@
- 07-11-16
+ 12-11-16
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
- 3. H_ordering_rules.clp :   Modified : dont_reverse_NP -- added 'plenty' to the list
+ 3. H_ordering_rules.clp :   Modified: dont_reverse_NP -- added 'plenty' to the list
+					dont_rev_if_VP_head_accused -- added 'convert'
+			     Added   : dont_reverse_VP_if_ends_with_sir, get_prps_together
  4. parser_tree_correction_rules.clp
 		Added   : grp_PRP_and_NP_as_one_chunk, modify_JJ_as_RB, modify_NNP_as_VB1, modify_NNP_as_VBG
 		Modified: modify_NNP_as_VB and modify_NN_as_VP
@@ -53,6 +55,8 @@
 			     Removed: May
 	initialisms.lex -->  Added :I.A.S. M.Sc. B.Sc.
 	standard_abbrevations.lex --> fixed the bug (Ex: B.A)
+	enclitics.lex --> added [mM]a'am
+	chk_input_format.pl --> fixed bug for '-'  Ex: ... (trimester) - from ...
  22. Updated the following files
         print-pos-info.py
  23. Updated following alignment files
