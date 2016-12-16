@@ -2,7 +2,8 @@
 ## Getting POS and Chunking information from Hindi parser
 
 #Getting POS
-sed 's/^_//g' $1/hnd | sed 's/_$//g' | sed 's/_/ /g'  >  $1/hnd-wx
+sed 's/^_//g' $1/hnd | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g'  >  $1/hnd-wx
+#sed 's/^_//g' $1/hnd.txt | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g'  >  $1/hnd-wx
 wx_utf8 < $1/hnd-wx > $1/hnd.utf8
 cd $HOME_anu_test/miscellaneous/HINDI_POS_CHUNKER/POSTagger/
 sh runTagger.sh $1/hnd.utf8 $1/hnd.tagger

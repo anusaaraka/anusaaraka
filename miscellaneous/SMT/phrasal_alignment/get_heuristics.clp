@@ -1,6 +1,6 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
-(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
 (deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
@@ -90,7 +90,7 @@
 ;Added by Shirisha Manju
 (defrule cp_man_@_word
 (declare (salience 1000))
-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?v))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi_components $?v))
 (test (eq (numberp ?mng) FALSE))
 (test (neq (str-index "@" ?mng) FALSE))
 =>
@@ -166,7 +166,7 @@
 (defrule align_no
 (declare (salience 907))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?m)(vibakthi ?v $?vib))
+(manual_word_info (head_id ?mid) (word ?m)(vibakthi_components ?v $?vib))
 (test (neq (numberp ?m) FALSE))
 (id-Apertium_output ?aid ?mng $?rm)
 (test (eq (numberp ?mng) FALSE))
@@ -183,7 +183,7 @@
 (defrule align_no1
 (declare (salience 907))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?m)(vibakthi ?v $?vib))
+(manual_word_info (head_id ?mid) (word ?m)(vibakthi_components ?v $?vib))
 (test (eq (numberp ?m) FALSE))
 (test (eq (sub-string (- (length ?m) 2) (length ?m) ?m) "veM"))
 (id-Apertium_output ?aid ?mng $?rm)
@@ -201,7 +201,7 @@
 (defrule anu_exact_match
 (declare (salience 906))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng - 0))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))(id-hyphen_word-vib ?mid - $?mng - 0))
 (id-Apertium_output ?aid $?mng)
 (pada_info (group_head_id ?aid)(vibakthi 0))
 =>
@@ -219,7 +219,7 @@
 (defrule anu_exact_match1
 (declare (salience 905))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))(id-hyphen_word-vib ?mid - $?mng - $?vib)
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components $?vib))(id-hyphen_word-vib ?mid - $?mng - $?vib)
 					(id-hyphen_word-vib ?mid - $?mng $?vib - 0)) ;sabane == saba ne
 (id-Apertium_output ?aid $?mng $?vib)
 (test (neq (length $?vib) 0))
@@ -237,7 +237,7 @@
 (defrule anu_gid_exact_match
 (declare (salience 904))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng - 0))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))(id-hyphen_word-vib ?mid - $?mng - 0))
 (id-Apertium_output ?aid $?mng)
 (pada_info (group_ids $? ?aid $? ?))
 (not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match))
@@ -257,14 +257,11 @@
 (defrule anu_pronoun_match
 (declare (salience 903))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word ?m)(vibakthi 0))(id-hyphen_word-vib ?mid - ?m - 0))
+(or (manual_word_info (head_id ?mid) (word ?m)(vibakthi_components 0))(id-hyphen_word-vib ?mid - ?m - 0))
 (man_word-root-cat ?m ?root p)
 (id-HM-source ?aid ?root ?)
 (pada_info (group_head_id ?aid)(vibakthi ?v&ko|kA|0))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match1))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_pronoun_match))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match|anu_exact_match1|anu_gid_exact_match|anu_pronoun_match))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_root_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_root_match anu_pronoun_match))
@@ -274,7 +271,7 @@
 (defrule anu_wsd_match
 (declare (salience 902))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng ?m)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng ?m - 0))
+(or (manual_word_info (head_id ?mid) (word $?mng ?m)(vibakthi_components 0))(id-hyphen_word-vib ?mid - $?mng ?m - 0))
 (man_word-root-cat ?m ?root&~ho ?)
 (id-HM-source ?aid $?mng ?root ?)
 (pada_info (group_head_id ?aid)(vibakthi 0))
@@ -297,7 +294,7 @@
 (defrule exact_match_without_vib 
 (declare (salience 900))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?vib)(group_ids $?grp_ids))(id-hyphen_word-vib ?mid - $?mng - ?v $?vib))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?vib)(group_ids $?grp_ids))(id-hyphen_word-vib ?mid - $?mng - ?v $?vib))
 (test (neq ?v 0))
 (id-Apertium_output ?aid $?mng)
 (pada_info (group_head_id ?aid)(vibakthi 0))
@@ -315,7 +312,7 @@
 (defrule exact_match_without_vib1
 (declare (salience 900))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0)(group_ids $?grp_ids))
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0)(group_ids $?grp_ids))
 (id-Apertium_output ?aid $?mng $?prep)
 (id-HM-source ?pid $?prep ?)
 (pada_info (group_head_id ?aid) (preposition $? ?pid&~0 $?))
@@ -335,7 +332,7 @@
 (defrule exact_match_without_vib2
 (declare (salience 901))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?)(group_ids $?grp_ids)) (id-hyphen_word-vib ?mid - $?mng - ?v $?))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?)(group_ids $?grp_ids)) (id-hyphen_word-vib ?mid - $?mng - ?v $?))
 (test (neq ?v 0))
 (id-Apertium_output ?aid $?mng $?prep)
 (id-HM-source ?pid $?prep ?)
@@ -356,7 +353,7 @@
 (defrule man_word_and_vib_match_using_dic
 (declare (salience 870))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)) (id-hyphen_word-vib ?mid - $?mng - $?vib))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components $?vib)) (id-hyphen_word-vib ?mid - $?mng - $?vib))
 (database_info (components $?mng)(group_ids $? ?id $?))
 (id-word ?id ?)
 (database_info (components $?vib)(group_ids $? ?vib_id $?))
@@ -372,7 +369,7 @@
 (defrule man_root_and_vib_match_using_dic
 (declare (salience 850))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi $?vib))
+(manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi_components $?vib))
 (man_word-root-cat ?mng ?root ?)
 (database_info (components $?m ?root)(group_ids $? ?id $?))
 (id-word ?id ?)
@@ -386,12 +383,30 @@
         (assert (anu_id-man_id-src-rule_name ?id ?mid dictionary_match man_root_and_vib_match_using_dic))
 )
 ;---------------------------------------------------------------------------
+(defrule man_root_and_vib_match_using_dic_for_vn
+(declare (salience 850))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi_components $?vib)(tam nA))
+(man_word-root-cat ?mng ?root vn)
+(database_info (components ?root1 )(group_ids $? ?id $?))
+(id-word ?id ?)
+(test (eq (string-to-field (str-cat ?root "nA")) ?root1))
+(pada_info (group_head_id  ?id)(preposition $? ?vib_id $?))
+(database_info (components $?vib)(group_ids $? ?vib_id $?))
+(not (anu_id-man_id-src-rule_name ? ?mid ?  man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ? ?mid ?  man_root_and_vib_match_using_dic))
+=>
+        (assert (anu_id-man_id-type ?id ?mid  dictionary_match))
+        (assert (anu_id-man_id-src-rule_name ?id ?mid dictionary_match man_root_and_vib_match_using_dic_for_vn))
+)
+;---------------------------------------------------------------------------
+
 ;To avoid this, a common compromise is the [cross-sectional] shape shown in Fig. 9.9(c)
 ;isase bacane ke lie sAXAraNawayA ciwra 9.9(@c) meM xiKAI gaI Akqwi kA [anuprasWa paricCexa] liyA jAwA hE.
 (defrule man_word_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))  (id-hyphen_word-vib ?mid - $?mng - 0))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))  (id-hyphen_word-vib ?mid - $?mng - 0))
 (database_info (components $?mng)(group_ids $? ?aid $?))
 (id-word ?aid ?)
 (not (pada_info (preposition ?aid)))
@@ -442,7 +457,7 @@
 (defrule man_root_match_using_dic
 (declare (salience 835))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi 0)) (id-hyphen_word-vib ?mid - $?m ?mng - 0))
+(or (manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi_components 0)) (id-hyphen_word-vib ?mid - $?m ?mng - 0))
 (man_word-root-cat ?mng ?root&~kara&~ho ?)
 (database_info (components $?m ?root)(group_ids $? ?aid $?))
 (id-word ?aid ?w&~the)
@@ -460,7 +475,7 @@
 (defrule dic_word_match_without_vib
 (declare (salience 830))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?))
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?))
 (test (neq ?v 0))
 (database_info (components $?mng)(group_ids $? ?aid $?))
 (id-word ?aid ?)
@@ -478,7 +493,7 @@
 (defrule dic_root_match_without_vib
 (declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi ?v $?vib))
+(manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi_components ?v $?vib))
 (test (neq ?v 0))
 (man_word-root-cat ?mng ?root ?)
 (database_info (components $?m ?root)(group_ids $? ?aid $?))
@@ -568,7 +583,7 @@
 (defrule verb_root_and_tam_match_using_dic
 (declare (salience 880))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?verb_mng)(root $?v_root)(vibakthi $?tam)(group_ids $?grp_ids))
+(manual_word_info (head_id ?mid) (word $?verb_mng)(root_components $?v_root)(tam_components $?tam)(group_ids $?grp_ids))
 (database_info (components $?v_root)(group_ids $? ?aid $?))
 (id-word ?aid ?)
 (tam_database_info (e_tam ?e_tam) (components $?tam ))
@@ -583,8 +598,8 @@
 (defrule verb_root_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
-(manual_word_info (head_id ?mid)(word $?r)(root $?root)(vibakthi $?tam))
-(test (neq $?tam 0))
+(manual_word_info (head_id ?mid)(word $?r)(root_components $?root)(tam_components $?tam))
+(test (neq (implode$ $?tam) 0))
 (database_info (components $?root)(group_ids $? ?eid $?))
 (id-word ?eid ?w&~have&~to)
 (test (neq (integerp (member$ $?root (create$ ho kara))) TRUE))
@@ -603,7 +618,7 @@
 (defrule verb_match_with_WSD
 (declare (salience 841))
 (current_id ?mid)
-(manual_word_info (head_id ?mid)(root $?root))
+(manual_word_info (head_id ?mid)(root_components $?root))
 ;(or (manual_word_info (head_id ?mid)(root $?root))(manual_word_info (head_id ?mid)(word $?root)))
 (id-HM-source ?aid $?root WSD_root_mng|WSD_word_mng)
 (not (anu_id-man_id-src-rule_name ? ?mid  ? anu_exact_match|anu_wsd_match|anu_exact_match1))
@@ -637,12 +652,13 @@
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?m_mng)(vibakthi $?vib))
+(manual_word_info (head_id ?mid) (word ?m_mng))
+;(manual_word_info (head_id ?mid) (word ?m_mng)(vibakthi $?vib))
 (man_word-root-cat ?m_mng ?h_root ?)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) "FALSE"))
 (or (database_info (meaning ?mng) (group_ids $? ?aid $?))(id-Apertium_output ?aid ?mng))
-(not (pada_info (preposition ?aid)))
-(id-word ?aid ?)
+(not (or (pada_info (preposition ?aid))(pada_info (group_cat infinitive)(group_ids ?aid ?))))
+(id-word ?aid ?w&~to)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
 (test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
 (not (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet ?))
@@ -659,11 +675,12 @@
 (defrule lookup_man_root_in_hindi_wordnet
 (declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (root ?h_root)(vibakthi $?vib))
+(manual_word_info (head_id ?mid) (root ?h_root))
+;(manual_word_info (head_id ?mid) (root ?h_root)(vibakthi $?vib))
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) "FALSE"))
 (or (database_info (meaning ?mng) (group_ids $? ?aid $?))(id-Apertium_output ?aid ?mng))
-(not (pada_info (preposition ?aid)))
-(id-word ?aid ?)
+(not (or (pada_info (preposition ?aid))(pada_info (group_cat infinitive)(group_ids ?aid ?))))
+(id-word ?aid ?w&~to)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
 (test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
 (not (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet ?))
@@ -686,7 +703,7 @@
 (defrule kriyA_mUla_partial_match
 (declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid)(root $?v_root ?r&kara|ho|xe))
+(manual_word_info (head_id ?mid)(root_components $?v_root ?r&kara|ho|xe))
 (test (neq (length $?v_root) 0))
 (or (database_info (components $? $?v_root $? ?r)(group_ids $? ?aid $?))(database_info (components $? $?v_root $?)(group_ids $? ?aid $?))(id-HM-source ?aid $? $?v_root ?r ?))
 (test (neq (integerp (member$ $?v_root (create$ ho kara))) TRUE))
@@ -702,7 +719,7 @@
 (defrule tam_match
 (declare (salience 810))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (vibakthi $?tam))
+(manual_word_info (head_id ?mid) (tam_components $?tam))
 (tam_database_info (e_tam ?etam) (components $?tam))
 (id-TAM ?aid ?etam)
 =>
@@ -718,11 +735,22 @@
 (anu_id-man_id-src-rule_name ?aid ?mid1 ? ?)
 (test (neq ?mid ?mid1))
 (or (id-Apertium_output ?aid $?mng ?v&ke ?v1) (id-Apertium_output ?aid $?mng ?v))
-(or (manual_word_info (head_id ?mid) (word $?mng) (vibakthi ?v1)) (manual_word_info (head_id ?mid) (word $?mng) (vibakthi ?v ?v1))(manual_word_info (head_id ?mid) (word $?mng) (vibakthi ?v)))
+(or (manual_word_info (head_id ?mid) (word $?mng) (tam_components ?v1)) (manual_word_info (head_id ?mid) (word $?mng) (tam_components ?v ?v1))(manual_word_info (head_id ?mid) (word $?mng) (tam_components ?v)))
 (not (anu_id-man_id-src-rule_name ?aid ?mid hindi_tam_match ?))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  hindi_tam_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_tam_match tam_match1))
+)
+;Use warm water for bathing. nahAne ke lie garma jala kA prayoga kareM  .
+(defrule vib_match
+(declare (salience 810))
+(current_id ?mid)
+(id-Apertium_output ?aid $?a $?v)
+(test (neq (length $?v) 0))
+(manual_word_info (head_id ?mid)(vibakthi_components $?v))
+=>
+	(assert (anu_id-man_id-type ?aid ?mid  hindi_tam_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_tam_match vib_match))
 )
 
 
@@ -815,7 +843,7 @@
 (defrule partial_align_with_l
 (declare (salience 840))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (root $?man_mng ?k&kara|ho) )
+(manual_word_info (head_id ?mid) (root_components $?man_mng ?k&kara|ho) )
 (test (neq (length $?man_mng) 0))
 (anu_id-anu_mng-man_mng ?aid  ?  $?man_mng)
 (id-word ?aid ?)
@@ -842,7 +870,7 @@
 (defrule align_using_phrasal_data_M1
 (declare (salience 831))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?man_mng) (vibakthi ?vib))
+(manual_word_info (head_id ?mid) (word $?man_mng) (vibakthi_components ?vib))
 (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?vib) 
 (id-word ?aid ?)
 =>

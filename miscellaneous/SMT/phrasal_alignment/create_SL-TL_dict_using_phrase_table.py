@@ -44,11 +44,14 @@ for line in open(sys.argv[1]):
 					pos_lst[i] = 'DONE'
 			keyval = '_'.join(mysl) + ' =EQ= ' + tl[int(pos_id[1:-1])] + ',*SUKH*'
 			mydic.append(keyval)
+#			print line , "----"
 		elif pos_id[1:-1] == '':  # to a low ||| nimna ||| () () (0) ||| ...
 			keyval = sl[pos_lst.index(pos_id)] + '***' + str(pos_lst.index(pos_id)) + ' =EQ= ####,*SUKH*'
 			pos_lst[pos_lst.index(pos_id)] = 'DONE'
 			mydic.append(keyval)
+#			print line , "***********"
 		elif "," in pos_id:       # Note ||| XyAna xIjie ||| (0,1) ||| ... 
+#			print line , "^^^^^^^^^^^"			
 			mytl = [] 
 			vals = pos_id[1:-1].split(",")
 			for i in vals:
@@ -57,6 +60,7 @@ for line in open(sys.argv[1]):
 			keyval = sl[pos_lst.index(pos_id)] + '***' + str(pos_lst.index(pos_id)) + ' =EQ= ' + '_'.join(mytl) + ',*SUKH*'
 			mydic.append(keyval)
  		else:			  # length 2.308 ||| lambAI 2.308 ||| (0) (1) ||| ...
+#			print line, "#########"	, sl[pos_lst.index(pos_id)], tl, pos_id	
 			keyval = sl[pos_lst.index(pos_id)] + '***' + str(pos_lst.index(pos_id)) + ' =EQ= ' + tl[int(pos_id[1:-1])] + ',*SUKH*'
 			mydic.append(keyval)
 	fw.write('%s\n' % ' '.join(mydic))

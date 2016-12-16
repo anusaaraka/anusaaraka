@@ -1,4 +1,4 @@
- 12-11-16
+ 16-12-16
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -59,10 +59,15 @@
 	chk_input_format.pl --> fixed bug for '-'  Ex: ... (trimester) - from ...
  22. Updated the following files
         print-pos-info.py
- 23. Updated following alignment files
+	create_SL-TL_dict_using_phrase_table.py --> Added print statements for debugging
+ 23. get_pos_chunk.sh:  Added sed command to modify ' - ' as '-'
+ 24. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
-        get_verb_and_phrasal_grp.clp
- 24. Updated Log	
+        get_verb_and_phrasal_grp.clp	get_score.clp
+  	Added 'tam' and 'tam_components' slots in manual_word_info deftemplate
+	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
+		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp
+ 25. Updated Log	
 
 
  24-08-16
