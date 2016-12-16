@@ -126,7 +126,7 @@
 ;hama [isake bAre meM] KaNda 9.4 meM aXyayana kareMge.
 (defrule ke_[word]_meM
 (declare (salience 700))
-(manual_id-word ?id1 ?w&ke|isake|usake|inake|unake)
+(manual_id-word ?id1 ?w&ke)
 (manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w0&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya|bIca|pakRa|samparka)
 (manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?w1&meM|para)
 (not (mng_has_been_grouped ?id1))
@@ -165,7 +165,7 @@
 (defrule ke_[word]
 (declare (salience 650))
 (manual_id-word ?id1 ke)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa|sAWa-sAWa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -414,6 +414,20 @@
         (assert (mng_has_been_grouped ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------
+(defrule pronoun_multi_group_meM
+(declare (salience 570))
+(manual_id-word ?id1 ?w&isake|usake|inake|unake)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w0&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya|bIca|pakRa|samparka)
+(manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?w1&meM|para)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (mng_has_been_grouped ?id3))
+=>
+        (assert (manual_word_info (head_id ?id1) (word ?w ?w0 ?w1)(group_ids ?id1 ?id2 ?id3)))
+        (assert (mng_has_been_grouped ?id2))
+        (assert (mng_has_been_grouped ?id3))
+)
+;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 
 ;The units of all other physical quantities can be expressed as combinations of the base units.
 ;inake awirikwa anya saBI BOwika rASiyoM ke mAwrakoM ko mUla mAwrakoM ke saMyojana xvArA vyakwa kiyA jA sakawA hE.
@@ -422,7 +436,7 @@
 ;jEse ki,  inake bAxa, isa prakAra, isI prakAra , isI waraha, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre))
 ?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
@@ -457,6 +471,20 @@
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
+;cabAez Sugara rahiwa cuiMga gama 
+(defrule grp_rahiwa
+(declare (salience 560))
+(manual_id-word ?id0 ?n)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?n1&rahiwa|yukwa)
+(not (mng_has_been_grouped ?id0))
+(not (mng_has_been_grouped ?id1))
+=>
+        (assert (manual_word_info (head_id ?id1) (word ?n ?n1)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
 )
 
 ;====================================== Default Word Grouping =======================================

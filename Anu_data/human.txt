@@ -173,3 +173,5 @@ tailor	1
 umpire	1
 warden	1
 writer	1
+elder	1
+cashier	1

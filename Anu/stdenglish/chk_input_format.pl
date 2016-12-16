@@ -84,8 +84,8 @@ while($in = <STDIN>){
 # Join DANGLING punctuation marks to the right of the word, if it is at the beginning of a sentence.
 	$in =~ s/^([^a-zA-Z0-9]+)[ \t]+([a-zA-Z0-9])/$1$2/;
 # Join DANGLING punctuation marks to the left of the word in all other cases
-	$in =~ s/[ \t]+([^a-zA-Z0-9]+)([ \t]+)([a-zA-Z0-9])/$1$2$3/g;
-	$in =~ s/([^a-zA-Z0-9]+)([ \t]+)([^a-zA-Z0-9])([ \t]+)/$1$3$4/g;#Q3/2008 mobile phone production market part Q3/2008 in that nokia is biggest part in mobile phone production with 39.4% after that samsung [17.3%], sony ericsson[8.6%] , motorola[8.5%]and LG electronics[7.7%] took place.
+	$in =~ s/[ \t]+([^a-zA-Z0-9\-]+)([ \t]+)([a-zA-Z0-9])/$1$2$3/g; #First three months (trimester) - from the first day of the last menstruation to 12 weeks.
+	$in =~ s/([^a-zA-Z0-9]+)([ \t]+)([^a-zA-Z0-9\-])([ \t]+)/$1$3$4/g;#Q3/2008 mobile phone production market part Q3/2008 in that nokia is biggest part in mobile phone production with 39.4% after that samsung [17.3%], sony ericsson[8.6%] , motorola[8.5%]and LG electronics[7.7%] took place. First three months (trimester) - from the first day of the last menstruation to 12 weeks.
 	$in =~ s/[ \t]+([^a-zA-Z0-9]+)$/$1/g;
 	$in =~ s/([a-zA-Z0-9]+)-([ \t])/$1 - $2/g;
 
@@ -94,7 +94,7 @@ while($in = <STDIN>){
 #This semicolon should be moved to the left side of the word to avoid ';' in word field.
 #So for this adding below pattern as Suggested by Chaitanya Sir. 
 #Added by Roja(18-01-13)
-	$in =~ s/([a-zA-Z]+)[ ][;][ ]([(a-zA-Z]+)/$1; $2/g;
+	$in =~ s/([a-zA-Z]+)[ ][;][ ](['("a-zA-Z]+)/$1; $2/g;
 
 # change & to and
 	$in =~ s/\&/ and /g;

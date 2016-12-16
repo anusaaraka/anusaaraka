@@ -27490,7 +27490,7 @@ barAhasabjI	f
 barAhahaMgI	f
 barAhahaxa	f
 barAhahaxxa	f
-sara	f
+#sara	f
 saraI	f
 saraka	f
 sarakAra	f

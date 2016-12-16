@@ -55,6 +55,7 @@
 (not (score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score1&:(> ?score1 ?score))))
 (not (score (anu_id ?aid1) (man_id ?mid1) (weightage_sum ?score1&:(> ?score1 ?score))))
 (not (aligned_anu_id ?aid))
+(not (manual_id-word 2 .))
 =>
 	(retract ?f1 ?f2)
 	(assert (removed_aid ?aid))
@@ -158,6 +159,7 @@
 (defrule print_left_over_ids
 (declare (salience -503))
 =>
-	(assert (left_over_ids  ?*lids*))
+	(bind $?ids (sort > ?*lids*))
+	(assert (left_over_ids  $?ids))
 )
 

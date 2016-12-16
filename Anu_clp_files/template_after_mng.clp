@@ -20,8 +20,9 @@
 ;It is not less than a challenge to keep oneself healthy in today's busy life.
 (defrule modify_than_se_prep
 ?f0<-(id-Apertium_output ?id se $?mng)
-(id-word ?id than)
-(pada_info (group_head_id ?h)(group_ids =(+ ?id 1) $?) )
+(id-word ?id than|more)
+(pada_info (group_head_id ?h)(group_ids $?ids) )
+(test (eq (integerp (member$ (+ ?id 1) $?ids)) TRUE))
 ?f1<-(id-Apertium_output ?h $?m)
 =>
 	(retract ?f0 ?f1)

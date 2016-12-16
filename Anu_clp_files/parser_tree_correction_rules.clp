@@ -8,6 +8,27 @@
         (bind ?no (explode$ (str-cat ?m_cat ?no)))
 	(bind ?new_no ?no)
  )
+
+ ;========================================= Structure correction rules ==================================================
+ ;Suggested by Soma Mam (17-9-16)
+ ;Is your father in government service?
+ ;Before : kyA ApakI sarakArI sevA meM piwA hE?   After: kyA ApakA piwA sarakArI sevA meM hE?
+ (defrule grp_PRP_and_NP_as_one_chunk
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?Mot $?pre ?NP ?NP1 $?post)
+ ?f1<-(Node-Category  ?NP  NP)
+ (Node-Category  ?NP1  NP)
+ ?f2<-(Head-Level-Mother-Daughters ? ? ?NP ?PRP )
+ (Node-Category  ?PRP   PRP$)
+ ?f4<-(Head-Level-Mother-Daughters ?h1 ?l1 ?NP1 ?np $?p)
+ (Node-Category  ?np  NP)
+ ?f3<-(Head-Level-Mother-Daughters ? ?l2 ?np ?np1)
+ (Head-Level-Mother-Daughters ? ? ?np1 ?id )
+ (id-sd_cat ?id ?)
+  =>
+	(retract ?f0 ?f1 ?f2 ?f3 ?f4)
+	(assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?pre ?NP1 $?post))
+	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?NP1 ?PRP ?np1 $?p))
+ )
  ;==========================================   Category correction rules =================================================
  ;Suggested by Chaitanya Sir (21-11-12)
  ;The figure [has been redrawn] in Fig. 3.6 choosing different scales to facilitate the calculation. 
@@ -178,7 +199,24 @@
 	(assert (id-sd_cat  ?id RB))
 	(assert (Head-Level-Mother-Daughters consciously ?l1 ?mot $?p ?rb $?po))
  )
- ;======================================= LWG correction rules ===================================================
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Bhagyashri Kulkarni 14-9-16
+ ; He cut himself a great thick slice of cake. 
+ (defrule modify_JJ_as_RB
+ ?f1<-(Head-Level-Mother-Daughters ?h ?l $?p ?JJ ?JJ1 $?p1)
+ ?f2<-(Node-Category ?JJ JJ)
+ (Node-Category ?JJ1 JJ)
+ ?f0<-(Head-Level-Mother-Daughters great ?l1 ?JJ ?id)
+ ?f3<-(id-sd_cat ?id JJ)
+ =>
+        (retract ?f0 ?f1 ?f2 ?f3)
+        (bind ?rb (get_no ?JJ JJ RB))
+        (assert (Head-Level-Mother-Daughters ?h ?l $?p ?rb ?JJ1 $?p1 ))
+        (assert (Node-Category ?rb RB))
+        (assert (id-sd_cat  ?id RB))
+        (assert (Head-Level-Mother-Daughters great ?l1 ?rb ?id))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ; Suggested by Chaitanya Sir (02-03-16)
  ;Humans have always been curious about the world around them.
  (defrule modify_VBN_as_JJ
@@ -197,7 +235,7 @@
 	(assert (id-sd_cat  ?id JJ))
 	(assert (modified_cat_with_dic ?id))
  )
- ;------------------------------------------------------------------------------------------------------------------------
+ ;======================================= LWG correction rules ===================================================
  ;The mother calmed the angry son.The jet zoomed across the sky.
  ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
  (defrule modify_VBN_as_VBD
@@ -240,35 +278,106 @@
  ;Suggested by Chaitanya Sir (23-09-14)
  ;if first_daughter of NP is NNP and the daughter of NNP is the 1st word of the sentence 
  ;     and the word exists as a verb in the dictionary then modify it as 
- ;	Root => S  , S => VP , VP => VB
+ ;	Root => S  , S => VP , VP => VB NP
  ;[Wrap] the book.              Before: SAla puswaka.                   After: puswaka lapetie.
  ;[Reserve] the seats for me.   Before: awirikwa niXi mere lie sIteM.   After: mere lie sIteM bacAie.
+ ;[Do] get H.I.V. tested. 	Before: kara ne h.i.v. jAzca karavAyA.  After: h.i.v. jAzca karavAie.
+ ;[May] I come in Sir?		
  (defrule modify_NNP_as_VB
  ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?NP )
  (Node-Category ?ROOT ROOT)
- ?f4<-(Node-Category ?NP NP)
+ ?f4<-(Node-Category ?NP NP|S)
  ?f5<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 $?post ?punct)
  ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?NP1 ?NNP)
  ?f2<-(Node-Category ?NNP NNP)
  ?f6<-(Node-Category ?NP1 ?cat)
  ?f3<-(Head-Level-Mother-Daughters ?h2 ?l2 ?NNP P1)
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?head) "_verb")) "FALSE"))
+ (word-morph (original_word  ?h2)(category verb)(root ?root))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?root) "_verb")) "FALSE"))
  ?f7<-(id-sd_cat  P1  ?cat1)
+ (id-sd_cat  P2  ~VBZ) ;Gas is escaping from the pipe. Japan is a rising country. 
+ ?f9<-(Head-Level-Mother-Daughters ?PUNCT ?l3 ?punct ?pid)
+ ?f8<-(Node-Category ?punct ?p)
  =>
         (retract ?f0 ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
-        (bind ?s (get_no ?NP NP S))
-        (assert (Node-Category ?s S))
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?s ))
-
         (bind ?VP (get_no ?NP1 ?cat VP))
-        (assert (Node-Category ?VP VP))
-        (assert (Head-Level-Mother-Daughters ?h ?l ?s ?VP ?punct))
-
         (bind ?verb (get_no ?NNP NNP VB))
-        (assert (Node-Category ?verb VB))
-        (assert (Head-Level-Mother-Daughters ?h ?l ?VP ?verb $?post))
+	(if (and (eq ?PUNCT PUNCT-QuestionMark) (eq (integerp (member$ ?h1 (create$ May))) TRUE)) then
+		(retract ?f8 ?f9)
+		(bind ?s (get_no ?NP NP SQ))
+		(bind ?ps (get_no ?punct ?p P_QES))
+		(assert (Node-Category ?ps P_QES))
+	        (assert (Node-Category ?s SQ))
+		(assert (Head-Level-Mother-Daughters ?PUNCT ?l3 ?ps ?pid))
+		(assert (Head-Level-Mother-Daughters ?h1  ?l1 ?s  ?verb $?post ?ps))
+	else
+		(bind ?s (get_no ?NP NP S))
+		(assert (Node-Category ?s S))
+		(assert (Head-Level-Mother-Daughters ?h ?l ?s ?VP ?punct))
+		(assert (Head-Level-Mother-Daughters ?h1  ?l1 ?VP ?verb $?post))
+	)
+
+        (assert (Node-Category ?VP VP))
+       	(assert (Node-Category ?verb VB))
+       	(assert (id-sd_cat  P1  VB))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?s ))
+;	(assert (Head-Level-Mother-Daughters ?h1  ?l1 ?VP ?verb $?post))
         (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (17-09-16)
+ ;[Does] Lata come to your house? Before: kyA kyA lawA ApakA Gara AI huI?
+ (defrule modify_NNP_as_VB1
+ (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?SQ )
+ (and (Node-Category ?ROOT ROOT) (Node-Category ?SQ SQ))
+ ?f5<-(Head-Level-Mother-Daughters ?h ?l ?SQ ?NNP $?post ?punct)
+ ?f2<-(Node-Category ?NNP NNP)
+ (Head-Level-Mother-Daughters PUNCT-QuestionMark ? ?punct ?)
+ ?f3<-(Head-Level-Mother-Daughters ?h2 ?l2 ?NNP P1)
+ (test (member$ ?h2 (create$ Does Do)))
+ ?f7<-(id-sd_cat  P1  ?cat)
+ =>
+        (retract ?f2 ?f3 ?f5 ?f7)
+        (bind ?verb (get_no ?NNP NNP VB))
+
+        (assert (Node-Category ?verb VB))
         (assert (id-sd_cat  P1  VB))
+        (assert (Head-Level-Mother-Daughters ?h ?l ?SQ ?verb $?post ?punct))
+        (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (26-08-16)
+ ;if first_daughter of NP is NNP and the daughter of NNP is the 1st word of the sentence 
+ ;     and the word exists as a verb in the dictionary then modify it as 
+ ;	Root => S  , S => VP , VP => VBG
+ ;[Running] is good for health. Before: saFcAlana svAsWya ke lie acCA hE. After: xOdanA svAsWya ke lie acCA hE.
+ (defrule modify_NNP_as_VBG
+ (declare (salience 1))
+ ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?NP )
+ (Node-Category ?ROOT ROOT)
+ ?f4<-(Node-Category ?NP ?c&NP|S)
+ ?f5<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 $?post ?punct)
+ ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?NP1 ?NNP)
+ ?f2<-(Node-Category ?NNP NNP)
+ ?f6<-(Node-Category ?NP1 ?cat)
+ ?f3<-(Head-Level-Mother-Daughters ?h2 ?l2 ?NNP P1)
+ ?f7<-(id-sd_cat  P1  ?cat1)
+ (word-morph (original_word  ?h2)(category verb)(root ?root)(suffix ing))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?root) "_verb")) "FALSE"))
+ =>
+        (retract ?f0 ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
+        (bind ?s (get_no ?NP ?c S))
+        (bind ?VP (get_no ?NP1 ?cat VP))
+        (bind ?verb (get_no ?NNP NNP VBG))
+
+        (assert (Node-Category ?s S))
+        (assert (Node-Category ?VP VP))
+        (assert (Node-Category ?verb VBG))
+        (assert (id-sd_cat  P1  VBG))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?s ))
+        (assert (Head-Level-Mother-Daughters ?h ?l ?s ?VP $?post ?punct))
+        (assert (Head-Level-Mother-Daughters ?h1  ?l1 ?VP ?verb))
+        (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ;Suggested by Chaitanya Sir (11-08-16)
@@ -300,10 +409,10 @@
   )
   ;------------------------------------------------------------------------------------------------------------------------
   ;Suggested by Sukhada (12-08-16)
-  ;She got the work done.
+  ;She got the work done. Drink plenty of water and get urine culture done. 
   (defrule modify_NN_as_VP
   ?f0<-(Head-Level-Mother-Daughters ?head&get|got|getting ?lvl ?Mot ?V ?NP)
-  (and (Node-Category ?Mot VP) (Node-Category ?V VBD|VBZ))
+  (and (Node-Category ?Mot VP) (Node-Category ?V VBD|VBZ|VB))
   ?f1<-(Node-Category ?NP NP)
   ?f2<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 ?VP)
   (Node-Category ?VP VP)

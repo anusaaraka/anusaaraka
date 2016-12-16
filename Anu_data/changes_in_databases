@@ -87,6 +87,7 @@
 	22. wArA	Suggested by Sukhada	    (21-12-13)  Eg: How does a star form?
 	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
 	24. kAPI    	Suggested by Sukhada 	    (02-09-14)  Eg: I used to be pretty good.
+	25. sara	Suggested by Rajini	    (14-10-16)  Eg: May I know your name sir? 
 
 #  changes in Phrv.txt 
 #  ===================
@@ -937,6 +938,8 @@ Removed:
 										    way business needs to be done.
 	4. would_have_been_ing	0_rahA_howA-0-0 (Suggested by Dipti Mam 18-01-14) 
 	5. ing			wA_huA-0-0	(By Shirisha Manju 	01-09-14)
+	6. shall_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
+	7. will_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
 
  Removed :
  -------
@@ -1483,6 +1486,10 @@ Nandini ji LTRC 	27-11-13)
 	181. paracetamol_PropN		pErAsItAmola			(	"			    "	  )
 					If fever is more than 100 give a pill of paracetamol and take suggestions from a medicine specialist 
 					doctor.
+	182. moti_noun			mowI
+					The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
+	183. non-medical_adjective   	gEra_cikiwsIya			(Suggested by Rajini    14-10-16)
+					Ex: 
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -2315,6 +2322,9 @@ Nandini ji LTRC 	27-11-13)
 				Ex: Fruits and vegetables have a ratio like this.
 	206. yourself_pronoun   wuma_Kuxa		as	Apane_Apa_ko	(	"	"		  "	)
 				Ex: You keep yourself far from many diseases by eating less fatty and fibered food. 
+	207. properly_adverb	uciwa_Dafga_se		as	TIka_se		(Suggested by Rajini           14-10-16)
+				Ex: It does not work properly. 
+	208. business_noun   	uxyoga			as	vyApAra		(Suggested by Rajini           17-10-16)
 	
 
     6. Removed meaning from existing list:
@@ -3629,6 +3639,8 @@ Nandini ji LTRC 	27-11-13)
 	cousin		dentist 	typist  	virgin  	widow   	winner  	
 	administrator	adviser		agent		american	astrologer	writer
 	baker		banker		tourist 	tailor		umpire  	warden  
+	elder		(Suggested by Soma Mam 		17-10-16) Ex: Talk respectfully with elders.
+	cashier		(	"	"		   "	) Ex: Deposit the amount with the cashier.
 	  
 
 # Changes in named_entities.txt

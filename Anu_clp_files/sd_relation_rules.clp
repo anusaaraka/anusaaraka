@@ -746,9 +746,6 @@ else
 )
  ; Ex. Bill does not drive.
 ;------------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju
- ;Ex: John is more intelligent than Tom.
- ;------------------------------------------------------------------------------------------------------------------------
 ;Modifed by Sukhada on 29-10-11
 (defrule prep+than+pobj
 (declare(salience 1000))
@@ -828,9 +825,9 @@ else
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule double_p
  (declare (salience 100))
-?f<-(rel_name-sids  case  ?p_saM  ?p-1)
-(rel_name-sids  mwe  ?p-1  ?p)
-?f1<-(rel_name-sids  ?nmod  ?kri  ?p_saM)
+ ?f<-(rel_name-sids  case  ?p_saM  ?p-1)
+ (rel_name-sids  mwe  ?p-1  ?p)
+ ?f1<-(rel_name-sids  ?nmod  ?kri  ?p_saM)
  (parserid-word ?p-1 ?word) (parserid-word ?p ?word1)
  (test (eq (sub-string 1 5 ?nmod) "nmod:"))
  (parser_id-cat_coarse ?kri ?cat)
@@ -1369,12 +1366,15 @@ else
  )
  ; Ex.  Do not waste electricity. Do not disturb the sleeping kids. Do not forget to take your tiffin. Do not neglect your duties. 
 ;------------------------------------------------------------------------------------------------------------------------
+ ;Added Does and May by Shirisha Manju 21-9-16
+ ;Does Ex: Does Lata come to your house?
+ ;May  Ex: May I come in Sir? 
  (defrule AjFArWaka_vAkya
  (parser_id-cat_coarse P1 verb)
  (not (rel_name-sids aux  ?kri P1))
  (not (rel_name-sids cop  ?kri P1))
  (not (rel_name-sids expl  P1  ?));Is there life beyond the grave?
- (parserid-word P1 ?wrd&~Is&~Am&~Are&~Was&~Were) ; Added for bllip parser Ex: Are a dog and a cat here?
+ (parserid-word P1 ?wrd&~Is&~Am&~Are&~Was&~Were&~Does&~May) ; Added for bllip parser Ex: Are a dog and a cat here?
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     AjFArWaka_vAkya)"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   AjFArWaka_vAkya   AjFArWaka_vAkya)"crlf)

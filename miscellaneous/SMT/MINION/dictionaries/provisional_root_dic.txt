@@ -47,6 +47,7 @@ real-life	vAswavika_jIvana meM
 such	isa_prakAra_kA/isa_prakAra_kI/EsA_hI
 thus	awaeva
 everywhere	hara_sWAna_para
+every	hareka
 friction	GarRaNa_bala	
 breeze	manxa_pavana
 preceding	piCale
@@ -119,3 +120,5 @@ half	arXaBAga
 he	yaha
 change	parivarwiwa_ho
 importance	mahawwA
+me	mEM
+mine	mEM

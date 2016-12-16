@@ -6,6 +6,17 @@
 
 
 ;============================================== Modify Morph root ==========================
+(defrule get_pronoun_root
+?f<-(man_word-root-cat  ?word&yahIM|yahI|wumane ?word  dummy_cat)
+=>
+	(retract ?f)
+	(if (eq ?word wumane) then
+		(assert (man_word-root-cat ?word wU modified_cat))
+	else
+		(assert (man_word-root-cat ?word yaha modified_cat))
+	)
+)
+;-------------------------------------------------------------------------------------
 ;saxiSoM ==> saxiSa      kareM ==> kara 
 (defrule modify_morph_root
 ?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
@@ -49,6 +60,19 @@
 	(printout t "Warning: morph root missing " ?word crlf)
 )
 ;-------------------------------------------------------------------------------------
+;[solahavIM] SawAbxI se yUropa meM vijFAna ke kRewra meM awyaXika pragawi huI.
+(defrule modify_cat_for_number
+?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+(test (eq (numberp ?word) FALSE))
+(test (eq (sub-string (- (length ?word) 2) (length ?word)  ?word) "vIM"))
+=>
+        (retract ?f)
+        (bind ?root (string-to-field (sub-string 1 (- (length ?word) 3) ?word)))
+        (assert (man_word-root-cat  ?word  ?root  modified_cat))   
+	(printout t "Warning: morph root missing " ?word crlf)
+)
+
+;-------------------------------------------------------------------------------------
 ;kaBI-kaBI hamArI kuCa Ese ajanabiyoM se mulAkAwa ho jAwI hE jinameM hameM eka Sabxa bAwacIwa ke binA BI pahale pala se hI xilacaspI pExA ho jAwI hE .
 ;ajanabiyoM => ajanabi
 ;(defrule modify_morph_root3
@@ -82,7 +106,7 @@
 (defrule rm_mng_after_hE_from_verb_chunk
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNF|VGNN $?pre ?mid ?lid)
 (manual_word_info (group_ids $? ?mid $?))
-(manual_id-word ?mid  hE|hEM|lie|karake|xeMge)
+(manual_id-word ?mid  hE|hEM|lie|karake|xeMge|karane)
 ;(manual_word_info (head_id ?mid) (word $? hEM|gaI))
 =>
         (retract ?f)
@@ -94,13 +118,17 @@
 ;yaxi vicArAXIna vaswueMz xo relagAdiyAz hEM wo usa vyakwi ke lie jo kisI eka relagAdI meM bETA hE, xUsarI relagAdI bahuwa weja calawI [huI prawIwa howI hE] .
 ;if first mng is aux and already one more aux present then remove the first aux
 ;Ex: huI prawIwa howI hE  ==> prawIwa howI hE
+; kala ravivAra [hogA, hE] nA ? [hogA, hE] ==> [hogA] [hE]
 (defrule rm_first_aux_mng_from_verb_chunk
-?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid ?lid)
-(manual_word_info (head_id ?mid) (word $? howI|howA $?))
-(manual_word_info (head_id ?fid) (word huI ))
+?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid)
+(manual_id-word ?mid  hE|hEM)
+;?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid ?lid)
+;(manual_word_info (head_id ?mid) (word $? howI|howA $?))
+(manual_word_info (head_id ?fid) (word hogA ))
 =>
         (retract ?f)
-        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid ?lid))
+;        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid ?lid))
+        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid))
         (assert (chunk_name-chunk_ids VGNN ?fid))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -124,6 +152,7 @@
 (man_word-root-cat ?word ?rt v)
 (not (man_word-root-cat ?word ? n))
 (not (man_word-root-cat ?word ? adj))
+(manual_id-word =(+ ?id 1) ?w&~se) ;xo se 
 =>
 	(retract ?f)
 	(assert (chunk_name-chunk_ids NP  $?p))
@@ -183,7 +212,7 @@
 (test (and (eq (string-to-field (sub-string 1  (- (str-index "-" ?mng) 1) ?mng)) ?m1)(eq (string-to-field (sub-string (+ (str-index "-" ?mng) 1) (length ?mng) ?mng)) ?m2)))
 =>
 	(retract ?f0 ?f1)
-	(bind ?r (string-to-field (str-cat ?m1"-"?root2)))
+	(bind ?r (string-to-field (str-cat ?root1"-"?root2)))
 	(assert (man_word-root-cat ?mng ?r ?c))
 )
 
