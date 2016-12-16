@@ -1,6 +1,6 @@
 (defglobal ?*id* = 1)
 
-(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
 (deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
@@ -218,7 +218,8 @@
 ?f1<-(ids-multi_vib ?id3&:(=(+ ?id2 1) ?id3) $?ids - $?vib)
 =>
         (retract ?f1)
-        (modify ?f (vibakthi $?vib)(group_ids $?gids ?id0 ?id3 $?ids))
+	(bind ?nv (remove_character " " (implode$ (create$ $?vib)) "_"))
+        (modify ?f (vibakthi ?nv)(vibakthi_components $?vib)(group_ids $?gids ?id0 ?id3 $?ids))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -231,7 +232,8 @@
 (not (manual_id-word ?id1 @PUNCT-ClosedParen|}))
 =>
 	(retract ?f)
-	(modify ?f0 (vibakthi $?vib)(group_ids $?ids ?id1 ?id $?vids))
+	(bind ?nv (remove_character " " (implode$ (create$ $?vib)) "_"))
+	(modify ?f0 (vibakthi ?nv)(vibakthi_components $?vib)(group_ids $?ids ?id1 ?id $?vids))
 )
 	
 ;============================================  Word Grouping ============================================
@@ -245,8 +247,8 @@
 (manual_id-word ?id0 ?mng&~ke&~kI&~se)
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
 (manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?mng2)
-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) ?m)
 (man_word-root-cat ?m ?mng3 ?)
+(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) ?m)
 (not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
@@ -436,11 +438,12 @@
 ;jEse ki,  inake bAxa, isa prakAra, isI prakAra , isI waraha, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre))
-?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake))
+?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa|liye $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
-	(modify ?f (head_id ?mid) (word ?p )(vibakthi ?w $?d)(group_ids ?mid ?mid1 $?ids))
+        (bind ?new_v (remove_character " " (implode$ (create$ ?w $?d)) "_"))
+	(modify ?f (head_id ?mid) (word ?p )(vibakthi ?new_v)(vibakthi_components ?w $?d)(group_ids ?mid ?mid1 $?ids))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 
@@ -517,7 +520,7 @@
 (not (mng_has_been_grouped ?id3))
 (not (vib_added ?h))
 =>
-	(modify ?f1 (vibakthi ?vib)(group_ids $?ids ?id0 ?id3))
+	(modify ?f1 (vibakthi ?vib)(vibakthi_components ?vib)(group_ids $?ids ?id0 ?id3))
         (assert (mng_has_been_grouped ?id3))
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -528,15 +531,20 @@
 (defrule single_vib
 (declare (salience 540))
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun) (vibakthi ?v $?v1)(group_ids $?grp_ids ?lid))
-(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se)
+(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se|sA)
 (not (chunk_name-chunk_ids VGF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE.
 (not (mng_has_been_grouped ?id1))
 =>
-	(if (eq ?v 0) then
-                (modify ?f1 (vibakthi ?vib)(group_ids $?grp_ids ?lid ?id1))
-        else
-                (modify ?f1 (vibakthi ?v $?v1 ?vib)(group_ids $?grp_ids ?lid ?id1))
-        )
+	(if (eq ?vib sA) then
+                (modify ?f1 (word $?noun ?vib)(group_ids $?grp_ids ?lid ?id1))
+	else
+		(if (eq ?v 0) then
+        	        (modify ?f1 (vibakthi ?vib)(vibakthi_components ?vib)(group_ids $?grp_ids ?lid ?id1))
+        	else 
+	        	(bind ?new_v (remove_character " " (implode$ (create$ ?v $?v1 ?vib)) "_"))
+                	(modify ?f1 (vibakthi ?new_v)(vibakthi_components ?v $?v1 ?vib)(group_ids $?grp_ids ?lid ?id1))
+        	)
+	)
         (assert (mng_has_been_grouped ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -556,9 +564,10 @@
 =>
         (retract ?f2)
 	(if (eq ?v 0) then
-        	(modify ?f1 (vibakthi ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+        	(modify ?f1 (vibakthi ?vib)(vibakthi_components ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
 	else
-        	(modify ?f1 (vibakthi ?v $?v1 ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+	        (bind ?new_v (remove_character " " (implode$ (create$ ?v $?v1 ?vib)) "_"))
+        	(modify ?f1 (vibakthi ?new_v)(vibakthi_components ?v $?v1 ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
 	)
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -578,7 +587,7 @@
 ;not modified in manual_word_info bcoz we are not modifying phrasal info
 (defrule cp_man_hypen_word
 (declare (salience 100))
-(or (manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?v))(id-word-vib ?mid - ?mng - $?v))
+(or (manual_word_info (head_id ?mid) (word ?mng)(vibakthi_components $?v))(id-word-vib ?mid - ?mng - $?v))
 (test (eq (numberp ?mng) FALSE))
 (test (neq (str-index "-" ?mng) FALSE))
 (not (id-hyphen_word-vib ?mid $?))
@@ -593,7 +602,7 @@
 ;ex : man: praXAnamanwrI dic : praXAna manwrI 
 (defrule cp_man_fact
 (declare (salience 100))
-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi_components $?vib))
 (or (id-Apertium_output ? ?m ?m1) (id-Apertium_output ? ?m ?m1 ?v&ko|ke|se)(database_info (components ?m ?m1 )))
 (test (eq (numberp ?mng) FALSE))
 (test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
@@ -606,7 +615,7 @@
 ;ex : man: praXAna manwrI dic : praXAnamanwrI 
 (defrule cp_man_fact1
 (declare (salience 100))
-(manual_word_info (head_id ?mid) (word ?m ?m1)(vibakthi $?vib))
+(manual_word_info (head_id ?mid) (word ?m ?m1)(vibakthi_components $?vib))
 (or (id-Apertium_output ? ?mng) (id-Apertium_output ? ?mng ?v&ko|ke|se)(database_info (components ?mng)))
 (test (eq (numberp ?mng) FALSE))
 (test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
