@@ -2,6 +2,20 @@
 
 (deftemplate score (slot anu_id (default 0))(slot man_id (default 0))(slot weightage_sum (default 0))(multislot heuristics (default 0))(multislot rule_names (default 0)))
 
+;[Is] their daughter [married]? unakI betI SAxISuxA [hE]?
+;1 4, 4 4 => 4,4
+(defrule rm_aux_score_fact
+(declare (salience 250))
+(root-verbchunk-tam-chunkids ? ? ? $? ?aux ?h)
+(anu_id-man_id-src-rule_name ?h ?mid single_verb_match single_verb_match_with_anu)
+?f1<-(anu_id-man_id-src-rule_name ?m ?mid ? ?)
+(test (neq ?m ?h))
+(manual_id-word ?mid hE)
+=>
+	(retract ?f1)
+)
+
+
 (defrule modify_score_fact
 (declare (salience 200))
 ?f0<-(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?count)(heuristics $?hs)(rule_names $?rs))

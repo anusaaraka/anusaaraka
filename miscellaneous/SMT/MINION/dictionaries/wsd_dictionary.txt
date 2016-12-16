@@ -4053,7 +4053,7 @@ stamp	TappA_lagA/tikata/pEra_pataka/
 stanchion	AXAra/teka/golaposta/gola_kA_KamBA/KamBA/
 standard	mAnaka/AxarSa/kakRA/ucca_swara/
 standing	Kade_rahane_kI_jagaha/sWAyI/prawiRTA/ijZjZawa/vijewA_krama/
-standstill	(15.3.10/
+standstill	gawiroXa
 stand	nirxiRta_kara/Kade_raha/saha/nirNaya/kataGarA/addA/kA_samarWana_kara/wEyAra_raha/wyAgapawra_xe/samarWana_kara/kA_pAlana_kara/datA_raha/para_najara_raKa/niBA/niSciwa_ho/stEMda/KadZA_ho/atala_raha/hE/xarSA/
 staple	reSA/praXAna_mAla/kaccA_mAla/wawva/muKya_viRaya/muKya/stepala_kara/
 stark	PIkA/pUrNa_rUpa_se/kaTora/
@@ -4374,10 +4374,10 @@ tiptoe	paMjA/paMjoM_ke_bala_cala/
 tip	suciwa_kara/ulata_xe/ulata_jA/AgAha_kara/baKSISa_xe/noka/suJAva/agraBAga/sirA_lagA/
 tiresome	ubAU/WakAne_vAlA/
 tire	Uba_jA/Uba/WakA_huA/Waka/pahiyA/
-tithe	xasavAz_BAga/xasavAz_BAga_xe/
-title	aBijAwa/nAma/mAnopAXi_mila/SIRk/KZiwAba/aXikAra/nAma_xe/
-toast	SuBakAmanA/AkarRaNa/svAsWya_yA_SuBakAmanA_ke_lie_SarAba_pInA/Buna/tosta/sika/BUna/
-today	Aja/
+tithe	xasavAz_BAga/xasavAz_BAga_xe
+title	aBijAwa/nAma/mAnopAXi_mila/SIRk/KZiwAba/aXikAra/nAma_xe
+toast	SuBakAmanA/AkarRaNa/svAsWya_yA_SuBakAmanA_ke_lie_SarAba_pInA/Buna/tosta/sika/BUna
+today	Aja
 toe	pAzva_kA_azgUTA/AxeSa_kA_pAlana_kara/
 toil	pariSrama/pariSrama_kara/
 toll	mArgakara/XImI_gawi_se_GaNtA_bajA/
@@ -4397,7 +4397,7 @@ torture	uwpIdana/awi_kaRta_xe/
 toss	uCAla_xe/sikkA_uCAla_kara_nirNaya_le/jalxI_se_purA_kara/PeMka_xe/xe/nikAla_xe/raxxa_kara_xe/PeMka/hilA/uCAla_uCAla_kara_milA/uwkRepaNa/uCAla/
 total	kula/sampUrNa/joda/joda_nikAla/
 tot	baccA/hisAba_lagA/alpa_mAwrA/
-to	ke_liye/kA/isake_bAxa_meM/kI_apekRA/waka/para/0/kI/vAlA/se/0_kara/kI_ora/meM/ke_sAmane/ko/ora/ke_karIba/ke_pAsa/ne/nA/-ne/kara/ke/ke_lie/ke_prawi/
+to	ke_liye/kA/isake_bAxa_meM/kI_apekRA/waka/para/kI/vAlA/se/0_kara/kI_ora/meM/ke_sAmane/ko/ora/ke_karIba/ke_pAsa/ne/nA/-ne/kara/ke/ke_lie/ke_prawi/
 touch	TIka_kara/praBAviwa_honA/sparSa_kara/karuNAwmaka/sparSa/BAva/rUpa/saMparka/CUwA/mawWA_teka/mukAbalA_kara/CU/jamIna_para_uwara/lene_kelie_manA/SurU_karavA_xe/para_prakASa_dAla/prakASa_dAla/WodZA/praBAva_dAla/
 touchy	nAjuka/saMvexanaSIla/cidacidA/
 tough	kadA/muSkila/majabUwa/xqDawApUrvaka_tike_raha/uxxaNda/kaTora/Kexajanaka/

@@ -5,7 +5,7 @@
 
 (deftemplate alignment (slot anu_id (default 0))(slot man_id (default 0))(multislot anu_meaning (default 0))(multislot man_meaning(default 0)))
 
-(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
 ;=============================== modify/remove score fact for same weight ================
 
@@ -20,6 +20,18 @@
         (modify ?f0 (weightage_sum ?sum))
 )
 ;-----------------------------------------------------------------------------------
+(defrule modify_score_fact_with_conj
+(declare (salience 102))
+?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum 1))
+(not (score (weightage_sum ?s&:(> ?s 1) )))
+(alignment (anu_id =(- ?aid 1))(man_id =(- ?mid 1)) (anu_meaning Ora) )
+=>
+        (modify ?f0 (weightage_sum 2))
+)
+;-----------------------------------------------------------------------------------
+
+
+
 (defrule modify_score_for_same_wt
 (declare (salience 101))
 ?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?score) )
@@ -27,6 +39,7 @@
 (test (> (fact-index ?f0) (fact-index ?f1)))
 (or (id-HM-source ?aid $?m ?)(id-Apertium_output ?aid $?m))
 (manual_word_info (head_id ?mid) (word $?m))
+(not (manual_word_info (head_id ?mid1) (word $?m)))
 =>
 	(bind ?score (+ ?score 1))
 	(modify ?f0 (weightage_sum ?score))
@@ -52,8 +65,8 @@
 ?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
 ?f2<-(score (anu_id ?aid1)(man_id ?mid)(weightage_sum ?score))
 (test (neq ?aid ?aid1))
-(not (score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score1&:(> ?score1 ?score))))
-(not (score (anu_id ?aid1) (man_id ?mid1) (weightage_sum ?score1&:(> ?score1 ?score))))
+(not (score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score1&:(>= ?score1 ?score))))
+(not (score (anu_id ?aid1) (man_id ?mid1) (weightage_sum ?score1&:(>= ?score1 ?score))))
 (not (aligned_anu_id ?aid))
 (not (manual_id-word 2 .))
 =>

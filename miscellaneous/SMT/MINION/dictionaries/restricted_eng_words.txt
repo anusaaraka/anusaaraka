@@ -96,7 +96,7 @@ most	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa/lagaBaga/awya
 much	bahuwa/bahuwa_kAla/aXika/prAyaH/Ora/karIba-karIba/kAPI
 my	merA/mere/mEM
 myself	svayaM/svawaH
-near	nikata/samIpa/pAsa_meM/pAsa_hI/pAsa/najaxIkI/najaxIka/mUla/milawA-julawA/lagaBaga_samIpa/lagaBaga/karIba/kiPayawaSArI/kaFjUsa/jigarI/bilkula_nayA/bAzyA/bahuwa_kuCa_sahI/AnevAlA/anwarafga/milawA_julawA/pAsa_se/pasa/nikata_se/karIba-karIba/ke_pAsa/ke_najaxIka/karIba_ho/nikata_pahuzca
+near	nikata/samIpa/pAsa_meM/pAsa_hI/pAsa/najaxIkI/najaxIka/mUla/milawA-julawA/lagaBaga_samIpa/lagaBaga/karIba/kiPayawaSArI/kaFjUsa/jigarI/bilkula_nayA/bAzyA/bahuwa_kuCa_sahI/AnevAlA/anwarafga/milawA_julawA/pAsa_se/pasa/nikata_se/karIba-karIba/ke_pAsa/ke_najaxIka/karIba_ho/nikata_pahuzca/Asa_pAsa
 neither	nA_yaha_nA_vaha/na_hI/nahIM/na/koI_BI_nahIM/inakAra/na_wo
 no	nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM/inakAra
 nobody	koI_nahIM/mAmUlI_AxamI/koInahIM
@@ -109,7 +109,7 @@ on	lagAwAra/pe/para/ora/meM/ko/ke_upara/ke_pAsa/ke_kinAre/ke_bAre_meM
 one	eka_UNDEF
 onto	para/pICe_padanA
 opposite	viruxXa/viroXI/viparIwa/ultA/sAmane/prawikUla/Amane-sAmane/ke_sAmane
-or	yA/aWavA/anyaWA
+or	yA/aWavA/anyaWA/va
 other	anya/xUsarA/xUsar/viparIwa/Ora/bAkI
 others	anya
 our	hamArA/hamalogo_kA/apanA/hamAre/hamArI/apane/apanI/mEM
@@ -162,7 +162,7 @@ unlike	se_Binna/asamAna/prawikUla/ke_viparIwa
 until	waka/jaba_waka
 up	wEyAra/weja/vixroha_graswa/viparIwa/UzcI/uwsAhiwa/uTAna/uTA_hUA/upara/UcAI_para/SIrRasWa/samApwa/prawyeka/praswuwa/KuSa/KulA/jalA_huA/jagA_huA/gusse_meM/garma/badA/baDI_huI/avagawa/apa/Upara/ucca/Upara_vAlA/Upara_kI_ora/UrXva/upara_kI_ora/pUrI_waraha_se/kasa_ke/Age/SIrRasWa_vyakwi/caDAva/ke_Upara/ke_upara/para/uTa/baDA/uTA/caDA
 upon	ke_Upara/para/najaxIka/UzcA
-us	hameM/hame/hamAre/apan/hama_ko
+us	hameM/hame/hamAre/apan/hama_ko/hamArI
 versus	viparIwa/viruxXa/ke_mukAbale/banAma
 via	kI_rAha_se/se_hokara/ke_xvArA
 was	WA/WI/We

@@ -85,7 +85,7 @@
  (load-facts "hindi_parser_grp_rel_ids_tmp.dat")
  (load-facts "manual_word.dat")
  (load-facts "pos.dat")
- (load-facts "manual_noun_grp.dat")
+ ;(load-facts "manual_noun_grp.dat")
  (load-facts "comp_and_aux_grp_info.dat")
  (open "hindi_parser_grp_rel_wrds.dat" h_p_wrd1 "w")
  (run)
@@ -268,6 +268,8 @@
  (load ?*path*)
  (load-facts "align_debug_source.dat")  ;eng-hin parsers align facts
  (load-facts "align_debug_source1.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "manual_word.dat")
  (assert (heuristic-weightage anu_exact_match 6))
  (assert (heuristic-weightage anu_root_match 5))
  (assert (heuristic-weightage anu_exact_match_without_vib 4))
@@ -328,8 +330,10 @@
  (load-facts "word.dat")
  (open "total-left-over.dat" lf "a")
  (open "catastrophe.dat" catas_fp "a")
+ (open "word_align.dat" w_fp "w")
  (run)
  (save-facts "word_alignment.dat" local anu_id-anu_mng-sep-man_id-man_mng_tmp)
+ (save-facts "manual_lwg_new.dat" local manual_word_info)
  (close catas_fp)
  (clear)
  ;--------------------------------------------------------------------------
