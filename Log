@@ -42,17 +42,23 @@
  17. vibakthi.clp:    Modified: dbase_kriyA_obj_vibakthi_rule  -- lookup root_mng instead mng
  18. hindi_meaning.clp: Added: get_meaning_for_number 
 		     Modified the rules to remove the condition to check FALSE for dbase meaning in action part
- 19. run_modules_std.bat  
+ 19. wsd_tam_debug.clp:
+	Opened debug_file.dat in "a" mode
+	Modified prov_dir path from $HOME_anu_provisional_wsd_rules to "$HOME_anu_provisional_wsd_rules/canonical_form_prov_wsd_rules"
+	Modified : display_rule
+ 21. wsd_debug.clp:
+	Modified prov_dir path from $HOME_anu_provisional_wsd_rules to "$HOME_anu_provisional_wsd_rules/canonical_form_prov_wsd_rules" 
+ 22. run_modules_std.bat  
 		Loaded lwg_info.dat and punctuation_info.dat files in template_before_mng module
 		moved tam meaning module to execute after hindi_meaning module
             Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat and run_modules_link.bat
- 20. create_hindi_animate.c:
+ 23. create_hindi_animate.c:
 		Added pronoun case to create hindi animate list
- 20. Updated following files:
+ 24. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
- 21. Updated following lex files:
+ 25. Updated following lex files:
 	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP and NIIT in the list
 				     Removed: May
 	initialisms.lex 	-->  Added :I.A.S. M.Sc. B.Sc.
@@ -60,6 +66,7 @@
 	enclitics.lex 		-->  added [mM]a'am
 	chk_input_format.pl 	-->  fixed bug for '-'  Ex: ... (trimester) - from ...
 	canonical_form.lex	-->  Added rule to convert ke_liye to ke_lie	 
+	get_canonical_form_in_wsd.lex	--> Added rule to handle canonical form in tam files
  22. Updated the following files
         print-pos-info.py
 	create_SL-TL_dict_using_phrase_table.py --> Added print statements for debugging
@@ -72,6 +79,9 @@
 	anu_compile.sh	-> Added compilation of canonical_form.lex before creating canonical form
 	Anusaaraka_logon.sh
 	get_dictionary_in_canonical_form.sh --> Modified get_canonical_form-dic.out to canonical_form.out (Using lex prog instead of 'c' prog)
+	wsd_tam_debug.sh 	--> Added punctuation_info.dat in echo statement.
+	provisional_Anu_databases/get-text-files.sh -> Added human.txt in cp step.
+	get_canonical_dic.sh	--> get_canonical_form-dic.out  to canonical_form.out
  24. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp	get_score.clp		eng_parser_grouping.clp		get_hnd_std_parser_heuristics.clp
@@ -81,7 +91,6 @@
 	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
 		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp
  25. Updated Log	
-
 
  24-08-16
  ========

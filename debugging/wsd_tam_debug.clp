@@ -13,9 +13,10 @@
  (load* "global_path.clp")
  (load-facts "sand_box.dat")
  (load-facts "domain.dat")
+ (open "debug_file.dat" wsd_fp "a")
 
-
- (defglobal ?*prov_dir* = ?*provisional_wsd_path*)
+; (defglobal ?*prov_dir* = ?*provisional_wsd_path*)
+ (defglobal ?*prov_dir* = (create$ (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/")))
  (defglobal ?*wsd_dir* = (create$ (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/")))
  (defglobal ?*debug_flag* = TRUE)
  (defglobal ?*count* = 1)
@@ -141,7 +142,7 @@
  ?f<-(all_tam_mngs ?id ?tam)
  =>
  (retract ?f)
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/canonical_form_prov_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
  (open "jnk" fp2 "r")
  (if (eq (read fp2) EOF) then
@@ -179,7 +180,7 @@
  ?f<-(print_all_possible_meanings ?id ?tam ?exp_mng)
  =>
  (retract ?f)
- ( system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
+ ( system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/canonical_form_prov_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
  (open "jnk" fp "r")
  (if (neq (read fp) EOF) then
@@ -205,7 +206,7 @@
  ?f<-(print_only_expected_meaning ?id ?tam ?exp_mng)
  =>
  (retract ?f)
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/canonical_form_prov_wsd_rules/" ?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">jnk 2>error")
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">>jnk 2>error")
  (open "jnk" file "r")
  (if (eq (read file) EOF) then
@@ -254,12 +255,15 @@
  	(printout t "(exit) "crlf)
 
  	(bind ?tam_file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?tam "_tam.clp"))
- 	(bind ?tam_file1 (str-cat ?*provisional_wsd_path* "/" ?tam "_tam.clp"))
- 	(if (and (neq (load* ?tam_file) FALSE)(halt)) then
-	else (if (and(neq (load* ?tam_file1) FALSE)(halt)) then
-	     else
-               (printout t "There is no rule file with that tam." crlf)
-              )
+ 	(bind ?tam_file1 (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?tam "_tam.clp"))
+ 	;(if (and (neq (load* ?tam_file) FALSE)(halt)) then
+	;else (if (and(neq (load* ?tam_file1) FALSE)(halt)) then
+	;Modified above lines as shown below by Roja:
+ 	(if (neq (load* ?tam_file1) FALSE) then
+		else (if (neq (load* ?tam_file) FALSE) then
+	     		else
+		               (printout t "There is no rule file with that tam." crlf)
+ 		)
         )
  )
 
@@ -287,14 +291,14 @@
  (retract ?f)
  (printout t  "STEP1::  To create or open a particular clip file type the following command :" crlf)
  (printout t  "======" crlf)
- (printout t  "         (system \"gvim -o \" ?*provisional_wsd_path* ""/" "<tam>_tam.clp)" crlf)
- (printout t  "         For Eg for \"is_ing\" tam:- CLIPS> (system \"gvim -o \"  ?*provisional_wsd_path* ""/"  "is_ing_tam.clp)" crlf crlf)
+ (printout t  "         (system \"gvim -o \" ?*provisional_wsd_path* ""/canonical_form_prov_wsd_rules/" "<tam>_tam.clp)" crlf)
+ (printout t  "         For Eg for \"is_ing\" tam:- CLIPS> (system \"gvim -o \"  ?*provisional_wsd_path* ""/canonical_form_prov_wsd_rules/"  "is_ing_tam.clp)" crlf crlf)
  (printout t  "STEP2::  After writing the rule save and close the file. " crlf)
  (printout t  "======" crlf)
  (printout t  "STEP3::  To check the syntax error in the rule; please load the file using the following command :" crlf)
  (printout t  "======" crlf)
- (printout t  "         (load* (str-cat ?*provisional_wsd_path* ""/" "<tam>_tam.clp))" crlf)
- (printout t  "         For Eg:- CLIPS> (load* (str-cat ?*provisional_wsd_path* ""/" "is_ing_tam.clp))" crlf crlf)
+ (printout t  "         (load* (str-cat ?*provisional_wsd_path* ""/canonical_form_prov_wsd_rules/" "<tam>_tam.clp))" crlf)
+ (printout t  "         For Eg:- CLIPS> (load* (str-cat ?*provisional_wsd_path* ""/canonical_form_prov_wsd_rules/" "is_ing_tam.clp))" crlf crlf)
  (printout t  "STEP4::  If the return value is \"TRUE\" it implies there is no syntax error in the rule else,  identify and co "crlf       "======       -rrect the error and repeat the above three STEPS "crlf crlf)
  (printout t "STEP5::   Run the sentence again in Anusaraka to see the effect of the above rule ." crlf)
  (printout t  "======" crlf)
@@ -302,3 +306,5 @@
 
  (system "clear")
  (run)
+;(watch rules)
+;(watch facts)

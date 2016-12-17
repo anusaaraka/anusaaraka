@@ -18,7 +18,7 @@
 ; (load-facts "sent_type.dat")
 
 
- (defglobal ?*prov_dir* = ?*provisional_wsd_path*)
+ (defglobal ?*prov_dir* = (create$ (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/")))
  (defglobal ?*debug_flag* = TRUE)
  (defglobal ?*Ex_mng*     = ex_mng)
  (defglobal ?*count* = 1)
