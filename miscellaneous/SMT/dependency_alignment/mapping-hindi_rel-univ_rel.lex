@@ -86,5 +86,11 @@
 [ \t]enm[ \t]		{       printf("\tdep\t");	}
 [ \t]psp__cl[ \t]	{       printf("\tcase\t");	}
 [ \t]vmod[ \t]	{       printf("\tparataxis\t");}
-[ \t]k1s[ \t]		{	printf("\troot_k1s\t");	}
+[ \t]k1s[ \t]		{	printf("\troot_k1s\t"); /*	}
+Rule based parser mappings */}
 
+[ ][A-Za-z_]+_ke_swAna_(se|para|meM)	{	printf("\tnmod\t"); }
+[ \t]saha-k1[ \t]	{	printf("\tnmod\t");	}
+[ \t]saha-k2[ \t]	{	printf("\tnmod\t");	}
+[ \t]avaXi[ \t]		{	printf("\tnmod\t");	}
+[ \t]purpose[ \t]	{	printf("\tadvcl\t");	}
