@@ -7,10 +7,10 @@
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  echo "Generating Canonical form dictionaries"
- sh get_txt_files.sh
- sh get_dictionary_in_canonical_form.sh
  flex canonical_form.lex
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
+ sh get_txt_files.sh
+ sh get_dictionary_in_canonical_form.sh
  $HOME_anu_test/Anu_src/comp.sh canonical_form_correction
  $HOME_anu_test/Anu_src/comp.sh canonical_to_conventional
  $HOME_anu_test/Anu_src/comp.sh non_canonical_form

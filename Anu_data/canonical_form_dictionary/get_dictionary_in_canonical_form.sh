@@ -6,7 +6,8 @@ while read line
 do
         cut -f1 $line".txt"  > $line".hindi"
         cut -f2 $line".txt"  > $line".eng"
-	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form_tmp"
+#	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form_tmp"
+	./canonical_form.out <  $line".hindi" > $line".canonical_form_tmp"
         ./canonical_form_correction.out  < $line".canonical_form_tmp" > $line".canonical_form_tmp1"
         ./canonical_to_conventional.out  < $line".canonical_form_tmp1" > $line".canonical_form"
 	paste  $line".canonical_form" $line".eng" > dictionaries/$line"_in_canonical_form.txt"
@@ -19,7 +20,8 @@ while read line
 do
         cut -f1 $line".txt"  > $line".eng"
         cut -f2 $line".txt"  > $line".hindi"
-	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form_tmp"
+#	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form_tmp"
+	./canonical_form.out <  $line".hindi" > $line".canonical_form_tmp"
         ./canonical_form_correction.out  < $line".canonical_form_tmp" > $line".canonical_form_tmp1"
         ./canonical_to_conventional.out  < $line".canonical_form_tmp1" > $line".canonical_form"
         paste  $line".eng" $line".canonical_form"  > dictionaries/$line"_in_canonical_form.txt"
@@ -32,8 +34,10 @@ while read line
 do
 	cut -f1 $line".txt"  > $line".hnd"
         cut -f2 $line".txt"  > $line".hindi"
-        ./get_canonical_form-dic.out  $line".hnd"   > $line".hnd1.canonical_form_tmp"
-        ./get_canonical_form-dic.out  $line".hindi" > $line".hnd2.canonical_form_tmp"
+#        ./get_canonical_form-dic.out  $line".hnd"   > $line".hnd1.canonical_form_tmp"
+        ./canonical_form.out <  $line".hnd"   > $line".hnd1.canonical_form_tmp"
+#        ./get_canonical_form-dic.out  $line".hindi" > $line".hnd2.canonical_form_tmp"
+        ./canonical_form.out <  $line".hindi" > $line".hnd2.canonical_form_tmp"
         ./canonical_form_correction.out  < $line".hnd1.canonical_form_tmp" > $line".hnd1.canonical_form_tmp1"
        ./canonical_to_conventional.out  < $line".hnd1.canonical_form_tmp1" > $line".hnd1.canonical_form"
         ./canonical_form_correction.out  < $line".hnd2.canonical_form_tmp" > $line".hnd2.canonical_form_tmp1"

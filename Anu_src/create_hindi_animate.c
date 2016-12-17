@@ -15,7 +15,7 @@
   GDBM_FILE   dbf;
   datum    content,word;
   FILE     *fp;
-  char	   *line=NULL, str[1000], str1[1000], *value;
+  char	   *line=NULL, str[1000], org_str[1000], str1[1000], *value;
   size_t   length;
   int	   len, len1;
 
@@ -32,10 +32,20 @@
 		*str='\0'; *str1='\0'; 
 		len=strcspn(line, "\t");
 		strncpy(str, line, len); str[len]='\0'; line=line+len+1; //str contains eng animate word
+		strcpy(org_str, str);
 		strcat(str, "_noun"); //by default considering cat as noun
 		word.dptr=str;
 		word.dsize=strlen(word.dptr);
    		content = gdbm_fetch(dbf,word); //fetching eng animate in default dic
+
+		if(content.dptr == NULL) 
+		{
+			strcpy(str, org_str);
+			strcat(str, "_pronoun"); //checking pronoun 
+			word.dptr=str;
+			word.dsize=strlen(word.dptr);
+			content = gdbm_fetch(dbf,word);
+		}
 
 		value  = (char *)malloc(sizeof(char)* content.dsize+1); 
 		strncpy(value, content.dptr, content.dsize); //storing content in value
