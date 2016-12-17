@@ -64,7 +64,10 @@ cd $MYPATH1
   echo "Creating social_science_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
 
-
+ echo "Creating crude_equivalent_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/crude_equivalent_dic.gdbm  < crude_equivalent_dic_in_canonical_form.txt
+ #echo "Creating tmp_kriyA_mUla.dic.txt"
+ #./create-gdbm.pl $HOME_anu_test/Anu_databases/man_kriyA_mUla_dic.gdbm  < man_kriyA_mUla_dic.txt
  echo "Creating wsd_dic.gdbm"
   ./create-gdbm.pl $HOME_anu_test/Anu_databases/wsd_dic.gdbm  < wsd_dictionary_in_canonical_form.txt
  echo "Creating provisional_PropN_dic.gdbm"

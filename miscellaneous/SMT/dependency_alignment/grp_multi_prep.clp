@@ -1,6 +1,7 @@
 (defglobal ?*hin_p_wrd* = h_p_wrd )
+(defglobal ?*prep_lst* = (create$ ))
 
-(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
 ;==================== to generate hindi parser debug info ==========================
 
@@ -25,18 +26,11 @@
         (assert (got_wrd ?id1 ?w1))
 )
 
-;(defrule rm_punc_rel
-;(declare (salience 911))
-;?f0<-(relation_name-rel_ids punct ?id ?id1)
-;=>
-;        (retract ?f0)
-;)
-;
 ;======================= group and modify prep rels ===========================
 
 (defrule get_multi_prep_fact
 (declare (salience 910))
-(manual_word_info (head_id ?h) (word ?w)(vibakthi $?p ?v $?p1)(group_ids $?g ?id $?g1))
+(manual_word_info (head_id ?h)(vibakthi_components $?p ?v $?p1)(group_ids $?g ?id $?g1))
 (manual_id-word ?id ?v)
 (test (or(neq (length $?p) 0)(neq (length $?p1) 0)))
 (not (got_prep_head ?h))
@@ -47,7 +41,7 @@
 ;---------------------------------------------------------------------------
 (defrule grp_multi_prep
 (declare (salience 910))
-(manual_word_info (head_id ?h) (word ?w)(vibakthi $?p ?v $?p1)(group_ids $?g ?id $?g1))
+(manual_word_info (head_id ?h)(vibakthi_components $?p ?v $?p1)(group_ids $?g ?id $?g1))
 (manual_id-word ?id ?v)
 (test (or(neq (length $?p) 0)(neq (length $?p1) 0)))
 ?f0<-(prep_lst ?h $?d)
@@ -79,6 +73,7 @@
 =>
         (retract ?f ?f0)
         (assert (hnd_rel_name-h_id-c_ids ?id2 ?r $?d - ?in ?h $?d))
+	(bind ?*prep_lst* (create$ ?*prep_lst* $?d))
 )
 ;---------------------------------------------------------------------------
 ;(prep_lst 16 17 18 19)
@@ -107,24 +102,13 @@
 (defrule modify_out_if_prep_id
 (declare (salience 902))
 (prep_lst ?h $?ids)
-?f0<-(hnd_rel_name-h_id-c_ids ?id ?r $? - ?out ?h $?ids)
+?f0<-(hnd_rel_name-h_id-c_ids ?id ?r $?p - ?out ?h $?ids)
 ?f1<-(relation_name-rel_ids ?rel ?in ?out)
 (test (member$ ?out $?ids))
 =>
         (retract ?f0 ?f1)
-        (assert (hnd_rel_name-h_id-c_ids ?id ?rel - ?in ?h $?ids))
+        (assert (hnd_rel_name-h_id-c_ids ?id ?rel $?p - ?in ?h $?ids))
 )
-;
-;(defrule modify_out_if_prep_id1
-;(declare (salience 902))
-;(prep_lst ?h $?ids)
-;?f1<-(relation_name-rel_ids ?rel ?in ?out)
-;?f2<-(relation_name-rel_ids ?r ?out ?out1)
-;(test (member$ ?out $?ids))
-;=>
-;        (retract ?f1 ?f2)
-;        (assert (hnd_rel_name-h_wrd-c_wrds ?out1 ?rel - ?in ?out1))
-;)
 
 (defrule grp_case
 (declare (salience 901))
@@ -132,7 +116,13 @@
 ?f0<-(relation_name-rel_ids case ?n ?prep)
 =>
 	(retract ?f ?f0)
-	(assert (hnd_rel_name-h_id-c_ids ?prep ?r ?prep - ?id ?n ?prep))
+	(if (eq ?r advmod) then
+		(assert (hnd_rel_name-h_id-c_ids ?prep ?r  - ?id ?n ?prep))
+		(assert (id-grp_type-ids ?n adv ?n ?prep))
+	else
+		(bind ?*prep_lst* (create$ ?*prep_lst* ?prep))
+		(assert (hnd_rel_name-h_id-c_ids ?prep ?r ?prep - ?id ?n ?prep))
+	)
 )
 
 (defrule def_rel
@@ -140,17 +130,30 @@
 ?f0<-(relation_name-rel_ids ?rel ?id ?id1)
 =>
         (retract ?f0)
-        (assert (hnd_rel_name-h_id-c_ids ?id1 ?rel - ?id ?id1))
+	(assert (hnd_rel_name-h_id-c_ids ?id1 ?rel - ?id ?id1))
 )
 
+(defrule rm_case_rel
+(declare (salience 100))
+(hnd_rel_name-h_id-c_ids ? ?rel $? ?id1 $? - ?id $?)
+?f0<-(hnd_rel_name-h_id-c_ids ? ? - ? ?id1)
+=>
+	(retract ?f0)
+)
 
+(defrule get_prep_list
+(declare (salience 10))
+=>
+	(assert (prep_ids_list ?*prep_lst* ) )
+)
 
-
-
-
-
-
-
-
-
+(defrule get_case_grp_ids
+(declare (salience 10))
+(hnd_rel_name-h_id-c_ids ?id ?rel $?v - ?h ?id1 $?v)
+(test (neq (length $?v) 0))
+(not (got_ids ?id))
+=>
+	(assert (id-grp_type-ids ?id1 case ?id1 $?v))
+	(assert (got_ids ?id))
+)
 

@@ -42,6 +42,25 @@
         (retract ?f0)
         (assert (rel_name-sids  root 0 ?id))
 )
+
+(defrule rm_rid_not_mapped
+(declare (salience 960))
+?f0<-(rel_name-sids ? ? ?pid)
+(test (eq (sub-string 1 1 (implode$ (create$ ?pid))) "P" ))
+=>
+	(retract ?f0)
+)
+
+(defrule rm_lid_not_mapped
+(declare (salience 960))
+?f0<-(rel_name-sids ? ?pid ?)
+(test (eq (sub-string 1 1 (implode$ (create$ ?pid))) "P" ))
+=>
+        (retract ?f0)
+)
+
+
+
 ;---------------------------------------------------
 (defrule save_eng_org_rel_facts
 (declare (salience 950))
@@ -72,74 +91,54 @@
 )
 
 ;============================ group relations ================================================
-;The inquiring and imaginative human mind has responded to the [wonder and awe of nature] in different ways.
-(defrule grp_nmod_conj
-(declare (salience 852))
-?f0<-(rel_name-sids ?rel ?h ?c)
-?f1<-(rel_name-sids cc ?c ?cc)
-?f2<-(rel_name-sids ?rel1 ?c ?c1)
-(test (eq (sub-string 1 4 ?rel1) "conj"))
-(not (eng_rel_name-h_wrd-c_wrd ?rel ?h $?))
+
+(defrule rm_case_rel
+(declare (salience 856))
+?f0<-(rel_name-sids case ?id ?id)
 =>
-        (retract ?f0 ?f1 ?f2)
-        (assert (eng_rel_name-h_wrd-c_wrd ?cc ?rel ?h ?cc ?c1 ?c))
+	(retract ?f0)
+)
+
+
+
+;The microscopic domain includes [atomic, molecular and nuclear] phenomena.
+(defrule grp_conj
+(declare (salience 855))
+?f1<-(rel_name-sids ?rel ?c $?d)
+(test (or (eq ?rel appos) (eq (sub-string 1 4 ?rel) "conj")))
+?f2<-(rel_name-sids ?rel1 ?c $?d1)
+(test (or (eq ?rel1 appos) (eq (sub-string 1 4 ?rel1) "conj")))
+(test (neq $?d $?d1))
+=>
+	(retract ?f1 ?f2)
+	(assert (eng_rel_name-h_wrd-c_wrd ?c ?rel ?c (sort > (create$ $?d $?d1))))
+)
+;---------------------------------------------------
+(defrule grp_conj1
+(declare (salience 855))
+?f1<-(eng_rel_name-h_wrd-c_wrd ?c ?rel ?c  $?d)
+(test (or (eq ?rel appos) (eq (sub-string 1 4 ?rel) "conj")))
+?f2<-(rel_name-sids ?rel1 ?c $?d1)
+(test (or (eq ?rel1 appos) (eq (sub-string 1 4 ?rel1) "conj")))
+(test (neq $?d $?d1))
+=>
+        (retract ?f1 ?f2)
+        (assert (eng_rel_name-h_wrd-c_wrd ?c ?rel ?c (sort > (create$ $?d $?d1))))
 )
 ;---------------------------------------------------
 (defrule grp_multiple_rel
 (declare (salience 850))
-?f0<-(rel_name-sids ?r&compound|case ?id ?id1)
+?f0<-(rel_name-sids ?r&compound|case ?id $?ids)
 ?f1<-(rel_name-sids ?r&compound|case ?id ?id2)
-(test (neq ?id1 ?id2))
+(test (eq (integerp (member$ ?id2 $?ids)) FALSE))
 =>
         (retract ?f0 ?f1)
-        (if (> ?id1 ?id2) then
-                (assert (eng_rel_name-h_wrd-c_wrd ?id2 ?r ?id ?id2 ?id1))
-        else
-                (assert (eng_rel_name-h_wrd-c_wrd ?id2 ?r ?id ?id1 ?id2))
-        )
+	(bind $?n (sort > (create$ $?ids ?id2)))
+	(assert (rel_name-sids ?r ?id $?n))
 )
 ;---------------------------------------------------
-(defrule get_grp_with_multiple_rel
+(defrule grp_auxpass
 (declare (salience 850))
-?f1<-(eng_rel_name-h_wrd-c_wrd ?id2 ?r&case|det ?id $?ids)
-?f0<-(rel_name-sids ?rel ?h ?id)
-=>
-        (retract ?f1 ?f0)
-        (assert (eng_rel_name-h_wrd-c_wrd ?id  ?rel ?h $?ids ?id))
-)
-
-;---------------------------------------------------
-(defrule get_case_grp
-(declare (salience 840))
-?f1<-(eng_rel_name-h_wrd-c_wrd ?id2 ?r ?h $?d ?id $?d1)
-?f0<-(rel_name-sids case ?id ?case)
-=>
-        (retract ?f1 ?f0)
-        (assert (eng_rel_name-h_wrd-c_wrd ?case ?r ?h $?d ?case ?id $?d1))
-)
-;---------------------------------------------------
-(defrule get_mark_grp
-(declare (salience 840))
-?f1<-(eng_rel_name-h_wrd-c_wrd ?id2 ?r ?h $?d ?id $?d1)
-?f0<-(eng_rel_name-h_wrd-c_wrd ? mark ?h ?case)
-(test (neq ?id ?case))
-=>
-        (retract ?f1 ?f0)
-        (assert (eng_rel_name-h_wrd-c_wrd ?case ?r ?h $?d ?case ?id $?d1))
-)
-;---------------------------------------------------
-(defrule get_det_grp
-(declare (salience 800))
-?f1<-(eng_rel_name-h_wrd-c_wrd ?id2 ?r ?h $?d ?id $?d1)
-?f0<-(eng_rel_name-h_wrd-c_wrd ? amod|det|nummod ?id ?det)
-(test (numberp ?det))
-=>
-        (retract ?f1 ?f0)
-        (assert (eng_rel_name-h_wrd-c_wrd ?det ?r ?h $?d ?det ?id $?d1))
-)
-;---------------------------------------------------
-(defrule rm_auxpass
-(declare (salience 800))
 ?f0<-(rel_name-sids aux ?id ?id1)
 ?f1<-(rel_name-sids auxpass ?id ?id2)
 =>
@@ -147,60 +146,173 @@
         (assert (eng_rel_name-h_wrd-c_wrd ?id2 aux ?id ?id1 ?id2))
 )
 ;---------------------------------------------------
-(defrule grp_aux
-(declare (salience 780))
-?f0<-(eng_rel_name-h_wrd-c_wrd ?h root ?id ?id1)
-?f1<-(eng_rel_name-h_wrd-c_wrd ? aux|auxpass ?id1 $?ids)
-=>
-        (retract ?f1 ?f0)
-        (assert (eng_rel_name-h_wrd-c_wrd ?h root ?id $?ids ?id1 ))
-)
-;---------------------------------------------------
-; [about_the_world][around_them] <=>  [about_the_world_around_them]
-(defrule grp_noun
-(declare (salience 770))
-?f0<-(eng_rel_name-h_wrd-c_wrd ?h ?r ?id $?d ?id1)
-?f1<-(eng_rel_name-h_wrd-c_wrd ? ?r1 ?id1 $?d1)
-(test (and (eq (sub-string 1 4 ?r) "nmod")(eq (sub-string 1 4 ?r1) "nmod")))
-(not (rel_name-sids_tmp $? ?id1 $?))
-(test (numberp ?id1)) 
-=>
-	(retract ?f0 ?f1)
-	(assert (eng_rel_name-h_wrd-c_wrd ?h ?r ?id $?d $?d1 ?id1))
-)
-;---------------------------------------------------------------------------
 (defrule def_eng_rel
-(declare (salience 750))
-?f0<-(rel_name-sids ?rel ?id ?id1)
+(declare (salience 800))
+?f0<-(rel_name-sids ?rel ?id $?d ?id1)
 =>
         (retract ?f0)
-        (assert (eng_rel_name-h_wrd-c_wrd ?id1 ?rel ?id ?id1))
+        (assert (eng_rel_name-h_wrd-c_wrd ?id1 ?rel ?id $?d ?id1))
 )
 ;---------------------------------------------------
+(defrule grp_nmod_conj
+(declare (salience 750))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d ?c $?d1)
+?f1<-(eng_rel_name-h_wrd-c_wrd ? cc ?c ?cc)
+?f2<-(eng_rel_name-h_wrd-c_wrd ? ?rel1 ?c $?c1)
+(test (or (eq ?rel1 appos) (eq (sub-string 1 4 ?rel1) "conj")))
+(not (sorted_id  ?))
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (eng_rel_name-h_wrd-c_wrd ?cc ?rel ?h (sort > (create$ $?d $?d1 ?cc $?c1)) ?c))
+	(assert (conj_head ?c))
+)
+;---------------------------------------------------
+; [its] [bright celestial objects]
+;The holy dip is on [13 November].
+(defrule grp_case_amod_det_and_nummod
+(declare (salience 700))
+?f1<-(eng_rel_name-h_wrd-c_wrd ?id2 ?r ?h $?d ?id $?d1)
+?f0<-(eng_rel_name-h_wrd-c_wrd ? ?r1&case|det|det:predet|amod|nummod|nmod:poss|nmod:tmod ?id ?det $?ids)
+(test (numberp ?det))
+(not (sorted_id  ?))
+=>
+        (retract ?f1 ?f0)
+        (assert (eng_rel_name-h_wrd-c_wrd ?det ?r ?h $?d $?ids ?det ?id $?d1))
+)
+;---------------------------------------------------
+(defrule grp_mark
+(declare (salience 700))
+?f1<-(eng_rel_name-h_wrd-c_wrd ?id2 ?r ?h $?d ?id $?d1)
+(not (sorted_id  ?id2))
+?f0<-(eng_rel_name-h_wrd-c_wrd ? mark ?id ?det)
+(test (eq ?det (- ?id 1)))
+=>
+        (retract ?f1 ?f0)
+        (assert (eng_rel_name-h_wrd-c_wrd ?det ?r ?h $?d ?det ?id $?d1))
+)
+;---------------------------------------------------
+;This beauty of water will not be found anywhere else.
+(defrule grp_aux
+(declare (salience 700))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?h ?r ?id $?d ?id1 $?d1)
+?f1<-(eng_rel_name-h_wrd-c_wrd ? aux|auxpass ?id1 $?ids)
+(not (sorted_id ?))
+=>
+        (retract ?f1 ?f0)
+        (assert (eng_rel_name-h_wrd-c_wrd ?h ?r ?id $?d $?ids ?id1 $?d1 ))
+)
+;---------------------------------------------------
+(defrule grp_neg
+(declare (salience 700))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?h ?r ?id $?d ?id1 $?d1)
+?f1<-(eng_rel_name-h_wrd-c_wrd ? neg ?id1 ?n)
+(not (sorted_id  ?))
+=>
+        (retract ?f1 ?f0)
+        (assert (eng_rel_name-h_wrd-c_wrd ?h ?r ?id $?d ?n ?id1 $?d1))
+)
+
+;---------------------------------------------------
+; [about_the_world][around_them] <=>  [about_the_world_around_them]
+;(defrule grp_noun
+;(declare (salience 650))
+;?f0<-(eng_rel_name-h_wrd-c_wrd ?h ?r ?id ?pid $?d ?id1 $?d1)
+;?f1<-(eng_rel_name-h_wrd-c_wrd ? ?r1 ?id1 ?pid1 $?d2)
+;(test (and (eq (sub-string 1 4 ?r) "nmod")(eq (sub-string 1 4 ?r1) "nmod")))
+;(not (rel_name-sids_tmp $? ?id1 $?))
+;(test (numberp ?id1)) 
+;;(got_en_wrd ?pid ?w&~with) ;For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.
+;;(got_en_wrd ?pid1 ?w1)
+;;(test (neq ?w ?w1)) ; [of the molecular constituents] [of the bulk system]
+;(not (sorted_id  ?))
+;=>
+;	(retract ?f0 ?f1)
+;	(assert (eng_rel_name-h_wrd-c_wrd ?h ?r ?id ?pid $?d ?pid1 $?d2 ?id1 $?d1))
+;)
+;---------------------------------------------------------------------------
 (defrule grp_compound
-(declare (salience 740))
+(declare (salience 640))
 ?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?h  $?ids ?id1 $?post)
-?f1<-(eng_rel_name-h_wrd-c_wrd ? compound|mwe ?id1 ?com)
+?f1<-(eng_rel_name-h_wrd-c_wrd ? compound|mwe|compound:prt ?id1 ?com $?cids)
+(not (sorted_id  ?))
 =>
 	(retract ?f0 ?f1)
-	(assert (eng_rel_name-h_wrd-c_wrd ?id ?rel ?h  $?ids ?com ?id1 $?post))
+	(assert (eng_rel_name-h_wrd-c_wrd ?id ?rel ?h  $?ids ?com $?cids ?id1 $?post))
+)
+;---------------------------------------------------
+;[One kind] [of response] from the earliest times has been to observe the physical environment ...
+;(defrule grp_kind
+;(declare (salience 635))
+;(got_en_wrd ?kind kind)
+;?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d ?kind)
+;(not (sorted_id  ?))
+;(got_en_wrd ?id1&:(= (+ ?kind 1) ?id1) of)
+;?f1<-(eng_rel_name-h_wrd-c_wrd ? nmod:of ?kind ?id1 $?ids)
+;=>
+;	(retract ?f0 ?f1)
+;	(assert (eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d ?kind ?id1 $?ids))
+;)
+
+(defrule grp_of
+(declare (salience 635))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d ?noun)
+(not (sorted_id  ?))
+(id-word ?of&:(= (+ ?noun 1) ?of) of)
+?f1<-(eng_rel_name-h_wrd-c_wrd ? nmod:of ?noun $?d1 ?of $?ids)
+=>
+	(retract ?f0 ?f1)
+	(assert (eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d $?d1 ?of $?ids ?noun))
+)
+
+
+
+(defrule grp_of1
+(declare (salience 634))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d ?noun $?d1 ?last)
+(not (sorted_id  ?))
+(got_en_wrd ?of&:(= (+ ?noun 1) ?of) of)
+?f1<-(eng_rel_name-h_wrd-c_wrd ? nmod:of ?last $?d2 ?of $?ids)
+=>
+        (retract ?f0 ?f1)
+        (assert (eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d $?d2 ?of $?ids ?noun $?d1 ?last))
+)
+
+
+;---------------------------------------------------
+(defrule modify_conj_h
+(declare (salience 630))
+?f1<-(conj_head ?ch)
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d ?ch $?d1)
+=>
+	(retract ?f0 ?f1)
+	(assert  (eng_rel_name-h_wrd-c_wrd ?id ?rel ?h $?d $?d1 ?ch))
+	(assert (modified_conj_h ?id))
+)
+;---------------------------------------------------
+;P1 
+(defrule rm_Pids_facts
+(declare (salience 621))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id $?d1)
+(test (eq (numberp ?id) FALSE))
+=>
+	(retract ?f0)
 )
 ;---------------------------------------------------
 (defrule get_mod_rel_ids
-(declare (salience 720))
+(declare (salience 620))
 (eng_rel_name-h_wrd-c_wrd ?id ?rel ?id1 $?d1 ?id2)
 (not (rel_name-sids_tmp ?id $?))
 (not (removed_prep ?id))
+(test (neq (numberp ?id) FALSE))
 =>
         (assert (rel_name-sids_tmp ?id ?rel ?id1 $?d1 ?id2))
 )
 ;========================= remove prep ids from rel , get multiple prep wrds ====================
 (defrule rm_prep_ids
-(declare (salience 710))
+(declare (salience 610))
 ?f0<-(rel_name-sids_tmp ?i ?rel ?h $?ids)
 (pada_info (preposition $?p ?id1&~0 $?p1))
-(test (neq (integerp (member$ ?id1 $?ids)) FALSE))
-(not (removed_prep ?i))
+(test (and (neq (integerp (member$ ?id1 $?ids)) FALSE) (eq (integerp (member$ - $?ids)) FALSE)))
 =>
 	(retract ?f0)
 	(bind $?pids (create$ $?p ?id1 $?p1))
@@ -208,7 +320,7 @@
 		(bind ?id (nth$ ?i $?pids))
 		(bind $?ids (delete-member$ $?ids ?id))
 	)
-	(if (> (length $?pids) 1) then
+       	(if (> (length $?pids) 1) then
 		(assert (rel_name-sids_tmp ?i ?rel $?pids - ?h $?ids))
 	else
 		(assert (rel_name-sids_tmp ?i ?rel ?h $?ids))
@@ -217,7 +329,7 @@
 )
 ;---------------------------------------------------
 (defrule replace_multi_prep_wrds
-(declare (salience 707))
+(declare (salience 600))
 ?f0<-(rel_name-sids_tmp ?i ?rel $?p ?id $?p1 - $?ids)
 (id-word ?id ?wrd)
 =>
@@ -227,19 +339,24 @@
 ;---------------------------------------------------
 ;nmod:in <=> nmod:in_terms_of
 (defrule modify_rel_name_for_multi_prep
-(declare (salience 706))
+(declare (salience 590))
 ?f0<-(rel_name-sids_tmp ?i ?rel $?wrd  - $?ids)
 ?f1<-(eng_rel_name-h_wrd-c_wrd ?i ?rel $?d)
+(test (> (length $?wrd) 1))
 =>
 	(retract ?f0 ?f1)
 	(bind ?nwrd (implode$ (remove_character " " (implode$ (create$  $?wrd)) "_")))
-	(bind ?r (string-to-field (str-cat (sub-string 1 (- (str-index ":" ?rel) 1) ?rel) ":" ?nwrd)))
+	(if (neq (str-index ":" ?rel) FALSE) then
+		(bind ?r (string-to-field (str-cat (sub-string 1 (- (str-index ":" ?rel) 1) ?rel) ":" ?nwrd)))
+	else
+		(bind ?r (string-to-field (str-cat ?rel ":" ?nwrd)))
+	)
 	(assert (rel_name-sids_tmp ?i ?r $?ids))
 	(assert (eng_rel_name-h_wrd-c_wrd ?i ?r $?d))
 )
 ;============================ grouped rel debug info ==========================
 (defrule sort_ids
-(declare (salience 705))
+(declare (salience 550))
 ?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?id1 $?d1 ?id2)
 (not (sorted_id ?id))
 =>
@@ -249,8 +366,27 @@
 	(assert (sorted_id ?id))
 )
 ;---------------------------------------------------
+(defrule rm_rel_without_child
+(declare (salience 540))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel $?)
+?f<-(rel_name-sids_tmp ?id ?rel ? )
+=>
+	(retract ?f ?f0)
+)
+;---------------------------------------------------
+(defrule replace_eng_words_for_nos
+(declare (salience 531))
+?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel $?d ?id1 $?d1)
+(id-word ?id1 ?wrd)
+(test (numberp ?wrd))
+=>
+        (retract ?f0)
+	(bind ?wrd (string-to-field (str-cat @ ?wrd)))
+        (assert (eng_rel_name-h_wrd-c_wrd ?id ?rel $?d ?wrd $?d1))
+)
+;---------------------------------------------------
 (defrule replace_eng_words
-(declare (salience 700))
+(declare (salience 530))
 ?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel $?d ?id1 $?d1)
 (id-word ?id1 ?wrd)
 =>
@@ -259,7 +395,7 @@
 )
 ;---------------------------------------------------
 (defrule print_rel_in_order
-(declare (salience 650))
+(declare (salience 50))
 ?f0<-(eng_rel_name-h_wrd-c_wrd ?id ?rel ?in $?mng)
 ?f1<-(rel_name-sids_tmp ?id ?rel $?ids)
 (not (eng_rel_name-h_wrd-c_wrd ?id1&:(< ?id1 ?id) $?))
