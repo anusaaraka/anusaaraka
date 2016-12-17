@@ -10,6 +10,8 @@ char word[10000], canonical_word[10000];
 
 \(assert[ ]\(id-(wsd_root|wsd_word|H_vib)_mng[ ]\?[a-z0-9 \?\(\)=+-]*[ ]	{	ECHO; BEGIN hnd_wrd;	}
 
+\(assert[ ]\(id-E_tam-H_tam_mng[ ]\?[a-z0-0_\?-]*[ ][a-zA-Z0-9]*	{	ECHO; BEGIN hnd_wrd;  //nA_cAhiye  }
+
 <hnd_wrd>{HINDI_wrd}+	{	strcpy(word, yytext);
 				canonical_form(word,canonical_word); //calling canonical_form function
 				printf("%s", canonical_word);  *word='\0'; *canonical_word='\0';}
