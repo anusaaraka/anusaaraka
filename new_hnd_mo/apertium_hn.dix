@@ -4393,7 +4393,6 @@
 <e lm="Ahuwi"><i>Ahuwi</i><par n="Apawwi/__n"/></e>
 <e lm="AhvAna"><i>AhvAna</i><par n="kroXa/__n"/></e>
 <e lm="A"><i>A</i><par n="KA/__v"/></e>
-<e lm="a"><i></i><par n="Gar/a__n"/></e>
 <e lm="AiMxA"><i>AiMx</i><par n="regular__adj-noun"/></e>
 <e lm="AInA"><i>AIn</i><par n="regular__adj-noun"/></e>
 <e lm="ajaba"><i>ajaba</i><par n="amIra/__adj"/></e>
@@ -6778,6 +6777,7 @@
 <e lm="asaMyama"><i>asaMyama</i><par n="kroXa/__n"/></e>
 <e lm="asaMyoga"><i>asaMyoga</i><par n="kroXa/__n"/></e>
 <e lm="asaMyukwa"><i>asaMyukwa</i><par n="amIra/__adj"/></e>
+<e lm="asakRama"><i>asakRama</i><par n="amIra/__adj"/></e>
 <e lm="aSana"><i>aSana</i><par n="kroXa/__n"/></e>
 <e lm="AsAna"><i>AsAna</i><par n="kroXa/__n"/></e>
 <e lm="Asana"><i>Asan</i><par n="Gar/a__n"/></e>
@@ -13383,7 +13383,6 @@
 <e lm="idalI"><i>idal</i><par n="ladak/I__n"/></e>
 <e lm="Idiwa"><i>Idiwa</i><par n="amIra/__adj"/></e>
 <e lm="i"><i>i</i><par n="kavi/__n"/></e>
-<e lm="I"><i></i><par n="ladak/I__n"/></e>
 <e lm="ijahAra"><i>ijahAra</i><par n="kroXa/__n"/></e>
 <e lm="ijAjawa"><i>ijAjawa</i><par n="BIda/__n"/></e>
 <e lm="ijArabaMxa"><i>ijArabaMx</i><par n="Gar/a__n"/></e>
@@ -32093,6 +32092,7 @@
 <e lm="xAvAgni"><i>xAvAgni</i><par n="SAnwi/__n"/></e>
 <e lm="xAva"><i>xAva</i><par n="kroXa/__n"/></e>
 <e lm="xavA"><i>xavA</i><par n="rAw/a__n"/></e>
+<e lm="xavAI"><i>xavA</i><par n="ladak/I__n"/></e>
 <e lm="xAvA"><i>xAv</i><par n="regular__adj-noun"/></e>
 <e lm="XAvA"><i>XAv</i><par n="regular__adj-noun"/></e>
 <e lm="XAvaka"><i>XAvak</i><par n="Gar/a__n"/></e>
@@ -33121,6 +33121,7 @@
 <e lm="yogiwA"><i>yogiwA</i><par n="ASA/__n"/></e>
 <e lm="yogiwva"><i>yogiwva</i><par n="kroXa/__n"/></e>
 <e lm="yogyA"><i>yogyA</i><par n="ASA/__n"/></e>
+<e lm="yogya"><i>yogya</i><par n="amIra/__adj"/></e>
 <e lm="yogyawA"><i>yogyawA</i><par n="IrRyA/__n"/></e>
 <e lm="yojaka"><i>yojak</i><par n="Gar/a__n"/></e>
 <e lm="yojanA"><i>yojanA</i><par n="ASA/__n"/></e>

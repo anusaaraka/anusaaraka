@@ -71,7 +71,7 @@ for line in open(sys.argv[2]): #argv[2] is dictionary
 			if tup not in graph_dict:
                              graph_dict.append(tup)
 	if 'Word not found' not in line:
-		index = lst[3].strip()
+		index = lst[3].strip() #To pick last id in the eng phrase
 
 graph_file.write('%s' % graph_dict)
 
