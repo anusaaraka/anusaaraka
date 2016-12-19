@@ -33380,6 +33380,10 @@ in_a_day_or_two	eka_xo_xina_meM#eka_xo_xina_meM#noun#3#WM
 #I will get back to you in a day or two.								   (	"	   "	   "	)
 anyone_and_everyone	hara_koI#hara_koI#noun#3#WM			
 #													   ( Suggested by Chaitanya Sir)   
+right_now	isa_samaya#isa_samaya#noun#1#WM
+#Look, I am very busy right now.							(Suggested by Bhagyashri Kulkarni 14-11-16)	  
+to_a_great_extent	kAPI_haxa_waka/kAPI#kAPI_haxa_waka/kAPI#noun#4#WM
+#The danger of glaucoma, cataract, and blindness can be decreased to a great extent by taking diet rich in vitamin-C. ( Suggested by Chaitanya Sir)
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

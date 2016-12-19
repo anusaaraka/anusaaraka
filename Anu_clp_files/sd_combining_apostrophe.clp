@@ -35,6 +35,8 @@
         (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd1 ?word "  " ?word")" crlf)
         (printout ?*l_wrd_fp* "(parserid-word  "?rnode ?word" "?wrd1 ?word ")" crlf)
         (printout ?*l_cat_fp* "(id-sd_cat  "?rnode ?word" "?c ")" crlf)
+	(bind ?new_w (string-to-field (str-cat ?wrd1 ?word)))
+        (assert (id-Modified_word ?rnode ?new_w))
 	(bind ?wrd1 (str-cat ?rnode ?word))
         (bind ?lnd (explode$ ?wrd1))
         (assert (id-Modified_id ?rnode ?lnd))
@@ -104,6 +106,15 @@
 	(bind ?head (sym-cat ?h ?pos))
         (assert (Head-Level-Mother-Daughters ?head ?lvl1 ?NN ?noun))
   	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NN $?post))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ (defrule map_ner
+ (id-Modified_id ?pid ?mid)
+ (id-Modified_word ?pid ?mw)
+ ?f0<-(word-wordid-nertype ?word ?pid ?ner)
+ =>
+	(retract ?f0)
+	(assert  (word-wordid-nertype ?mw ?mid ?ner))
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end

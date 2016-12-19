@@ -23,6 +23,7 @@
  (assert (meaning_has_been_decided_for_linkid))
  (assert (parser_id-number-src))
  (assert (parser_id-cat))
+ (assert (word-wordid-nertype))
  )
 
  (defglobal ?*cat_cons-file* = cat_cons_fp) 
@@ -36,6 +37,7 @@
  (defglobal ?*l_rel-file* = l_rel_fp)
  (defglobal ?*num-file* = num_fp)
  (defglobal ?*e_cons-file* = e_cons_fp)
+ (defglobal ?*ner-file* = ner_fp)
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -296,6 +298,14 @@
 	(printout ?*e_cons-file* "(Head-Level-Mother-Daughters  "?head"  "?lvl"  "?Mot"  "(implode$ $?dau)")" crlf)
  )
  ;====================================================================================================================
+ (defrule map_ner
+ ?f<-(word-wordid-nertype ?w ?pid ?ner)
+ (parserid-wordid    ?pid  ?wid)
+ =>
+	(retract ?f)
+	(printout ?*ner-file* "(word-wordid-nertype  "?w"  "?wid"  " ?ner")" crlf)
+ )
+ ;====================================================================================================================
  (defrule end
  (declare (salience -10))
  =>
@@ -310,5 +320,6 @@
 	(close ?*mng_dcd-file*)
 	(close ?*num-file*)
         (close ?*e_cons-file*)
+        (close ?*ner-file*)
  )
  ;-------------------------------------------------------------------------------------------------------------------

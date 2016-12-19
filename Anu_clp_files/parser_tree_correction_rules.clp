@@ -3,6 +3,9 @@
 
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
  ;----------------------------------------------------------------------------------------------------------------------- 
+ (deffunction string_to_integer (?parser_id)
+ (string-to-field (sub-string 2 10000 ?parser_id)))
+
  (deffunction get_no(?node ?o_cat ?m_cat)
 	(bind ?no (sub-string (+ (length ?o_cat) 1 ) (length ?node) ?node ))
         (bind ?no (explode$ (str-cat ?m_cat ?no)))
@@ -200,23 +203,6 @@
 	(assert (Head-Level-Mother-Daughters consciously ?l1 ?mot $?p ?rb $?po))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ;Suggested by Bhagyashri Kulkarni 14-9-16
- ; He cut himself a great thick slice of cake. 
- (defrule modify_JJ_as_RB
- ?f1<-(Head-Level-Mother-Daughters ?h ?l $?p ?JJ ?JJ1 $?p1)
- ?f2<-(Node-Category ?JJ JJ)
- (Node-Category ?JJ1 JJ)
- ?f0<-(Head-Level-Mother-Daughters great ?l1 ?JJ ?id)
- ?f3<-(id-sd_cat ?id JJ)
- =>
-        (retract ?f0 ?f1 ?f2 ?f3)
-        (bind ?rb (get_no ?JJ JJ RB))
-        (assert (Head-Level-Mother-Daughters ?h ?l $?p ?rb ?JJ1 $?p1 ))
-        (assert (Node-Category ?rb RB))
-        (assert (id-sd_cat  ?id RB))
-        (assert (Head-Level-Mother-Daughters great ?l1 ?rb ?id))
- )
- ;------------------------------------------------------------------------------------------------------------------------
  ; Suggested by Chaitanya Sir (02-03-16)
  ;Humans have always been curious about the world around them.
  (defrule modify_VBN_as_JJ
@@ -295,7 +281,7 @@
  (word-morph (original_word  ?h2)(category verb)(root ?root))
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?root) "_verb")) "FALSE"))
  ?f7<-(id-sd_cat  P1  ?cat1)
- (id-sd_cat  P2  ~VBZ) ;Gas is escaping from the pipe. Japan is a rising country. 
+ (id-sd_cat  P2  ?c&~VBZ&~MD&~VB) ;Gas is escaping from the pipe. Japan is a rising country. Father will not be at home tomorrow.
  ?f9<-(Head-Level-Mother-Daughters ?PUNCT ?l3 ?punct ?pid)
  ?f8<-(Node-Category ?punct ?p)
  =>
@@ -322,27 +308,6 @@
        	(assert (id-sd_cat  P1  VB))
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?s ))
 ;	(assert (Head-Level-Mother-Daughters ?h1  ?l1 ?VP ?verb $?post))
-        (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
- )
- ;------------------------------------------------------------------------------------------------------------------------
- ;Suggested by Chaitanya Sir (17-09-16)
- ;[Does] Lata come to your house? Before: kyA kyA lawA ApakA Gara AI huI?
- (defrule modify_NNP_as_VB1
- (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?SQ )
- (and (Node-Category ?ROOT ROOT) (Node-Category ?SQ SQ))
- ?f5<-(Head-Level-Mother-Daughters ?h ?l ?SQ ?NNP $?post ?punct)
- ?f2<-(Node-Category ?NNP NNP)
- (Head-Level-Mother-Daughters PUNCT-QuestionMark ? ?punct ?)
- ?f3<-(Head-Level-Mother-Daughters ?h2 ?l2 ?NNP P1)
- (test (member$ ?h2 (create$ Does Do)))
- ?f7<-(id-sd_cat  P1  ?cat)
- =>
-        (retract ?f2 ?f3 ?f5 ?f7)
-        (bind ?verb (get_no ?NNP NNP VB))
-
-        (assert (Node-Category ?verb VB))
-        (assert (id-sd_cat  P1  VB))
-        (assert (Head-Level-Mother-Daughters ?h ?l ?SQ ?verb $?post ?punct))
         (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
  )
  ;------------------------------------------------------------------------------------------------------------------------
@@ -380,54 +345,23 @@
         (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ;Suggested by Chaitanya Sir (11-08-16)
- ;VBP EX: They are educated.    VBZ Ex: Ice gets formed.
- (defrule modify_cat_as_verb_or_adj_with_get_word
- (declare (salience 5))
- ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?V ?ADJP)
- (and (Node-Category ?Mot VP) (Node-Category ?V VBZ|VBP))
- ?f1<-(Node-Category ?ADJP ADJP)
- ?f2<-(Head-Level-Mother-Daughters ?h ?l ?ADJP ?VBN)
- ?f3<-(Node-Category ?VBN VBN)
- ?f4<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
- ?f5<-(id-sd_cat  ?id  VBN)
-  =>
-	(if (eq (integerp (member$ ?head (create$ gets get getting))) TRUE) then ;Ice gets formed.
-		(retract ?f0 ?f1 ?f2)
-		(bind ?VP (get_no ?ADJP ADJP VP))
-		(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?V ?VP))
-		(assert (Node-Category ?VP VP))
-		(assert (Head-Level-Mother-Daughters ?h ?l ?VP ?VBN))
-	else ;They are educated.
-		(retract ?f2 ?f3 ?f4 ?f5)
-		(bind ?JJ (get_no ?VBN VBN JJ))
-		(assert (Head-Level-Mother-Daughters ?h ?l ?ADJP ?JJ))
-		(assert (Node-Category ?JJ JJ))
-		(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?JJ ?id))
-		(assert (id-sd_cat  ?id  JJ))
-	)
-  )
-  ;------------------------------------------------------------------------------------------------------------------------
-  ;Suggested by Sukhada (12-08-16)
-  ;She got the work done. Drink plenty of water and get urine culture done. 
-  (defrule modify_NN_as_VP
-  ?f0<-(Head-Level-Mother-Daughters ?head&get|got|getting ?lvl ?Mot ?V ?NP)
-  (and (Node-Category ?Mot VP) (Node-Category ?V VBD|VBZ|VB))
-  ?f1<-(Node-Category ?NP NP)
-  ?f2<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 ?VP)
-  (Node-Category ?VP VP)
-  (Head-Level-Mother-Daughters ? ? ?VP ?VBN)
-  (Node-Category ?VBN VBN)
-  =>
+ ;Suggested by Sukhada (12-08-16)
+ ;She got the work done. Drink plenty of water and get urine culture done. 
+ (defrule modify_NN_as_VP
+ ?f0<-(Head-Level-Mother-Daughters ?head&get|got|getting ?lvl ?Mot ?V ?NP)
+ (and (Node-Category ?Mot VP) (Node-Category ?V VBD|VBZ|VB))
+ ?f1<-(Node-Category ?NP NP)
+ ?f2<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 ?VP)
+ (Node-Category ?VP VP)
+ (Head-Level-Mother-Daughters ? ? ?VP ?VBN)
+ (Node-Category ?VBN VBN)
+ =>
 	(retract ?f0 ?f1 ?f2)
 	(bind ?vp (get_no ?NP NP VP))
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?V ?vp))
 	(assert	(Node-Category ?vp VP))
 	(assert (Head-Level-Mother-Daughters ?h ?l ?vp ?NP1 ?VP))
-  )
-
-
-
+ )
  ;==============================================================================================
  ;Suggested by Chaitanya Sir (24-03-14)
  ;There can be some confusion [regarding] the trailing zeros.
