@@ -17,7 +17,10 @@
                           (added 'PropN' condition)
                           PP_pronoun_rule_without_vib -- added them
 		  	  default_hnd_mng_rule (added if condition to check mng is '-')
- 7. sd_relation_rules.clp :  Modified: AjFArWaka_vAkya (added 'Does|May')
+ 7. sd_relation_rules.clp :
+		Modified: AjFArWaka_vAkya (added 'Does|May')
+		       	  kriyA_sub_rule1 -- added root condition
+			  acomp+nsubj -- removed 'become' from list
  8. sd_lwg_rules.clp
 		Modified: cp_facts_for_lwg , replace_VP, get_lwg -- added 'SINV' in the list
 			  replace_S1  -- added 'ought' in the list
@@ -26,6 +29,7 @@
 			  check_for_CC_imper -- added or condition to allow SBAR  
 			  check_for_causitive -- added 'Get' in the list
 			  check_for_imper1 -- handled (INTJ ? VP) pattern
+			  add_not_to_lwg -- added assert stmt for not insertion
  9. sd_category.clp : Added: IN_rule1 , CD_rule1
 		      Modified: PropN_rule 		-- added 'But, It'  in not condition
         			PropN_rule_from_NER 	-- used P1 instead of 1
@@ -102,6 +106,9 @@
 	get_canonical_dic.sh	--> get_canonical_form-dic.out  to canonical_form.out
 	run_stanford-parser.sh  --> Modified to add parser_correction.py program
 	multifast-v1.4.2/src/run.sh --> added proper_noun dic's
+	phrasal_alignment/run_alignment.sh
+	bin/run_alignment.sh 	: Modified to get automatic generated new hindi parser relations and suggested mng files
+	Anusaaraka_alignment.sh : integrated rule based hindi parser and extracted transliteration meaning for all the words in the sentence
  29. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp	get_score.clp		eng_parser_grouping.clp		get_hnd_std_parser_heuristics.clp

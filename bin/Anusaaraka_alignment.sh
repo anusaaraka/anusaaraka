@@ -3,8 +3,15 @@
 
   MYPATH=$HOME_anu_tmp/tmp/$1_tmp
   PHRASAL_PATH=$HOME_anu_test/miscellaneous/SMT/phrasal_alignment
-
-  cp $4 $MYPATH/    #ilparser
+  
+  if [ "$4" != "" ] ; then
+	  cp $4 $MYPATH/    #ilparser
+	  sh $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_conll_info.sh $MYPATH $4
+  else
+	touch 	$MYPATH/hnd_parser_relns.txt
+        touch 	$MYPATH/hnd_root_and_tam_info.txt	
+  fi
+ # cp $1_align.txt $2_org $MYPATH/   #omitted sentencses info
 
   #Running below command temporarily . As of now o/p from champollion is in canonical form.
   #If input is from other source then comment the below line and modify the shell accordingly.
@@ -16,11 +23,14 @@
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
 
   $HOME_anu_test/Anu_data/canonical_form_dictionary/get_canonical_form-dic.out $MYPATH/hnd_tmp > $MYPATH/hnd_tmp1
+  #$HOME_anu_test/Anu_data/canonical_form_dictionary/get_canonical_form-dic.out $MYPATH/hnd1 > $MYPATH/hnd_tmp1
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < $MYPATH/hnd_tmp1 > $MYPATH/hnd_tmp2
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < $MYPATH/hnd_tmp2 > $MYPATH/hnd
 
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' | sed 's/[ ]\.\([^$]\)/\.\1/g' > $MYPATH/hnd-hi-en
 
+  #------rule base ---------------
+  sed 's/^_//g' $MYPATH/hnd | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g' > $MYPATH/hnd_sent.txt
 
   cd $PHRASAL_PATH
   sh get_pos_chunk.sh $MYPATH
@@ -49,13 +59,14 @@
   fi       
   cd $PHRASAL_PATH 
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd >  $MYPATH/hnd-sent
+ # sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd_tmp >  $MYPATH/hnd-sent
   sed 1,2d $MYPATH/hnd-sent > $MYPATH/hnd-sent1 
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/eng_tok_org >  $MYPATH/eng_tok_org-sent
   sed 1,2d $MYPATH/eng_tok_org-sent > $MYPATH/eng_tok_org-sent1
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd-hi-en >  $MYPATH/hnd-hi-en-sent
   sed 1,2d $MYPATH/hnd-hi-en-sent > $MYPATH/hnd-hi-en-sent1 
   ./replace-punctuation.out < $MYPATH/hnd-hi-en > $MYPATH/hnd-hi-en-map-punc
-  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc | sed 's/_/ /g' | sed 's/  / /g'| sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g' > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
+  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc | sed 's/_/ /g' | sed 's/   / /g' | sed 's/ - /-/g' | sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g' > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
 
   cd $HOME_anu_test/bin/
   apertium-destxt $MYPATH/hnd | lt-proc -ac hi.morf.bin | apertium-retxt >  $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph
@@ -70,33 +81,61 @@
  $HOME_anu_test/Anu_src/split_file.out hnd-sent1 dir_names.txt  hnd
  $HOME_anu_test/Anu_src/split_file.out hnd-hi-en-sent1 dir_names.txt  hnd-hi-en
  $HOME_anu_test/Anu_src/split_file.out eng_tok_org-sent1 dir_names.txt  eng_tok_org
- $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
+ $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph_tmp.dat
  $HOME_anu_test/Anu_src/split_file.out manual_hin.tam.txt dir_names.txt manual_hin.tam.dat
  $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
  $HOME_anu_test/Anu_src/split_file.out pos.txt dir_names.txt pos.dat
  $HOME_anu_test/Anu_src/split_file.out chunk_info.txt dir_names.txt chunk_info.dat
 
  #--------------    dependency alignment files -----------------
- sh $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_conll_info.sh $MYPATH $4
 
  $HOME_anu_test/Anu_src/split_file.out hnd_parser_relns.txt dir_names.txt hindi_parser_rel_ids_tmp.dat
  $HOME_anu_test/Anu_src/split_file.out hnd_root_and_tam_info.txt dir_names.txt hindi_root_and_tam_info.dat
  #$HOME_anu_test/Anu_src/split_file.out hnd_parser_cat.txt dir_names.txt hindi_parser_cat.dat
 
-rm -f */total-left-over.dat
-#python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/get_omitted_sent_info.py $4 $5
+ rm -f */total-left-over.dat
 
+# python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/get_omitted_sent_info.py $1_align.txt $2_org
+# python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/get_omitted_sent_info.py $4 $5
+
+ #----------------  Rule based Hindi parser -----------------------
+ python $rule_based_parser/src/get_ids_for_hnd_sent.py $MYPATH/hnd_sent.txt > $MYPATH/hnd_wrd.txt
+ $HOME_anu_test/Anu_src/split_file.out hnd_wrd.txt   dir_names.txt hnd_wrd.dat
+# $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt hnd.morph_tmp.dat
+
+ echo "Calling Transliteration"
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+
+ tr ' ' '\n' <  $HOME_anu_tmp/tmp/$1.snt > $MYPATH/words
+ sort -u $MYPATH/words | grep -v "^$" > $MYPATH/sorted_words
+ sh transliteration-script.sh $MYPATH sorted_words 2> /dev/null
+
+ paste $MYPATH/sorted_words $MYPATH/sorted_words.wx > $MYPATH/transliterated_words_for_align
 
  cd $PHRASAL_PATH
  while read line
  do
-#	echo $line
+	echo $line
+	#----------- Rule Based Hindi Parser -------------------------
+	cd $MYPATH/$line
+	cp manual_hin.morph_tmp.dat hnd.morph_tmp1.dat 
+	echo "(defglobal ?*hpath* = $rule_based_parser)" >> global_path.clp
+	timeout 10 myclips -f  $rule_based_parser/intrachunker/run_chunk_modules.bat > $1.hnd.out
+	timeout 10 myclips -f  $rule_based_parser/clp_files/get_scope.bat >> $1.hnd.out
+	timeout 10 myclips -f  $rule_based_parser/clp_files/get_rels.bat >> $1.hnd.out
+	if [ "$4" == "" ] ; then
+    	   sed -i 's/rel_name-ids/relation_name-rel_ids/g' rel_info.dat
+	   $HOME_anu_test/miscellaneous/SMT/dependency_alignment/mapping-hindi_rel-univ_rel.out < rel_info.dat > hindi_parser_rel_ids_tmp.dat
+	fi
+        #-------------------------------------------------------------
+	cd $PHRASAL_PATH
 	if [ "$3" == "general" ] ; then
+		touch $MYPATH/$line/word-alignment-hi-en.dat
+		touch $MYPATH/$line/word-alignment.dat
         	cd $HOME_anu_test/bin 
-	timeout 500 sh run_alignment.sh $MYPATH/$line $1 $3 
+		timeout 500 sh run_alignment.sh $MYPATH/$line $1 $line $3
 		cd $PHRASAL_PATH
 	else	
-	 
 	sh run_alignment.sh $MYPATH/$line $3
 	sh run_alignment-hi-en.sh $MYPATH/$line $3
         cd $HOME_anu_test/bin 
@@ -107,3 +146,25 @@ rm -f */total-left-over.dat
 
  cd $MYPATH
  sh $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_align_browser_eng.sh $HOME_anu_test $1 $HOME_anu_tmp $HOME_anu_output
+
+ sort -u  proper_noun_mngs_tmp.txt  > proper_noun_mngs.txt 
+ sort -u  multi_proper_noun_mngs_tmp.txt  > multi_proper_noun_mngs.txt 
+ sort -u  suggested_dic_mngs_tmp.txt > suggested_dic_mngs.txt
+ sort -n -k2  align_percent_info.txt > align_percent.txt
+ 
+
+# while read line
+# do
+#        grep "^$line    " $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt > k
+#        grep "^$line    " $HOME_anu_test/Anu_data/compound-matching/named_entities.txt >> k
+#        grep "^$line    " $HOME_anu_test/Anu_data/compound-matching/proper_noun-common_noun_compounds.txt >> k
+#        grep "^$line    " $HOME_anu_test/Anu_data/compound-matching/acronyms-common_noun_compounds.txt >> k
+#	 grep "^$line	" $HOME_anu_test/Anu_data/compound-matching/proper_noun_person_names.txt >> k
+#        if  [ -s "k" ] ;
+#        then
+#                echo $line >> existing_multi_words.txt
+#        else
+#                echo $line >> multi_proper_nouns.txt
+#        fi
+# done < multi_proper_noun_mngs.txt
+#

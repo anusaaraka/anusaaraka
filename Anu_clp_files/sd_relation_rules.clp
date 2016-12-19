@@ -191,19 +191,22 @@
  ;------------------------------------------------------------------------------------------------------------------------
 
  (defrule kriyA_sub_rule1
+ (rel_name-sids root ? ?kriyA)
  (rel_name-sids xcomp ?kriyA ?kri)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (not (sub_for_kriyA ?kri))
  (not (got_kriyA-karwA_rel ?kri))
  (not (got_kriyA-subject ?kriyA))
  (not (got_shared_subject ?kri))
+; (not (got_kriyA-vAkyakarma ? ?kriyA))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kri"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule1   kriyA-subject   "?kri"        "?sub")"crlf)
  (assert (sub_for_kriyA ?kri))
  )
+
  ;Added by Shirisha Manju
- ;Ex : Broken windows need to be replaced. 
+ ;Ex : Broken windows need to be replaced.  These smugglers are to be captured.
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule nsubj_conj
  (declare (salience 100))
@@ -328,7 +331,8 @@
 (defrule acomp+nsubj
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
 (rel_name-sids xcomp|acomp ?kriyA ?samA)
-(parser_id-root ?kriyA look|appear|seem|set|become)
+(parser_id-root ?kriyA look|appear|seem|set)
+;(parser_id-root ?kriyA look|appear|seem|set|become)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	acomp+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
