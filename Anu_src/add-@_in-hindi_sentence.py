@@ -10,7 +10,8 @@ f = fr.readlines()
 for line in xrange(len(f)):
         wordlist = f[line].split()
 	for word in wordlist:
- 	  if (word.startswith('@') or word.startswith('\@') or word.startswith('PUNCT-OpenParen\@')) and (('-' in word) or ('.' in word)) and ('.'  not in word[-1]) and ('SYMBOL' not in word):
+ 	  if (word.startswith('@') or word.startswith('\@') or word.startswith('PUNCT-OpenParen\@')) and (('-' in word) or ('.' in word)) and ('.'  not in word[-1]):
+# and ('SYMBOL' not in word):
             wrd = word.split('-')
 	    c = 0
 	    each_item = ''

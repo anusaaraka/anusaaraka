@@ -555,7 +555,7 @@
                 (if (eq ?count (- ?pos 1)) then
                     (bind ?new_vrb_chunk (sym-cat (sub-string 1 ?index1 ?cp_vrb_chunk) "not" (sub-string ?index1 (length ?cp_vrb_chunk) ?cp_vrb_chunk)))
                  
-		   (printout t  ?index1 ?cp_tam)
+		   (printout t  ?new_vrb_chunk " "?index1" " ?cp_tam)
                     (bind ?new_tam (sym-cat (sub-string 1 ?index1 ?cp_tam) "not" (sub-string ?index1 (length ?cp_tam) ?cp_tam)))
                )
 ;               (printout t " new_vrb_chunk " ?new_vrb_chunk " new_tam " ?new_tam " " ?index " " ?count " " ?pos " " ?index1 crlf)
@@ -564,6 +564,7 @@
     )
     (assert (root-verbchunk-tam-parser_chunkids ?root ?new_vrb_chunk ?new_tam $?lwg))
     (printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?new_vrb_chunk" "?new_tam" "(implode$ $?lwg)")" crlf)
+    (assert (inserted_not ?not))
  )
 
  ;--------------------------------------------------------------------------
@@ -724,15 +725,18 @@
 	(bind ?count 0)
 	(bind ?cp_tam ?tam)
 	(bind ?new_tam ?tam)
-        (printout t ?tam crlf) 
     	(bind ?index (str-index "_" ?tam))
+	(printout t "added index1 by manju crlf)
+	(bind ?index1 ?index) 
         (while (neq ?index FALSE)
                 (bind ?count (+ ?count 1))
                 (if (eq ?count (- ?pos 2)) then
-                    (bind ?new_tam (sub-string 1 ?index ?cp_tam))
+                    (bind ?new_tam (sub-string 1 ?index1 ?cp_tam))
+;                    (bind ?new_tam (sub-string 1 ?index ?cp_tam))
                 )
                (bind ?tam (sub-string (+ ?index 1) 1000 ?tam))
                (bind ?index (str-index "_" ?tam))
+		(if (neq ?index FALSE) then (bind ?index1 (+ ?index ?index1)))
         )
 	(bind ?r (string-to-field (str-cat ?root"_"?root1)))
         (if (neq (length $?ids) 0) then
