@@ -48,8 +48,7 @@
   ;the ex: Ayodhya Station is at a distance of 128 miles from the Mughal Sarai Station [of] [the] Northern Railway's Mughal Sarai-Lucknow line .
   (defrule PropN_rule_from_NER
   (declare (salience 12))
-  (word-wordid-nertype ?word&~of&~the ?id PERSON|LOCATION|ORGANIZATION) 
-  (parserid-wordid   ?pid  ?id)
+  (word-wordid-nertype ?word&~of&~the ?pid PERSON|LOCATION|ORGANIZATION) 
   (parserid-word ?pid ?word)
   ?f0<-(id-sd_cat  ?pid ?)
   =>
@@ -58,20 +57,6 @@
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  ;Added by Roja(13-06-13) ;Ex: John's family is renovating their kitchen.
-  (defrule PropN_rule_from_NER1
-  (declare (salience 12))
-  (word-wordid-nertype ?word ?id PERSON|LOCATION|ORGANIZATION)
-  (parserid-wordid   ?pid's  ?id)
-  (parserid-word ?pid's ?wrd)
-  ?f0<-(id-sd_cat   ?pid's ?)
-  (test (neq (str-index "'s" ?wrd) FALSE))
-  (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
-  =>
-        (assert (parser_id-cat_coarse  ?pid's PropN))
-        (assert (parser_id-cat ?pid's proper_noun))
-	(retract ?f0)
-  )
   ;------------------------------------------------------------------------------------------
 ;  ;(Added by S.Maha Laxmi 4-07-11)(Suggested by Sukahada)
 ;  ; #Ex. We ate at Joe's Diner last week. The Master said, if I did not go, how would you ever see? 

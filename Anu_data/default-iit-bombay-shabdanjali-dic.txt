@@ -5550,7 +5550,7 @@ angoras_UNDEFINED	lambe_bAloM_vAle
 angrier_UNDEFINED	kroXiwa
 angriest_UNDEFINED	kroXiwa
 angrily_adverb	kroXa_se/gusse_meM
-angry_adjective	kroXiwa/wUPAnI/uPanawA_huA/pracaNda/nArAja/KaPA/kruxXa/katu/kaRtapraxa
+angry_adjective	kroXiwa/wUPAnI/uPanawA_huA/pracaNda/nArAja/KaPA/kruxXa/katu/kaRtapraxa/gussA
 angst_noun	GabarAhata/cinwA
 angstrom_UNDEFINED	EgstrAma
 angstrom_noun	Efgstrama
@@ -22051,7 +22051,7 @@ dharman_UNDEFINED	Xarmana
 dhingra_UNDEFINED	DIfgarA
 dhir_UNDEFINED	XIra
 dhirsamant_UNDEFINED	XIrasAmanwa
-diabetes_noun	maXumeha_roga/maXumeha
+diabetes_noun	maXumeha_roga/maXumeha/dAyabitIja
 diabetic_adjective	maXumeha_sambanXI/maXumeha-sambanXI/maXumeha-pIdiwa_ke_lie_upayukwa
 diabetic_noun	maXumeha-rogI
 diabeticer_UNDEFINED	maXumeha_sambanXI
@@ -23496,7 +23496,7 @@ disunited_adjective	viBAjiwa
 disunities_UNDEFINED	viBexa
 disunity_noun	PUta/anabana/viBexa
 disuse_noun	anupayoga
-disused_adjective	apracaliwa
+disused_adjective	bekAra/apracaliwa
 ditch_noun	KAIra/nAlI/KAI
 ditch_verb	uwAra/nikAsa_hewu_nAlI_Koxa/havAI_jahAja_uwAra/Coda_xe/coda_xe
 ditched_UNDEFINED	KAIra
@@ -24862,7 +24862,7 @@ each-other_pronoun	anyonya
 each-way_adverb	xono_waraPa{Sarwa_kA}
 each_adjective	hara/prawyeka/hara_eka/haraeka/eka-eka/eka_eka
 each_adverb	hara/prawyeka_ke_lie/hara_eka_lie/eka_sAWa
-each_determiner	prawyeka
+each_determiner	prawyeka/hareka
 each_pronoun	praweka/haraeka/prawyeka
 eager-beaver_noun	uwsuka{anOpacArika}
 eager_adjective	uwsuka/uwsAhI/saragarma/icCuka
@@ -25943,7 +25943,6 @@ emptiness_noun	SUnyawA/SUnya/KAlIpana
 empty-handed_adjective	KAlI-hAWa
 empty-headed_adjective	KAlI_ximAga_kA
 empty_adjective	SUnya/rikwa/nirarWaka/KoKalA/KAlI
-empty_noun	KAlI_dibbA
 empty_verb	nikAla/KAlI_kara/KAlI_ho/Coda
 emptying_UNDEFINED	KAlI_karanA
 emptying_noun	rikwIkaraNa
@@ -47991,7 +47990,7 @@ materializing_UNDEFINED	mUrwarUpa_xenA
 materially_UNDEFINED	xravyAwmaka_rUpa_se
 materially_adverb	mahawwvapUrNa_Dafga_se/ArWika_rUpa_se
 materials_UNDEFINED	xravyAwmaka
-maternal_adjective	mAwqka/mAwqvaMSI/mAwqsulaBa/mAwq-
+maternal_adjective	mAwqka/mAwqvaMSI/mAwqsulaBa/mAwq-/mAwAoM_kA/mAwA_kA
 maternaler_UNDEFINED	mAwqka
 maternalest_UNDEFINED	mAwqka
 maternally_adverb	mAwqsulaBa_Dafga_se
@@ -61511,7 +61510,7 @@ propenonitrile_noun	propinonAitrAila
 propensities_UNDEFINED	JukAva
 propensity_noun	JukAva/pravqwwi
 proper-noun_noun	vyakwivAcaka_saFjFA
-proper_adjective	uciwa/vyakwi_vAcaka/TIka/Tika
+proper_adjective	uciwa/vyakwi_vAcaka/TIka/Tika/sahI
 properer_UNDEFINED	uciwa
 properest_UNDEFINED	uciwa
 properly_adverb	TIka_se/uciwa_Dafga_se
@@ -93599,3 +93598,4 @@ paracetamol_PropN	pErAsItAmola
 blood-stream_noun	rakwapravAha
 moti_noun	mowI
 non-medical_adjective	gEra_cikiwsIya
+pre-delivery_adjective	prasava_pUrva

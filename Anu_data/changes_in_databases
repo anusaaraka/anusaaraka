@@ -607,7 +607,9 @@
  29.    BArI		ajAwI/__adj		(Suggested by Soma Mam		14-06-16)
  30.	<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>	(By Rajini 26-07-16)
 	<e><p><l>eM</l><r>e<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:subj"/></r></p></e>	(	"	   )
-	
+ 31. 	asakRama	amIra/__adj		(By Roja                    17-12-16)
+ 32.`	yogya		amIra/__adj		(    "				"   )
+ 33.	xavAI		ladak/I__adj		(Suggested by Chaitanya Sir 17-12-16)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -662,7 +664,8 @@ Modified :
 		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
 		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e>
 		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
-		
+	  8. I       ladak/I__n			(By Roja   17-12-16)
+          9. a       Gar/a__n			(    "        "    )
 
 
 # Changes in apertium-en-hi.en.metadix 
@@ -1489,7 +1492,8 @@ Nandini ji LTRC 	27-11-13)
 	182. moti_noun			mowI
 					The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
 	183. non-medical_adjective   	gEra_cikiwsIya			(Suggested by Rajini    14-10-16)
-					Ex: 
+	184. pre-delivery_adjective  	prasava_pUrva			(Suggested by Chaitanya Sir  10-12-16)
+					Ex: The percentage of the women getting the pre-delivery test done thrice is only 18.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1874,6 +1878,14 @@ Nandini ji LTRC 	27-11-13)
 		diarrhoea_noun		dAyariyA	most_adjective		jyAxAwara
 		harm_noun		nukasAna
 		hiatus_noun		hAyAtasa
+      	183. diabetes_noun		dAyabitIja		(Suggested by Chaitanya Sir 10-12-16)
+	184. angry_adjective		gussA			( By shirisha Manju 15-12-16)
+					Ex: Getting angry very soon, very often.
+	185. disused_adjective		bekAra			(Suggested by Chaitanya Sir 15-12-16)
+					Ex: Do not keep water collected at home in coolers, empty disused tin cans, and in empty bottles.
+	186. maternal_adjective		mAwAoM_kA/mAwA_kA	(Suggested by Chaitanya Sir 15-12-16)
+					Ex: Data related to maternal mortality rate of the state is not available.
+	187. proper_adjective		sahI			(Suggested by Chaitanya Sir 15-12-16)
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2435,6 +2447,7 @@ Nandini ji LTRC 	27-11-13)
 	54. den_noun	        mAzda					(	"	"	"	18-05-16)
 	55. hardened_UNDEFINED      kadA_karanA				(	"	"	"	04-06-16)
  	56. hardening_UNDEFINED     kadA_karanA				(	"	"	"	04-06-16)
+	57. empty_noun		    KAlI_dibbA	(no noun entry in OLD)	(					)
 
 
     8. Modified category:
@@ -3530,6 +3543,7 @@ Nandini ji LTRC 	27-11-13)
 	Dennis		denisa		(	"	"	"	"	"	)
 	Ganges		gaMgA		(Suggested by Chaitanya Sir 	      15-12-14	)
 	Persia  	PArasa		(	"	14anu-ban-09	"     16-02-15  )	
+	mrs.		SrImawI
 
 	Following entries are added from  wiki sentences by Shirisha Manju
 	Chidambaram     cixaMbarama	to	Sathasivam      sawyaSivama
@@ -3541,6 +3555,7 @@ Nandini ji LTRC 	27-11-13)
 	dow     	dava		verma   	varmA		jane    jena
 	kerala		kerala		karnataka       karnataka	louise  lUsI
 	gabriel		gEbriyala	toms    	toYma		billy   billI
+
 		
 
    Modified:
@@ -3766,10 +3781,12 @@ Nandini ji LTRC 	27-11-13)
   -------
 	following_morning       agale_xina_subaha#agale_xina_subaha#noun#2#RM	(Suggested by Chaitanya Sir	10-03-15)
 
-  Modified:
+ Modified:
+ --------
 	1. following_morning       agalI_subaha#noun#1#RM	as	agalI_subaha#noun#2#RM	    (Suggested by Chaitanya Sir 10-03-15)
 	2. Government_of_India     BArawa_sarakAra#noun#2#RM	as	BArawa_sarakAra#noun#1#RM   (By Manju       13-09-16)
 	3. paper_form      	   kAgaja_rUpa			as	kAgajI_rUpa		    (Suggested by Bhagyashri Kulkarni 16-9-16)
+	4. year_old		   varRIyA			as	varRIya			    (    "             "        "    14-11-16)     
 
  Modified first meaning:
  -----------------------
@@ -3780,6 +3797,12 @@ Nandini ji LTRC 	27-11-13)
 	1. sample_sentence	uxAharaNa_vAkya					(Suggested by Chaitanya Sir     02-09-16)
 	2. blood_pressure  	blada_preSara					(By Manju			13-09-16)
 	3. video_game		vIdiyo_gema					(Suggested by Bhagyashri Kulkarni 17-9-16)
+
+ Modified head:
+ --------------
+	1. district_hospitals		1	as	2			(Suggested by Chaitanya Sir 	15-12-16)
+					Ex: Special attention is being paid on the quality of the operation of cataract for which all district
+					    hospitals, base hospitals are being converted into Microscopic Centres.
 
 # Changes in hindi_wordnet_dic1.txt
 # =================================
