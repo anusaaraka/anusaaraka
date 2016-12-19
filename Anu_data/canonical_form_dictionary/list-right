@@ -54,4 +54,8 @@ account_dic
 account_multi_dic
 banking_dic
 banking_multi_dic
+proper_noun_organization_names
+proper_noun_person_names
+proper_noun_place_names
 wsd_dictionary
+crude_equivalent_dic

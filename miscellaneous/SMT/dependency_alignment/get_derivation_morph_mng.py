@@ -1,3 +1,5 @@
+# run : python get_derivation_morph_mng.py  default-iit-bombay-shabdanjali-dic_smt.gdbm derivational_dict.txt 
+
 #Programme to get derivational morph info
 import sys
 import gdbm 

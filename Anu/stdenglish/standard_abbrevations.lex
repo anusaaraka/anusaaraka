@@ -37,7 +37,7 @@ int len=0;
 ^e\.g\.{SPC}	{printf("ABBR-Example%c",yytext[4]);}
 {SPC}e\.g\.{SPC}	{printf("%cABBR-Example%c",yytext[0],yytext[5]);}
 
-(L[.]T[.]|n[.]m[.]|B[.]C[.]|A[.]D[.]|B[.]C[.]E[.]|C[.]E[.]|B[.]A[.]|B[.]S[.])[ ] 	{
+(L[.]T[.]|n[.]m[.]|B[.]C[.]|A[.]D[.]|B[.]C[.]E[.]|C[.]E[.]|B[.]A[.]|B[.]S[.]|M[.]A[.]|B[.]Sc[.])[ ] 	{
 							*str='\0';
 							while((len=strcspn(yytext,".")) < strlen(yytext))
                  		                        {
