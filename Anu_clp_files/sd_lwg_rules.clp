@@ -726,7 +726,7 @@
 	(bind ?cp_tam ?tam)
 	(bind ?new_tam ?tam)
     	(bind ?index (str-index "_" ?tam))
-	(printout t "added index1 by manju crlf)
+	(printout t "added index1 by manju" crlf)
 	(bind ?index1 ?index) 
         (while (neq ?index FALSE)
                 (bind ?count (+ ?count 1))
