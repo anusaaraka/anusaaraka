@@ -1,0 +1,22 @@
+Albert_Einstein	Albarta_AinastEna#Albarta_AinastEna#PropN#2#RM
+Chetan_Mehta	cewana_mehata#cewana_mehata#PropN#2#RM
+Darood_Sharif	xarUxa_SarIPZa#xarUxa_SarIPZa#PropN#1#WM
+Dawood_Ibrahim	xAuxa_ibrAhima#xAuxa_SibrAhima#PropN#2#WM
+Hafiz_Sayeed_LeT	hAPija_saIxa_ela_I_tI#hAPija_saIxa_ela_I_tI#PropN#2#WM
+Imtiaz_Ali	imwiyAjZa_alI#imwiyAjZa_alI#PropN#2#WM
+Markandey_Katju	mArkaMdeya_kAtajU #mArkaMdeya_kAtajU #PropN#1#WM
+Hussain_Zaidi	husEna_jExI#husEna_jExI#PropN#1#WM
+Ram_Jethmalani	rAma_jeTamalAnI#rAma_jeTamalAnI#PropN#1#WM
+Asaduddin_Owaisi	asaxuxxIna_ovEsI#asaxuxxIna_ovEsI#PropN#1#WM
+Indira_Gandhi	iMxirA_gAMXI#iMxirA_gAMXI#PropN#2#RM
+BS_Chauhan	bI_esa_cOhAna#bI_esa_cOhAna#PropN#2#RM
+Lalit_Modi	laliwa_moxI#laliwa_moxI#PropN#2#WM
+Madhu_Trehan	maXu_wrehana#maXu_wrehana#PropN#2#WM
+Vidyasagar_Rao	vixyAsAgara_rAva#vixyAsAgara_rAva#PropN#2#WM
+Ajmal_Kasab	ajZamala_kasAba#ajZamala_kasAba#PropN#1#WM
+Anurag_Kashyap's	anurAga_kaSyapa#anurAga_kaSyapa#PropN#1#WM
+Avul_Pakir_Jainulabdeen	abula_pAkira_jEnulAbaxIna#abula_pAkira_jEnulAbaxIna#PropN#1#WM
+Avul_Pakir_Jainulabdeen_Abdul_Kalam	abula_pAkira_jEnulAbaxIna_abxula_kalAma#abula_pAkira_jEnulAbaxIna_abxula_kalAma#PropN#1#WM
+Shreyansh_Kumar	SreyaMRakumAra#SreyaMRakumAra#PropN#2#WM
+Shreyansh_Kumar's	SreyaMRakumAra#SreyaMRakumAra#PropN#2#WM
+Harry_Potter	hoYrI_poYtara#hoYrI_poYtara#PropN#2#WM

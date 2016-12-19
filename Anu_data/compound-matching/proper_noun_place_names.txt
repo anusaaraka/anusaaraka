@@ -1,0 +1,3 @@
+New_Delhi	naI_xillI#naI_xillI#noun#2#WM
+Khardungla_pass	KaraxuMgalA_xarrA#KaraxuMgalA_xarrA#PropN#1#WM
+Andhra_Pradesh   AzXra_praxeSa#AzXra_praxeSa#PropN#2#WM

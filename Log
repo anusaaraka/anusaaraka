@@ -60,7 +60,12 @@
             Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat and run_modules_link.bat
  23. create_hindi_animate.c:
 		Added pronoun case to create hindi animate list
- 24. Added parser_correction.py program
+ 24. Added following programs/dictionaries
+	parser_correction.py 
+	proper_noun_organization_names
+	proper_noun_person_names
+	proper_noun_place_names
+	crude_equivalent_dic
  25. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
@@ -69,18 +74,22 @@
 	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP and NIIT in the list
 				     Removed: May
 	initialisms.lex 	-->  Added :I.A.S. M.Sc. B.Sc.
-	standard_abbrevations.lex --> fixed the bug (Ex: B.A)
+	standard_abbrevations.lex --> fixed the bug (Ex: B.A) ,  Added : M.A. and B.Sc.
 	enclitics.lex 		-->  added [mM]a'am
 	canonical_form.lex	-->  Added rule to convert ke_liye to ke_lie	 
 	get_canonical_form_in_wsd.lex	--> Added rule to handle canonical form in tam files
+	mapping-hindi_rel-univ_rel.lex
  27. Updated the following files
 	chk_input_format.pl 			-->  fixed bug for '-'  Ex: ... (trimester) - from ...
         print-pos-info.py
 	create_SL-TL_dict_using_phrase_table.py --> Added print statements for debugging
-	mapping-hindi_rel-univ_rel.lex
 	match_value_in_hnd.py			--> Added comments
 	run-ner.pl              		--> Modified to get pids(P1,P2 ...) instead of ids (1,2 ...)
 	split-relations.py      		--> Modified to get basic, propagation and tree relations
+	get_derivation_morph_mng.py 		--> added comments
+	list-right				-->  proper_noun dic's
+	list_Anu_data_compound			-->  proper_noun dic's
+	list_SMT				--> crude_equivalent_dic
  28. Updated following shell files
 	get_pos_chunk.sh:  Added sed command to modify ' - ' as '-'
         phrasal_alignment/compile.sh
@@ -92,6 +101,7 @@
 	provisional_Anu_databases/get-text-files.sh -> Added human.txt in cp step.
 	get_canonical_dic.sh	--> get_canonical_form-dic.out  to canonical_form.out
 	run_stanford-parser.sh  --> Modified to add parser_correction.py program
+	multifast-v1.4.2/src/run.sh --> added proper_noun dic's
  29. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp	get_score.clp		eng_parser_grouping.clp		get_hnd_std_parser_heuristics.clp
@@ -100,7 +110,9 @@
   	Added 'tam' and 'tam_components' slots in manual_word_info deftemplate
 	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
 		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp
- 30. Updated Log	
+ 30. Updated verifieds
+	sd_verified (878)	small_sent_verified_sd (178)
+ 31. Updated Log	
 
  24-08-16
  ========
