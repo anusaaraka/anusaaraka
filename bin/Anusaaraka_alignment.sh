@@ -101,7 +101,8 @@
  #----------------  Rule based Hindi parser -----------------------
  python $rule_based_parser/src/get_ids_for_hnd_sent.py $MYPATH/hnd_sent.txt > $MYPATH/hnd_wrd.txt
  $HOME_anu_test/Anu_src/split_file.out hnd_wrd.txt   dir_names.txt hnd_wrd.dat
-# $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt hnd.morph_tmp.dat
+ $rule_based_parser/src/morph.out $MYPATH/hnd.morph_tmp.txt $MYPATH/hnd_hin.tam.txt < $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
+ $HOME_anu_test/Anu_src/split_file.out hnd.morph_tmp.txt dir_names.txt hnd.morph_tmp1.dat
 
  echo "Calling Transliteration"
  cd $HOME_anu_test/miscellaneous/transliteration/work
@@ -118,7 +119,6 @@
 	echo $line
 	#----------- Rule Based Hindi Parser -------------------------
 	cd $MYPATH/$line
-	cp manual_hin.morph_tmp.dat hnd.morph_tmp1.dat 
 	echo "(defglobal ?*hpath* = $rule_based_parser)" >> global_path.clp
 	timeout 10 myclips -f  $rule_based_parser/intrachunker/run_chunk_modules.bat > $1.hnd.out
 	timeout 10 myclips -f  $rule_based_parser/clp_files/get_scope.bat >> $1.hnd.out
