@@ -22,7 +22,7 @@
   sed -i  '1iparIkRaNa .' $MYPATH/hnd1
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
 
-  $HOME_anu_test/Anu_data/canonical_form_dictionary/get_canonical_form-dic.out $MYPATH/hnd_tmp > $MYPATH/hnd_tmp1
+  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out < $MYPATH/hnd_tmp > $MYPATH/hnd_tmp1
   #$HOME_anu_test/Anu_data/canonical_form_dictionary/get_canonical_form-dic.out $MYPATH/hnd1 > $MYPATH/hnd_tmp1
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < $MYPATH/hnd_tmp1 > $MYPATH/hnd_tmp2
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < $MYPATH/hnd_tmp2 > $MYPATH/hnd
@@ -66,7 +66,7 @@
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd-hi-en >  $MYPATH/hnd-hi-en-sent
   sed 1,2d $MYPATH/hnd-hi-en-sent > $MYPATH/hnd-hi-en-sent1 
   ./replace-punctuation.out < $MYPATH/hnd-hi-en > $MYPATH/hnd-hi-en-map-punc
-  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc | sed 's/_/ /g' | sed 's/   / /g' | sed 's/ - /-/g' | sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g' > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
+  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc |  sed 's/_/ /g' | sed 's/   / /g' | sed 's/ - /-/g'  | sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
 
   cd $HOME_anu_test/bin/
   apertium-destxt $MYPATH/hnd | lt-proc -ac hi.morf.bin | apertium-retxt >  $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph
