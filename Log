@@ -101,9 +101,10 @@
 	get_pos_chunk.sh:  Added sed command to modify ' - ' as '-'
         phrasal_alignment/compile.sh
         dic_compile.sh
-	anu_compile.sh	-> Added compilation of canonical_form.lex before creating canonical form
+	anu_compile.sh	-> Added compilation of canonical_form.lex and non_canonical_form.lex before creating canonical form
 	Anusaaraka_logon.sh
 	get_dictionary_in_canonical_form.sh --> Modified get_canonical_form-dic.out to canonical_form.out (Using lex prog instead of 'c' prog)
+						Converting dictionaries first to non_canonical_form and then creating  canonical form
 	wsd_tam_debug.sh 	--> Added punctuation_info.dat in echo statement.
 	provisional_Anu_databases/get-text-files.sh -> Added human.txt in cp step.
 	get_canonical_dic.sh	--> get_canonical_form-dic.out  to canonical_form.out

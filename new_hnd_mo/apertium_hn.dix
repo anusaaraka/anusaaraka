@@ -342,12 +342,12 @@
 <e><p><l>iyegA</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>egA</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e r="LR"><p><l>yegA</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
-<e><p><l>ezge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
+<e><p><l>eMge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e r="LR"><p><l>yeMge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>oge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iegA</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyegA</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
-<e><p><l>ezge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<e><p><l>eMge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e r="LR"><p><l>yeMge</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>UzgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>egI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
@@ -356,12 +356,12 @@
 <e><p><l>iyegA</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>egI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e r="LR"><p><l>yegI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
-<e><p><l>ezgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
+<e><p><l>eMgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e r="LR"><p><l>yeMgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>ogI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iegA</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyegA</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
-<e><p><l>ezgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<e><p><l>eMgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e r="LR"><p><l>yeMgI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l></l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h0"/><s n="tam:imper"/></r></p></e>
 <e><p><l></l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h0"/><s n="tam:imper"/></r></p></e>
@@ -1198,12 +1198,12 @@
 <e><p><l>IjiyegA</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iegA</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyeMgA</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
-<e><p><l>iezge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ieMge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyeMge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>ioge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
 <e><p><l>IjiegA</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>IjiyegA</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
-<e><p><l>iezge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ieMge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyeMge</l><r>I<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iUzgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyUzgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
@@ -1213,12 +1213,12 @@
 <e><p><l>IjiyegA</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyegI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iegI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
-<e><p><l>iezgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ieMgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyeMgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iogI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
 <e><p><l>IjiegA</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>IjiyegA</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
-<e><p><l>iezgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ieMgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>iyeMgI</l><r>I<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 </pardef>
 <pardef n="C/U__v">
@@ -1426,12 +1426,12 @@
 <e><p><l>uiyegA</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uegA</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uyegA</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
-<e><p><l>uezge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ueMge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uyeMge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uoge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uiegA</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uiyegA</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
-<e><p><l>uezge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ueMge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uyeMge</l><r>U<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uUzgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uegI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
@@ -1440,12 +1440,12 @@
 <e><p><l>uiyegA</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uegI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uyegI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
-<e><p><l>uezgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ueMgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uyeMgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uogI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uiegA</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uiyegA</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:gA"/></r></p></e>
-<e><p><l>uezgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
+<e><p><l>ueMgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>uyeMgI</l><r>U<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:gA"/></r></p></e>
 <e><p><l>UzgA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:gA"/></r></p></e>
 <e><p><l>egA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:gA"/></r></p></e>

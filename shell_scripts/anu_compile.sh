@@ -9,11 +9,11 @@
  echo "Generating Canonical form dictionaries"
  flex canonical_form.lex
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
- sh get_txt_files.sh
- sh get_dictionary_in_canonical_form.sh
+ $HOME_anu_test/Anu_src/comp.sh non_canonical_form
  $HOME_anu_test/Anu_src/comp.sh canonical_form_correction
  $HOME_anu_test/Anu_src/comp.sh canonical_to_conventional
- $HOME_anu_test/Anu_src/comp.sh non_canonical_form
+ sh get_txt_files.sh
+ sh get_dictionary_in_canonical_form.sh
 
  echo "Generating Canonical form WSD rules"
  cd $HOME_anu_test/WSD/wsd_rules/
