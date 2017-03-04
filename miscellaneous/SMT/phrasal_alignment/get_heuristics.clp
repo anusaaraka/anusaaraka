@@ -259,9 +259,9 @@
 (current_id ?mid)
 (or (manual_word_info (head_id ?mid) (word ?m)(vibakthi_components 0))(id-hyphen_word-vib ?mid - ?m - 0))
 (man_word-root-cat ?m ?root p)
-(id-HM-source ?aid ?root ?)
+(or (id-HM-source ?aid ?root ?)(database_info (meaning ?root)(group_ids ?aid)))
 (pada_info (group_head_id ?aid)(vibakthi ?v&ko|kA|0))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match|anu_exact_match1|anu_gid_exact_match|anu_pronoun_match))
+(not (anu_id-man_id-src-rule_name ? ?mid ? anu_exact_match|anu_exact_match1|anu_gid_exact_match))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_root_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_root_match anu_pronoun_match))
@@ -284,6 +284,23 @@
         (assert (anu_id-man_id-type ?aid ?mid  anu_root_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_root_match anu_wsd_match))
 )
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju 13-01-17
+;Similarly, the basic laws of electromagnetism (Maxwell's equations) govern all electric and magnetic phenomena.
+;isI prakAra vixyuwa cumbakawva ke mUlaBUwa sixXAnwa (mEksavela-samIkaraNa) saBI vixyuwIya waWA cumbakIya pariGatanAoM ko niyanwriwa karawe hEM.
+(defrule man_hyphen_match_with_anu_wsd
+(declare (salience 902))
+(current_id ?mid)
+(id-hyphen_word-vib ?mid - ?m ?m1 - 0)
+(or (and (id-HM-source ?aid ?m ?)(id-HM-source =(+ ?aid 1) ?m1 ?))
+    (and (id-HM-source ?aid ? transliterate_meaning_dic)(id-HM-source =(+ ?aid 1) ?m1 ?)))
+    
+=>
+	(assert (anu_id-man_id-type (+ ?aid 1) ?mid  anu_root_match))
+        (assert (anu_id-man_id-src-rule_name (+ ?aid 1) ?mid anu_root_match anu_wsd_match))
+)
+
+
 
 ;================================ Anu Exact match without vib =============================
 
@@ -599,7 +616,7 @@
 (declare (salience 840))
 (current_id ?mid)
 (manual_word_info (head_id ?mid)(word $?r)(root_components $?root)(tam_components $?tam))
-(test (neq (implode$ $?tam) 0))
+(test (neq (implode$ $?tam) "0"))
 (database_info (components $?root)(group_ids $? ?eid $?))
 (id-word ?eid ?w&~have&~to)
 (test (neq (integerp (member$ $?root (create$ ho kara))) TRUE))
@@ -618,7 +635,8 @@
 (defrule verb_match_with_WSD
 (declare (salience 841))
 (current_id ?mid)
-(manual_word_info (head_id ?mid)(root_components $?root))
+(manual_word_info (head_id ?mid)(root_components $?root)(tam_components $?tam))
+(test (neq (implode$ $?tam) "0"))
 ;(or (manual_word_info (head_id ?mid)(root $?root))(manual_word_info (head_id ?mid)(word $?root)))
 (id-HM-source ?aid $?root WSD_root_mng|WSD_word_mng)
 (not (anu_id-man_id-src-rule_name ? ?mid  ? anu_exact_match|anu_wsd_match|anu_exact_match1))

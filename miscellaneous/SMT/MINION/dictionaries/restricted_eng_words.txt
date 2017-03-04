@@ -77,7 +77,7 @@ how	kEse/kiwanA/kisa_waraha/kEsA
 however	waWApi/waba_BI/PiraBI/Pira_BI/jEse_BI/hAlAzki/lekina
 i	mEM/muje/mEMne
 in	meM/vEyakwika/upalabXa/sawwArUDa/pracaliwa/pahane_hue/jalawI_huI/ina/in/BIwarI/anxara_kA/anwarika/anxara/BIwara/sawwArUDa_rAjanIwika_xala_kA_saxasya/praBuwva/prawi/kI_waraPa_se/ke_samaya_meM/ke_samaya/ke_anxara/se/kA
-including	sammiliwa_karawe_hue/sahiwa
+including	sammiliwa_karawe_hue/sahiwa/SAmila_karanA
 inside	XaMsA_huA/gupwa/BIwarI/mana_se/jela_meM/BIwara/anxara_se/anxara/aByanwara/ximAga/peta/mana/kinArA/BIwarI_BAgaa/BIwarI_BAga/Anwarika_BAga/meM/ke_anxara
 into	anxara_ko/upara/meM/ke_anxara/guNiwa_karane_para
 is	howA_hE/hE/howI_hE/ho/howA_hEM/howe_hEM
@@ -153,7 +153,7 @@ thru	sIXA
 till	golaka/xarAja/waka/jowa/Kewa_jowa
 to	hoSa_meM/banxa_avasWA_meM/banxa/ko/kI_aora/kI_ora/waka/kI/se/ke_mukAbale_meM/meM/se_milA_kara/ke_prawi/kA/kI_apekRA/ke_karIba/ke_lie/ke_sAmane/ora/para/vAlA/ke_liye
 too	BI
-touching	karuNAwmaka/mArmika/marmasparSI
+#touching	karuNAwmaka/mArmika/marmasparSI
 toward	samIpa/howe-howe/uxyawa/lage/banawA_huA/kI_waraPa/ke_prawi/ke_pAsa/ke_lie/kI_ora/ke_viRaya_meM/ke_nikata
 towards	kI_waraPa_se/kI_ora/howe-howe/waraPa/meM/kI_waraPa/ke_prawi/ke_pAsa/ke_lie
 under	nicalA/nIce/ke_nIce/se_kama/pAnI_ke_BIwara/meM/ke_xeKareKa_meM/ke_wahawa/ke_niyantraNa_meM/ke_nigarAnI_meM/ke_aXIna/ke_anxara/anxara/ke_wale

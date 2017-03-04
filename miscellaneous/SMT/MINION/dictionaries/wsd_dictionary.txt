@@ -3542,7 +3542,7 @@ respective	kramaSaH/safgawa/paraspara/
 respect	aMSoM/ke_bAre_meM/wulanA/saMxarBa/praSaMsA_kara/sammAna_kara/sammAna/
 respite	virAma/vilamba_kara/
 respondent	javAbaxeha/prawivAxI/
-respond	kiwAba_ke_bIca_meM_gAyA_jAnevAlA_Bajana/prawyuwwara_xe/
+respond	kiwAba_ke_bIca_meM_gAyA_jAnevAlA_Bajana/prawyuwwara_xe/prawikriyA_vyakwa_kara/
 response	kI_prawikriyA_meM/prawikriyA/anukriyA/prawyuwwara/
 responsible	uwwaraxAyI/kAraNa/jimmexAra/javAbaxeha/
 resting	viSrAma/ArAma/ArAmaxAyaka/virAmaswala/raKakara/ASraya/suswA/uTAkara/

@@ -58,6 +58,25 @@
 	(retract ?f0)
 )
 ;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 12-01-17
+;The inquiring and imaginative human mind [has responded] to the wonder and awe of nature in different ways.
+;prakqwi ke Ese AScaryoM evaM vismayoM ke prawi mAnava kA kalpanASIla waWA anveRI maswiRka viBinna prakAra se apanI [prawikriyAez vyakwa karawA rahA hE]  .
+(defrule check_prev_2_words_for_kara_or_ho_or_xe_using_dic
+(declare (salience 855))
+?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
+(manual_word_info (head_id ?mid) (word ?w))
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa|le v|modified_cat)
+(manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word ?word)(group_ids ?mid1))
+(manual_word_info (head_id ?mid2&:(= (- ?mid1 1) ?mid2)) (word ?word1)(group_ids ?mid2))
+(man_word-root-cat ?word1 ?root2 ?)
+(man_word-root-cat ?word ?root1 ?)
+(or (database_info (components ?word1 ?word ?r))(database_info (components ?root2 ?root1 ?r)))
+=>
+       (retract ?f0 )
+       (assert (chunk_name-chunk_ids-words ?chnk  ?mid2 ?mid1 ?mid $?gids - ?word1 ?word $?mng))
+       (assert (id-man_root ?mid2 ?root2 ?root1 ?r))
+)
+;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep.                                   rAjakumArI ne ronA [SurU kara xiyA]. 
 ;And, turning to her guards, she ordered them to seize Dipu.   usane apane paharexAroM kI ora GUmakara xIpU ko pakadane kA [AxeSa xiyA]. 
@@ -178,6 +197,7 @@
 ?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd))
 (test (member$ ?mid $?gids))
 (not (manual_word_info (group_ids $?gids)))
+(not (manual_word_info (vibakthi ?vib&~0)(group_ids $?gids $?)));nahAne ke lie
 =>
         (bind $?new_mng (create$ ?man_wrd $?r_mng))
         (modify ?f1 (word $?new_mng)(group_ids $?gids))

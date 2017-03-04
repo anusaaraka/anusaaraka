@@ -2746,7 +2746,7 @@ indeed	vAswava_meM
 indeever	inxIvara
 independence	AjAxI
 india	BArawa/iMdiyA
-indian	iMdiyana
+indian	BArawIya/iMdiyana
 indians	BArawIyoM
 indies	iMdIja
 indira	iMxirA/iMnxirA/inxirA
@@ -4641,7 +4641,7 @@ ocean	sAgara
 october	aktUbara
 odedara	oxexArA
 odedra	oxexra
-odi	odIAI
+odi	vanade/odIAI
 officer	oYPisara
 ogra	ogarA
 oinam	oinAma
@@ -7137,7 +7137,7 @@ andhrapradesh	AzXra_praxeSa
 lisa	lIsA
 diane	dEnA
 murali	muralI
-i.a.s.	AI_e_esa
+i.a.s.	AI.e.esa.
 aptech	epteka
 uptron	aptrAna
 brilliant	briliyaMta

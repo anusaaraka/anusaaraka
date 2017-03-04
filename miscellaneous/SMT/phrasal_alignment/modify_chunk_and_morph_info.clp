@@ -7,7 +7,7 @@
 
 ;============================================== Modify Morph root ==========================
 (defrule get_pronoun_root
-?f<-(man_word-root-cat  ?word&yahIM|yahI|wumane ?word  dummy_cat)
+?f<-(man_word-root-cat  ?word&yahIM|yahI|inhIM|wumane|isI ?word  dummy_cat)
 =>
 	(retract ?f)
 	(if (eq ?word wumane) then
@@ -84,7 +84,21 @@
 ;        (bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 4) ?word) "I" )))
 ;        (assert (man_word-root-cat ?word ?root modified_cat))
 ;)
-;
+
+;kyA howA hE , jaba kisI vyakwi ko eca.AI.vI. saMkramaNa ho jAwA hE ?
+(defrule modify_abbr_root
+(declare (salience 1100))
+?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+(manual_id-word ? ?w)
+(test (eq (numberp ?w) FALSE))
+(test (neq (str-index "." ?w) FALSE))
+(test (eq (string-to-field (sub-string 1 (- (str-index "." ?w) 1) ?w)) ?word))
+=>
+        (retract ?f)
+        (assert (man_word-root-cat ?w ?w modified_cat))
+)
+
+
 
 ;==================================== Modify chunk info ==================================
 
@@ -177,29 +191,29 @@
 ;----------------------------------------------------------------------------------------------------------
 ;His garret was under the roof of a high, five-storied house and was more like a cupboard than a room. 
 ;usakI xuCawwI eka pAzca-maFjilA , Uzce makAna kI ekaxama UparavAlI Cawa ke nIce WI. kamarA kyA WA , goyA eka alamArI WI. 
-(defrule modify_chunk_for_sen_boundary
-?f0<-(chunk_name-chunk_ids NP $?p ?id $?po)
-(test (or (neq (length $?p) 0) (neq (length $?po) 0)))
-?f<-(manual_word_info (head_id ?id) (word ?w)) 
-(test (neq (numberp ?w) TRUE))
-(test (neq (str-index "." ?w) FALSE))  
-(man_word-root-cat  ?w1	 ?    ?cat)
-(test (eq (string-to-field (sub-string 1  (- (str-index "." ?w) 1) ?w)) ?w1))
-=>
-	(retract ?f0)
-	(modify ?f (word ?w1))
-	(if (eq (length $?p) 0) then
-		(assert (chunk_name-chunk_ids NP $?po))
-	else
-		(assert (chunk_name-chunk_ids NP  $?p))
-		(assert (chunk_name-chunk_ids NP  $?po))
-	)
-	(if (eq ?cat v) then
-		(assert (chunk_name-chunk_ids VGF ?id))
-	else
-		(assert (chunk_name-chunk_ids NP ?id))
-	)
-)
+;(defrule modify_chunk_for_sen_boundary
+;?f0<-(chunk_name-chunk_ids NP $?p ?id $?po)
+;(test (or (neq (length $?p) 0) (neq (length $?po) 0)))
+;?f<-(manual_word_info (head_id ?id) (word ?w)) 
+;(test (neq (numberp ?w) TRUE))
+;(test (neq (str-index "." ?w) FALSE))  
+;(man_word-root-cat  ?w1	 ?    ?cat)
+;(test (eq (string-to-field (sub-string 1  (- (str-index "." ?w) 1) ?w)) ?w1))
+;=>
+;	(retract ?f0)
+;	(modify ?f (word ?w1))
+;	(if (eq (length $?p) 0) then
+;		(assert (chunk_name-chunk_ids NP $?po))
+;	else
+;		(assert (chunk_name-chunk_ids NP  $?p))
+;		(assert (chunk_name-chunk_ids NP  $?po))
+;	)
+;	(if (eq ?cat v) then
+;		(assert (chunk_name-chunk_ids VGF ?id))
+;	else
+;		(assert (chunk_name-chunk_ids NP ?id))
+;	)
+;)
 ;----------------------------------------------------------------------------------------------------------
 
 ;haswinApura meM prakRAla Ora [pUjA-arcanA] kA samaya subaha 8 baje se SAma 5 baje waka hE .
