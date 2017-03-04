@@ -64,6 +64,7 @@
 ^[wW]hy[ ]*'s	{printf("%chy is",yytext[0]);}
 ^[wW]ho[ ]*'d	{printf("%cho would",yytext[0]);}
 ^[wW]ho[ ]*'s	{printf("%cho is",yytext[0]);}
+^[wW]ho[ ]*'s[ ]been	{printf("%cho has been",yytext[0]);  /*Exception in who's one ..Need to write rules */}
 ^[wW]e[ ]*'ll	{printf("%ce will",yytext[0]);}
 ^[wW]hat[ ]*'ll	{printf("%chat will",yytext[0]);}
 ^[wW]e[ ]*'re	{printf("%ce are",yytext[0]);}
@@ -112,6 +113,7 @@
 [^a-zA-Z][wW]hy[ ]*'s	{printf("%c%chy is",yytext[0],yytext[1]);}
 [^a-zA-Z][wW]ho[ ]*'d	{printf("%c%cho would",yytext[0],yytext[1]);}
 [^a-zA-Z][wW]ho[ ]*'s	{printf("%c%cho is",yytext[0],yytext[1]);}
+[^a-zA-Z][wW]ho[ ]*'s[ ]been	{printf("%c%cho has been",yytext[0],yytext[1]); /*Exception: who's one.. Need to write rules. */}
 [^a-zA-Z][wW]e[ ]*'ll	{printf("%c%ce will",yytext[0],yytext[1]);}
 [^a-zA-Z][wW]hat[ ]*'ll	{printf("%c%chat will",yytext[0],yytext[1]);}
 [^a-zA-Z][wW]e[ ]*'re	{printf("%c%ce are",yytext[0],yytext[1]);}

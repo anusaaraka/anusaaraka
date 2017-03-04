@@ -66,7 +66,7 @@ while($in = <STDIN>){
         $in =~ s/'s([^a-zA-Z0-9])/ABBR-SingleQuotes$1/g;
         $in =~ s/o'clock/oABBR-SingleQuoteclock/g;
         $in =~ s/o'([^ \t\n\.])/of$1/g; #Added dot(.) in the pattern Ex: The southern state of Johor offers its famed 'nasi biryani , ' 'laksa Johor , ' 'mee bandung' and 'soto'.
-        $in =~ s/s'([^a-zA-Z0-9])/sABBR-SingleQuote$1/g;
+        $in =~ s/s'([^\.a-zA-Z0-9])/sABBR-SingleQuote$1/g; #Under GST, the singular taxable event is the 'supply of goods/services'.
 
 # Insert space after the punctuation marks.
 	$in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([A-Za-z])/$1$2 $3/g; #The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.(Added by Mahalaxmi, 0-9 in the second expression)

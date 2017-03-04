@@ -10,7 +10,7 @@
 (anu_id-man_id-src-rule_name ?h ?mid single_verb_match single_verb_match_with_anu)
 ?f1<-(anu_id-man_id-src-rule_name ?m ?mid ? ?)
 (test (neq ?m ?h))
-(manual_id-word ?mid hE)
+(manual_id-word ?mid hE|kareM)
 =>
 	(retract ?f1)
 )

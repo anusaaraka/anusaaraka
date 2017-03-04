@@ -55,6 +55,7 @@
 	32. ASaMkA  	(Suggested by Chaitanya Sir 03-02-15)	Ex: More than 80 people were feared dead last night after flash floods, the 
 								    worst in 34 years. 
 	33. gamBIrawA	Suggested by sheetla prassd tiwari (21-06-16) Ex: But when there is a question of the very existence of a unique creation 									   of earth then this much seriousness was incumbent upon.
+	34. gupwawA	Suggested by Chaitanya Sir (16-2-17)	Ex: To say that would compromise his secrecy.
 	
 
   3. Removed :
@@ -1886,6 +1887,8 @@ Nandini ji LTRC 	27-11-13)
 	186. maternal_adjective		mAwAoM_kA/mAwA_kA	(Suggested by Chaitanya Sir 15-12-16)
 					Ex: Data related to maternal mortality rate of the state is not available.
 	187. proper_adjective		sahI			(Suggested by Chaitanya Sir 15-12-16)
+	188. its_pronoun		yaha			( By shirisha Manju 01-02-17)
+	189. sugared_adjective		cInI_yukwa		(Suggested by Chaitanya Sir 15-12-16)
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2337,6 +2340,7 @@ Nandini ji LTRC 	27-11-13)
 	207. properly_adverb	uciwa_Dafga_se		as	TIka_se		(Suggested by Rajini           14-10-16)
 				Ex: It does not work properly. 
 	208. business_noun   	uxyoga			as	vyApAra		(Suggested by Rajini           17-10-16)
+	209. sugared_UNDEFINED	cInI			as	cInI_yukwa	(Suggested by Chaitanya Sir 		)
 	
 
     6. Removed meaning from existing list:
@@ -3555,8 +3559,9 @@ Nandini ji LTRC 	27-11-13)
 	dow     	dava		verma   	varmA		jane    jena
 	kerala		kerala		karnataka       karnataka	louise  lUsI
 	gabriel		gEbriyala	toms    	toYma		billy   billI
+	indian		BArawIya	(Suggested by Chaitanya Sir	)	
+	odi		vanade		
 
-		
 
    Modified:
    ---------
@@ -3827,6 +3832,13 @@ Nandini ji LTRC 	27-11-13)
 	chinese		reading
 	cloth		danish
 
+# Changes in proper_noun_person_names.txt
+#========================================
+    Added :
+	Heeraben_Modi	hIrAbena_moxI#hIrA_bena_moxI#PropN#2#WM		(By Shirisha Manju )
+	Narendra_Modi's	nareMxra_moxI#nareMxra_moxI#PropN#2#WM  	(By Shirisha Manju )
+		
+
 # Added new files:
 # ===============
  1. ol_parser_unused_words.txt                  (Added by Roja 06-11-10 suggested by Chaitanya sir)
@@ -3862,7 +3874,9 @@ Nandini ji LTRC 	27-11-13)
         banking_dic.txt                 banking_multi_dic.txt
         computer_dic.txt                computer_multi_dic.txt
 
-
+17. proper_noun_organization_names		(Added by Shirisha Manju 19-12-16.  Suggested by Chaitanya Sir)
+18. proper_noun_person_names			(Added by Shirisha Manju 19-12-16.  Suggested by Chaitanya Sir)
+19. proper_noun_place_names			(Added by Shirisha Manju 19-12-16.  Suggested by Chaitanya Sir)
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
         i) acronyms-common_noun_compounds.txt

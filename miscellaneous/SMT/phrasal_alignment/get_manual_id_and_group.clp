@@ -341,6 +341,7 @@
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
 (not (and (id-HM-source ?aid ?mng ?)(id-HM-source =(+ ?aid 1) ?mng1 ?))) ;a biennial life cycle. eka xvivArRika jIvana cakra
+(not (and (database_info (components ?mng)(group_ids ?aid))(id-HM-source =(+ ?aid 1) ?mng1 ?))) ;cause : mUla kAraNa ; main : mUla
 =>
         (assert (manual_word_info (head_id ?id1) (word ?mng ?m)(group_ids ?id0 ?id1)))
         (assert (mng_has_been_grouped ?id0))
@@ -556,7 +557,8 @@
 (defrule single_vib1
 (declare (salience 540))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
-(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye karane ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
+(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
+;(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye karane ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
 ?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA)(group_ids $?grp_ids1))
 (test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
 (not (chunk_name-chunk_ids VGF $? ?mid0 $?))

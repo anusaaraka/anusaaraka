@@ -24,7 +24,7 @@ unake	them/their/him
 merA	i/me/my/mine
 vaha	she/he/the/her/him/they/them/that/those
 yahAz	here
-yaha	the/that/this/it/he/him/his/her/she/these/they/such/similar
+yaha	the/that/this/it/he/him/his/her/she/these/they/such/similar/their
 isakA	the/it/its/this/he/him/his
 isakI	the/it/its/this/he/him/his
 isake	the/it/its/this/he/him/his

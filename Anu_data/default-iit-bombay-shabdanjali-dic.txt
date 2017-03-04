@@ -42738,7 +42738,7 @@ itineraries_UNDEFINED	yAwrAkrama
 itinerariest_UNDEFINED	yAwrAkrama
 itinerary_noun	yAwrAkrama/yAwrAvivaraNa
 its_adjective	usak/isk/isakA/apanA
-its_pronoun	vaha/usakA/isakA
+its_pronoun	vaha/usakA/isakA/yaha
 itself_pronoun	svayam/svayaM/apane_Apa
 itsy-bitsy_adjective	bahuwa_CotA_sA
 itty-bitty_adjective	bahuwa_CotA_sA
@@ -77846,8 +77846,8 @@ sugar-lump_noun	cInI_kA_DelA
 sugar_noun	cInI/SarkarA/Sakkara/riSvawa_kA_pEsA/priya/nakalI_nota/Sugara
 sugar_verb	cInI_dAla
 sugarcane_UNDEFINED	IKa
-sugared_UNDEFINED	cInI
-sugared_adjective	cInI_milA/cInI_meM_pagA
+sugared_UNDEFINED	cInI_yukwa
+sugared_adjective	cInI_yukwa/cInI_milA/cInI_meM_pagA
 sugariness_noun	miTAsa/mITApana
 sugaring_UNDEFINED	cInI
 sugarless_adjective	SarkarArahiwa/binA_cInI_kA

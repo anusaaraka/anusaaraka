@@ -675,6 +675,7 @@
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids)
  (parserid-word ?first ?w&~Let&~let);Now let her see.
+ (test (eq (integerp (member$ ?w (create$ can could will would shall should))) FALSE))
  (parser_id-root-category-suffix-number ?first ?w verb ? ?) ; counter example for not imperative : But knew it was not possible. 
  (not (lwgids_imper_checked ?first $?ids))
  =>
