@@ -20,6 +20,7 @@
 
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/hnd_non_canonical_form  $MYPATH/hnd1
   sed -i  '1iparIkRaNa .' $MYPATH/hnd1
+  sed -i  's/\xA0/ /g' $MYPATH/hnd1
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
 
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out < $MYPATH/hnd_tmp > $MYPATH/hnd_tmp1

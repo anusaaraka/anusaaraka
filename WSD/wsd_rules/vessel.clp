@@ -33,7 +33,7 @@
 (assert (id-wsd_viBakwi ?id1 kA))  
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  vessel.clp    vessel1   "  ?id "   pAwra )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_viBakwi   " ?*wsd_dir* "  vessel.clp 	vessel1  "  ?id1 "  kA" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_viBakwi   " ?*wsd_dir* "  vessel.clp 	vessel1  "  ?id1 "  kA )" crlf))
 )
 
 

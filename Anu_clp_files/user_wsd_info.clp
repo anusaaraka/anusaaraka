@@ -33,7 +33,7 @@
  (prep_id-relation-anu_ids  ?p  ?rel ?id)
  (id-word ?id ?word)
  =>
-   (printout ?*rel-word-file*  "(" ?rel " 	"?id","?word ")" crlf)
+   (printout ?*rel-word-file*  "(" ?rel " 	"?word"-"?id ")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule relations2
@@ -42,7 +42,7 @@
  (id-word ?id ?word)
  (id-word ?id1 ?word1)
  =>
-   (printout ?*rel-word-file*  "(" ?rel " 	"?id","?word" 	 " ?id1","?word1 ")" crlf)
+   (printout ?*rel-word-file*  "(" ?rel " 	"?word"-"?id",	" ?word1"-"?id1 ")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule new_line
