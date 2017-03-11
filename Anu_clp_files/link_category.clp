@@ -25,6 +25,17 @@
        (assert (category_to_be_decided ?pid))
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (11-03-17)
+ (defrule PropN_rule_from_NER
+  (declare (salience 251))
+  (word-wordid-nertype ?word&~of&~the ?pid PERSON|LOCATION|ORGANIZATION)
+  (parserid-word ?pid ?word)
+  ?f0<-(category_to_be_decided ?pid)
+  =>
+        (printout ?*link_cat-file* "(parser_id-cat_coarse  " ?pid "   PropN)" crlf)
+        (retract ?f0)
+ )
+ ;----------------------------------------------------------------------------------------------------------------
  ;Running is good for health
  (defrule gerund_rule
  (declare (salience 250))

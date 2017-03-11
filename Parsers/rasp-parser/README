@@ -1,0 +1,16 @@
+Steps to Download/update RASP Parser
+-------------------------------------
+
+  1. cd $HOME_anu_test/Parsers/rasp-parser/
+  2. git clone https://github.com/kapila-ponnamperuma/PersonalLexiconService.git
+  3. sh get_latest_version_rasp_parser.sh 
+  4. cd $HOME_anu_test
+  5. shell_scripts/remove_out-files.sh
+  6. shell_scripts/anu_compile.sh
+
+
+To Run Anusaaraka :
+==================
+
+Anusaaraka_rasp.sh  <file_name>
+

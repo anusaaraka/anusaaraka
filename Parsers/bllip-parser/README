@@ -1,0 +1,24 @@
+Steps to get Bllip Parser
+==========================
+
+ 1. cd $HOME_anu_test/Parsers/bllip-parser
+ 2. Run the below command to get the bllip parser
+	git clone https://github.com/BLLIP/bllip-parser.git
+ 3. check the g++ version  :
+	g++ --version
+ 4. if version < 4.7 then update g++ to 4.7
+		(OR)
+    Modify the below line in Makefile
+	CXXFLAGS ?= $(CFLAGS) -Wno-deprecated -std=c++11
+			as
+	CXXFLAGS ?= $(CFLAGS) -Wno-deprecated -std=c++0x
+ 5. sh compile.sh
+ 6. cd $HOME_anu_test
+ 7. shell_scripts/remove_out-files.sh
+ 8. shell_scripts/anu_compile.sh
+
+
+To Run Anusaaraka :
+==================
+
+Anusaaraka_bllip_parser.sh  <file_name>

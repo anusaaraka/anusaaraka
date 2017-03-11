@@ -17,8 +17,6 @@
  fi
 
  MYPATH=$HOME_anu_tmp
- #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -137,7 +135,7 @@
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt_Tf1.txt  dir_names.txt  mrs_output.dat
 
   $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
-  $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner.dat
+  $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner_tmp.dat
 
   if [ "$4" != "general" -a "$4" != "" ]; then
   $HOME_anu_test/Anu_src/split_file.out domain_multi_word_expressions.txt  dir_names.txt  domain_multi_word_expressions.dat

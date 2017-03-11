@@ -7,6 +7,7 @@
  (assert (parser_numid-word-remark))
  (assert (parser_numeric_id-word))
  (assert (parserid-word))
+ (assert (word-wordid-nertype))
  )
  
  (defglobal ?*nid_wrd_fp* =  l_n_w_fp)
@@ -67,11 +68,12 @@
 	(retract ?f0 ?f1 ?f2 ?f3)
         (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?pid "  "?wrd ?wrd1 "  " ?wrd1")" crlf)
         (printout ?*l_wrd_fp* "(parserid-word  "?lnode ?wrd1" "?wrd ?wrd1 ")" crlf)
+ 	(bind ?new_w (string-to-field (str-cat ?wrd ?wrd1)))
 	(bind ?wrd1 (str-cat ?lnode ?wrd1))
 	(bind ?lnd (explode$ ?wrd1))
 	(assert (id-Modified_id ?lnode ?lnd))
         (assert (id-Modified_id ?rnode ?lnd))
- 
+        (assert (id-Modified_word ?lnode ?new_w))
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule word_rule
@@ -90,6 +92,16 @@
  =>
 	(printout ?*l_wrd_fp* "(No complete linkages found)" crlf)
         (printout ?*nid_wrd_fp* "(No complete linkages found)" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------
+ (defrule map_ner
+ (declare (salience 30))
+ (id-Modified_id ?pid ?mid)
+ (id-Modified_word ?pid ?mw)
+ ?f0<-(word-wordid-nertype ?word ?pid ?ner)
+ =>
+        (retract ?f0)
+        (assert  (word-wordid-nertype ?mw ?mid ?ner))
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule link_rel_ys_yp0
