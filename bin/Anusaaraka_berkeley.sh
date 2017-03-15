@@ -17,8 +17,6 @@
  fi
 
  MYPATH=$HOME_anu_tmp
- #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -50,12 +48,16 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ #=====================Check whether i/p file contains <TITLE> or not ..If not present adding it=====
+ #Check whether i/p file contains <TITLE> or not ... If not present adding it.
+ $HOME_anu_test/Anu_src/check_for_TITLE.out $PRES_PATH/$1 $MYPATH/tmp/$1_tmp/$1
+
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ cd $HOME_anu_test/Parsers/stanford-parser/src/
  sh run-ner.sh $1
 
- cd $PRES_PATH
+ cd $MYPATH/tmp/$1_tmp
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH $5
@@ -83,7 +85,7 @@
 
   echo "Calling Berkeley parser ..." 
   cd $HOME_anu_test/Parsers/berkeley-parser/
-  java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
+  java -mx500m  -jar BerkeleyParser-1.6.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
   sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 
 
   echo "Calling Stanford parser ..."

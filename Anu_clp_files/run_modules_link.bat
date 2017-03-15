@@ -29,10 +29,12 @@
  (load-facts "link_numeric_word_tmp1.dat")
  (load-facts "linkid_word_tmp1.dat")
  (load-facts "link_relation_info_tmp.dat")
+ (load-facts "ner_tmp.dat")
  (open "linkid_word.dat" l_fp "w")
  (open "link_numeric_word.dat" l_n_w_fp "w")
  (open "link_relation_info_tmp1.dat" l_r_fp "w")
  (run)
+ (save-facts "ner_tmp1.dat" local word-wordid-nertype)
  (clear)
  ;--------------------------------------------------------------------------------
  ; mapping between parser-generated id and original word id
@@ -67,6 +69,7 @@
  (load-facts "word2.dat")
  (load-facts "original_word.dat")
  (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "ner_tmp1.dat") 
  (open "linkid_cat.dat" link_cat_fp "w")
  (run)
  (clear)
@@ -188,6 +191,7 @@
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "chunk_relations.dat")
  (load-facts "link_number_tmp.dat")
+ (load-facts "ner_tmp1.dat")
  (open "root.dat" root_fp "a")
  (open "idiomatic_expr.dat" id_expr_fp "a")
  (open "preferred_morph.dat" pre_morph_fp "a")
@@ -197,6 +201,7 @@
  (open "meaning_has_been_decided.dat" mng_dcd_fp "a")
  (open "cat_consistency_check.dat" cat_cons_fp "a")
  (open "number_tmp.dat" num_fp "a")
+ (open "ner.dat" ner_fp "w")
  (run)
  (clear)
  ;----------------------------------------------------------------------
@@ -216,6 +221,7 @@
  (run)
 ; (facts)
  (save-facts "pada_id_info.dat" local  pada_info)
+ (save-facts "tam_id.dat" local id-tam_type)
  (clear)
  ;-------------------------------------------------------------------------------
  (load "global_path.clp")
@@ -281,6 +287,7 @@
  (load-facts "hindi_meanings_tmp.dat")
  (load-facts "tam_id.dat")
  (load-facts "language.dat")
+ (load-facts "ner.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))

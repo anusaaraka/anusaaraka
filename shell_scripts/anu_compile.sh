@@ -125,7 +125,7 @@
  mv wx_utf8.out $HOME_anu_test/bin/wx_utf8
  ./comp.sh aper_chunker
  ./comp.sh rm_tags
- ./compile_bison.sh
+ ./compile_bison.sh constituency_parse
  ./comp.sh wx2wx-normal
  ./comp.sh wx2wx-small
  mv wx2wx-normal.out wx2wx-small.out $HOME_anu_test/bin/
@@ -173,12 +173,12 @@
  ./configure
  make
 
- echo " Compiling Original Link Parser files"
- cd $HOME_anu_test/Anu
- tar -xzf link-grammar-4.5.7.tar.gz 
- cd $HOME_anu_test/Anu/link-grammar-4.5.7/
- ./configure
- make
+# echo " Compiling Original Link Parser files"
+# cd $HOME_anu_test/Anu
+# tar -xzf link-grammar-4.5.7.tar.gz 
+# cd $HOME_anu_test/Anu/link-grammar-4.5.7/
+# ./configure
+# make
 
  echo "Compiling stanford parser files"
  cd $HOME_anu_test/Parsers/stanford-parser/src
@@ -193,8 +193,8 @@
  $HOME_anu_test/Anu_src/comp.sh add_info_for_no_parse
  
  echo "Compiling RASP parser files"
- cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
- sh comp.sh 
+ cd $HOME_anu_test/Parsers/rasp-parser/src/
+ sh $HOME_anu_test/Anu_src/compile_bison.sh rasp_constituency_parse
 
  echo "Creating binary files"
  cd $HOME_anu_test/Anu_clp_files
@@ -225,18 +225,18 @@
  sed '$d' < work/phrasal-mert/phrasal.test.ini_tmp > work/phrasal-mert/phrasal.test.ini_tmp1
  cat work/phrasal-mert/phrasal.test.ini_tmp1 work/path_for_transliteration  > work/phrasal-mert/phrasal.test.ini
 
- echo "compiling bllip parser"
- cd  $HOME_anu_test/Parsers
- unzip bllip-parser-master.zip
- readline=`uname -m`
- if [ "$readline" ==  "i686" ] ; then
-        export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
- if [ "$readline" ==  "x86_64" ]; then
-        export GCCFLAGS="-march=opteron -m64 -I /home/mj/C++/boost"  
- fi
- fi
- cd $HOME_anu_test/Parsers/bllip-parser-master
- make
+# echo "compiling bllip parser"
+# cd  $HOME_anu_test/Parsers
+# unzip bllip-parser-master.zip
+# readline=`uname -m`
+# if [ "$readline" ==  "i686" ] ; then
+#        export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
+# if [ "$readline" ==  "x86_64" ]; then
+#        export GCCFLAGS="-march=opteron -m64 -I /home/mj/C++/boost"  
+# fi
+# fi
+# cd $HOME_anu_test/Parsers/bllip-parser-master
+# make
 
  echo "Copying Readme and shell file to Provisional directory"
  cd  $HOME_anu_test/Doc/Provisional_data
