@@ -17,8 +17,6 @@
  fi
 
  MYPATH=$HOME_anu_tmp
- #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -50,12 +48,16 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ #=====================Check whether i/p file contains <TITLE> or not ..If not present adding it=====
+ #Check whether i/p file contains <TITLE> or not ... If not present adding it.
+ $HOME_anu_test/Anu_src/check_for_TITLE.out $PRES_PATH/$1 $MYPATH/tmp/$1_tmp/$1
+
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ cd $HOME_anu_test/Parsers/stanford-parser/src/
  sh run-ner.sh $1
 
- cd $PRES_PATH
+ cd $MYPATH/tmp/$1_tmp
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH $5
@@ -82,7 +84,7 @@
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Bllip parser ..."
-  cd $HOME_anu_test/Parsers/bllip-parser-master
+  cd $HOME_anu_test/Parsers/bllip-parser/bllip-parser
   sed 's/^/<s> /g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  | sed 's/$/ <\/s>/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}" $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed 's/^(S1/(ROOT/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
@@ -122,7 +124,7 @@
   $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
   $HOME_anu_test/Anu_src/split_file.out proper_noun_dic.txt  dir_names.txt  proper_noun_dic.dat
   $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
-  $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner.dat
+  $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner_tmp.dat
 
   if [ "$4" != "general" -a "$4" != "" ]; then
   $HOME_anu_test/Anu_src/split_file.out domain_multi_word_expressions.txt  dir_names.txt  domain_multi_word_expressions.dat

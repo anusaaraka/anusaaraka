@@ -1,0 +1,15 @@
+Steps to get Berkely parser
+===========================
+  1. Download the berkeley parser from the following link:
+         https://github.com/slavpetrov/berkeleyparser/blob/master/BerkeleyParser-1.6.jar
+  2. Download the grammer file from the following link
+	 https://github.com/slavpetrov/berkeleyparser/blob/master/eng_sm6.gr
+  3. Copy the above dowloaded files in the following path:
+        $HOME_anu_test/Parsers/berkeley-parser
+
+
+To Run Anusaaraka :
+==================
+
+Anusaaraka_berkeley.sh  <file_name>
+~                                      

@@ -17,8 +17,6 @@
  fi
 
  MYPATH=$HOME_anu_tmp
- #STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
- STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2015-12-09
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -54,10 +52,9 @@
  #Check whether i/p file contains <TITLE> or not ... If not present adding it.
  $HOME_anu_test/Anu_src/check_for_TITLE.out $PRES_PATH/$1 $MYPATH/tmp/$1_tmp/$1
 
-
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ cd $HOME_anu_test/Parsers/stanford-parser/src/
  sh run-ner.sh $1
 
 # echo "Calling Transliteration"
