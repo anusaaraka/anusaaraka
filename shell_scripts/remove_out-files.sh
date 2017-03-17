@@ -35,10 +35,11 @@
  cd $HOME_anu_test/apertium
  rm -f *.out
  rm -f *.bin
+ rm -f lex.yy.c en-hi.dixtmp1
 
  echo "Removing CLIPS out files"
  cd $HOME_anu_test/CLIPS
- rm -f gdbm_lookup.h wx_utf8.lex *.o
+ rm -f gdbm_lookup.h wx_utf8.lex *.o lex.yy.c
 
  cd $HOME_anu_test/bin
  rm -f myclips
@@ -67,7 +68,7 @@
 
  echo "Removing canonical files"
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
- rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c non_canonical_form.out
+ rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c non_canonical_form.out *-1*
  rm -rf dictionaries 
 
  cd $HOME_anu_test/WSD/wsd_rules/
