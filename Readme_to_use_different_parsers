@@ -1,10 +1,27 @@
-1. Open Logos Parser:
+1.  How to run Anusaaraka with different Parsers
+    ============================================
+
+	Rule-based Parsers
+	------------------
+	1. Ace Parser		: Anusaaraka_ace.sh	<file_name>
+	2. Logon Parser   	: Anusaaraka_logon.sh 	<file_name>
+	3. Link Parser    	: Anusaaraka_link.sh  	<file_name> 
+
+
+	Statistical Parsers
+	-------------------
+	1. Stanford Parser 	: Anusaaraka_stanford.sh <file_name>
+	2. Berkeley Parser	: Anusaaraka_berkeley.sh <file_name>
+	3. Rasp Parser		: Anusaaraka_rasp.sh     <file_name>
+
+
+2. Open Logos Parser:
    ================
        -- OpenLogos MT (optional but desirable to use OpenLogos parser. Package contains steps to Install.)
        -- export OpenLogos path in bashrc
 	   Ex: 	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
 --------------------------------------------------------------------------------------------------------------
-2. Linkage diagram:
+3. Linkage diagram:
     ===============   
     To view the linkage diagram run the Unix command:
     $ anu_link-parser.sh   
@@ -13,21 +30,6 @@
    The following command runs the parser on a file.
 
     $ anu_link-parser.sh  < <input_file>
-
--------------------------------------------------------------------------------------------------------------------
-3 To run Anusaaraka for different Parsers
-    =======================================
-        1.  To run Stanford Parser   -- Anusaaraka_stanford.sh <file_name>
-	2.  To run Berkeley Parser   -- Anusaaraka_berkeley.sh <file_name>
-  	3.  To run Open Logos Parser -- Anusaaraka_ol.sh <file_name> 
-	4.  To run Rasp Parser       -- Anusaaraka_rasp.sh <file_name>
-	5.  To run Link Parser 	     -- Anusaaraka_link.sh  <file_name>			
-                                         
-    To run the sentence for partucular linkage in Link parser :
-    ---------------------------------------------------------
-
-                     Anusaaraka_link.sh  <file_name> <linkage_number>
-               Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
 
 -------------------------------------------------------------------------------------------------------------------
 4. Categories:
