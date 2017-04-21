@@ -59,6 +59,21 @@
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
+;kama vasAyukwa AhAra kA [kareM] sevana  .
+(defrule verb_count_of_manual1
+(declare (salience 1000))
+(chunk_name-chunk_ids-words VGNF ?mid $? - $?)
+?f<-(man_verb_count-verbs ?man_verb_count $?verbs)
+(test (not (integerp (member$ ?mid $?verbs))))
+(not (chunk_name-chunk_ids-words VGF $?))
+=>
+        (retract ?f)
+        (bind ?man_verb_count (+ ?man_verb_count 1))
+        (bind $?verbs (create$ $?verbs ?mid))
+        (assert (man_verb_count-verbs ?man_verb_count $?verbs))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule cp_verb_count_fact
 (declare (salience 1000))
 ?f0<-(man_verb_count-verbs ?c ?mid  $?ids)
@@ -923,7 +938,8 @@
 (pada_info (group_cat ~VP)(group_ids $?grp))
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
-(not (anu_id-man_id-src-rule_name ? ?mid $? scope $?))
+(not (anu_id-man_id-src-rule_name ? ?mid $? scope|single_verb_match $?))
+(not (anu_id-man_id-src-rule_name ?aid1 ? scope ?))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  scope))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid  scope get_small_scope_fact))
@@ -957,6 +973,7 @@
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
 (not (anu_id-man_id-src-rule_name ? ?mid $? scope $?))
+(not (anu_id-man_id-src-rule_name ?aid1 ? scope ?))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  scope))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid  scope get_large_scope_fact))
