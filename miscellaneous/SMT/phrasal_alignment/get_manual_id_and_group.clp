@@ -440,7 +440,7 @@
 (defrule pronoun_group
 (declare (salience 570))
 ?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake))
-?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa|liye $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
+?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa|liye|xOrAna $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
         (bind ?new_v (remove_character " " (implode$ (create$ ?w $?d)) "_"))

@@ -10,10 +10,10 @@
  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  make distclean
 
- echo "Removing link-parser"
- cd $HOME_anu_test/Anu
- rm -rf link-grammar-4.5.7
-
+# echo "Removing link-parser"
+# cd $HOME_anu_test/Anu
+# rm -rf link-grammar-4.5.7
+#
  echo "Removing stanford out files"
  cd $HOME_anu_test/Parsers/stanford-parser/src
  rm -f *.out lex.yy.c
@@ -23,7 +23,7 @@
  rm -f lex.yy.c y.tab.c y.output  y.tab.h dependency_parse derivation_parse add_info_for_no_parse.out
 
  echo "Removing RASP out files"
- cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
+ cd $HOME_anu_test/Parsers/rasp-parser/src/
  rm -f rasp_constituency_parse y.tab.c y.tab.h lex.yy.c
 
  echo "Removing .out files"
@@ -35,10 +35,11 @@
  cd $HOME_anu_test/apertium
  rm -f *.out
  rm -f *.bin
+ rm -f lex.yy.c en-hi.dixtmp1
 
  echo "Removing CLIPS out files"
  cd $HOME_anu_test/CLIPS
- rm -f gdbm_lookup.h wx_utf8.lex *.o
+ rm -f gdbm_lookup.h wx_utf8.lex *.o lex.yy.c
 
  cd $HOME_anu_test/bin
  rm -f myclips
@@ -67,7 +68,7 @@
 
  echo "Removing canonical files"
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
- rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c non_canonical_form.out
+ rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c non_canonical_form.out *-1*
  rm -rf dictionaries 
 
  cd $HOME_anu_test/WSD/wsd_rules/

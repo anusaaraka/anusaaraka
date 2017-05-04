@@ -141,7 +141,7 @@
 ?f1<-(left_over_ids $?ids)
 (not (added_emphatic ?mid))
 (not (pronoun_align ?aid ?mid))
-(not (score (anu_id ?aid) (man_id ?mid) (heuristics $? anu_exact_match $?)))
+(not (score (anu_id ?aid) (man_id ?mid) (heuristics $? anu_exact_match|dictionary_match $?)))
 =>
 	(bind ?c 0)
 	(loop-for-count (?i 1 (length $?roots))
@@ -923,6 +923,23 @@
         (assert (left_over_ids $?p $?p1))
 )
 ;---------------------------------------------------------------------------------
+;Malaria , kalajar , tuberculoses starts with fever.
+;maleriyA , kAlAjAra , yakRmA kI SuruAwa buKAra se hI howI hE .
+(defrule default_kara/ho_group1
+(declare (salience 290))
+?f<-(left_over_ids ?id )
+?f0<-(manual_word_info (head_id ?id) (word $?mng)(root ?r&kara|ho)(vibakthi_components 0))
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid ?a)
+(id-cat_coarse ?aid verb)
+?f2<-(manual_word_info (head_id ?mid) (word ?a)(group_ids $?ids))
+=>
+        (retract ?f0 ?f ?f1)
+        (bind ?nr (remove_character " " (implode$ (create$ ?a ?r)) "_"))
+        (modify ?f2 (word ?a $?mng) (root ?nr)(root_components ?a ?r)(group_ids $?ids ?id))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid ?a $?mng))
+        (assert (left_over_ids))
+)
+;---------------------------------------------------------------------------------
 ;We can easily check their equality.
 ;Man: hama inakI samAnawA kI [paraKa] AsAnI se [[kara sakawe hEM]] .
 ;Anu: hama unakA samawulyawA AsAnI se [jAzca sakawe hEM].
@@ -1359,7 +1376,7 @@
 ?f<-(left_over_ids ?id )
 (manual_word_info (head_id ?id) (word ?mng1)(vibakthi_components ?v $?vib) )
 (man_word-root-cat ?mng1 ?r ~p)
-(test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina))) FALSE))
+(test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina iwanA))) FALSE))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid ?m $?mng)
 (test (and (neq ?mng1 ?m) (neq ?a ?m)))
 (id-cat_coarse ?aid verb|adjective)
@@ -1582,6 +1599,7 @@
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id1 @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w $?mng  @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
         (printout t "single alignment" crlf)
 )
+;---------------------------------------------------------------------------------
 
 ;[Eat] less fatty food. kama vasAyukwa AhAra kA [kareM sevana]  .
 (defrule add_extra_word_for_verb
@@ -1600,6 +1618,25 @@
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w ?mng  @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
         (printout t "single alignment" crlf)
 )
+;---------------------------------------------------------------------------------
+;With more tension hormone cortisol [harms] the hippocampus of the brain seriously.
+;jyAxA wanAva se hArmona kortisAla ximAga ke hippokEMpasa ko gamBIra [[nukasAna] [pahuzcAwA hE]]. 
+(defrule add_word_for_verb
+(declare (salience 6))
+?f<-(left_over_ids ?id)
+(hindi_id_order)
+(id-cat_coarse ?aid verb)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?mng - ?mid $?mng)
+(manual_word_info (head_id ?id) (word ?w)(vibakthi 0))
+(not (msg_printed))
+(not (removed_man_id_with-anu_id ?id ?aid))
+(score (anu_id ?aid) (man_id ?id) (heuristics $? hindi_wordnet_match|dictionary_match $?))
+=>
+        (retract ?f ?f1)
+        (assert (left_over_ids))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?mng - ?mid @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN $?mng))
+        (printout t "single alignment" crlf)
+)
 
 ;He might have come here. 
 ;[SAyaxa] vaha yahAM [AyA hogA] .
@@ -1607,15 +1644,31 @@
 (declare (salience 6))
 ?f<-(left_over_ids ?id)
 (hindi_id_order )
+(manual_word_info (head_id ?id) (word ?m) (group_ids ?id))
+(test (member$ ?m (create$ SAyaxa jarUra)))
 (manual_word_info (head_id ?id0) (word $?mng)(group_ids $?ids))
 (id-Apertium_output ?aid ?m $?mng)
-(test (member$ ?m (create$ SAyaxa)))
-(manual_word_info (head_id ?id) (word ?m) (group_ids ?id))
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?m $?mng - ?id0 $?mng)
 =>
 	(retract ?f ?f1)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?m $?mng - ?id0 ?m $?mng))
 	(assert (left_over_ids ))
+)
+
+;Do clean the mouth every time with water after eating
+;hara bAra KAne ke bAxa pAnI se muzha jarUra sAPa kareM  . 
+(defrule group_aux_with_anu1
+(declare (salience 6))
+?f<-(left_over_ids ?id)
+(hindi_id_order )
+(manual_word_info (head_id ?id) (word ?m) (group_ids ?id))
+(test (member$ ?m (create$ SAyaxa jarUra avaSya)))
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?id1&:(=(+ ?id 1) ?id1) $?mng)
+(root-verbchunk-tam-chunkids ? ? ? $? ? $? ?aid)
+=>
+        (retract ?f ?f1)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?id1 ?m $?mng))
+        (assert (left_over_ids ))
 )
 
 
