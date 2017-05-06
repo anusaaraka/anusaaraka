@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
    char		*line = NULL, word[10000], type[1000], *ptr, str[1000];
    size_t	length=0, len=0, len1=0;

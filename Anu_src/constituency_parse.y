@@ -3,6 +3,7 @@
 #define YYSTYPE char *
 #include <stdio.h>
 #include <string.h>
+int yylex(); //added to avoid gcc error in 16.04
 
 int my_level=0,my_token_count=0,found=0,my_index[100],j=0,index1=1,k=0;// index1 seems to store (max_number_of_levels+1)!
 int my_opn_parn_loc[100];
@@ -22,9 +23,9 @@ int yywrap()
 	return 1;
 }
 
-main(int argc,char *argv[])
+void main(int argc,char *argv[])
 {     
-	yyparse();
+	int yyparse(); //added int to avoid gcc error in 16.04
       	{	int i,j;
        		for(i=1;i<index1;i++){ 
             		for(j=1;j<current_sub_level[i]+1;j++); //printf("\n");

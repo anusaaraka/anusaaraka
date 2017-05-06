@@ -4,7 +4,7 @@ char str[1000];
 int len=0;
 %}
 %%
-(U.K.|U.S.A.|U.S.|D.C.|M.D.|P.M.|R.N.|I.A.S.|M.Sc.|B.Sc.)	{
+(U.K.|U.S.A.|U.S.|D.C.|M.D.|P.M.|R.N.)	{
                                            while((len=strcspn(yytext,".")) < strlen(yytext))
                                            {
                                               strncat(str,yytext,len);
@@ -15,8 +15,3 @@ int len=0;
                                            printf("%s",str);strcpy(str,"\0");
                                          }
 %%
-main()
-{
- yylex();
-}
-

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <ctype.h>
 
 #define MAX_LINE_LENGTH 500
 #define MAX_NO_OF_LINES 500 //Increased to 500 from 200 by Roja(14-06-11) for a big sentence from "calculate" file in SENSEVAL TRAIN
@@ -56,7 +57,7 @@ int func2(char *str)
 }
 
 
-read_file(char **f_input){
+int read_file(char **f_input){
   unsigned char *input,*p;
   int c,i=0,size,increment_size,buffer,realloc_calls=0;
   size = 10000;
