@@ -76,7 +76,7 @@ char ch;
 [\n]                                                            {count=0;fprintf(fp,";~~~~~~~~~~\n");}
 %%
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
 fp=fopen(argv[1],"a");
 yylex();

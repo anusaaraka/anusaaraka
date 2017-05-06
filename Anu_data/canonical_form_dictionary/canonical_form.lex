@@ -6,7 +6,7 @@ anusvar   M
 nukta	  Z
 
 %{
-extern canonical_form(char* str , char* new_str);
+extern void canonical_form(char* str , char* new_str);
 char canonical_word[1000];
 %}
 
@@ -27,7 +27,4 @@ char canonical_word[1000];
 
 @[a-zA-Z]+				ECHO;
 
-[a-zA-Z_]+iye				{	canonical_form(yytext,canonical_word); //To handle ke_liye
-						printf("%s", canonical_word);
-					}
 %%

@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-main(int argc,char *argv[])
+#include <sys/stat.h>
+void main(int argc,char *argv[])
 {
   FILE *fp,*fp1,*fp2;
   char str[100000],str1[100],filename[100],str_tmp[100];

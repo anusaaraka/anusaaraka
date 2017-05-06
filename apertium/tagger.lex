@@ -1,15 +1,20 @@
 %{
 #include<string.h>
+#include<stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 char str[1000],str1[100],str2[100],word[100];
-int len=0;
+int len=0,len1=0;
 FILE *fp;
 int count=0;
+int print_category(char* category); //added this to avoid warnings in 16.04
 %}
 
 %%
-[\^][a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$][\^]['][s][<]gen[>][$] 	{ print_category(yytext); } 
-[\^][a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$] 				{ print_category(yytext); } 
-[\^][\*][a-zA-Z0-9\-]*[$]						{ count=count+1;
+
+\^[a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$][\^]['][s][<]gen[>][$] 	{ print_category(yytext); } 
+\^[a-zA-Z0-9\-]*[<][a-zA-Z0-9<>-]*[>][$] 				{ print_category(yytext); } 
+\^[\*][a-zA-Z0-9\-]*[$]						{ count=count+1;
 	                                                                  if((yytext[2]>=65)&&(yytext[2]<=90)){
 										    fprintf(fp,"(id-cat %d proper_noun)\n",count);
                         		                                            fprintf(fp,"(id-cat_coarse %d PropN)\n",count);}
@@ -24,7 +29,7 @@ int count=0;
 %%
 
 
-print_category(char* category)
+int print_category(char* category)
 {
         
         len=strcspn(category,"^");
@@ -69,7 +74,7 @@ print_category(char* category)
 }
 
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
 fp=fopen(argv[1],"w");
 yylex();

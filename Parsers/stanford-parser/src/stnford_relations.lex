@@ -38,7 +38,7 @@ FILE *fp;
 
 %%
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
 fp=fopen(argv[1],"a");
 strcpy(str3,argv[2]);
