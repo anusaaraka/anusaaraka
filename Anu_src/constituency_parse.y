@@ -23,9 +23,10 @@ int yywrap()
 	return 1;
 }
 
-void main(int argc,char *argv[])
+int main(int argc,char *argv[])
 {     
-	int yyparse(); //added int to avoid gcc error in 16.04
+	//int yyparse(); //added int to avoid gcc error in 16.04
+	yyparse(); 
       	{	int i,j;
        		for(i=1;i<index1;i++){ 
             		for(j=1;j<current_sub_level[i]+1;j++); //printf("\n");
@@ -51,7 +52,7 @@ void main(int argc,char *argv[])
 		
 }
 
-%}
+%} 
 
 %token LEFT_PAREN RIGHT_PAREN SLASH TOK_CATEGORY STRING
 
