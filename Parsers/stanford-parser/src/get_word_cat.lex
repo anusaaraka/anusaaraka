@@ -31,7 +31,7 @@ FILE *fp,*fp1,*fp2;
 
 %%
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
 fp=fopen(argv[1],"w");
 fp1=fopen(argv[2],"w");

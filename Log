@@ -1,4 +1,4 @@
- 11-3-17
+ 06-05-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -132,9 +132,36 @@
  35. Removed bllip parser, rasp parser , berkeley parser and stanford ner (original tars)
  36. Added the following folders
 	berkeley-parser	 bllip-parser	and  rasp-parser  (with only README's, compilations and src)
- 37. Updated verifieds
+ 37. Modified following programmes to avoid warnings in 16.04 Ubuntu:
+	Anu/stdenglish/abbrevations_using_NER.c
+	Anu/stdenglish/enclitics.lex
+	Anu/stdenglish/initialisms.lex
+	Anu/stdenglish/standard_abbrevations.lex
+	Anu/stdenglish/titles.lex
+	Anu_data/canonical_form_dictionary/canonical_form.lex
+	Anu_src/aper_chunker.lex
+	Anu_src/check_for_TITLE.c
+	Anu_src/constituency_parse.y
+	Anu_src/converting-dic-format.c
+	Anu_src/converting-dic-to-smt_format.c
+	Anu_src/replace_nonascii-chars.c
+	Anu_src/split_file.c
+	Anu_src/word.c
+	Parsers/logon-parser/src/add_info_for_no_parse.lex
+	Parsers/logon-parser/src/dependency_parse.y
+	Parsers/logon-parser/src/derivation_parse.y
+	Parsers/rasp-parser/src/rasp_constituency_parse.y
+	Parsers/stanford-parser/src/get_word_cat.lex
+	Parsers/stanford-parser/src/stnford_relations.lex
+	WSD/wsd_rules/get_canonical_form_in_wsd.lex
+	apertium/compile.sh
+	apertium/en-hi.t1x
+	apertium/tagger.lex
+	multifast-v1.4.2/src/get_word_count.c
+	multifast-v1.4.2/src/get_word_count_single.c
+ 38. Updated verifieds
 	sd_verified (878)	small_sent_verified_sd (178)
- 38. Updated Log	
+ 39. Updated Log	
 
  24-08-16
  ========

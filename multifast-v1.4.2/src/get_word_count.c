@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
    char		*line = NULL, multi_word[1000], mng[10000], *p;
    size_t	len=0, multi_len=0, len1=0;

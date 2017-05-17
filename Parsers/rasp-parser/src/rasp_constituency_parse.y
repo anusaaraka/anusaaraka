@@ -2,7 +2,7 @@
 #define YYSTYPE char *
 #include <stdio.h>
 #include <string.h>
-
+int yylex(); //added to avoid gcc error in 16.04
 
   int   my_level=0,my_token_count=0,found=0,my_index[100],j=0,index1=1;
   int   my_opn_parn_loc[100];
@@ -23,7 +23,7 @@
  * information with level and token count in clips format.   
  * opens constituents.clp file in write mode and writes the Node-category information into it. */
 
-main(int argc,char *argv[])  
+void main(int argc,char *argv[])  
 {
        FILE *fp_cons;
        FILE *fp_level;
@@ -34,7 +34,7 @@ main(int argc,char *argv[])
   //     fp_level =fopen("Node_level_info.dat","w");
   //     fprintf(fp_level,"(deffacts  Node_level-constituents\n");
 
-     yyparse();
+ extern int  yyparse();
      {
        int i,j;
        FILE *fp;    
@@ -72,7 +72,8 @@ expression: LEFT_PAREN   {found=0;my_level++;
                            strcpy(token,$3);
                            my_token_count++;
                            //sprintf(str2,"\t%d\t%d\t\0",my_token_count,my_level);
-                           sprintf(str2,"-%d\0",my_token_count);
+			   //Modified above step as shown below by Roja(11-05-16). To avoid warnings in Ubuntu 14.04 and above
+                           sprintf(str2,"-%d",my_token_count); str2[strlen(str2)] = '\0';
                            strcat($3,str2);
                            sprintf(str3,"(Node-Category  %s  %s)\n",$3,token);
                            sprintf(str4,"(Node-level  %s  %d)\n",$3,my_level);

@@ -30,8 +30,3 @@ int prev_count=0;
 [\}]/\n\n[\004|014]						{printf("}\n;~~~~~~~~~~");}
 
 %%
-
-main(int argc, char* argv[])
-{
-yylex();
-}

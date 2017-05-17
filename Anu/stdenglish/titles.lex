@@ -17,8 +17,3 @@ int len=0;
                                 str[len-1]='\0';
                                 printf("%sABBR-Dot", str);}	
 %%
-main()
-{
- yylex();
-}
-
