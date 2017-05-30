@@ -11302,6 +11302,7 @@ El resultat és una sola forma lèxica (vindré) (excepte en el cas 'I did come'
 </out>
 </action>
 </rule>
+<!--
 <rule comment="PREADV">
 <pattern>
 	<pattern-item n="preadv"/>
@@ -11321,7 +11322,7 @@ El resultat és una sola forma lèxica (vindré) (excepte en el cas 'I did come'
 </chunk>
 </out>
 </action>
-</rule>
+</rule> -->
 <rule comment="CNJ">
 <pattern>
 	<pattern-item n="cnj"/>

@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-main(int argc, char * argv[])
+void main(int argc, char * argv[])
 {
 	FILE *fp, *fp1;
 	char *line = NULL, *next_line = NULL;

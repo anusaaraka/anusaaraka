@@ -31,9 +31,7 @@ apertium-validate-transfer en-hi-empty.t1x
 apertium-preprocess-transfer en-hi-empty.t1x en-hi-empty.t1x.bin
 
 
-
 #Preparing t1x.bin file
-
 apertium-validate-transfer en-hi.t1x
 apertium-preprocess-transfer en-hi.t1x en-hi.t1x.bin
 

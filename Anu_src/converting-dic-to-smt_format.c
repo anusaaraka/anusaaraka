@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 
- main(int argc, char* argv[])
+void main(int argc, char* argv[])
  {
            FILE 	*fp, *fp1;
            char 	* line = NULL;

@@ -2,6 +2,8 @@
 #define YYSTYPE char *
 #include <stdio.h>
 #include <string.h>
+int yylex(); //added to avoid gcc error in 16.04
+
 FILE *cat_fp,*d_tree_fp;
 char *cat;
 int len=0,word_id=0,count=0;
@@ -45,7 +47,7 @@ token_grammar1 : /* */
 
 
 %%
-main(int argc,char* argv[])
+void main(int argc,char* argv[])
 {
  d_tree_fp = fopen(argv[1], "w");
  cat_fp = fopen(argv[2], "w");

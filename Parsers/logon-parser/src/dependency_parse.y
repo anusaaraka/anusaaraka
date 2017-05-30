@@ -3,6 +3,9 @@
 #define YYDEBUG 1
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+int yylex(); //added to avoid gcc error in 16.04
+
 FILE *fp;
 char arg0[100][100],sent[1000],sent_head[100];
 char rel_name[100][100],id[100][100],args[100][100][100],sub_index[100]="\0",arg_type[100][100][100];
@@ -97,7 +100,7 @@ int get_word_id(char id_str[100] , char sent[1000])
 
 }
 
-main(int argc,char* argv[])
+void main(int argc,char* argv[])
 {
  int i=0,j=0,k=0,index3=0;
  char *sen,str[1000];
