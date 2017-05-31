@@ -89,6 +89,7 @@
 (man_word-poss_roots ?mng $? ?root $?)
 ;(man_word-root-cat ?mng ?root ?)
 (test (eq (numberp (implode$ (create$ ?mng))) FALSE ))
+(test (eq (numberp ?root) FALSE ))
 (test (or (neq (gdbm_lookup "restricted_hnd_words.gdbm" ?mng) "FALSE")(neq (gdbm_lookup "restricted_hnd_words.gdbm" ?root) "FALSE")))
 =>
         (bind $?dic_list (create$ ))
@@ -376,10 +377,10 @@
 (declare (salience 400))
 ?f0<-(left_over_ids $?p ?mid $?p0)
 (manual_word_info (head_id ?mid) (word ?m&Pira))
-?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a  - ?mid1&:(=(- ?mid 1) ?mid1) Ora)
+?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a  - ?mid1&:(=(- ?mid 1) ?mid1) ?w&Ora|yA)
 =>
         (retract ?f ?f0)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a  - ?mid Ora ?m))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a  - ?mid ?w ?m))
         (assert (left_over_ids $?p $?p0))
 	(assert (added_emphatic ?mid))
 )
@@ -684,13 +685,17 @@
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am - ?mid  $?m)
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - ?mid1  $?mng)
 (test (eq (integerp (member$ $?mng (create$ $?m))) FALSE));In SI, there are seven base units as given in Table 2.1. 11-02
+;(test (eq (integerp (member$ (nth$ (length $?m) $?m) (create$ hEM hE))) FALSE)) ;;mobAila Pona, iMtaraneta se jiMxagI AsAna wo [huI hE] lekina isake nukasAna BI [hEM].
 (id-word ?id ~let)
 =>
-		(retract ?f ?f0)
 		(if (> ?mid ?mid1) then
 			(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am - ?mid $?mng $?m))
+			(retract ?f ?f0)
 		else	
-			(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am - ?mid $?m $?mng))
+			(if (eq (integerp (member$ (nth$ (length $?m) $?m) (create$ hEM hE))) FALSE) then
+				(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am - ?mid $?m $?mng))
+				(retract ?f ?f0)
+			)
 		)
 )
 ;---------------------------------------------------------------------------------
@@ -713,7 +718,8 @@
 (declare (salience 330))
 (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - ?mid  $?mng)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?h ? $? - ?mid1 $? $?mng)
+(or (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $? ? - ?mid1 $? $?mng)
+    (and (id-HM-source-grp_ids ?h ?r ? ?h)(manual_word_info (head_id ?mid1)(root ?r)))) 
 ?f0<-(left_over_ids $?ids)
 =>
 	(retract ?f ?f0)
@@ -795,8 +801,8 @@
 (defrule align_conj_left
 (declare (salience 310))
 ?f<-(left_over_ids $?p ?id $?p1)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid Ora|waWA - ?mid&:(= (+ ?id 1) ?mid ) ?)
-(pada_info (group_ids $? ?aid1&:(= (- ?aid 1) ?aid1)))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid Ora|waWA|yA - ?mid&:(= (+ ?id 1) ?mid ) ?)
+;(pada_info (group_ids $? ?aid1&:(= (- ?aid 1) ?aid1)))
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (chunk_name-chunk_ids CCP ?mid)
 (chunk_name-chunk_ids ? $? ?id)
@@ -817,12 +823,14 @@
 ;sandwiched between oxford street and marylebone lane is one of london's most appealing areas.
 ;lanxana ke sabase jyAxA AkarRiwa karane vAle kRewroM meM se eka AksaPorda strIta waWA [merIlebona] ke maXya hE .
 (defrule align_conj_right
-(declare (salience 310))
+(declare (salience 365))
+;(declare (salience 310))
 ?f<-(left_over_ids $?p ?id $?p1)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid Ora|waWA - ?mid&:(= (- ?id 1) ?mid ) ?)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid Ora|waWA|yA - ?mid&:(= (- ?id 1) ?mid ) ?)
 (pada_info (group_ids $? ?aid1&:(= (+ ?aid 1) ?aid1)))
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (chunk_name-chunk_ids CCP ?mid)
+(not (chunk_name-chunk_ids VGF =(- ?mid 1))); ... eka jagaha se xUsarI jagahoM waka [PElane] yA [metAstesisa] kI ...
 (chunk_name-chunk_ids ? ?id $?)
 (manual_word_info (head_id ?id) (word $?mng)(vibakthi_components ?v $?vib))
 ?f0<-(id-Apertium_output ?aid1 $?am)
@@ -846,15 +854,34 @@
 (declare (salience 310))
 (man_verb_count-verbs ?c ?mf ?mid)
 (anu_verb_count-verbs ?c ?af ?aid)
-(score (anu_id ?af) (man_id ?mf)(heuristics $? anu_exact_match $?))
+(score (anu_id ?af) (man_id ?mf)(heuristics $? anu_exact_match|anu_root_match $?))
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?af $? - ?mf $?)
 (manual_word_info (head_id ?mid) (word $?mng))
 ?f0<-(id-Apertium_output ?aid $?amng)
 ?f1<-(left_over_ids $?pre ?mid $?po)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
 =>
 	(retract ?f0 ?f1)
 	(assert (left_over_ids $?pre $?po))
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid  $?amng - ?mid  $?mng))
+)
+;---------------------------------------------------------------------------------
+;The following consequences show up if a person [is caught] up with AIDS. 
+;kisI vyakwi ko edsa [hone para] nimna xuRpariNAma sAmane Awe hEM 
+(defrule align_2nd_verb_if_first_is_exact_match1
+(declare (salience 310))
+?f1<-(left_over_ids ?mid)
+(man_verb_count-verbs ?c ?mf)
+(chunk_name-chunk_ids-words VGNN $? ?mid - $?mng)
+(manual_word_info (head_id ?mid) (word $?mng))
+(anu_verb_count-verbs ? ?af ?aid)
+(score (anu_id ?af) (man_id ?mf)(heuristics $? anu_exact_match|anu_root_match $?))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?af $? - ?mf $?)
+?f0<-(id-Apertium_output ?aid $?amng)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
+=>
+        (retract ?f0 ?f1)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid  $?amng - ?mid  $?mng))
 )
 ;---------------------------------------------------------------------------------
 ;Extensive security arrangements have been made by the administration for the festival and it does not want to leave anything to chance.
@@ -884,6 +911,7 @@
 (manual_word_info (head_id ?lid) (group_ids $? ?id $?)(word $?mng1 ?w)(vibakthi_components ?vib $?v))
 (manual_word_info (head_id ?mid) (group_ids $? =(- ?lid 1) $?))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid  $?mng ?m )
+(test (neq (create$ ?a $?amng)(create$ $?mng ?m)))
 (test (neq (integerp (member$ ?m (create$ WIM WA We WI hE hEM hue huI lie karanA kI kareM kareMge))) TRUE))
 (id-cat_coarse ?aid verb|adjective)
 (chunk_name-chunk_ids JJP|NP|VGNF|VGNN $? ?mid $?)
@@ -910,7 +938,7 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(manual_word_info (head_id ?id) (word ?mng)(vibakthi_components 0))
 (man_word-root-cat ?mng ? ~p)
-(test (eq (integerp (member$ ?mng (create$ BI hI yA))) FALSE))
+(test (eq (integerp (member$ ?mng (create$ BI hI yA wo))) FALSE))
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid&:(= (+ ?id 1) ?mid) ?kara $?tam)
 (man_word-root-cat ?kara&~hE kara|ho|karA|karavA v)
 (id-word ?aid ?w&~to&~is&~are)
@@ -1042,17 +1070,16 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 (manual_word_info (head_id ?id) (word ?m $?mng)(vibakthi_components ?v $?vib)(group_ids $? ?lid))
 (test (neq (integerp (member$ ?m (create$ wo hama lIjie yahAz))) TRUE)) 
-(manual_word_info (head_id ?mid) (group_ids =(+ ?lid 1) $?))
-;(manual_word_info (head_id ?mid) (group_ids $? =(+ ?id 1) $?))
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ? $? - ?mid $?)
-(or (and (chunk_name-chunk_ids ? $?grp)(test (and (integerp (member$ ?mid $?grp)) (integerp (member$ ?id $?grp)))))
-    (and (chunk_name-chunk_ids ??ch&~VGF $? ?id)(chunk_name-chunk_ids ? $? ?mid $?)))
+(or (manual_word_info (head_id ?mid) (group_ids =(+ ?lid 1) $?))
+    (and (manual_id-word ?pid&:(= (+ ?lid 1) ?pid) @PUNCT-Comma)(manual_word_info (head_id ?mid) (group_ids =(+ ?pid 1) $?))))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ? $? - ?mid $?m1)
+(or (and (chunk_name-chunk_ids ?chnk&~VGF $? ?id)(chunk_name-chunk_ids ? $? ?mid $?))
+    (and (chunk_name-chunk_ids ? $?grp)(test (and (integerp (member$ ?mid $?grp)) (integerp (member$ ?id $?grp))))))
 ?f1<-(id-Apertium_output ?aid1&:(= (- ?aid 1) ?aid1) $?am)
+(test (neq (integerp (member$ $?am (create$ $?m1))) TRUE))
 (id-cat_coarse ?aid1 ?c1&~preposition&~verb)
 (id-cat_coarse ?aid ?c&~preposition&~verb)
 (id-word ?aid1 ?w&~the&~a)
-;(manual_word_info (head_id ?id) (word ?m $?mng)(vibakthi_components ?v $?vib))
-;(test (neq (integerp (member$ ?m (create$ wo hama lIjie yahAz))) TRUE)) 
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (not (checked_id ?id))
 (not (removed_man_id_with-anu_id ?id ?aid1))
@@ -1358,7 +1385,7 @@
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
 ?f1<-(id-Apertium_output ?aid $?am)
 (not (removed_man_id_with-anu_id ?id ?aid))
-(id-cat_coarse ?aid ~determiner)
+(id-cat_coarse ?aid ?c&~determiner&~conjunction)
 =>
 	(retract ?f ?f1)
         (assert (left_over_ids $?p $?p1))
@@ -1379,7 +1406,7 @@
 (test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina iwanA))) FALSE))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid ?m $?mng)
 (test (and (neq ?mng1 ?m) (neq ?a ?m)))
-(id-cat_coarse ?aid verb|adjective)
+(id-cat_coarse ?aid verb|adjective|adverb)
 (or (eng_id-eng_wrd-man_wrd ?aid ? $?pmng) (anu_id-anu_mng-man_mng ?aid ? $?pmng))
 (test (neq (integerp (member$ ?mng1 (create$ $?pmng))) FALSE))
 (not (removed_man_id_with-anu_id ?id ?aid))
@@ -1520,7 +1547,7 @@
 ?f<-(left_over_ids ?id)
 ?f1<-(hindi_id_order ?aid)
 (id-Apertium_output ?aid $?amng)
-(id-cat_coarse ?aid ~determiner)
+(id-cat_coarse ?aid ?c&~determiner&~wh-adverb)
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi_components ?v $?vib))
 (man_word-root-cat ?w ? ~p) 
 (test (eq (integerp (member$ ?w (create$ awaH wo yaha vaha jise jisakA kyA))) FALSE))
@@ -1607,7 +1634,7 @@
 ?f<-(left_over_ids ?id)
 (hindi_id_order)
 (id-cat_coarse ?aid verb)
-?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid&:(= (- ?id 1) ?mid) $?)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?a - ?mid&:(= (- ?id 1) ?mid) $?)
 (manual_word_info (head_id ?mid) (word ?w)(root kara)(vibakthi 0))
 (manual_word_info (head_id ?id) (word ?mng&sevana))
 (not (msg_printed))
@@ -1615,7 +1642,7 @@
 =>
         (retract ?f ?f1)
         (assert (left_over_ids))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w ?mng  @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?a - ?mid @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w ?mng  @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN))
         (printout t "single alignment" crlf)
 )
 ;---------------------------------------------------------------------------------
@@ -1684,6 +1711,7 @@
 ?f1<-(hindi_id_order)
 ?f2<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?id1&:(=(- ?id 1) ?id1) $?m)
 (test (neq (create$ ?a $?amng) $?m))
+(test (neq (create$ ?a)  $?m))
 (test (eq (integerp (member$ ?a (create$ ki jise yahAM ))) FALSE))
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi_components ?v1 $?vib))
 (test (neq (integerp (member$ ?w (create$ inhIM evaM wo ki waWA yaha yahAz vaha usake usakA isa isakI koI kisI eka))) TRUE))

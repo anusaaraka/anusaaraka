@@ -29,9 +29,6 @@
         (modify ?f0 (weightage_sum 2))
 )
 ;-----------------------------------------------------------------------------------
-
-
-
 (defrule modify_score_for_same_wt
 (declare (salience 101))
 ?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?score) )
@@ -92,6 +89,17 @@
 (aligned_man_id ?mid)
 =>
         (retract ?f0)
+)
+;-----------------------------------------------------------------------------------
+;Taking diet rich in vitamin-A can also be helpful in keeping eyes healthy. 
+;vitAmina-e se BarapUra AhAra lenA BI AzKoM ko svasWa banAe raKane meM maxaxagAra sAbiwa ho sakawA hE.
+(defrule rm_aux_score
+(declare (salience 110))
+(score (anu_id ?aid) (man_id ?mid)(heuristics $? anu_exact_match  $?))
+(root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?aid)
+?f0<-(score (anu_id ?id) )
+=>
+	(retract ?f0)
 )
 ;================================== alignment using score ============================
 
