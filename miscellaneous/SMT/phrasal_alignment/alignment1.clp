@@ -1664,25 +1664,6 @@
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?mng - ?mid @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN $?mng))
         (printout t "single alignment" crlf)
 )
-;---------------------------------------------------------------------------------
-;With more tension hormone cortisol [harms] the hippocampus of the brain seriously.
-;jyAxA wanAva se hArmona kortisAla ximAga ke hippokEMpasa ko gamBIra [[nukasAna] [pahuzcAwA hE]]. 
-(defrule add_word_for_verb
-(declare (salience 6))
-?f<-(left_over_ids ?id)
-(hindi_id_order)
-(id-cat_coarse ?aid verb)
-?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?mng - ?mid $?mng)
-(manual_word_info (head_id ?id) (word ?w)(vibakthi 0))
-(not (msg_printed))
-(not (removed_man_id_with-anu_id ?id ?aid))
-(score (anu_id ?aid) (man_id ?id) (heuristics $? hindi_wordnet_match|dictionary_match $?))
-=>
-        (retract ?f ?f1)
-        (assert (left_over_ids))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?mng - ?mid @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN ?w @SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN $?mng))
-        (printout t "single alignment" crlf)
-)
 
 ;He might have come here. 
 ;[SAyaxa] vaha yahAM [AyA hogA] .

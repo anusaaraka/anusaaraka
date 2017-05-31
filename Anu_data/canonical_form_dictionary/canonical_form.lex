@@ -27,4 +27,7 @@ char canonical_word[1000];
 
 @[a-zA-Z]+				ECHO;
 
+[a-zA-Z_]+iye				{	canonical_form(yytext,canonical_word); //To handle ke_liye
+						printf("%s", canonical_word);
+					}
 %%
