@@ -7,9 +7,9 @@
 (defrule rm_aux_score_fact
 (declare (salience 250))
 (root-verbchunk-tam-chunkids ? ? ? $? ?aux ?h)
-(anu_id-man_id-src-rule_name ?h ?mid single_verb_match single_verb_match_with_anu)
-?f1<-(anu_id-man_id-src-rule_name ?m ?mid ? ?)
-(test (neq ?m ?h))
+(anu_id-man_id-src-rule_name ?h ?mid ? single_verb_match_with_anu|verb_root_and_tam_match_using_dic)
+?f1<-(anu_id-man_id-src-rule_name ?aux ?mid ? ?)
+;(test (neq ?m ?h))
 (manual_id-word ?mid hE|kareM)
 =>
 	(retract ?f1)
