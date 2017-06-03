@@ -192,6 +192,9 @@
  (load-facts "chunk_relations.dat")
  (load-facts "link_number_tmp.dat")
  (load-facts "ner_tmp1.dat")
+ (load-facts "linkid_word.dat")
+ (load-facts "multi_word_expressions_tmp.dat")
+ (load-facts "provisional_multi_dic_tmp.dat")
  (open "root.dat" root_fp "a")
  (open "idiomatic_expr.dat" id_expr_fp "a")
  (open "preferred_morph.dat" pre_morph_fp "a")
@@ -203,6 +206,7 @@
  (open "number_tmp.dat" num_fp "a")
  (open "ner.dat" ner_fp "w")
  (run)
+ (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority)
  (clear)
  ;----------------------------------------------------------------------
  ; Generate hindi Pada for the sentence.
