@@ -73,14 +73,14 @@ void replace_space_with_underscore(char inp_text[10000])
 	   offset_count=strlen(inp_text)-strlen(p)+1;
 
            //calling function check_for_punctuation()
-           check_for_punctuation(str);
-           if(flag==1) {
+//           check_for_punctuation(str);
+//           if(flag==1) {
            offset_no[j]=offset_count;
 	   word_id[j]=word_count;
 //	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
 	   word_count++; }
-        }
+//        }
 	else
 	{
 	   word_count++;
@@ -150,7 +150,7 @@ for (j=0; j < matchp->match_num; j++) { //(Added below code by Roja.)
                 for(i=atoi(id_count); i>=1; i--) {
 //			printf("%d-%d\n", word_ids,i);
                         final_ids=word_ids-i+1;
-                        printf(" %d ", final_ids);
+                        printf(" P%d ", final_ids);
                 }
 
                 printf("%s %s %s %s 1)",  mng, head_id, cat, mng_type);

@@ -16,15 +16,6 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja(21-02-14)
- ;To load provisional_multi_dictionary facts
- (defrule load_provisional_multi_dic
- (declare (salience 9000))
- (not (not_SandBox))
- =>
- (load-facts "provisional_multi_dic.dat")
- )
- ;--------------------------------------------------------------------------------------------------------------
- ;Added by Roja(21-02-14)
  ;The magnitude of electric field E due to a point charge is thus same on a sphere with the point charge at its center; [in other words], it has a spherical symmetry.
  ;Here, in provisional MWE dic we have mng other_words = xUsare_Sabxa, In MWE in_other_words = anya_Sabxa
  ;To check provisional multiword fact available or not. If present then pick provisional fact and retract database fact.

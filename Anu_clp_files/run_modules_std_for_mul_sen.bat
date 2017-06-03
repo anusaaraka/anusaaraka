@@ -4,7 +4,7 @@
  (load-facts "hindi_meanings_tmp.dat")
  (load-facts "revised_root.dat")
  (load-facts "cat_consistency_check.dat")
- (assert (default-cat))
+ (assert (default-cat)) 
  (run)
  (save-facts "hindi_meanings_tmp.dat" local id-HM-source)
  (clear)
@@ -22,7 +22,7 @@
  (open "hindi_meanings_tmp1.dat" caus_mng_fp "w")
  (run)
  (clear)
- ;--------------------------------------------------------------------------------------------------------------
+ ;-------------------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/prepare_apertium_input.bclp"))
  (bload ?*path*)
@@ -40,12 +40,11 @@
  (load-facts "number.dat")
  (load-facts "gender.dat")
  (load-facts "cat_consistency_check.dat")
- (load-facts "revised_preferred_morph.dat")
  (load-facts "tam_id.dat")
  (open "id_Apertium_input.dat" fp5 "w")
- (open "apertium_input_debug.dat" aper_debug "a")
- (open "GNP_errors.txt" err_fp1 "a")
+ (open "apertium_input_debug.dat" aper_debug "w")
+ (open "GNP_errors.txt" err_fp1 "w")
  (run)
  (clear)
  (exit)
- ;--------------------------------------------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------

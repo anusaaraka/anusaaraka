@@ -24,6 +24,8 @@
  (assert (parser_id-number-src))
  (assert (parser_id-cat))
  (assert (word-wordid-nertype))
+ (assert (ids-cmp_mng-head-cat-mng_typ-priority))
+ (assert (parserid-word))
  )
 
  (defglobal ?*cat_cons-file* = cat_cons_fp) 
@@ -297,7 +299,7 @@
  =>
 	(printout ?*e_cons-file* "(Head-Level-Mother-Daughters  "?head"  "?lvl"  "?Mot"  "(implode$ $?dau)")" crlf)
  )
- ;====================================================================================================================
+ ;=========================================================================================================================
  (defrule map_ner
  ?f<-(word-wordid-nertype ?w ?pid ?ner)
  (parserid-wordid    ?pid  ?wid)
@@ -305,7 +307,29 @@
 	(retract ?f)
 	(printout ?*ner-file* "(word-wordid-nertype  "?w"  "?wid"  " ?ner")" crlf)
  )
- ;====================================================================================================================
+ ;=================================== RULES FOR MAPPING multi word expressions ==============================================
+
+ ;She found the evening boring and uninteresting [, in short ,] a [waste of time] .
+ (defrule map_mwe
+ ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?pid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+ (parserid-wordid    ?pid  ?wid)
+ =>
+	(retract ?f)
+	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre ?wid  $?post ?cmp_mng  ?h ?cat ?mng ?p))
+ )
+
+ ;She found the evening boring and uninteresting [, in short ,] a waste of time .
+ (defrule remove_punc_ids_in_mwe
+ (declare (salience -5))
+ ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?pid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+ (parserid-word  ?pid  ?wrd)
+ (test (neq (str-index "PUNCT" ?wrd) FALSE))
+ =>
+	(retract ?f)
+	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre $?post ?cmp_mng  ?h ?cat ?mng ?p))	
+ )
+ ;=============================================================================================================================
+
  (defrule end
  (declare (salience -10))
  =>

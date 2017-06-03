@@ -7,6 +7,7 @@
  (defglobal ?*rel-debug* = rel_debug)
  (defglobal ?*num-file* = num_fp)
  (defglobal ?*e_cons_file* = e_cons_fp)
+ (defglobal ?*ner-file* = ner_fp)
 
  (deffunction never-called ()
  (assert (parser_id-number))
@@ -24,6 +25,8 @@
  (assert (verb_type-verb-kriyA_mUla-tam))
  (assert (ol_res_id-word_id-word))
  (assert (current_id-group_members))
+ (assert (word-wordid-nertype))
+ (assert (ids-cmp_mng-head-cat-mng_typ-priority))
  )
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
@@ -373,6 +376,39 @@
  )
 
  ;--------------------------------------------------------------------------------------------------------------------
+ (defrule map_ner
+ ?f<-(word-wordid-nertype ?w ?pid ?ner)
+ (parserid-wordid    ?pid  ?wid)
+ =>
+        (retract ?f)
+        (printout ?*ner-file* "(word-wordid-nertype  "?w"  "?wid"  " ?ner")" crlf)
+ )
+ ;=================================== RULES FOR MAPPING multi word expressions ==============================================
+ ;Below two rules are not tested as OL parser is not currently in use.
+ ;Added by Roja (02-06-17)
+ ;She found the evening boring and uninteresting [, in short ,] a [waste of time] .
+ (defrule map_mwe
+ ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?pid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+ (ol_res_id-word_id-word ?pid  ?wid  ?wrd)
+ =>
+        (retract ?f)
+        (assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre ?wid  $?post ?cmp_mng  ?h ?cat ?mng ?p))
+ )
+
+ ;Added by Roja (02-06-17)
+ ;She found the evening boring and uninteresting [, in short ,] a waste of time .
+ (defrule remove_punc_ids_in_mwe
+ (declare (salience -5))
+ ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?pid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+ (ol_res_id-word_id-word  ?pid   ?id  ?wrd)
+ (test (neq (str-index "punctuation_mark" ?wrd) FALSE))
+ =>
+        (retract ?f)
+        (assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre $?post ?cmp_mng  ?h ?cat ?mng ?p))
+ )
+                                                                                
+ ;=============================================================================================================================
+
  (defrule end
  (declare (salience -10))
  =>
@@ -385,5 +421,6 @@
 	(close ?*rel-debug*)
         (close ?*num-file*)
         (close ?*e_cons_file*)
+	(close ?*ner-file*)
  )
  ;--------------------------------------------------------------------------------------------------------------------

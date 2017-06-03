@@ -35,6 +35,7 @@
  (load-facts "sd-tree_relations_tmp.dat")
  (load-facts "E_constituents_info_tmp2.dat")
  (load-facts "Node_category_tmp2.dat")
+ (load-facts "ner_tmp.dat")
  (open "sd_word.dat" l_fp "w")
  (open "sd_numeric_word.dat" l_n_w_fp "w")
  (open "sd-relations_tmp1.dat" l_r_fp "w")
@@ -42,6 +43,7 @@
  (run)
  (save-facts "E_constituents_info_tmp3.dat" local Head-Level-Mother-Daughters)
  (save-facts "Node_category_tmp3.dat" local  Node-Category)
+ (save-facts "ner_tmp1.dat" local word-wordid-nertype)
  (clear)
  ;--------------------------------------------------------------------------------
  (load "global_path.clp")
@@ -77,13 +79,13 @@
  (run)
  (clear)
  ;--------------------------------------------------------------------------------
- ; Determine pos category from link parser
+ ; Determine pos category from stanford parser
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_category.bclp"))
  (bload ?*path*)
  (load-facts "sd_category_tmp2.dat")
  (load-facts "sd_word.dat")
- (load-facts "ner.dat")
+ (load-facts "ner_tmp1.dat")
  (load-facts "E_constituents_info_tmp5.dat")
  (load-facts "Node_category.dat")
  (load-facts "parserid_wordid_mapping.dat")
@@ -143,6 +145,7 @@
  (load-facts "lwg_info_tmp.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "parser_pos_cat.dat")
+ (load-facts "root_tmp.dat")
  (open "relations_tmp.dat" open-file "w")
  (open "relations_debug.dat" debug_fp "w")
  (open "word.dat" open-word "a")
@@ -176,6 +179,10 @@
  (load-facts "parser_pos_cat.dat")
  (load-facts "E_constituents_info_tmp6.dat")
  (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "ner_tmp1.dat")
+ (load-facts "multi_word_expressions_tmp.dat")
+ (load-facts "provisional_multi_dic_tmp.dat")
+ (load-facts "sd_word.dat")
  (open "root.dat" root_fp "w")
  (open "preferred_morph.dat" pre_morph_fp "w")
  (open "lwg_info.dat" lwg_fp "w")
@@ -183,7 +190,9 @@
 ; (open "relations_tmp1.dat" file1 "w")
  (open "cat_consistency_check.dat" cat_cons_fp "w")
  (open "E_constituents_info.dat" e_cons_fp "w")
+ (open "ner.dat" ner_fp "w")
  (run)
+ (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority)
  (clear)
  ;----------------------------------------------------------------------
  (load "global_path.clp")
@@ -235,7 +244,7 @@
  (close hmng_fp1)
  (close open-word1)
  (clear)
- ;----------------------------------------------------------------------
+ ;================================ TRANSFER MODULE ===================================================
  ; Across paxa ordering
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/H_ordering_rules.clp"))
@@ -254,7 +263,7 @@
  (save-facts "hindi_id_order_tmp.dat" local hindi_id_order)
  (save-facts "meaning_to_be_decided.dat" local meaning_to_be_decided)
  (clear)
- ;================================ TRANSFER MODULE ===================================================
+ ;----------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/template_before_mng.clp"))
  (load ?*path*)
@@ -290,6 +299,7 @@
  (load-facts "hindi_meanings_tmp.dat")
  (load-facts "tam_id.dat")
  (load-facts "language.dat")
+ (load-facts "ner.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))
@@ -299,7 +309,6 @@
  (bind ?wsd_path (str-cat ?*wsd_path* "/canonical_form_wsd_rules/"))
  (defglobal ?*prov_dir* = ?prov_path)
  (defglobal ?*wsd_dir* = ?wsd_path)
-; (defglobal ?*wsd_dir* = "anusaaraka/WSD/wsd_rules/canonical_form_wsd_rules/")
  (load* ?path1)
  (open "debug_file.dat" wsd_fp "a")
  (focus WSD_MODULE)
@@ -369,7 +378,7 @@
  (set-current-module WSD_TAM_MODULE)
  (bind ?path1 (str-cat ?*path* "/Anu_clp_files/wsd_tam_meaning.clp"))
  (bind ?prov_path (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/"))
- (bind ?wsd_path (str-cat ?*wsd_path* "/canonical_form_wsd_rules/"))
+ (bind ?wsd_path (str-cat ?*wsd_path*  "/canonical_form_wsd_rules/"))
  (defglobal ?*prov_dir* = ?prov_path)
  (defglobal ?*wsd_dir* = ?wsd_path)
  (load ?path1)
@@ -515,6 +524,7 @@
  (load-facts "multi_word_expressions.dat")
  (load-facts "word.dat")
  (load-facts "revised_root.dat")
+ (load-facts "ner.dat")
  (open "vib_debug.dat" vib_debug_fp "w")
  (open "pada_control_fact.dat" p_c_fact "a")
  (run)
