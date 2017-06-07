@@ -41,10 +41,9 @@
  #Check whether i/p file contains <TITLE> or not ... If not present adding it.
  $HOME_anu_test/Anu_src/check_for_TITLE.out $PRES_PATH/$1 $MYPATH/tmp/$1_tmp/$1
 
-
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ cd $HOME_anu_test/Parsers/stanford-parser/src/
  sh run-ner.sh $1
 
  cd $MYPATH/tmp/$1_tmp
@@ -114,9 +113,9 @@
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
-  $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
+  $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out proper_noun_dic.txt  dir_names.txt  proper_noun_dic.dat
-  $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
+  $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner_tmp.dat
 
   if [ "$4" != "general" -a "$4" != "" ]; then

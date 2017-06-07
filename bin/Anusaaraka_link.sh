@@ -118,9 +118,9 @@
   $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
 
-  $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
+  $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out proper_noun_dic.txt  dir_names.txt  proper_noun_dic.dat
-  $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
+  $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner_tmp.dat
 
   if [ "$4" != "general" -a "$4" != "" ]; then

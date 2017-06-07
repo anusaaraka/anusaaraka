@@ -2605,6 +2605,11 @@ Nandini ji LTRC 	27-11-13)
 	29. good_books      	kqpA_xqRti#kqpA_xqRti#noun#2#RM		(Suggested by 14anu-ban-02	11-04-15)
 				Ex: We urge you to try to add many names and items to these tables with the help of your teachers, good books
 				    and websites on science. [ncert]
+	30. Co-scheduling	saha_anusUcana#saha_anusUcana#noun#2#RM	(This entry is not mwe entry. By Roja 03-06-17)
+	31. Fig.		Akqwi.#Akqwi.#noun#2#RM			(	"	"		"	      )
+
+	
+
 
     Modified :
     --------
@@ -2645,6 +2650,7 @@ Nandini ji LTRC 	27-11-13)
 				Ex: above sentence
 	any_longer		Ora_jZyAxA_nahIM   as	Ora_jZyAxA		(Suggested by Chaitanya Sir 19-08-16)
 				Ex: Unfortunately, no crow had joined yet, but they could not wait any longer.
+	no_profit		na_lABa_na_hAni		as	lABa_nahIM_hE	(Suggested by Rajini 03-06-17)
 				
     Added new entry:
     ----------------
@@ -3021,9 +3027,60 @@ Nandini ji LTRC 	27-11-13)
 
    Modifying the head id:
    ---------------------
-   	with_reference_to_his_application_dated_shri_is_offered_post_of         ---  #110#  ==> #5#     (by Roja 15-07-13)
-        failure_to_levy_the_countervailing_duty_resulted_in_short_levy_of_duty  ---  #110#  ==> #1#     (by Roja 15-07-13)
-	sort_of									---  #3#    ==>	#1#	(By Manju 19-08-13)
+   	with_reference_to_his_application_dated_shri_is_offered_post_of		#110#	#5#     (by Roja 15-07-13)
+        failure_to_levy_the_countervailing_duty_resulted_in_short_levy_of_duty	#110#	#1#     (by Roja 15-07-13)
+	sort_of									#3#	#1#	(by Manju 19-08-13)
+	Big_o-notation								#3#	#2#	(by Rajini 01-06-17)
+	Channel-attached_station						#3#	#2#	(	"	" )
+	Come_down_on_one_side_of_the_fence_or_other				#15#	#10#	(	"	"	)
+	If_so_,									#3#	#2#	(	"	"	)
+	after_taking_into_account_the_result_of_discussions_held_with_the_representive_of_ministry	#16#	#14#RM	(	"	)
+	arrangements_are_being_made_to_ensure_timely_submission_of_report	#18#	#10#	(	"	"	)
+	copy_of_the_letter_referred_to_above_is_sent_herewith			#11#	#9#	(	"	"	)
+	excess_levy_of_duties_and_payment_due_but_not_made			#12#	#10#	(	"	"	)
+	fall_short_of								#4#	#1#	(	"	"	)
+	it_may_further								#4#	#3#	(	"	"	)
+	ordered_also_that_it_be_published_in_the_gazette_of_india		#19#	#1#	(	"	"	)
+	plenty_of								#3#	#1#	(	"	"	)
+	procurement_was_excessive_resulting_in_surplus_and_idling_of_rolling_stock	#18#	#11#	(	"	)
+	so_far_as_repeated_auctions_of_the_goods_are_concerned			#15#	#10#	(	"	"	)
+	some_kind_of								#4#	#2#	(	"	"	)
+	to_take_remedial_action_to_avoid_recurrence_of_such_cases		#17#	#2#	(	"	"	)
+	undersigned_is_directed_to_acknowledge_the_receipt_of_your_letter_no._dated	#17	#3#	(	"	)
+	wishes_to_place_on_record_his_appreciation_of_work_done			#17#	#1#
+	stock_exchange								#3#	#2#	(	"	"	)
+	with_respect_to								#3#	#2#	(	"	"	)
+	,_in_short_,								#4#	#2#	(By Roja	03-06-17)
+	,_that_is_,								#4#	#2#	(	"	"	)
+
+	
+	Modified category:
+	-----------------
+	If_so_,							noun	conjunction	(By Rajini	03-06-17)
+	copy_of_the_letter_referred_to_above_is_sent_herewith	noun	verb		(	"	"	)
+	excess_levy_of_duties_and_payment_due_but_not_made	noun	verb		(	"	"	)
+	fall_short_of						noun	verb		(	"	"	)
+	it_may_further						noun	adverb		(	"	"	)
+	ordered_also_that_it_be_published_in_the_gazette_of_india	noun	verb	(	"	"	)
+	so_far_as_repeated_auctions_of_the_goods_are_concerned	noun	adjective	(	"	"	)
+	to_take_remedial_action_to_avoid_recurrence_of_such_cases	noun	verb	(	"	"	)
+	undersigned_is_directed_to_acknowledge_the_receipt_of_your_letter_no._dated	noun	verb	(	"	)
+	wishes_to_place_on_record_his_appreciation_of_work_done	noun	verb		(	"	"	)
+	in_common						-	noun		(	"	"	)
+	nutrient_cycling					-	noun		(	"	"	)
+	back_yard						-	noun		(	"	"	)
+
+
+	Modified english mwe:
+	--------------------
+	undersigned_is_directed_to_acknowledge_the_receipt_of_your_letter_no_dated	(By Rajini	03-06-17)
+			to
+	undersigned_is_directed_to_acknowledge_the_receipt_of_your_letter_no._dated	
+	If_so,		to	If_so_,							(	"	"	)
+	
+	
+		
+
 
 
 # Changes in phy_dictionary.txt
