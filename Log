@@ -1,4 +1,4 @@
- 06-05-17
+ 03-06-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
  2. template_after_mng.clp:  Added   : modify_than_se_prep
@@ -56,29 +56,39 @@
 	Modified : display_rule
  20. wsd_debug.clp:
 	Modified prov_dir path from $HOME_anu_provisional_wsd_rules to "$HOME_anu_provisional_wsd_rules/canonical_form_prov_wsd_rules" 
- 21. parser_id_mapping.clp:  Added : map_ner
+ 21. parser_id_mapping.clp:  Added : map_ner, map_mwe, remove_punc_ids_in_mwe
  22. user_wsd_info.clp : modified print stmt for relations to print as rel-id
  24. combining_apostrophe.clp:  Modified : word_rule_ys_yp        Added    : map_ner
  25. link_category.clp  Added : PropN_rule_from_NER
  26. pada.clp           Added : get_tam_type
- 27. run_modules_std.bat  
+ 27. check_for_best_match_in_multi-word.clp:
+	Removed:	load_provisional_multi_dic rule
+ 28. ol_parser_id_mapping.clp:
+	Added: map_mwe, remove_punc_ids_in_mwe, map_ner
+ 29. run_modules_std.bat  
 		Loaded lwg_info.dat and punctuation_info.dat files in template_before_mng module
 		Loaded ner_tmp.dat file in sd_combining_apostrophe and parser_id_mapping modules
 		moved tam meaning module to execute after hindi_meaning module
-            Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat and run_modules_link.bat
- 28. create_hindi_animate.c:
+		Loaded multi_word_expressions_tmp.dat and provisional_multi_dic_tmp.dat in parser_id_mapping module
+            Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat, run_modules_link.bat and run_modules_std_for_mul_sen.bat
+ 30. create_hindi_animate.c:
 		Added pronoun case to create hindi animate list
- 29. Added following programs/dictionaries
+ 31. multi_word_expression.c:
+	Modified to get ids for punctuations. (ids are stored in Pids format)
+ 32. multi_word_expression_for_prov.c:
+	Modified to get ids for punctuations. (ids are stored in Pids format)
+
+ 33. Added following programs/dictionaries
 	parser_correction.py 
 	proper_noun_organization_names
 	proper_noun_person_names
 	proper_noun_place_names
 	crude_equivalent_dic
- 30. Updated following files:
+ 34. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
- 31. Updated following lex files:
+ 35. Updated following lex files:
 	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP and NIIT in the list
 				     Removed: May
 	initialisms.lex 	-->  Added :I.A.S. M.Sc. B.Sc.
@@ -88,7 +98,7 @@
 	canonical_form.lex	-->  Added rule to convert ke_liye to ke_lie	 
 	get_canonical_form_in_wsd.lex	--> Added rule to handle canonical form in tam files
 	mapping-hindi_rel-univ_rel.lex
- 32. Updated the following files
+ 36. Updated the following files
 	chk_input_format.pl 			-->  fixed bug for '-'  Ex: ... (trimester) - from ...
 						     " goods/services'. "
         print-pos-info.py
@@ -100,7 +110,7 @@
 	list-right				-->  proper_noun dic's
 	list_Anu_data_compound			-->  proper_noun dic's
 	list_SMT				--> crude_equivalent_dic
- 33. Updated following shell files
+ 37. Updated following shell files
 	get_pos_chunk.sh:  Added sed command to modify ' - ' as '-'
         phrasal_alignment/compile.sh
         dic_compile.sh
@@ -118,10 +128,15 @@
 	bin/run_alignment.sh 	: Modified to get automatic generated new hindi parser relations and suggested mng files
 	Anusaaraka_alignment.sh : integrated rule based hindi parser and extracted transliteration meaning for all the words in the sentence
 	Modified the files to change ner path as stanford ner folder is removed [user has to download]
-	Anusaaraka_stanford.sh		Anusaaraka_link.sh		Anusaaraka_berkeley.sh
-	Anusaaraka_rasp.sh		Anusaaraka_bllip_parser.sh	Anusaaraka_site.sh
-	Anusaaraka_ace.sh		Anusaaraka_logon.sh
- 34. Updated following alignment files
+	Modified 'multi_word_expressions.dat' to 'multi_word_expressions_tmp.dat' and
+		 'provisional_multi_dic.dat'  to 'provisional_multi_dic_tmp.dat' in following files:
+        Anusaaraka.sh           Anusaaraka_all.sh               Anusaaraka_bllip_parser.sh
+        Anusaaraka_berkeley.sh  Anusaaraka_bllip_parser.sh      Anusaaraka_bllip_parser_minion.sh
+        Anusaaraka_link.sh      Anusaaraka_logon.sh             Anusaaraka_ol.sh
+        Anusaaraka_rasp.sh      Anusaaraka_site.sh              Anusaaraka_stanford-Factored.sh
+        Anusaaraka_stanford.sh  Anusaaraka_ace.sh               Anusaaraka_stanford_align_man_ord.sh
+        Anusaaraka_stanford_minion.sh
+ 38. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp	get_score.clp		eng_parser_grouping.clp		get_hnd_std_parser_heuristics.clp
 	grp_multi_prep.clp		parser_alignment.clp	hindi_parser_correction.clp	hindi_parser_grouping.clp
@@ -129,10 +144,10 @@
   	Added 'tam' and 'tam_components' slots in manual_word_info deftemplate
 	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
 		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp
- 35. Removed bllip parser, rasp parser , berkeley parser and stanford ner (original tars)
- 36. Added the following folders
+ 39. Removed bllip parser, rasp parser , berkeley parser and stanford ner (original tars)
+ 40. Added the following folders
 	berkeley-parser	 bllip-parser	and  rasp-parser  (with only README's, compilations and src)
- 37. Modified following programmes to avoid warnings in 16.04 Ubuntu:
+ 41. Modified following programmes to avoid warnings in 16.04 Ubuntu:
 	Anu/stdenglish/abbrevations_using_NER.c
 	Anu/stdenglish/enclitics.lex
 	Anu/stdenglish/initialisms.lex
@@ -159,9 +174,9 @@
 	apertium/tagger.lex
 	multifast-v1.4.2/src/get_word_count.c
 	multifast-v1.4.2/src/get_word_count_single.c
- 38. Updated verifieds
+ 42. Updated verifieds
 	sd_verified (878)	small_sent_verified_sd (178)
- 39. Updated Log	
+ 43. Updated Log	
 
  24-08-16
  ========
