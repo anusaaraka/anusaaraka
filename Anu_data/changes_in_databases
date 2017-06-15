@@ -1117,6 +1117,14 @@ Nandini ji LTRC 	27-11-13)
 	135. gardening_noun  		bAgabAnI	as	bAgavAnI	(Suggested by Bhagyashri Kulkarni 25-8-16)
 	136. garden_verb     		bAgabAnI_kara	as	bAgavAnI_kara	(	"	"		  25-8-16)
 	137. gum_noun        		masUDA		as	masUdA		(Suggested by Chaitanya Sir      01-09-16)
+	138. light_verb			rAswA_xiK	as	rAswA_xiKA	(	"	"		 14-06-17)
+	139. light_verb			Aga_lag		as	Aga_laga	(	"	"		   "	 )
+	140. dilapidate_verb		jIrNa-SIrNa	as	jIrNa-SIrNa_ho  (	"	"		   "	 )
+	141. life_noun			jLxagI		as	jiMxagI		(Suggested by Rajini 	         14-06-17)
+	142. place_noun			jLmmexArI	as	jimmexArI	(	"	"		   "	 )
+	143. screw_verb			lag/hLmawa_juT/Gum/gum as laga/himawa_juTa/GumA/guma  (Suggested by Rajini  14-06-17)
+	144. service_verb		KLxamawa_kara	as	Kixamawa_kara	(Suggested by Rajini             14-06-17)
+	145. title_noun			KLwAba		as	KiwAba		(	"	"		    "	 )	
 
     3. Added new entry:
        ---------------
@@ -1889,6 +1897,11 @@ Nandini ji LTRC 	27-11-13)
 	187. proper_adjective		sahI			(Suggested by Chaitanya Sir 15-12-16)
 	188. its_pronoun		yaha			( By shirisha Manju 01-02-17)
 	189. sugared_adjective		cInI_yukwa		(Suggested by Chaitanya Sir 15-12-16)
+	190. accumulation_noun		ikatTA_honA/ekawriwa_honA (Suggested by Chaitanya Sir 14-06-17)
+	191. appropriate_adjective	samuciwa		  (		"		"     )
+	192. beneficial_adjective	PAyaxemanxa		(		"		"     )
+	193. difficult_adjective	kaRtapraxa		(		"		"     )
+	194. extremely_adverb		awyAXika		(		"		"     )
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2390,7 +2403,10 @@ Nandini ji LTRC 	27-11-13)
 	41. spacing_noun	anwarAlana					(	"	"		24-02-15)
 	42. move_noun		upAya						(	"	"		06-03-15)
 	43. curative_adjective  Arogyakara_paxArWa				(	"	"		02-09-15)
-	
+	44. light_noun		kam						(	"	"		14-06-17)
+	45. light_verb		jal/jala/camaka_uT				(	"	"		  "	)
+	46. place_noun		jagAha						(	"    Rajini		  "	)
+	47. lion_noun		sLha-rASi					(	"	"		  "	)	
 
     7. Removed entry:
        --------------
@@ -2468,7 +2484,7 @@ Nandini ji LTRC 	27-11-13)
 	10. civilisation_UNDEFINED	as civilisation_noun	(Suggested by Sukhada 		26-11-13 )
 	11. doctorate_UNDEFINED as	doctorate_noun    	(Suggested by Pramila Banasthali 24-01-14)
 	12. english_UNDEFINED	as	english_noun		( Suggested by Chaitanya Sir     04-11-14)
-
+	13. dilapidate_UNDEFINED as	dilapidate_verb		(	"	"		 14-06-17)
 	
 # Changes in preposition.txt
 # ==========================
@@ -2496,6 +2512,7 @@ Nandini ji LTRC 	27-11-13)
 	rather_than		---	(		"		"   )
 	at_the_behest_of	---	(		"		"   )
 	till_after		---	(		"	    21-07-15)	
+	related_to		---	(		"	    13-06-17)
 
 #  Changes in proper_noun-common_noun_compounds.txt 
 #  ================================================
@@ -3023,6 +3040,7 @@ Nandini ji LTRC 	27-11-13)
 	14. security_guard  	paharexAra		(Suggested by 14anu-ban-01      18-02-15)
 				Ex: The thief broke into the office while his accomplice stalled off the security guard.
 	15. never_mind		koI_bAwa_nahIM		(Suggested by Bhagyashri	(22-07-16)
+	16. because_of      	ke_kAraNa		(Suggested by Chaitanya sir     07-06-17)
 
 
    Modifying the head id:
