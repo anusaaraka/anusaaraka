@@ -3097,7 +3097,7 @@ accumulated_UNDEFINED	saFcaya_karanA
 accumulated_adjective	jamA/ikatTA
 accumulates_UNDEFINED	saFcaya_karanA
 accumulating_UNDEFINED	saFcaya_karanA
-accumulation_noun	saFcayana/safgrahaNa/jamAva
+accumulation_noun	saFcayana/safgrahaNa/jamAva/ikatTA_honA/ekawriwa_honA
 accumulations_UNDEFINED	saFcayana
 accumulative_adjective	saFcayI/saFcayaSIla
 accumulatively_UNDEFINED	saFcayI_rUpa_se
@@ -6269,7 +6269,7 @@ approaching_UNDEFINED	paxXawi
 approaching_adjective	AnevAlA
 approbation_noun	maFjUrI/anumoxana
 approbations_UNDEFINED	anumoxana
-appropriate_adjective	uciwa/upayukwa/TIka
+appropriate_adjective	uciwa/upayukwa/TIka/samuciwa
 appropriate_verb	prayoga_kara/haWiyA_le/anuciwa_rUpa_se_apanA_banA_le/alaga_raKa
 appropriated_UNDEFINED	alaga_raKanA
 appropriately_adverb	uciwa_rUpa_se/upayukwa_rUpa_se/TIka_Dafga_se
@@ -9248,7 +9248,7 @@ benefice_noun	Xarmavqwwi
 beneficed_UNDEFINED	Xarmavqwwi
 beneficent_adjective	uxAra
 benefices_UNDEFINED	Xarmavqwwi
-beneficial_adjective	lABaxAyaka/lABapraxa
+beneficial_adjective	lABaxAyaka/lABapraxa/PAyaxemanxa
 beneficialer_UNDEFINED	lABaxAyaka
 beneficialest_UNDEFINED	lABaxAyaka
 beneficiary_noun	lABaBogI
@@ -22228,7 +22228,7 @@ differently_adverb	alaga_prakAra_se
 differing_UNDEFINED	Binna_honA
 differs_UNDEFINED	Binna_honA
 difficult_UNDEFINED	muSkIla
-difficult_adjective	teDA/sanwApI/muSkila/kaTina/cidacidA
+difficult_adjective	teDA/sanwApI/muSkila/kaTina/cidacidA/kaRtapraxa
 difficulter_UNDEFINED	kaTina
 difficultest_UNDEFINED	kaTina
 difficulties_UNDEFINED	kaTinawA
@@ -22313,7 +22313,7 @@ dike_verb	KAI/bAzXa_banA
 diked_UNDEFINED	KAInA
 dikes_UNDEFINED	KAInA
 diking_UNDEFINED	KAInA
-dilapidate_UNDEFINED	jIrNa-SIrNa
+dilapidate_verb	jIrNa-SIrNa_ho
 dilapidated_adjective	jIrNa-SIrNa/tUtA-PUtA
 dilapidateder_UNDEFINED	jIrNa-SIrNa
 dilapidatedest_UNDEFINED	jIrNa-SIrNa
@@ -28030,7 +28030,7 @@ extravaganza_noun	manoraFjana-kAryakrama
 extraxt_UNDEFINED	uxXaraNa
 extreme_adjective	carama/xUrawama/xUra/wIvra/ugara/samaSIwoRNa/saKwa/pracMada/kaTora/kadA/bahuwa/aXikawama/awiSaya/awyanwa
 extreme_noun	ugara/sirA
-extremely_adverb	awyaXika/bahuwa_hI
+extremely_adverb	awyaXika/bahuwa_hI/awyAXika
 extremer_UNDEFINED	sirA
 extremes_UNDEFINED	sirA
 extremest_UNDEFINED	sirA
@@ -45544,7 +45544,7 @@ life-support_noun	jIvana_avalamba
 life-threatening_adjective	GAwaka/KawaranAka
 life-work_noun	jIvana_upalabXi
 life_adjective	sajIva/jinxAxilI
-life_noun	jIvana/urjA/sakriyawA/sajIva_vaswu/jLxagI/jIviwa_xaSA/Ayu/AjIvana/jIvawva/prANI/jIvanwawA/AjIvikA_aWavA_jIvanayApana-viXi/jIvanaxAna{Kela_meM}
+life_noun	jIvana/urjA/sakriyawA/sajIva_vaswu/jiMxagI/jIviwa_xaSA/Ayu/AjIvana/jIvawva/prANI/jIvanwawA/AjIvikA_aWavA_jIvanayApana-viXi/jIvanaxAna{Kela_meM}
 lifebelt_noun	petI/rakRA-petI
 lifebelts_UNDEFINED	petI
 lifeblood_noun	prANa-Sakwi/jIvana_Sakwi/jIvana_kA_AXAra
@@ -45598,10 +45598,10 @@ light-heartedly_adverb	prasannawA_se
 light-pen_noun	lAita-pena
 light-year_noun	prakASa_varRa
 light-years_noun	lambA_samaya
-light_adjective	xuScaritra/XImA/wucCa/sugama/PurwIlA/narama/manxa/mAmUlI/laGu/kuCa_kama/kama/kam/harajAI/halkI/halkA/CiCorA/camakIlA/binA_BAra_kA/baluI/ayaciwa/asWiramawi/halakA/balAGAwaSUnya/WakAvata_rahiwa/sarala/PuhAra/BAra_rahiwa
+light_adjective	xuScaritra/XImA/wucCa/sugama/PurwIlA/narama/manxa/mAmUlI/laGu/kuCa_kama/kama/harajAI/halkI/halkA/CiCorA/camakIlA/binA_BAra_kA/baluI/ayaciwa/asWiramawi/halakA/balAGAwaSUnya/WakAvata_rahiwa/sarala/PuhAra/BAra_rahiwa
 light_adverb	xIre-xIre/namrawA_se/halakepana_se/AsAnI_se
 light_noun	roSanI/xqRtikoNa/xqRti/xIyA/xipaka/xina_kA_prakASa/uwsarjana/ujAlA/svargIya_jyowI/suryaprakASa/rOSanII/roSanaxAna/PUtalAita/prakASaxraSI/prakASapuFja/prakASamAna/prakASa/lejara/lAitahAus/lAita/kiraNa/kaleje_kA_tukadA/camaka/buxXi/bawwI/afgAra/prakASa-srowa/samaJa
-light_verb	uwwejiwa_ho/ujAlA_kara/roSanI_xe/roSana_kara/rAswA_xiK/prakASiwa_kara/jal/jalA/jala/camaka_uT/camaka/Aga_lag/prakASiwa_ho/camaka_uTa
+light_verb	uwwejiwa_ho/ujAlA_kara/roSanI_xe/roSana_kara/rAswA_xiKA/prakASiwa_kara/jalA/camaka/Aga_laga/prakASiwa_ho/camaka_uTa
 lighted_UNDEFINED	balAGAwaSUnya
 lighted_adjective	prakASiwa
 lighten_verb	prakASa_baDA/halkA_kara/gamBIrawA_hata/cinwAmukwa_ho/rafga_halkA_kara/Alokiwa_ho/camaka_uTa
@@ -45817,7 +45817,7 @@ lintel_noun	sAha
 lints_UNDEFINED	ciWade
 linux_UNDEFINED	linaksa
 lion_adjective	bahAxura
-lion_noun	siMha/sLha-rASi/Sera_kA_baccA/Sera/bahAxura
+lion_noun	siMha/Sera_kA_baccA/Sera/bahAxura
 lionise_verb	bahuwa_mahawva_xe
 lionize_verb	bahuwa_mahawva_xe
 lions_UNDEFINED	siMha
@@ -58516,7 +58516,7 @@ placatory_adjective	SAnwa_karane_vAlA/manA_sakane_vAlA
 place-mat_noun	meja_kI_catAI/mejapoSa
 place-name_noun	kisI_jagaha_kA_nAma/sWAnIya_nAma
 place-setting_noun	Bojana_sAmagrI/Bojana_sAmagrI_seta
-place_noun	sWAna/xarjA/sWiwi/sIta/paxa/nambara/nagara/makAna/kRewra/kAryaBAra/kArya/jLmmexArI/jagAha/jagaha/ilAkA/Gara/BUmi/BUBAga/avasara/aMSa
+place_noun	sWAna/xarjA/sWiwi/sIta/paxa/nambara/nagara/makAna/kRewra/kAryaBAra/kArya/jimmexArI/jagaha/ilAkA/Gara/BUmi/BUBAga/avasara/aMSa
 place_verb	raKa/yAxa_kara/xe/viSvAsa_kara/pESa_kara/niyukwa_kara/niSicawa_kara/lagA/kara/GoRaNA_kara/BarosA_kara/bala_xe/raKa_xe/pahacAna/jArI_raKa/nOkarI_xe
 placeable_adjective	AsAnI_se_pahacAne_jAne_yogya
 placebo_noun	prayogika_ORaXa/mqwaka_ke_liye_prArWanA/kUta-BeRaja
@@ -69311,7 +69311,7 @@ screw-top_adjective	Dakkana_lagA_huA
 screw-topped_adjective	Dakkana_lagA_huA
 screw_INDC	BAda_meM_jAo
 screw_noun	peFca/rakama/peFca_kI_cUdI/pecakaSa/mariyala_tattU/kewakI/kaFjUsa/kAgapeFca/jelara/Dakkana/Pera
-screw_verb	XokA_xe/xabAva_dAla/vikqwi_kara/samBoga_kara/peFca_se_kasa/moda/maroda/lag/kasa/hLmawa_juT/Gum/gum/cuswa_kara
+screw_verb	XokA_xe/xabAva_dAla/vikqwi_kara/samBoga_kara/peFca_se_kasa/moda/maroda/laga/kasa/himawa_juTa/GumA/guma/cuswa_kara
 screwball_noun	sanakI
 screwdriver_noun	peFcakaSa
 screwed-up_adjective	nirASa/marodakara_golA_banA_huA/GabarAyA_huA
@@ -70623,7 +70623,7 @@ serves_UNDEFINED	parosanA
 service-Charge_noun	sevA_Sulka
 service-area_noun	sarvisa_kRewra
 service_noun	sevA/upayoga/upAsanA/upacAra/sevA_viBAga/sarvisa/safgaTana/sAhayawA/pUrI_saPAI/pUjA/maxaxa/marammwa/kramavyavasWA/kArya/karmacArI/kAma/jAzca/BOjana_parosane_ke_barwana/bArI/viBAga/sahAyawA/vyavasWA/anuRtAna/saPAI-XulAI/seta/barawana/wAmIla/sarvisa{tenisa_meM}/nOkarI
-service_verb	xeKa-BAla_kara/sevA_kara/sarvisa_kara/maxaxa_kara/KLxamawa_kara/saPAI-XulAI_kara
+service_verb	xeKa-BAla_kara/sevA_kara/sarvisa_kara/maxaxa_kara/Kixamawa_kara/saPAI-XulAI_kara
 serviceability_noun	upayogiwA
 serviceable_adjective	upayogI/tikAU/kAma_kA
 serviceableness_noun	upayogiwA
@@ -81682,7 +81682,7 @@ title-page_noun	muKa-pqRTa/muKapqRTa
 title-pages_UNDEFINED	muKa-pqRTa
 title-role_noun	SIrRaka_kI_BUmikA
 title-roles_UNDEFINED	SIrRaka_kI_BUmikA
-title_noun	nAma/upAXi/SIrRaka/saFjFA/prajewA_kA_paxa/paxavI/paxa/newqwva/KLwAba/cEmpiyanaSipa/BAga/aXikAra/mAnopAXi/siranAmA
+title_noun	nAma/upAXi/SIrRaka/saFjFA/prajewA_kA_paxa/paxavI/paxa/newqwva/KiwAba/cEmpiyanaSipa/BAga/aXikAra/mAnopAXi/siranAmA
 title_verb	nAma_xe/mAnopAXi_mila
 titled_adjective	aBijAwa
 titleder_UNDEFINED	aBijAwa

@@ -122,3 +122,6 @@ change	parivarwiwa_ho
 importance	mahawwA
 me	mEM
 mine	mEM
+helpful	maxaxagAra
+finish	Kawma_kara
+yes	jI_hAz	
