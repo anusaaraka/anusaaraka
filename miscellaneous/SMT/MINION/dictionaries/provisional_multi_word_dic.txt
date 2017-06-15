@@ -5,3 +5,4 @@ optical_fibers	prakASika_wanwu
 angle_of_deviation	vicalana_koNa
 angle_of_incidence	Apawana_koNa
 in_recent_times	hAla_hI_meM
+blood_pressure	blada_preSara
