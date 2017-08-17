@@ -488,6 +488,8 @@ shall_have_been_ing	0_rahA_hogA-0-0
 #Ex: No, probably I shall have been studying at this time. <=> nahIM, SAyaxa mEM isa samayapaDZa rahA houMgA.
 will_have_been_ing	0_rahA_hogA-0-0
 #Ex: Will you have been sleeping at this time tomorrow? <=> kyA kala wuma isa samaya so rahe hoge?
+will_not_be_able_to_0	0_pAyegA-0-nahIM
+#Ex: By this the rays of Sun will not be able to cause harm to you. <=> isase sUrya kI kiraNeM Apako nukasAna nahIM pahuzcA pAezgI .
 ############################### tams with examples #############################################
 #are_to_be_en	nA_ke_liye_hE-0-0  Ex: All these fruits are to be eaten.
 #were_to_be_en   nA_ke_liye_WA-0-0  Ex: All these fruits were to be eaten.

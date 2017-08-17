@@ -125,3 +125,4 @@ mine	mEM
 helpful	maxaxagAra
 finish	Kawma_kara
 yes	jI_hAz	
+or	va

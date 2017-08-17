@@ -173,8 +173,8 @@
 	jayajayakAra_kara f	Suggested by Sukhada (05-05-15) Ex: Bansal is being hailed for saving a young child from drowning. 
 	golI_calA         f	"			"	Ex: The police opened fire on the public.
 	SoBA_baDA       f	Suggested by Bhagyashri Kulkarni (6-9-16) Ex: Beautiful paintings adorned the walls of the palace. 
+	CuttI_xe	f	Suggested by Chaitanya sir   (02-08-17) Ex: The patient also gets discharged from the hospital in seven days.
 	
-
 
 #  changes in compound_phrase.txt  (samAsa.txt)
 #  =========================
@@ -944,6 +944,7 @@ Removed:
 	5. ing			wA_huA-0-0	(By Shirisha Manju 	01-09-14)
 	6. shall_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
 	7. will_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
+	8. will_not_be_able_to_0	0_pAyegA-0-nahIM (Suggested by Chaitanya Sir 14-08-17)
 
  Removed :
  -------
@@ -1902,6 +1903,26 @@ Nandini ji LTRC 	27-11-13)
 	192. beneficial_adjective	PAyaxemanxa		(		"		"     )
 	193. difficult_adjective	kaRtapraxa		(		"		"     )
 	194. extremely_adverb		awyAXika		(		"		"     )
+	195. occur_verb			prakata_ho		(		"	      16-06-17)
+					Ex: In most patients no symptoms occur. aXikawara marIjoM meM koI BI lakRaNa prakata nahIM howe.
+	196. immediately_adverb      	wuranwa			(   By shirisha Manju         17-06-17)
+					Ex: This test is done immediately before and after exercise.
+	197. man_noun        		inasAna			(   By shirisha Manju         27-06-17)
+					Ex: On the addiction of nicotine coming once man starts being dependent on it and can not leave its habit
+					    easily. 
+	198. only_adverb		basa			(   By shirisha Manju         27-06-17)
+					Ex: Only some things need to be kept in mind.  basa kuCa bAwoM kA XyAna raKanA hogA .
+	199. grower_noun     		ugAne_vAlA/uga/ugA	(Suggested by Chaitanya Sir 12-08-17)
+	200. debtor_noun		uXArakarwA 		(Suggested by Chaitanya Sir 12-08-17)
+					Ex: A contract of guarantee is a conditional promise by the surety that if the principal debtor defaults
+					    he shall be liable to the creditor.
+	201. mostly_adverb              aXikAMSa        	(Suggested by Chaitanya Sir  16-08-17)
+                                        Ex: Debentures are mostly issued to finance the long-term requirements of business and do not carry any
+                                            voting rights.
+	202. finance_noun		viwwapoRaNa		(Suggested by Chaitanya Sir  16-08-17)
+	203. finance_verb		viwwapoRaNa_kara	(Suggested by Chaitanya Sir  16-08-17)
+					Ex: Debentures are mostly issued to finance the long-term requirements of business and do not carry any
+					    voting rights.
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2353,9 +2374,11 @@ Nandini ji LTRC 	27-11-13)
 	207. properly_adverb	uciwa_Dafga_se		as	TIka_se		(Suggested by Rajini           14-10-16)
 				Ex: It does not work properly. 
 	208. business_noun   	uxyoga			as	vyApAra		(Suggested by Rajini           17-10-16)
-	209. sugared_UNDEFINED	cInI			as	cInI_yukwa	(Suggested by Chaitanya Sir 		)
+	209. sugared_UNDEFINED	cInI			as	cInI_yukwa	(Suggested by Chaitanya Sir 	       )
+	210. strengthen_verb	Sakwi_baDa		as	majabUwa_kara	(	"	"	       14-08-17) 	
+				Ex: The choice of activities was left to the States/UTs most of whom chose activities that strengthen revenue
+                                    administration but not necessarily helped in moving towards conclusive titling.
 	
-
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -2513,6 +2536,7 @@ Nandini ji LTRC 	27-11-13)
 	at_the_behest_of	---	(		"		"   )
 	till_after		---	(		"	    21-07-15)	
 	related_to		---	(		"	    13-06-17)
+	in_the_form_of		---	(		"	    02-08-17)
 
 #  Changes in proper_noun-common_noun_compounds.txt 
 #  ================================================
@@ -3088,10 +3112,11 @@ Nandini ji LTRC 	27-11-13)
                                 Ex: That is why Haridwar is also called the Gate of the Ganges .
 	14. security_guard  	paharexAra		(Suggested by 14anu-ban-01      18-02-15)
 				Ex: The thief broke into the office while his accomplice stalled off the security guard.
-	15. never_mind		koI_bAwa_nahIM		(Suggested by Bhagyashri	(22-07-16)
+	15. never_mind		koI_bAwa_nahIM		(Suggested by Bhagyashri	22-07-16)
 	16. because_of      	ke_kAraNa		(Suggested by Chaitanya sir     07-06-17)
-	17. well_established	suprawiRTiwa		(Suggested by Rajini 		(09-06-17)
+	17. well_established	suprawiRTiwa		(Suggested by Rajini 		09-06-17)
 				(Added this meaning from well_establihed)
+	18. stretch_marks	KiMcAva_cihna		(Suggested by Chaitanya sir 	02-08-17)
 
 
    Modifying the head id:
@@ -3527,7 +3552,7 @@ Nandini ji LTRC 	27-11-13)
 	24. alternating_voltage prawyAvarwI_voltawA#prawyAvarwI_voltawA#noun#2#RM	(	"	"		  "	)
 				Ex: Such a voltage is called  alternating voltage  (ac voltage) and the current driven by it in a circuit is
                                     called the alternating current (ac current).
-	25. average_current	mAXya_XArA #mAXya_XArA #noun#2#RM			(Suggested by 14anu-ban-09      11-04-15)
+	25. average_current	mAXya_XArA#mAXya_XArA#noun#2#RM				(Suggested by 14anu-ban-09      11-04-15)
 				Ex: Thus, the sum of the instantaneous current values over one complete cycle is zero, and the average current
 				    is zero.
 	26. boiling_points	kvaWanAMka#kvaWanAMka#noun#2#WM				(Suggested by 14anu-ban-02      14-04-15)
@@ -3917,7 +3942,8 @@ Nandini ji LTRC 	27-11-13)
 	1. following_morning       agalI_subaha#noun#1#RM	as	agalI_subaha#noun#2#RM	    (Suggested by Chaitanya Sir 10-03-15)
 	2. Government_of_India     BArawa_sarakAra#noun#2#RM	as	BArawa_sarakAra#noun#1#RM   (By Manju       13-09-16)
 	3. paper_form      	   kAgaja_rUpa			as	kAgajI_rUpa		    (Suggested by Bhagyashri Kulkarni 16-9-16)
-	4. year_old		   varRIyA			as	varRIya			    (    "             "        "    14-11-16)     
+	4. year_old		   varRIyA			as	varRIya			    (    "             "        "    14-11-16)     	 5. liver_oil       	    eka_prakAra_kI_maCalI_ke_yakqwa_kA_wela  as  yakqwa_kA_wela      (Suggested by Chaitanya Sir 16-06-17)
+	6. fire_pit        	   KulI_havA_meM_agnikuMda	as	agnikuMda		    (	 "		"	   "	)
 
  Modified first meaning:
  -----------------------

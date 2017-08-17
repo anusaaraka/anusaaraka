@@ -29208,7 +29208,7 @@ street_theater	nukkadZa_nAtaka#nukkadZa_nAtaka#noun#2#RM
 street_value	anEwika_vaswuoM_kA_mUlya#anEwika_vaswuoM_kA_mUlya#noun#2#RM
 street_walker	veSyA#veSyA#noun#2#RM
 street_wise	badZe_Sahara_kI_muSkiloM_se_pariciwa#badZe_Sahara_kI_muSkiloM_se_pariciwa#noun#2#RM
-stretch_marks	KAla_KIMcane_se_padZane_vAle_niSAna#KAla_KIMcane_se_padZane_vAle_niSAna#noun#2#RM
+stretch_marks	KiMcAva_cihna/KAla_KIMcane_se_padZane_vAle_niSAna#KiMcAva_cihna/KAla_KIMcane_se_padZane_vAle_niSAna#noun#2#RM
 stretcher_bearer	strecara_vAhaka#strecara_vAhaka#noun#2#RM
 strike_breaker	hadZawAla_wodZanevAlA#hadZawAla_wodZanevAlA#noun#2#RM
 strike_general	sAmAnya_ama_hadZawAla#sAmAnya_ama_hadZawAla#noun#2#RM
@@ -33389,6 +33389,10 @@ something_or_the_other	kuCa_na_kuCa#kuCa_na_kuCa#determiner#1#RM
 #Keep taking something or the other at intervals.	(Suggested by Chaitanya sir 	15-06-17)
 something_or_other	kuCa_na_kuCa#kuCa_na_kuCa#determiner#1#RM
 #Keep taking something or the other at intervals.	(Suggested by Chaitanya sir 	15-06-17)
+gram_flour	besana/canA_kA_AtA#besana/canA_kA_AtA#noun#2#WM
+#In this, you can have toast butter, gram flour chila( pancake), puffed rice, fruits-salad and juice. (Suggested by Chaitanya sir  1-07-17)
+puffed_rice	muramurA#muramurA#noun#2#RM
+#In this, you can have toast butter, gram flour chila( pancake), puffed rice, fruits-salad and juice. (Suggested by Chaitanya sir  1-07-17)
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -74,7 +74,7 @@ him	vaha/usako/yaha
 himself	svayaM/Apase
 his	usakI/apane/usake/unake/usakA/yaha/apanI
 how	kEse/kiwanA/kisa_waraha/kEsA
-however	waWApi/waba_BI/PiraBI/Pira_BI/jEse_BI/hAlAzki/lekina
+however	waWApi/waba_BI/PiraBI/Pira_BI/jEse_BI/hAlAzki/lekina/jabaki
 i	mEM/muje/mEMne
 in	meM/vEyakwika/upalabXa/sawwArUDa/pracaliwa/pahane_hue/jalawI_huI/ina/in/BIwarI/anxara_kA/anwarika/anxara/BIwara/sawwArUDa_rAjanIwika_xala_kA_saxasya/praBuwva/prawi/kI_waraPa_se/ke_samaya_meM/ke_samaya/ke_anxara/se/kA
 including	sammiliwa_karawe_hue/sahiwa/SAmila_karanA
@@ -144,7 +144,7 @@ them	unako/unakA/unake/unheM/ve/una_para/unak/unheM_unako/vaha/apane
 themselves	Kuxa/svayaM
 there	vahAz/vaha
 these	ye/ina/yaha/inheM
-they	unheM/ve_loga/ve/unhoMne/ye/unameM
+they	unheM/ve_loga/ve/unhoMne/ye/unameM/unake
 this	yaha/isa/isese/iwanA/isake_lie/isakA/ise/EsA
 those	ve/jo/ina/una
 through	SurU_se_anwa_waka/sIXA/pUrNa/lagAwAra/KulA/eka_se_xUsare_waka/xvArA/SurU_se_AkIra_waka/se/pUrI_waraha_se/baxOlawa/acCI_waraha_se/eka_ora_se_xUsarI_ora/prawibanXa_ko_wodawe_hue/anwa_waka/meM_se/meM/ke_xvArA/ke_mAXyama_se/ke_jarie/se_waka/Suru_se_anwa_waka/ke_kAraNa
@@ -169,7 +169,7 @@ was	WA/WI/We
 we	hama/mEM/hameM/hamArA/hamane/hame/hamAre/hamArI/hamAr
 were	hEM/WA
 what	kOna-sA/kiwanA/kisa/jo_kuCa/kyA/jo/isA/jEsA
-whatever	jo_kuCa_BI/kuCa_BI/jo_BI
+whatever	jo_kuCa_BI/kuCa_BI/jo_BI/jiwanA
 when	jaba/yaxyapi/waba/cUzki/jisa_samaya/kaba/kyozki
 where	kahAz/jisa_sWAna_para/jaba_ki/jahAz/jisase/jisameM/jisapara
 which	kina/jo/jise/jinako/jinakA/jisake/jinase/jisameM/jisane/kOna-sA/jaba_ki/kyA/jisakA/jinheM/ji/kOna_sA/jahAz

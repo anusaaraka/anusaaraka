@@ -3406,7 +3406,7 @@ activations_UNDEFINED	uwpreraNa
 activator_noun	uwpreraka
 active-service_noun	sakriya_sevA
 active-voice_noun	kawqvAcya
-active_adjective	sakriya/weja/rediyoXarmI/PurwIlA/PurwIl/praBAvaSAlI/praBAvakArI/kriyASIla/kAryarawa/karwqvAcaka/jAgqwa
+active_adjective	sakriya/weja/rediyoXarmI/PurwIlA/PurwIl/praBAvaSAlI/praBAvakArI/kriyASIla/kAryarawa/karwqvAcaka/jAgqwa/cuswa
 active_noun	karwqvAcaka
 actively_adverb	sakriya_rUpa_se/sakriyawA_se
 activeness_noun	sakriyawA
@@ -3422,7 +3422,7 @@ activist_noun	sakriyawAvAxI
 activistic_adjective	sakriyawAvAxI
 activists_UNDEFINED	sakriya
 activities_UNDEFINED	kriyA-kalApa
-activity_noun	kriyA_kalApa/sakriyawA/kriyASIlawA/kriyA-kalApa/kriyA/kAryakalApa/gawiviXi
+activity_noun	kriyA_kalApa/sakriyawA/kriyASIlawA/kriyA-kalApa/kriyA/kAryakalApa/gawiviXi/prakriyA
 actor_noun	aBinewA/karwA/Ektar
 actors_UNDEFINED	aBinewA
 actress_noun	aBinewrI
@@ -3515,7 +3515,7 @@ addicted_adjective	vaSIBUwa/AxI/Asakwa
 addicting_UNDEFINED	lawa_lagA_huA
 addiction_noun	lawa/vyasana
 addictions_UNDEFINED	lawa
-addictive_adjective	lawa_lagAne_vAlI_vaswu/vyasanakArI
+addictive_adjective	lawa_lagAne_vAlI_vaswu/vyasanakArI/naSIlI
 addictively_UNDEFINED	lawa_lagAne_vAlI_vaswu_rUpa_se
 addictiver_UNDEFINED	lawa_lagAne_vAlI_vaswu
 addictivest_UNDEFINED	lawa_lagAne_vAlI_vaswu
@@ -4072,7 +4072,7 @@ affixed_UNDEFINED	jodanA
 affixes_UNDEFINED	jodanA
 affixing_UNDEFINED	jodanA
 afflict_UNDEFINED	wraswa_ho
-afflict_verb	xuHKI_ho/pIdiwa_ho/wraswa_ho[karanA]
+afflict_verb	xuHKI_ho/pIdiwa_ho/wraswa_ho[karanA]/graswa_ho
 afflicted_adjective	sanwapwa
 afflicting_UNDEFINED	wraswa_honA
 affliction_noun	pIdA/xuHKa/roga/musIbawa
@@ -6302,7 +6302,7 @@ approximater_UNDEFINED	samIpa_AnA
 approximates_UNDEFINED	samIpa_AnA
 approximatest_UNDEFINED	samIpa_AnA
 approximating_UNDEFINED	samIpa_AnA
-approximation_noun	nikatawA/sAxqSya/lagaBaga_sahI_anumAna
+approximation_noun	nikatawA/sAxqSya/lagaBaga_sahI_anumAna/anxAjA
 approximations_UNDEFINED	nikatawA
 appurtenance_UNDEFINED	upAbanXa
 appurtenance_noun	sAja-sAmAna/pUraka/upAbanXa{pariSiRta}
@@ -8818,7 +8818,7 @@ beamed_UNDEFINED	camakanA
 beaming_UNDEFINED	camakanA
 beaming_adjective	xIpwimAna
 beams_UNDEFINED	prakASa_kI_kiraNa
-bean_noun	sema/WodA/sikkA/pEsA/kuCa/bIja
+bean_noun	PalI/sema/WodA/sikkA/pEsA/kuCa/bIja
 beanbag_noun	bInabEga
 beanfeast_noun	prIwiBoja/melA
 beanpole_UNDEFINED	lambA-xubalA_vyikwa
@@ -14674,8 +14674,8 @@ cleanest_UNDEFINED	KAlI
 cleaning_noun	saPAI
 cleanlier_UNDEFINED	binA_koI_galawI_se
 cleanliest_UNDEFINED	binA_koI_galawI_se
-cleanliness_noun	scacCawA/saPAI
-cleanlinesses_UNDEFINED	scacCawA
+cleanliness_noun	svacCawA/saPAI
+cleanlinesses_UNDEFINED	svacCawA
 cleanly_adverb	binA_koI_galawI_se/ImAnaxArI_se/AsAnI_se
 cleans_UNDEFINED	KAlI
 cleanse_verb	SoXana_kara/Xo/SuxXI_kara/sAPa_kara/mukwa_kara
@@ -16783,7 +16783,7 @@ conjuring_noun	jAdU_kA_Kela
 conjuror_noun	jAxUgara
 conk_verb	behoSa_ho_jA
 connect_UNDEFINED	sambanXa_kara
-connect_verb	joda/telIPona_para_milA/satA/sambanXa_sWApiwa_kara/sambanXa_joda/Pona_para_milA/milA/laga/judA_ho
+connect_verb	joda/telIPona_para_milA/satA/sambanXa_sWApiwa_kara/sambanXa_joda/Pona_para_milA/milA/laga/judA_ho/juda
 connected_UNDEFINED	jodanA
 connecting-rod_noun	saMyojI_SalAkA
 connecting_UNDEFINED	jodanA
@@ -20217,7 +20217,7 @@ debris_noun	rodA/malabA/kacarA
 debrises_UNDEFINED	rodA
 debt_noun	uXAra/qNa/karja/bAXyawA/ABAra_bAXyawA/ABAra
 debta_UNDEFINED	xevawA
-debtor_noun	xenaxAra/qNI
+debtor_noun	xenaxAra/qNI/uXArakarwA
 debtors_UNDEFINED	xenaxAra
 debts_UNDEFINED	qNa
 debug_UNDEFINED	xoRamArjana
@@ -20713,7 +20713,7 @@ defined_UNDEFINED	spaRta_karanA
 defines_UNDEFINED	spaRta_karanA
 defining_UNDEFINED	spaRta_karanA
 definite_adjective	niSciwa/spaRta
-definitely_adverb	pakkA_karanA/niSciwa_rUpa_se/spaRtawA_se
+definitely_adverb	pakkA_karanA/niSciwa_rUpa_se/spaRtawA_se/jarUra
 definiter_UNDEFINED	niSciwa
 definitest_UNDEFINED	niSciwa
 definition_noun	pariBARA/rUpareKA_kI_spaRtawA/pariBARAkaraNa/nirXAraNa/vyAKyA/spaRta
@@ -22224,7 +22224,7 @@ differentiating_UNDEFINED	viBexa_jAna_lenA
 differentiation_noun	avakalana/viSiRtIkaraNa/viBexana
 differentiator_UNDEFINED	avakalaka
 differently_UNDEFINED	Binna_rUpa_se
-differently_adverb	alaga_prakAra_se
+differently_adverb	alaga_prakAra_se/alaga-alaga
 differing_UNDEFINED	Binna_honA
 differs_UNDEFINED	Binna_honA
 difficult_UNDEFINED	muSkIla
@@ -22264,7 +22264,7 @@ digestible_adjective	supAcya
 digesting_UNDEFINED	pacAnA
 digestion_noun	pacAva/pAcana_Sakwi/pAcana
 digestions_UNDEFINED	pAcana
-digestive_adjective	pAcaka
+digestive_adjective	pAcaka/pAcana
 digestiver_UNDEFINED	pAcaka
 digestives_UNDEFINED	pAcaka
 digestivest_UNDEFINED	pAcaka
@@ -26162,7 +26162,7 @@ energize_UNDEFINED	kriyASIla_karanA
 energize_verb	uwsAhiwa_kara/UrjA_praxAna_kara/kriyASIla_kara
 energizer_noun	jIvanaxAwA
 energizing_adjective	wAjagI_xene_vAlA/sPUrwixAyaka
-energy_noun	UrjA/kArya-Sakwi
+energy_noun	UrjA/kArya-Sakwi/Sakwi
 enervate_UNDEFINED	WakA
 enervate_verb	hawowsAha_kara
 enervated_UNDEFINED	Wake_hue
@@ -26926,7 +26926,7 @@ esotericer_UNDEFINED	gUDa
 esotericest_UNDEFINED	gUDa
 especial_UNDEFINED	viSiCata
 especial_adjective	viSiRta
-especially_adverb	viSeRawaH/viSeRa_rUpa_se/KAsa_wOra_para
+especially_adverb	viSeRawaH/viSeRa_rUpa_se/KAsa_wOra_para/KAsakara
 espied_UNDEFINED	Bexa_lenA
 espies_UNDEFINED	Bexa_lenA
 espionage_noun	gupwacara_raKanA/jAsUsI/cAravqwwi
@@ -27404,7 +27404,7 @@ excepts_UNDEFINED	CodanA
 excerpt_UNDEFINED	uXqwa_karanA
 excerpt_noun	uxXaraNa
 excerpt_verb	uxXqwa_kara
-excess_adjective	jarUrawa_se_jyAxA
+excess_adjective	jarUrawa_se_jyAxA/aXika
 excess_noun	bahuwa_aXika/jyAxawI/aXiSeRa/aXikawA
 excesser_UNDEFINED	bahuwa_aXika
 excesses_UNDEFINED	bahuwa_aXika
@@ -27742,7 +27742,7 @@ expense_noun	Karca/lAgawa
 expensed_UNDEFINED	lAgawa
 expenses_UNDEFINED	lAgawa
 expensing_UNDEFINED	lAgawa
-expensive_adjective	mahazgA/mahMagA/kImawI/bahumUlya
+expensive_adjective	mahazgA/mahMagA/kImawI/bahumUlya/KarcIlA
 expensively_adverb	aXika_Karca_karake
 expensiver_UNDEFINED	mahazgA
 expensivest_UNDEFINED	mahazgA
@@ -28335,7 +28335,7 @@ fall-through_verb	asaPala_ho
 fall-to_verb	hAra_jA/SurU_kara
 fall_adjective	SarawkAlIna/pawaJada
 fall_noun	pawana/vinASa/topI_Axi_ke_pICe_se_latakawA_kapadA/Sarax_qwu/Saraxqwu/Saraxa_qwu/pawaJada/JaranA/JAlara/girAvata/girAva/geharAI/DalAva/DalAna/parAjaya
-fall_verb	XimA_ho/Xasa_jAnA/uwara/ulata_jA/sawiwva_Ko/samarpana_kara/sahamawa_ho/pIlA_pada/paxAvanawa_ho/pawana_ho/parAswa_ho/parAjiwa_ho/pahuzca/pahuMca/padanAa/pada/paCAda_KA/nikala/nIce_gira/naRta_ho/mAna/manxa_ho/laga/ladaKadA_kara_gira/ke_hisse_meM_A/KarAba_ho/kama_pada/kama_ho/Kade_ho/Juka/Jada/ho/graswa_ho/gira_pada/girA/gira/Gata/DalU_ho/Daha/CA/CA_jA/BraRta_ho/bigada/barasa/barabAxa_ho/A/lAlaca_meM_A
+fall_verb	XimA_ho/Xasa_jAnA/uwara/ulata_jA/sawiwva_Ko/samarpana_kara/sahamawa_ho/pIlA_pada/paxAvanawa_ho/pawana_ho/parAswa_ho/parAjiwa_ho/pahuzca/pahuMca/padanAa/pada/paCAda_KA/nikala/nIce_gira/naRta_ho/mAna/manxa_ho/laga/ladaKadA_kara_gira/ke_hisse_meM_A/KarAba_ho/kama_pada/kama_ho/Kade_ho/Juka/Jada/ho/gira_pada/girA/gira/Gata/DalU_ho/Daha/CA/CA_jA/BraRta_ho/bigada/barasa/barabAxa_ho/A/lAlaca_meM_A
 fallacies_UNDEFINED	Brama
 fallacious_adjective	Brama_meM_dAlane_vAlA/xoRayukwa
 fallaciouser_UNDEFINED	Brama_meM_dAlane_vAlA
@@ -29540,8 +29540,8 @@ finals_UNDEFINED	anwima_caraNa
 finance-company_noun	pEsoM_kA_lena_xena_karane_vAlI_kampanI
 finance-house_noun	pEsoM_kA_lena_xena_karane_vAlI_saMsWA
 finance_adjective	viwwIya
-finance_noun	ArWika_vyavasWA/viwwa-vyavasWA/viwwa/pUzjI/ArWika_prabanXa/arWa-vyavasWA
-finance_verb	ArWika_prabanXa
+finance_noun	ArWika_vyavasWA/viwwa-vyavasWA/viwwa/pUzjI/ArWika_prabanXa/arWa-vyavasWA/viwwapoRaNa
+finance_verb	ArWika_prabanXa/viwwapoRaNa_kara
 financed_UNDEFINED	ArWika_prabanXa
 finances_UNDEFINED	ArWika_prabanXa
 financial-year_noun	ArWika_varRa
@@ -34712,7 +34712,7 @@ groves_UNDEFINED	kuFja
 grow_verb	baDa/upajA/ugA/pExA_kara/PEla/pAla/jA/ho_jA/baDA/A/Age_baDa
 grower-member_UNDEFINED	uwpAxaka-saxasya
 grower-seller_UNDEFINED	uwpAxaka-vikrewA
-grower_noun	baDane_vAlA_pOXA/uwpAxaka
+grower_noun	ugAne_vAlA/baDane_vAlA_pOXA/uwpAxaka/uga/ugA
 growing_UNDEFINED	baDanA
 growing_adjective	pragawiSIla/baDawA
 growl_noun	gurrAhata/gadagadAhata
@@ -35849,7 +35849,7 @@ harlotest_UNDEFINED	veSyA
 harlotry_noun	veSyAvqwwi
 harlots_UNDEFINED	veSyA
 harm_noun	hAni/kRawi/nukasAna
-harm_verb	kRawi_pahuzc/hAni_pahuzc/aniRta_kara
+harm_verb	kRawi_pahuzca/hAni_pahuzca/aniRta_kara
 harmed_UNDEFINED	hAni
 harmful_adjective	hAnikAraka/hAnipraxawA
 harmfuler_UNDEFINED	hAnikAraka
@@ -36323,7 +36323,7 @@ heart-to-heart_adjective	svacCanxa_evaM_Anwarika
 heart-to-heart_noun	svacCanxa_evaM_Anwarika_bawacIwa/xila_hI_xila_meM
 heart-warming_adjective	AnanxaxAyI/suKaxa
 heart-whole_adjective	jigarI/hArxika
-heart_noun	hqxaya/xila/xayA/wawva/vIra/uwsAha/sAra/saMvexanSIlawA/sAhasa/priya/premI/pAna_kA_pawwA/moha/maXya_BAga/kenxra/jI/jAna/bIca/hraxaya
+heart_noun	xila/hqxaya/xayA/wawva/vIra/uwsAha/sAra/saMvexanSIlawA/sAhasa/priya/premI/pAna_kA_pawwA/moha/maXya_BAga/kenxra/mana/jI/jAna/bIca
 heartache_noun	gahana_KinnawA/manovyaWA
 heartaches_UNDEFINED	gahana_KinnawA
 heartbeat_noun	xila_kI_Xadakana/Xadakana
@@ -36584,7 +36584,7 @@ help_verb	sahAyawA_kara/sevA_kara/sahAyaka_ho/sahArA_xe/prowsAhana_xe/prabanXa_k
 helped_UNDEFINED	sahAyawA_karanA
 helper_noun	sahAyaka/sahAyawA_karanevAlA
 helpers_UNDEFINED	sahAyaka
-helpful_adjective	sahAyaka/lABaxAyaka
+helpful_adjective	sahAyaka/lABaxAyaka/upayogI
 helpfuler_UNDEFINED	sahAyaka
 helpfulest_UNDEFINED	sahAyaka
 helpfully_adjective	maxaxagAra
@@ -38971,7 +38971,7 @@ immeasurabler_UNDEFINED	aparimiwa
 immeasurablest_UNDEFINED	aparimiwa
 immediacy_noun	kAlika_sannikatawA/wAwkAlikawA/avilambawA
 immediate_adjective	wAwkAlika/SiGra/sannihiwa/samIpavarwI/nikatawama/mUla/karIba_ke/avyavahiwa
-immediately_adverb	wawkAla/wuranwa_hI/usI_samaya/TIka/POrana
+immediately_adverb	wawkAla/wuranwa_hI/usI_samaya/TIka/POrana/wuranwa
 immediater_UNDEFINED	avyavahiwa
 immediatest_UNDEFINED	avyavahiwa
 immemorial_adjective	awi_prAcIna/cirakAla
@@ -39368,7 +39368,7 @@ import_noun	mahawva/AyAwa/arWa
 import_verb	AyAwa_kara/bulAyA_jAnA
 importance_noun	mahawva/prawiRTA/mahawwva/guruwva/guruwA/gamBIrawA/Adambara
 importances_UNDEFINED	mahawva
-important_adjective	mahawwvapUrNa/viSiRta/SAnaxAra/sabase_mahawwvapUrNa/muKya/awyAvaSyaka/KAsa/mahawvapUrNa
+important_adjective	mahawwvapUrNa/viSiRta/SAnaxAra/sabase_mahawwvapUrNa/muKya/awyAvaSyaka/KAsa/mahawvapUrNa/jarUrI
 importanter_UNDEFINED	mahawwvapUrNa
 importantest_UNDEFINED	mahawwvapUrNa
 importantly_adverb	AvaSyaka_rUpa_meM/mahawwvapUrNa_Dafga_se
@@ -45598,7 +45598,7 @@ light-heartedly_adverb	prasannawA_se
 light-pen_noun	lAita-pena
 light-year_noun	prakASa_varRa
 light-years_noun	lambA_samaya
-light_adjective	xuScaritra/XImA/wucCa/sugama/PurwIlA/narama/manxa/mAmUlI/laGu/kuCa_kama/kama/harajAI/halkI/halkA/CiCorA/camakIlA/binA_BAra_kA/baluI/ayaciwa/asWiramawi/halakA/balAGAwaSUnya/WakAvata_rahiwa/sarala/PuhAra/BAra_rahiwa
+light_adjective	xuScaritra/XImA/wucCa/sugama/PurwIlA/narama/manxa/mAmUlI/laGu/kuCa_kama/kama/harajAI/halkI/halkA/CiCorA/camakIlA/binA_BAra_kA/baluI/ayaciwa/asWiramawi/halakA/balAGAwaSUnya/WakAvata_rahiwa/sarala/PuhAra/BAra_rahiwa/halkA-PulkA
 light_adverb	xIre-xIre/namrawA_se/halakepana_se/AsAnI_se
 light_noun	roSanI/xqRtikoNa/xqRti/xIyA/xipaka/xina_kA_prakASa/uwsarjana/ujAlA/svargIya_jyowI/suryaprakASa/rOSanII/roSanaxAna/PUtalAita/prakASaxraSI/prakASapuFja/prakASamAna/prakASa/lejara/lAitahAus/lAita/kiraNa/kaleje_kA_tukadA/camaka/buxXi/bawwI/afgAra/prakASa-srowa/samaJa
 light_verb	uwwejiwa_ho/ujAlA_kara/roSanI_xe/roSana_kara/rAswA_xiKA/prakASiwa_kara/jalA/camaka/Aga_laga/prakASiwa_ho/camaka_uTa
@@ -47316,7 +47316,7 @@ man-made_adjective	mAnava-nirmiwa/kqtrima
 man-of-war_noun	yuxXapowa
 man-size_adjective	upayukwa
 man-sized_adjective	upayukwa
-man_noun	AxamI/wuma/vyakwi/sipAhI/purURa/pUrNa_purURa/premI/pawi/marxa/manuRya/mAnava/KixamawagAra/AxamII/nara/sEnika/nOkara
+man_noun	AxamI/wuma/vyakwi/sipAhI/purURa/pUrNa_purURa/premI/pawi/marxa/manuRya/mAnava/KixamawagAra/AxamII/nara/sEnika/nOkara/inasAna
 man_verb	AxamI_lagA/AxamI_kAma_para_ho[lagAnA]
 manacle_noun	haWakadI
 manacled_UNDEFINED	haWakadI
@@ -47551,7 +47551,7 @@ manurkar_UNDEFINED	manurakara
 manuscript_adjective	haswaliKiwa
 manuscript_noun	pANdulipi/haswalipi
 manuscripts_UNDEFINED	pANdulipi
-many_adjective	bahuwa_se/kiwane/kaI/jiwanA/iwane/Dera_SAre/bahuwa_sAre
+many_adjective	bahuwa_se/kiwane/kaI/jiwanA/iwane/Dera_SAre/bahuwa_sAre/bahuwa
 many_determiner	aneka
 many_pronoun	kaI
 map_noun	mAnaciwra/mAncitra
@@ -48055,7 +48055,7 @@ matte_adjective	camakarahiwa
 matted_UNDEFINED	catAI
 matter-of-fact_adjective	waWyAwmaka
 matter_UNDEFINED	mahawwvapUrNa_ho
-matter_noun	xravya/wawva/viRaya/upAxAna/samasyA/sAmagrI/sAmagra/pIba/paxArWa/mAmalA/mahawva/kAraNa/cIja/BAra
+matter_noun	xravya/wawva/viRaya/upAxAna/samasyA/sAmagrI/sAmagra/pIba/paxArWa/mAmalA/mahawva/kAraNa/cIja/BAra/bAwa
 mattered_UNDEFINED	xravya
 mattering_UNDEFINED	xravya
 matters_UNDEFINED	xravya
@@ -50613,7 +50613,7 @@ mossy_adjective	kAIxAra/GisA_pitA
 most_adjective	aXikAMSa/sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/jyAxAwara
 most_adverb	sabase_aXika/lagaBaga/awyaXika
 most_pronoun	aXikawama
-mostly_adverb	prAyaH/mUKya_rUpa_se
+mostly_adverb	prAyaH/mUKya_rUpa_se/aXikAMSa
 mosy_noun	cUhe_jEsA
 mote_noun	XUla_kaNa
 motel_noun	motala
@@ -50918,7 +50918,7 @@ muadhdhin_noun	muajjina
 muazzin_noun	muajjina
 much-more_less	adverb/Pira_BI_aXika
 much-raker_noun	xoRa_KojanevAlA
-much_adjective	bahuwa/bahuwa_kAla/aXika
+much_adjective	bahuwa/bahuwa_kAla/aXika/jyAxA
 much_adverb	bahuwa/prAyaH/Ora/karIba-karIba
 mucher_UNDEFINED	bahuwa
 muchest_UNDEFINED	bahuwa
@@ -53211,7 +53211,7 @@ nutritionary_UNDEFINED	poRaNa_sambanXI
 nutritionist_UNDEFINED	poRaNa_viSeRajFa
 nutritionist_noun	AhAra_vijFa
 nutritionists_UNDEFINED	poRaNa_viSeRajFa
-nutritious_adjective	pORtika/poRaka
+nutritious_adjective	pORtika/poRaka/puRtikAraka
 nutritive_adjective	poRaNa_sambanXI
 nuts_adjective	pAgala
 nuts_noun	pAgala
@@ -53572,7 +53572,7 @@ occupiers_UNDEFINED	aXivAsI
 occupies_UNDEFINED	kabjA_karanA
 occupy_verb	raha/kabjA_kara/grahaNa_kara/samBAla/jarUrawa_ho
 occupying_UNDEFINED	kabjA_karanA
-occur_verb	aswiwva_meM_ho/pAyA_jA/ho/Gatiwa_ho/A/Gata/sUJa
+occur_verb	aswiwva_meM_ho/pAyA_jA/ho/Gatiwa_ho/A/Gata/sUJa/prakata_ho
 occurence_verb	Gata
 occurred_UNDEFINED	GatanA
 occurrence_noun	GatanA/upasWiwi
@@ -53968,7 +53968,7 @@ online_adjective	oYna-lAina/oYnalAina
 online_noun	oYnalAina
 onlooker_noun	wamASabIna/xarSaka
 onlookers_UNDEFINED	xarSaka
-only_adjective	kevala/sirPa/ikalOwA/eka_mAtra/ekamAtra/akelA
+only_adjective	kevala/sirPa/ikalOwA/eka_mAtra/ekamAtra/akelA/basa
 only_adverb	kevala/waBI/sirPa/mAwra/mAtra/kinwu/hI
 onomatopoeia_noun	Xvani-anukaraNAwmaka_Sabxa/Xvani-anukaraNa
 onomatopoeic_adjective	Xvani_anukaraNAwmaka
@@ -54205,7 +54205,7 @@ opulentest_UNDEFINED	xOlawamanxa
 opulently_adverb	vEBavapUrNa_Dafga_se/AlISAna_Dafga_se
 opus_noun	safgIwa_racanA/racanA
 or-else_conjunction	nahIM_wo
-or_conjunction	yA/xo_meM_eka/aWavA/anyaWA
+or_conjunction	yA/xo_meM_eka/aWavA/anyaWA/va
 oracle_noun	xevavANI/xivyavakwA/xevavANI_sWala/jAnakArImaya_puswaka/jAnakAra
 oracles_UNDEFINED	xevavANI
 oracular_adjective	xevavANI_ke_samAna/rahasyamaya
@@ -54470,7 +54470,7 @@ ostrich_noun	Suwura_murga/Suwuramurga
 ostriches_UNDEFINED	Suwura_murga
 other(s)_UNDEFINED	anya
 other-worldly_adjective	pAralOkika
-other_adjective	anya/xUsarA/xUsar/viparIwa/Ora
+other_adjective	anya/xUsarA/xUsarI/viparIwa/Ora
 other_determiner	anya/xUsarA/bAkI
 other_pronoun	anya/xUsarA
 otherness_noun	BinnawA
@@ -55677,7 +55677,7 @@ panaches_UNDEFINED	kalazgI
 panalella_noun	eka_pawalA_lambA_sigAra
 panama_noun	bAzsa_se_banI_huI_topI
 panamas_UNDEFINED	bAzsa_se_banI_huI_topI
-pancake_noun	cillA/capatA_gola_keka/BArI_parawa
+pancake_noun	cIlA/capatA_gola_keka/BArI_parawa
 pancakes_UNDEFINED	cillA
 panchayat_noun	paFcAyawa
 panchayet_noun	paFcAyawa
@@ -63214,7 +63214,7 @@ radiated_UNDEFINED	Ananxa_PElAnA
 radiates_UNDEFINED	Ananxa_PElAnA
 radiating_UNDEFINED	Ananxa_PElAnA
 radiation-sickness_noun	vikiraNaSIla_kiraNoM_ke_praBAva_se_hone_vAlA_roga
-radiation_noun	kiraNa_pAwa/vikiraNa_cikiwsA/vikiraNa/rediyo_XarmI_paxArWa_kI_sahAyawA_se_ilAja_karAnA
+radiation_noun	vikiraNa/kiraNa_pAwa/vikiraNa_cikiwsA/rediyo_XarmI_paxArWa_kI_sahAyawA_se_ilAja_karAnA
 radiations_UNDEFINED	rediyo_XarmI_paxArWa_kI_sahAyawA_se_ilAja_karAnA
 radiator_noun	kiraNeM_nikalanevAlA_yanwra/vikiraka/rediyetara
 radiators_UNDEFINED	rediyetara
@@ -76937,7 +76937,7 @@ streetwise_UNDEFINED	kArya_kuSala
 streetwise_adjective	apanA_bacAva_karane_meM_sakRama
 strength_UNDEFINED	Sakwi
 strength_noun	wIvrawA/wAkawa/safKyA/prawyayakAriwA/majabUwI/guNa/bala/kRamawA/kula_safKyA
-strengthen_verb	Sakwi_baDa/majabUwa_kara/majabUwa_ho
+strengthen_verb	majabUwa_kara/Sakwi_baDa/majabUwa_ho
 strengthened_UNDEFINED	Sakwi_baDanA
 strengthener_noun	sambalana
 strengthening_UNDEFINED	Sakwi_baDanA
@@ -86037,7 +86037,7 @@ unionize_verb	safgaTiwa_ho/safGa_banA
 unionized_adjective	safgaTiwa
 unions_UNDEFINED	saMyoga
 uniprocessing_UNDEFINED	eka_saMsAXana
-unique_adjective	anupama/viSiRta/viciwra/ekamAwra/axviwIya/anUTA/alaga-alaga/apUrva
+unique_adjective	anupama/viSiRta/viciwra/ekamAwra/axviwIya/anUTA/alaga-alaga/apUrva/anoKA
 uniquely_UNDEFINED	anoKepana_se
 uniquely_adverb	viSiRta_rUpa_se/vilakRaNa_Dafga_se/alaga-alaga
 uniqueness_UNDEFINED	anoKApana
@@ -88756,7 +88756,7 @@ verve_noun	uwsAha/joSa
 verves_UNDEFINED	uwsAha
 vervet_noun	varvata_vAnara
 very_adjective	vahI/TIka/bahuwa[uwwamA_sUcaka]/usI
-very_adverb	bahuwa/ekaxama/bilakula_vahI/bahuwa_hI/awyanwa
+very_adverb	bahuwa/ekaxama/bilakula_vahI/bahuwa_hI/awyanwa/behaxa
 vesical_adjective	mUwrASayI
 vesicant_adjective	uwsPotaka
 vesicant_noun	uwsPotaka
@@ -93599,3 +93599,4 @@ blood-stream_noun	rakwapravAha
 moti_noun	mowI
 non-medical_adjective	gEra_cikiwsIya
 pre-delivery_adjective	prasava_pUrva
+busyness_noun	vyaswawA

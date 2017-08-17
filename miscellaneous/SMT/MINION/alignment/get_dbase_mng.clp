@@ -201,7 +201,7 @@
  	)
  )
  ;--------------------------------------------------------------------------------------------------------
- (defrule get_mng_from_all_dic1
+ (defrule get_mng_from_all_dic
  (declare (salience 155))
  (id-original_word ?id ?word)
  (id-root ?id ?root)
@@ -222,6 +222,8 @@
 		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "wsd_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "crude_equivalent_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "transliterate_meaning.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "provisional_transliterate_mng.gdbm" ?id ?w ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 

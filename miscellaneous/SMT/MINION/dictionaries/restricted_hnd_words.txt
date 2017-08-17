@@ -18,8 +18,8 @@ hE	is/have/are/be/has/am
 #apanA	the/our
 usakI	his/its/him/her/he
 usake	his/its
-unakA	them/their
-unake	them/their/him
+unakA	them/their/they
+unake	them/their/him/they
 #him added for number plural , honorophic
 merA	i/me/my/mine
 vaha	she/he/the/her/him/they/them/that/those/it
@@ -32,5 +32,5 @@ jinakA	which
 hama	we
 hamArA	our
 jisake	which
-saBI	overall/all/every
+saBI	overall/all/every/everyone
 saba	all/everyone/everything/sub

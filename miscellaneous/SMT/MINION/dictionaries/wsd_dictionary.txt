@@ -1983,7 +1983,7 @@ hark	yAxa_xilA/XyAna_se_suna/
 harmonious	saxBAvanApUrNa/samasvara/suvyavasWiwa/
 harmonize	mela_KA/eka_samAna_kara/sura_wAla_milA/
 harmony	sura/laya/wAlamela/
-harm	hAnI/hAnI_pahuzcA/
+harm	hAni/hAni_pahuzcA/
 harp	bahuwa_bola/hArpa/
 harrow	xu:Kaxa/hEro/
 harry	wafga_kara/bAra-bAra_AkramaNa_kara/
