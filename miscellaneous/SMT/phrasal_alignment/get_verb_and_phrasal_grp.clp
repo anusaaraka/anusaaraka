@@ -124,13 +124,28 @@
 (manual_word_info (head_id ?mid) (word ?w))
 (man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
 (manual_word_info (head_id ?mid1&:(= (- ?id 1) ?mid1)) (word $?word))
-(database_info (components $?word ?r) (root ?root))
+(or (database_info (components $?word ?r) (root ?root))(database_info (components $?word ho|kara) (root ?root)))
 =>
        	(retract ?f0 )
 	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?id ?mid $?gids - $?word $?mng))
        	(assert (id-man_root ?mid1 $?word ?r))
 )
-
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 16-06-17
+;In most patients no symptoms occur. aXikawara marIjoM meM koI BI lakRaNa prakata nahIM howe.
+(defrule check_nahIM_for_kara_or_ho_or_xe_using_dic
+(declare (salience 835))
+?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
+(manual_word_info (head_id ?mid) (word ?w))
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
+(manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word nahIM))
+(manual_word_info (head_id ?mid2&:(= (- ?mid1 1) ?mid2)) (word $?word))
+(or (database_info (components $?word ?r))(database_info (components $?word ho|kara) (root ?root)))
+=>
+        (retract ?f0 )
+        (assert (chunk_name-chunk_ids-words ?chnk  ?mid2 ?mid1 ?mid $?gids - $?word nahIM $?mng))
+        (assert (id-man_root ?mid2 $?word ?r))
+)
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 12-2-15
 ;if there is no entry in database then check for the mng in WSD
@@ -241,6 +256,23 @@
 	(assert (root_decided ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 27-07-17
+;On the addiction of nicotine coming once man [starts being dependent] on it and can not leave its habit easily.
+;eka bAra nikotIna kI lawa padane para inasAna usa para [nirBara rahane lagawA hE] Ora isakI Axawa ko AsAnI se Coda nahIM sakawA
+(defrule verb_rule3
+(declare (salience 730))
+(chunk_name-chunk_ids-words VGNN ?id - ?w)
+?f1<-(manual_word_info (head_id ?id) (word ?w))
+(test (eq (sub-string (- (length ?w) 1) (length ?w) ?w) "ne"))
+?f2<-(manual_word_info (head_id ?id1&:(= (+ ?id 1) ?id1)) (word $?mng) (root laga)(group_ids $?ids))
+;?f2<-(manual_word_info (head_id ?id1&:(= (+ ?id 1) ?id1)) (word $?mng) (root laga)(tam wA_hE) (group_ids $?ids))
+=>
+	(retract ?f1)
+	(bind ?nr (string-to-field (str-cat ?w"_laga")))
+	(modify ?f2 (word ?w $?mng)(root ?nr) (root_components ?w laga)(group_ids ?id $?ids))
+	(assert (root_decided ?id1))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;Fresh breath and shining teeth enhance your personality. wAjA sAzseM Ora camacamAwe xAzwa Apake vyakwiwva ko [niKArawe hEM].  
 ;This causes a major upheaval in science.  ye prekRaNa hI vijFAna meM mahAna krAnwi kA [kAraNa banawe] [hEM].
@@ -284,10 +316,10 @@
 (not (id-Apertium_output ? ?m1 $?mng));The [work] [done] by the spring force in a cyclic process is zero. awaH spriMga bala xvArA kisI cakrIya prakrama meM [kiyA gayA] [kArya] SUnya howA hE.  dic -- kArya_kara
 (test (< ?id1 ?id0))
 (not (id-Apertium_output ? ?m));Keep doing small physical activities like climbing stairs, gardening, small domestic [works] or dancing.
+(not (id-Apertium_output ? ?m1 $?))
 (not (and (id-Apertium_output ? ?a)(man_word-root-cat ?a  ho v)))
 (not (manual_id-word =(- ?id1 1) kA)) ;nahIM , mEMne subaha kA [nASwA] kAPI BArI [kiyA] WA  .
 =>
-        (retract ?f1)
 	(bind ?nr (remove_character " " (implode$ (create$ ?m ?r)) "_"))
 	(if (neq ?m1 ?r) then
 		(bind ?last_wrd (string-to-field (sub-string (- (length ?m1) 1) (length ?m1) ?m1  )))
@@ -296,14 +328,17 @@
 	)
 ;	(printout t "lwrd "?last_wrd crlf)
 	(if (neq (length ?last_wrd) 0) then
+        	(retract ?f1)
 		(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ ?last_wrd $?mng)) "_"))))
 		(modify ?f0 (head_id ?id1)(word ?m ?m1 $?mng)(root ?nr)(root_components ?m ?r)(group_ids ?id1 $?ids)(tam ?ntam)(tam_components ?last_wrd $?mng))
+		(assert (root_decided ?id1))
 	else (if (neq (length $?mng) 0) then
+	        (retract ?f1)
 		(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ $?mng)) "_"))))
 		(modify ?f0 (head_id ?id1)(word ?m ?m1 $?mng)(root ?nr)(root_components ?m ?r)(group_ids ?id1 $?ids)(tam ?ntam)(tam_components $?mng))
+		(assert (root_decided ?id1))
 	     )
 	)
-	(assert (root_decided ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -316,6 +351,7 @@
 (database_info (components ?m ?r&kara|ho))
 ?f<-(manual_word_info (word ?m1 $?m2)(group_ids ?id1&:(= (+ ?id 1) ?id1) $?ids))
 (man_word-root-cat ?m1  ?r1&kara|ho v)
+(not (id-Apertium_output ? ?m ))
 =>
 	(retract ?f1)
 	(bind ?nr (remove_character " " (implode$ (create$ ?m ?r1)) "_"))
@@ -482,10 +518,14 @@
 (declare (salience 400))
 ?f2<-(chunk_name-chunk_ids-words VGF ?id0 $?ids - ?m1 $?mng)
 ?f<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(root $?r) (group_ids ?id0 $?ids))
-(anu_id-anu_mng-man_mng ? ? ?m ?m1 $?m2)
-?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m&~kyA)(group_ids $?ids1))
-?f1<-(chunk_name-chunk_ids ? ?id)
+(anu_id-anu_mng-man_mng ? ?a ?m ?m1 $?m2)
 (not (id-Apertium_output ? ?m))
+(not (id-HM-source ? ?m1 ?))
+(not (database_info (root ?a) (meaning ?m))) ;ye SarIra Ora ximAga meM AksIjana kA [pravAha][baDAwe hEM] jisase ximAga kI sakriyawA baDawI hE  
+?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m)(group_ids $?ids1))
+(man_word-root-cat ?m ? ~p)
+(test (eq (integerp (member$ ?m (create$ kyA iwanA))) FALSE))
+?f1<-(chunk_name-chunk_ids ? ?id)
 =>
 	(retract ?f ?f0 ?f1 ?f2)
   	(bind ?nr (remove_character " " (implode$ (create$ ?m $?r)) "_"))
@@ -638,7 +678,6 @@
 	)
 )
 
-
 (defrule default_root
 (declare (salience -30))
 ?f0<-(manual_word_info (head_id ?id0)(word ?w))
@@ -647,5 +686,20 @@
 =>
 	(modify ?f0 (root ?r)(root_components ?r))
 	(assert (got_default_root ?id0))
+)
+
+;isake alAvA xUXa pInA @PUNCT-Comma gAjara KAnA BI PAyaxemanxa sAbiwa howA hE  .
+(defrule default_root1
+(declare (salience -31))
+?f0<-(manual_word_info (head_id ?id0)(word ?w $?v))
+(man_word-root-cat ?w ?r p)
+(not (got_default_root ?id0))
+=>
+	(if (eq (integerp (member$ ?w (create$ isake usake inake Apake))) TRUE) then
+		(modify ?f0 (root ?r)(root_components ?r) (vibakthi_components ke $?v))
+	else
+        	(modify ?f0 (root ?r)(root_components ?r))
+	)
+        (assert (got_default_root ?id0))
 )
 

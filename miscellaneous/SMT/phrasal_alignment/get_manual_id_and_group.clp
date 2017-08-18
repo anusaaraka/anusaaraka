@@ -165,7 +165,7 @@
 (defrule ke_[word]
 (declare (salience 650))
 (manual_id-word ?id1 ke)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa|sAWa-sAWa)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa|sAWa-sAWa|bajAya)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -202,6 +202,17 @@
 	(assert (ids-multi_vib ?id1 ?id2 - para ?w)) 
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------
+;Pira paFje [[se Upara] [kI ora]] mAliSa kareM EsA kaI bAra kareM .
+;Added by Shirisha Manju
+(defrule grp_contineous_multi_vib
+(declare (salience 611))
+?f0<-(ids-multi_vib $?ids ?id - $?v) 
+?f1<-(ids-multi_vib ?id1&:(=(+ ?id 1) ?id1) $?ids1  - $?v1) 
+=>	
+	(retract ?f0 ?f1)
+	(assert (ids-multi_vib $?ids ?id ?id1 $?ids1 - $?v $?v1))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -286,6 +297,7 @@
         (assert (mng_has_been_grouped ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;E: These unit vectors are perpendicular to each other.
 ;M: ye ekAfka saxiSa [eka xUsare ke] lambavaw hEM .  dic: eka xUsare se
 ;E: The experimental discoveries of Oersted and Faraday showed that electric and magnetic phenomena are in general inseparable.
@@ -305,6 +317,45 @@
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
 =>
         (assert (manual_word_info (head_id ?id2) (word ?mng ?mng1 ?m)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Eng: The canned juice you take from the market should be 100 percent pure [fruit juice]. 
+;Man: Apa bAjAra se jo dibbAbanxa jUsa leM vaha 100 PIsaxI [PaloM kA rasa] honA cAhie.
+(defrule multi_word_3_with_anu
+(declare (salience 580))
+(id-HM-source ? ?mng ?mng1 ?mng2 ?)
+(manual_id-word ?id0 ?mng&~ke&~kI&~se)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(or (manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?mng2)
+    (and (man_word-root-cat ?m ?mng2 ?c&~v)(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?m))
+)
+(not (mng_has_been_grouped ?id0))
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (chunk_name-chunk_ids VGF $? ?id2 $?))
+=>
+        (assert (manual_word_info (head_id ?id2) (word ?mng ?mng1 ?mng2)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;rojAnA [jyAxA se jyAxA] pAnI piez .
+(defrule multi_word_3
+(declare (salience 580))
+(manual_id-word ?id0 ?mng)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) se)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?mng)
+(not (mng_has_been_grouped ?id0))
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        (assert (manual_word_info (head_id ?id2) (word ?mng se ?mng)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
@@ -405,9 +456,9 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
 (declare (salience 570))
-?f1<-(manual_id-word ?id0 ?noun&~hEM);vyApaka rUpa se, vExyuwa waWA cumbakIya praBAva avicCexa hEM - isIlie isa bala ko vixyuwa-cumbakIya bala kahawe hEM.
+?f1<-(manual_id-word ?id0 ?noun&~hEM&~hE);vyApaka rUpa se, vExyuwa waWA cumbakIya praBAva avicCexa hEM - isIlie isa bala ko vixyuwa-cumbakIya bala kahawe hEM.
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&~isa)
 (not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -432,15 +483,26 @@
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 
+;isa prakAra, isI prakAra , isI waraha
+(defrule pronoun_group2
+(declare (salience 570))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|isI|apane|jisake|wumhAre|Apake|sabake|unake))
+?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|prakAra|waraha|vajaha)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1)))
+=>
+	(retract ?f1)
+	(modify ?f  (word ?p ?w)(group_ids ?mid ?mid1))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
 ;The units of all other physical quantities can be expressed as combinations of the base units.
 ;inake awirikwa anya saBI BOwika rASiyoM ke mAwrakoM ko mUla mAwrakoM ke saMyojana xvArA vyakwa kiyA jA sakawA hE.
 ;The little flats in such houses always have bells that ring like that. 
 ;[isa waraha ke] Cote-Cote PlEtoM kI GaNtiyAz hameSA isI waraha kI AvAja karawI hEM .
-;jEse ki,  inake bAxa, isa prakAra, isI prakAra , isI waraha, apane|inake KilAPa
+;jEse ki,  inake bAxa, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake))
-?f<-(manual_word_info (head_id ?h) (word ?w&awirikwa|bAxa|prakAra|ki|waraha|vajaha|pAsa|KilAPa|sAWa|pAsa|liye|xOrAna $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake|unake))
+?f<-(manual_word_info (head_id ?h) (word ?w&bAxa|ki|pAsa|KilAPa|sAWa|Asa-pAsa|liye|xOrAna|alAvA $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
         (bind ?new_v (remove_character " " (implode$ (create$ ?w $?d)) "_"))
@@ -532,7 +594,8 @@
 (defrule single_vib
 (declare (salience 540))
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun) (vibakthi ?v $?v1)(group_ids $?grp_ids ?lid))
-(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se|sA)
+(test (eq (integerp (member$ $?noun (create$ va Ora yA))) FALSE))
+(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se|sA|sI)
 (not (chunk_name-chunk_ids VGF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE.
 (not (mng_has_been_grouped ?id1))
 =>

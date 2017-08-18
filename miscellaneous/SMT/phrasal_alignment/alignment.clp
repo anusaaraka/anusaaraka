@@ -77,6 +77,7 @@
 (declare (salience 110))
 ?f0<-(score (anu_id ?aid))
 (or (aligned_anu_id ?aid) (removed_aid ?aid))
+(not (got_score ?aid ?))
 =>
         (retract ?f0)
 )
@@ -87,6 +88,7 @@
 (declare (salience 110))
 ?f0<-(score (man_id ?mid))
 (aligned_man_id ?mid)
+(not (got_score ? ?mid))
 =>
         (retract ?f0)
 )
@@ -108,7 +110,7 @@
 ;Man: hama pedoM se girawe hue [pawwoM ko] waWA bAzXa se bahawe hue pAnI ko xeKawe hEM .
 (defrule align_with_max_sum
 (declare (salience 90))
-?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
+?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score)(heuristics $?h)(rule_names $?r))
 (not (score (weightage_sum ?score1&:(> ?score1 ?score))))
 (id-Apertium_output ?aid $?a_mng)
 ?f0<-(manual_word_info (group_ids $?d ?mid $?d1))
@@ -118,6 +120,7 @@
         (assert (alignment (anu_id ?aid)(man_id ?mid)(anu_meaning $?a_mng)(man_meaning $?d ?mid $?d1)))
 	(assert (aligned_anu_id ?aid))
 	(assert (aligned_man_id ?mid))
+	(assert (score_fact ?aid ?mid ?score $?h - $?r))
 )
 ;-----------------------------------------------------------------------------------
 ;Ex: if aper output not present then consider hindi meaning
@@ -125,7 +128,7 @@
 ;isa moYdala ke anusAra, paramANu kA Xana AveSa paramANu meM [pUrNawayA] ekasamAna rUpa se viwariwa hE waWA qNa AveSiwa ilektroYna isameM TIka usI prakAra anwaHsWApiwa hEM jEse kisI warabUja meM bIja.
 (defrule align_with_max_sum1
 (declare (salience 80))
-?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
+?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score)(heuristics $?h)(rule_names $?r))
 (not (score (weightage_sum ?score1&:(> ?score1 ?score))))
 (not (id-Apertium_output ?aid $?))
 (id-HM-source ?aid $?amng ?)
@@ -136,6 +139,7 @@
         (assert (alignment (anu_id ?aid)(man_id ?mid)(anu_meaning $?amng)(man_meaning $?ids)))
         (assert (aligned_anu_id ?aid))
         (assert (aligned_man_id ?mid))
+	(assert (score_fact ?aid ?mid ?score $?h - $?r))
 )
 
 ;================================= replace id with word ==============================
@@ -164,12 +168,21 @@
         )
 )
 
+(defrule save_new_score_fact
+(declare (salience -502))
+(score_fact ?aid ?mid ?sc $?h - $?r)
+(not (got_score ?aid ?mid))
+=>
+	(assert (score (anu_id ?aid) (man_id ?mid) (weightage_sum ?sc) (heuristics $?h)(rule_names $?r)))
+	(assert (got_score ?aid ?mid))
+)
+
 ;==================== get left over ids info =======================================
 
 (defglobal ?*lids* = (create$ )) 
 
 (defrule get_left_over_ids
-(declare (salience -502))
+(declare (salience -503))
 ?f0<-(manual_id-word ?id ?mng)
 (manual_word_info (head_id ?id)) 
 =>
@@ -178,9 +191,10 @@
 )
 
 (defrule print_left_over_ids
-(declare (salience -503))
+(declare (salience -504))
 =>
 	(bind $?ids (sort > ?*lids*))
 	(assert (left_over_ids  $?ids))
+	(save-facts "align_score_new.dat" local score)
 )
 

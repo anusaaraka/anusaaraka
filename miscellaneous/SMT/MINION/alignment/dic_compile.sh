@@ -207,6 +207,8 @@ echo "Creating eng_proper_noun_multi.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating transliterate_meaning.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_meaning.gdbm < transliterate_meaning.txt
+ echo "Creating provisional_transliterate_mng.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_transliterate_mng.gdbm < $MYPATH/provisional_transliterate_mng.txt
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh

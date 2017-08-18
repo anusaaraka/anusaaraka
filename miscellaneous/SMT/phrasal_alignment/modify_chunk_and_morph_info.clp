@@ -7,13 +7,17 @@
 
 ;============================================== Modify Morph root ==========================
 (defrule get_pronoun_root
-?f<-(man_word-root-cat  ?word&yahIM|yahI|inhIM|wumane|isI ?word  dummy_cat)
+?f<-(man_word-root-cat  ?word&yahIM|yahI|inhIM|wumane|isI|vahIM|usI ?word  dummy_cat)
 =>
 	(retract ?f)
 	(if (eq ?word wumane) then
-		(assert (man_word-root-cat ?word wU modified_cat))
+		(assert (man_word-root-cat ?word wuma modified_cat))
 	else
+             (if (eq (integerp (member$ ?word (create$ vahIM usI))) TRUE) then
+		(assert (man_word-root-cat ?word vaha modified_cat))
+	     else
 		(assert (man_word-root-cat ?word yaha modified_cat))
+	    )
 	)
 )
 ;-------------------------------------------------------------------------------------
@@ -73,17 +77,13 @@
 )
 
 ;-------------------------------------------------------------------------------------
-;kaBI-kaBI hamArI kuCa Ese ajanabiyoM se mulAkAwa ho jAwI hE jinameM hameM eka Sabxa bAwacIwa ke binA BI pahale pala se hI xilacaspI pExA ho jAwI hE .
-;ajanabiyoM => ajanabi
-;(defrule modify_morph_root3
-;(declare (salience 1100))
-;?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
-;(test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "yoM"))
-;=>
-;        (retract ?f)
-;        (bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 4) ?word) "I" )))
-;        (assert (man_word-root-cat ?word ?root modified_cat))
-;)
+(defrule modify_morph_root3
+(declare (salience 1100))
+?f<-(man_word-root-cat  naI   naI adj)
+=>
+        (retract ?f)
+        (assert (man_word-root-cat naI nayA modified_cat))
+)
 
 ;kyA howA hE , jaba kisI vyakwi ko eca.AI.vI. saMkramaNa ho jAwA hE ?
 (defrule modify_abbr_root
@@ -116,11 +116,11 @@
 ;Scalars can be added, subtracted, multiplied and divided just as the ordinary numbers.
 ;axiSoM ko hama TIka vEse hI joda sakawe hEM, GatA sakawe hEM, guNA yA [BAga kara sakawe hEM jEsA] ki hama sAmAnya safKyAoM ke sAWa karawe hEM .
 ;The word Science originates from the Latin verb Scientia meaning 'to know'.
-;
+;vitAmina-e se BarapUra AhAra [lenA BI] AzKoM ko svasWa banAe raKane meM maxaxagAra sAbiwa ho sakawA hE  .
 (defrule rm_mng_after_hE_from_verb_chunk
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNF|VGNN $?pre ?mid ?lid)
 (manual_word_info (group_ids $? ?mid $?))
-(manual_id-word ?mid  hE|hEM|lie|karake|xeMge|karane)
+(or (manual_id-word ?mid  hE|hEM|lie|karake|xeMge|karane)(manual_id-word ?lid ?w&BI|wo))
 ;(manual_word_info (head_id ?mid) (word $? hEM|gaI))
 =>
         (retract ?f)
@@ -133,12 +133,13 @@
 ;if first mng is aux and already one more aux present then remove the first aux
 ;Ex: huI prawIwa howI hE  ==> prawIwa howI hE
 ; kala ravivAra [hogA, hE] nA ? [hogA, hE] ==> [hogA] [hE]
+;guda kolestroYla kA 50 se kama honA Ora bEda kolestroYla kA 100 se aXika [honA KawaranAka hE]. [honA] [KawaranAka hE]
 (defrule rm_first_aux_mng_from_verb_chunk
-?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid)
+?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN ?fid $?pre ?mid)
 (manual_id-word ?mid  hE|hEM)
 ;?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid ?lid)
 ;(manual_word_info (head_id ?mid) (word $? howI|howA $?))
-(manual_word_info (head_id ?fid) (word hogA ))
+(manual_word_info (head_id ?fid) (word hogA|honA ))
 =>
         (retract ?f)
 ;        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid ?lid))

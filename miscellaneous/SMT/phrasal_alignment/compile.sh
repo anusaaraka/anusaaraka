@@ -11,6 +11,7 @@ $HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_tourism.gdbm < en-hi-gdb
 #$HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_rapidex.gdbm < en-hi-gdbm-dict_rapidex.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_demonetisation.gdbm < en-hi-gdbm-dict_demonetisation.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_GST.gdbm < en-hi-gdbm-dict_GST.txt
+$HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_IITB.gdbm < en-hi-gdbm-dict_IITB.txt
 
 $HOME_anu_test/Anu_src/comp.sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/morph
 
@@ -31,6 +32,7 @@ $HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_health.gdbm < Hin-Eng-dic_he
 #$HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_rapidex.gdbm < Hin-Eng-dic_rapidex.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_demonetisation.gdbm < Hin-Eng-dic_demonetisation.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_GST.gdbm < Hin-Eng-dic_GST.txt
+$HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_IITB.gdbm < Hin-Eng-dic_IITB.txt
 
 echo "Compiling phrasal_mwe"
 cd $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe
