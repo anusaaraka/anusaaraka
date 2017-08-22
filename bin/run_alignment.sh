@@ -22,8 +22,12 @@
  #============= automatic meanings/relations files =============================
  cat proper_noun_mngs.dat >> $HOME_anu_tmp/tmp/$2_tmp/proper_noun_mngs_tmp.txt
  cat multi_proper_noun_mngs.dat >> $HOME_anu_tmp/tmp/$2_tmp/multi_proper_noun_mngs_tmp.txt
- cat align_percent_info.dat >> $HOME_anu_tmp/tmp/$2_tmp/align_percent_info.txt
- cat suggested_dic_mngs.dat >> $HOME_anu_tmp/tmp/$2_tmp/suggested_dic_mngs_tmp.txt
+ cat parser_align_percent_info.dat >> $HOME_anu_tmp/tmp/$2_tmp/parser_align_percent_info.txt
+ cat alignment_percent_info.dat >> $HOME_anu_tmp/tmp/$2_tmp/alignment_percent_info_tmp.txt
+ cat suggested_dic_mngs.dat >> $HOME_anu_tmp/tmp/$2_tmp/suggested_dic_mngs.txt
+ 
+# echo "--------------- $3" >> $HOME_anu_tmp/tmp/$2_tmp/trans_match.txt
+# cat trans_match.dat >> $HOME_anu_tmp/tmp/$2_tmp/trans_match.txt
 
  if [ -s "new_hindi_parser_relations.dat" ]; then
 	echo "$3	got_new_hindi_parser_relations" >> $HOME_anu_tmp/tmp/$2_tmp/hindi_parser_info.txt

@@ -90,14 +90,15 @@
   )
   ;------------------------------------------------------------------------------------------
   ;Suggested by Soma JI 08-08-15 
-  ;This chapter begins by giving you a [simplified] account of how macroeconomics differs from the microeconomics that you have known.
+  ;NP : This chapter begins by giving you a [simplified] account of how macroeconomics differs from the microeconomics that you have known.
+  ;ADJP: The boy hassled by the police stood [confused].
   (defrule modify_VBN_cat1
   (declare (salience 5))
   ?f0<-(id-sd_cat  ?id  VBN)
   (Head-Level-Mother-Daughters ? ? ?VBN ?id)
-  (Head-Level-Mother-Daughters ? ? ?Mot $? ?VBN $?)
-  (Node-Category ?Mot NP)
   (Node-Category ?VBN VBN|VBG)
+  (Head-Level-Mother-Daughters ? ? ?Mot $? ?VBN $?)
+  (Node-Category ?Mot NP|ADJP)
   =>
         (assert (parser_id-cat_coarse ?id adjective))
         (assert (parser_id-cat ?id adjective))

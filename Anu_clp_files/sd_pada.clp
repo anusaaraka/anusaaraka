@@ -69,6 +69,23 @@
                 (retract ?f)
         )
  )
+ ;================================= fact removal ==========================
+ (defrule rm_wrong_fact
+ (declare  (salience 5000))
+ ?f0<-(head_id-prawiniXi_id-grp_ids ?id $?p 0 $?p1)
+ =>
+	(retract ?f0)
+	(assert (head_id-prawiniXi_id-grp_ids ?id $?p $?p1))
+	(printout t "Warning: cons id not mapped " ?id crlf)
+ )
+ 
+ (defrule rm_wrong_fact1
+ (declare  (salience 5000))
+ ?f0<-(prawiniXi_id-node-category 0 ?id $?)
+ =>
+        (retract ?f0)
+        (printout t "Warning: cons id not mapped" ?id crlf)
+ )
  ;==================================== Generate pada using prawiniXi info ================================================
  (defrule get_conj_group
  (declare  (salience 4850))
@@ -161,11 +178,12 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;But, today's rapidly changing business environment has forced the accountants to reassess their roles and functions both within the organization and the society.
+ ; ADVP Ex: Do not remain hungry for long.
  (defrule get_single_prep
  (declare  (salience 4600))
  (or (head_id-prawiniXi_id-grp_ids ?hid ?pp ?prep_id ?np_id)(head_id-prawiniXi_id-grp_ids ?hid ?pp ? ?prep_id ?np_id))
  (prawiniXi_id-node-category ?pp ?PP PP|WHPP)
- (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP|ADJP) ;The game of life is played for winning. In short, the greater the rate of change of momentum, the greater is the force. 
+ (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP|ADJP|ADVP) ;The game of life is played for winning. In short, the greater the rate of change of momentum, the greater is the force. 
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
  (id-word ?prep ?w&~per);The limiting speed is about 11.2 kilometres per second.
  (not (prep_ids $?ids ?prep $?))
@@ -717,6 +735,16 @@
 	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ (defrule rm_wrong_pada_fact
+ (declare (salience 100))
+ (get_pada)
+?f0<-(pada_info (group_head_id ?hid)(group_ids ?id))
+ (test (eq (numberp ?id) FALSE))
+ =>
+	(retract ?f0)
+	(printout t "Warning : Wrong pada fact generated " ?id crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule print_pada
  (declare (salience 100))
  (get_pada)
@@ -758,7 +786,7 @@
  (declare (salience 10))
  (pada_info (group_head_id  ?id)(group_cat VP))
  (root-verbchunk-tam-chunkids ? ? ?tam $?ids ?id)
- (test (eq (integerp (member$ ?tam (create$ am_en are_en being_en is_en was_en were_en is_not_en was_not_en were_not_en are_to_be_en am_being_en are_being_en is_to_be_en was_being_en would_be_en has_been_en))) TRUE))
+ (test (eq (integerp (member$ ?tam (create$ am_en are_en being_en is_en was_en were_en is_not_en was_not_en were_not_en are_to_be_en am_being_en are_being_en is_to_be_en was_being_en would_be_en has_been_en are_not_en))) TRUE))
  =>
 	(assert (id-tam_type ?id passive))
  )
