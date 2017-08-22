@@ -173,11 +173,12 @@
  (test (or (eq (sub-string 1 1 ?mng) "@") (eq ?cat PropN))) 
  =>
         (retract ?f0)
+	(bind $?nmng (implode$ (remove_character "_" ?mng " ")))
 	(if (eq ?vib 0) then
-	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  )" crlf)
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " $?nmng"  )" crlf)
 	else  
 		(bind $?v (implode$ (remove_character "_" ?vib " ")))
-	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " $?v " )" crlf)
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " $?nmng"  " $?v " )" crlf)
 	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_for_head_id )" crlf)
  )
@@ -381,8 +382,8 @@
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
- (id-word ?pada_id ?w&~and&~or);Now try generating random text in the style of an inaugural address or an internet chat room.
-  =>
+ ;(id-word ?pada_id ?w&~and&~or);Now try generating random text in the style of an inaugural address or an internet chat room.
+ =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  movement_of_kA_vib )" crlf)

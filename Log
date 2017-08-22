@@ -1,6 +1,7 @@
- 03-06-17
+ 22-08-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
+			               yes-no_question -- added punctuation fact in rule part
  2. template_after_mng.clp:  Added   : modify_than_se_prep
  3. H_ordering_rules.clp :   Modified: dont_reverse_NP -- added 'plenty' to the list
 					dont_rev_if_VP_head_accused -- added 'convert'
@@ -10,13 +11,14 @@
 		Modified: modify_NNP_as_VB and modify_NN_as_VP
 		Removed : modify_JJ_as_RB, modify_NNP_as_VB1 and modify_cat_as_verb_or_adj_with_get_word
  5. parser_tree_modification_rules.clp
-		Modified: rename_VP_for_To -- added 'ought' in the list
+		Modified: rename_VP_for_To -- added 'ought|able' in the list
+		Added   : modify_ADJP_as_VP
  6. prepare_apertium_input.clp
 		Added   : add_yaha_as_root, RaRTI_kA_vib_rule_for_conj and PP_pronoun_rule_with_kriyA_mUla
 		Modified: print_org_word_mng_for_head_id, print_org_word_mng_with_kA_vib and print_org_word_mng_for_grp_id
                           (added 'PropN' condition)
                           PP_pronoun_rule_without_vib -- added them
-		  	  default_hnd_mng_rule (added if condition to check mng is '-')
+		  	  default_hnd_mng_rule (added if condition to check mng is '-')  
  7. sd_relation_rules.clp :
 		Modified: AjFArWaka_vAkya (added 'Does|May')
 		       	  kriyA_sub_rule1 -- added root condition
@@ -45,6 +47,7 @@
 	          change_tam_source_for_WSD -- modified tooltip for WSD
  15. template_before_mng.clp
 	Added :   decide_tag_question_mng and decide_tag_question_mng1
+	Modified : decide_mng1 -- used root fact instead word fact
  16. run_H_gen_sen.bat
 	Loaded GNP_agmt_info.dat file in template_after_mng module
  17. vibakthi.clp:    Modified: dbase_kriyA_obj_vibakthi_rule  -- lookup root_mng instead mng
@@ -61,34 +64,37 @@
  24. combining_apostrophe.clp:  Modified : word_rule_ys_yp        Added    : map_ner
  25. link_category.clp  Added : PropN_rule_from_NER
  26. pada.clp           Added : get_tam_type
- 27. check_for_best_match_in_multi-word.clp:
+ 27. gender_info.clp:  Modified the file to add test condition for numberp
+ 28. check_for_best_match_in_multi-word.clp:
 	Removed:	load_provisional_multi_dic rule
- 28. ol_parser_id_mapping.clp:
+ 29. ol_parser_id_mapping.clp:
 	Added: map_mwe, remove_punc_ids_in_mwe, map_ner
- 29. run_modules_std.bat  
+ 30. run_modules_std.bat  
 		Loaded lwg_info.dat and punctuation_info.dat files in template_before_mng module
 		Loaded ner_tmp.dat file in sd_combining_apostrophe and parser_id_mapping modules
 		moved tam meaning module to execute after hindi_meaning module
 		Loaded multi_word_expressions_tmp.dat and provisional_multi_dic_tmp.dat in parser_id_mapping module
+		Loaded  multiword_id_mapping.dat, provisional_multi_dic.dat and proper_noun_dic.dat files in parser_id_mapping module
+		Loaded  punctuation_info.dat file in hindi_sent_reorder module
             Accordingly modified run_modules_ol.bat, run_modules_ace.bat, run_modules_logon.bat, run_modules_link.bat and run_modules_std_for_mul_sen.bat
- 30. create_hindi_animate.c:
+ 31. create_hindi_animate.c:
 		Added pronoun case to create hindi animate list
- 31. multi_word_expression.c:
+ 32. multi_word_expression.c:
 	Modified to get ids for punctuations. (ids are stored in Pids format)
- 32. multi_word_expression_for_prov.c:
+ 33. multi_word_expression_for_prov.c:
 	Modified to get ids for punctuations. (ids are stored in Pids format)
 
- 33. Added following programs/dictionaries
+ 34. Added following programs/dictionaries
 	parser_correction.py 
 	proper_noun_organization_names
 	proper_noun_person_names
 	proper_noun_place_names
 	crude_equivalent_dic
- 34. Updated following files:
+ 35. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
- 35. Updated following lex files:
+ 36. Updated following lex files:
 	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP and NIIT in the list
 				     Removed: May
 	initialisms.lex 	-->  Added :I.A.S. M.Sc. B.Sc.
@@ -98,7 +104,7 @@
 	canonical_form.lex	-->  Added rule to convert ke_liye to ke_lie	 
 	get_canonical_form_in_wsd.lex	--> Added rule to handle canonical form in tam files
 	mapping-hindi_rel-univ_rel.lex
- 36. Updated the following files
+ 37. Updated the following files
 	chk_input_format.pl 			-->  fixed bug for '-'  Ex: ... (trimester) - from ...
 						     " goods/services'. "
         print-pos-info.py
@@ -110,7 +116,7 @@
 	list-right				-->  proper_noun dic's
 	list_Anu_data_compound			-->  proper_noun dic's
 	list_SMT				--> crude_equivalent_dic
- 37. Updated following shell files
+ 38. Updated following shell files
 	get_pos_chunk.sh:  Added sed command to modify ' - ' as '-'
         phrasal_alignment/compile.sh
         dic_compile.sh
@@ -136,18 +142,18 @@
         Anusaaraka_rasp.sh      Anusaaraka_site.sh              Anusaaraka_stanford-Factored.sh
         Anusaaraka_stanford.sh  Anusaaraka_ace.sh               Anusaaraka_stanford_align_man_ord.sh
         Anusaaraka_stanford_minion.sh
- 38. Updated following alignment files
+ 39. Updated following alignment files
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp	get_score.clp		eng_parser_grouping.clp		get_hnd_std_parser_heuristics.clp
 	grp_multi_prep.clp		parser_alignment.clp	hindi_parser_correction.clp	hindi_parser_grouping.clp
-	map_hindi_rel_univ_rel.clp
+	map_hindi_rel_univ_rel.clp	run_H_gen_sen_eng.bat
   	Added 'tam' and 'tam_components' slots in manual_word_info deftemplate
 	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
 		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp
- 39. Removed bllip parser, rasp parser , berkeley parser and stanford ner (original tars)
- 40. Added the following folders
+ 40. Removed bllip parser, rasp parser , berkeley parser and stanford ner (original tars)
+ 41. Added the following folders
 	berkeley-parser	 bllip-parser	and  rasp-parser  (with only README's, compilations and src)
- 41. Modified following programmes to avoid warnings in 16.04 Ubuntu:
+ 42. Modified following programmes to avoid warnings in 16.04 Ubuntu:
 	Anu/stdenglish/abbrevations_using_NER.c
 	Anu/stdenglish/enclitics.lex
 	Anu/stdenglish/initialisms.lex
@@ -174,9 +180,9 @@
 	apertium/tagger.lex
 	multifast-v1.4.2/src/get_word_count.c
 	multifast-v1.4.2/src/get_word_count_single.c
- 42. Updated verifieds
+ 43. Updated verifieds
 	sd_verified (878)	small_sent_verified_sd (178)
- 43. Updated Log	
+ 44. Updated Log	
 
  24-08-16
  ========

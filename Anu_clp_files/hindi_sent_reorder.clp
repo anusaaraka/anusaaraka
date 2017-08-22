@@ -47,6 +47,8 @@
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
  (assert (parserid-wordid))
+ (assert (id-left_punctuation))
+ (assert (id-right_punctuation))
  )
  ;============================================ Stanford Parser Rules ===================================================
 
@@ -272,10 +274,12 @@
  ;======================================== New word insertion rules =======================================================
  ;Added by Shirisha Manju (1-02-11)
  ;May I go outside ? Are you going? Did you take your breakfast?
+ ;counter ex for the fact punctuation : May he become a great man. 
  (defrule yes-no_question
  ?f1<-(id-word 1 did|do|does|may|can|could|would|will|are|is|was|were|am|shall|has|have|had|should)
- (id-cat_coarse 2 ~verb) ;Do clean the mouth every time with water after eating.
  ?f0 <- (hindi_id_order  $?sent )
+ (id-last_word ?id ?)
+ (id-right_punctuation  ?id PUNCT-QuestionMark)
  (not (prep_id-relation-anu_ids ? AjFArWaka_kriyA ?kri) )
  =>
         (retract ?f0 ?f1)

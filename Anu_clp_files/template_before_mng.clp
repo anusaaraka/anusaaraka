@@ -16,13 +16,22 @@
 ;ApakI billI Kuxa ko mere pEra se ragadawI rahawI hE
 ;She [kept on asking] me questions the whole time.
 (defrule decide_mng1
-(id-word ?k keeps|kept|keep)
+(id-root-category-suffix-number ?k ?r&keep|go ? ? ?)
 (id-word =(+ ?k 1) on)
-(id-root-category-suffix-number =(+ ?k 2) ? verb ing ?)
+(id-root-category-suffix-number =(+ ?k 2) ?r1 verb ing ?)
 =>
         (printout       ?*h_fp*      "(id-HM-source  " ?k  "	-      Template_root_mng)"crlf)
         (printout       ?*h_fp*      "(id-HM-source  " (+ ?k 1)  "	-      Template_root_mng)"crlf)
         (printout       ?*tam_fp*      "(id-E_tam-H_tam_template_mng  " (+ ?k 2)  " 	ing	wA_rahawA_hE)"crlf)
+	;(if (eq ?r keep) then
+;        (printout       ?*tam_fp*      "(id-E_tam-H_tam_template_mng  " (+ ?k 2)  " 	ing	wA_rahawA_hE)"crlf)
+	;else
+	;	(if (eq ?r1 put) then
+	;	        (printout       ?*tam_fp*      "(id-E_tam-H_tam_template_mng  " (+ ?k 2)  " 	ing	we_jA)"crlf)
+	;	else
+	;	        (printout       ?*tam_fp*      "(id-E_tam-H_tam_template_mng  " (+ ?k 2)  " 	ing	wA_rahawA_hE)"crlf)
+	;	)
+	;)
 )
 ;--------------------------------------------------------------------
 ;Suggested by Chaitanya Sir (11-08-2016)
@@ -52,8 +61,6 @@
 (root-verbchunk-tam-chunkids ? ? ? ?aux1&:(=(+ ?id 1) ?aux1))
 (id-last_word ?id2&:(=(+ ?aux1 1) ?id2) ?)
 (id-right_punctuation ?id2 PUNCT-QuestionMark)
-;(id-word ?aux ?w)
-;(id-word ?aux1 ?w)
 (id-root-category-suffix-number ?aux1 ? ? ?s ?)
 =>
         (printout  ?*h_fp* "(id-HM-source  " ?aux1  "   hE_nA      Template_root_mng)"crlf)
@@ -73,8 +80,6 @@
 (id-word ?id1&:(=(+ ?aux1 1) ?id1) not)
 (id-last_word ?id2&:(=(+ ?id1 1) ?id2) ?)
 (id-right_punctuation ?id2 PUNCT-QuestionMark)
-;(id-word ?aux ?w)
-;(id-word ?aux1 ?w)
 (id-root-category-suffix-number ?aux1 ? ? ?s ?)
 =>
         (printout  ?*h_fp* "(id-HM-source  " ?aux1  "   hE_nA      Template_root_mng)"crlf)
