@@ -40,6 +40,7 @@
  10. cat_rule.clp : Modified: fine_cat -- removed apertium cat fact
  11. causative_verb_mng : Modified : causative_verb_mng -- added loop to check last word in dictionary
 				     get_rule_info      -- modified tooltip for WSD
+			  Added : sort_debug_file_ids, sort_debug_file_ids1
  12. hindi_sentence.clp: Modified: rm_repeated_mng_from_sentence -- added waraha|hAz to the list
  13. sd_combining_apostrophe.clp: Modified: word_rule_for_poss (added nmod:'s) , modified word fact to modify ner
 			          Added : map_ner
@@ -91,10 +92,9 @@
  33. create_hindi_animate.c:
 		Added pronoun case to create hindi animate list
  34. multi_word_expression.c:
-	Modified to get ids for punctuations. (ids are stored in Pids format)
+	Modified to get ids for punctuations. (ids are stored in Mids format)
  35. multi_word_expression_for_prov.c:
-	Modified to get ids for punctuations. (ids are stored in Pids format)
-
+	Modified to get ids for punctuations. (ids are stored in Mids format)
  36. Added following programs/dictionaries
 	parser_correction.py 
 	proper_noun_organization_names
@@ -106,7 +106,7 @@
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
  38. Updated following lex files:
-	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP and NIIT in the list
+	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP, NIIT, AC, ORS and DNA in the list
 				     Removed: May
 	initialisms.lex 	-->  Added :I.A.S. M.Sc. B.Sc.
 	standard_abbrevations.lex --> fixed the bug (Ex: B.A) ,  Added : M.A. and B.Sc.
@@ -157,7 +157,7 @@
         alignment.clp   alignment1.clp  get_heuristics.clp      get_manual_id_and_group.clp     modify_chunk_and_morph_info.clp
         get_verb_and_phrasal_grp.clp	get_score.clp		eng_parser_grouping.clp		get_hnd_std_parser_heuristics.clp
 	grp_multi_prep.clp		parser_alignment.clp	hindi_parser_correction.clp	hindi_parser_grouping.clp
-	map_hindi_rel_univ_rel.clp	run_H_gen_sen_eng.bat
+	map_hindi_rel_univ_rel.clp	run_H_gen_sen_eng.bat   get_aligned_mng.clp
   	Added 'tam' and 'tam_components' slots in manual_word_info deftemplate
 	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
 		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp

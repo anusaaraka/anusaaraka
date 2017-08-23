@@ -150,7 +150,7 @@ for (j=0; j < matchp->match_num; j++) { //(Added below code by Roja.)
                 for(i=atoi(id_count); i>=1; i--) {
 //			printf("%d-%d\n", word_ids,i);
                         final_ids=word_ids-i+1;
-                        printf(" P%d ", final_ids);
+                        printf(" M%d ", final_ids);
                 }
 
                 printf("%s %s %s %s 1)",  mng, head_id, cat, mng_type);

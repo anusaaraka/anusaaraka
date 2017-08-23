@@ -32,6 +32,14 @@
         (retract ?f0)
         (assert (id-HM-source ?id $?mng ?s))
 )
+
+(defrule del_symbols
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp $?a @SYMBOL-@GREATERTHAN@SYMBOL-@GREATERTHAN|@SYMBOL-@LESSTHAN@SYMBOL-@LESSTHAN $?b)
+=>
+	(retract ?f0)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp $?a $?b))
+)
+
 ;------------------------------------- get multiple proper noun list ---------------------------
 (defrule get_mul_proper_n_list
 (declare (salience 15))
@@ -159,17 +167,44 @@
 (defrule get_dic_mng
 (declare (salience -1))
 (left_over_ids)
-?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?amng - ?mid ?mng)
-(id-HM-source ?aid ?aroot ?)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid ?mng)
 (id-root ?aid ?root)
 (man_word-root-cat ?mng ?mroot ?)
-(not (database_info (meaning ?mroot) (database_name default-iit-bombay-shabdanjali-dic_smt.gdbm) (group_ids ?aid)))
+(not (database_info (meaning ?mroot) (database_name default-iit-bombay-shabdanjali-dic_smt.gdbm|transliterate_meaning.gdbm|provisional_transliterate_mng.gdbm) (group_ids ?aid)))
 (id-cat_coarse ?aid ?cat)
+(id-word ?aid ?word)
 =>
 	(retract ?f0)
-	(printout ?*d_file* ?root"_"?cat"	"?mroot crlf)
+	(assert (word-root-cat-mng   ?word ?root ?cat ?mroot))
+;	(printout ?*d_file* ?root"_"?cat"	"?mroot crlf)
 )
 
+(defrule print_sen
+(declare (salience -2))
+(word-root-cat-mng $?)
+(para_id-sent_id-no_of_words ? ?senid ?)
+(Eng_sen $?sen)
+(manual_hin_sen $?m)
+(not (got sen))	
+=>
+	(printout ?*d_file* ?senid "  Eng: " (implode$ $?sen) crlf)
+	(printout ?*d_file* "   Hin: " (implode$ $?m) crlf)
+	(assert (got sen))	
+	
+)
 
+(defrule print_info
+(got sen)	
+?f0<-(word-root-cat-mng ?w ?r ?c ?mr)
+=>
+	(retract ?f0)
+	(printout ?*d_file* "	"?w "	"?r"_"?c"	"?mr crlf)
+)
 
+(defrule print_info1
+(declare (salience -20))
+(got sen)
+=>
+	(printout ?*d_file* "----------------------------------------------------" crlf crlf)
+)
 
