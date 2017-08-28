@@ -499,6 +499,7 @@
  (defrule kA_in_hindi_rt_mng
  (declare (salience 610))
  ?f0<-(id-HM-source ?id ?h_mng ?s)
+ (test (neq (numberp ?h_mng) TRUE)) 
  (test (member$ kA (create$ (remove_character "_" ?h_mng " "))))
  (pada_info (group_head_id ?id) (gender ?g) (number ?n) (case ?c) (vibakthi ?vib))
  (test (neq ?vib 0))

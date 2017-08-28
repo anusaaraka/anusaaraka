@@ -33117,7 +33117,7 @@ generalized_adjective	vyApaka
 generalizes_UNDEFINED	vyApaka_banAnA
 generalizing_UNDEFINED	vyApaka_banAnA
 generally_UNDEFINED	prAyaH
-generally_adverb	vyApaka_rUpa_se/sAmAnyawaya/AmawOra_para/aksara/prAya:
+generally_adverb	vyApaka_rUpa_se/sAmAnyawaya/AmawOra_para/aksara/prAya:/sAXAraNawaH
 generals_UNDEFINED	sAmAnya
 generalship_noun	raNakOSala
 generate_UNDEFINED	uwpanna_kara
@@ -36664,7 +36664,7 @@ hen-parties_UNDEFINED	mahilAoM_kI_jalapAna_goRTI
 hen-party_noun	mahilAoM_kI_jalapAna_goRTI/avivAhiwa_strI-xala
 hen_adjective	mAxA
 hen_noun	murgI/Orawa/muqgI/mAxA
-hence_adverb	isa_kAraNa_se/awaH
+hence_adverb	isa_kAraNa_se/awaH/isalie
 henceforth_adverb	Age_se/BaviRya_meM/isake_bAxa_se
 henceforward_adverb	isake_bAxa_se
 henchman_noun	vaPAxAra_samarWaka/vaPAxAra_sevaka
@@ -40385,7 +40385,7 @@ indistinguishablest_UNDEFINED	aviBexya
 indite_verb	liKa
 indivially_adverb	vyakwigawa_rUpa_se
 individual_adjective	vyakwika/vyakwigawa/viSeRa/alaga_alaga
-individual_noun	vyakwi/vyakwigawa/viSiRta
+individual_noun	vyakwi/vyakwigawa/viSiRta/vyaRti
 individualer_UNDEFINED	viSiRta
 individualest_UNDEFINED	viSiRta
 individualise_UNDEFINED	viSiRta_kara_xenA
@@ -46317,7 +46317,7 @@ long-standing_adjective	xIrGakAlika
 long-stay_UNDEFINED	lambe_samaya_waka_raha
 long-stay_adjective	xIrGakAlIna/lambe_samaya_waka_rahanA
 long-suffering_adjective	cirasahiRNu/lambe_samaya_se_safkata_Jelane_vAlA
-long-term_adjective	xIrGAvaXi
+long-term_adjective	xIrGAvaXi/xIrGAvaXika
 long-time_adjective	xIrGakAlIna
 long-wave_noun	lambI_warafga
 long-winded_adjective	ubAne_vAlA_lambA_BARaNa/leKa_Axi/ubAU/SabxAdambarI/SabxAdambarapUrNa
@@ -48825,7 +48825,7 @@ methane_noun	xalaxala_kI_vAyu/mIWena/mIwena
 methanes_UNDEFINED	xalaxala_kI_vAyu
 methanol_noun	meWanOla
 method_adjective	vyavasWiwa
-method_noun	praNAlI/warIkA/paxXawi/niyamiwawA/kramabaxXwA/Dafga
+method_noun	praNAlI/warIkA/paxXawi/niyamiwawA/kramabaxXwA/Dafga/praviXi/viXi
 methodic_UNDEFINED	warIke_kA
 methodical_adjective	vyavasWiwa/viXivaw/suvyavasWiwa/warIke_kA
 methodicaler_UNDEFINED	warIke_kA
@@ -53784,7 +53784,7 @@ offsides_noun	xAhinI_xiSA/paralA_sirA
 offspring_noun	sanwAna/SAvaka/pariNAma
 offsprings_UNDEFINED	sanwAna
 oft_adverb	bahuXA/aksara/prAyaH
-often_adverb	aksara/prAyaH/bAra
+often_adverb	aksara/prAyaH/bAra/bahuXA
 oftenest_UNDEFINED	aksara
 ogle_noun	katAkRa
 ogle_verb	AsakwipUrNa_Dafga_se_GUra/XqRtawA_se_xeKa
@@ -54865,7 +54865,7 @@ overactive_UNDEFINED	awisakriya
 overacts_UNDEFINED	kqwrima_aBinaya_karanA
 overage_UNDEFINED	aXika_Aya
 overall_UNDEFINED	sampUrNawayaH
-overall_adjective	sampUrNa/samaswa/sAmAnya/saBI/pUrA/kula/sampUrNawaH/kula_milAkara
+overall_adjective	sampUrNa/samaswa/sAmAnya/saBI/pUrA/kula/sampUrNawaH/kula_milAkara/samagra
 overall_adverb	kula_milAkara
 overall_noun	uparI_poSAka/prAvaraNa/perabanxa
 overaller_UNDEFINED	sampUrNawaH
@@ -70967,7 +70967,7 @@ share_verb	sAJA_kara/prayoga_kara/hissA_kara/hissA_bAzta/bAzta/bAzta_le/bawA/bAN
 sharecropper_noun	batAIxAra
 sharecroppers_UNDEFINED	batAIxAra
 shared_UNDEFINED	sAJA_karanA
-shareholder_noun	hissexAra
+shareholder_noun	hissexAra/SeyaraXAraka
 shareholding_noun	hissexArI
 shareowner_noun	aMSaXArI
 shares_UNDEFINED	sAJA_karanA

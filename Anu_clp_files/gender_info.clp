@@ -77,6 +77,7 @@
  (defrule get_female_gender_with_cat
  (declare (salience 850))
  (id-HM-source ?id ?h_mng ?)
+ (test (neq (numberp ?h_mng) TRUE)) 
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id verb)
  (f_gen_dic_name ?f_dic)
@@ -127,6 +128,7 @@
  (defrule get_male_gender_with_cat
  (declare (salience 700))
  (id-HM-source ?id ?h_mng ?)
+ (test (neq (numberp ?h_mng) TRUE)) 
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id verb)
  (m_gen_dic_name ?m_dic)
@@ -145,6 +147,7 @@
  (defrule get_gender_from_male_list
  (declare (salience 650))
  (id-HM-source ?id ?h_mng ?)
+ (test (neq (numberp ?h_mng) TRUE)) 
  ?mng<-(meaning_to_be_decided ?id)
  (m_gen_dic_name ?m_dic)
  (test (neq (str-index "_" ?h_mng) FALSE))

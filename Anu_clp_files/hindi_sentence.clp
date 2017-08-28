@@ -112,6 +112,7 @@
  (pada_info (group_head_id ?h) (group_ids $? ?id $?))
  ?f0<-(id-Apertium_output ?h $?hmng)
  (id-right_punctuation ?h ?punct)
+ (test (neq ?id ?h)) ;You can check your PAN application status to enter acknowledgement no, name and date of birth.
  =>
 	(retract ?f)
 	(assert (id-Apertium_output ?id $?pre))

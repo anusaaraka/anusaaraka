@@ -133,7 +133,7 @@
  (defrule get_num_frm_plural_list
  (declare (salience 800))
  (id-word ?wid ?word&:(not (numberp ?word)))
- ?f<- (id-number-src  ?wid  ?n&s|-  ?)
+ ?f<- (id-number-src  ?wid  ?n&s|-  ?s&~Word)
  =>
         (bind ?a (gdbm_lookup "ol_parser_unused_words.gdbm" ?word))
         (if (neq ?a "FALSE") then
