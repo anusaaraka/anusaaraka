@@ -212,7 +212,7 @@
 
 		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?root ?cat)
-		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?w ?word ?cat)
 		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat)
@@ -255,6 +255,7 @@
  (default-cat ?cat1)
  (test (neq ?cat ?cat1))
  (test (neq (numberp ?root) TRUE))
+ (id-word ?id ?w)
  =>
 
                 (dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat1)
@@ -263,7 +264,7 @@
                 (dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat1)
                 (dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat1)
                 (dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat1)
-                (dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat1)
+                (dic_lookup "proper_noun_dic.gdbm" ?id ?w ?w ?cat1)
                 (dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat1)
                 (dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat1)
 		(dic_lookup "social_science_dic.gdbm" ?id ?word ?root ?cat1)

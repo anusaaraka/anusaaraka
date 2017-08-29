@@ -10676,7 +10676,7 @@ borough_noun	upanagara/baro
 boroughs_UNDEFINED	upanagara
 borrow_verb	uXAra_le/qNa_le/nakala_kara/mAzga_le/le/karja_le/anukaraNa_kara/uXAra_liyA_huA
 borrowed_UNDEFINED	uXAra_liyA_huA
-borrower_noun	karjaxAra/qNI
+borrower_noun	karjaxAra/qNI/uXArakarwA
 borrowers_UNDEFINED	qNI
 borrowing_UNDEFINED	qNa_le
 borrowing_noun	uXAra_grahaNa/BARA_grahaNa/qNa_lenA
@@ -20012,7 +20012,7 @@ day-dreams_UNDEFINED	xivAsvapna_xeKanA
 day-girl_noun	anAvAsI_CAtrA
 day-room_noun	bETaka_kakRa
 day-school_noun	anAvAsI_vixyAlaya
-day-to-day_adjective	xEnika/xina-prawixina
+day-to-day_adjective	xEnika/xina-prawixina/xEnanxina
 day-trip_noun	eka_xivasIya_yAwrA
 day-tripper_noun	eka_xivasIya_yAwrA_karane_vAlA
 day_noun	xina/xivasa/warIKa/samaya/ladAI_kA_mOkA/jyowiRa_xivasa/jivanAvaXi/jivanakAla/CuttI/kAla
@@ -25011,7 +25011,7 @@ eastwarder_UNDEFINED	pUraba_xiSA_kI_ora
 eastwardest_UNDEFINED	pUraba_xiSA_kI_ora
 eastwards_adverb	pUraba_xiSA_kI_ora/pUrva_kI_ora
 easy-chair_noun	ArAma_kursI
-easy_adjective	AsAna/XIre_se/suvIXa/suKI/sIXA/sarala/sahaja/narama/mMaxA/manxa/kAmukawApUrNa/DIlA/dIlA/AsAnaA/asAna/ArAmaxeha/Aramaxeha/Aramawalaba/AlasI/ArAmaxAyaka
+easy_adjective	AsAna/XIre_se/suvIXa/suKI/sIXA/sarala/sahaja/narama/mMaxA/manxa/kAmukawApUrNa/DIlA/dIlA/AsAnaA/asAna/ArAmaxeha/Aramaxeha/Aramawalaba/AlasI/ArAmaxAyaka/saralawama
 easy_adverb	sAvaXAni_se/AhiswA
 easy_noun	saralawA/ArAma
 easygoing_adjective	maswa/SAnwa
@@ -42326,7 +42326,7 @@ investing_UNDEFINED	aXikAra_xenA
 investiture_noun	paxarohaNa_samAroha/mAnABiReka
 investitures_UNDEFINED	paxarohaNa_samAroha
 investment_UNDEFINED	pUFjI
-investment_noun	vinIyukwa_Xana/pUzjIniveSa/PAyaxA/niveSa/niveSana
+investment_noun	niveSa/vinIyukwa_Xana/pUzjIniveSa/PAyaxA/niveSana
 investments_UNDEFINED	niveSana
 investor_UNDEFINED	pUFjI
 investor_noun	niveSaka/Xana_lagAnA
@@ -45120,7 +45120,7 @@ leg_noun	pEra/tAzga/rAna/pAyzacA/pAyA/lEga/pAzyacA/padAva
 leg_verb	pEra_se_mAra/pera_se_mAra/pEra_hil/cala/BAga
 legacies_UNDEFINED	paramparA_meM_prApwa
 legacy_noun	pEwrika_sampawwi/virAsawa/pEwqka_sampawwi/paramparA_meM_prApwa
-legal_adjective	kAnUnI/viXika/vEga
+legal_adjective	kAnUnI/viXika/vEga/kAnUna
 legaler_UNDEFINED	kAnUnI
 legalest_UNDEFINED	kAnUnI
 legalisation_noun	vEXIkaraNa
@@ -93600,3 +93600,4 @@ moti_noun	mowI
 non-medical_adjective	gEra_cikiwsIya
 pre-delivery_adjective	prasava_pUrva
 busyness_noun	vyaswawA
+i.e._noun	arWAw

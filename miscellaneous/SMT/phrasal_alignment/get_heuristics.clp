@@ -737,7 +737,7 @@
 (defrule kriyA_mUla_partial_match
 (declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid)(root_components $?v_root ?r&kara|ho|xe))
+(manual_word_info (head_id ?mid)(root_components $?v_root ?r&kara|ho|xe|le))
 (test (neq (length $?v_root) 0))
 (or (database_info (components $? $?v_root $? ?r)(group_ids $? ?aid $?))(database_info (components $? $?v_root $?)(group_ids $? ?aid $?))
     (id-HM-source ?aid $? $?v_root ?r ?))

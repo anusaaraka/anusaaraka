@@ -89,7 +89,7 @@
 (manual_word_info (head_id ?mid) (word ?w))
 (man_word-root-cat ?w ?r&kara|ho|xe|raKa|le v|modified_cat)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word)(group_ids $?ids))
-(database_info (components $?word $? ?r) (root ?root))
+(or (database_info (components $?word $? ?r) (root ?root))(database_info (components $?word kara|ho|xe|le)))
 (not (id-Apertium_output ? $?word))
 =>
        (retract ?f0 )
@@ -270,6 +270,22 @@
 	(retract ?f1)
 	(bind ?nr (string-to-field (str-cat ?w"_laga")))
 	(modify ?f2 (word ?w $?mng)(root ?nr) (root_components ?w laga)(group_ids ?id $?ids))
+	(assert (root_decided ?id1))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 25-08-17
+;SeyaroM ke [nirgamiwa] [hone ke pahale] kampaxanI ke nixeSakoM ko nimnaliKiwa viRayoM para nirNaya lenA hE
+(defrule default_verb_grp
+(declare (salience 730))
+(chunk_name-chunk_ids-words VGNN ?id $?ids - ?w $?m)
+?f1<-(manual_word_info (head_id ?id) (word ?w))
+(test (eq (sub-string (- (length ?w) 1) (length ?w) ?w) "ne"))
+(man_word-root-cat ?w ?r ?)
+?f2<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?mng) (group_ids ?id1))
+=>
+	(retract ?f1)
+	(bind ?nr (string-to-field (str-cat ?mng"_"?r)))
+	(modify ?f2 (word ?mng ?w $?m)(root ?nr) (root_components ?mng ?r)(group_ids ?id1 ?id $?ids))
 	(assert (root_decided ?id1))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------

@@ -242,6 +242,7 @@
 (not (added_emphatic ?mid))
 (not (pronoun_align ?aid ?mid))
 (not (score (anu_id ?aid) (man_id ?mid) (heuristics $? anu_exact_match|anu_root_match|dictionary_match|hindi_wordnet_match|multi_hindi_wordnet_match|multi_dictionary_match $?)))
+(not (id-HM-source ?aid $? WSD_compound_phrase_root_mng))
 =>
 	(bind ?c 0)
 	(loop-for-count (?i 1 (length $?roots))
@@ -269,6 +270,7 @@
 (not (got_align ?aid))
 (not (pronoun_align ?aid ?mid))
 (not (score (anu_id ?aid) (man_id ?mid) (heuristics $? single_verb_match|anu_exact_match|multi_hindi_wordnet_match $?)))
+(not (id-HM-source ?aid $? WSD_compound_phrase_root_mng))
 =>
         (retract ?f0 ?f1)
         (assert (removed_man_id_with-anu_id ?mid ?aid))
