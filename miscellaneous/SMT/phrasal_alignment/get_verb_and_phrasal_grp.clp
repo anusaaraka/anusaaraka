@@ -71,6 +71,7 @@
 (man_word-root-cat ?word1 ?root2 ?)
 (man_word-root-cat ?word ?root1 ?)
 (or (database_info (components ?word1 ?word ?r))(database_info (components ?root2 ?root1 ?r)))
+(not (id-HM-source ? ?word ?r ?))
 =>
        (retract ?f0 )
        (assert (chunk_name-chunk_ids-words ?chnk  ?mid2 ?mid1 ?mid $?gids - ?word1 ?word $?mng))
@@ -168,6 +169,20 @@
        	(retract ?f0 )
        	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - ?word $?mng))
 	(assert (id-man_root ?mid1 ?r0 ?r))
+)
+;----------------------------------------------------------------------------------------------------------
+(defrule default_kara_grp
+(declare (salience 848))
+?f1<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?id $?ids - $?m)
+(manual_word_info (head_id ?id) (word ?w $?m1))
+(man_word-root-cat ?w kara ?)
+(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?mng) (group_ids ?id1))
+(man_word-root-cat ?mng ?r&~ho ~p)
+(not (id-Apertium_output ? ?mng))
+=>
+        (retract ?f1)
+       	(assert (chunk_name-chunk_ids-words ?chnk  ?id1 ?id $?ids - ?mng $?m))
+	(assert (id-man_root ?id1 ?mng kara))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 02-06-15
@@ -280,8 +295,11 @@
 (chunk_name-chunk_ids-words VGNN ?id $?ids - ?w $?m)
 ?f1<-(manual_word_info (head_id ?id) (word ?w))
 (test (eq (sub-string (- (length ?w) 1) (length ?w) ?w) "ne"))
-(man_word-root-cat ?w ?r ?)
+(man_word-root-cat ?w ?r&kara|ho ?)
 ?f2<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?mng) (group_ids ?id1))
+(not (id-Apertium_output ? ?mng))
+(not (id-Apertium_output ? ?w $?m))
+(man_word-root-cat ?mng ? ~p)
 =>
 	(retract ?f1)
 	(bind ?nr (string-to-field (str-cat ?mng"_"?r)))
@@ -332,6 +350,7 @@
 (not (id-Apertium_output ? ?m1 $?mng));The [work] [done] by the spring force in a cyclic process is zero. awaH spriMga bala xvArA kisI cakrIya prakrama meM [kiyA gayA] [kArya] SUnya howA hE.  dic -- kArya_kara
 (test (< ?id1 ?id0))
 (not (id-Apertium_output ? ?m));Keep doing small physical activities like climbing stairs, gardening, small domestic [works] or dancing.
+(not (id-HM-source ? ?m  ?))
 (not (id-Apertium_output ? ?m1 $?))
 (not (and (id-Apertium_output ? ?a)(man_word-root-cat ?a  ho v)))
 (not (manual_id-word =(- ?id1 1) kA)) ;nahIM , mEMne subaha kA [nASwA] kAPI BArI [kiyA] WA  .
@@ -382,12 +401,12 @@
 ;kiyA jA rahA hE ==> kara , yA_jA_rahA_hE  ; karane ==> kara , ne
 (defrule get_verbal_noun_and_kiyA_root-and_tam
 (declare (salience 602))
-?f<-(manual_word_info (head_id ?id) (word $?w ?word&karane|karanA|karanI|kiyA|kiye $?wrds)(vibakthi_components $?vib)(group_ids $?grp_ids))
+?f<-(manual_word_info (head_id ?id) (word $?w ?word&karane|karanA|karanI|kiyA|kiye|kie $?wrds)(vibakthi_components $?vib)(group_ids $?grp_ids))
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
 (not (root_decided ?id))
 =>
 	(bind ?nr (remove_character " " (implode$ (create$ $?w kara)) "_"))
-	(if (or (eq ?word kiyA) (eq ?word kiye)) then
+	(if (or (eq ?word kiyA) (eq ?word kiye)(eq ?word kie)) then
 	 	(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ yA $?wrds)) "_"))))
 	       	(modify ?f (word $?w ?word $?wrds)(root ?nr)(root_components $?w kara)(tam ?ntam)(tam_components yA $?wrds))
 	else	

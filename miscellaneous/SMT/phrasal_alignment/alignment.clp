@@ -7,6 +7,49 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+
+;=============================== get facts for same weightage ===========================
+
+(defrule get_same_wt_m_fact
+(declare (salience 130))
+?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w))
+?f1<-(score (anu_id ?aid1) (man_id ?mid) (weightage_sum ?w))
+(test (neq ?aid ?aid1))
+=>
+	(retract ?f0 ?f1)
+	(assert (man_id-wt-anu_ids ?mid ?w ?aid ?aid1))
+)
+
+(defrule add_same_wt_m_fact
+(declare (salience 140))
+?f0<-(man_id-wt-anu_ids ?mid ?w $?ids)
+?f1<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w))
+=>
+	(retract ?f0 ?f1)
+	(assert (man_id-wt-anu_ids ?mid ?w $?ids ?aid))
+)
+
+(defrule get_same_wt_a_fact
+(declare (salience 130))
+?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w))
+?f1<-(score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?w))
+(test (neq ?mid ?mid1))
+=>
+        (retract ?f0 ?f1)
+        (assert (anu_id-wt-man_ids ?aid ?w ?mid ?mid1))
+)
+
+(defrule add_same_wt_a_fact
+(declare (salience 140))
+?f0<-(anu_id-wt-man_ids ?aid ?w $?ids)
+?f1<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w))
+=>
+        (retract ?f0 ?f1)
+        (assert (anu_id-wt-man_ids ?aid ?w $?ids ?mid))
+)
+
 ;=============================== modify/remove score fact for same weight ================
 
 (defrule modify_score_with_punct
@@ -15,60 +58,109 @@
 ?f1<-(id-right_punctuation  ?aid PUNCT-ClosedParen)
 (manual_id-word =(+ ?mid 1) @PUNCT-ClosedParen)
 =>
-	(retract ?f1)
-	(bind ?sum (+ ?sum 1))
+        (retract ?f1)
+        (bind ?sum (+ ?sum 1))
         (modify ?f0 (weightage_sum ?sum))
 )
 ;-----------------------------------------------------------------------------------
-(defrule modify_score_fact_with_conj
+(defrule modify_score_with_prev_word_align
 (declare (salience 102))
-?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum 1))
-(not (score (weightage_sum ?s&:(> ?s 1) )))
-(alignment (anu_id =(- ?aid 1))(man_id =(- ?mid 1)) (anu_meaning Ora) )
-=>
-        (modify ?f0 (weightage_sum 2))
-)
-;-----------------------------------------------------------------------------------
-(defrule modify_score_for_same_wt
-(declare (salience 101))
-?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?score) )
-?f1<-(score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score) )
-(test (> (fact-index ?f0) (fact-index ?f1)))
-(or (id-HM-source ?aid $?m ?)(id-Apertium_output ?aid $?m))
-(manual_word_info (head_id ?mid) (word $?m))
-(not (manual_word_info (head_id ?mid1) (word $?m)))
-=>
-	(bind ?score (+ ?score 1))
-	(modify ?f0 (weightage_sum ?score))
-)
-;-----------------------------------------------------------------------------------
-;a biennial life cycle. eka xvivArRika jIvana cakra
-(defrule rm_score_with_same_wt
-(declare (salience 100))
-?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
-?f2<-(score (anu_id ?aid1)(man_id ?mid)(weightage_sum ?score))
+?f0<-(score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w))
+(score (anu_id ?aid1) (man_id ?mid) (weightage_sum ?w))
 (test (neq ?aid ?aid1))
-(id-Apertium_output ?aid $?m)
-(id-Apertium_output ?aid1 $?m1)
-(manual_word_info (head_id ?mid) (word $?m $?m1))
+(score_fact =(- ?aid 1) =(- ?mid 1) ? $?)
+=>
+        (bind ?sum (+ ?w 3))
+        (modify ?f0 (weightage_sum ?sum))
+)
+;-----------------------------------------------------------------------------------
+; ... [BArawa ke loga],  BArawa ko eka sampUrNa praBuwva-sampanna ...  
+; ... THE [PEOPLE OF INDIA], having solemnly resolved ...
+(defrule modify_score_with_prep_of
+(declare (salience 120))
+?f0<-(man_id-wt-anu_ids ?mid ?w $? ?aid $?)
+(manual_word_info (head_id ?mid)(group_ids $? ?lid))
+(manual_id-word ?lid ke|kA)
+(score_fact ?aid1 =(+ ?lid 1) ? $?)
+(id-word =(+ ?aid1 1) of)
+(id-word ?aid&:(= (+ ?aid1 2) ?aid) ?)
 (not (aligned_anu_id ?aid))
 =>
-        (retract ?f1)
-        (assert (removed_aid ?aid))
+	(retract ?f0)
+        (bind ?sum (+ ?w 3))
+	(assert (score (anu_id ?aid) (man_id ?mid) (weightage_sum ?sum)))
 )
 ;-----------------------------------------------------------------------------------
-(defrule rm_score_with_same_wt1
-(declare (salience 100))
-?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
-?f2<-(score (anu_id ?aid1)(man_id ?mid)(weightage_sum ?score))
-(test (neq ?aid ?aid1))
-(not (score (anu_id ?aid) (man_id ?mid1) (weightage_sum ?score1&:(>= ?score1 ?score))))
-(not (score (anu_id ?aid1) (man_id ?mid1) (weightage_sum ?score1&:(>= ?score1 ?score))))
-(not (aligned_anu_id ?aid))
-(not (manual_id-word 2 .))
+;It is a Short [Service Commission] Entry wherein suitable candidates can opt for [Permanent Commission].
+;yaha eka laGu [sevA Ayoga kI] praviRti hE jisameM upayukwa ummIxavAra [sWAyI Ayoga kA] cunAva kara sakawe hEM
+(defrule get_a_scope_with_std_and_man
+(declare (salience 120))
+?f0<-(anu_id-wt-man_ids ?aid ?w $?p ?mid $?p1)
+(chunk_name-chunk_ids NP $? ?pid ?mid $?)
+(alignment (anu_id ?aid1) (man_id ?pid))
+(pada_info (group_ids $? ?aid1 ?aid))
 =>
-	(retract ?f1 ?f2)
-	(assert (removed_aid ?aid))
+	(retract ?f0)
+	(bind ?sum (+ ?w 3))	
+	(assert (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?sum)))
+)
+;-----------------------------------------------------------------------------------
+
+(defrule get_m_scope_with_std_and_man
+(declare (salience 120))
+?f0<-(man_id-wt-anu_ids ?mid ?w $?p ?aid $?p1)
+(chunk_name-chunk_ids NP $? ?pid ?mid $?)
+(alignment (anu_id ?aid1) (man_id ?pid))
+(pada_info (group_ids $? ?aid1 ?aid))
+=>
+        (retract ?f0)
+        (bind ?sum (+ ?w 3))
+        (assert (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?sum)))
+)
+;-----------------------------------------------------------------------------------
+(defrule get_single_m_score_fact
+(declare (salience 110))
+?f0<-(man_id-wt-anu_ids ?mid ?w ?aid)
+=>
+	(retract ?f0)
+        (assert (score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w)))
+)
+;-----------------------------------------------------------------------------------
+(defrule get_single_a_score_fact
+(declare (salience 110))
+?f0<-(anu_id-wt-man_ids ?aid ?w ?mid)
+=>
+        (retract ?f0)
+        (assert (score (anu_id ?aid) (man_id ?mid) (weightage_sum ?w)))
+)
+
+;-----------------------------------------------------------------------------------
+(defrule modify_m_score_fact
+(declare (salience 110))
+?f0<-(man_id-wt-anu_ids ?mid ?w $?p ?aid $?p1)
+(aligned_anu_id ?aid)
+=>
+	(retract ?f0)
+	(assert (man_id-wt-anu_ids ?mid ?w $?p $?p1))
+)	
+;-----------------------------------------------------------------------------------
+(defrule modify_a_score_fact
+(declare (salience 110))
+?f0<-(anu_id-wt-man_ids ?aid ?w $?p ?mid $?p1)
+(aligned_man_id ?mid)
+=>
+        (retract ?f0)
+        (assert (anu_id-wt-man_ids ?aid ?w $?p $?p1))
+)
+
+;======================== remove extra score facts for aligned ids =================
+
+(defrule rm_wrong_score_fact_same_wt
+(declare (salience 110))
+?f0<-(man_id-wt-anu_ids ?mid $?p)
+(aligned_man_id ?mid)
+=>
+	(retract ?f0)
 )
 ;-----------------------------------------------------------------------------------
 ;We see leaves falling from trees and water flowing down a dam.
