@@ -1,4 +1,4 @@
- 28-08-17
+ 20-10-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
 			               yes-no_question -- added punctuation fact in rule part
@@ -164,6 +164,7 @@
   	Added 'tam' and 'tam_components' slots in manual_word_info deftemplate
 	Modified the below files to use 'vibakthi_components' slot instead of 'vibakthi' slot and 'root_components' instead of 'root'
 		alignment1.clp  get_heuristics.clp	modify_chunk_and_morph_info.clp
+	create_eng_align_html_phrasal.clp  --	Modified the file to get tooltip for Pth Layer
  43. Removed bllip parser, rasp parser , berkeley parser and stanford ner (original tars)
  44. Added the following folders
 	berkeley-parser	 bllip-parser	and  rasp-parser  (with only README's, compilations and src)

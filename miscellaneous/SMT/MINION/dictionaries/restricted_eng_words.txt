@@ -144,7 +144,7 @@ them	unako/unakA/unake/unheM/ve/una_para/unak/unheM_unako/vaha/apane
 themselves	Kuxa/svayaM
 there	vahAz/vaha
 these	ye/ina/yaha/inheM
-they	unheM/ve_loga/ve/unhoMne/ye/unameM/unake
+they	unheM/ve_loga/ve/unhoMne/ye/unameM/unake/vo
 this	yaha/isa/isese/iwanA/isake_lie/isakA/ise/EsA
 those	ve/jo/ina/una
 through	SurU_se_anwa_waka/sIXA/pUrNa/lagAwAra/KulA/eka_se_xUsare_waka/xvArA/SurU_se_AkIra_waka/se/pUrI_waraha_se/baxOlawa/acCI_waraha_se/eka_ora_se_xUsarI_ora/prawibanXa_ko_wodawe_hue/anwa_waka/meM_se/meM/ke_xvArA/ke_mAXyama_se/ke_jarie/se_waka/Suru_se_anwa_waka/ke_kAraNa
@@ -186,3 +186,4 @@ you	Apa/wumheM/Apako/ApakA/Apake/Apane/wU/wuma
 your	Apa/wumhArA/ApakA/wU
 yours	Apa/wumhArA/ApakA/wU
 yourself	Kuxa/Apaa/wuma_Kuxa/wuma/svayaM_apane_Apa_ko/Apa_svayaM/Apane_Apa_ko/Apa_Kuxa/wuma_hI
+etc	Axi/iwyAxi/vagEraha

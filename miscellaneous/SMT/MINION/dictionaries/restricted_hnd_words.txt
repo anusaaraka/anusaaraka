@@ -33,4 +33,5 @@ hama	we
 hamArA	our
 jisake	which
 saBI	overall/all/every/everyone
-saba	all/everyone/everything/sub
+saba	all/everyone/everything/sub/most
+Axi	etc.

@@ -146,7 +146,7 @@
 (defrule kI_[word]
 (declare (salience 650))
 (manual_id-word ?id1 ?w1&kI)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha|apekRA|waraph)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha|apekRA|waraph|waraPa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -399,6 +399,24 @@
         (assert (mng_has_been_grouped ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 2-08-17
+;dic : pUrI waraha se  Man: pUrI waraha
+;CUta xekara : jaba saMvixakArI pakRa xUsare pakRa xvArA saMvixA ke niRpAxana meM [pUrI waraha] yA AMSika rUpa se CUta xewA hE yA niRpAxana ke lie samayAvaXi baDA xewA hE yA niRpAxana ke sWAna para koI anya prawipUrwi svIkAra kara lewA hE, waba saMvixA CUta xI gaI sImA waka Kawma ho gaI samaJI jAwI hE 
+(defrule multi_word_2_with_dic1
+(declare (salience 590))
+(database_info (components ?mng ?mng1 ?mng2))
+(manual_id-word ?id0 ?mng)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(test (eq (integerp (member$ ?mng2 (create$ ke se meM kA ko))) TRUE))
+(not (mng_has_been_grouped ?id0))
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+=>
+        (assert (manual_word_info (head_id ?id1) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;Circular motion is a familiar class of motion that has a special significance in [daily-life] situations.
 ;vqwwIya gawi se hama BalIBAzwi pariciwa hEM jisakA hamAre [xEnika jIvana] meM viSeRa mahawwva hE .
@@ -456,7 +474,7 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
 (declare (salience 570))
-?f1<-(manual_id-word ?id0 ?noun&~hEM&~hE);vyApaka rUpa se, vExyuwa waWA cumbakIya praBAva avicCexa hEM - isIlie isa bala ko vixyuwa-cumbakIya bala kahawe hEM.
+?f1<-(manual_id-word ?id0 ?noun&~hEM&~hE&~.);vyApaka rUpa se, vExyuwa waWA cumbakIya praBAva avicCexa hEM - isIlie isa bala ko vixyuwa-cumbakIya bala kahawe hEM.
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
 ?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&~isa)
 (not (mng_has_been_grouped ?id0))
@@ -501,8 +519,8 @@
 ;jEse ki,  inake bAxa, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake|unake))
-?f<-(manual_word_info (head_id ?h) (word ?w&bAxa|ki|pAsa|KilAPa|sAWa|Asa-pAsa|liye|xOrAna|alAvA $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake|unake|mere))
+?f<-(manual_word_info (head_id ?h) (word ?w&bAxa|ki|pAsa|KilAPa|sAWa|Asa-pAsa|liye|xOrAna|alAvA|bIca $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
         (bind ?new_v (remove_character " " (implode$ (create$ ?w $?d)) "_"))
@@ -556,7 +574,7 @@
 ;====================================== Default Word Grouping =======================================
 (defrule get_default_group
 (declare (salience 500))
-?f1<-(manual_id-word ?mid ?man_wrd&~kA&~se&~ke&~{&~}&~.)
+?f1<-(manual_id-word ?mid ?man_wrd&~kA&~se&~ke&~{&~}&~.&~-)
 (test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
 (not (manual_word_info (group_ids $? ?mid $?)))
 (not (mng_has_been_grouped ?mid))
@@ -596,7 +614,7 @@
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun) (vibakthi ?v $?v1)(group_ids $?grp_ids ?lid))
 (test (eq (integerp (member$ $?noun (create$ va Ora yA))) FALSE))
 (manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se|sA|sI)
-(not (chunk_name-chunk_ids VGF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE.
+(not (chunk_name-chunk_ids VGF|VGNF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE. isase usa vyakwi kI use [sUciwa kI gaI] praswAva kI SarwoM se AbaxXa hone kI icCAe vyakwa howI hE 
 (not (mng_has_been_grouped ?id1))
 =>
 	(if (eq ?vib sA) then
@@ -622,7 +640,7 @@
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
 (test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
 ;(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye karane ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA)(group_ids $?grp_ids1))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA|hewu)(group_ids $?grp_ids1))
 (test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
 (not (chunk_name-chunk_ids VGF $? ?mid0 $?))
 (not (vib_added ?id0))
