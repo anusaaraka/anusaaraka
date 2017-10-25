@@ -479,17 +479,17 @@ nA_vAlA_hE,m,p,m	vAle_ho
 nA_vAlA_hE,f,s,m	vAlI_ho
 nA_vAlA_hE,f,p,m	vAle_ho
 
-nA_hI_hE,f,p,m	nA_hI_hE
-nA_hI_hE,f,p,u	nA_hI_hE
-nA_hI_hE,f,s,a	nA_hI_hE
-nA_hI_hE,f,s,m	nA_hI_hE
-nA_hI_hE,f,s,u	nA_hI_hE
-nA_hI_hE,m,p,a	nA_hI_hE
-nA_hI_hE,m,p,m	nA_hI_hE
-nA_hI_hE,m,p,u	nA_hI_hE
-nA_hI_hE,m,s,a	nA_hI_hE
-nA_hI_hE,m,s,m	nA_hI_hE
-nA_hI_hE,m,s,u	nA_hI_hE
+nA_hI_hE,f,p,m	hI_hE
+nA_hI_hE,f,p,u	hI_hEM
+nA_hI_hE,f,s,a	hI_hE
+nA_hI_hE,f,s,m	hI_hE
+nA_hI_hE,f,s,u	hI_hE
+nA_hI_hE,m,p,a	hI_hEM
+nA_hI_hE,m,p,m	hI_hE
+nA_hI_hE,m,p,u	hI_hEM
+nA_hI_hE,m,s,a	hI_hE
+nA_hI_hE,m,s,m	hI_hE
+nA_hI_hE,m,s,u	hI_hE
 
 nA_hI_WA,f,p,a	nA_hI_WA
 nA_hI_WA,f,p,m	nA_hI_WA

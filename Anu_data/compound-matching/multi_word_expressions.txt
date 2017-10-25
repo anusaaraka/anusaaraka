@@ -1226,7 +1226,6 @@ Outer_function	AcCAxaka_Palana#AcCAxaka_Palana#noun#2#RM
 Over_flow_flag	aXipravAha_Xvaja#aXipravAha_Xvaja#noun#3#RM
 Over_punch	aXi_Cixraka#aXi_Cixraka#noun#2#RM
 Over_run	aXivahiwa#aXivahiwa#noun#2#RM
-Overdraft	ovaradrAPta#ovaradrAPta#noun#1#RM
 Page_end_character	pqRTa_aMwa_saMprawIka#pqRTa_aMwa_saMprawIka#noun#3#RM
 Page_exception_interrupt	pqRTa_apavAxa_aMAwarAyana#pqRTa_apavAxa_aMAwarAyana#noun#3#RM
 Page_failure	pqRTa_viPalawA#pqRTa_viPalawA#noun#2#RM
@@ -1539,7 +1538,6 @@ Signal_transformation	saMkewa_rUpAMwaraNa#saMkewa_rUpAMwaraNa#noun#2#RM
 Single_Assress_Intertion	ekala_pawA_anuxeSa#ekala_pawA_anuxeSa#noun#3#RM
 Single_instruction	ekala_anuxeSa#ekala_anuxeSa#noun#2#RM
 Sit_on_the_fence	xUrI_banAye_raKanA#xUrI_banAye_raKanA#noun#4#RM
-Soccer	PutabAla#PutabAla#noun#1#RM
 Special_Drawing_Rights	viSeRRa_AharaNa_aXikAra#viSeRRa_AharaNa_aXikAra#noun#3#RM
 Special_purpose_computer	viSeRa_uxxeSya_aBikaliwra#viSeRa_uxxeSya_aBikaliwra#UNDEFINED#1#RM
 Spread_spectrum_audio	viswqwa_prawibiMba_Sravya#viswqwa_prawibiMba_Sravya#noun#3#RM
@@ -3205,8 +3203,6 @@ american_indian	sWAnIya_amarIkI#sWAnIya_amarIkI#noun#2#RM
 american_national_standards_institute	amerIkI_rARtrIya_mAnaka_saMsWAna#amerIkI_rARtrIya_mAnaka_saMsWAna#noun#4#RM
 american_revolution	amerikI_krAnwi#amerikI_krAnwi#noun#2#RM
 american_standard_code_for_information_interchanging	sUcanA_ke_lie_amerIkI_mAnaka_kUta#sUcanA_ke_lie_amerIkI_mAnaka_kUta#noun#6#RM
-americanise	amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM
-americanize	amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM
 amethystine_python	AmesWAitina_ajagara#AmesWAitina_ajagara#noun#2#RM
 amino_acid	emino_rasAyana#emino_rasAyana#noun#2#RM
 ammonia_clock	amoniyA_GadI#amoniyA_GadI#noun#2#RM
@@ -9110,7 +9106,7 @@ current_account_measure	cAlU_KAwA_kI_karravAI#cAlU_KAwA_kI_karravAI#noun#3#RM
 current_account_statement	cAlU_KAwA_vivaraNa#cAlU_KAwA_vivaraNa#noun#3#RM
 current_account_surplus	cAlU_KAwA_aXiSeRa#cAlU_KAwA_aXiSeRa#noun#3#RM
 current_affairs	sAmayika_GatanAez#sAmayika_GatanAez#noun#2#RM
-current_assets	cAlU_parisaMpwwiyAM_MswiyAM#cAlU_parisaMpwwiyAM_MswiyAM#noun#2#RM
+current_assets	cAlU_parisaMpwwiyAM#cAlU_parisaMpwwiyAM#noun#2#RM
 current_beam_position	XArA_puMja_sWiwi#XArA_puMja_sWiwi#noun#3#RM
 current_demand	cAlU_mAMga#cAlU_mAMga#noun#2#RM
 current_deposit	cAlU_jamA_rASiyAM#cAlU_jamA_rASiyAM#noun#2#RM
@@ -16004,7 +16000,7 @@ in_order_that	jisase_ki#jisase_ki#noun#3#RM
 in_order_to_facilitate_timely_credit_of_customs_dues	sImA_Sulka_xeyoM_ke_yaWAsamaya_kredita_ko_suviXAjanaka_banAne_ke_uxxeSya_se#sImA_Sulka_xeyoM_ke_yaWAsamaya_kredita_ko_suviXAjanaka_banAne_ke_uxxeSya_se#noun#6#RM
 in_other_respects	anya_bAwoM_meM#anya_bAwoM_meM#noun#3#RM
 in_other_words	anya_SabxoM_meM#anya_SabxoM_meM#noun#3#RM
-in_part	aMSawaH#aMSawaH#noun#2#RM
+in_part	aMSawaH/AMSika#aMSawaH/AMSika#noun#2#RM
 in_partial_modification_of	kA_AMSika_ASoXana_karawe_hue#kA_AMSika_ASoXana_karawe_hue#noun#3#RM
 in_patient	aMwaraMga_rogI#aMwaraMga_rogI#noun#2#RM
 in_peril_of	ke_Kaware_se#ke_Kaware_se#noun#2#RM
@@ -18652,7 +18648,7 @@ long_shot	joKima_BarA_uxyama#joKima_BarA_uxyama#noun#2#RM
 long_since	bahuwa_pahale_se#bahuwa_pahale_se#noun#2#RM
 long_stay	lambe_samaya_waka_rahanA#lambe_samaya_waka_rahanA#noun#2#RM
 long_suffering	lambe_samaya_se_saMkata_Jelane_vAlA#lambe_samaya_se_saMkata_Jelane_vAlA#noun#2#RM
-long_term	xIxarkAlika#xIxarkAlika#noun#2#RM
+long_term	xIrGakAlika#xIrGakAlika#noun#2#RM
 long_term_borrowing	xIrGakAlika_uXAra#xIrGakAlika_uXAra#noun#3#RM
 long_term_capital	xIrGakAlika_pUMjI#xIrGakAlika_pUMjI#noun#3#RM
 long_term_loan	xIxarkAlika_karje#xIxarkAlika_karje#noun#3#RM
@@ -33393,6 +33389,8 @@ gram_flour	besana/canA_kA_AtA#besana/canA_kA_AtA#noun#2#WM
 #In this, you can have toast butter, gram flour chila( pancake), puffed rice, fruits-salad and juice. (Suggested by Chaitanya sir  1-07-17)
 puffed_rice	muramurA#muramurA#noun#2#RM
 #In this, you can have toast butter, gram flour chila( pancake), puffed rice, fruits-salad and juice. (Suggested by Chaitanya sir  1-07-17)
+discounting_bills	huNdI_battA#huNdI_battA#noun#2#RM
+#Discounting Bills of Exchange. viniyama kI huNdI battA	(Suggested by Chaitanya sir     01-08-17)
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
