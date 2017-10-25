@@ -1,4 +1,4 @@
- 20-10-17
+ 25-10-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
 			               yes-no_question -- added punctuation fact in rule part
@@ -44,6 +44,7 @@
 			  Added : sort_debug_file_ids, sort_debug_file_ids1
  12. hindi_sentence.clp: Modified: rm_repeated_mng_from_sentence -- added waraha|hAz to the list
 				   move_nahIM_before_verb_or_after_noun -- added test condition
+		 	 Added : add_mwe_grp_info, add_verb_grp_info and get_default_ids rules to dispaly group info
  13. sd_combining_apostrophe.clp: Modified: word_rule_for_poss (added nmod:'s) , modified word fact to modify ner
 			          Added : map_ner
  14. tam_meaning.clp
@@ -54,6 +55,8 @@
 	Modified : decide_mng1 -- used root fact instead word fact
  16. run_H_gen_sen.bat
 	Loaded GNP_agmt_info.dat file in template_after_mng module
+	Loaded : hindi_meanings_with_grp_ids.dat and lwg_info.dat and 
+	         created id_Apertium_output_with_grp.dat file in hindi_sentence module
  17. vibakthi.clp:    Modified: dbase_kriyA_obj_vibakthi_rule  -- lookup root_mng instead mng
 		      	        saMjFA_vib_to_saMjFA_samA_vibakthi_rule -- also moved prep id 
 		      Added : of_vib_movement_conj
@@ -74,6 +77,8 @@
  28. check_for_best_match_in_multi-word.clp:
 	Removed: load_provisional_multi_dic rule
 	Added :  combine_two_groups_with_same_id
+	Modified : chk_for_prov_multi_diff_group_ids : removed wrg message and took the large group
+		   chk_for_prov_multi_same_group_ids : added wrg message if mngs differ
  29. ol_parser_id_mapping.clp:
 	Added: map_mwe, remove_punc_ids_in_mwe, map_ner
  30. sd_pada.clp
@@ -109,7 +114,7 @@
         provisional_multi_word_dictionary.txt
 	sd_verified (876)
  39. Updated following lex files:
-	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP, NIIT, AC, ORS and DNA in the list
+	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP, NIIT, AC, ORS, DNA and w.e.f. in the list
 				     Removed: May
 	initialisms.lex 	-->  Added :I.A.S. M.Sc. B.Sc.
 	standard_abbrevations.lex --> fixed the bug (Ex: B.A) ,  Added : M.A. and B.Sc.
@@ -117,6 +122,7 @@
 				     added  ^[wW]ho[ ]*'s[ ]been , [^a-zA-Z][wW]ho[ ]*'s[ ]been
 	canonical_form.lex	-->  Added rule to convert ke_liye to ke_lie	 
 	get_canonical_form_in_wsd.lex	--> Added rule to handle canonical form in tam files
+	add_snt_tag.lex 	--> added new line after </p>
 	mapping-hindi_rel-univ_rel.lex
  40. Updated the following files
 	chk_input_format.pl 			-->  fixed bug for '-'  Ex: ... (trimester) - from ...

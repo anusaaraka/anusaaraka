@@ -34,24 +34,30 @@
  ;To check provisional multiword fact available or not. If present then pick provisional fact and retract database fact.
  ;When same group ids
  (defrule chk_for_prov_multi_same_group_ids
+ (declare (salience 1))
  (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ 1)
  ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng1 ? ? ? 2)
  =>
- (retract ?f)
- (assert (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ 1))
+	(retract ?f)
+	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ 1))
+	(if (neq ?mng ?mng1) then
+		(printout t "Warning: Check Multi word in provisional and database "  ?mng       "-----" ?mng1 crlf) 
+	)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja(21-02-14)
  ;To check provisional multiword fact available or not. If present then pick provisional fact and retract database fact.
  ;When different group ids printing warning message as per Chaitanya Sir suggestion.
  (defrule chk_for_prov_multi_diff_group_ids
- (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ 1)
+ ?f1<-(ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ 1)
  ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids1 ?mng1 ? ? ? 2)
  (test (or (member$ $?grp_ids $?grp_ids1)(member$ $?grp_ids1 $?grp_ids)))
  =>
- (retract ?f)
- (assert (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ 1))
- (printout t "Warning: Check Multi word in provisional and database"	$?grp_ids	"-----"	$?grp_ids1 crlf) 
+	(if (> (length $?grp_ids) (length $?grp_ids1)) then
+		 (retract ?f)
+	else	
+		(retract ?f1)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;To check best match in multi word dictionary and proper noun dictionary

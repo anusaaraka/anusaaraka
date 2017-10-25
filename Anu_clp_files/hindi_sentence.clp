@@ -41,6 +41,7 @@
  (assert (conjunction-components))
  (assert (id-cat))
  (assert (id-cat_coarse)) 
+ (assert (verb_type-verb-causative_verb-tam))
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
@@ -390,3 +391,59 @@
         (close ?*hin_sen-file* )
  )
  ;---------------------------------------------------------------------------------------------------------
+ (defglobal ?*grp_file* = n_fp)
+
+; (defrule add_prep_grp
+; (declare (salience -11))
+; (pada_info (group_ids $? ?h) (preposition ?pid&~0 $?ids))
+;; (id-cat ?det determiner|adjective)
+; ?f0<-(id-mng ?h $?mng)
+; =>
+;	(retract ?f0)
+;	(printout ?*grp_file* "(id-Apertium_output  " ?h "  " (implode$ $?mng) " @PUNCT-ClosedParen@PUNCT-ClosedParen )" crlf)
+;	(printout ?*grp_file* "(id-Apertium_output  " ?pid "   @PUNCT-OpenParen@PUNCT-OpenParen -)" crlf)
+; )
+; 
+
+ ;---------------------------------------------------------------------------------------------------------
+ (defrule add_mwe_grp_info
+ (declare (salience -12))
+ (id-HM-source-grp_ids ? ? ? ?fid $?ids ?lid)
+?f0<-(id-mng ?fid $?mng)
+?f1<-(id-mng ?lid $?mng1)
+ =>
+	(retract ?f0 ?f1)
+	(if (eq (length $?mng) 0) then
+	        (printout ?*grp_file* "(id-Apertium_output  " ?fid " @PUNCT-OpenParen@PUNCT-OpenParen - )" crlf)
+	else
+		(printout ?*grp_file* "(id-Apertium_output  " ?fid " @PUNCT-OpenParen@PUNCT-OpenParen " (implode$ $?mng) ")" crlf) 
+	)
+	(if (eq (length $?mng1) 0) then
+	        (printout ?*grp_file* "(id-Apertium_output  " ?lid " - @PUNCT-ClosedParen@PUNCT-ClosedParen )" crlf)
+	else
+	        (printout ?*grp_file* "(id-Apertium_output  " ?lid "  " (implode$ $?mng1) " @PUNCT-ClosedParen@PUNCT-ClosedParen )" crlf)
+	)
+ )
+ ;---------------------------------------------------------------------------------------------------------
+ (defrule add_verb_grp_info
+ (declare (salience -13))
+ (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
+ ?f1<-(id-mng ?h $?mng1)
+ =>
+        (retract ?f1 )
+	(printout ?*grp_file* "(id-Apertium_output  " ?id " @PUNCT-OpenParen@PUNCT-OpenParen -- )" crlf)
+	(printout ?*grp_file* "(id-Apertium_output  " ?h "  " (implode$ $?mng1) " @PUNCT-ClosedParen@PUNCT-ClosedParen )" crlf) 
+ )
+ ;---------------------------------------------------------------------------------------------------------
+ (defrule get_default_ids
+ (declare (salience -14))
+ ?f0<-(id-mng ?fid $?mng)
+ =>
+	(retract ?f0)
+	(if (eq (length $?mng) 0) then
+		(printout ?*grp_file* "(id-Apertium_output  " ?fid " )" crlf)
+	else
+	        (printout ?*grp_file* "(id-Apertium_output  " ?fid "  " (implode$ $?mng) " )" crlf)
+	)
+)
+
