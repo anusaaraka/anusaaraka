@@ -102,9 +102,9 @@
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (10-4-13)
- (deffunction get_possible_mngs(?id ?lw ?type)
+ (deffunction get_possible_mngs(?id ?lw ?type ?gdbm)
         (bind $?dic_list (create$ ))
-        (bind ?new_mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?lw))
+        (bind ?new_mng (gdbm_lookup ?gdbm ?lw))
 	(if (neq ?new_mng "FALSE") then
 	        (bind ?slh_index (str-index "/" ?new_mng))
         	(if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
@@ -202,7 +202,34 @@
 	    )
  	)
  )
- ;--------------------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (25-10-17)
+;Answer- id: 2480 
+(defrule modify_word_fact
+ (declare (salience 157))
+?f<-(id-word ?id ?w)
+?f1<-(id-root ?id ?r)
+?f2<-(id-original_word ?id ?o)
+(test (eq (numberp ?w) FALSE))
+(test (eq (sub-string  (length ?w) (length ?w) ?w) "-"))
+=>
+	(retract ?f ?f1 ?f2)
+	(bind ?nw (string-to-field (sub-string 1 (- (length ?w) 1) ?w)))
+	(assert (id-word ?id ?nw))
+	(assert (id-root ?id ?nw))
+	(assert (id-original_word ?id ?nw))
+)
+;--------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (26-10-17)
+;Self-awareness
+(defrule get_default_root
+(declare (salience 156))
+?f<-(id-word ?id ?w)
+(not (id-root ?id ?))
+=>
+	(assert (id-root ?id ?w))
+)
+;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic
  (declare (salience 155))
  (id-original_word ?id ?word)
@@ -228,6 +255,7 @@
 		(dic_lookup "provisional_transliterate_mng.gdbm" ?id ?w ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 
  (defrule get_PropN_as_noun_mng
  (declare (salience 154))
  (id-cat_coarse ?id PropN)
@@ -235,7 +263,8 @@
  =>
 	(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?w ?w noun)
  )
-
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 
  (defrule get_PropN_as_noun_mng1
  (declare (salience 153))
  (id-cat_coarse ?id PropN)
@@ -382,16 +411,28 @@
  ;Added by Shirisha Manju (10-4-13)
  (defrule get_mngs_for_right_word
  ?f0<-(right_word ?id ?rw)
- (test (eq (numberp ?rw) FALSE))
+; (test (eq (numberp ?rw) FALSE))
  =>
-        (get_possible_mngs ?id ?rw right)
+	(if (eq (numberp ?rw) TRUE) then
+		(assert	(id-right_word-possible_mngs ?id ?rw ?rw))
+	else
+	        (get_possible_mngs ?id ?rw right "default-iit-bombay-shabdanjali-dic_smt.gdbm")
+        	(get_possible_mngs ?id ?rw right "transliterate_meaning.gdbm")
+	        (get_possible_mngs ?id ?rw right "proper_noun_dic.gdbm")
+	)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (10-4-13)
  (defrule get_mngs_for_left_word
  ?f0<-(left_word ?id ?lw)
- (test (eq (numberp ?lw) FALSE))
+; (test (eq (numberp ?lw) FALSE))
  =>
-        (get_possible_mngs ?id ?lw left)
+	(if (eq (numberp ?lw) TRUE) then
+		(assert (id-left_word-possible_mngs ?id ?lw ?lw))
+	else
+        	(get_possible_mngs ?id ?lw left "default-iit-bombay-shabdanjali-dic_smt.gdbm")
+        	(get_possible_mngs ?id ?lw left "transliterate_meaning.gdbm")
+        	(get_possible_mngs ?id ?lw left "proper_noun_dic.gdbm")
+	)
  )
  ;--------------------------------------------------------------------------------------------------------

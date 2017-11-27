@@ -1,4 +1,4 @@
- 25-10-17
+ 27-11-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
 			               yes-no_question -- added punctuation fact in rule part
@@ -123,6 +123,7 @@
 	canonical_form.lex	-->  Added rule to convert ke_liye to ke_lie	 
 	get_canonical_form_in_wsd.lex	--> Added rule to handle canonical form in tam files
 	add_snt_tag.lex 	--> added new line after </p>
+	mapping-symbols.lex 	--> fixed bug to handle 1.2.3
 	mapping-hindi_rel-univ_rel.lex
  40. Updated the following files
 	chk_input_format.pl 			-->  fixed bug for '-'  Ex: ... (trimester) - from ...
@@ -136,6 +137,7 @@
 	list-right				-->  proper_noun dic's
 	list_Anu_data_compound			-->  proper_noun dic's
 	list_SMT				--> crude_equivalent_dic
+	print-pos-info.py 			--> added SYMBOL-TELDA
  41. Updated following shell files
 	get_pos_chunk.sh:  Added sed command to modify ' - ' as '-'
         phrasal_alignment/compile.sh
@@ -153,6 +155,7 @@
 	phrasal_alignment/run_alignment.sh
 	bin/run_alignment.sh 	: Modified to get automatic generated new hindi parser relations, suggested mng and align percent files
 	Anusaaraka_alignment.sh : integrated rule based hindi parser and extracted transliteration meaning for all the words in the sentence
+                                  updated for hyphen words
 	Modified the files to change ner path as stanford ner folder is removed [user has to download]
 	Modified 'multi_word_expressions.dat' to 'multi_word_expressions_tmp.dat' and
 		 'provisional_multi_dic.dat'  to 'provisional_multi_dic_tmp.dat' in following files:

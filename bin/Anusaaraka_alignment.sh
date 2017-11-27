@@ -67,7 +67,8 @@
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd-hi-en >  $MYPATH/hnd-hi-en-sent
   sed 1,2d $MYPATH/hnd-hi-en-sent > $MYPATH/hnd-hi-en-sent1 
   ./replace-punctuation.out < $MYPATH/hnd-hi-en > $MYPATH/hnd-hi-en-map-punc
-  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc |  sed 's/_/ /g' | sed 's/   / /g' | sed 's/ - /-/g'  |sed 's/-isa/ - isa/g' | sed 's/hE-/hE - /g' | sed 's/hEM-/hEM - /g' | sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
+#  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc |  sed 's/_/ /g' | sed 's/   / /g' | sed 's/ - /-/g'  |sed 's/-isa/ - isa/g' | sed 's/hE-/hE - /g' | sed 's/hEM-/hEM - /g' | sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
+  sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/hnd-hi-en-map-punc |  sed 's/_/ /g' | sed 's/   / /g' | sed 's/ - /-/g'  |sed 's/-isa/ - isa/g' | sed 's/hE-/hE - /g' | sed 's/hEM-/hEM - /g' | sed 's/ClosedParen-/ClosedParen - /g' |sed 's/kareM-/kareM - /g' | sed 's/nota-/nota - /g' | sed 's/uxAharaNa-/uxAharaNa - /g' | sed 's/-isameM/ - isameM/g'| sed 's/-Apake/ - Apake/g' | sed 's/\. -/. - /g' | sed 's/^(/PUNCT-OpenParen/g' | sed 's/)$/PUNCT-ClosedParen/g' | sed 's/^;/PUNCT-Semicolon/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
 
   cd $HOME_anu_test/bin/
   apertium-destxt $MYPATH/hnd | lt-proc -ac hi.morf.bin | apertium-retxt >  $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph
@@ -87,6 +88,7 @@
  $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
  $HOME_anu_test/Anu_src/split_file.out pos.txt dir_names.txt pos.dat
  $HOME_anu_test/Anu_src/split_file.out chunk_info.txt dir_names.txt chunk_info.dat
+
  rm -f alignment_percent_info_tmp.txt suggested_dic_mngs.txt
 
  #--------------    dependency alignment files -----------------
@@ -124,7 +126,7 @@
 	echo "(defglobal ?*hpath* = $rule_based_parser)" >> global_path.clp
 	timeout 10 myclips -f  $rule_based_parser/intrachunker/run_chunk_modules.bat > $1.hnd.out
 	timeout 10 myclips -f  $rule_based_parser/clp_files/get_scope.bat >> $1.hnd.out
-	timeout 30 myclips -f  $rule_based_parser/clp_files/get_rels.bat >> $1.hnd.out
+	timeout 50 myclips -f  $rule_based_parser/clp_files/get_rels.bat >> $1.hnd.out
 	if [ "$4" == "" ] ; then
     	   sed -i 's/rel_name-ids/relation_name-rel_ids/g' rel_info.dat
 	   $HOME_anu_test/miscellaneous/SMT/dependency_alignment/mapping-hindi_rel-univ_rel.out < rel_info.dat > hindi_parser_rel_ids_tmp.dat
@@ -151,6 +153,7 @@
 
  sort -u  proper_noun_mngs_tmp.txt  > proper_noun_mngs.txt 
  sort -u  multi_proper_noun_mngs_tmp.txt  > multi_proper_noun_mngs.txt 
+ sort -u  suggested_mwe_mngs_tmp.txt  > suggested_mwe_mngs.txt
  sort -n -k2  parser_align_percent_info.txt > parser_align_percent.txt
  sort -n -k2  alignment_percent_info_tmp.txt > alignment_percent_info.txt
  

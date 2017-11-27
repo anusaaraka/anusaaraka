@@ -28,5 +28,7 @@ for line in open(sys.argv[1]):
 			lst[0] = 'SYMBOL-VERTICAL-LINE'
 		if lst[0]== '/':
 			lst[0] = 'SYMBOL-SLASH'
+		if lst[0]=='~':
+			lst[0] = 'SYMBOL-TELDA' 
 		print '(manual_id-wrd-cat\t%s\t%s\t%s)' % (sent_count, lst[0], lst[1].strip())
 	
