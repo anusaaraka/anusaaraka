@@ -80,7 +80,11 @@ void replace_space_with_underscore(char inp_text[10000])
 //	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
 	   word_count++; }
-        }
+	   else {
+		 offset_no[j]=offset_count;
+	         word_id[j]=word_count;
+	         word_count++; j++;
+        }}
 	else
 	{
 	   word_count++;

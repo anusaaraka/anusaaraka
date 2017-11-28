@@ -73,14 +73,18 @@ void replace_space_with_underscore(char inp_text[10000])
 	   offset_count=strlen(inp_text)-strlen(p)+1;
 
            //calling function check_for_punctuation()
-//           check_for_punctuation(str);
-//           if(flag==1) {
+           check_for_punctuation(str);
+           if(flag==1) {
            offset_no[j]=offset_count;
 	   word_id[j]=word_count;
 //	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
 	   word_count++; }
-//        }
+	   else {
+		 offset_no[j]=offset_count;
+	         word_id[j]=word_count;
+	         word_count++; j++;
+        }}
 	else
 	{
 	   word_count++;

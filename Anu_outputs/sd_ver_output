@@ -93,6 +93,7 @@ Hindi meaning using Stanford parser 2.19
 The blacksmith made an assay of iron ore. 
 luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAI.
 luhAra ne lOha ayaska kI eka paraKa banAI.
+Warning: Check Multi word in provisional and database lOha_ayaska-----lohe_kI_Kanija_mittI
 
 Hindi meaning using Stanford parser 2.20
 He could hear a faint sound from the bushes. 
@@ -297,7 +298,7 @@ vaha usake kArya ke bAre meM awyanwa sAvaXAna hE.
 
 Hindi meaning using Stanford parser 2.64
 It is likely they will come. 
-yaha samBava hE ki ve Aezge.
+yaha samBava hE ki ve AeMge.
 Warning: Multiple adjective senses are available for likely . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.65
@@ -629,6 +630,7 @@ Hindi meaning using Stanford parser 2.138
 Delhi is my birth place. 
 xillI merI janmaBUmi hE.
 xillI merA janma sWAna hE.
+Warning: Check Multi word in provisional and database janmaBUmi-----janma_sWAna
 
 Hindi meaning using Stanford parser 2.139
 She gave birth to twins. 
@@ -648,7 +650,7 @@ usane tikatoM kI eka puswaka KarIxI.
 
 Hindi meaning using Stanford parser 2.143
 I should have talked to you before inviting John. 
-muJe joYna ko Amanwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI.
+muJe joYna ko Amanwriwa karane se pahale Apase bAwacIwa karanI cAhie WI.
 
 Hindi meaning using Stanford parser 2.144
 Can you tell us where those strange ideas came from? 
@@ -698,6 +700,7 @@ Hindi meaning using Stanford parser 2.154
 The recent advertising campaign has had a marked effect on sales. 
 hAla_hI_hAla hI huA vijFApanabAjI aBiyAna kA bikrI para suspaRta praBAva huA hE.
 hAla ke vijFApanabAjI aBiyAna kA bikrI para suspaRta praBAva huA hE.
+Warning: Check Multi word in provisional and database vijFApana_karane_sambanXI_aBiyAna-----vijFApanabAjI_aBiyAna
 Warning: Multiple adjective senses are available for marked . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.155
@@ -937,7 +940,7 @@ vaha isa viRaya para AKira meM bolA.
 
 Hindi meaning using Stanford parser 2.207
 I should have talked to you before inviting John. 
-muJe joYna ko Amanwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI.
+muJe joYna ko Amanwriwa karane se pahale Apase bAwacIwa karanI cAhie WI.
 
 Hindi meaning using Stanford parser 2.208
 The sleeping of students can ruin a lecture. 
@@ -1116,7 +1119,7 @@ vaha badA Kela praSaMsaka hE.
 Hindi meaning using Stanford parser 2.247
 I live at 805 West Indiana Street. 
 mEM 805 paScima Indiana sadaka meM rahawA hUz.
-mEM 805 vesta_iMdiyanA strIta meM rahawA hUz.
+mEM 805 vesta iMdiyanA strIta meM rahawA hUz.
 
 Hindi meaning using Stanford parser 2.248
 It was a completely wasted journey. 
@@ -1131,9 +1134,9 @@ mere pAsa bahuwa jyAxA pEsA nahIM hE.
 
 Hindi meaning using Stanford parser 2.250
 Dalai Lama is the abbot of the Tibetian monastery. 
+xalAI lAmA PropN-tibetian-PropN maTa kA maTAXyakRa hE.
 xalAI PropN-lama-PropN Tibetian maTa kA maTAXyakRa hE.
 xalAI PropN-lama-PropN PropN-tibetian-PropN maTa kA maTAXyakRa hE.
-xalAI lAmA PropN-tibetian-PropN maTa kA maTAXyakRa hE.
 
 Hindi meaning using Stanford parser 2.251
 There is abject poverty in India. 
@@ -1474,7 +1477,7 @@ Hindi meaning using Stanford parser 3.23
 To the people of India he is the symbol of mature wisdom. 
 BArawa ke logoM ke lie vaha paripakva buxXimawwA kA prawIka hE.
 vaha BArawa ke logoM ke lie paripakva buxXimawwA kA prawIka hE.
-Warning: Multiple adjective senses are available for mature. WSD rule is required 
+Warning: Multiple adjective senses are available for mature . WSD rule is required 
 
 Hindi meaning using Stanford parser 3.24
 I enclose three documents herewith. 
@@ -1889,6 +1892,7 @@ Warning: Multiple adjective senses are available for available . WSD rule is req
 
 Hindi meaning using Stanford parser 4.7
 Almora is a small town in Uttarakhanda state. 
+Almora PropN-uttarakhanda-PropN rAjya meM eka CotA nagara hE.
 almorA PropN-uttarakhanda-PropN rAjya meM eka CotA nagara hE.
 
 Hindi meaning using Stanford parser 4.8
@@ -1922,7 +1926,7 @@ usako anwawaH janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.14
 The main states of southern India are Tamilnadu, Kerala, Maharashtra, Andhrapradesh and Karnataka. 
-xakRiNI BArawa ke pramuKa rAjya wamilanAdu, kerala, mahArARtra, AzXra_praxeSa Ora karnataka hEM.
+xakRiNI BArawa ke pramuKa rAjya wamilanAdu, kerala, mahArARtra, AzXra praxeSa Ora karnataka hEM.
 xakRiNI BArawa ke pramuKa rAjya wamilanAdu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
 Warning: Multiple adjective senses are available for main . WSD rule is required 
 Warning: Multiple adjective senses are available for southern . WSD rule is required 
@@ -2324,6 +2328,7 @@ kasAI kI xukAna sadaka ke usa pAra hE.
 Hindi meaning using Stanford parser 5.1
 I can not get along without some help. 
 mEM WodI sahAyawA ke binA Age_nahIM_baDa sakawA hUz.
+mEM kuCa sahAyawA ke binA Age_nahIM_baDa sakawA hUz.
 
 Hindi meaning using Stanford parser 5.2
 I do not want to get into problem. 
@@ -2533,7 +2538,7 @@ mohana jafgala se kuCa wowoM ko lAyA.
 
 Hindi meaning using Stanford parser 5.51
 She was afraid Panditji's men would be coming. 
-vaha cinwiwa WI ki paNdiwa jI ke AxamI A rahe hoMge.
+vaha cinwiwa WI ki paNdiwa_jI ke AxamI A rahe hoMge.
 
 Hindi meaning using Stanford parser 5.52
 He concluded that we should go. 
@@ -2782,7 +2787,7 @@ vaha praWama BArawIya aBiyAna kA newA WA jisane PropN-everest-PropN para caDane 
 
 Hindi meaning using Stanford parser 6.8
 For example, take a stainless steel spoon. 
-uxAharaNa_ke liye, eka stenalEsa stIla cammaca lIjie.
+uxAharaNa_ke lie, eka stenalEsa stIla cammaca lIjie.
 
 Hindi meaning using Stanford parser 6.9
 Where did the steel come from? 
@@ -3903,7 +3908,7 @@ kyA Apa mere dOlara ko pAunda meM baxala sakawe hEM?
 
 Hindi meaning using Stanford parser 8.76
 You think yourself very clever, do not you? 
-Apa Apane Apa ko awyanwa cawura socawe hEM, hE nA ?
+Apa apane Apa ko awyanwa cawura socawe hEM, hE nA ?
 
 Hindi meaning using Stanford parser 8.77
 You can do a diploma in Graphics and Animation. 
