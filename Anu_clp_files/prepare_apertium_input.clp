@@ -148,6 +148,7 @@
  ;----------------------------------------------------------------------------------------------------------------------- 
  ;What is the purpose of Dharma? He wrote the biography of Tagore.
  ;We went to Paris on Sarah's advice. hama [sArA kI] salAha para perisa gaye.
+ ;It signifies the [offeree's] willingness to be bound by the terms of the proposal communicated to him.
  (defrule print_org_word_mng_with_kA_vib
  (declare (salience 1400))
  ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng|proper_noun_dic)
@@ -157,8 +158,13 @@
  (test (member$ ?f_id $?f_ids))
   =>
         (retract ?f0)
+	(if (eq (integerp (str-index "'" ?mng)) TRUE) then
+		(bind ?m (sub-string 1 (- (length ?mng) 2) ?mng))
+	else
+		(bind ?m ?mng)
+	)
  	(bind ?kA_mng (get_kA_mng ?g ?n ?c))
-        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " ?kA_mng " )" crlf)
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?m"  " ?kA_mng " )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_with_kA_vib )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
@@ -1357,7 +1363,12 @@
   (id-cat_coarse ?id ?cat)
   =>
         (retract ?f1)
-        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
+	(if (eq (integerp (str-index "'" ?h_word)) TRUE) then
+                (bind ?m (sub-string 1 (- (length ?h_word) 2) ?h_word))
+        else
+                (bind ?m ?h_word)
+        )
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?m "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_hid )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------

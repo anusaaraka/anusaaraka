@@ -403,7 +403,6 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/check_for_best_match_in_multi-word.clp"))
  (load ?*path*)
  (load-facts "multi_word_expressions.dat")
- (load-facts "proper_noun_dic.dat")
  (load-facts "domain.dat")
  (assert (index 1))
  (assert (English-list))

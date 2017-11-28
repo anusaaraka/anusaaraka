@@ -1,4 +1,4 @@
- 27-11-17
+ 28-11-17
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
 			               yes-no_question -- added punctuation fact in rule part
@@ -20,10 +20,13 @@
                           PP_pronoun_rule_without_vib -- added them
 		  	  default_hnd_mng_rule (added if condition to check mng is '-')  
 			  kA_in_hindi_rt_mng -- added test condition for number
+			  print_org_word_mng_with_kA_vib -- handled "offeree's"
+		   	  PP_rule_with_vib_hid		 -- handled 's
  7. sd_relation_rules.clp :
 		Modified: AjFArWaka_vAkya (added 'Does|May')
 		       	  kriyA_sub_rule1 -- added root condition
 			  acomp+nsubj -- removed 'become' from list
+			  aux_cop -- added 'To'
  8. sd_lwg_rules.clp
 		Modified: cp_facts_for_lwg , replace_VP, get_lwg -- added 'SINV' in the list
 			  replace_S1  -- added 'ought' in the list
@@ -83,8 +86,8 @@
 	Added: map_mwe, remove_punc_ids_in_mwe, map_ner
  30. sd_pada.clp
 	Added : rm_wrong_fact, rm_wrong_fact1 and rm_wrong_pada_fact
-	Modified : get_single_prep -- added 'ADVP' to the list
-		   get_tam_type -- added 'are_not_en' to the list
+	Modified : get_single_prep -- added 'ADVP' to the list  ;  get_tam_type -- added 'are_not_en' to the list
+		   multiple_prep_rule -- added 'TO_VP,Inf_VP'	;  get_pos_pada -- added test condition for number
  31. hindi_compound_meaning.clp
 	Modified : rm_cmp_mng_if_head_is_verb -- added warning msg
 	Modified the file to get sorted ids

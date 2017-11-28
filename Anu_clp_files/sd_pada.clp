@@ -137,8 +137,8 @@
  (not (prep_id_decided ?prep))
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
  ?f0<-(head_id-prawiniXi_id-grp_ids ?hid ?pp $? ?prep_id ?np_id)
- (prawiniXi_id-node-category ?pp ?PP PP|WHPP|QP)
- (prawiniXi_id-node-category ?np_id ?NP NP|WHNP|S)
+ (prawiniXi_id-node-category ?pp ?PP PP|WHPP|QP|TO_VP)
+ (prawiniXi_id-node-category ?np_id ?NP NP|WHNP|S|Inf_VP)
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
 ?f1<-(pada_info (group_head_id ?np_id)(preposition 0))
  (root-verbchunk-tam-chunkids ? ? ? $? ?vid) ;I am depending on you to keep your promise.
@@ -535,6 +535,7 @@
  (defrule get_pos_pada
  (declare (salience 920))
  (id-word ?pos ?word)
+ (test (eq (numberp ?word) FALSE))
  (test (neq (str-index "'" ?word) FALSE))
  (head_id-prawiniXi_id-grp_ids ?pos ?pos_id ?)
  (head_id-prawiniXi_id-grp_ids ? ?pos_h $? ?pos_id $?)
