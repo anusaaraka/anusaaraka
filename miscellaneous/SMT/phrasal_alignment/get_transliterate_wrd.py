@@ -1,6 +1,10 @@
 #Written by Roja(21-07-17)
 #RUN:: python get_transliterate_wrd.py <eng_file> <hnd_file> <sound_dic>
 #Ex::  python get_transliterate_wrd.py  eng hnd  Sound_dic.txt
+#DEBUG NOTATIONS: 
+#                 '^^^' --> "Relevent_dictionary_entry(i.e. Current_eng) and its mapping" 
+#                 '%%'  --> "
+#                 '**'  --> "
 #As this programme used inside clips..so only single sentence left over words are present so eng_lst and hnd_lst directly instead of appending words.
 #################################################################################
 import sys
@@ -75,7 +79,8 @@ def check_transliterate(eng, hnd):
 	e = eng[eng_index]
 	eng_keys = check_key_in_dic(e)
 	for each in eng_keys:
-		if each in eng and each in sound_dic :
+	#VC	if each in eng and each in sound_dic :
+		if (each == eng[eng_index:eng_index+len(each)]) : 
 #			print '^^^', e , eng_index, hnd_index, eng_keys
 			s = sound_dic[each].split('/')
 			ind = eng_index
@@ -99,7 +104,9 @@ def check_transliterate(eng, hnd):
 					else:
 						str1.append(l[0])
 					if max_eng_len < eng_index:
+#VC                                             print("rAma:: max_eng_len =", max_eng_len)
                                                 max_eng_len = eng_index
+#VC                                             print("hari:: max_eng_len =", max_eng_len)
                                                 partial_eng_match = str1
 				if len(str2) > hnd_index-1:
 					str2[hnd_index-1] = l[1]
@@ -127,7 +134,7 @@ def check_transliterate(eng, hnd):
 	if count > max_eng_len+10 and stack == []: #To stop while loop assuming maximum index+10 len
 		break
 	o = ''.join(str1) + ' ' + ''.join(str2) + ' ' + ''.join(partial_eng_match) + ' ' + ''.join(partial_hnd_match)
-
+  #VC print("returned o=", o)
   return o
 #####################
 for eng in eng_lst:
@@ -137,11 +144,14 @@ for eng in eng_lst:
 		if out != None and type(out) == str:
 			o = out.split()
 			if len(o) == 4:
-				if o[0] == eng and o[1] == hnd:
+				if o[0] == eng.lower() and o[1] == hnd:
+#				if o[0] == eng and o[1] == hnd:
 					print '(eng_word-tran_word ' , o[0], o[1],  ')'
 					#print '(transliterate-word ' , o[0], o[1],  ')'
 					break
-				elif o[1] + 'a' == hnd:
+				elif o[0] == eng.lower() and o[1] + 'a' == hnd:  #VC
+#				elif o[0] == eng and o[1] + 'a' == hnd:
+#				elif o[1] + 'a' == hnd:
 #					print  '(transliterate-word ', o[0] , o[1] + 'a', ')'
 					print  '(eng_word-tran_word ', o[0] , o[1] + 'a', ')'
 					break

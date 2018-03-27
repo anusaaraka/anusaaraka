@@ -1,4 +1,4 @@
-I	I/eka/AI/mEM/muJe
+I	I/eka/AI/mEM/muJe/ka
 a	eka/koI/prawi/kisI/eka_EsI/a
 aboard	savAra/xala_meM/samUha_meM/ke_pAsa/para_savAra
 about	PElA_huA/calawA-PirawA/cAro_ora/yahAz-vahAz/pICe/pAsa/lagaBaga/kramAnusAra/jahAz-wahAz/iXara-uXara/iwaswawaH/cArOM_waraPa/cAroM_ora/Asa-pAsa/iXara_uXara/bahuwa_ho_gayA/ke_bAre_meM/Asa_pAsa/wakarIbana/karIba
@@ -72,7 +72,7 @@ hers	usa_swrI_kA/usakI
 herself	svayaM/vaha_svayaM
 him	vaha/usako/yaha
 himself	svayaM/Apase
-his	usakI/apane/usake/unake/usakA/yaha/apanI
+his	usakI/apane/usake/unake/unakA/usakA/yaha/apanI
 how	kEse/kiwanA/kisa_waraha/kEsA
 however	waWApi/waba_BI/PiraBI/Pira_BI/jEse_BI/hAlAzki/lekina/jabaki
 i	mEM/muje/mEMne
@@ -94,11 +94,12 @@ minus	nyUnawama/kamI/GatAva/ke_binA/GatA
 more	aXika/Ora_aXika/Ora/KUba/bahuwa/aXikawara/aXikAMSa/jyAxA/aXika_mAwrA_meM/awyaXika
 most	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa/lagaBaga/awyaXika/sabase_jyAxA
 much	bahuwa/bahuwa_kAla/aXika/prAyaH/Ora/karIba-karIba/kAPI
-my	merA/mere/mEM
+my	merA/mere/mEM/apane
+#I am happy that I fulfilled [my three promises]. muJe KuSI hE ki mEMne [apane wIna vAxoM ko] pUrA kiyA  .
 myself	svayaM/svawaH
 near	nikata/samIpa/pAsa_meM/pAsa_hI/pAsa/najaxIkI/najaxIka/mUla/milawA-julawA/lagaBaga_samIpa/lagaBaga/karIba/kiPayawaSArI/kaFjUsa/jigarI/bilkula_nayA/bAzyA/bahuwa_kuCa_sahI/AnevAlA/anwarafga/milawA_julawA/pAsa_se/pasa/nikata_se/karIba-karIba/ke_pAsa/ke_najaxIka/karIba_ho/nikata_pahuzca/Asa_pAsa
 neither	nA_yaha_nA_vaha/na_hI/nahIM/na/koI_BI_nahIM/inakAra/na_wo
-no	nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM/inakAra
+no	nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM/inakAra/naM
 nobody	koI_nahIM/mAmUlI_AxamI/koInahIM
 none	nahIM_hEM/bilkula_nahIM/bilkula_BI_nahIM/inakAra/koI_nahIM/koI_BI_nahIM
 nothing	kuCa_nahIM
@@ -106,7 +107,7 @@ notwithstanding	waba_BI/Pira_BI/waWApi/ke_bAvajUxa
 of	kA/se/ke_bAre_meM/meM_kA/meM_se
 off	suxUra/xUra/xAhinA/uxAsa/samApwa/rUKA/raxxa/oYPa/mAmulI/CuttI_kA/banxa/Bafga/bakI/alaga/se_xUra_hatakara/CUta/se_xUra/se_alaga/se/para_se
 on	lagAwAra/pe/para/ora/meM/ko/ke_upara/ke_pAsa/ke_kinAre/ke_bAre_meM
-one	eka_UNDEF
+one	eka_UNDEF/koI_BI
 onto	para/pICe_padanA
 opposite	viruxXa/viroXI/viparIwa/ultA/sAmane/prawikUla/Amane-sAmane/ke_sAmane
 or	yA/aWavA/anyaWA/va
@@ -133,7 +134,7 @@ she	usane/vaha/mAxA/aOrawa/swrI/yaha
 since	waba_se/se/kyofki/uparAnwa/cUfki
 some	kuCa/WodA_sA/viSiRta/koI/kai/bahuwa_baDiyA/pUrNawayA/lagaBaga/kuCa_loga/kisI
 somebody	koI/koI_vyakwi
-someone	koI/badA_AxamI/koI_vyakwi
+someone	koI/badA_AxamI/koI_vyakwi/kisI
 something	kuCa/koI_cIja/koI_bAwa/koI
 than	kaba/se/kI_apekRA/kI_wulanA_meM
 that	jo/isa/yaha/vaha/usa/ki/jinheM/waka/iwanA/isa_haxa_waka/uwanA/jo_ki/vahI/jinak/ji/jise
@@ -183,7 +184,7 @@ within	ke_anwargawa/BIwara/mana_meM/mana_hI_mana/ke_anxara/anxara/meM/ke_BIwara/
 without	bAhara/ke_binA/Codakara/binA/ke_KilAPa/na
 worth	mUlya/yogya/mUlya_kA/lAyaka/ke_barAbara_mola_kA/kA_mAlika/mahawva/kImawa
 you	Apa/wumheM/Apako/ApakA/Apake/Apane/wU/wuma
-your	Apa/wumhArA/ApakA/wU
+your	Apa/wumhArA/ApakA/wU/apanA
 yours	Apa/wumhArA/ApakA/wU
 yourself	Kuxa/Apaa/wuma_Kuxa/wuma/svayaM_apane_Apa_ko/Apa_svayaM/Apane_Apa_ko/Apa_Kuxa/wuma_hI
 etc	Axi/iwyAxi/vagEraha
