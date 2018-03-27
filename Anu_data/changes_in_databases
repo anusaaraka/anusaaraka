@@ -1513,6 +1513,15 @@ Nandini ji LTRC 	27-11-13)
 	187. inter-operability_noun	anwaHkRamawA			(Suggested by Chaitanya Sir  25-10-17)
 					Ex: To achieve its tasks Indian Navy is enhancing its capabilities, cooperation and inter-operability 
                                             with regional and extra regional navies.
+	188. reborn_verb     		punarjanma_le/punarjanma_ho
+					Ex :Every time evil raises its head anywhere on earth, I am reborn in some form to fight it.
+	189. rightfully_adverb       	nyAyapUrvaka/iMsAPa_se/jAyaja_wOra_para	(Suggested by Chaitanya Sir  14-02-18)
+					Ex: Bhishm defeated me and you are rightfully his now. 
+	190. dishonored_adjective	apamAniwa                  	(       "       "       "       16-02-18)
+					Ex: They were sad and angry to be dishonored.
+	191. o_interjection		he				(	"	"	"	17-02-18)
+					Ex:O king, all of us have two natures.
+
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1878,6 +1887,8 @@ Nandini ji LTRC 	27-11-13)
 	181. mucus_noun			balagama		(	"	"		  30-08-16)
 	182. aware_adjective 		jAgarUka		(	"	"		    "	  )
 					Ex: How much aware are you about the care of your eyes. 
+	183. tomorrow_noun   		BaviRya			(	"	Chaitanya Sir     17-01-18)
+					Ex: We need to plan for a better tomorrow.
 
 		words extracted automatically from alignment and verified by Rajini:
 
@@ -1963,8 +1974,26 @@ Nandini ji LTRC 	27-11-13)
 	214. bureaucracy_noun		aXikArI-wanwra
 	215. bound_verb			AbaxXa
 	216. fixed_adjective		niyawa
+	217. banknote_noun   		bEMka_nota	(Suggested by Chaitanya Sir   04-01-18)
+					Ex: Cash: It refers to money in the physical form of currency, such as banknotes and coins.
+	218. evacuation_noun 		nikAsI		(Suggested by Chaitanya Sir   04-01-18)
+					Ex: The citizens living in a particular region that is prone to serious environmental disasters may be 
+                                            informed about evacuation procedures, including clear escape routes, well ahead of time.
+	219. amazing_adjective		gZajZaba	(Suggested by Chaitanya Sir   20-01-18)
+	220. revolve_verb		Guma		("		"	      05-02-18)
+					Ex: Do you see the fish on the revolving disc on the pole?
+	221. reborn_adjective		punarjanma	("		"		"     )
+	222. be_verb			bana		("              "             09-02-18)
+					Ex: Therefore, we want you to be the new emperor. isalie, hama cAhawe hEM ki Apa nae samrAta baneM  . 
+	223. diarrhea_noun   		xaswa_roga	(Suggested by Chaitanya Sir   12-02-18)
+					Ex: And your participation in this study will give information regarding the role of norovirus as a 
+                                            cause of diarrhea.
+	224. participation_noun 	BAgIxArI/*/BAga_lenA
+	225. gather_verb		safgaTiwa_kara	(Suggested by Chaitanya Sir   13-02-18)
+					Ex: Susheema gathered his forces and started for Pataliputra. 
+	226. surprisingly_adverb     	hErAnI_kI_bAwa_hE	(Suggested by Chaitanya Sir   13-02-18)
+					Ex: Surprisingly, instead of fighting, the crowd welcomed Ashoka!
 
-	
     5. Modifying first meaning from the list :
        -------------------------------------
         1. establishment_noun   aXiRTAna                as      sWApanA         (Suggested by Meena  07-02-12   )
@@ -2539,6 +2568,9 @@ Nandini ji LTRC 	27-11-13)
 	55. hardened_UNDEFINED      kadA_karanA				(	"	"	"	04-06-16)
  	56. hardening_UNDEFINED     kadA_karanA				(	"	"	"	04-06-16)
 	57. empty_noun		    KAlI_dibbA	(no noun entry in OLD)	(					)
+	58. adopted_UNDEFINED	afgIkAra_karanA				(	"	"	"	02-02-18)
+	59. participation_UNDEFINED BAgIxArI				(	"	"	"	12-02-18)
+	60. dishonored_UNDEFINED	apamAniwa_kara			(	"	"	"	16-02-18)
 
 
     8. Modified category:
@@ -2796,6 +2828,9 @@ Nandini ji LTRC 	27-11-13)
 	civil_and_session_court	sivila_Ora_sESa_aZsa_UZyAyAlaya	as	sivila_Ora_seSana_nyAyAlaya			("  "	"	)
 	current_assets		cAlU_parisaMpwwiyAM_MswiyAM	as	cAlU_parisaMpwwiyAM		(	By Shirisha Manju 25-10-17)
 	long_term		xIxarkAlika			as	xIrGakAlika			(Suggested by Chaitanya Sir 25-10-17)
+	pros_and_cons   	AgA_pICA			as	Age_pICe			(	"	"	    04-01-18)	
+	after_that      	waxnaMwara			as	waxanaMwara			(	"	"	    11-01-18)
+	pros_and_cons		AgA_pICA			as	Age_pICe			(	"	"	    05-03-18)
 
 
     Added new entry:
@@ -3174,7 +3209,22 @@ Nandini ji LTRC 	27-11-13)
 				(Added this meaning from well_establihed)
 	18. stretch_marks	KiMcAva_cihna		(Suggested by Chaitanya sir 	02-08-17)
 	19. in_part		AMSika			(	"	"		25-10-17)
-
+	20. pros_and_cons   	lABa_va_hAni		(	"	"		04-01-18)
+				Ex: India has to analyze all the pros and cons before giving a green signal.
+	21. after_that		isake_bAxa		(	"	"		11-01-18)
+				Ex: After that they will dispatch the message and wait for the receipt. isake bAxa ve saMxeSa Beja xeMge Ora 
+                                    rasIxa ke lie iMwajAra kareMge.
+	22. long_ago        	bahuwa_samaya_pahale	(       "       "               02-02-18)
+	23. soon_after      	wuranwa_bAxa		(	"	"		05-02-18)
+				Ex: Pandu died soon after Arjun's birth. 
+	24. every_time		jaba_kaBI_BI/jaba_BI	(	"	"		05-02-18)
+				Ex: Every time evil raises its head anywhere on earth, I am reborn in some form to fight it. 
+	25. Your_Majesty	mahAmahima		(Suggested by Chaitanya sir     05-03-18)
+	26. after_that		isake_bAxa		(	"	"		 "	)
+	27. every_time		jaba_kaBI_BI/jaba_BI	(	"	"		 "	)
+	28. long_ago		bahuwa_samaya_pahale	(	"	"		 "	)
+	29. pros_and_cons	lABa_va_hAni		(	"	"		 "	)
+	30. soon_after		wuranwa_bAxa		(	"	"		 "	)
 
    Modifying the head id:
    ---------------------
@@ -3778,6 +3828,9 @@ Nandini ji LTRC 	27-11-13)
 	Dalhousie	dalahOjZI	as	dalhojI		(Suggested by Chaitanya Sir  03-06-14)
 	mark	niSAna		as	mArka			(	"	"	     25-10-17)
 
+  Added new meaning
+  -----------------
+	b.c.	IsA_pUrva/I.pU.					(Suggested by Chaitanya Sir  05-03-18)
 
 # Changes in kriyA_object_vib.txt
 # ==============================

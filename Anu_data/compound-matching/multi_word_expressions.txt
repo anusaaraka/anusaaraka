@@ -1751,7 +1751,7 @@ Write_rate	leKana_xara#leKana_xara#noun#2#RM
 Write_read_head	leKana_paTana_SIrRa#leKana_paTana_SIrRa#noun#3#RM
 Write_ring	leKana_valaya#leKana_valaya#noun#2#RM
 Write_time	leKana_samaya#leKana_samaya#noun#2#RM
-Your_Majesty	mahArAja#mahArAja#noun#2#RM
+Your_Majesty	mahAmahima/mahArAja#mahAmahima/mahArAja#noun#2#RM
 Zero-slot_LAN	SUnya_KAMcA_lEna#SUnya_KAMcA_lEna#noun#2#RM
 Zero_Population_Growth	SUnya_janasaMKyA_vqxXi_xara#SUnya_janasaMKyA_vqxXi_xara#noun#3#RM
 a_basketful	tokarIBara#tokarIBara#noun#2#RM
@@ -2745,7 +2745,7 @@ after_sometime	kuCa_samaya_bAxa#kuCa_samaya_bAxa#noun#2#RM
 after_taking_into_account_the_result_of_discussions_held_with_the_representive_of_ministry	maMwrAlaya_ke_prawiniXi_ke_sAWa_hue_vicAra_vimarSa_ke_pariNAmoM__ko_XyAna_meM_raKakara#maMwrAlaya_ke_prawiniXi_ke_sAWa_hue_vicAra_vimarSa_ke_pariNAmoM__ko_XyAna_meM_raKakara#noun#14#RM
 after_taking_into_consideration_all_aspects_of_the_question	mAmale_ke_saBI_pahaluoM_para_vicAra_karane_ke_bAxa#mAmale_ke_saBI_pahaluoM_para_vicAra_karane_ke_bAxa#noun#6#RM
 after_taste	ke_bAxa_kA_jZAyakA#ke_bAxa_kA_jZAyakA#noun#2#RM
-after_that	waxnaMwara#waxnaMwara#noun#2#RM
+after_that	isake_bAxa/waxanaMwara#isake_bAxa/waxanaMwara#noun#2#RM
 after_the_expiry_of	kI_samApwi_para#kI_samApwi_para#noun#3#RM
 after_the_fashion_of	PESana_ke_bAxa#PESana_ke_bAxa#noun#3#RM
 again_and_again	bAra_bAra#bAra_bAra#noun#3#RM
@@ -11986,7 +11986,7 @@ every_now_and_then	samaya_samaya_para#samaya_samaya_para#noun#4#RM
 every_one	hara_eka#hara_eka#noun#2#RM
 every_other	hara_xUsarA#hara_xUsarA#noun#2#RM
 every_so_often	jaba_xeKo_waba#jaba_xeKo_waba#noun#3#RM
-every_time	hara_bAra#hara_bAra#noun#2#RM
+every_time	hara_bAra/jaba_kaBI_BI/jaba_BI#hara_bAra/jaba_kaBI_BI/jaba_BI#noun#2#RM
 everywhere_defined	sArva_pAriBARiwa#sArva_pAriBARiwa#noun#2#RM
 eviction_inspector	bexaKalI_nirIkRaka#bexaKalI_nirIkRaka#noun#2#RM
 evil_doer	kukarmI#kukarmI#noun#2#RM
@@ -18626,7 +18626,7 @@ logical_symbol	warkasaMgawa_prawIka#warkasaMgawa_prawIka#noun#2#RM
 logical_unit	wArkika_yUnita#wArkika_yUnita#noun#2#RM
 logical_variable	warkasaMgawa_cara#warkasaMgawa_cara#noun#2#RM
 london_account_current_section	laMxana_cAlU_leKA_anuBAga#laMxana_cAlU_leKA_anuBAga#noun#4#RM
-long_ago	bahuwa_pahale#bahuwa_pahale#noun#2#RM
+long_ago	bahuwa_samaya_pahale/bahuwa_pahale#bahuwa_samaya_pahale/bahuwa_pahale#noun#2#RM
 long_bills	xIxarkAlIna_huMdiyAM_Mila#xIxarkAlIna_huMdiyAM_Mila#noun#2#RM
 long_bills_book	xIxarkAlika_bila_auMdI_bahI#xIxarkAlika_bila_auMdI_bahI#noun#3#RM
 long_bone	lambI_haddI#lambI_haddI#noun#2#RM
@@ -24678,7 +24678,7 @@ proprietary_stake	svAmya_paNa_aAjI#svAmya_paNa_aAjI#noun#2#RM
 propriety_audit_section	Ociwya_leKAparIkRA_anuBAga#Ociwya_leKAparIkRA_anuBAga#noun#3#RM
 propriety_cum_efficiency_audit	Ociwya_evaM_xakRawA_leKAparIkRA#Ociwya_evaM_xakRawA_leKAparIkRA#noun#4#RM
 prorata_share	yaWAnupAwa_hissA#yaWAnupAwa_hissA#noun#2#RM
-pros_and_cons	AgA_pICA#AgA_pICA#noun#3#RM
+pros_and_cons	Age_pICe/lABa_va_hAni#Age_pICe/lABa_va_hAni#noun#3#RM
 prosecuting_attorney	aBiyojana_muKZwAra#aBiyojana_muKZwAra#noun#2#RM
 prosecuting_inspector	saMpwwi_nirIkRaka#saMpwwi_nirIkRaka#noun#2#RM
 prospective_effect	uwwravyApI_praBAva#uwwravyApI_praBAva#noun#2#RM
@@ -28355,7 +28355,7 @@ song_drama_division	gIwa_evaM_nAtaka_praBAga#gIwa_evaM_nAtaka_praBAga#noun#3#RM
 sonic_barrier	Xvanika_avaroXa#Xvanika_avaroXa#noun#2#RM
 sonic_boom	wejZa_Xvani#wejZa_Xvani#noun#2#RM
 sonny_boy	betA#betA#noun#2#RM
-soon_after	wuranwa_isake_bAxa_ki#wuranwa_isake_bAxa_ki#noun#2#RM
+soon_after	wuranwa_bAxa/wuranwa_isake_bAxa_ki#wuranwa_bAxa/wuranwa_isake_bAxa_ki#noun#2#RM
 soon_enough	jalxI_hI#jalxI_hI#noun#2#RM
 soot_black	kAliKa#kAliKa#noun#2#RM
 sophomore_class	xviwIya_varRa_kA_kakRA#xviwIya_varRa_kA_kakRA#noun#2#RM
@@ -33391,6 +33391,22 @@ puffed_rice	muramurA#muramurA#noun#2#RM
 #In this, you can have toast butter, gram flour chila( pancake), puffed rice, fruits-salad and juice. (Suggested by Chaitanya sir  1-07-17)
 discounting_bills	huNdI_battA#huNdI_battA#noun#2#RM
 #Discounting Bills of Exchange. viniyama kI huNdI battA	(Suggested by Chaitanya sir     01-08-17)
+green_signal	harI_JaNdA#harI_JaNdA#noun#2#RM
+#India has to analyze all the pros and cons before giving a green signal. (Suggested by Chaitanya sir     04-01-18)
+red_signal	lAla_JaNdA#lAla_JaNdA#noun#2#RM
+#station master gave red signal and the train stopped.			  (Suggested by Chaitanya sir     04-01-18)
+ahead_of_time	samaya_rahawe#samaya_rahawe#noun#3#RM			  
+#The citizens living in a particular region that is prone to serious environmental disasters may be informed about evacuation procedures, including clear escape routes, well ahead of time.				   (Suggested by Chaitanya sir     04-01-18)
+immediate_after_that	waxanaMwara#waxanaMwara#noun#1#RM
+#		(Suggested by Chaitanya sir     11-01-18)
+yet_again	eka_bAra_Pira_se#eka_bAra_Pira_se#adverb#2#WM
+#I am sure she will fall for you yet again as she now has things to talk to her friends about.  (Suggested by Chaitanya sir     20-01-18)
+heavenly_voice	AkASavANI#AkASavANI#noun#2#WM
+#When Arjun was born, a heavenly voice was heard. jaba arjuna kA janma huA, waba AkASavANI huI .
+later_on	bAxa_meM#bAxa_meM#noun#1#WM
+#This palace triggered Duryodhan's envy, causing a fateful game of dice to be played later on.	
+recent_past	hAla_hI_meM#hAla_hI_meM#noun#2#WM
+#This is a research study and the purpose of this research is to find the presence of norovirus in diarrheal stool samples and in stool of apparently healthy children who had an episode of norovirus diarrhea in the recent past. (Suggested by Chaitanya sir     12-02-18)
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

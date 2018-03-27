@@ -573,7 +573,7 @@ b	bI
 b.a.r.c.	bI._E._Ara._sI.
 b.b.	bI._bI.
 b.b.m.b.	bI._bI._ema._bI.
-b.c.	bI._sI./bIsI
+b.c.	IsA_pUrva/bI._sI./bIsI/I.pU.
 b.c.c.i.	bI._sI._sI._AI.
 b.j.d.	bI._je._dI.
 b.j.p.	BA._jA._pA./bI._je._pI.
