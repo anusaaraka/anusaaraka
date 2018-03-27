@@ -36,12 +36,60 @@
 	(retract ?f)
         (assert (manual_id-word ?*id* ?wrd))
         (assert (manual_hin_sen_tmp $?remaining_sen))
-        (if (and (neq ?wrd @PUNCT-Comma)(neq ?wrd @PUNCT-Colon)(neq ?wrd @PUNCT-Dot)) then
+        (if (and (neq ?wrd @PUNCT-Comma)(neq ?wrd @PUNCT-Colon)(neq ?wrd @PUNCT-Dot)(neq ?wrd ..)) then
 	    (retract ?f1)
 	    (assert (manual_hin_sen1 $?sen ?wrd))
         )
         (bind ?*id* (+ ?*id* 1))
 )
+
+;kqpayA nimnaliKiwa jAnakArI ko sAvaXAnI se [paDeM.] yaxi Apako aXika jAnakArI cAhie wo hameM bawAeM  .
+;(defrule modify_word_fact
+;(declare (salience 800))
+;?f0<-(manual_id-word ?id ?mng&~.)
+;(test (eq (numberp ?mng) FALSE))
+;(test (neq (str-index "." ?mng) FALSE))
+;(test (eq (sub-string (length ?mng) (length ?mng) ?mng ) "."))
+;=>
+;	(retract ?f0)
+;	(bind ?n (string-to-field (sub-string 1 (- (length ?mng) 1) ?mng)))
+;	(assert (manual_id-word ?id ?n))
+;)
+;	
+ 
+
+
+
+(defrule get_dbase_fact_for_chandrabinxu
+(declare (salience 1000))
+(manual_id-word ?mid ?mng)
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "M" ?mng) FALSE))
+(database_info (components $?p ?mng1 $?p1)(group_ids $?ids ))
+(test (eq (numberp ?mng1) FALSE))
+(test (neq (str-index "z" ?mng1) FALSE))
+(test (eq (sub-string 1 (- (str-index "M" ?mng) 1) ?mng) (sub-string 1 (- (str-index "z" ?mng1) 1) ?mng1)))
+(test (eq (sub-string (+ (str-index "M" ?mng) 1) (length ?mng) ?mng) (sub-string (+ (str-index "z" ?mng1) 1) (length ?mng1) ?mng1)))
+(not (database_info (components $?p ?mng $?p1)(group_ids $?ids )))
+=>
+        (assert (database_info (components $?p ?mng $?p1) (group_ids $?ids )))
+)
+
+(defrule get_dbase_fact_for_chandrabinxu1
+(declare (salience 1000))
+(manual_id-word ?mid ?mng)
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "f" ?mng) FALSE))
+(database_info (components $?p ?mng1 $?p1)(group_ids $?ids ))
+(test (eq (numberp ?mng1) FALSE))
+(test (neq (str-index "z" ?mng1) FALSE))
+(test (eq (sub-string 1 (- (str-index "f" ?mng) 1) ?mng) (sub-string 1 (- (str-index "z" ?mng1) 1) ?mng1)))
+(test (eq (sub-string (+ (str-index "f" ?mng) 1) (length ?mng) ?mng) (sub-string (+ (str-index "z" ?mng1) 1) (length ?mng1) ?mng1)))
+(not (database_info (components $?p ?mng $?p1)(group_ids $?ids )))
+=>
+        (assert (database_info (components $?p ?mng $?p1) (group_ids $?ids )))
+)
+
 
 ;===================================== Vibakthi Grouping =============================================================
 
@@ -165,7 +213,7 @@
 (defrule ke_[word]
 (declare (salience 650))
 (manual_id-word ?id1 ke)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa|sAWa-sAWa|bajAya)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa|KilAPa|sAWa-sAWa|bajAya|alAvA|prawi)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -366,13 +414,13 @@
 (declare (salience 580))
 (id-HM-source ? ?mng ?mng1 ?)
 (manual_id-word ?id0 ?mng&~ke&~kI&~se)
-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m&~Axi)
 (man_word-root-cat ?m ?mng1 ?c&~v)
 (not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
 =>
-        (assert (manual_word_info (head_id ?id1) (word ?mng ?m)(group_ids ?id0 ?id1)))
+        (assert (manual_word_info (head_id ?id1) (word ?mng ?m)(root_components ?mng ?m)(group_ids ?id0 ?id1)))
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id1))
 )
@@ -386,8 +434,8 @@
 (declare (salience 575))
 (database_info (components ?mng ?mng1 ))
 (manual_id-word ?id0 ?mng&~ke&~kI&~se)
-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)
-(man_word-root-cat ?m ?mng1 ?c&~v)
+(or (and (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)(test (eq ?m ?mng1)))
+    (and (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)(man_word-root-cat ?m ?mng1 ?c&~v)))
 (not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
@@ -477,10 +525,14 @@
 ?f1<-(manual_id-word ?id0 ?noun&~hEM&~hE&~.);vyApaka rUpa se, vExyuwa waWA cumbakIya praBAva avicCexa hEM - isIlie isa bala ko vixyuwa-cumbakIya bala kahawe hEM.
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
 ?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&~isa)
+(test (eq (member$ ?w (create$ isa agara yaxi Apako @PUNCT-ClosedParen)) FALSE))
+(test (eq (member$ ?noun (create$ isa agara yaxi Apako @PUNCT-ClosedParen)) FALSE))
 (not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id2))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun ?w)(group_ids ?id0 ?id2)))
+	(bind ?nw (string-to-field (str-cat ?noun"-"?w)))
+        (assert (manual_word_info (head_id ?id0) (word ?nw)(group_ids ?id0 ?id2)))
+;        (assert (manual_word_info (head_id ?id0) (word ?noun ?w)(group_ids ?id0 ?id2)))
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
@@ -519,7 +571,7 @@
 ;jEse ki,  inake bAxa, apane|inake KilAPa
 (defrule pronoun_group
 (declare (salience 570))
-?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|wumhAre|Apake|sabake|unake|mere))
+?f1<-(manual_word_info (head_id ?mid) (word ?p&isake|isakI|usake|inake|isa|jEse|isI|apane|jisake|jinake|wumhAre|Apake|sabake|unake|mere))
 ?f<-(manual_word_info (head_id ?h) (word ?w&bAxa|ki|pAsa|KilAPa|sAWa|Asa-pAsa|liye|xOrAna|alAvA|bIca $?d)(group_ids ?mid1&:(=(+ ?mid 1) ?mid1) $?ids))
 =>
 	(retract ?f1)
@@ -574,7 +626,7 @@
 ;====================================== Default Word Grouping =======================================
 (defrule get_default_group
 (declare (salience 500))
-?f1<-(manual_id-word ?mid ?man_wrd&~kA&~se&~ke&~{&~}&~.&~-)
+?f1<-(manual_id-word ?mid ?man_wrd&~kA&~se&~ke&~{&~}&~.&~-&~@SYMBOL-TELDA&~...)
 (test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
 (not (manual_word_info (group_ids $? ?mid $?)))
 (not (mng_has_been_grouped ?mid))
@@ -614,7 +666,8 @@
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun) (vibakthi ?v $?v1)(group_ids $?grp_ids ?lid))
 (test (eq (integerp (member$ $?noun (create$ va Ora yA))) FALSE))
 (manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se|sA|sI)
-(not (chunk_name-chunk_ids VGF|VGNF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE. isase usa vyakwi kI use [sUciwa kI gaI] praswAva kI SarwoM se AbaxXa hone kI icCAe vyakwa howI hE 
+(not (chunk_name-chunk_ids VGF|VGNF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE. isase usa vyakwi kI use [sUciwa kI gaI] praswAva kI SarwoM se AbaxXa hone kI icCAe vyakwa howI hE
+(not (id-Apertium_output ? ?vib)) ;10.0 tAipa sI .
 (not (mng_has_been_grouped ?id1))
 =>
 	(if (eq ?vib sA) then
@@ -640,7 +693,8 @@
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
 (test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
 ;(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye karane ))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA|hewu)(group_ids $?grp_ids1))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|xvArA|vAlI|vAlA|vAle|waka|numA|hewu)(group_ids $?grp_ids1))
+;?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA|hewu)(group_ids $?grp_ids1))
 (test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
 (not (chunk_name-chunk_ids VGF $? ?mid0 $?))
 (not (vib_added ?id0))
@@ -653,6 +707,26 @@
         	(modify ?f1 (vibakthi ?new_v)(vibakthi_components ?v $?v1 ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
 	)
 )
+;1920 waka EsA mAnA jAwA WA ki BArawIya saByawA kA uxBava [6 vIM] SawAbxI IsA pUrva se hI mAnA jAwA WA  .
+(defrule single_vib2
+(declare (salience 40))
+?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
+(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye ))) FALSE))  
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @SYMBOL-TELDA)
+?f2<-(manual_word_info (head_id ?id2&:(=(+ ?id1 1) ?id2))(word ?vib&ne|para|ko|meM|lie|jEse|jEsI|xvArA|vAlI|vAlA|vAle|waka|numA|hewu/vIM)(group_ids $?grp_ids1))
+(test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
+(not (chunk_name-chunk_ids VGF $? ?mid0 $?))
+(not (vib_added ?id0))
+=>
+        (retract ?f2)
+        (if (eq ?v 0) then
+                (modify ?f1 (vibakthi ?vib)(vibakthi_components ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+        else
+                (bind ?new_v (remove_character " " (implode$ (create$ ?v $?v1 ?vib)) "_"))
+                (modify ?f1 (vibakthi ?new_v)(vibakthi_components ?v $?v1 ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+	)
+ )                                                     
+
 ;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 18-5-15
 ;to map man punct's same as anu punt's
@@ -661,7 +735,7 @@
 ?f0<-(manual_word_info  (head_id ?mid) (word ?w))
 (test (integerp (member$ ?w (create$ / )))) 
 =>
-	(modify ?f0 (word SYMBOL-SLASH))
+	(modify ?f0 (word @SYMBOL-@SLASH))
 )
 ;==================================== get hyphen word inf0 ==============================
 ;Added by Shirisha Manju
