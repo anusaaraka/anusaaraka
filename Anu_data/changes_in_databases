@@ -1127,6 +1127,13 @@ Nandini ji LTRC 	27-11-13)
 	143. screw_verb			lag/hLmawa_juT/Gum/gum as laga/himawa_juTa/GumA/guma  (Suggested by Rajini  14-06-17)
 	144. service_verb		KLxamawa_kara	as	Kixamawa_kara	(Suggested by Rajini             14-06-17)
 	145. title_noun			KLwAba		as	KiwAba		(	"	"		    "	 )	
+	146. battlefield_noun		yuXxBUmi 	as	yuXxaBUmi	(	"	"	         09-05-18)
+	147. buddhism_noun		bOXxa_Xarma	as	bOxXa_Xarma	(	"	"		    "    )
+	148. download_verb		kampyUtara_me_detA_trAMsavara_kara as kampyUtara_me_detA_le_A ( Suggested by Chaitanya Sir 09-05-18)
+	149. enough_noun		mAtrA		as	mAwrA		( Suggested by Chaitanya Sir 09-05-18)
+	150. everybody_pronoun		saBa_loga	as	saba_loga	(	"	"		"    )
+	151. obverse_noun		viparIwArW	as	viparIwArWa	(	"	"		"    )
+	152. panic_verb			sanwrAswa_ho	as	sanwraswa_ho	(	"	"		"    )
 
     3. Added new entry:
        ---------------
@@ -1520,8 +1527,10 @@ Nandini ji LTRC 	27-11-13)
 	190. dishonored_adjective	apamAniwa                  	(       "       "       "       16-02-18)
 					Ex: They were sad and angry to be dishonored.
 	191. o_interjection		he				(	"	"	"	17-02-18)
-					Ex:O king, all of us have two natures.
-
+						Ex:O king, all of us have two natures.
+	192. dishonored_adjective	apamAniwa
+	193. reborn_verb		punarjanma_le/punarjanma_ho	(Suggested by Chaitanya Sir  09-05-18)
+	194. rightfully_adverb		nyAyapUrvaka/iMsAPa_se/jAyaja_wOra_para (	" 	"	"    )
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1993,6 +2002,27 @@ Nandini ji LTRC 	27-11-13)
 					Ex: Susheema gathered his forces and started for Pataliputra. 
 	226. surprisingly_adverb     	hErAnI_kI_bAwa_hE	(Suggested by Chaitanya Sir   13-02-18)
 					Ex: Surprisingly, instead of fighting, the crowd welcomed Ashoka!
+	227. chastise_verb   		dAzta			(Suggested by Chaitanya Sir   13-02-18)
+					Ex: The Lord at once took the position of the teacher and chastised the student, calling him, indirectly                                            , a fool.
+	228. British_noun		britiSa			(Suggested by Chaitanya Sir   07-05-18)
+	229. adopted_adjective		xawwaka			(	"	"		"     )
+	230. assertive_adjective	xqDa			(	"	"		"     )
+	231. battlefield_noun		yuxXasWala		(	"	"		"     )
+	232. chant_noun			japa			(	"	"		"     )
+	233. chant_verb			japa_kara/Bajana_kara	(	"	"	      09-05-18)
+	234. disguise_verb		veRa_baxala		(	"	"		"     )
+	235. domesticate_verb		pAla			(	"	"		"     )
+	236. enough_noun		paryApwa		(	"	"		"     )
+	237. free_adjective		muPwa			(	"	"		"     )
+	238. headless_adjective		binA_sira_kA		(	"	"		"     )
+	239. kneel_verb			GutanoM_ke_bala_bETa	(	"	"	        "     )
+	240. learn_verb			jFAwa_ho		(	"	"		"     )
+	241. obverse_adjective		aBimuKa			(	"	"	        "     )
+	242. participant_noun		BAga_lene_vAlA		(	"	"	        "     )
+	243. personified_adjective	mUrwa_rUpa/mUrwimAna_rUpa (	"	"		"     )
+	244. seethe_verb		mana_hI_mana_gusse_se_KOla/anxara_hI_anxara_gusse_se_KOla ( " " ")
+	245. succeed_verb		kA_sWAna_le		(	"	"		"     )
+	246. tomorrow_noun		BaviRya			(	"	"		"     )
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2454,6 +2484,8 @@ Nandini ji LTRC 	27-11-13)
 	213. fixed_adjective	sWira_kI_huI		as	sWira		(	"	"		"      )
 	214. national_adjective	xeSaBakwa		as	rARtrIya	(	"	"		"      )
 	215. profile_noun	pArSva_ciwra		as	varNana		(	"	"		"      )
+	216. innovative_adjective	navIna		as	aBinava		(	"	"	       09-05-18)
+	217. wherever_conjunction	kahIM_BI	as	jahAz_kahIM_BI	(	"	"		"      )
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2507,6 +2539,7 @@ Nandini ji LTRC 	27-11-13)
 	46. place_noun		jagAha						(	"    Rajini		  "	)
 	47. lion_noun		sLha-rASi					(	"	"		  "	)	
 	48. plan_verb		yojanA_wEyAra_kara				(Suggested by Chaitanya Sir 	25-10-17)
+	49. learn_verb		sik						(	"	"		09-05-18)
 
     7. Removed entry:
        --------------
@@ -2571,7 +2604,7 @@ Nandini ji LTRC 	27-11-13)
 	58. adopted_UNDEFINED	afgIkAra_karanA				(	"	"	"	02-02-18)
 	59. participation_UNDEFINED BAgIxArI				(	"	"	"	12-02-18)
 	60. dishonored_UNDEFINED	apamAniwa_kara			(	"	"	"	16-02-18)
-
+	61. adopted_UNDEFINED	grahaNa_karanA				(	"	"	"	09-05-18)
 
     8. Modified category:
        ------------------
@@ -3840,7 +3873,6 @@ Nandini ji LTRC 	27-11-13)
    2. ragada  		ko	(Suggested by Sukhada       02-06-14) Ex: Your cat keeps on rubbing itself against my leg. 
    3. preraNA_xe      	ko	(Suggested by Chaitanya Sir 31-08-15) Ex: As a committed educator, he inspired millions of young people to
 									  achieve their very best.
-   4. preriwa_kara    	ko	(	"	"		"   )
 
 # Changes in human.txt
 # ===================
@@ -4100,6 +4132,7 @@ Nandini ji LTRC 	27-11-13)
     Added :
 	Heeraben_Modi	hIrAbena_moxI#hIrA_bena_moxI#PropN#2#WM		(By Shirisha Manju )
 	Narendra_Modi's	nareMxra_moxI#nareMxra_moxI#PropN#2#WM  	(By Shirisha Manju )
+	Sri_Krsna	SrIkqRNa#SrIkqRNa#PropN#2#WM			(	"	"  )
 		
 
 # Added new files:

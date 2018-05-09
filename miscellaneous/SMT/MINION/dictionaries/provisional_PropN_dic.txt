@@ -630,7 +630,7 @@ Kashmir	kaSmIra
 Keats	kItsa
 Kennedy	kEnedI
 Kilimanjaro	kilimaMjAro
-King	rAjA
+King	rAjA/rAjan
 Kintyre	Kintyre
 Kipling	kipaliMga
 Kippur	Kippur
@@ -1136,3 +1136,9 @@ tava	wava
 Uttamauj	uwwamOjA
 yudhi	yuXi
 Kuruksetra	kurukRewra
+Bhagavad-gita	BagavaxgIwA
+Servitor	sevaka	
+Govinda	goviMxa
+Yudhaamanyu	yuXAmanyu
+Uttamaujaa	uwwamOjA
+Drupada	xrupaxa

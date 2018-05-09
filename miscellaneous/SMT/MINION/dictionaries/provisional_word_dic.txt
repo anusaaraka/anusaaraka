@@ -1,5 +1,6 @@
 their	unake/inakI
 them	unakI
+those	una
 his	usakA/usakI/use/unake/unakA/unakI
 him	use
 our	hamAre/hamArI/hamArA	
@@ -16,3 +17,6 @@ graphical	grAPI
 but	para
 everybody	saBI
 feedback	PIdabEYka
+motivated	preriwa
+informed	bawAyA
+certainly	niScaya_hI
