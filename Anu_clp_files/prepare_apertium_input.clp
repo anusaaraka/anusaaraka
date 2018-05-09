@@ -648,7 +648,7 @@
   (defrule PP_pronoun_rule_with_vib_kA
   (declare (salience 941))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
-  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
+  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|ours|my|me|they|its|we|it|him|this|mine)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat PP|infinitive|VP)(group_ids $?f_ids))

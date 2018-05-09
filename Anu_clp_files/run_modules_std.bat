@@ -90,6 +90,7 @@
  (load-facts "Node_category.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "word2.dat")
+ (load-facts "punctuation_info.dat")
  (open "sd_category_info.dat" sd_cat_fp "w")
  (run)
  (clear)

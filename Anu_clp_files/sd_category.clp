@@ -4,6 +4,8 @@
  (assert (id-sd_cat))
  (assert (parserid-word))
  (assert (word-wordid-nertype))
+ (assert (id-left_punctuation))
+ (assert (id-right_punctuation))
  )
 
  (defglobal ?*cat_fp* = sd_cat_fp)
@@ -15,6 +17,27 @@
 
 
   ;------------------------------------------------------------------------------------------
+  ; if first id is nonascii then treat second id as first id to control PropN_rule
+  ; [nonascii3226128162 Listen] to your customers (put yourself in their shoes) and make a note of the feedback received.
+  (defrule cntrl_fact_for_PropN
+  (declare (salience 20))
+  (parserid-word P1 ?w)
+  (test (neq (str-index "nonascii" ?w) FALSE))
+  (id-word_cap_info 2 first_cap)
+  =>
+	(assert (not_PropN P2))
+  )
+
+  ;"All men are my children. [What] I desire for my own children, and I desire their welfare and happiness both in this world and the next, I desire for all men."
+  (defrule cntrl_fact_for_PropN1
+  (declare (salience 20))
+  (parserid-word ?pid ?w)
+  (parserid-wordid ?pid ?id)
+  (id-right_punctuation =(- ?id 1) PUNCT-DotPUNCT-Semicolon|PUNCT-ExclamationPUNCT-Semicolon|PUNCT-Dot)
+  =>
+        (assert (not_PropN ?pid))
+  )
+  
   ; NOTE: PropN info is extracted from NER so handling NNPS category before NER rule.
   ; NNPS -- A Grateful Dead/Allman [Brothers] concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
   (defrule NNPS_rule
@@ -83,6 +106,7 @@
   ?f0<-(id-sd_cat  ?pid ?)
   (parserid-word ?pid ?w&~I&~Let&~But&~It) ;You are lucky I am here. Aditya said, Let us look at it carefully first.
   (test (eq (str-index "SYMBOL-" ?w) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
+   (not (not_PropN ?pid)); [nonascii3226128162 Listen] to your customers (put yourself in their shoes) and make a note of the feedback received.
    =>
         (assert (parser_id-cat_coarse ?pid PropN))
         (assert (parser_id-cat ?pid proper_noun))

@@ -144,7 +144,9 @@
 	(retract ?f0)
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?org_word"  -  -   -)" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?org_word ")" crlf)
-	(printout t "Warning: root missing for " ?org_word crlf)
+	(if (eq (integerp (member$ ?org_word (create$ - ))) FALSE) then
+		(printout t "Warning: root missing for " ?org_word crlf)
+	)
  )
  ;-------------------------------------ADDITIONAL RULES FOR OPEN LOGOS PARSER------------------------------------------------
  ;Added by Roja (31-03-11)
