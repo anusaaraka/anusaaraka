@@ -91,9 +91,51 @@
 	(retract ?f0)
 	(assert (id-grp_type-ids ?h ?t $?p ?r))
 ) 
-;======================================= Alignment rules ==========================
+;======================================= Alignment rules with initial ids ==========================
+(defrule align_nmod_with_dic_mng
+(declare (salience 1020))
+(rel_name-sids nmod:of ?ah ?ac)
+(hnd_rel_name-h_id-c_ids ? nmod:ke|nmod:kA - ?mh ?mc $?)
+(manual_word_info (head_id ?mh) (root_components $?hmng))
+(manual_word_info (head_id ?mc) (root_components $?cmng))
+(database_info (components $?hmng ) (group_ids ?ah ))
+(database_info (components $?cmng ) (group_ids ?ac ))
+=>
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ah ?mh nmod align_nmod_with_dic_mng 2))
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_nmod_with_dic_mng 2))
+)
 
-(defrule align_root
+(defrule align_nmod_child_dic_mng
+(declare (salience 1019))
+(rel_name-sids nmod:of ?ah ?ac)
+(hnd_rel_name-h_id-c_ids ? nmod:ke|nmod:kA - ?mh ?mc $?)
+(manual_word_info (head_id ?mh) (root_components $?hmng))
+(database_info (components $?hmng ) (group_ids ?ah ))
+(not (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ? ? align_nmod_with_dic_mng ?))
+(not (anu_id-man_id-rel_name-rule_name-confidence_level ? ?mc ? align_nmod_with_dic_mng ?))
+=>
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_nmod 2))
+)
+
+
+
+;(defrule modify_lvl_with_dic
+;(declare (salience 1010))
+;?f0<-(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid $?d ?l)
+;(manual_word_info (head_id ?mid) (root_components $?mng))
+;(database_info (components $?mng ) (group_ids ?aid ))
+;(not (modified_level ?mid))
+;=>
+;        (retract ?f0)
+;        (bind ?lvl (+ ?l 1))
+;        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid $?d ?lvl))
+;        (assert (modified_level ?mid))
+;)
+
+
+
+;====================================== Alignment with grouped ids ==================================
+(defrule align_group_root
 (declare (salience 1000))
 (rel_name-grouped_rel_hids root 0 $? ?mverb) 
 (rel_name-grouped_rel_eids root 0 $? ?averb)

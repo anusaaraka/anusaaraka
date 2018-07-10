@@ -125,6 +125,18 @@
 	)
 )
 
+(defrule grp_case1
+(declare (salience 900))
+?f<-(hnd_rel_name-h_id-c_ids ?h ?r $?ids - ?id ?n $?ids)
+?f0<-(relation_name-rel_ids case ?n ?prep)
+=>
+        (retract ?f ?f0)
+        (bind ?*prep_lst* (create$ ?*prep_lst* ?prep))
+	(bind $?ids (sort > (create$ $?ids ?prep)))
+       	(assert (hnd_rel_name-h_id-c_ids ?prep ?r $?ids - ?id ?n $?ids))
+)
+
+
 (defrule def_rel
 (declare (salience 850))
 ?f0<-(relation_name-rel_ids ?rel ?id ?id1)
