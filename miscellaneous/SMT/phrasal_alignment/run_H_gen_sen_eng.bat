@@ -79,7 +79,7 @@
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/dependency_alignment/grp_multi_prep-new.clp"))
+ (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/dependency_alignment/grp_multi_prep.clp"))
  (load ?*path*)
  (load-facts "manual_word.dat")
  (load-facts "manual_noun_grp.dat")
