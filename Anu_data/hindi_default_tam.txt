@@ -481,15 +481,17 @@ used_to_be_en	yA_jAwA_WA-0-0
 needs_to_be_en	yA_jAnA_hE-0-0
 imper_ing	we_raha-0-0
 imper_en	yA-0-0
-is_used_to_0	yA_jAwA_hE-0-0
-# It is used for students to solve problems . 	Suggested by Bhagyashri Kulkarni (12-9-16) 
-# vixyArWiyoM ke lie samasyAoM ko hala karane ke lie isakA prayoga kiyA jAwA hE .
 shall_have_been_ing	0_rahA_hogA-0-0
 #Ex: No, probably I shall have been studying at this time. <=> nahIM, SAyaxa mEM isa samayapaDZa rahA houMgA.
 will_have_been_ing	0_rahA_hogA-0-0
 #Ex: Will you have been sleeping at this time tomorrow? <=> kyA kala wuma isa samaya so rahe hoge?
 will_not_be_able_to_0	0_pAyegA-0-nahIM
 #Ex: By this the rays of Sun will not be able to cause harm to you. <=> isase sUrya kI kiraNeM Apako nukasAna nahIM pahuzcA pAezgI .
+################################## new entries #################################################
+is_used_to_0    yA_jAwA_hE-0-0
+# It is used for students to solve problems .  <=>  vixyArWiyoM ke lie samasyAoM ko hala karane ke lie isakA prayoga kiyA jAwA hE . (Suggested by Bhagyashri Kulkarni 12-9-16)
+would_be_able_to_0	0_pAyegA-0-0
+#He would be able to kill him. <=> vaha usako mAra pAyegA. (Suggested by Chaitanya Sir  13-06-18)
 ############################### tams with examples #############################################
 #are_to_be_en	nA_ke_liye_hE-0-0  Ex: All these fruits are to be eaten.
 #were_to_be_en   nA_ke_liye_WA-0-0  Ex: All these fruits were to be eaten.

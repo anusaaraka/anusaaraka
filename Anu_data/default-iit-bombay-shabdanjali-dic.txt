@@ -4251,7 +4251,7 @@ aggressiveness_UNDEFINED	sInAjori
 aggressiveness_noun	kalahapriyawA/JagadAlUpana/AkrAmakawA
 aggressiver_UNDEFINED	AkrAmaka
 aggressivest_UNDEFINED	AkrAmaka
-aggressor_noun	AkramaNa_karwA/AkramaNakArI/AkAramaka
+aggressor_noun	AkramaNa_karwA/AkramaNakArI/AkAramaka/AwawAyI
 aggressors_UNDEFINED	AkramaNa_karwA
 aggrieve_verb	xuKa_xe
 aggrieved_adjective	vyaWiwa/Kinna/asanwuRta/apakqwa
@@ -6806,7 +6806,7 @@ arya_UNDEFINED	Arya
 as-much-again_UNDEFINED	xubArA
 as-much-as-one-can-do_UNDEFINED	sambAvanA_waka
 as_adverb	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki
-as_conjunction	jEsA/kyofki/jEse_hI/jaba
+as_conjunction	jEsA/kyoMki/jEse_hI/jaba
 as_preposition	ke_rUpa_meM/ke_jEsA/ke_BAnwi/ke_samAna
 asa_UNDEFINED	e_esa_ea
 asap_ABBR	jiwanI_jalxI_ho_sake
@@ -12306,7 +12306,7 @@ call-up_verb	telIPona_kara
 call-upon_verb	nimanwriwa_kara
 call_adjective	AkarRaka
 call_noun	pukAra/viJIta/upasWiwi/safkewa_kI_sItI/safkewa/rasmI_mulAkAwa/OpacArika-BeNta/OpacArika_BeNta/nyOwA/nirxeSa/nirNaya/nirIkRaNa/nimaNtraNa/nigarAnI/mAzga/karwavya/kAla/kala/hAjirI/cillAhata/cIKa/ciKa/cahacahAhata/bulAvA/bolI/bigula/bArI/aXikAra/AvhAna-patra/AvaSyakawA/avasara/AjFA/aBiyAcanA
-call_verb	pukAra/XyAna_xilA/telIPona_kara/sWagiwa_kara/safkewa_kara/samApwa_kara/Pona_kara/nirNaya_xe/ninxA_kara/nAma_xe/nAma_raKa/milane_jA/mAzga/mAzga_kara/lA/kala_kara/kaha/jagA/hAjirI_le/GoRiwa_kara/cillA/cahacahA/bulA/bulA_Beja/bolI_lagA/bolI_bolanAa/bola/BeNta_karane_jA/BeNta_kara/BaviRya_vANI_bola/AxeSa_xe/anumAna_kara/A/AmaNtriwa_kara
+call_verb	pukAra/XyAna_xilA/telIPona_kara/sWagiwa_kara/safkewa_kara/samApwa_kara/Pona_kara/nirNaya_xe/ninxA_kara/nAma_xe/nAma_raKa/milane_jA/mAzga/mAzga_kara/lA/kala_kara/kaha/jagA/hAjirI_le/GoRiwa_kara/cillA/cahacahA/bulA/bulA_Beja/bolI_lagA/bolI_bolanAa/bola/BeNta_karane_jA/BeNta_kara/BaviRya_vANI_bola/AxeSa_xe/anumAna_kara/A/AmaNtriwa_kara/kaha_kara
 called_UNDEFINED	bulAnA
 called_adjective	nAma_k
 calligrapher_noun	suleKaka
@@ -16871,7 +16871,7 @@ consequentialer_UNDEFINED	Pala_svarUpa
 consequentialest_UNDEFINED	Pala_svarUpa
 consequentially_UNDEFINED	piraNAmasvaopa
 consequentially_adverb	pariNAmasvarUpa
-consequently_adverb	awaH/pariNAmasvarUpa/isake_pariNAma_svarUpa/isalie
+consequently_adverb	PalasvarUpa/pariNAmasvarUpa/awaH/isake_pariNAma_svarUpa/isalie
 consequents_UNDEFINED	Pala_svarUpa
 conservancy_noun	saMrakRaNa_saMsWA
 conservation_noun	saMrakRaNa/saMrakRana/prAkqwika_saMrakRaNa/avinASiwA
@@ -21073,7 +21073,7 @@ demerit_noun	avaguNa
 demerits_UNDEFINED	avaguNa
 demesne_noun	jamInxArI
 demesnes_UNDEFINED	jamInxArI
-demigod_noun	yakRa
+demigod_noun	xevawA/yakRa
 demigods_UNDEFINED	yakRa
 demilitarisation_UNDEFINED	visEnyIkaraNa
 demilitarisations_UNDEFINED	visEnyIkaraNa
@@ -34636,7 +34636,7 @@ grope_verb	tatola/tatolawe_hue_jA/jabarxaswI_CU
 groped_UNDEFINED	tatolanA
 gropes_UNDEFINED	tatolanA
 groping_UNDEFINED	tatolanA
-gross_adjective	BaxxA/nirA/motA/GatiyA/aSlIla
+gross_adjective	BaxxA/nirA/motA/GatiyA/aSlIla/sWUla
 gross_noun	sakala_lABa/kula_Aya/grusa
 gross_verb	arjiwa_kara
 grossed_UNDEFINED	BaxxA
@@ -36085,7 +36085,7 @@ hauteur_noun	xarpa
 hauteurs_UNDEFINED	xarpa
 have-nots_noun	nirXana
 have-to_verb	sambanXa_raKa
-have_verb	pAsa_ho/xil/se_SatruwA_ho/sawarka_Ora_wEyAra_ho/raKa/pI/para_najara_raKa/para_AzKa_ho/mila/KA/ke_sAWa_samBoga_kara/karav/jAna/ho/hE/hAla_kI_KabareM_raKa/dAla/bAXya_ho
+have_verb	mila/pAsa_ho/xil/se_SatruwA_ho/sawarka_Ora_wEyAra_ho/raKa/pI/para_najara_raKa/para_AzKa_ho/KA/ke_sAWa_samBoga_kara/karav/jAna/ho/hE/hAla_kI_KabareM_raKa/dAla/bAXya_ho
 haven_noun	banxaragAha/ASraya-sWala
 havened_UNDEFINED	ASraya
 havening_UNDEFINED	ASraya
@@ -38649,7 +38649,7 @@ ideating_UNDEFINED	kalpanA_karanA
 ideation_noun	vicAraNa
 ideations_UNDEFINED	vicAraNa
 identical_UNDEFINED	bilkula_eka_se
-identical_adjective	pUrNawayA_samAna/eka_jEsA/vEsA_hI/jEsA/bilakul_vahI/bilakul_samAna
+identical_adjective	pUrNawayA_samAna/eka_jEsA/vEsA_hI/jEsA/bilakul_vahI/bilakul_samAna/ekarUpa
 identicalest_UNDEFINED	bilkula_eka_se
 identifiable_UNDEFINED	pahacAna_yogya
 identification_UNDEFINED	SinAKwa
@@ -40331,7 +40331,7 @@ indirct_adjective	parokRa
 indirect_adjective	aprawyakRa/parokRa/cakkaraxAra
 indirecter_UNDEFINED	aprawyakRa
 indirectest_UNDEFINED	aprawyakRa
-indirectly_adverb	aprawyakRa_yA_parokRa_rUpa_se/aprawykRa_rUpa_se
+indirectly_adverb	aprawyakRa_rUpa_se/parokRa_rUpa_se/aprawyakRawaH
 indirvidually_adverb	eka_eka_karake/vyakwigawa_rUpa_se
 indiscernible_UNDEFINED	awInxriya
 indiscernible_adjective	aboXagamya/awInaxriya
@@ -44985,7 +44985,7 @@ leapt_UNDEFINED	uCAla
 learier_UNDEFINED	ASafkiwa
 leariest_UNDEFINED	ASafkiwa
 learn_verb	vixyA_arjana_kara/yAxa_kara/vicAra_kara/sIKa/siKa/rata/rata_le/pawA_laga/paDa/Kabara_ho/jFAna_prApwa_kara/jAna/sUcanA_pA/jFAwa_ho
-learned_adjective	vixvAna/suSikRiwa/jFAnI/paDe_liKe_vyakwiyoM_kA_samUha
+learned_adjective	vixvAna/suSikRiwa/jFAnI/paDe_liKe_vyakwiyoM_kA_samUha/vixvAn
 learneder_UNDEFINED	paDe_liKe_vyakwiyoM_kA_samUha
 learnedest_UNDEFINED	paDe_liKe_vyakwiyoM_kA_samUha
 learnedness_UNDEFINED	vixvawwA
@@ -45637,7 +45637,7 @@ lignites_UNDEFINED	BUrA_koyalA
 lii_adjective	bAvana
 liii_adjective	wrepana
 like-minded_adjective	samaruci
-like_adjective	usI_warAha/usI_waraha/usI_prakAra/samAna/jEsA/eka-sA/eka_se
+like_adjective	usI_waraha/usI_prakAra/samAna/jEsA/eka-sA/eka_se
 like_adverb	usI_DMaja_se
 like_preposition	waraha_kA/jEsA
 like_verb	pasanxa_kara/pasMaxa_kara/pasMaxa_ho/cAha/uciwa_laga
@@ -46453,7 +46453,7 @@ lorries_UNDEFINED	lArI
 lorrry_noun	traka
 lorry_noun	lArI/larI
 lose_noun	nukasAna
-lose_verb	Ko_xe/samaya_naRta_kara/parAjiwa_ho/nimna_xarje_kA_ho/lupwa_ho_j/ko_xa/Ko_j/k/Karca_kara/kama_ho_j/icCA_na_raKa/hAra/gazv/gazvA_xe/bUla_j/Bataka_j/mita_jA/na_suna_pA/hAra_jA/barabAxa_ho/pICe_ho_jA/Ko
+lose_verb	Ko_xe/samaya_naRta_kara/parAjiwa_ho/nimna_xarje_kA_ho/lupwa_ho_jA/Ko_jA/Karca_kara/kama_ho_jA/icCA_na_raKa/hAra/gazv/gazvA_xe/bUla_jA/Bataka_j/mita_jA/na_suna_pA/hAra_jA/barabAxa_ho/pICe_ho_jA/Ko
 loser_noun	hAni_Bugawane_vAlA/asaPala_vyakwi
 losers_UNDEFINED	hAni_Bugawane_vAlA
 loses_UNDEFINED	gazvA_xenA
@@ -53430,10 +53430,10 @@ observance_noun	sAmAjika/rIwi-rivAja/anupAlana/XArmika/nEwika_rIwi{pAlana}
 observances_UNDEFINED	nEwika_rIwi
 observant_adjective	cOkasa/anupAlaka
 observatary_noun	wArAGara/AkASalocaka
-observation_noun	avalokana/xeKareKa/prekRaNa/kaWana/niraKa/socavicAra
+observation_noun	avalokana/xeKareKa/prekRaNa/kaWana/niraKa/socavicAra/nirIkRaNa
 observations_UNDEFINED	avalokana
 observatory_noun	veXaSAlA
-observe_verb	xeKa/kaha/anupAlana_kara/niraKa/rIwirivAjoM_kA_pAlana_kara/niyamoM_kA_pAlana_kara/apnA_mawa/socavicAra_vyakwa_kara/prekRaNa_kara/avalokana_kara
+observe_verb	xeKa/kaha/anupAlana_kara/niraKa/rIwirivAjoM_kA_pAlana_kara/niyamoM_kA_pAlana_kara/apanA_mawa/socavicAra_vyakwa_kara/prekRaNa_kara/avalokana_kara/nirIkRaNa_kara
 observed_UNDEFINED	niraKanA
 observer_noun	prekRaka/paryavekRaka/parixarSaka
 observers_UNDEFINED	parixarSaka
@@ -59686,7 +59686,6 @@ posits_UNDEFINED	mAna_lenA
 posse_noun	xala/tukadI/tolI/asWAyI_ArakRI_xal
 possed_UNDEFINED	tukadI
 posses_UNDEFINED	tukadI
-posses_verb	raK_ho/raKa/pAsa_ho/para_niyaNtraNa_raKa
 possess_verb	XAraNa_kara/kA_svAmI_yA_mAlika_ho/yukwa_ho/XAra_kara/svawva_raKa/raKa/pAsa_ho/mAlika_ho/kAbu_kara/kabjA_kara/AviRta_kara/AkrAnwa_kara/aBiBUwa_kara/se_sampanna_ho/para_niyanwraNa_raKa
 possessed_UNDEFINED	se_sampanna_honA
 possessed_adjective	BUwagraswa
@@ -68580,7 +68579,7 @@ satirize_verb	kA_upahAsa_kara/vyafgya_kasa/uphAsa_kara/kI_ninxA_kara
 satirized_UNDEFINED	kI_ninxA_karanA
 satirizes_UNDEFINED	kI_ninxA_karanA
 satirizing_UNDEFINED	kI_ninxA_karanA
-satisfaction_noun	sanwoRa/spaRtIkaraNa/pUrwi
+satisfaction_noun	sanwoRa/spaRtIkaraNa/pUrwi/saMwuRti
 satisfactions_UNDEFINED	sanwoRa
 satisfactorier_UNDEFINED	sanwoRajanaka
 satisfactoriest_UNDEFINED	sanwoRajanaka
@@ -69347,7 +69346,7 @@ scripting_UNDEFINED	haswalipi
 scripting_noun	lipinyAsa/lipibaxXana/liKAI/afkana
 scripts_UNDEFINED	haswalipi
 scriptural_adjective	XArmika/XarmagranWa_sambanXI/leKana_sambAXI/bAibila_sambanXI
-scripture_noun	XarmagranWa
+scripture_noun	XarmagranWa/SAswra
 scriptures_UNDEFINED	XarmagranWa
 scriptwriter_noun	AleKaka
 scroll_noun	cIraka/lapetavez_kAgaja_para_liKA_xaswAveja/lapetavAz_kAgaja/GUzGara
@@ -77706,7 +77705,7 @@ successful_adjective	saPala/sOBAgyaSAlI/sampanna/kAmayAba
 successfuler_UNDEFINED	kAmayAba
 successfulest_UNDEFINED	kAmayAba
 successfully_adverb	saPalawApUrvaka
-succession_noun	silasilA/wAzwA/uwwarAXikAra
+succession_noun	silasilA/wAzwA/uwwarAXikAra/paramparA
 successions_UNDEFINED	uwwarAXikAra
 successive_adjective	Anukramika/lagAwAra/eka_ke_bAxa_eka_Ane_vAlA
 successively_adverb	kramaSaH/bArI-bArI_se
@@ -77948,10 +77947,10 @@ summaries_UNDEFINED	sArAMSa
 summariest_UNDEFINED	sArAMSa
 summarily_UNDEFINED	safkRepa_meM
 summarily_adverb	POrana_hI/binA_xerI_kie
-summarise_verb	sAra_praswuwa_kara/sAra_ho
+summarise_verb	sAra_praswuwa_kara/sAra_ho/sAra_rUpa_meM_xe
 summarization_UNDEFINED	safkRepaNa
 summarize_UNDEFINED	safkRepa
-summarize_verb	sAra_praswuwa_kara/sAra_ho
+summarize_verb	sAra_praswuwa_kara/sAra_ho/sAra_rUpa_meM_xe
 summary_adjective	sarasarI/safkRipwa/jalxabAjI_kA
 summary_noun	sArAMSa
 summat_UNDEFINED	kuCa
@@ -78492,7 +78491,7 @@ surrealisticest_UNDEFINED	awiyaWArWavAxI_xqRtikoNa
 surrealists_UNDEFINED	awiyaWArWavAxI
 surrender_noun	samarpaNa/AwmasamarpaNa
 surrender_verb	AwmasamarpaNa_kara/wyAga_xe/sOmpa_xe
-surrendered_UNDEFINED	AwmasamarpaNa_karanA
+surrendered_adjective	AwmasamarpaNa_kiyA_huA/Awmasamarpiwa/SaraNAgawa
 surrenderer_noun	hAra_mAnane_vAlA/AwmasamarpaNakarwA
 surrendering_UNDEFINED	AwmasamarpaNa_karanA
 surrenders_UNDEFINED	AwmasamarpaNa_karanA
@@ -82024,8 +82023,7 @@ topknot_noun	UzcA_jUdA
 topknotted_adjective	kalagIxAra
 topless_adjective	colIrahiwa/binA_Dakkana_kA
 topless_adverb	binA_colI_ke
-topmost_UNDEFINED	sabase_UparI
-topmost_adjective	sabase_Upara_kA
+topmost_adjective	sabase_Upara_kA/sabase_UparI/uccawama/sarvocca/sarvopari
 topnotch_adjective	behawarIna
 topographic_adjective	sWalAkqwika
 topographical_adjective	sWalAkqwika
@@ -90823,7 +90821,7 @@ welds_UNDEFINED	peda
 welfare-state_noun	kalyANa_rAjya
 welfare-statist_adjective	loka_hiwakArI_rAjyoM_kA
 welfare_UNDEFINED	BalAI
-welfare_noun	samvqxXi/xeKaBAla/suKa/kalyANakArI_sahAyawA/kalyANakArI_paxvawi/kalyANa/hiwa
+welfare_noun	samvqxXi/xeKaBAla/suKa/kalyANakArI_sahAyawA/kalyANakArI_paxXawi/kalyANa/hiwa
 welfares_UNDEFINED	kalyANa
 welfarist_adjective	loka_hiwakArI_rAjyoM_kA
 welkin_noun	AkASa
@@ -93604,3 +93602,9 @@ i.e._noun	arWAw
 lethality_noun	mAraka_kRamawA
 inter-operability_noun	anwaHkRamawA
 rightfully_adverb	nyAyapUrvaka/iMsAPa_se/jAyaja_wOra_para
+krsnaconscious_noun	kqRNaBAvanABAviwa
+nescience_noun	ajFAna
+knower_noun	jFAwA
+described_adjective	varNiwa
+conch-shell_noun	SafKa
+servitor_noun	sevaka

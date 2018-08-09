@@ -255,7 +255,7 @@ attitude	xqRtikoNa/ravEyA/
 attractive	AkarRI_bala/AkarRaka/
 attribute	guNa/sambanXa_TaharA/pariNAma_bawAyA_jAwA_hE/kAraNa_bawA/Sreya_xe/
 at	kI_ora/se/para/meM/ko/suna_kara/baje/bilakula/
-a	eka/prawi/eka_EsA/vaha/kisI/
+a	eka/prawi/eka_EsA/kisI/
 auctioneer	nIlAma_karane_vAlA/nIlAma_mez_beca/
 auction	nIlAma_kara/nIlAmI/
 audit	leKA_parIkRaNa/leKA_jAzca/

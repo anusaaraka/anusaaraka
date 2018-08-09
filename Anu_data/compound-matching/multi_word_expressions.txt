@@ -5015,7 +5015,7 @@ baseball_coach	besabAla_SikRaka#besabAla_SikRaka#noun#2#RM
 baseball_game	besabAla_Kela#besabAla_Kela#noun#2#RM
 baseball_swing	besa_boYla_sviMga#besa_boYla_sviMga#noun#2#RM
 baseband_transmission	AXAra_bEMda_saMpreRaNa#AXAra_bEMda_saMpreRaNa#noun#2#RM
-based_on	para_AXAriwa#para_AXAriwa#noun#2#RM
+#based_on	para_AXAriwa#para_AXAriwa#noun#2#RM
 basic_access	AXAra_aBigama#AXAra_aBigama#noun#2#RM
 basic_access_method	AXArI_aBigama_viXi#AXArI_aBigama_viXi#noun#3#RM
 basic_assumption_recovery	mUla_kalpanAeM_purnaprApwi#mUla_kalpanAeM_purnaprApwi#noun#3#RM
@@ -13491,7 +13491,7 @@ for_the_love_of	ke_sammAnArWa#ke_sammAnArWa#noun#3#RM
 for_the_moment	PilahAla#PilahAla#noun#3#RM
 for_the_persent	aBI#aBI#noun#3#RM
 for_the_sake_of	ke_lie#ke_lie#noun#3#RM
-for_the_time_being	PIlahAla#PIlahAla#noun#4#RM
+for_the_time_being	PilahAla#PilahAla#noun#4#RM
 for_then	kyoMki_waba#kyoMki_waba#noun#2#RM
 for_value_received	mUlya_evaja#mUlya_evaja#noun#3#RM
 for_want_of	ke_aBAva_meM#ke_aBAva_meM#noun#2#RM
@@ -32647,7 +32647,7 @@ wide_band_channel	viswqwa_bEMda_praNAlI#viswqwa_bEMda_praNAlI#noun#3#RM
 wide_ranging	vyApaka#vyApaka#noun#2#RM
 wide_screen	viSAla_parxA#viSAla_parxA#noun#2#RM
 widely_held_companies	bahujana_XAriwa_kampaniyAM#bahujana_XAriwa_kampaniyAM#noun#3#RM
-widely_read	bahuxatiwa#bahuxatiwa#noun#2#RM
+widely_read	bahupaTiwa#bahupaTiwa#noun#2#RM
 wild_ass	jaMgalI_Kaccara#jaMgalI_Kaccara#noun#2#RM
 wild_basil	jaMgalI_wulasI#jaMgalI_wulasI#noun#2#RM
 wild_bean	jaMgalI_PalI#jaMgalI_PalI#noun#2#RM
@@ -33407,6 +33407,14 @@ later_on	bAxa_meM#bAxa_meM#noun#1#WM
 #This palace triggered Duryodhan's envy, causing a fateful game of dice to be played later on.	
 recent_past	hAla_hI_meM#hAla_hI_meM#noun#2#WM
 #This is a research study and the purpose of this research is to find the presence of norovirus in diarrheal stool samples and in stool of apparently healthy children who had an episode of norovirus diarrhea in the recent past. (Suggested by Chaitanya sir     12-02-18)
+krsna_conscious	kqRNaBAvanABAviwa#kqRNaBAvanABAviwa#noun#2#WM
+#Therefore, the conclusion is that a spiritual master who is one hundred percentkrsnaconscious is the bona fide spiritual master, for he can solve the problems of life. 	(Suggested by Chaitanya sir     10-05-18)
+krsna_consciousness	kqRNaBAvanAmqwa#kqRNaBAvanAmqwa#noun#2#WM
+#Lord Caitanya said that one who is master in the science of krsna consciousness, regardless of his social position, is the real spiritual master.				(Suggested by Chaitanya sir     10-05-18)
+bona_fide	prAmANika#prAmANika#noun#2#WM
+#Therefore, the conclusion is that a spiritual master who is one hundred percent krsnaconscious is the bona fide spiritual master, for he can solve the problems of life.	(Suggested by Chaitanya sir     16-05-18)
+for_a_moment	kRaNa_Bara#kRaNa_Bara#noun#3#WM
+#As a great devotee of Krushna, he could not forget Krushna even for a moment, because that is the nature of a devotee. (Suggested by Chaitanya sir     11-07-18)
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
