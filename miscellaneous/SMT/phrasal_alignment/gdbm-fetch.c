@@ -4,9 +4,9 @@
 * 	Ex: ./gdbm-fetch.out en-hi-dict.gdbm  key.txt  > key-val.txt 
 *********************************************************************/
 
-#include<stdio.h>
-#include<string.h>
-#include<gdbm.h>
+#include <stdio.h>
+#include <string.h>
+#include <gdbm.h>
 #include <stdlib.h>
 
  int main(int argc,char* argv[]){
@@ -14,7 +14,7 @@
   GDBM_FILE   dbf;
   datum    content,word;
   FILE     *fp;
-  char	   *line=NULL, str[1000], wrd_ids[1000], *value;
+  char	   *line=NULL, str[1000], wrd_ids[1000], *value=NULL;
   size_t   length;
   int	   len, len1;
 
@@ -23,37 +23,42 @@
   fp = fopen(argv[2], "r");
   if(fp == NULL) printf("couldn't open the file\n");
 
- 
-  while(getline(&line, &length, fp)!=-1)
-  {
-	*str='\0'; *wrd_ids='\0'; 
-	if(line[0] != ';') 
-	{
-		line = line+20+1; //(eng_cmp_mng-eng_ids\t = 20(length of the string)
-		len=strcspn(line, "\t");
-		strncpy(str, line, len); str[len]='\0'; line=line+len+1;
-		len1=strcspn(line, ")");
-		strncpy(wrd_ids, line, len1); 	wrd_ids[len1]='\0';
-	//		printf("%s", wrd_ids);
-		word.dptr=str;
-		word.dsize=strlen(word.dptr);
-   		content = gdbm_fetch(dbf,word);
-
-		value  = (char *)malloc(sizeof(char)* content.dsize+1);
-		strncpy(value, content.dptr, content.dsize);
-		value[content.dsize] = '\0';
-		word.dptr[word.dsize]='\0';
-
-		if(content.dptr == NULL)
-        		printf("%s\tWord not found\n", word.dptr);  
-		else  	
-			printf("%s\t%s\t%s\n",word.dptr, value, wrd_ids);
-		line=NULL;  
-	}
-	else
-	   printf("%s", line); line = NULL; // ;~~~~~~~~~~
- }
- fclose(fp);
- gdbm_close(dbf);
- free(value);
+  fseek(fp, 0, SEEK_END); //to check file size added fseek and ftell steps
+  if (ftell(fp) != 0) { 
+    fseek(fp, 0, SEEK_SET);
+    while(getline(&line, &length, fp)!=-1)
+    {
+  	*str='\0'; *wrd_ids='\0'; 
+  	if(line[0] != ';') 
+  	{
+  		line = line+20+1; //(eng_cmp_mng-eng_ids\t = 20(length of the string)
+  		len=strcspn(line, "\t");
+  		strncpy(str, line, len); str[len]='\0'; line=line+len+1;
+  		len1=strcspn(line, ")");
+  		strncpy(wrd_ids, line, len1); 	wrd_ids[len1]='\0';
+  	//		printf("%s", wrd_ids);
+  		word.dptr=str;
+  		word.dsize=strlen(word.dptr);
+     		content = gdbm_fetch(dbf,word);
+  
+  		value  = (char *)malloc(sizeof(char)* content.dsize+1);
+  		strncpy(value, content.dptr, content.dsize);
+  		value[content.dsize] = '\0';
+  		word.dptr[word.dsize]='\0';
+  
+  		if(content.dptr == NULL)
+          		printf("%s\tWord not found\n", word.dptr);  
+  		else  	
+  			printf("%s\t%s\t%s\n",word.dptr, value, wrd_ids);
+  		line=NULL;  
+  	}
+  	else
+  	   printf("%s", line); line = NULL; // ;~~~~~~~~~~
+   }
+   fclose(fp);
+   gdbm_close(dbf);
+   free(value);	
+   }
+   else
+	exit(0); //if input file empty then exit from the programme 
 }
