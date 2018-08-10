@@ -9,7 +9,7 @@ BI	also/too/even/so
 ki	that
 isa	the/this/such/that
 eka	a/an/one
-koI	a/an/any/no/some/one
+koI	a/an/any/no/some/one/none
 #I can only marry him and [no one else]. mEM kevala usI se SAxI karUfgI OrYa [kisI se nahIM] .
 kisI	a/an/any/some/someone/one
 #I can only marry him and [no one else]. mEM kevala usI se SAxI karUfgI OrYa [kisI se nahIM] .
@@ -24,16 +24,18 @@ unakA	them/their/him/they/his
 unake	them/their/him/they/his
 #him added for number plural , honorophic
 merA	i/me/my/mine
-vaha	she/he/the/her/him/they/them/that/those/it/his
-yahAz	here
+vaha	she/he/the/her/him/they/them/their/that/those/it/his
+yahAz	here/herein
 yaha	the/that/this/it/he/him/his/her/she/these/they/such/similar/their
 isakA	the/it/its/this/he/him/his
 isakI	the/it/its/this/he/him/his
 isake	the/it/its/this/he/him/his
-jinakA	which
+jinakA	which/that
+#that: But one who is not a devotee of the Lord has only material qualifications that are of little value. kiMwu jo BagavaxBakwa nahIM hE, usake pAsa BOwika yogyawAez hI rahawI hEM jinakA koI mUlya nahIM howA  .
 hama	we
 hamArA	our
 jisake	which
 saBI	overall/all/every/everyone/everybody
 saba	all/everyone/everything/sub/most/everybody
-Axi	etc./etc
+Axi	etc./etc/primeval
+Ex:He is the [primeval] Lord Govinda and the cause of all causes. ve [Axi] BagavAn goviMxa hEM Ora samaswa kAraNoM ke kAraNa hEM 

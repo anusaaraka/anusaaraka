@@ -184,3 +184,4 @@ messenger	1
 servant	1
 monkey	1
 crow	1
+yourself	1

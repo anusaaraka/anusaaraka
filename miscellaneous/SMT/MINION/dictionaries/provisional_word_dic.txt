@@ -20,3 +20,11 @@ feedback	PIdabEYka
 motivated	preriwa
 informed	bawAyA
 certainly	niScaya_hI
+learned	xakRa
+#It does not matter whether a person is a vipra (learned scholar in Vedic wisdom) or is born in a lower family, or is in the renounced order of life — if he is master in the science of Krsna, he is the perfect and bona fide spiritual master.
+master	xakRa
+# above example only
+pilgrimage	wIrWasWala
+#It is understood that this philosophy evolved on the Battlefield of Kuruksetra, which is a sacred place of pilgrimage from the immemorial time of the Vedic age.
+overtaken	aBiBUwa
+#O Janaardana, although these men, their hearts overtaken by greed, see no fault in killing one's family or quarreling with friends, why should we, who can see the crime in destroying a family, engage in these acts of sin?
