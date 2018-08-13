@@ -139,6 +139,16 @@
         (assert (hnd_rel_name-h_id-c_ids ?prep ?r ?prep - ?id ?n ?prep))
 )
 ;---------------------------------------------------------------------------
+; ... unake piwA ...
+(defrule grp_pronoun_case
+(declare (salience 900))
+?f<-(relation_name-rel_ids ?r ?id ?n)
+(manual_id-word ?n ?p&unakA|unake|usakA|usake|isakA|isake)
+=>
+	(retract ?f)
+        (assert (hnd_rel_name-h_id-c_ids ?n ?r kA - ?id ?n))
+)	
+;---------------------------------------------------------------------------
 (defrule def_rel
 (declare (salience 850))
 ?f0<-(relation_name-rel_ids ?rel ?id ?id1)

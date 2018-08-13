@@ -1,4 +1,4 @@
- 09-05-18
+ 13-08-18
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
 			               yes-no_question -- added punctuation fact in rule part
@@ -112,12 +112,13 @@
 	Modified to get ids for punctuations. (ids are stored in Mids format)
  38. multi_word_expression_for_proper_nouns.c
 	Modified to get ids for punctuations. (ids are stored in Mids format)
- 39. Added following programs/dictionaries
+ 39. Added following programs/dictionaries/files
 	parser_correction.py 
 	proper_noun_organization_names
 	proper_noun_person_names
 	proper_noun_place_names
 	crude_equivalent_dic
+	resolve_same_wt_facts.clp
  40. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt

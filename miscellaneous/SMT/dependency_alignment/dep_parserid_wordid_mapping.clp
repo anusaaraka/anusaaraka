@@ -19,7 +19,7 @@
 (defrule modify_hword1
 (declare (salience 100))
 ?f<-(hid-word ?id $?p ?punct $?p1)
-(test (neq (integerp (member$ ?punct (create$ PUNCT-DoubleQuote PUNCT-QuestionMark PUNCT-Semicolon))) FALSE))
+(test (neq (integerp (member$ ?punct (create$ PUNCT-DoubleQuote PUNCT-QuestionMark PUNCT-Semicolon PUNCT-OpenParen PUNCT-ClosedParen))) FALSE))
 =>
 	(retract ?f)
 	(assert (hid-word ?id $?p $?p1))

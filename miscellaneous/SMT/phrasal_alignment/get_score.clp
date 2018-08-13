@@ -15,7 +15,18 @@
 	(retract ?f1)
 )
 
+(defrule rm_dic_fact_if_anu_mng_from_dic
+(declare (salience 250))
+?f1<-(anu_id-man_id-src-rule_name ?aid ?mid dictionary_match ?)
+?f0<-(anu_id-man_id-src-rule_name ?aid ?mid anu_root_match ?)
+(id-HM-source ?aid ? Default_meaning)
+=>
+        (retract ?f1)
+)
 
+
+
+;============================================================================================
 (defrule modify_score_fact
 (declare (salience 200))
 ?f0<-(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?count)(heuristics $?hs)(rule_names $?rs))

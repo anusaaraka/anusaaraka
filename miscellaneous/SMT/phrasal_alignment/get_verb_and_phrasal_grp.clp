@@ -22,6 +22,18 @@
                         )
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
+
+(defrule modify_hindi_word
+(declare (salience 1000))
+?f0<-(manual_word_info (head_id ?mid) (word ?m))
+(test (eq (numberp ?m) FALSE)) 
+(test (eq (sub-string  (length ?m) (length ?m) ?m) "-"))
+=>
+        (bind ?nm (string-to-field (sub-string 1 (- (length ?m) 1) ?m)))
+        (modify ?f0 (word ?nm) )
+)
+
+
 ;================================================== verb rules =============================================
 (defrule get_verb_chunk_cp
 (declare (salience 1000))
@@ -70,7 +82,7 @@
 (manual_word_info (head_id ?mid2&:(= (- ?mid1 1) ?mid2)) (word ?word1)(group_ids ?mid2))
 (man_word-root-cat ?word1 ?root2 ?)
 (man_word-root-cat ?word ?root1 ?)
-(or (database_info (components ?word1 ?word ?r))(database_info (components ?root2 ?root1 ?r)))
+(or (database_info (components ?word1 ?word ?r))(database_info (components ?root2 ?root1 ?r))(database_info (components ?root2 ?root1 kara|ho)))
 (not (id-HM-source ? ?word ?r ?))
 =>
        (retract ?f0 )
@@ -90,8 +102,11 @@
 (manual_word_info (head_id ?mid) (word ?w))
 (man_word-root-cat ?w ?r&kara|ho|xe|raKa|le v|modified_cat)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word)(group_ids $?ids))
-(or (database_info (components $?word $? ?r) (root ?root))(database_info (components $?word kara|ho|xe|le)))
+(or (database_info (components $?word $? ?r) (root ?root))
+    (database_info (components $?word kara|ho|xe|le))(database_info (components $?word ?w)))
 (not (id-Apertium_output ? $?word))
+(not (id-Apertium_output ? $?mng))
+(test (neq (integerp (member$ $?word (create$ kyA ))) TRUE))
 =>
        (retract ?f0 )
        (assert (chunk_name-chunk_ids-words ?chnk  $?ids ?mid $?gids - $?word $?mng))
@@ -142,6 +157,7 @@
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word nahIM))
 (manual_word_info (head_id ?mid2&:(= (- ?mid1 1) ?mid2)) (word $?word))
 (or (database_info (components $?word ?r))(database_info (components $?word ho|kara) (root ?root)))
+(not (id-Apertium_output ? $?word))
 =>
         (retract ?f0 )
         (assert (chunk_name-chunk_ids-words ?chnk  ?mid2 ?mid1 ?mid $?gids - $?word nahIM $?mng))
@@ -174,14 +190,20 @@
 (defrule default_kara_grp
 (declare (salience 848))
 ?f1<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?id $?ids - $?m)
-(manual_word_info (head_id ?id) (word ?w $?m1))
-(man_word-root-cat ?w kara ?)
+(manual_word_info (head_id ?id) (word ?w $?m1)(vibakthi_components ?v $?vib))
+(man_word-root-cat ?w kara|karavA ?)
 (manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?mng) (group_ids ?id1))
 (man_word-root-cat ?mng ?r&~ho ~p)
+(test (neq (integerp (member$ ?mng (create$ waba hI kyA ))) TRUE))
 (not (id-Apertium_output ? ?mng))
 =>
         (retract ?f1)
-       	(assert (chunk_name-chunk_ids-words ?chnk  ?id1 ?id $?ids - ?mng $?m))
+;       	(assert (chunk_name-chunk_ids-words ?chnk  ?id1 ?id $?ids - ?mng ?m ))
+	(if (neq ?v 0) then
+	       	(assert (chunk_name-chunk_ids-words ?chnk  ?id1 ?id $?ids - ?mng ?w $?m1 ?v $?vib))
+	else
+	       	(assert (chunk_name-chunk_ids-words ?chnk  ?id1 ?id $?ids - ?mng $?m))
+	)	
 	(assert (id-man_root ?id1 ?mng kara))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -203,6 +225,21 @@
 	(assert (root_decided ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------
+;(defrule get_kara_root_for_chunker_info
+;(declare (salience 805))
+;(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?m $?r_mng)
+;(man_word-root-cat ?m&~hE&~kI ?r&kara|ho|xe|raha|bana v)
+;?f1<-(manual_word_info (head_id ?mid)(word ?m $?r_mng)(group_ids $?gids))
+;(not (root_decided ?mid))
+;=>
+;        (modify ?f1 (root ?r)(root_components  ?r) (group_ids $?gids))
+;        (assert (root_decided ?mid))
+;)
+
+
+
+
+
 ;Added by Shirisha Manju 23-09-15
 ;usane vyAvahArika mahawva ke viRayoM ke lie upasWiwa howA huA ki [Coda xiyA] WA; usane karane ke lie saBI icCA KoI WI.
 ;pahuFcA xiyA = pahuFcA xe
@@ -232,6 +269,23 @@
         (bind $?new_mng (create$ ?man_wrd $?r_mng))
         (modify ?f1 (word $?new_mng)(group_ids $?gids))
 )
+;----------------------------------------------------------------------------------------------------------
+;BagavAn ne wawkAla guru kA paxa sazBAlA Ora apane miwra ko aprawyakRawaH murKa [kaha kara dAztA]  . 
+;[kaha kara dAztA] == [kaha kara] [dAztA]
+(defrule split_kara_grp
+(declare (salience 790))
+?f1<-(manual_word_info (head_id ?id0) (word $?m kara ?m1)(group_ids $?grp_ids ?id))
+?f0<-(chunk_name-chunk_ids-words ?c $?grp_ids ?id - $?m kara ?m1)
+?f2<-(chunk_name-chunk_ids ?c $?grp_ids ?id)
+(man_word-root-cat ?m1 ?r&~saka ?)
+=>
+	(retract ?f0 ?f2)
+	(modify ?f1 (word $?m kara)(group_ids $?grp_ids ))
+	(assert (manual_word_info (head_id ?id) (word ?m1)(root ?r)(root_components ?r) (group_ids ?id)))
+	(assert (chunk_name-chunk_ids-words ?c $?grp_ids - $?m kara ))
+	(assert (chunk_name-chunk_ids NP ?id))
+	(assert (chunk_name-chunk_ids ?c $?grp_ids))
+) 
 ;----------------------------------------------------------------------------------------------------------
 (defrule verb_rule1
 (declare (salience 740)) 
@@ -292,8 +346,8 @@
 ;SeyaroM ke [nirgamiwa] [hone ke pahale] kampaxanI ke nixeSakoM ko nimnaliKiwa viRayoM para nirNaya lenA hE
 (defrule default_verb_grp
 (declare (salience 730))
-(chunk_name-chunk_ids-words VGNN ?id $?ids - ?w $?m)
-?f1<-(manual_word_info (head_id ?id) (word ?w))
+(chunk_name-chunk_ids-words VGNN ?id $? - ?w $?m)
+?f1<-(manual_word_info (head_id ?id) (word ?w)(vibakthi_components ?v $?v1)(group_ids $?ids))
 (test (eq (sub-string (- (length ?w) 1) (length ?w) ?w) "ne"))
 (man_word-root-cat ?w ?r&kara|ho ?)
 ?f2<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?mng) (group_ids ?id1))
@@ -303,7 +357,11 @@
 =>
 	(retract ?f1)
 	(bind ?nr (string-to-field (str-cat ?mng"_"?r)))
-	(modify ?f2 (word ?mng ?w $?m)(root ?nr) (root_components ?mng ?r)(group_ids ?id1 ?id $?ids))
+	(if (neq ?v 0) then
+		(modify ?f2 (word ?mng ?w ?v $?v1)(root ?nr) (root_components ?mng ?r)(vibakthi_components ?v $?v1)(group_ids ?id1 $?ids))
+	else
+		(modify ?f2 (word ?mng ?w )(root ?nr) (root_components ?mng ?r)(group_ids ?id1 $?ids))
+	)
 	(assert (root_decided ?id1))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
@@ -333,6 +391,20 @@
 ;        (assert (replaced_tam_with_root_tam ?id0))
 	(assert (root_decided ?id0))
 )
+;----------------------------------------------------------------------------------------------------------
+;counter: brAhmI lipi kA prayoga aSoka ke SeRa sAmrAjya uwwara meM uwwarAFcala meM kalsI Ora xakRiNa meM mEsUra meM [kiyA jAwA WA]  .
+;aBimanyu ko yaha pawA WA ki kisa prakAra isake anxara jAnA hE, lekina isase kEse nikalAnA hE, vaha yaha nahIM [jAnawA WA].
+;(defrule get_root_for_WA
+;(declare (salience 730))
+;?f1<-(manual_word_info (head_id ?id0)(word $?n ?m WA)(group_ids $?grp_ids ?mid))
+;(man_word-root-cat ?m ?r v)
+;(test (or (eq (sub-string (- (length ?m) 1) (length ?m) ?m  ) "wI") (eq (sub-string (- (length ?m) 1) (length ?m) ?m  ) "we")(eq (sub-string (- (length ?m) 1) (length ?m) ?m  ) "wA")))
+;(not (root_decided ?id0))
+;=>
+;	(bind ?nr (remove_character " " (implode$ (create$ $?n ?r)) "_"))
+;	(modify ?f1 (word $?n ?m WA)(root ?nr)(root_components $?n ?r)(tam WA)(tam_components wA))
+;	(assert (root_decided ?id0))
+;)
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;We can broadly [describe] physics as a study of the basic laws of nature and their manifestation in different natural phenomena.
@@ -421,36 +493,37 @@
        (assert (root_decided ?id))
 )
 ;----------------------------------------------------------------------------------------------------------
+;not WA : cAra se CaH SawAbxiyoM ke bAxa ye Pira se vikasiwa [huI WI]
 ;Added by Shirisha Manju
-(defrule complex_predicate_tam
-(declare (salience 601))
-?f<-(manual_word_info (head_id ?id) (word $?w ?word $?wrds)(group_ids $?grp_ids))
-(test (neq (length $?w) 0))
-?f1<-(man_word-root-cat    ?word&~hE ?root&~hE    v)
-(test (neq (integerp (member$ ?word (create$ hE jAwe jAwI jAwA jAne sakawe sakawI sakawA se cAhie))) TRUE))
-(test (neq (integerp (member$ $?w (create$ kiyA karawe karAyA jAwI jAwA))) TRUE))
-(chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
-(not (root_decided ?id))
-(not (replaced_tam_with_root_tam ?id))
-=>
-	(bind ?nr (remove_character " " (implode$ (create$ $?w ?root)) "_"))
-;        (modify ?f (root ?nr)(root_components $?w ?root))
-	(if (neq ?word ?root) then
-		(if (neq (length ?word) (length ?root)) then
-	               	(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-		else
-			(bind ?tam (create$))
-		)
-	       	(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ ?tam $?wrds)) "_"))))
-          	(modify ?f (root ?nr)(root_components $?w ?root)(tam ?ntam)(tam_components ?tam $?wrds ))
-	else
-             (if (neq (length $?wrds) 0) then
-		(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ $?wrds)) "_"))))
-                (modify ?f (root ?nr)(root_components $?w ?root)(tam ?ntam)(tam_components $?wrds))
-	     )
-	)
-        (assert (root_decided ?id))
-)
+;(defrule complex_predicate_tam
+;(declare (salience 601))
+;?f<-(manual_word_info (head_id ?id) (word $?w ?word $?wrds)(group_ids $?grp_ids))
+;(test (neq (length $?w) 0))
+;?f1<-(man_word-root-cat    ?word&~hE ?root&~hE&~WA    v)
+;(test (neq (integerp (member$ ?word (create$ hE jAwe jAwI jAwA jAne sakawe sakawI sakawA se cAhie jAegA))) TRUE))
+;(test (neq (integerp (member$ $?w (create$ xene kiyA karawe karAyA jAwI jAwA jAegA jAegI ))) TRUE))
+;(chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
+;(not (root_decided ?id))
+;(not (replaced_tam_with_root_tam ?id))
+;=>
+;	(bind ?nr (remove_character " " (implode$ (create$ $?w ?root)) "_"))
+;;        (modify ?f (root ?nr)(root_components $?w ?root))
+;	(if (neq ?word ?root) then
+;		(if (neq (length ?word) (length ?root)) then
+;	               	(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
+;		else
+;			(bind ?tam (create$))
+;		)
+;	       	(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ ?tam $?wrds)) "_"))))
+;          	(modify ?f (root ?nr)(root_components $?w ?root)(tam ?ntam)(tam_components ?tam $?wrds ))
+;	else
+;             (if (neq (length $?wrds) 0) then
+;		(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ $?wrds)) "_"))))
+;                (modify ?f (root ?nr)(root_components $?w ?root)(tam ?ntam)(tam_components $?wrds))
+;	     )
+;	)
+;        (assert (root_decided ?id))
+;)
 ;----------------------------------
 ;Your self-confidence also increases with teeth.  xAzwoM se ApakA AwmaviSvAsa BI [baDawA hE] 
 ;As vib and tam both goes into same field...increasing tam rule and replace_tam_with_root-tam rule salience above than vib rules
@@ -458,16 +531,17 @@
 (defrule tam
 (declare (salience 590))
 ?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(group_ids $?grp_ids))
-?f1<-(man_word-root-cat    ?word&~hE ?root    v) 
+?f1<-(man_word-root-cat    ?word&~hE&~We&~WA ?root    v) 
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
 (not (root_decided ?id))
+(test (neq (integerp (member$ ?word (create$ usakA ))) TRUE))
 =>
        (if (eq (length ?word) (length ?root)) then
 	      (if (neq (length $?wrds) 0) then
 		 (bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ $?wrds)) "_"))))
         	 (modify ?f (root ?root)(root_components ?root)(tam ?ntam)(tam_components $?wrds))
 	      else
-		(modify ?f (root ?root)(root_components ?root))
+		(modify ?f (root ?root)(root_components ?root)(tam yA) (tam_components yA))
 	      )	
        else
                (bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
@@ -575,7 +649,7 @@
 (declare (salience 400))
 ?f2<-(chunk_name-chunk_ids-words VGF ?id0 $?ids - huA $?mng)
 ?f<-(manual_word_info (head_id ?id0) (word huA $?mng)(root $?r) (group_ids ?id0 $?ids))
-?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m)(group_ids $?ids1))
+?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m&~kyA)(group_ids $?ids1))
 (anu_id-anu_mng-man_mng ? ? $? ?m)
 ?f1<-(chunk_name-chunk_ids ? ?id)
 =>
@@ -632,6 +706,21 @@
         (retract ?f0 ?f1)
         (assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
 )
+
+
+(defrule group_mawa_using_anu
+(declare (salience 12))
+?f0<-(manual_word_info (head_id ?id0) (word $?mng)(root ?r)(group_ids ?id $?ids))
+(id-Apertium_output ?aid ?m&mawa|nahIM $?m1)
+(or (id-HM-source ?aid ?r ?) (id-HM-source ?aid hE ?))
+?f1<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?m) (group_ids $?ids1))
+=>
+        (retract ?f1)
+	(modify ?f0 (word ?m $?mng) (group_ids $?ids1 ?id $?ids))
+;        (assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
+)
+
+
 ;Actually sir, I [am not expecting] very good marks.
 ;jI xaraasala , muJe bahuwa acCe nambaroM kI [ASA nahIM hE]  .
 (defrule group_using_anu_mng1
@@ -656,6 +745,7 @@
   	(bind ?nr (remove_character " " (implode$ (create$ ?m ?r)) "_"))
         (assert (manual_word_info (head_id ?id1) (word ?m $?mng)(root ?nr)(root_components ?m ?r)(group_ids $?ids1 ?id $?ids)))
 )
+
 ;--------------------------  corrections --- improve above rules then del these rules --------------------
 ;Added by Shirisha Manju
 ;(manual_word_info (word uTAe jAne cAhie) (root uTA) (vibakthi e jAne cAhie)) == (vibakthi jAne cAhie)
@@ -678,7 +768,7 @@
 ;(word ho) (root ho) (vibakthi jAwA hE)
 (defrule modify_root_and_vib
 (declare (salience -13))
-?f0<-(manual_word_info (head_id ?id0) (word ?m&ho|howA|howI $?mng)(root ?r&~ho)(tam_components $?vib))
+?f0<-(manual_word_info (head_id ?id0) (word ?m&ho|howA|howI|huI $?mng)(root ?r&~ho)(tam_components $?vib))
 (test (neq (length $?mng) 0))
 ?f<-(chunk_name-chunk_ids ?c $? ?id0 $?)
 =>
@@ -693,12 +783,13 @@
 	(assert (vib_modified ?id0))
 )
 
+
 (defrule modify_tam
 (declare (salience -13))
 ?f0<-(manual_word_info (head_id ?id0)(word $? ?w $?)(tam ?tam))
-(test (member$ ?tam (create$ we_hEM ez yA_jAwA_hE ne)))
+(test (member$ ?tam (create$ wI_hEM we_hEM ez yA_jAwA_hE ne)))
 =>
-	(if (eq ?tam we_hEM) then
+	(if (or (eq ?tam we_hEM) (eq ?tam wI_hEM)) then
 		(modify ?f0 (tam wA_hE)(tam_components wA hE))
 	     else (if (and (eq ?w ho)(eq ?tam yA_jAwA_hE)) then
 			(bind ?ntam (string-to-field (implode$ (remove_character " " (implode$ (create$ 0 jAwA hE)) "_"))))
@@ -713,11 +804,34 @@
 	)
 )
 
+(defrule modify_root
+(declare (salience -13))
+?f0<-(manual_word_info (head_id ?id0)(word $?w)(root ?r) (root_components nahIM $?r1))
+(test (neq (length $?r1) 0))
+=>
+	(bind ?n (string-to-field (sub-string 7 (length ?r) ?r)))
+;	(printout t ?n )
+	(modify ?f0 (root ?n)(root_components $?r1))
+)
+
+(defrule default_verb_root
+(declare (salience -25))
+?f0<-(manual_word_info (head_id ?id) (word $?mng)(root ?root) (root_components ?r1 jA))
+(man_word-root-cat ?r1 ?r v)
+=>
+;	(retract ?f0)
+	(bind ?n (string-to-field (str-cat ?r"_jA")))
+	(assert (manual_word_info (head_id ?id) (word $?mng)(root ?n) (root_components ?r jA)))
+)
+
+
+
 (defrule default_root
 (declare (salience -30))
 ?f0<-(manual_word_info (head_id ?id0)(word ?w))
-(man_word-root-cat ?w ?r ?)
+(man_word-root-cat ?w ?r ~prsg)
 (not (got_default_root ?id0))
+(not (root_decided ?id0))
 =>
 	(modify ?f0 (root ?r)(root_components ?r))
 	(assert (got_default_root ?id0))
@@ -733,7 +847,7 @@
 	(if (eq (integerp (member$ ?w (create$ isake usake inake Apake))) TRUE) then
 		(modify ?f0 (root ?r)(root_components ?r) (vibakthi_components ke $?v))
 	else
-        	(modify ?f0 (root ?r)(root_components ?r))
+	       	(modify ?f0 (root ?r)(root_components ?r))
 	)
         (assert (got_default_root ?id0))
 )

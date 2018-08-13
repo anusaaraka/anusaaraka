@@ -31,9 +31,9 @@ var=`cat $1/graph_output`
 
 if [ "'$var'" == "'NO PATH'" ] ; then
 	touch $1/word-alignment.dat
-	echo "@Phrase @level @left @over @words::	@NO @PATH" > $1/left-over-words.dat    
-	echo "@Phrase @level @left @over @words::	@NO @PATH" > $1/left-over-words1.dat    
-	echo "@Phrase @level @left @over @words::	@NO @PATH" > $1/total-left-over1.dat    
+	echo "@B. @Phrase @level @left @over @words:	@NO @PATH" > $1/left-over-words.dat    
+	echo "@B. @Phrase @level @left @over @words:	@NO @PATH" > $1/left-over-words1.dat    
+	echo "@B. @Phrase @level @left @over @words:	@NO @PATH" > $1/total-left-over1.dat    
         echo "@NO @PATH"	> $1/left
 	touch $1/align_left_over_wrds.dat
 	touch $1/mapped3.dat
@@ -59,7 +59,7 @@ else
 	echo "" >>  $1/total-left-over1.dat
 fi
 	sed -i 's/\*\*,\*\*/ /g'  $1/left
-	echo "@Word @level @left @over @Words::" >> $1/total-left-over1.dat
+	echo "@C. @Word @level @left @over @Words:" >> $1/total-left-over1.dat
 	cat $1/left >> $1/total-left-over1.dat
 	sed 's/(hindi_left_over_words//g' $1/total-left-over1.dat | sed 's/)$//g' | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/nonascii/@nonascii/g'  > $1/total-left-over2.dat
 	mv  $1/total-left-over2.dat $1/total-left-over1.dat

@@ -3,7 +3,7 @@
 
 #Getting POS
 #sed 's/^_//g' $1/hnd | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g' | sed 's/-isa/ - isa/g' | sed 's/hE-/hE - /g' | sed 's/\. -/. - /g'  >  $1/hnd-wx
-sed 's/^_//g' $1/hnd | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g' | sed 's/-isa/ - isa/g' | sed 's/hE-/hE - /g' | sed 's/\. -/. - /g' | sed 's/)-/) - /g' | sed 's/kareM-/kareM - /g' | sed 's/nota-/nota - /g' | sed 's/uxAharaNa-/uxAharaNa - /g' | sed 's/-isameM/ - isameM/g' | sed 's/-Apake / - Apake /g' >  $1/hnd-wx
+sed 's/^_//g' $1/hnd | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g' | sed 's/-isa/ - isa/g' | sed 's/hE-/hE - /g' | sed 's/\. -/. - /g' | sed 's/)-/) - /g' | sed 's/kareM-/kareM - /g' | sed 's/nota-/nota - /g' | sed 's/uxAharaNa-/uxAharaNa - /g' | sed 's/-isameM/ - isameM/g' | sed 's/-Apake / - Apake /g' | sed 's/^[ ]-\([^ ]\)/ - \1/g' | sed 's/-\./ - ./g' | sed 's/\([a-zA-Z]\)nonascii/\1 nonascii/g' >  $1/hnd-wx
 #sed 's/^_//g' $1/hnd.txt | sed 's/_$//g' | sed 's/_/ /g' | sed 's/ - /-/g'  >  $1/hnd-wx
 wx_utf8 < $1/hnd-wx > $1/hnd.utf8
 cd $HOME_anu_test/miscellaneous/HINDI_POS_CHUNKER/POSTagger/
