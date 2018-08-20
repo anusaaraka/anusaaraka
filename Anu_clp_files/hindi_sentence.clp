@@ -405,6 +405,24 @@
 ; )
 ; 
 
+ (defrule get_phrasal_vb_info
+ (declare (salience -11))
+ (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
+ (id-HM-source-grp_ids ? ? ? ?h $? ?l)
+ ?f1<-(id-mng ?l $?m)
+ =>
+	(retract ?f1)
+	(printout ?*grp_file* "(id-Apertium_output  " ?id " @PUNCT-OpenParen@PUNCT-OpenParen -- )" crlf)
+	(if (eq (length $?m) 0) then
+	        (printout ?*grp_file* "(id-Apertium_output  " ?l " - @PUNCT-ClosedParen@PUNCT-ClosedParen )" crlf)
+	else		
+		(printout ?*grp_file* "(id-Apertium_output  " ?l "  " (implode$ $?m) " @PUNCT-ClosedParen@PUNCT-ClosedParen )" crlf) 
+	)
+	(assert (verb_grouped ?h))
+ )
+
+
+
  ;---------------------------------------------------------------------------------------------------------
  (defrule add_mwe_grp_info
  (declare (salience -12))
@@ -429,6 +447,7 @@
  (declare (salience -13))
  (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
  ?f1<-(id-mng ?h $?mng1)
+ (not (verb_grouped ?h))
  =>
         (retract ?f1 )
 	(printout ?*grp_file* "(id-Apertium_output  " ?id " @PUNCT-OpenParen@PUNCT-OpenParen -- )" crlf)

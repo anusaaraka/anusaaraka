@@ -151,6 +151,7 @@
  (id-HM-source ?id ?mng ?src)
  (test (neq ?mng -))
  (not (last_punc_decided ?hid)) ;How are you today?
+ (not (hid-punc_head-right_punctuation ?id ?p_h ?r_punc))
  =>
 	(retract ?f0)
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?r_punc))

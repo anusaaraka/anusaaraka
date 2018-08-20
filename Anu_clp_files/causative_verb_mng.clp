@@ -192,7 +192,7 @@
  (and (Node-Category ?NN NN) (Node-Category ?NNS NNS|NN))
  (Head-Level-Mother-Daughters  ? ?  ?NN  ?id)
  (Head-Level-Mother-Daughters  ? ?  ?NNS  ?id1)
- ?f0<-(id-HM-source ?id ?mng ?s&WSD_root_mng|Default_meaning)
+ ?f0<-(id-HM-source ?id ?mng ?s)
  ?f1<-(id-HM-source ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning)
  (id-original_word ?id ?w)
  (id-original_word ?id1 ?w1)
