@@ -86,7 +86,9 @@
 
   replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org
   cd $HOME_anu_test/Anu_src/
-  ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
+  #After King Shantanu's sudden death ….
+  sed -n '1h;2,$H;${g;s/nonascii[0-9]\+[ ]\([\.?!]\)\n/ \1\n/g;p}' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp1_org
+  ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp1_org  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Stanford parser ..."
   cd $HOME_anu_test/Parsers/stanford-parser/src

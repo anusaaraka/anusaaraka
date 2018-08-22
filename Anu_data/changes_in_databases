@@ -1,5 +1,4 @@
-# 
-# changes in male_list.txt
+ changes in male_list.txt
 #  ========================
   1. Removed  :   miwra  
                   vaha  
@@ -89,6 +88,7 @@
 	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
 	24. kAPI    	Suggested by Sukhada 	    (02-09-14)  Eg: I used to be pretty good.
 	25. sara	Suggested by Rajini	    (14-10-16)  Eg: May I know your name sir? 
+	26. Bakwa	Suggested by Chaitanya Sir  (09-08-18)
 
 #  changes in Phrv.txt 
 #  ===================
@@ -324,6 +324,7 @@
 			ne_para			ne_se		ne_kI_jarUrawa_pada_sakawI_hE,
 			nA_hI_hE
 	5. yA_jAwA_hE,m,s,u		jAwA_hE	 	as  	jAwA_hUM	(Suggested by Somaji 10-11-14)
+	6. 0_wA_rahawA_hE,f,p,a      wI_rahawI_hEM 	as  wA_rahawA_hE,f,p,a      wI_rahawI_hEM (Suggested by Chaitanya Sir 5-06-18)
 
 
   Removed  : 
@@ -551,7 +552,7 @@
 
 	Added 14897 entries extracted from wordnet by Mudit Mittal (11-06-16)
 		aalii	to  zygote  
-
+	yourself	
 
 #  Changes in total-paxasUwra.txt 
 #  ==============================
@@ -946,6 +947,7 @@ Removed:
 	6. shall_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
 	7. will_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
 	8. will_not_be_able_to_0	0_pAyegA-0-nahIM (Suggested by Chaitanya Sir 14-08-17)
+	9. would_be_able_to_0	0_pAyegA-0-0	(Suggested by Chaitanya Sir 09-08-18)
 
  Removed :
  -------
@@ -1134,7 +1136,12 @@ Nandini ji LTRC 	27-11-13)
 	150. everybody_pronoun		saBa_loga	as	saba_loga	(	"	"		"    )
 	151. obverse_noun		viparIwArW	as	viparIwArWa	(	"	"		"    )
 	152. panic_verb			sanwrAswa_ho	as	sanwraswa_ho	(	"	"		"    )
-
+	153. lose_verb			lupwa_ho_j	as	lupwa_ho_jA
+					Ko_j		as	Ko_jA		bUla_j	as	bUla_jA
+					kama_ho_j	as	kama_ho_jA	(   By Shirisha Manju           18-05-18)
+	154. welfare_noun    		kalyANakArI_paxvawi  as kalyANakArI_paxXawi ( Suggested by Chaitanya Sir 21-05-18)
+	155. indirectly_adverb		aprawyakRa_yA_parokRa_rUpa_se	as aprawyakRa_rUpa_se/parokRa_rUpa_se (By Manju 01-06-18)
+					
     3. Added new entry:
        ---------------
 	1. attorney-at-law_UNDEFINED    pramANiwa_aBikarwA
@@ -1531,6 +1538,20 @@ Nandini ji LTRC 	27-11-13)
 	192. dishonored_adjective	apamAniwa
 	193. reborn_verb		punarjanma_le/punarjanma_ho	(Suggested by Chaitanya Sir  09-05-18)
 	194. rightfully_adverb		nyAyapUrvaka/iMsAPa_se/jAyaja_wOra_para (	" 	"	"    )
+	195. krsnaconscious_noun     	kqRNaBAvanABAviwa			(	"	"    10-05-18)	
+					Ex: Therefore, the conclusion is that a spiritual master who is one hundred percent krsnaconscious is 
+                                            the bona fide spiritual master, for he can solve the problems of life.
+	196. surrendered_adjective   	AwmasamarpaNa_kiyA_huA/Awmasamarpiwa/SaraNAgawa (Suggested by Chaitanya Sir  16-05-18)
+					Ex: Now I am Your disciple, and a soul surrendered unto You.
+	197. nescience_noun  		ajFAna					(       "       "    23-05-18)
+					EX: A man fallen in the ocean of nescience can not be saved simply by rescuing his outward dress — the
+                                            gross material body.
+	198. knower_noun     		jFAwA					(	"	"    24-05-18)	
+					Ex: The Absolute Truth is realized in three phases of understanding by the knower of the Absolute Truth,
+					    and all of them are identical.
+	200. servitor_noun		sevaka					(Suggested by Ayushi Banasthali 11-7-18)
+					Ex: Lord Krushna is Rama Himself, and wherever Lord Rama is, His eternal servitor Hanuman and His 
+					    eternal consort Sita, the goddess of fortune, are present.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1937,8 +1958,8 @@ Nandini ji LTRC 	27-11-13)
 	196. immediately_adverb      	wuranwa			(   By shirisha Manju         17-06-17)
 					Ex: This test is done immediately before and after exercise.
 	197. man_noun        		inasAna			(   By shirisha Manju         27-06-17)
-					Ex: On the addiction of nicotine coming once man starts being dependent on it and can not leave its habit
-					    easily. 
+					Ex: On the addiction of nicotine coming once man starts being dependent on it and can not leave its 
+					    habit easily. 
 	198. only_adverb		basa			(   By shirisha Manju         27-06-17)
 					Ex: Only some things need to be kept in mind.  basa kuCa bAwoM kA XyAna raKanA hogA .
 	199. grower_noun     		ugAne_vAlA/uga/ugA	(Suggested by Chaitanya Sir 12-08-17)
@@ -2023,6 +2044,24 @@ Nandini ji LTRC 	27-11-13)
 	244. seethe_verb		mana_hI_mana_gusse_se_KOla/anxara_hI_anxara_gusse_se_KOla ( " " ")
 	245. succeed_verb		kA_sWAna_le		(	"	"		"     )
 	246. tomorrow_noun		BaviRya			(	"	"		"     )
+	247. call_verb			kaha_kara		(	"	"		"     )
+					Ex: The Lord at once took the position of the teacher and chastised the student, calling him, indirectly					    , a fool.
+	248. consequently_adverb     	PalasvarUpa		(	"       "               "     )
+					Ex:Therefore, the breaking of the sanaatana-dharma tradition by irresponsible leaders of society brings
+					   about chaos in that society, and consequently people forget the aim of life — Visnu
+	249. succession_noun 		paramparA		(	"	"		"     )
+					Ex: O Krsna, maintainer of the people, I have heard by disciplic succession that those who destroy
+					    family traditions dwell always in hell
+	250. gross_adjective 		sWUla			(	"	"	      23-05-18)
+					Ex: A man fallen in the ocean of nescience can not be saved simply by rescuing his outward dress — the
+					    gross material body. 
+	251. topmost_adjective       	sabase_UparI/uccawama/sarvocca/sarvopari	("	"	      24-05-18)
+	252. identical_adjective     	ekarUpa			(Suggested by Chaitanya Sir   24-05-18)	 
+	253. indirectly_adverb       	aprawyakRawaH		(	By Manju	      01-06-18)
+					Ex: The Lord at once took the position of the teacher and chastised the student, calling him, 
+					    indirectly, a fool. 
+	254. scripture_noun  		SAswra			(Suggested by Ayushi 	      26-06-18)
+					Ex: he surpasses all studies of Vedic wisdom, and all scriptures of the world. vaha samaswa vExika jFAna                                            waWA viSva ke samaswa SAswroM ke aXyayana ko pICe Coda xewA hE  .
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2540,6 +2579,7 @@ Nandini ji LTRC 	27-11-13)
 	47. lion_noun		sLha-rASi					(	"	"		  "	)	
 	48. plan_verb		yojanA_wEyAra_kara				(Suggested by Chaitanya Sir 	25-10-17)
 	49. learn_verb		sik						(	"	"		09-05-18)
+	50. lose_verb		ko_xa/k						(   By Shirisha Manju           18-05-18)
 
     7. Removed entry:
        --------------
@@ -2605,6 +2645,9 @@ Nandini ji LTRC 	27-11-13)
 	59. participation_UNDEFINED BAgIxArI				(	"	"	"	12-02-18)
 	60. dishonored_UNDEFINED	apamAniwa_kara			(	"	"	"	16-02-18)
 	61. adopted_UNDEFINED	grahaNa_karanA				(	"	"	"	09-05-18)
+	62. surrendered_UNDEFINED   AwmasamarpaNa_karanA		(	"	"	"	16-05-18)
+	63. topmost_UNDEFINED       sabase_UparI			(	"	"	"	24-05-18)
+	64. posses_verb     raKa_ho/raKa/pAsa_ho/para_niyaNwraNa_raKa	(	"	"	"	   "	)
 
     8. Modified category:
        ------------------
@@ -2650,6 +2693,8 @@ Nandini ji LTRC 	27-11-13)
 	till_after		---	(		"	    21-07-15)	
 	related_to		---	(		"	    13-06-17)
 	in_the_form_of		---	(		"	    02-08-17)
+	in_the_midst_of		---	(		"	    10-05-18) Ex:O descendant of Bharata, at that time Krsna, smiling, in the
+							midst of both the armies, spoke the following words to the grief-stricken Arjuna.
 
 #  Changes in proper_noun-common_noun_compounds.txt 
 #  ================================================
@@ -2864,6 +2909,9 @@ Nandini ji LTRC 	27-11-13)
 	pros_and_cons   	AgA_pICA			as	Age_pICe			(	"	"	    04-01-18)	
 	after_that      	waxnaMwara			as	waxanaMwara			(	"	"	    11-01-18)
 	pros_and_cons		AgA_pICA			as	Age_pICe			(	"	"	    05-03-18)
+	for_the_time_being      PIlahAla			as	PilahAla			(	"	"	    10-05-18)
+	widely_read		bahuxatiwa			as	bahupaTiwa			(	"	"	    09-08-18)
+		
 
 
     Added new entry:
@@ -3603,6 +3651,7 @@ Nandini ji LTRC 	27-11-13)
 	addition_noun   kA_niyama/SaBuja_kA_niyama 			(Wrongly extracted entry)
 	maxwell-boltzamann_noun mEksavEla-boltSamAna_sAMKyikI		(	"		)	
 	thermodynamic_noun      URmAgawika_wApa				(	"		)
+	twenty-four_UNDEFINED   24	(By Shirisha Manju 25-05-18)
 
    Modified:
    ---------

@@ -14,8 +14,9 @@
 	cut -f1 $MYPATH/hindi_dep_parser_out.txt > $MYPATH/hid
 	cut -f2 $MYPATH/hindi_dep_parser_out.txt > $MYPATH/hword
 	paste $MYPATH/hid $MYPATH/hword > $MYPATH/dep_parser_word_tmp.txt
- 	sed 's/^/(hid-word\tP/g' $MYPATH/dep_parser_word_tmp.txt | sed 's/$/)/g' | sed 's/;/ PUNCT-Semicolon /g' | sed 's/(hid-word\tP\t)/;~~~~~~~~~~/g' | sed 's/?/ PUNCT-QuestionMark /g' | sed 's/"/ PUNCT-DoubleQuote /g'> $MYPATH/dep_parser_word.txt
+ 	sed 's/(/ PUNCT-OpenParen /g' $MYPATH/dep_parser_word_tmp.txt | sed 's/)/ PUNCT-ClosedParen /g' | sed 's/^/(hid-word\tP/g' | sed 's/$/)/g' | sed 's/;/ PUNCT-Semicolon /g' | sed 's/(hid-word\tP\t)/;~~~~~~~~~~/g' | sed 's/?/ PUNCT-QuestionMark /g' | sed 's/"/ PUNCT-DoubleQuote /g'> $MYPATH/dep_parser_word.txt
         touch 	$MYPATH/hnd_root_and_tam_info.txt	
+	sed 's/^$/;~~~~~~~~~~/g' $MYPATH/hindi_dep_parser_out.txt > $MYPATH/hindi_dep_parser_original.txt
   else
 	touch 	$MYPATH/hnd_parser_relns.txt
         touch 	$MYPATH/hnd_root_and_tam_info.txt	
@@ -119,6 +120,7 @@
 
  $HOME_anu_test/Anu_src/split_file.out hnd_parser_relns.txt dir_names.txt hindi_dep_parser_rel_ids_tmp.dat
  $HOME_anu_test/Anu_src/split_file.out dep_parser_word.txt dir_names.txt dep_parser_word_tmp.dat
+ $HOME_anu_test/Anu_src/split_file.out hindi_dep_parser_original.txt dir_names.txt hindi_dep_parser_original.dat
  #$HOME_anu_test/Anu_src/split_file.out hnd_parser_cat.txt dir_names.txt hindi_parser_cat.dat
  $HOME_anu_test/Anu_src/split_file.out hnd_root_and_tam_info.txt dir_names.txt hindi_root_and_tam_info.dat
 

@@ -21,9 +21,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id sanwrAswa_ho))
+(assert (id-wsd_root_mng ?id sanwraswa_ho)); Modified sanwrAswa_ho as sanwraswa_ho by Shirisha Manju
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panic.clp 	panic1   "  ?id "  sanwrAswa_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panic.clp 	panic1   "  ?id "  sanwraswa_ho )" crlf))
 )
 
 ;"panic","V","1.sanwrAswa_honA"

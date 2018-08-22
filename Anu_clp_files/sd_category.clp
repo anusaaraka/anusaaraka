@@ -33,7 +33,7 @@
   (declare (salience 20))
   (parserid-word ?pid ?w)
   (parserid-wordid ?pid ?id)
-  (id-right_punctuation =(- ?id 1) PUNCT-DotPUNCT-Semicolon|PUNCT-ExclamationPUNCT-Semicolon|PUNCT-Dot)
+  (id-right_punctuation =(- ?id 1) PUNCT-DotPUNCT-Semicolon|PUNCT-ExclamationPUNCT-Semicolon|PUNCT-Dot|PUNCT-Colon)
   =>
         (assert (not_PropN ?pid))
   )
