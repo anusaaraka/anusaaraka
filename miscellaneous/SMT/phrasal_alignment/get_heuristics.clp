@@ -27,7 +27,7 @@
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (deffunction get_hwnb_possible_mngs(?id ?root ?gdbm ?cat)
-        (bind $?dic_list (create$ ))
+ ;       (bind $?dic_list (create$ ))
         (bind ?new_mng (gdbm_lookup ?gdbm ?root))
   	(if (neq ?new_mng "FALSE") then
 	        (bind ?slh_index (str-index "/" ?new_mng))
@@ -36,7 +36,8 @@
                         	(bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
 	                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
         	                (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
-                	        (bind $?dic_list (create$ $?dic_list ?new_mng1 ,))
+				(assert (id-root-cat-possible_mngs ?id ?root ?cat ?new_mng1))
+;                	        (bind $?dic_list (create$ $?dic_list ?new_mng1 ,))
                         	(bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
 	                        (bind ?slh_index (str-index "/" ?new_mng))
           		)
@@ -44,15 +45,17 @@
 	        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
 	        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
         	(bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-	        (bind $?dic_list (create$ $?dic_list ?new_mng1))
-        	(assert (id-root-cat-possible_mngs ?id ?root ?cat $?dic_list))
+;	        (bind $?dic_list (create$ $?dic_list ?new_mng1))
+        	(assert (id-root-cat-possible_mngs ?id ?root ?cat ?new_mng1))
+;        	(assert (id-root-cat-possible_mngs ?id ?root ?cat $?dic_list))
 	)
  )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule get_hnd_wnb_facts
 (declare (salience 1500))
-(manual_word_info (head_id ?id) (root ?root))
+(or (manual_word_info (head_id ?id) (root ?root))(manual_word_info (head_id ?id) (root_components ?root ?k&kara|ho|xe))
+    (and (manual_word_info (head_id ?id) (word ?w)) (man_word-root-cat ?w ?root ?)))
 (test (neq (numberp ?root) TRUE))
 =>
 	(get_hwnb_possible_mngs ?id ?root "hnd-wrdnet-adj.gdbm" adj)
@@ -61,10 +64,25 @@
 	(get_hwnb_possible_mngs ?id ?root "hnd-wrdnet-verb.gdbm" verb)
 )
 ;-------------------------------------------------------------------------------------
+(defrule modify_word_fact
+(declare (salience 1000))
+?f<-(id-word ?id ?w)
+?f2<-(id-original_word ?id ?o)
+(test (eq (numberp ?w) FALSE))
+(test (eq (sub-string  (length ?w) (length ?w) ?w) "-"))
+=>
+        (retract ?f ?f2 )
+        (bind ?nw (string-to-field (sub-string 1 (- (length ?w) 1) ?w)))
+        (assert (id-word ?id ?nw))
+        (assert (id-original_word ?id ?nw))
+)
+
 ;Added by Shirisha Manju
 (defrule rm_prep_info
 (declare (salience 1002))
-?f0<-(id-word ?id in|of|on|to|its)
+;?f0<-(id-word ?id in|of|on|to|its)
+(or (id-cat_coarse ?id preposition)(pada_info (preposition $? ?id $?)))
+?f0<-(id-word ?id ?)
 =>
         (retract ?f0)
 )
@@ -83,13 +101,24 @@
 ;Added by Shirisha Manju
 (defrule get_mwe_ids_if_mng_same
 (declare (salience 1002))
-(manual_word_info (head_id ?mid) (word $?mng))
+(or (manual_word_info (head_id ?mid) (word $?mng))(id-hyphen_word-vib ?mid - $?mng - 0))
 (id-Apertium_output ?aid $?mng)
 (id-HM-source-grp_ids ?aid ? ?src $?ids ?aid)
 (test (>= (length $?ids) 1))
 (not (mwe_ids $? ?aid))
 =>
 	(assert (mwe_ids $?ids ?aid))
+)
+;-------------------------------------------------------------------------------------
+;O Krsna, maintainer of the people, I have heard by disciplic succession that those who destroy [family traditions] dwell always in hell.
+;he prajApAlaka kqRNa ! mEneM guru-paramparA se sunA hE ki jo loga [kula-Xarma] kA vinASa karawe hEM ,ve saxEva naraka meM vAsa karawe hEM.
+(defrule rm_mwe_id_if_left_mng_same
+(declare (salience 1002))
+(anu_id-man_id-src-rule_name ?aid ?mid ? partial_match_for_hyphen_word_left)
+(id-HM-source-grp_ids ? ? ? ?aid =(+ ?aid 1))
+?f0<-(id-word =(+ ?aid 1) ?)
+=>
+	(retract ?f0)
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -102,6 +131,18 @@
         (retract ?f0 ?f1 ?f2)
 	(assert (mwe_ids $?p $?p1 ?aid))
 )
+;prApwa karanA == prApwa kara
+(defrule rm_nA_from_hi_mng
+(declare (salience 1002))
+; (pada_info (group_head_id  ?id)(group_cat infinitive))
+(id-cat_coarse ?id verb)
+?f<-(id-HM-source ?id $?m ?mng ?s)
+(test (eq (sub-string (- (length ?mng) 1) (length ?mng) ?mng) "nA"))
+=>
+        (bind ?n (string-to-field (sub-string 1 (- (length ?mng) 2) ?mng)))
+	(assert (id-HM-source ?id $?m ?n ?s))
+)
+
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule cp_man_@_word
@@ -114,15 +155,29 @@
         (assert (id-word-vib ?mid - ?new_mng - $?v))
 )
 
+(defrule modify_manual_word_for_decimal_no
+(declare (salience 1000))
+?f0<-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi_components $?v))
+(test (eq (floatp ?mng) TRUE))
+=>
+	(if (eq (sub-string (length (implode$ (create$ ?mng)))(length (implode$ (create$ ?mng))) (implode$ (create$ ?mng))) "0") then
+		(bind ?nw (string-to-field (sub-string 1 (- (length (implode$ (create$ ?mng))) 2) (implode$ (create$ ?mng)))))
+		(retract ?f0)
+		(modify ?f0 (word ?nw))
+	)
+)
+
 ;============================== get anu and manual verb info ==========================
 ;Counts the number of verbs of anusaaraka sentence
 (defrule verb_count_of_anu
 (declare (salience 1001))
-(or (pada_info (group_cat VP)(group_head_id  ?vid)) (id-cat ?vid gerund_or_present_participle))
+(or (pada_info (group_cat VP)(group_head_id  ?vid)) (id-cat ?vid gerund_or_present_participle)
+    (root-verbchunk-tam-chunkids ? ? ? $? ?vid))
 ?f<-(anu_verb_count-verbs ?anu_verb_count $?verbs)
 (test (not (integerp (member$ ?vid $?verbs))))
 (id-word ?vid ?w)
 (test (eq (str-index "nonascii" (implode$ (create$ ?w))) FALSE))
+(not (id-word =(- ?vid 1) the))
 =>
         (retract ?f)
         (bind ?anu_verb_count (+ ?anu_verb_count 1))
@@ -133,7 +188,10 @@
 ;Counts the number of verbs of manual sentence
 (defrule verb_count_of_manual
 (declare (salience 1001))
-(chunk_name-chunk_ids-words VGF ?mid $? - $?)
+(or (chunk_name-chunk_ids-words VGF ?mid $? - $?)
+    (and (chunk_name-chunk_ids-words VGNN ?mid $? - $?)
+         (or (manual_word_info (head_id ?mid)(root xe|kara))(manual_word_info (head_id ?mid)(tam nA))))
+)
 ?f<-(man_verb_count-verbs ?man_verb_count $?verbs)
 (test (not (integerp (member$ ?mid $?verbs))))
 =>
@@ -208,7 +266,8 @@
 (test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
 (or (id-root ?aid ?root)(id-word ?aid ?root))
 =>
-	(assert (database_info (root ?root)(components ?m ?m1) (group_ids ?aid)))
+	(bind ?nm (string-to-field (str-cat ?m"_"?m1)))
+	(assert (database_info (root ?root)(meaning ?nm)(components ?m ?m1) (group_ids ?aid)))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -226,7 +285,48 @@
         (assert (database_info (root ?root)(meaning ?mng)(components ?mng) (group_ids $?p ?aid $?po)))
 )
 ;-------------------------------------------------------------------------------------
+;kahAM == kahAz
+(defrule get_dbase_fact_for_chandrabinxu
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?mng))
+(test (eq (numberp ?mng) "FALSE"))
+(database_info (meaning ?mng1)(group_ids ?aid ))
+(test (and (eq (sub-string 1 (- (length ?mng) 1) ?mng)  (sub-string 1 (- (length ?mng1) 1) ?mng1))
+      (or (eq (sub-string (length ?mng1) (length ?mng1) ?mng1) "z")
+          (eq (sub-string (length ?mng1) (length ?mng1) ?mng1) "M"))))
+(id-word ?aid ?root)
+=>
+        (assert (database_info (root ?root)(meaning ?mng)(components ?mng) (group_ids ?aid )))
+)
 
+(defrule get_dbase_fact_for_chandrabinxu1
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?mng))
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "f" ?mng) FALSE))
+(database_info (meaning ?mng1)(root ?r)(group_ids ?aid ))
+(test (neq (str-index "z" ?mng1) FALSE))
+(test (eq (sub-string 1 (- (str-index "f" ?mng) 1) ?mng) (sub-string 1 (- (str-index "z" ?mng1) 1) ?mng1)))
+(test (eq (sub-string (+ (str-index "f" ?mng) 1) (length ?mng) ?mng) (sub-string (+ (str-index "z" ?mng1) 1) (length ?mng1) ?mng1)))
+(not (database_info (root ?r)(meaning ?mng)(group_ids ?aid )))
+=>
+	(assert (database_info (root ?r)(meaning ?mng)(components ?mng) (group_ids ?aid )))
+)
+;mouth == muMha == muzha
+(defrule get_dbase_fact_for_chandrabinxu2
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?mng))
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "M" ?mng) FALSE))
+(database_info (meaning ?mng1)(root ?r)(group_ids ?aid ))
+(test (neq (str-index "z" ?mng1) FALSE))
+(test (eq (sub-string 1 (- (str-index "M" ?mng) 1) ?mng) (sub-string 1 (- (str-index "z" ?mng1) 1) ?mng1)))
+(test (eq (sub-string (+ (str-index "M" ?mng) 1) (length ?mng) ?mng) (sub-string (+ (str-index "z" ?mng1) 1) (length ?mng1) ?mng1)))
+(not (database_info (root ?r)(meaning ?mng)(group_ids ?aid )))
+=>
+        (assert (database_info (root ?r)(meaning ?mng)(components ?mng) (group_ids ?aid )))
+)
+;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;to use in scope rule - becoz manual_word_info fact is removed after alignment
 (defrule generate_man_id_and_grp_fact
@@ -293,9 +393,26 @@
 (or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))(id-hyphen_word-vib ?mid - $?mng - 0))
 (id-Apertium_output ?aid $?mng)
 (pada_info (group_head_id ?aid)(vibakthi 0))
+(not (anu_id-man_id-type ?aid ?mid anu_exact_match))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match anu_exact_match))
+)
+;-------------------------------------------------------------------------------------
+;if pada is missing
+;We will explain how to collect the sample.; Since you only have to provide a stool sample, no illness or injury as a result of participation is anticipated. 
+;hama Apako namUnA lene kA warIkA bawAeMge , cUzki Apake xvArA kevala mala kA namUnA xiyA jAnA hE , isalie isake kAraNa Apako bImArI yA cota lagane kI samBAvanA nahIM hE  .
+(defrule anu_exact_match0
+(declare (salience 906))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))(id-hyphen_word-vib ?mid - $?mng - 0))
+(id-HM-source ?aid $?mng ?)
+(not (id-Apertium_output ?aid $?))
+(not (pada_info (group_head_id ?aid)))
+(not (anu_id-man_id-type ?aid ?mid anu_exact_match))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match anu_exact_match0))
 )
 ;-------------------------------------------------------------------------------------
 
@@ -349,7 +466,7 @@
 (or (manual_word_info (head_id ?mid) (word ?m)(vibakthi_components 0))(id-hyphen_word-vib ?mid - ?m - 0))
 (man_word-root-cat ?m ?root p)
 (or (id-HM-source ?aid ?root ?)(database_info (meaning ?root)(group_ids ?aid)))
-(pada_info (group_head_id ?aid)(vibakthi ?v&ko|kA|meM|0))
+(pada_info (group_head_id ?aid)(vibakthi ?v&ko|kA|meM|0|ne))
 (id-Apertium_output ?aid ?m1)
 (not (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match|anu_root_match ?))
 =>
@@ -375,6 +492,19 @@
         (assert (anu_id-man_id-type ?aid ?mid  anu_root_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_root_match anu_wsd_match))
 )
+
+(defrule anu_wsd_match1
+(declare (salience 902))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (root_components $?mng ?m)(vibakthi_components 0))
+(id-HM-source ?aid $?mng ?m ?)
+(pada_info (group_head_id ?aid)(vibakthi 0))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match|anu_root_match ?))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_root_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_root_match anu_wsd_match))
+)
+
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 13-01-17
 ;Similarly, the basic laws of electromagnetism (Maxwell's equations) govern all electric and magnetic phenomena.
@@ -419,9 +549,9 @@
 (declare (salience 900))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))
-(id-Apertium_output ?aid $?mng $?prep)
-(pada_info (group_head_id ?aid) (preposition $? ?pid&~0 $?))
-(id-HM-source ?pid $?prep ?)
+(or (and (id-Apertium_output ?aid $?mng ?prep) (pada_info (group_head_id ?aid)(vibakthi ?prep))) 
+    (and (id-Apertium_output ?aid $?mng $?prep)(pada_info (group_head_id ?aid) (preposition $? ?pid&~0 $?))(id-HM-source ?pid $?prep ?))
+)
 (not (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match|anu_exact_match_without_vib ? ))
 =>
 
@@ -443,11 +573,24 @@
 (id-Apertium_output ?aid $?mng $?prep)
 (pada_info (group_head_id ?aid) (preposition $? ?pid&~0 $?))
 (id-HM-source ?pid $?prep ?)
-(not (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match|anu_exact_match_without_vib ? ))
+(not (anu_id-man_id-src-rule_name ? ?mid anu_exact_match|anu_exact_match_without_vib ? ))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match_without_vib exact_match_without_vib2))
 )
+
+(defrule root_match_without_vib
+(declare (salience 901))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (root_components $?root)) (id-hyphen_word-vib ?mid - $?root - $?))
+(id-HM-source ?aid $?root ?)
+;(not (anu_id-man_id-src-rule_name ?aid ?mid anu_exact_match|anu_exact_match_without_vib|anu_root_match_without_vib ? ))
+(not (anu_id-man_id-src-rule_name ? ?mid anu_exact_match|anu_exact_match_without_vib|anu_root_match|anu_root_match_without_vib ? ))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_root_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_root_match_without_vib root_match_without_vib))
+)
+
 
 ;==================================== Exact dictionary match ==========================================
 
@@ -483,6 +626,7 @@
 (database_info (components $?m ?root)(group_ids $? ?id $?)(database_type ?type))
 (pada_info (group_head_id  ?id)(preposition $? ?vib_id $?))
 (database_info (components $?vib)(group_ids $? ?vib_id $?))
+(not (anu_id-man_id-src-rule_name ?id ? dictionary_match|multi_dictionary_match|anu_exact_match ?))
 (not (anu_id-man_id-src-rule_name ? ?mid dictionary_match|multi_dictionary_match|anu_exact_match ?))
 (id-word ?id ?) ;used for contrl fact for prep and aux ids. check rules rm_aux_id/rm_mwe_id
 =>
@@ -521,7 +665,8 @@
 (or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))  (id-hyphen_word-vib ?mid - $?mng - 0))
 (database_info (components $?mng)(group_ids $? ?aid $?)(database_type ?type))
 (not (pada_info (preposition ?aid)))
-(not (anu_id-man_id-src-rule_name ? ?mid dictionary_match|multi_dictionary_match|anu_exact_match ?))
+(not (pada_info (group_head_id ?aid)(preposition ?p&~0 $?)))
+(not (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_root_match ?))
 (id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
 =>
 	(if (eq ?type multi) then
@@ -548,6 +693,20 @@
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match man_hyphen_wrd_match_using_dic))
 )
+;iMdiyA-500033 == INDIA-500033.    388-e == 388-A  
+(defrule man_hyphen_wrd_match_using_dic1
+(declare (salience 839))
+(current_id ?mid)
+(id-hyphen_word-vib ?mid - ?m1 ?m2  - 0)
+(id-left_word-possible_mngs ?aid ? $? ?m1 $?)
+(id-right_word-possible_mngs ?aid ? $? ?m2 $?)
+(not (anu_id-man_id-src-rule_name ?aid ?mid  dictionary_match|multi_dictionary_match|anu_exact_match ?))
+(id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match man_hyphen_wrd_match_using_dic1))
+)
+
 ;---------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;When the Prince Shreyanshkumar came to know of this he remembered the tradition of his ancestors to abandon [food and water] .
@@ -574,7 +733,7 @@
 (database_info (components $?m ?root)(group_ids $? ?aid $?)(database_type ?type))
 (id-word ?aid ?w&~the)
 (not (pada_info (preposition ?aid)))
-(not (anu_id-man_id-src-rule_name ? ?mid  dictionary_match|multi_dictionary_match|anu_exact_match ?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  dictionary_match|multi_dictionary_match|anu_exact_match|anu_root_match ?))
 =>
 	(if (eq ?type multi) then
 	        (assert (anu_id-man_id-type ?aid ?mid  multi_dictionary_match))
@@ -596,7 +755,9 @@
 (database_info (components $?mng)(group_ids $? ?aid $?)(database_type ?type))
 (not (pada_info (preposition $? ?aid $?)))
 (not (anu_id-man_id-src-rule_name ?aid ?mid   dictionary_match|multi_dictionary_match|anu_exact_match ?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid   ? man_word_and_vib_match_using_dic))
 (id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
+(pada_info (group_head_id ?aid)(preposition $? ?p&~0 $?))
 =>
 	(if (eq ?type multi) then
         	(assert (anu_id-man_id-type ?aid ?mid  multi_dictionary_match_without_vib))
@@ -617,8 +778,9 @@
 (man_word-root-cat ?mng ?root ?)
 (database_info (components $?m ?root)(group_ids $? ?aid $?))
 (not (pada_info (preposition $? ?aid $?)))
-(not (anu_id-man_id-src-rule_name ? ?mid  dictionary_match|multi_dictionary_match|anu_exact_match ?))
+(not (anu_id-man_id-src-rule_name ? ?mid  dictionary_match|multi_dictionary_match|anu_exact_match|dic_match_without_vib ?))
 (id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? dic_pronoun_root_match_without_vib))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match_without_vib dic_root_match_without_vib))
@@ -626,9 +788,10 @@
 ;---------------------------------------------------------------------------
 ;[isake alAvA] xUXa pInA @PUNCT-Comma gAjara KAnA BI PAyaxemanxa sAbiwa howA hE  .
 (defrule dic_pronoun_root_match_without_vib
-(declare (salience 820))
+(declare (salience 821))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word ?mng $?)(vibakthi_components ?v&~0 $?vib))
+;(manual_word_info (head_id ?mid) (word ?mng $?))
 (man_word-root-cat ?mng ?root p)
 (database_info (components ?root)(group_ids $? ?aid $?))
 (not (pada_info (preposition $? ?aid $?)))
@@ -636,7 +799,7 @@
 (id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
 =>
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match_without_vib dic_root_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match_without_vib dic_pronoun_root_match_without_vib))
 )
 ;---------------------------------------------------------------------------
 ;The great eruption of krakatau must have taken place around 416 ad, as reported in ancient javanese scriptures.
@@ -646,9 +809,12 @@
 (declare (salience 811))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $? ?mng $? ))
-(test (eq (member$ ?mng (create$ nahIM)) FALSE))
-(or (id-Apertium_output ?aid ?mng $?)(id-HM-source ?aid ?mng ?))
-(not (anu_id-man_id-src-rule_name ? ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_exact_match_without_vib|partial_match ?))
+(man_word-root-cat ?mng ~kara ?c&~prsg)
+(test (eq (member$ ?mng (create$ nahIM ke kara hE We na hEM)) FALSE))
+(or (id-Apertium_output ?aid $?p ?mng $?p1)(id-HM-source ?aid $?p ?mng $?p1 ?))
+(test (or (neq (length $?p) 0) (neq (length $?p1) 0)))
+(not (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_exact_match_without_vib|partial_match|hindi_wordnet_match ?))
+(id-word ?aid ?)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  partial_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_match_with_anu))
@@ -659,9 +825,10 @@
 (declare (salience 810))
 (current_id ?mid)
 (or (manual_word_info (head_id ?mid) (word $? $?mng $? ))(manual_word_info (head_id ?mid)(word $? $?mng $? ?v&se|ko|ke)))
-(test (and (neq (length $?mng) 0)(eq (integerp (member$ $?mng (create$ WI WA kI kara hE ho hue huI huA hEM hI vajaha se jEsA nahIM))) FALSE)))
+(test (and (neq (length $?mng) 0)(eq (integerp (member$ $?mng (create$ We WI WA kI kara hE ho hue huI huA hEM hI vajaha se meM jEsA nahIM ke karawA karawe karawI na))) FALSE)))
 (id-Apertium_output ?aid $? $?mng $?)
 (not (anu_id-man_id-src-rule_name ? ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_exact_match_without_vib|partial_match ?))
+(id-word ?aid ?)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  partial_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_match_with_anu1))
@@ -678,12 +845,15 @@
 (declare (salience 809))
 (current_id ?mid)
 (or (manual_word_info (head_id ?mid) (word $? ?mng $? ))(manual_word_info (head_id ?mid)(word $? ?mng $? ?v&se|ko|ke))
-    (id-hyphen_word-vib ?mid - ?mng ? - ?))
+    (id-hyphen_word-vib ?mid - $? ?mng $?  - ?))
 (man_word-root-cat ?mng&~lIjie ?r ?c&~p&~prsg&~sh&~v)
-(test (eq (integerp (member$ ?r (create$ se sA WI WA kI kA kara raha pada jA hE ho hue huI huA hI hEM howA ki))) FALSE))
-(or (database_info (components $? ?mng $?)(group_ids ?aid))(database_info (components $? ?r $?)(group_ids ?aid))
-    (id-left_word-possible_mngs ?aid ? $? ?mng $?) (id-right_word-possible_mngs ?aid ? $? ?mng $?)) 
+(test (eq (integerp (member$ ?r (create$ na se sA WI WA kI kA kara raha pada jA hE ho hue huI huA hI hEM howA ki nahIM))) FALSE))
+(or (database_info (components $? ?mng $?)(group_ids ?aid))
+    (database_info (components $? ?r $?)(group_ids ?aid))
+    (id-left_word-possible_mngs ?aid ? $? ?mng $?) 
+    (id-right_word-possible_mngs ?aid ? $? ?mng $?)) 
 (not (pada_info (preposition $? ?aid $?)))
+(id-cat_coarse ?aid ~conjunction)
 (not (anu_id-man_id-src-rule_name ? ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_exact_match_without_vib|partial_match ?))
 (id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
 =>
@@ -691,10 +861,10 @@
         (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_word_match_with_dic))
 )
 ;---------------------------------------------------------------------------
-(defrule partial_word_match_for_hyphen_word
-(declare (salience 809))
+(defrule partial_match_for_hyphen_word_left
+(declare (salience 810))
 (current_id ?mid)
-(id-hyphen_word-vib ?mid - ?mng ? - ?)(id-hyphen_word-vib ?mid - ? ?mng  - ?)
+(id-hyphen_word-vib ?mid - ?mng ? - ?)
 (or (database_info (components $? ?mng $?)(group_ids ?aid))
     (id-left_word-possible_mngs ?aid ? $? ?mng $?)(id-right_word-possible_mngs ?aid ? $? ?mng $?))
 (not (pada_info (preposition $? ?aid $?)))
@@ -702,8 +872,23 @@
 (id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
 =>
         (assert (anu_id-man_id-type ?aid ?mid  partial_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_word_match_with_dic))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_match_for_hyphen_word_left))
 )
+
+(defrule partial_match_for_hyphen_word_right
+(declare (salience 810))
+(current_id ?mid)
+(id-hyphen_word-vib ?mid - ? ?mng  - ?)
+(or (database_info (components $? ?mng $?)(group_ids ?aid))
+    (id-left_word-possible_mngs ?aid ? $? ?mng $?)(id-right_word-possible_mngs ?aid ? $? ?mng $?))
+(not (pada_info (preposition $? ?aid $?)))
+(not (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_exact_match_without_vib|partial_match ?))
+(id-word ?aid ?) ;used for contrl fact for prep and aux ids . check  rules : rm_aux_id/rm_mwe_id
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match partial_match_for_hyphen_word_right))
+)
+
 ;=================================   verb rules =================================================
 ;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
 (defrule single_verb_match_with_anu
@@ -764,15 +949,38 @@
 )
 ;---------------------------------------------------------------------------
 ;;Added by Shirisha Manju
+;adv: perfectly == BalIBAzwi == acCI_waraha se
 (defrule get_hindi_wordnet_match
 (declare (salience 820))
 (current_id ?mid)
-(id-root-cat-possible_mngs ?mid ?root ?cat $?pos_mngs)
-(id-Apertium_output ?aid $?mng)
-(test (neq (integerp (member$ $?mng $?pos_mngs)) FALSE))
+(id-root-cat-possible_mngs ?mid ?root&~hI ?cat $?mng)
+(test (neq (integerp (member$ $?mng (create$ ho kara))) TRUE))
+(or (id-Apertium_output ?aid $?mng)
+    (database_info (components $?mng)(group_ids ?aid))
+    (id-HM-source ?aid $?mng ?)
+    (and (id-cat_coarse ?aid adverb)(database_info (components $?mng se)(group_ids ?aid)))
+)
+(not (anu_id-man_id-type ?aid ?mid hindi_wordnet_match))
+(id-word ?aid ?)
+;(test (neq (integerp (member$ $?mng $?pos_mngs)) FALSE))
 =>
 	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match get_hindi_wordnet_match))
 	(assert (anu_id-man_id-type ?aid ?mid  hindi_wordnet_match))
+)
+;---------------------------------------------------------------------------
+;;Added by Shirisha Manju
+;distinguishing = viBinnawA = viBexa kara
+(defrule wordnet_partial_match
+(declare (salience 820))
+(current_id ?mid)
+(id-root-cat-possible_mngs ?mid ?root ?cat $?mng)
+(database_info (components $?mng kara|ho)(group_ids ?aid))
+(not (root-verbchunk-tam-chunkids ? ? ? $? ?aid $? ?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match ?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? wordnet_partial_match))
+=>
+	(assert (anu_id-man_id-src-rule_name ?aid ?mid partial_match wordnet_partial_match))
+        (assert (anu_id-man_id-type ?aid ?mid  partial_match))
 )
 ;---------------------------------------------------------------------------
 ;dic:
@@ -835,7 +1043,7 @@
 (defrule kriyA_mUla_partial_match
 (declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid)(root_components $?v_root ?r&kara|ho|xe|le))
+(manual_word_info (head_id ?mid)(root_components $?v_root ?r&kara|ho|xe|le|jA))
 (test (neq (length $?v_root) 0))
 (or (database_info (components $? $?v_root $? ?r)(group_ids $? ?aid $?))(database_info (components $? $?v_root $?)(group_ids $? ?aid $?))
     (id-HM-source ?aid $? $?v_root ?r ?))
@@ -844,6 +1052,22 @@
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))
 	(assert (anu_id-man_id-src-rule_name ?aid ?mid kriyA_mUla_partial_match kriyA_mUla_partial_match))
+)
+
+;O descendant of Bharata,at that time Krsna, [smiling],in the midst of both the armies, spoke the following words to the grief-stricken Arjuna. 
+;he BarawavaMSI (XqwarARtra )! usa samaya xonoM senAoM ke maXya Sokamagna arjuna se kqRNa ne mAno [hazsawe hue] ye Sabxa kahe  . 
+(defrule kriyA_mUla_partial_match1
+(declare (salience 819))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid)(root_components $?v_root))(manual_word_info (head_id ?mid)(word $?v_root)))
+(chunk_name-chunk_ids-words VGNF|VGF ?mid $?)
+(test (neq (length $?v_root) 0))
+(database_info (components $? $?v_root ?r&kara|ho|raha)(group_ids $? ?aid $?))
+(test (neq (integerp (member$ $?v_root (create$ ho kara))) TRUE))
+(not (anu_id-man_id-src-rule_name ?aid ?mid dictionary_match|multi_dictionary_match|anu_exact_match|anu_exact_match_without_vib|anu_root_match|kriyA_mUla_partial_match ?))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid kriyA_mUla_partial_match kriyA_mUla_partial_match1))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -857,6 +1081,21 @@
 	(assert (anu_id-man_id-type ?aid ?mid  hindi_tam_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_tam_match tam_match))
 )
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;I declare that I have read the information sheet provided to me regarding this study and have clarified my doubts.()
+(defrule get_multiple_tam_id
+(declare (salience 810))
+(id-TAM ?aid ?etam)
+(id-TAM ?aid1 ?etam)
+(anu_id-man_id-type ?aid ?mid  hindi_tam_match)
+(not (anu_id-man_id-type ?aid1 ?mid  hindi_tam_match))
+(test (neq ?aid ?aid1))
+=>
+	(assert (anu_id-man_id-type ?aid1 ?mid  hindi_tam_match))
+        (assert (anu_id-man_id-src-rule_name ?aid1 ?mid hindi_tam_match tam_match))
+)
+
 ;================================ English word rules ====================================
 
 ;Eng : This process under forward bias is known as minority [carrier] [injection].
@@ -933,44 +1172,83 @@
 )
 ;============================= phrasal alignment =======================================================
 ;Added by Shirisha Manju
+(defrule align_using_phrasal_data_L
+(declare (salience 750))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $?man_mng)(vibakthi 0))(manual_word_info (head_id ?mid)(root_components $?man_mng))) 
+(anu_id-anu_mng-man_mng ?aid  ?w&~@PUNCT-Comma  $?man_mng)
+(not (got_align ?mid))
+(id-cat_coarse ?aid ~preposition)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  L_layer_match))
+	(assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_match align_using_phrasal_data_L))
+)
+
+;Added by Shirisha Manju
 ;It can be noted that each term represents a periodic function with a different angular frequency.
 ;XyAna xIjie, yahAz prawyeka paxa eka viBinna koNIya Avqwwi ke AvarwI Palana ko [nirUpiwa karawA hE].
 ;phrasal -- nirUpiwa
+(defrule L_layer_kriyA_mUla_match
+(declare (salience 700))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (root_components $?man_mng ?k&kara|ho|xe) )
+(anu_id-anu_mng-man_mng ?aid  ?  $?man_mng )
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  L_layer_partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_partial_match L_layer_kriyA_mUla_match))
+        (assert (got_align ?mid))
+)
+
+;Added by Shirisha Manju
 (defrule partial_align_with_l
 (declare (salience 700))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (root_components $?man_mng ?k&kara|ho) )
+(manual_word_info (head_id ?mid) (root_components $?man_mng))
 (test (neq (length $?man_mng) 0))
-(anu_id-anu_mng-man_mng ?aid  ?  $?man_mng)
+(or (anu_id-anu_mng-man_mng ?aid  ? ? $?man_mng $?)(anu_id-anu_mng-man_mng ?aid  ? $? $?man_mng ?))
+(id-word ?aid ?)
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  L_layer_pharasal_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_pharasal_match align_using_phrasal_data_L))
+        (assert (anu_id-man_id-type ?aid ?mid  L_layer_partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_partial_match align_using_phrasal_data_L))
 	(assert (got_align ?mid))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
-(defrule align_using_phrasal_data_L
-(declare (salience 750))
-(current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?man_mng))
+(defrule L_layer_without_vib
+(declare (salience 749))
+ (current_id ?mid)
+(manual_word_info (head_id ?mid) (word $?man_mng)(vibakthi ?v&~0 $?))
 (anu_id-anu_mng-man_mng ?aid  ?w&~@PUNCT-Comma  $?man_mng)
 (not (got_align ?mid))
 (id-cat_coarse ?aid ~preposition)
-(not (anu_id-man_id-type ? ?mid anu_exact_match))
 =>
-	(assert (anu_id-man_id-type ?aid ?mid  L_layer_pharasal_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_pharasal_match align_using_phrasal_data_L))
+        (assert (anu_id-man_id-type ?aid ?mid  L_layer_partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_partial_match L_layer_without_vib))
 )
 ;-------------------------------------------------------------------------------------
+(defrule M_layer_match
+(declare (salience 751))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $?man_mng) (vibakthi_components 0))(manual_word_info (head_id ?mid)(root_components $?man_mng)))
+(eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng) 
+(id-word ?aid ?)
+(test (eq (integerp (member$ $?man_mng (create$ wo))) FALSE))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  M_layer_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  M_layer_match M_layer_match))
+	(assert (got_M_layer_for ?mid))
+)
+
 ;Added by Shirisha Manju
 (defrule align_using_phrasal_data_M1
 (declare (salience 750))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?man_mng) (vibakthi_components ?vib))
 (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?vib) 
+(id-word ?aid ?)
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid  M_layer_pharasal_match align_using_phrasal_data_M1))
+        (assert (anu_id-man_id-type ?aid ?mid  M_layer_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  M_layer_match align_using_phrasal_data_M1))
 	(assert (got_M_layer_for ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -980,14 +1258,29 @@
 (defrule align_using_phrasal_data_M
 (declare (salience 750))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?man_mng))
+(manual_word_info (head_id ?mid) (word $?man_mng)(vibakthi ?v&~0 $?))
 (or (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng)(eng_id-eng_wrd-man_wrd  ?aid ? ?n&hamAre|jise|jisa $?man_mng))
 (not (got_M_layer_for ?mid))
 (id-cat_coarse ?aid ~preposition)
+(id-word ?aid ?)
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid M_layer_pharasal_match align_using_phrasal_data_M))
+        (assert (anu_id-man_id-type ?aid ?mid  M_layer_partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid M_layer_partial_match align_using_phrasal_data_M))
 )
+
+;Added by Shirisha Manju
+(defrule M_layer_kriyA_mUla_match
+(declare (salience 700))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (root_components $?man_mng ?k&kara|ho|xe) )
+(eng_id-eng_wrd-man_wrd ?aid  ?  $?man_mng )
+(id-word ?aid ?)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  M_layer_partial_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  M_layer_partial_match M_layer_kriyA_mUla_match))
+        (assert (got_align ?mid))
+)
+
 
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju

@@ -30,8 +30,44 @@
                         )
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
-;===================================================================================
 
+(defrule get_derivational_mng
+(declare (salience 2550))
+(id-root ?id ?root)
+(test (neq (gdbm_lookup "derivational_mng.gdbm" ?root) "FALSE"))
+=>	
+	(bind ?new_mng (gdbm_lookup "derivational_mng.gdbm" ?root))
+	(bind ?slh_index (str-index "/" ?new_mng))
+	(if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
+		(while (neq ?slh_index FALSE)
+                	(bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
+                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+                        (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
+                        (assert (id-root-derivational_mngs ?id ?root ?new_mng1))
+                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
+                        (bind ?slh_index (str-index "/" ?new_mng))
+                )
+	)
+        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+        (assert (id-root-derivational_mngs ?id ?root ?new_mng1))
+)
+;===================================================================================
+(defrule map_resolved_align_facts
+(declare (salience 2501))
+?f1<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?amng)(man_meaning $?mng))
+(anu_id-man_id-source ?aid ?mid ?)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
+=>
+        (retract ?f1 )
+	(if (eq (length $?amng) 0) then
+                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid $?mng))
+        else
+                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid $?mng))
+        )
+)
+;---------------------------------------------------------------------------------------
 (defrule map_align_facts
 (declare (salience 2500))
 ?f1<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?amng)(man_meaning $?mng))
@@ -45,7 +81,7 @@
         )
 	(assert (anu_id-man_id-source ?aid ?mid Oth_layer))
 )
-;===================================================================================
+;=================================== modify/remove  anu output ========================
 ;if mng is null then assert hyphen
 (defrule modify_anu_out
 (declare (salience 2450))
@@ -54,165 +90,52 @@
 	(retract ?f0)
 	(assert (id-Apertium_output ?aid -))
 )
-;============================== resolve same wt problem ===============================
-(defrule modify_a_wt_fact
-(declare (salience 2000))
-?f0<-(anu_id-wt-man_ids ?aid ?w $?p ?mid $?p1)
-(anu_id-man_id-source ? ?mid ?)
-=>
-        (retract ?f0)
-        (assert (anu_id-wt-man_ids ?aid ?w $?p $?p1))
-)
-;----------------------------------------------------------------------------------------------
-(defrule modify_m_wt_fact
-(declare (salience 2000))
-?f0<-(man_id-wt-anu_ids ?mid ?w $?p ?aid $?p1)
-(anu_id-man_id-source ?aid ? ?)
+(defrule rm_SYMBOL_fact
+(declare (salience 2450))
+?f0<-(id-Apertium_output ?aid SYMBOL EMDASH $?)
 =>
 	(retract ?f0)
-	(assert (man_id-wt-anu_ids ?mid ?w $?p $?p1))
 )
-;----------------------------------------------------------------------------------------------
-(defrule resolve_pronoun_using_rel_anu_id
-(declare (salience 1990))
-?f0<-(anu_id-wt-man_ids ?aid ?w $?p ?mid $?p1)
-(prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa ?v ?aid)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?v ?a $? - ?mid1&:(= (+ ?mid 1) ?mid1) $?)
-(manual_word_info (head_id ?mid) (word $?mng))
-(id-Apertium_output ?aid $?am)
-?f1<-(left_over_ids $?l ?mid $?l1)
-?f2<-(hindi_id_order $?h ?aid $?h1)
+
+(defrule rm_aux_id
+(declare (salience 2451))
+(root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?h)
+?f0<-(id-Apertium_output ?id ?)
 =>
-        (retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
-        (assert (left_over_ids $?l $?l1))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
-        (assert (anu_id-man_id-source ?aid ?mid RaRTI_viSeRaNa))
+	(retract ?f0)
 )
-;----------------------------------------------------------------------------------------------
-(defrule resolve_pronoun_using_rel_man_id
-(declare (salience 1990))
-?f0<-(man_id-wt-anu_ids ?mid ?w $?p ?aid $?p1)
-(prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa ?v ?aid) 
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?v ?a $? - ?mid1&:(= (+ ?mid 1) ?mid1) $?)
-(manual_word_info (head_id ?mid) (word $?mng))
-(id-Apertium_output ?aid $?am)
-?f1<-(left_over_ids $?l ?mid $?l1)
-?f2<-(hindi_id_order $?h ?aid $?h1)
-=>
-        (retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
-        (assert (left_over_ids $?l $?l1))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
-        (assert (anu_id-man_id-source ?aid ?mid RaRTI_viSeRaNa))
+;============================= align with derivational mng ================================
+;Karna is the half brother of Arjuna, as he was born of Kunti before her [marriage] with King Pandu.
+;karNa arjuna kA AXA BAI hE kyoMki vaha kunwI ke garBa se rAjA pANdu ke sAWa [vivAhiwa hone] ke pUrva uwpanna huA WA  .
+(defrule align_with_derivationl_dic
+(declare (salience 2449))
+?f2<-(left_over_ids $?l ?mid $?l1)
+(or (manual_word_info (head_id ?mid)(word $?mng)(root_components $?root)(vibakthi_components ?v $?vib))
+    (manual_word_info (head_id ?mid)(word $?mng)(root_components $?root ?m&kara|ho)(vibakthi_components ?v $?vib))
 )
-;----------------------------------------------------------------------------------------------
-(defrule resolve_pronoun_using_rel_and_chunk
-(declare (salience 1980))
-?f0<-(anu_id-wt-man_ids ?aid ?w $?p ?mid $?p1)
-(prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa ?v ?aid)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?v ?a $? - ?mid1 $?)
-(chunk_name-chunk_ids ? ?fid&:(= (+ ?mid 1) ?fid) $? ?mid1)
-(manual_word_info (head_id ?mid) (word $?mng))
-(id-Apertium_output ?aid $?am)
-?f1<-(left_over_ids $?l ?mid $?l1)
-?f2<-(hindi_id_order $?h ?aid $?h1)
-=>
-        (retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
-        (assert (left_over_ids $?l $?l1))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
-        (assert (anu_id-man_id-source ?aid ?mid RaRTI_viSeRaNa_and_chunk))
+(or (id-root-derivational_mngs ?aid ? $?root)
+    (id-root-derivational_mngs ?aid ? $?root ?k&kara|ho)
 )
-;----------------------------------------------------------------------------------------------
-;[kisI praxeSa ke] iwihAsa ke nirmANa yA/Ora punarnirmANa meM purAwAwwvika srowoM kI [eka mahawvapUrNa] BUmikA howI hE  .
-(defrule resolve_using_pada
-(declare (salience 1980))
-?f0<-(man_id-wt-anu_ids ?mid ?w $?p ?aid $?p1)
-(pada_info (group_ids $? ?aid ?aid1 $?))
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?a $? - =(+ ?mid 1) $?m)
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
-(id-Apertium_output ?aid $?am)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?vib))
-?f1<-(left_over_ids $?l ?mid $?l1)
-?f2<-(hindi_id_order $?h ?aid $?h1)
+?f1<-(id-Apertium_output ?aid $?am)
 =>
- 	(retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
+	(retract ?f1 ?f2)
         (assert (left_over_ids $?l $?l1))
-        (assert (anu_id-man_id-source ?aid ?mid pada_rule))
-        (if (eq ?v 0) then
-                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
-        else
-                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng ?v $?vib))
-        )
+	(if (neq ?v 0) then
+		(bind $?v1 (create$ ?v $?vib))
+		(if (neq (member$ $?v1 $?mng) FALSE) then
+			(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng ))
+		else
+			(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng ?v $?vib ))
+		)
+	else
+		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
+	)
+	(assert (anu_id-man_id-source ?aid ?mid align_with_derivationl_mng))
 )
-;----------------------------------------------------------------------------------------------
-;will be asked to sign == haswAkRara karane ke lie kahA jAegA
-(defrule resolve_kriyA_with_rel
-(declare (salience 1980))
-?f0<-(man_id-wt-anu_ids ?mid ? $?p ?kriyA $?p1)
-(prep_id-relation-anu_ids - kriyA-kqxanwa_karma ?kriyA ?k)
-(prep_id-relation-anu_ids - to-infinitive =(+ ?kriyA 1) ?k)
-?f2<-(hindi_id_order $?h ?kriyA $?h1)
-?f1<-(left_over_ids $?l ?mid $?l1)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?k $? ? - ?mid1 $?)
-(manual_word_info (head_id ?mid1) (group_ids $? ?lid&:(=(- ?mid 1) ?lid)))
-(manual_word_info (head_id ?mid) (word $?mng))
-(id-Apertium_output ?kriyA $?am)
-=>
- 	(retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
-        (assert (left_over_ids $?l $?l1))
-        (assert (anu_id-man_id-source ?kriyA ?mid kriyA_with_rel))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?kriyA $?am - ?mid $?mng))
-)	
-;----------------------------------------------------------------------------------------------
-(defrule get_single_a_wt_align
-(declare (salience 1100))
-?f0<-(anu_id-wt-man_ids ?aid ?w ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?vib))
-(id-Apertium_output ?aid $?am)
-?f1<-(left_over_ids $?l ?mid $?l1)
-?f2<-(hindi_id_order $?h ?aid $?h1)
-(not (anu_id-man_id-source ?aid $?))
-=>
-        (retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
-        (assert (left_over_ids $?l $?l1))
-        (if (eq ?v 0) then
-                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
-        else
-                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng ?v $?vib))
-        )
-        (assert (anu_id-man_id-source ?aid ?mid left_over_same_wt_align))
-)
-
-
-(defrule get_single_m_wt_align
-(declare (salience 1100))
-?f0<-(man_id-wt-anu_ids ?mid ?w ?aid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?vib))
-(id-Apertium_output ?aid $?am)
-?f1<-(left_over_ids $?l ?mid $?l1)
-?f2<-(hindi_id_order $?h ?aid $?h1)
-(not (anu_id-man_id-source ?aid $?))
-=>
-        (retract ?f0 ?f1 ?f2)
-        (assert (hindi_id_order $?h $?h1))
-        (assert (left_over_ids $?l $?l1))
-        (if (eq ?v 0) then
-                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
-        else
-                (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng ?v $?vib))
-        )
-        (assert (anu_id-man_id-source ?aid ?mid left_over_same_wt_align))
-)
-
-
-
+;-------------------------------------------------------------------------------------------------	
 (defrule mv_prep_align_to_head_if_not_align
-(declare (salience 2450))
+(declare (salience 2440))
 (pada_info (group_ids ?h) (preposition ?pid))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?pid $?amng ? - ?mid $?mng)
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am - ?mid1 ?m)
@@ -226,23 +149,266 @@
 	(assert (added_group_end ?pid))	
 	(assert (anu_id-man_id-source ?h ?mid mv_prep_align_to_head))
 )
+;====================================== special rules ===============================
+
+;Since every living entity is an individual soul, each is changing his body [every moment], manifesting sometimes as a child, sometimes as a youth, and sometimes as an old man. 
+;prawyeka jIva eka vyaRti AwmA hE . vaha [prawikRaNa] apanA SarIra baxalawA rahawA hE – kaBI bAlaka ke rUpa meM @PUNCT-Comma kaBI yuvA waWA kaBI vqxXa puruRa ke rUpa meM  .
+(defrule align_comp_man_word_for_every
+(declare (salience 1100))
+?f<-(left_over_ids $?p ?id $?p1)
+(manual_word_info (head_id ?id)(word ?mng)(vibakthi_components ?v $?vib))
+(test (neq (numberp ?mng) TRUE))
+(test (eq (sub-string 1 5 ?mng) "prawi"))
+(id-word ?aid every)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
+(id-root ?aid1&:(=(+ ?aid 1) ?aid1) ?r)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
+(database_info (root ?r) (meaning ?mng1) )
+(test (eq (string-to-field (str-cat "prawi" ?mng1)) ?mng))
+?f1<-(id-Apertium_output ?aid $?a)
+?f2<-(id-Apertium_output ?aid1 $?a1)
+=>
+        (retract ?f ?f1 ?f2)
+        (assert (left_over_ids $?p $?p1))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?a1 - ?id ?mng))
+        (assert (group_ids-start_id-end_id ?aid ?aid1 - ?aid ?aid1))
+        (assert (anu_id-man_id-source ?aid1 ?id align_comp_man_word_for_every))
+)
+;Arjuna, however, could see the [evil consequences] and could not accept the challenge.
+;kiMwu arjuna ko wo [xuRpariNAma] xiKAI pada rahe We awaH vaha isa lalakAra ko svIkAra nahIM kara sakawA  .
+(defrule identify_hnd_comp
+(declare (salience 1100))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $? - ?mid ?mng)
+(test (or (eq (sub-string 1 3 ?mng) "xuR")(eq (sub-string 1 3 ?mng) "sax")))
+(pada_info (group_ids $? ?adj ?aid))
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?adj $?))
+(database_info (meaning ?mng1) (group_ids ?aid))
+(test (eq (string-to-field (sub-string 4 (length ?mng) ?mng)) ?mng1))
+?f1<-(id-Apertium_output ?adj $?)
+=>
+	(retract ?f1)
+	(assert (group_ids-start_id-end_id ?adj ?aid - ?adj ?aid))
+)
+
 ;================= modify noun pada ==============================
+
 ;[Most people] find receiving feedback in front of a group [of people] humiliating. 
 ;[aXikAMSa logoM ko] xusaroM ke sAmane apanI niMxA (PIdabEYka) apamAnajanaka lagawA hE.
 (defrule modify_using_pada
 (declare (salience 1091))
 (pada_info (group_cat PP) (group_ids $? ?adj ?h))
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?adj $? ?a - ?mid $?)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?adj $? ?a - ?mid ?m $?)
+(man_word-root-cat ?m ? ~p)
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $? ?a1 - =(+ ?mid 1) $?mng)
 ?f1<-(hindi_id_order $?p ?h $?p1)
 (id-Apertium_output ?h $?am)
+(id-cat_coarse ?aid1 ?c&~verb&~PropN)
+(not (id-HM-source-grp_ids ? ? Database_compound_phrase_root_mng ?adj ?h))
+(not (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?h ?aid1))
 =>
 	(retract ?f0 ?f1)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am - =(+ ?mid 1) $?mng))
 	(assert	(hindi_id_order $?p $?p1))	
 )
+;O Krsna, maintainer of the people, I have heard by disciplic succession that those who destroy [family traditions] dwell always in hell.
+;he prajApAlaka kqRNa ! mEneM guru-paramparA se sunA hE ki jo loga [kula-Xarma] kA vinASa karawe hEM ,ve saxEva naraka meM vAsa karawe hEM. 
+(defrule modify_hyphen_word
+(declare (salience 1092))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?mid $?mng)
+(score (anu_id ?aid) (man_id ?mid) (rule_names partial_match_for_hyphen_word_left))
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1&:(=(+ ?aid 1) ?aid1) $? ? - ?mid1 $?)
+(id-HM-source-grp_ids ? $? ?aid ?aid1)
+?f1<-(left_over_ids $?l)
+(not (added_group_end ?aid1))
+=>
+	(retract ?f0 ?f1)
+	(bind $?l (sort > (create$ $?l ?mid1)))
+        (assert (left_over_ids $?l))
+	(assert (removed_man_id_with-anu_id ?mid1 ?aid1))
+)
 
+;==================== Align with relation/pada  ==============================
+
+;At that time Arjuna, [the son of Pandu], seated in the chariot bearing the flag marked with Hanumaan, took up his bow and prepared to shoot his arrows.
+;usa samaya hanumAna se afkiwa XvajA lage raWa para AsIna [pANdupuwra] arjuna apanA XanuRa uTA kara wIra calAne ke lie uxyawa huA  .
+(defrule align_with_viSeRya-of_saMbanXI
+(declare (salience 1091))
+(prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?v ?s)
+(or (id-HM-source-grp_ids ?v ?mng ? ?) 
+    (database_info (components ?mng) (group_ids ?v)))
+?f<-(id-Apertium_output ?s ?mng1 ?vib&ke|kI|kA)
+?f1<-(id-Apertium_output ?v $?)
+(id-cat_coarse ?s PropN)
+(manual_id-word ?mid ?m)
+(test (eq (string-to-field (str-cat ?mng1 ?mng)) ?m))
+?f2<-(left_over_ids $?l ?mid $?l1)
+(pada_info (group_head_id ?v)(group_ids ?start $?i))
+=>
+	(retract ?f ?f1 ?f2)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?s ?mng1 ?vib -  ?mid  ?m))
+	(assert (group_ids-start_id-end_id ?start $?i =(- ?s 1)  ?s - ?start ?s))
+	(assert (anu_id-man_id-source ?s ?mid align_with_viSeRya-of_saMbanXI))
+	(assert (left_over_ids $?l $?l1))
+)
+;----------------------------------------------------------------------------------
+;he kqRNa ! muJe wo kevala [amafgala ke kAraNa] xiKa rahe hEM  .
+;I see only [causes of misfortune], O Krsna, killer of the Kesi demon.
+(defrule align_with_viSeRya-of_saMbanXI1
+(declare (salience 1091))
+?f<-(left_over_ids $?l ?mid $?l1)
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v&ke|kA)(group_ids $? ?lid))
+(manual_word_info (head_id ?mid1) (group_ids =(+ ?lid 1) $?))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?vi $? - ?mid1 $?)
+(prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?vi ?s)
+?f1<-(id-Apertium_output ?s $?am)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?s $?))
+=>
+        (retract ?f ?f1)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?s $?am -  ?mid1  $?mng ?v))
+        (assert (anu_id-man_id-source ?s ?mid align_with_viSeRya-of_saMbanXI))
+        (assert (left_over_ids $?l $?l1))
+)
+;----------------------------------------------------------------------------------
+;A man fallen in the ocean of nescience can not be saved simply by rescuing [his outward dress] — the gross material body. 
+;ajFAna-sAgara meM gire hue manuRya ko kevala [usake bAharI pahanAve] arWAw sWUla SarIra kI rakRA karake nahIM bacAyA jA sakawA.
+(defrule align_using_RaRTI_rel
+(declare (salience 1091))
+?f1<-(left_over_ids $?l ?mid1 $?l1)
+(chunk_name-chunk_ids ? $? ?mid1)
+(prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa ?v ?aid) 
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?v ?a $? - ?mid $?)
+(chunk_name-chunk_ids ? $?ids)
+(test (or (and (member$ ?mid $?ids)(member$ (+ ?mid1 1) $?ids)) 
+	  (and (member$ ?mid $?ids)(eq ?mid (+ ?mid1 1)))))
+(id-Apertium_output ?aid $?am)
+(manual_word_info (head_id ?mid1) (word ?mng))
+(or (man_word-root-cat ?mng ? p)(man_word-root-cat ?mng apanA ?))
+?f2<-(hindi_id_order $?h ?aid $?h1)
+=>
+        (retract ?f1 ?f2)
+        (assert (hindi_id_order $?h $?h1))
+        (assert (left_over_ids $?l $?l1))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid1 ?mng))
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?am - ?mid $?mng))
+        (assert (anu_id-man_id-source ?aid ?mid RaRTI_viSeRaNa))
+)
+
+
+;I will not be able to dispel it even if I win a prosperous, [unrivaled kingdom] on earth with sovereignty like the demigods in heaven.
+;svarga para xevawAoM ke AXipawya kI waraha isa XanaXAnya-sampanna sArI pqWvI para [niRkaNtaka rAjya] prApwa karake BI mEM isa Soka ko xUra nahIM kara sakUzgA
+(defrule align_with_pada
+(declare (salience 1091))
+(pada_info (group_head_id ?h) (group_ids $? ?aid ?h) (group_cat ~infinitive))
+(id-cat_coarse ?aid ~determiner)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?am ? -  ?id $?)
+(manual_word_info (head_id ?mid) (group_ids $? ?lid&:(=(- ?id 1) ?lid)))
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?mid $?))
+?f2<-(left_over_ids $?l ?mid $?l1)
+?f1<-(id-Apertium_output ?aid $?amng)
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components 0))
+(test (neq (integerp (member$ $?mng (create$ wo hama lIjie apanI una Axi isalie))) TRUE)) 
+=>
+	(retract ?f1 ?f2)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng -  ?mid  $?mng))
+	(assert (anu_id-man_id-source ?aid ?mid align_with_pada))
+	(assert (left_over_ids $?l $?l1))
+)
+
+;================= Align with verb count ==========================
+(defrule get_unaligned_verb_ids
+(declare (salience 1092)) 
+?f<-(man_verb_count-verbs ?c  $?m ?mid $?m1)
+?f1<-(anu_verb_count-verbs ?c $?a ?aid $?a1)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid $?mng)
+=>
+        (retract ?f ?f1)
+        (assert (man_verb_count-verbs ?c  $?m $?m1))
+        (assert (anu_verb_count-verbs ?c $?a $?a1))
+)
+
+(defrule grp_verb_alignment_with_count
+(declare (salience 946))
+?f0<-(man_verb_count-verbs ?c ?mid $?m $?m1)
+?f1<-(anu_verb_count-verbs ?c ?aid $?a $?a1)
+(manual_id-word ?mid1&:(=(- ?mid 1) ?mid1) ?)
+?f2<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?anu - ?mid1 ?w)
+(or (score (anu_id ?aid) (man_id ?mid1)(heuristics $? ?h&hindi_wordnet_match|anu_exact_match|dictionary_match $?))
+(score (anu_id ?aid) (man_id ?mid1) (rule_names $? wordnet_partial_match $?)))
+(chunk_name-chunk_ids-words VGF ?mid $? - ?w1 $?mng)
+(man_word-root-cat ?w1 ?r&nahIM|kara|xe|WA|ho|na ?)
+=>
+	(retract ?f0 ?f1 ?f2)
+	(assert (man_verb_count-verbs ?c  $?m $?m1))
+        (assert (anu_verb_count-verbs ?c $?a $?a1))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?anu - ?mid ?w ?w1 $?mng))
+	(assert (grouped_vid ?mid)) 
+)
+;krsna [never expected] such things from the son of His aunt Prthaa.
+;kqRNa ko apanI buA pqWA ke puwra se kaBI BI EsI [ASA nahIM WI]
+(defrule grp_verb_alignment_with_count1
+(declare (salience 946))
+?f0<-(man_verb_count-verbs ?c ?mid $?m $?m1)
+?f1<-(anu_verb_count-verbs ?c ?aid $?a $?a1)
+(manual_id-word ?mid0&:(=(- ?mid 1) ?mid0) nahIM)
+(manual_id-word ?mid1&:(=(- ?mid0 1) ?mid1) ?)
+?f2<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?anu - ?mid1 ?w)
+(or (score (anu_id ?aid) (man_id ?mid1)(heuristics $? ?h&hindi_wordnet_match|anu_exact_match|dictionary_match $?))
+(score (anu_id ?aid) (man_id ?mid1) (rule_names $? wordnet_partial_match $?)))
+(chunk_name-chunk_ids-words VGF ?mid $? - ?w1 $?mng)
+(man_word-root-cat ?w1 ?r&nahIM|kara|xe|WA|ho|na ?)
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (man_verb_count-verbs ?c  $?m $?m1))
+        (assert (anu_verb_count-verbs ?c $?a $?a1))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng ?anu - ?mid ?w nahIM ?w1 $?mng))
+        (assert (grouped_vid ?mid))
+        (assert (grouped_vid ?mid0))
+)
+
+
+;this rule will execute after restricted is verified
+(defrule get_verb_alignment_with_count
+(declare (salience 945))
+?f0<-(man_verb_count-verbs ?c ?mid $?m $?m1)
+?f1<-(anu_verb_count-verbs ?c ?aid $?a $?a1)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?mid $?))
+(not (and (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?) (score (anu_id ?aid)(heuristics $? dictionary_match|hindi_wordnet_match|anu_root_match_without_vib $?))))
+(not (and (anu_id-anu_mng-sep-man_id-man_mng_tmp $? - ?mid $?)(score (man_id ?mid)(heuristics $? dictionary_match|hindi_wordnet_match|anu_root_match_without_vib $?))(anu_id-man_id-source ? ?mid ?s1&left_over_same_wt_align|resolve_with_vcount)))
+?f<-(id-Apertium_output ?aid $?amng)
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi_components ?v $?vib))
+=>
+	(retract ?f0 ?f1 ?f)
+	(if (eq ?v 0) then
+		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng -  ?mid  $?mng))
+	else
+		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng -  ?mid  $?mng ?v $?vib))
+	)	
+	(assert (anu_id-man_id-source ?aid ?mid align_with_verb_count))
+	(assert (man_verb_count-verbs ?c $?m $?m1))
+	(assert (anu_verb_count-verbs ?c $?a $?a1))
+)
+	
+(defrule rm_aligned_ids_from_leftover
+(declare (salience 1090))
+(or (anu_id-man_id-source ?aid ?mid align_with_verb_count)(grouped_vid ?mid))
+?f<-(left_over_ids $?l ?mid $?l1)
+=>
+	(retract ?f)
+	(assert (left_over_ids $?l $?l1))
+)
+
+(defrule rm_repeated_aligned_id_for_verb_count
+(declare (salience 1090))
+(anu_id-man_id-source ?aid ?mid align_with_verb_count)
+?f<-(left_over_ids $?l)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ?a - ?mid1 $?)
+(test (neq ?mid ?mid1))
+=>
+	(retract ?f ?f1)
+	(bind $?l (sort > (create$ $?l ?mid1)))
+        (assert (left_over_ids $?l))
+)	
 
 ;================== get possible hindi roots =====================
 (defrule get_man_poss_roots
@@ -281,7 +447,8 @@
 (defglobal ?*esen* = (create$ ))
 
 (defrule get_left_over_hindi_words
-(declare (salience 950))
+(declare (salience 944))
+;(declare (salience 950))
 ;(declare (salience 2200))
 (left_over_ids $? ?id $?)
 (manual_id-word ?id ?w&~wo&~vaha) 
@@ -413,7 +580,8 @@
 	(system "sed 's/^(wlist//g' wrong_list_tmp.txt | sed 's/)$//g' > wrong_mngs.txt")
 	(system "python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/search_trnsltrtd_word.py trans_eng_file1.txt trans_hnd_file1.txt > shruthi_trans_match.dat")
 	(system "python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/get_transliterate_wrd.py trans_eng_file1.txt trans_hnd_file1.txt $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/Sound-list.txt out > roja_trans_match.dat")
-	(system "python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/word_level_transliteration.py trans_eng_file1.txt > hindi_in_eng.dat")
+;	(system "python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/word_level_transliteration.py trans_eng_file1.txt > hindi_in_eng.dat")
+	(system "python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/identify_acronyms.py trans_eng_file1.txt hindi_in_eng.dat")
 	(system "python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/countDifference_new.py correct_mngs.txt wrong_mngs.txt > spell_diff_match.dat")
 	;(system "cat trans_match1.dat trans_match2.dat > trans_match.dat")
 ; 	(load-facts "trans_match.dat" )
@@ -513,30 +681,6 @@
 	(assert (added_word ?mng1))
 )
 
-;=========================== get unaligned verbs ================================
-(defrule get_verb_id_if_not_in_count
-(declare (salience 1091))
-?f<-(man_verb_count-verbs ?c  $?m)
-(manual_word_info (head_id ?id) (word $? hE|hEM|gaIM))
-(test (eq (integerp (member$ ?id (create$ $?m))) FALSE))
-=>
-	(retract ?f)
-	(bind ?c (+ ?c 1))
-	(bind $?ids (sort > (create$ $?m ?id)))
-	(assert (man_verb_count-verbs ?c  $?ids))
-)
-
-(defrule get_unaligned_verb_ids
-(declare (salience 1090))
-?f<-(man_verb_count-verbs ?c  $?m ?mid $?m1)
-?f1<-(anu_verb_count-verbs ?c $?a ?aid $?a1)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?mid $?mng)
-=>
-	(retract ?f ?f1)
-	(assert (man_verb_count-verbs ?c  $?m $?m1))
-	(assert (anu_verb_count-verbs ?c $?a $?a1))
-)
-
 (defrule get_infinitive_count
 (declare (salience 1090))
 (pada_info (group_head_id ?id) (group_cat infinitive))
@@ -551,7 +695,7 @@
 (defrule align_trans_word
 (declare (salience 1091))
 ?f0<-(left_over_ids $?p ?id $?p1)
-(manual_word_info (head_id ?id)(word ?mng)(vibakthi ?v $?v1))
+(manual_word_info (head_id ?id)(word ?mng&~hI&~eka)(vibakthi ?v $?v1))
 (or (eng_word-tran_word ?eng ?mng)(eng_word-hin_word ?eng ?mng))
 (id-word ?aid ?eng)
 (id-Apertium_output ?aid $?amng)
@@ -610,7 +754,7 @@
 (not (pronoun_align ?aid ?mid))
 (not (score (anu_id ?aid) (man_id ?mid) (heuristics $? anu_exact_match|anu_root_match|dictionary_match|hindi_wordnet_match|multi_hindi_wordnet_match|multi_dictionary_match $?)))
 (not (id-HM-source ?aid $? WSD_compound_phrase_root_mng|Database_compound_phrase_root_mng))
-(not (anu_id-man_id-source ?aid ?mid align_paren_with_anu))
+(not (anu_id-man_id-source ?aid ?mid ?src&align_paren_with_anu|RaRTI_viSeRaNa))
 =>
 	(bind ?c 0)
 	(loop-for-count (?i 1 (length $?roots))
@@ -670,7 +814,7 @@
 (declare (salience 950))
 (root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?h)
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - ?mid ?m $?mng)
-(test (eq (integerp (member$ ?m (create$ hE hEM howA hE howI hE howe hEM hogA avaSya nahIM jarUra sakawI sakeM))) FALSE))
+(test (eq (integerp (member$ ?m (create$ hE hEM howA hE howI hE howe hEM hogA avaSya nahIM jarUra sakawI sakeM EsA))) FALSE))
 ?f1<-(left_over_ids $?ids)
 (id-word ?id ?w&~let&~never)
 (not (added_group_end ?id))
@@ -691,7 +835,7 @@
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ?mid ?mng)
 (id-cat_coarse ?id verb)
 (man_word-root-cat ?mng ? ?c)
-(test (or (eq ?c p) (eq (integerp (member$ ?mng (create$ usakA usakI use usa isa isakI hameM apanI apane kisa kisI hI BI yahAz kahIM jisameM jisakA sabako ora iwanA vo))) TRUE)))
+(test (or (eq ?c p) (eq (integerp (member$ ?mng (create$ usakA usakI use usa isa isakI hameM apanI apane kisa kisI hI BI yahAz kahIM jisameM jisakA sabako ora iwanA vo EsA))) TRUE)))
 ?f1<-(left_over_ids $?ids)
 =>
         (retract ?f ?f1)
@@ -740,6 +884,7 @@
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?to $? ? - ?mid $?)
 ?f0<-(id-Apertium_output ?to $?)
 ?f<-(left_over_ids $?ids)
+(not (added_group_end ?to))
 =>
         (retract ?f ?f0 ?f1)
 	(bind $?ids (sort > (create$ $?ids ?mid)))
@@ -747,20 +892,20 @@
         (assert (removed_man_id_with-anu_id ?mid ?to))
 )
 
-(defrule rm_prep_align_if_not_grouped
-(declare (salience 950))
-?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $? - ?mid $?)
-(id-cat_coarse ?aid preposition)
-(or (pada_info (group_head_id ?aid)) (pada_info (preposition ?aid))) 
-;?f1<-(id-Apertium_output ?aid $?)
-?f<-(left_over_ids $?ids)
-(not (added_group_end ?aid))
-=>
-	(retract ?f0 ?f)
-	(bind $?ids (sort > (create$ $?ids ?mid)))
-        (assert (left_over_ids $?ids))
-        (assert (removed_man_id_with-anu_id ?mid ?aid))
-)
+;(defrule rm_prep_align_if_not_grouped
+;(declare (salience 950))
+;?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $? - ?mid $?)
+;(id-cat_coarse ?aid preposition)
+;(or (pada_info (group_head_id ?aid)) (pada_info (preposition ?aid))) 
+;;?f1<-(id-Apertium_output ?aid $?)
+;?f<-(left_over_ids $?ids)
+;(not (added_group_end ?aid))
+;=>
+;	(retract ?f0 ?f)
+;	(bind $?ids (sort > (create$ $?ids ?mid)))
+;        (assert (left_over_ids $?ids))
+;        (assert (removed_man_id_with-anu_id ?mid ?aid))
+;)
 	
 
 ;================================= group hI/BI/jI/SrI/ora/kahIM/sabase/Pira ==============================
@@ -1249,36 +1394,13 @@
         (assert (left_over_ids $?p $?p1))
 )
 
-;============================ align with pada ===========================
-
-;(defrule align_head_if_adj_or_det_align
-;(declare (salience 780))
-;?f<-(left_over_ids $?p ?id $?p1 )
-;(manual_word_info (head_id ?id) (word $?mng)(vibakthi_components ?v $?vib)(group_ids ?fid $?))
-;(manual_word_info (head_id ?mid) (group_ids $? =(- ?fid 1)))
-;;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $? - ?mid $?)
-;;(pada_info (group_head_id ?h) (group_ids $? ?aid ?h))
-;;(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?h $?)) 
-;;(id-Apertium_output ?h $?amng)
-;=>
-;	(retract ?f)
-;;	(printout t ?aid " " ?mid crlf)
-;        (assert (left_over_ids $?p $?p1))
-;;	(if (eq ?v 0) then
-;;		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id $?mng))
-;;	else
-;;		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?amng - ?id $?mng ?v $?vib))
-;;	)
-;;	(assert (anu_id-man_id-source ?aid ?id noun_pada_align))
-;)	
-
 ;======================= Align MWE ======================================
 (defrule rm_aligned_mwe_id
 (declare (salience 750))
 (got_mwe ?id1 $?ids)
 ?f0<-(hindi_id_order $?pre ?id $?po)
 (test (and (member$ ?id $?ids) (neq ?id ?id1)))
-?f<-(id-Apertium_output ?id)
+?f<-(id-Apertium_output ?id -)
 =>
         (retract ?f0 ?f)
         (assert (hindi_id_order $?pre $?po))
@@ -1293,16 +1415,14 @@
 ?f2<-(id-Apertium_output ?aid1&:(= (+ ?aid 1) ?aid1) ?mng $?m)
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (manual_word_info (head_id ?id) (word $?m1) (vibakthi ?v $?v1))
+(id-word ?aid1 ~and)
 =>
 	(retract ?f ?f1 ?f2)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid ?mng))
-;	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid - - ?mid @PUNCT-OpenParen@PUNCT-OpenParen ?mng))
 	(if (eq ?v 0 ) then
 		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?mng $?m - ?id $?m1 ))
-;		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?mng $?m - ?id $?m1 @PUNCT-ClosedParen@PUNCT-ClosedParen))
 	else
 		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?mng $?m - ?id $?m1 ?v $?v1 ))
-;		(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 ?mng $?m - ?id $?m1 ?v $?v1 @PUNCT-ClosedParen@PUNCT-ClosedParen))
 	)
 	(assert (anu_id-man_id-source ?aid1 ?id align_mwe_if_one_mng_aligned))
 	(assert (added_group_end ?aid))
@@ -1315,7 +1435,8 @@
 (or (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng - ?mid1  $?mng)
     (and (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng - ?mid1  $?) (id-hyphen_word-vib ?mid1 - $?mng - ?))
     (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng ?v&kA|kI|ko|se|meM - ?mid1  $?mng)
-    (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng - ?mid1  $?mng ?v&kA|kI|ko|se|meM))
+    (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng - ?mid1  $?mng ?v&kA|kI|ko|se|meM)
+    (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1 $?mng ?v&kA|kI|ko|se|meM - ?mid1  $?mng ?v1&kA|kI|ko|se|meM|xvArA|ke))
 (or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)
     (and (id-HM-source ?id1 ? NN_NN_NN_compound_rule|NN_NN_compound_rule)(id-HM-source-grp_ids ?id1 $?mng  ?src $?ids)))
 (test (member$ ?id1 $?ids))
@@ -1352,6 +1473,7 @@
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
 (id-Apertium_output ?aid ?a&~SYMBOL $?d )
 ?f<-(id-Apertium_output ?adj $? )
+(id-cat_coarse ?aid ~PropN) ;In his doubt, he inquired from his secretary Sanjaya, "What did they do? awaH isI sanxeha ke kAraNa usane apane saciva se pUCA , "unhoMne kyA kiyA"
 =>
 	(retract ?f ?f0)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?d - ?mid $?m ?v $?m1))
@@ -1453,6 +1575,21 @@
 	(bind $?pre (sort > (create$ $?pre ?mid1)))
 	(assert (left_over_ids $?pre))
 )
+
+(defrule rm_particle_alignment2
+(declare (salience 625))
+(id-cat_coarse ?id particle)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - ?mid ?m )
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id1&:(= (- ?id 1) ?id1) $?a ?a1 - ?mid1 $?m1 kara)
+?f3<-(left_over_ids $?pre )
+?f1<-(id-Apertium_output ?id $?)
+=>
+        (retract ?f0 ?f1 ?f3)
+        (bind $?pre (sort > (create$ $?pre ?mid)))
+        (assert (left_over_ids $?pre))
+	(assert (group_ids-start_id-end_id ?id1 ?id - ?id1 ?id))
+)
+
 ;---------------------------------------------------------------------------------
 (defrule modify_inf_to_align
 (declare (salience 625))
@@ -1642,8 +1779,10 @@
     (manual_word_info (head_id ?mid) (group_ids $? =(- ?lid 2) $?)))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid  $?mng ?m)
 (test (neq (create$ ?a $?amng)(create$ $?mng ?m)))
-(test (neq (integerp (member$ ?m (create$ WIM WA We WI hE hEM hue huI lie se karanA kI kareM kareMge - @PUNCT-ClosedParen@PUNCT-ClosedParen))) TRUE))
+(test (neq (integerp (member$ ?m (create$ WIM WA We WI hE hEM hue huI hogI lie se meM karanA kI kareM kareMge pAwe - @PUNCT-ClosedParen@PUNCT-ClosedParen))) TRUE))
+(test (neq (sub-string (- (length ?m) 3 )(length ?m) ?m) "kara"))
 (id-cat_coarse ?aid verb|adjective)
+(id-word ?aid ~only)
 (not (id-cat_coarse =(- ?aid 1) determiner|preposition)) ;Ex: ... before commencing ...
 (chunk_name-chunk_ids JJP|NP|VGNF|VGNN $? ?mid $?)
 (or (chunk_name-chunk_ids ?c&VGF|VGNN|VGNF $? ?id $?) (chunk_name-chunk_ids-words ?c&VGF|VGNN|VGNF $? ?id $?))
@@ -1672,10 +1811,10 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(manual_word_info (head_id ?id) (word ?mng)(vibakthi_components 0))
 (man_word-root-cat ?mng ? ~p)
-(test (eq (integerp (member$ ?mng (create$ BI hI yA wo))) FALSE))
+(test (eq (integerp (member$ ?mng (create$ BI hI yA wo waba))) FALSE))
 ?f2<-(manual_word_info (head_id ?mid)(word ?kara $?tam)(root ?r) (root_components $?root)(group_ids $?g = (+ ?id 1) $?g1))
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid ?kara $?tam1)
-(man_word-root-cat ?kara&~hE kara|ho|karA|karavA|xe|raKa v)
+(man_word-root-cat ?kara&~hE kara|ho|karA|karavA|xe|raKa|raha v)
 (id-word ?aid ?w&~to&~is&~are)
 =>
 	(retract ?f0 ?f ?f1)
@@ -1694,8 +1833,8 @@
 ?f0<-(manual_word_info (head_id ?id) (word $?mng)(root ?r&kara|ho|karavA)(vibakthi_components 0))
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?am - ?mid ?a)
 (id-cat_coarse ?aid verb)
-?f2<-(manual_word_info (head_id ?mid) (word ?a)(group_ids $?ids))
-(test (eq (integerp (member$ ?a (create$ hE hEM))) FALSE))
+?f2<-(manual_word_info (head_id ?mid) (word ?a)(group_ids $?ids)(tam ~nA))
+(test (eq (integerp (member$ ?a (create$ hE hEM kahA))) FALSE))
 =>
         (retract ?f0 ?f ?f1)
         (bind ?nr (remove_character " " (implode$ (create$ ?a ?r)) "_"))
@@ -1767,6 +1906,21 @@
 	(modify ?f2 (word kara $?m1)(root kara_xe) (root_components kara xe)(group_ids ?mid $?ids))
 	(assert (anu_id-man_id-source ?aid ?mid grp_kara_xe))	
 )
+
+;Sleep also means ignorance. nIMxa kA arWa ajFAna BI hE  .
+(defrule grp_hE
+(declare (salience 550))
+?f<-(left_over_ids ?mid1)
+(manual_id-word ?mid1 hE)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?mng hE - ?mid ?mng1&~hE)
+(score (anu_id ?aid) (man_id ?mid) (heuristics $? dictionary_match|hindi_wordnet_match $?)) 
+(id-word ?aid means)
+=>
+	(retract ?f ?f0)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?mng hE - ?mid ?mng1 hE))
+	(assert (left_over_ids))
+	(assert (anu_id-man_id-source ?aid ?mid grp_hE))	
+)
 ;---------------------------------------------------------------------------------
 ;nimnaliKiwa kAraNoM se sArvajanika jamA kI lokapriyawA [baDa rahI hE].
 ;The [increasing] popularity of public deposits is due to:
@@ -1782,6 +1936,7 @@
 (id-Apertium_output ?aid $?amng ?a)
 (chunk_name-chunk_ids ?c $? ?id $?)
 (not (man_id-wt-anu_ids ?id $?))
+(not (anu_id-wt-man_ids $? ?id $?))
 =>
         (retract ?f)
         (assert (left_over_ids $?p $?p1))
@@ -1834,7 +1989,8 @@
 (declare (salience 530))
 ?f<-(left_over_ids $?p ?id $?p1)
 (manual_word_info (head_id ?id) (word ?m $?mng)(vibakthi_components ?v $?vib)(group_ids $? ?lid))
-(test (neq (integerp (member$ ?m (create$ wo hama lIjie yahAz apanA apanI jo jEsA))) TRUE)) 
+(man_word-root-cat ?m ? ~p)
+(test (neq (integerp (member$ ?m (create$ wo hama lIjie yahAz apanA apanI apane jo jEsA arWAw))) TRUE)) 
 (or (manual_word_info (head_id ?mid) (group_ids =(+ ?lid 1) $?))
     (and (manual_id-word ?pid&:(= (+ ?lid 1) ?pid) @PUNCT-Comma)(manual_word_info (head_id ?mid) (group_ids =(+ ?pid 1) $?))))
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ? $? - ?mid $?m1)
@@ -1879,18 +2035,19 @@
 (defrule align_with_manual_scope_prev_wrd
 (declare (salience 530))
 ?f<-(left_over_ids $?p ?id $?p1)
-(manual_word_info (head_id ?mid) (group_ids $? =(- ?id 1) $?))
+(manual_word_info (head_id ?id) (word $?mng ?m)(vibakthi_components ?v $?vib)(group_ids ?fid $?))
+(test (neq (integerp (member$ ?m (create$ wo hama lIjie apanI una Axi isalie))) TRUE)) 
+(or (manual_word_info (head_id ?mid) (group_ids $? =(- ?fid 1) $?))
+    (and (manual_id-word ?pid&:(= (- ?fid 1) ?pid) @PUNCT-Comma)(manual_word_info (head_id ?mid) (group_ids =(- ?pid 1) $?))))
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ? $? - ?mid $?)
 (or (and (chunk_name-chunk_ids ? $?grp)(test (and (integerp (member$ ?mid $?grp)) (integerp (member$ ?id $?grp)))))
     (and (chunk_name-chunk_ids ?ch&~VGF&~VGNF ?id $?)(chunk_name-chunk_ids ? $? ?mid $?)))
 ?f1<-(id-Apertium_output ?aid1&:(= (+ ?aid 1) ?aid1) $?am)
 (id-cat_coarse ?aid1 ?c&~verb&~preposition&~wh-determiner&~conjunction&~pronoun)
 (id-cat_coarse ?aid ?c1&~verb&~preposition&~wh-determiner&~determiner&~conjunction&~pronoun)
-(id-word ?aid1 ?w&~the&~a&~to&~there&~and)
+(id-word ?aid1 ?w&~the&~a&~to&~there&~and&~His)
 (id-word ?aid ?w1&~that)
-(manual_word_info (head_id ?id) (word $?mng ?m)(vibakthi_components ?v $?vib))
 (man_word-root-cat ?m ? ~p)
-(test (neq (integerp (member$ ?m (create$ wo hama lIjie apanI una Axi))) TRUE)) 
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (not (checked_id ?id))
 (not (removed_man_id_with-anu_id ?aid1 ?id))
@@ -1933,7 +2090,7 @@
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi_components ?v $?vib))
 (man_word-root-cat ?w ? ~p)
 (chunk_name-chunk_ids ?ch&~VGF $? ?id $?)
-(test (neq (integerp (member$ ?w (create$ wo hama una apanA apane apanI))) TRUE)) 
+(test (neq (integerp (member$ ?w (create$ wo hama una apanA apane apanI isalie))) TRUE)) 
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (not (checked_id ?id))
 (not (removed_man_id_with-anu_id ?aid1 ?id))
@@ -1969,7 +2126,7 @@
 (test (and (integerp (member$ ?aid $?grp)) (integerp (member$ ?aid1 $?grp))))
 (id-cat_coarse ?aid1 ?c&~verb&~preposition)
 (id-word ?aid1 ?w&~the&~a&~an&~to)
-(test (neq (integerp (member$ ?mng (create$ wo hama una apanA apane apanI))) TRUE))
+(test (neq (integerp (member$ ?mng (create$ wo hama una apanA apane apanI arWAw))) TRUE))
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?))
 (not (checked_id ?id))
 =>
@@ -2015,9 +2172,9 @@
 )
 ;---------------------------------------------------------------------------------
 (defrule align_hnd_pronoun
-(declare (salience 300))
+(declare (salience 301))
 ?f<-(left_over_ids $?p ?id $?p1)
-(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha)
+(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|vaha|apane-apane|una)
 (chunk_name-chunk_ids ? $? ?id $? ?id1 $?)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ? $? - ?id1 $?)
 ?f1<-(id-Apertium_output ?aid1&:(= (- ?aid 1) ?aid1) $?am) 
@@ -2040,7 +2197,7 @@
 (defrule align_hnd_pronoun1
 (declare (salience 300))
 ?f<-(left_over_ids $?p ?id $?p1)
-(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha)
+(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|vaha|apane-apane)
 (chunk_name-chunk_ids ? ?id)
 (chunk_name-chunk_ids ? ?id1&:(= (+ ?id 1) ?id1) $?)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ? $? - ?id1 $?)
@@ -2065,7 +2222,7 @@
 (defrule align_hnd_pronoun_with_std
 (declare (salience 300))
 ?f<-(left_over_ids $?p ?id $?p1)
-(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha)
+(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|apane-apane)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? ? - ?id1&:(= (+ ?id 1) ?id1) $?)
 (pada_info (group_ids ?det $? ?aid $?))
 (id-cat_coarse ?det determiner)
@@ -2088,16 +2245,13 @@
 ;(declare (salience 280))
 (declare (salience 551))
 (chunk_name-chunk_ids ? $? ?id ?id1 $?)
-(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|isake|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|eka|Apake)
+(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|isake|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|eka|Apake|vaha)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? - ?id1 $?)
 (pada_info (group_head_id ?aid) (group_ids ?det $? ?aid))
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?det $?))
-;(not (anu_id-anu_mng-sep-man_id-man_mng_tmp =(- ?aid 1) $?))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?a ? $? - ?id $?)
 ?f1<-(id-Apertium_output ?det $?am)
-;?f1<-(id-Apertium_output ?aid1&:(= (- ?aid 1) ?aid1) $?am)
 (id-cat_coarse ?det determiner)
-;(id-cat_coarse ?aid1 determiner)
 (id-word ?aid ?w&~like)
 (not (removed_man_id_with-anu_id ?id ?det))
 =>
@@ -2113,7 +2267,28 @@
 	(assert (anu_id-man_id-source ?det ?id modify_hnd_pronoun))	
 	(assert (anu_id-man_id-source ?a ?id removed_with_modify_hnd_pronoun))	
 )
-
+;----------------------------------------------------------------------------------------------------------
+;He thinks that the strength of his armed forces is immeasurable, being specifically protected by the most experienced general, Grandfather Bhisma.
+;vaha socawA hE ki awyanwa anuBavI senAnAyaka BIRma piwAmaha ke xvArA viSeRa rUpa se saMrakRiwa hone ke kAraNa usakI saSaswra senAoM kI Sakwi aparimeya hEM  .
+(defrule modify_hnd_pronoun1
+(declare (salience 551))
+(chunk_name-chunk_ids ? ?pro)
+(manual_id-word ?pro ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|isake|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|eka|Apake|apane-apane|vaha)
+;(manual_id-word ?id ?m&isa|isI|usa|use|usakA|usakI|usake|unakA|unakI|unake|isakA|isakI|isake|apanA|apanI|apane|ina|EsI|Ese|EsA|yaha|eka|Apake)
+(chunk_name-chunk_ids ? $?ids)
+(test (eq (integerp (member$ (+ ?pro 1) $?ids)) TRUE))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? - ?mid $?)
+(test (eq (integerp (member$ ?mid $?ids)) TRUE))
+(prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa ?aid ?aid1)
+(not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?)) 
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?a ? $? - ?pro $?mng)
+?f1<-(id-Apertium_output ?aid1 $?am)
+(not (removed_man_id_with-anu_id ?id ?aid1))
+=>
+        (retract ?f0 ?f1)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?am - ?pro $?mng))
+        (assert (anu_id-man_id-source ?aid1 ?pro modify_hnd_pronoun1))     
+)
 ;================================== noun related rules ================================
 (defrule modify_noun_align
 (declare (salience 501))
@@ -2136,11 +2311,12 @@
 
 
 (defrule align_with_vib
-(declare (salience 500))
+(declare (salience 501))
 ?f0<-(left_over_ids $?p ?id $?p1)
 (or (manual_word_info (head_id ?id) (word $?mng) (vibakthi_components $?vib))
     (manual_word_info (head_id ?id) (word $?mng) (tam_components ne|nA $?vib)))
 (id-Apertium_output ?aid $?am $?vib)
+(id-cat_coarse ?aid ~preposition)
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
 (test (neq (implode$ (create$ $?vib)) ""))
 (not (removed_man_id_with-anu_id ?id ?aid))
@@ -2244,7 +2420,7 @@
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
 ?f1<-(id-Apertium_output ?aid $?am)
 (not (removed_man_id_with-anu_id ?id ?aid))
-(id-cat_coarse ?aid ~determiner)
+(id-cat_coarse ?aid ?c&~determiner&~conjunction)
 =>
         (retract ?f ?f1)
         (assert (left_over_ids $?p $?p1))
@@ -2271,7 +2447,7 @@
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?))
 ?f1<-(id-Apertium_output ?aid ?a $?am)
 (not (removed_man_id_with-anu_id ?id ?aid))
-(id-cat_coarse ?aid ?c&~determiner&~conjunction)
+(id-cat_coarse ?aid ?c&~determiner&~conjunction&~pronoun)
 =>
 	(retract ?f ?f1)
         (assert (left_over_ids $?p $?p1))
@@ -2290,7 +2466,7 @@
 ?f<-(left_over_ids ?id )
 (manual_word_info (head_id ?id) (word ?mng1)(vibakthi_components 0) )
 (man_word-root-cat ?mng1 ?r ~p)
-(test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina iwanA))) FALSE))
+(test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina iwanA kare ki huI))) FALSE))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid ?m $?mng)
 (test (and (neq ?mng1 ?m) (neq ?a ?m)))
 (or (eng_id-eng_wrd-man_wrd ?aid ? $?pmng) (anu_id-anu_mng-man_mng ?aid ? $?pmng))
@@ -2313,7 +2489,7 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 (manual_word_info (head_id ?id) (word ?mng1)(vibakthi_components $?v) )
 (man_word-root-cat ?mng1 ?r ~p)
-(test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina iwanA))) FALSE))
+(test (eq (integerp (member$ ?mng1 (create$ awaH wo yahAz jina iwanA ki))) FALSE))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid ?a $?amng - ?mid ?m $?mng)
 (or (eng_id-eng_wrd-man_wrd ?aid ? ?m $?mng ?mng1) (anu_id-anu_mng-man_mng ?aid ? ?m $?mng ?mng1))
 (not (removed_man_id_with-anu_id ?id ?aid))
@@ -2582,6 +2758,7 @@
 (test (neq (create$ ?a)  $?m))
 (test (eq (integerp (member$ ?a (create$ ki jise yahAM ))) FALSE))
 (manual_word_info (head_id ?id) (word $?mng ?w)(vibakthi_components ?v1 $?vib))
+(man_word-root-cat ?w ? ~p)
 (test (neq (integerp (member$ ?w (create$ inhIM evaM wo ki waWA yaha yahAz vaha usake usakA isa isakI koI kisI eka jo))) TRUE))
 (not (msg_printed))
 (id-cat_coarse ?aid ?cat&~verb&~determiner&~pronoun&~preposition)
@@ -2690,6 +2867,7 @@
 (manual_word_info (head_id ?id) (word $?mng) (vibakthi $?vib)(vibakthi_components ?v $?))
 (id-Apertium_output ?aid $?amng)
 (not (msg_printed))
+(not (removed_man_id_with-anu_id ?id ?aid))
 =>
 	(retract ?f ?f)
 	(assert (left_over_ids ?ki))
@@ -2942,7 +3120,7 @@
 (group_ids-start_id-end_id $?ids - ?s ?e)
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?e $?))
 (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?s $?))
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ?mid $?)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? ? - ?mid $?)
 (test (member$ ?id $?ids))
 (not (added_group_end ?s))
 (not (added_group_end ?e))
@@ -3060,13 +3238,32 @@
 (defglobal ?*amt_file* = a_p)
 
 (defrule save_left_over_facts
-(declare (salience 10))
+(declare (salience 11))
 (left_over_ids $?d)
 (not (msg_printed))
 =>
 	(save-facts "left_over_ids1.dat" local left_over_ids)
-       (printout ?*lf-f* "  Alignment info :  " crlf )
+;        (printout ?*lf-f* "  Alignment info :  " crlf )
+;	(printout ?*lf-f* " -------------------  " crlf)
 )
+
+(defrule ctrl_fact_to_print_info
+(declare (salience 11))
+(hindi_id_order)
+(left_over_ids)
+=>
+        (assert (dont_print))
+)
+
+(defrule print_heading
+(declare (salience 10))
+(not (dont_print))
+=>
+
+	(printout ?*lf-f* "  Alignment info :  " crlf )
+        (printout ?*lf-f* " -------------------  " crlf)
+)
+
 ;---------------------------------------------------------------------------------
 (defrule print_info
 (declare (salience 9))
@@ -3081,7 +3278,7 @@
 
 (defrule get_wo_id_for_percent_info
 (declare (salience 1))
-(hindi_id_order)
+;(hindi_id_order)
 (left_over_ids ?id)
 (manual_id-word ?id ?w)
 (man_word-root-cat ?w ? prsg)
