@@ -6,6 +6,7 @@
 
   cp $2 $MYPATH/
   sed -i  '1iparIkRaNa .' $MYPATH/$2
+  sed -i  's/ hE- / hE - /g' $MYPATH/$2
   
   if [ "$4" != "" ] ; then
 #	  cp $4 $MYPATH/    #ilparser
