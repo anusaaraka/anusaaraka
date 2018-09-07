@@ -15,7 +15,7 @@
 
 ;===================================== Removing aux/prep ids from grp =============================
 (defrule cp_dummy_grp_fact
-(declare (salience 1201))
+(declare (salience 1500))
 (id-grp_type-ids ?i ?t $?p)
 (not (id-grp_type-ids_tmp ?i $?))
 =>
@@ -25,7 +25,7 @@
 ;--------------------------------------------------------------------------
 ;prawikriyA kara sakane ke lie => prawikriyA kara sakane
 (defrule rm_prep_ids_from_com_grp
-(declare (salience 1200))
+(declare (salience 1450))
 (prep_ids_list $? ?id $?)
 ?f0<-(id-grp_type-ids ?i ?t $?p ?id $?p1)
 =>
@@ -35,7 +35,7 @@
 ;--------------------------------------------------------------------------
 ;prawikriyA kara sakane => prawikriyA kara
 (defrule rm_aux_ids_from_com_grp
-(declare (salience 1200))
+(declare (salience 1450))
 ?f0<-(id-grp_type-ids ?i ?t $?p ?p1 ?id $?p2)
 ?f1<-(rel_name-grouped_rel_hids ?rel ?in $?r ?p1 ?id $?r1)
 (manual_id-word ?id sakane)
@@ -46,7 +46,7 @@
 )
 ;--------------------------------------------------------------------------
 (defrule rm_grouped_id
-(declare (salience 1150))
+(declare (salience 1400))
 (id-grp_type-ids ?i ? $?ids ?h)
 ?f0<-(rel_name-grouped_rel_hids ?rel&~root ?in $?p $?ids ?h $?p1)
 (test (neq (length $?ids) 0))
@@ -56,7 +56,7 @@
 )
 ;--------------------------------------------------------------------------
 (defrule rm_prep_ids_from_grp1
-(declare (salience 1100))
+(declare (salience 1400))
 (prep_ids_list $? ?id $?)
 ?f0<-(rel_name-grouped_rel_hids ?rel $?p ?id $?p1)
 =>
@@ -74,7 +74,7 @@
 )
 
 (defrule replace_grp_wrds1
-(declare (salience 1050))
+(declare (salience 1350))
 ?f0<-(id-grp_type-ids ?h ?t $?p ?id $?p1)
 (manual_id-word ?id ?w)
 =>
@@ -83,7 +83,7 @@
 )
 ;prekRaNa kiyA hE => prekRaNa kara
 (defrule modify_grp_mng_for_root
-(declare (salience 1040))
+(declare (salience 1300))
 ?f0<-(id-grp_type-ids ?h ?t $?p ?w $?p1)
 (id-word-root-tam ? ?w ?r&kara|ho ?)
 (not (id-grp_type-ids ?h ?t $?p ?r))
@@ -92,47 +92,104 @@
 	(assert (id-grp_type-ids ?h ?t $?p ?r))
 ) 
 ;======================================= Alignment rules with initial ids ==========================
+(defrule align_root_and_sub
+(declare (salience 1200))
+(rel_name-sids root 0 ?k)
+(rel_name-sids nsubj ?k ?s)
+(hnd_rel_name-h_id-c_ids ? root - 0 ?mk)
+(hnd_rel_name-h_id-c_ids ? nsubj - ?mk ?ms $?)
+=>
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?k ?mk root align_root_and_sub 2))
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?s ?ms nsubj align_root_and_sub 2))
+)	
+
+(defrule align_amod
+(declare (salience 1200))
+(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?rel ? 2)
+(rel_name-sids amod ?aid ?a)
+(hnd_rel_name-h_id-c_ids ? amod - ?mid ?m)
+=>
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?a ?m amod align_amod 2))
+)	
+
+(defrule align_cop
+(declare (salience 1200))
+(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid root ? ?)
+(rel_name-sids cop ?aid ?a)
+(hnd_rel_name-h_id-c_ids ? cop - ?mid ?m)
+(not (modified_initial_lvl ?a ?m))
+=>
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?a ?m cop align_cop 2))
+)
+
+(defrule align_nmod
+(declare (salience 1200))
+(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ? align_root_and_sub ?)
+(rel_name-sids nmod:of ?aid ?a)
+(hnd_rel_name-h_id-c_ids ? nmod:kA|nmod:ke|nmod:kI - ?mid ?m $?)
+(not (modified_initial_lvl ?a ?m))
+=>
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?a ?m nmod align_nmod 2))
+)	
+
+(defrule modify_with_dic
+(declare (salience 1150))
+?f0<-(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r ?rn ?l)
+(manual_word_info (head_id ?mid) (root_components $?mng))
+(database_info (components $?mng) (group_ids ?aid))
+(not (modified_initial_lvl ?aid ?mid))
+=>
+	(retract ?f0)
+	(bind ?l (+ ?l 1))
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?r ?rn ?l))
+	(assert (modified_initial_lvl ?aid ?mid))
+)
+
 (defrule align_nmod_with_dic_mng
-(declare (salience 1020))
+(declare (salience 1100))
 (rel_name-sids nmod:of ?ah ?ac)
 (hnd_rel_name-h_id-c_ids ? nmod:ke|nmod:kA - ?mh ?mc $?)
 (manual_word_info (head_id ?mh) (root_components $?hmng))
 (manual_word_info (head_id ?mc) (root_components $?cmng))
 (database_info (components $?hmng ) (group_ids ?ah ))
 (database_info (components $?cmng ) (group_ids ?ac ))
+(not (modified_initial_lvl ?ah ?mh))
 =>
-	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ah ?mh nmod align_nmod_with_dic_mng 2))
-	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_nmod_with_dic_mng 2))
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ah ?mh nmod align_nmod_with_dic_mng 3))
+	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_nmod_with_dic_mng 3))
+)
+;advmod stop there => obl  ruka vahIM para
+(defrule align_head_and_child_with_dic
+(declare (salience 1050))
+(rel_name-sids ?r ?ah ?ac)
+(hnd_rel_name-h_id-c_ids ? ?r1 - ?mh ?mc $?)
+(or (manual_word_info (root_components $?hmng)(group_ids $? ?mh $?))(manual_word_info (word $?hmng)(group_ids $? ?mh $?))) 
+(or (manual_word_info (root_components $?cmng)(group_ids $? ?mc $?))(manual_word_info (word $?cmng)(group_ids $? ?mc $?)))
+(database_info (components $?hmng ) (group_ids ?ah ))
+(database_info (components $?cmng ) (group_ids ?ac ))
+(not (modified_initial_lvl ?ah ?mh))
+=>
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ah ?mh nmod align_head_and_child_with_dic_mng 3))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_head_and_child_with_dic_mng 3))
+	(assert (modified_initial_lvl ?ah ?mh))
+	(assert (modified_initial_lvl ?ac ?mc))
 )
 
-(defrule align_nmod_child_dic_mng
+(defrule align_nmod_head_dic_mng
 (declare (salience 1019))
 (rel_name-sids nmod:of ?ah ?ac)
 (hnd_rel_name-h_id-c_ids ? nmod:ke|nmod:kA - ?mh ?mc $?)
 (manual_word_info (head_id ?mh) (root_components $?hmng))
 (database_info (components $?hmng ) (group_ids ?ah ))
-(not (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ? ? align_nmod_with_dic_mng ?))
-(not (anu_id-man_id-rel_name-rule_name-confidence_level ? ?mc ? align_nmod_with_dic_mng ?))
+(not (anu_id-man_id-rel_name-rule_name-confidence_level ?ah ? ? align_nmod_with_dic_mng ?))
+(not (anu_id-man_id-rel_name-rule_name-confidence_level ? ?mh ? align_nmod_with_dic_mng ?))
+(not (got_align_fact $? ?mh $?))
+(not (got_align_fact $? ?ah $?))
+(not (modified_initial_lvl ?ah ?mh))
 =>
-        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_nmod 2))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ah ?mh nmod align_nmod_head_with_dic 3))
+        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?ac ?mc nmod align_nmod_head_with_dic 2))
 )
-
-
-
-;(defrule modify_lvl_with_dic
-;(declare (salience 1010))
-;?f0<-(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid $?d ?l)
-;(manual_word_info (head_id ?mid) (root_components $?mng))
-;(database_info (components $?mng ) (group_ids ?aid ))
-;(not (modified_level ?mid))
-;=>
-;        (retract ?f0)
-;        (bind ?lvl (+ ?l 1))
-;        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid $?d ?lvl))
-;        (assert (modified_level ?mid))
-;)
-
-
 
 ;====================================== Alignment with grouped ids ==================================
 (defrule align_group_root
@@ -140,6 +197,7 @@
 (rel_name-grouped_rel_hids root 0 $? ?mverb) 
 (rel_name-grouped_rel_eids root 0 $? ?averb)
 (not (got_align_fact $?))
+(not (modified_initial_lvl ?ah ?mh))
 =>
 	(assert (anu_id-man_id-rel_name-rule_name-confidence_level ?averb ?mverb root align_root 2))
 )
@@ -194,6 +252,7 @@
 (not (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ? align_with_dic ?))
 (not (id-grp_type-ids_word ? ? $? ?mc $?))
 (not (id-grp_type-ids_word ? ? $? ?mh $?))
+(not (modified_initial_lvl ?h ?mh))
 =>
         (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ?rel align_with_dic 2))
         (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?h ?mh ?rel align_with_dic 2))
@@ -215,30 +274,11 @@
 (not (got_align_fact $?))
 (not (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ? align_with_dic ?))
 (not (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ? align_with_dic1 ?))
+(not (modified_initial_lvl ?h ?mh))
 =>
         (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ?rel align_with_dic1 2))
         (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?h ?mh ?rel align_with_dic1 2))
 )
-;---------------------------------------------------------------------------------------------
-;(defrule align_with_hindi_wordnet
-;(declare (salience 908))
-;(rel_name-grouped_rel_eids ? ?h $? ?c)
-;(rel_name-grouped_rel_hids ?rel ?mh $? ?mc)
-;(manual_id-word ?mc ?cmng)
-;(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?cmng))) "FALSE"))
-;;(or (database_info (meaning ?mng) (group_ids $? ?c $?))(id-Apertium_output ?c ?mng))
-;;(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
-;;(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?cmng))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
-;;(manual_id-word ?mh ?hmng)
-;;(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?hmng))) "FALSE"))
-;;(or (database_info (meaning ?mng1) (group_ids $? ?h $?))(id-Apertium_output ?h ?mng1))
-;;(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng1))) "FALSE"))
-;;(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?hmng))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng1)))))
-;;(not (anu_id-man_id-rel_name-rule_name-confidence_level ? ?mc ? align_with_dic ?))
-;=>
-;        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?c ?mc ?rel align_with_dic 2))
-;        (assert (anu_id-man_id-rel_name-rule_name-confidence_level ?h ?mh ?rel align_with_dic 1))
-;)
 ;---------------------------------------------------------------------------------------------
 (defrule align_nmod_towards
 (declare (salience 900))
@@ -415,7 +455,7 @@
 (declare (salience 95))
 (rel_name-grouped_rel_eids  ?rel ?averb $? ?aid)
 (rel_name-grouped_rel_hids ?rel ?mverb $? ?mid)
-(not (anu_id-man_id-rel_name-rule_name-confidence_level ? ?mid ? align_root|align_edges1|align_with_dic|align_with_dic1|align_nmod ?))
+(not (anu_id-man_id-rel_name-rule_name-confidence_level ? ?mid ? align_root|align_edges1|align_with_dic|align_with_dic1|align_nmod|align_cop|align_amod|align_root_and_sub ?))
 (not (anu_id_decided ?aid))
 (not (got_align_fact $?))
 =>
@@ -457,6 +497,7 @@
 (man_word-root-cat ?mng ?root ?)
 (database_info (components $? ?root $?) (group_ids $? ?aid $?))
 (not (modified_level ?mid))
+(not (modified_initial_lvl ?aid ?mid))
 =>
         (retract ?f0)
         (bind ?lvl (+ ?l 1))
@@ -470,6 +511,7 @@
 (rel_name-grouped_rel_hids ? ?mid $? ?mid1)
 (rel_name-grouped_rel_eids ? ?aid $? ?aid1)
 ?f0<-(anu_id-man_id-rel_name-rule_name-confidence_level ?aid1 ?mid1 $?d ?l)
+(not (modified_initial_lvl ?aid ?mid))
 =>
 	(retract ?f0)
 	(bind ?lvl (+ ?l 1))
@@ -484,6 +526,7 @@
 (or (database_info (components ?mng ) (group_ids ?aid ))(database_info (components $? ?mng $?)(database_type multi) (group_ids $? ?aid $?)))
 ;(database_info (components $? ?mng $?) (group_ids $? ?aid $?))
 (not (modified_level ?mid))
+(not (modified_initial_lvl ?aid ?mid))
 =>
         (retract ?f0)
         (bind ?lvl (+ ?l 1))
@@ -500,6 +543,7 @@
 (database_info (components ?mng1 ) (group_ids ?aid ))
 (test (eq (string-to-field (sub-string 1 (length ?mng) ?mng1)) ?mng))
 (not (modified_level ?mid))
+(not (modified_initial_lvl ?aid ?mid))
 =>
         (retract ?f0)
         (bind ?lvl (+ ?l 1))
@@ -514,6 +558,7 @@
 (man_word-root-cat ?mng ?root ?)
 (database_info (components ?root) (group_ids ?aid ))
 (not (modified_level ?mid))
+(not (modified_initial_lvl ?aid ?mid))
 =>
         (retract ?f0)
         (bind ?lvl (+ ?l 1))
@@ -553,6 +598,7 @@
 (defrule get_align_fact1
 (declare (salience -6))
 ?f0<-(anu_id-man_id-rel_name-rule_name-confidence_level ?aid ?mid ?rel ?r ?l)
+(test (and (neq ?r align_edges)(neq ?l 1)))
 =>
         (retract ?f0)
 	(assert	(anu_id-man_id-src-rule_name ?aid ?mid parsers_match ?r))
@@ -562,9 +608,8 @@
 )
 
 ;---------------------------------------------------------------------------------------------
-(defrule create_file
+(defrule create_file_with_grp
 (declare (salience -8))
-;(anu_id-man_id ?aid ?mid $?)
 (anu_id-man_id-src-rule_name ?aid ?mid $?)
 (rel_name-grouped_rel_eids ? $? ?aid)
 (rel_name-grouped_rel_hids ? ? $?ids)
@@ -577,6 +622,18 @@
         (assert (info_created ?aid ?mid))
 )
 ;---------------------------------------------------------------------------------------------
+(defrule create_file
+(declare (salience -8))
+(anu_id-man_id-src-rule_name ?aid ?mid $?)
+(not (info_created ?aid ?mid))
+=>
+        (bind ?f_name (str-cat ?mid "_info"))
+        (printout ?*s_file* crlf ?f_name "      "?aid crlf)
+        (assert (info_created ?aid ?mid))
+)
+;---------------------------------------------------------------------------------------------
+
+
 (defrule create_file1
 (declare (salience -9))
 ?f0<-(rel_name-grouped_rel_eids $? ?aid)

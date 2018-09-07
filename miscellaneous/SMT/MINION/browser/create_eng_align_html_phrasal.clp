@@ -561,6 +561,7 @@
  (defrule test_symbol_for_HM
  (declare (salience 1900))
  ?f<-(id-HM-source-grp_ids   ?id   ?mng   ?src $?grp_ids)
+ (test (neq (numberp ?mng) TRUE))
  (test (eq (sub-string 1 1 ?mng) "@"))
  =>
  (retract ?f)
@@ -1631,7 +1632,7 @@
  (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/total-left-over.dat"))
  (open ?dic_path dic_fp)
  (bind ?val (readline dic_fp))
- (printout fp "<tr><td class=\"outertd\">" crlf)
+ (printout fp "<tr><td class=\"outertd\">"  "Phrasal Info :<br> " crlf)
  (while (neq ?val EOF)
  (printout fp ?val"<br>" crlf)
  ;(printout t ?val crlf)

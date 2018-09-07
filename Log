@@ -125,6 +125,8 @@
  42. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
+	new_hnd_mo/README
+	new_hnd_mo/apertium_hn.dix
  43. Updated following lex files:
 	abbrevations.lex	-->  Added:   HIV, MRI, PA, OK, UP, NIIT, AC, ORS, DNA and w.e.f. in the list
 				     Removed: May

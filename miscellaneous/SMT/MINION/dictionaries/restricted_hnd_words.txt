@@ -7,7 +7,7 @@ anyaWA	or/otherwise
 hI	only
 BI	also/too/even/so
 ki	that
-isa	the/this/such/that
+isa	the/this/such/that/it
 eka	a/an/one
 koI	a/an/any/no/some/one/none
 #I can only marry him and [no one else]. mEM kevala usI se SAxI karUfgI OrYa [kisI se nahIM] .

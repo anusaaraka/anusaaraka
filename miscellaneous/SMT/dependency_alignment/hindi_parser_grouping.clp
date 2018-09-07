@@ -134,6 +134,7 @@
 ?f2<-(hnd_rel_name-h_id-c_ids ? conj|compound1|compound $? - ?cc $?conj)
 (manual_id-word ?cc ?w);saMsAra meM paxArWoM ke AScaryacakiwa karane vAle prakAra waWA jIvana evaM vyavahAra kI vismayakArI viBinnawAez hEM.
 (not (h-rel-mod_id ?id $?))
+(not (got_default_in_fact $?))
 =>
         (retract ?f0 ?f1 ?f2)
         (if (eq (integerp (member$ ?w (create$ evaM waWA Ora aWavA))) TRUE) then
@@ -192,13 +193,15 @@
 ;[unakA] [banAyA waWA upayoga kiyA hE]  => [banAyA waWA unakA upayoga kiyA hE]
 (defrule grp_PRP
 (declare (salience 908))
-(manual_id-word ?pid ?w&unakA|inakA|usakA)
+(manual_id-word ?pid ?w&unakA|inakA|apane|usakI|usakA)
 ?f0<-(hnd_rel_name-h_id-c_ids ? ? - ?h ?pid)
-(id-grp_type-ids ?gid comp $? ?h $?)
-?f1<-(hnd_rel_name-h_id-c_ids ?id ?r $?v - ?h1 $?d ?gid $?d1)
+;(id-grp_type-ids ?gid comp $? ?h $?)
+;?f1<-(hnd_rel_name-h_id-c_ids ?id ?r $?v - ?h1 $?d ?gid $?d1)
+?f1<-(hnd_rel_name-h_id-c_ids ?id ?r $?v - ?h1 $?d ?h $?d1)
 =>
 	(retract ?f0 ?f1)
-	(assert (hnd_rel_name-h_id-c_ids ?id ?r $?v - ?h1 $?d  ?pid ?gid $?d1))
+	(assert (hnd_rel_name-h_id-c_ids ?id ?r $?v - ?h1 $?d  ?pid ?h $?d1))
+;	(assert (hnd_rel_name-h_id-c_ids ?id ?r $?v - ?h1 $?d  ?pid ?gid $?d1))
 )
 
 ;---------------------------------------------------------------------------
@@ -238,9 +241,9 @@
 ;[eka prakAra kI] [prawikriyA] => [eka prakAra kI prawikriyA]
 (defrule grp_noun_with_ke
 (declare (salience 880))
-?f0<-(hnd_rel_name-h_id-c_ids ?h ?r ?vib - ?id  $?d ?vib)
+?f0<-(hnd_rel_name-h_id-c_ids ?h ?r - ?id  $?d ?vib)
 (manual_id-word ?vib ke|kI|kA)
-?f1<-(hnd_rel_name-h_id-c_ids ?h1 ?r1 $?v1 - ?h2 $?d1 =(+ ?vib 1) $?d2)
+?f1<-(hnd_rel_name-h_id-c_ids ?h1 ?r1 - ?h2 $?d1 =(+ ?vib 1) $?d2)
 (test (neq ?h ?h1))
 (not (h-rel-mod_id ?h $?))
 (not (h-rel-mod_id ?h1 $?))
@@ -248,8 +251,27 @@
 (id-word ? of)
 =>
         (retract ?f0 ?f1)
-        (assert (hnd_rel_name-h_id-c_ids ?h1 ?r1 $?v1 - ?h2 $?d ?vib $?d1 (+ ?vib 1) $?d2))
+        (assert (hnd_rel_name-h_id-c_ids ?h1 ?r1 - ?h2 $?d ?vib $?d1 (+ ?vib 1) $?d2))
 )
+
+;isIlie vaha apane ko jafgala meM ekAnwavAsa karake [nirASA kA ekAnwa jIvana] biwAne ke yogya samaJawA hE  .
+;[nirASA kA][ekAnwa jIvana] => [nirASA kA ekAnwa jIvana]
+(defrule grp_noun_with_ke1
+(declare (salience 880))
+?f0<-(hnd_rel_name-h_id-c_ids ?h ?r - ?id  $?d ?vib)
+(manual_id-word ?vib ke|kI|kA)
+(id-grp_type-ids ?vib1 comp $? =(+ ?vib 1) $?)
+?f1<-(hnd_rel_name-h_id-c_ids ?h1 ?r1 - ?h2 $?d1 ?vib1 $?d2)
+(test (neq ?h ?h1))
+(not (h-rel-mod_id ?h $?))
+(not (h-rel-mod_id ?h1 $?))
+(not (got_default_in_fact ?h))
+(id-word ? of)
+=>
+        (retract ?f0 ?f1)
+        (assert (hnd_rel_name-h_id-c_ids ?h1 ?r1 - ?h2 $?d ?vib $?d1 ?vib1 $?d2))
+)
+
 
 ;============================= combine comp ids ==================================
 
