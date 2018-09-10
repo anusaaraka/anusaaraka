@@ -1,4 +1,4 @@
- 06-09-18
+ 10-09-18
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4
 			               yes-no_question -- added punctuation fact in rule part
@@ -122,6 +122,10 @@
 	hnd-wrdnet-adj				hnd-wrdnet-adv,
 	hnd-wrdnet-noun				hnd-wrdnet-verb
 	derivational_dict.txt			get_derivation_morph_mng.py
+	spell_checker_in_hnd.sh 		get_multi_word-dic_single.sh
+	hi_IN.dic.wx.sort			get_words_list.sh 
+	check_hindi_words_only.c 		find_missing_hnd_wrd.py
+	identify_acronyms.py			spellDifference.py
  42. Updated following files:
         changes_in_databases
         provisional_multi_word_dictionary.txt
