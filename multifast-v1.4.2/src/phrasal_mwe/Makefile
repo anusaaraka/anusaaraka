@@ -1,7 +1,6 @@
 APP_NAME := extract_key_using_multifast
 APP_NAME1 := extract_key_using_multifast-hi-en
 APP_NAME2 := extract_key_in_hindi_phrase
-APP_NAME3 := check_hindi_words
 APP_NAME4 := check_hindi_words_only
 INCLUDE_DIRECTORY := ../../ahocorasick
 LIBRARY_DIRECTORY := ../../ahocorasick/build
@@ -31,12 +30,6 @@ $(APP_NAME2): $(APP_NAME2).o
 $(APP_NAME2).o: $(APP_NAME2).c
 	cc -o $(APP_NAME2).o -I$(INCLUDE_DIRECTORY) -Wall -c $(APP_NAME2).c
 
-$(APP_NAME3): $(APP_NAME3).o
-	cc -o $(APP_NAME3) $(APP_NAME3).o -l$(LINK_LIBRARY) -L$(LIBRARY_DIRECTORY)
-
-$(APP_NAME3).o: $(APP_NAME3).c
-	cc -o $(APP_NAME3).o -I$(INCLUDE_DIRECTORY) -Wall -c $(APP_NAME3).c
-
 $(APP_NAME4): $(APP_NAME4).o
 	cc -o $(APP_NAME4) $(APP_NAME4).o -l$(LINK_LIBRARY) -L$(LIBRARY_DIRECTORY)
 
@@ -44,4 +37,4 @@ $(APP_NAME4).o: $(APP_NAME4).c
 	cc -o $(APP_NAME4).o -I$(INCLUDE_DIRECTORY) -Wall -c $(APP_NAME4).c
 
 clean:
-	rm -f $(APP_NAME) $(APP_NAME1) $(APP_NAME2) $(APP_NAME3) $(APP_NAME4) $(APP_NAME).o $(APP_NAME1).o $(APP_NAME2).o  $(APP_NAME3).o $(APP_NAME4).o
+	rm -f $(APP_NAME) $(APP_NAME1) $(APP_NAME2) $(APP_NAME4) $(APP_NAME).o $(APP_NAME1).o $(APP_NAME2).o  $(APP_NAME4).o
