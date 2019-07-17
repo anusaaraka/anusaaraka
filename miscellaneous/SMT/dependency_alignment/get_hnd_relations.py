@@ -15,11 +15,13 @@ for line in open(sys.argv[1]):
 			val = dic[key].split('\t')
 			if val[1] != '0':
 #				fr.write('(relation_name-relation_ids-relation_wrds	' +  val[0] + '\t' + val[1] + '  ' +  val[2] + '\t' + wrd[int(val[1])] + '\t' + wrd[int(val[2])] + ')\n')
-				fr.write('(relation_name-rel_ids	' +  val[0] + '\t' + val[1] + '  ' +  val[2] + ')\n')
+				fr.write('(relation_name-rel_ids	' +  val[0] + '\t' + 'P' + val[1] + '  P' +  val[2] + ')\n')
+#				fr.write('(relation_name-rel_ids	' +  val[0] + '\t' + val[1] + '  ' +  val[2] + ')\n')
 				
 			else:
 #				fr.write('(relation_name-relation_ids-relation_wrds	' +  val[0] + '\t' + val[1] + '  ' +  val[2] + '\t' + val[1] + '\t' + wrd[int(val[2])] + ')\n')
-				fr.write('(relation_name-rel_ids	' +  val[0] + '\t' + val[1] + '  ' +  val[2] + ')\n')
+				fr.write('(relation_name-rel_ids	' +  val[0] + '\t' + 'P' + val[1] + '  P' +  val[2] + ')\n')
+#				fr.write('(relation_name-rel_ids	' +  val[0] + '\t' + val[1] + '  ' +  val[2] + ')\n')
 		wrd = {}
 		dic = {}
 		fr.write(';~~~~~~~~~~\n')

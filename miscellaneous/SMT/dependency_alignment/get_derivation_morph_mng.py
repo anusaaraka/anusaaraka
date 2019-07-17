@@ -1,5 +1,7 @@
 # run : python get_derivation_morph_mng.py  default-iit-bombay-shabdanjali-dic_smt.gdbm derivational_dict.txt 
-
+#Note: Install python-gdbm package to use gdbm in python 
+#Ex: sudo apt-get install python-gdbm 
+#############################################################################################################
 #Programme to get derivational morph info
 import sys
 import gdbm 

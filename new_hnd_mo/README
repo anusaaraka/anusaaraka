@@ -1,3 +1,20 @@
+pre-requisites:
+   - lttoolbox 3.1 or above
+   - apertium 3.1 or above
+
+Compile:     sh compile.sh
+--------
+
+To get analysis:
+----------------
+lt-proc -c -a hi.morf.bin
+
+
+To get generation
+-----------------
+lt-proc -c -g hi.gen.bin
+
+
 Added ke_liye & ke_xvArA in all pronouns and in parsarg list.
 corrected the karo entry "kara" instead of "ka".
 Deted Z from  all entries.

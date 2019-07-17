@@ -192,7 +192,7 @@
  (and (Node-Category ?NN NN) (Node-Category ?NNS NNS|NN))
  (Head-Level-Mother-Daughters  ? ?  ?NN  ?id)
  (Head-Level-Mother-Daughters  ? ?  ?NNS  ?id1)
- ?f0<-(id-HM-source ?id ?mng ?s&WSD_root_mng|Default_meaning)
+ ?f0<-(id-HM-source ?id ?mng ?s)
  ?f1<-(id-HM-source ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning)
  (id-original_word ?id ?w)
  (id-original_word ?id1 ?w1)
@@ -235,6 +235,29 @@
         (retract ?f0)
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;alignment purpose --for group info
+ (defrule sort_debug_file_ids
+ (declare (salience 601))
+?f0<-(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ?dir_name ?file_name ?rule_name $?ids ?mng)
+ (not (grouped_ids $?ids))
+ =>
+	(retract ?f0)
+	(bind $?ids (sort > (create$ $?ids)))
+	(assert (grouped_ids $?ids))
+	(assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ?dir_name ?file_name ?rule_name $?ids ?mng))
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ (defrule sort_debug_file_ids1
+ (declare (salience 601))
+?f0<-(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ?dir_name ?file_name ?rule_name $?ids ?mng)
+ (not (grouped_ids $?ids))
+ =>
+        (retract ?f0)
+        (bind $?ids (sort > (create$ $?ids)))
+	(assert (grouped_ids $?ids))
+        (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ?dir_name ?file_name ?rule_name $?ids ?mng))
+ )
+ ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
  ;Added 'physics_Glossary' in not condition by Roja(31-07-14).Ex: The line connecting the two [charges] defines a [direction] in [space].
  (defrule get_rule_info
@@ -245,6 +268,7 @@
  (test (neq (integerp (member$ ?id $?ids)) FALSE))
  =>
 	(retract ?f0)
+	(bind $?ids (sort > (create$ $?ids)))
 	(if (eq (str-index "provisional_wsd_rules" ?dir_name) FALSE) then
 		(bind ?str (str-cat ?src ",rule_name::"  ?rule_name))
 	else

@@ -58,7 +58,7 @@ $PATH1/add_snt_mrkr.out < $1.tmp2 > $PATH2/$1.pre-processed
 $PATH1/check_long_sentences.pl < $PATH2/$1.pre-processed
 
 else
-$PATH1/add_snt_tag.out < $PATH2/tmp_stdenglish/$1.tmp8 > $PATH2/$1.pre-processed
+$PATH1/add_snt_tag.out < $PATH2/tmp_stdenglish/$1.tmp8 | sed 's/^<p><s>[ ]/<p><s>/g' | sed 's/^<p><s>-[^ ]/<p><s>- /g' > $PATH2/$1.pre-processed
 fi
 
 cd ../

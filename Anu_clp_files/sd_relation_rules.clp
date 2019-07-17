@@ -1197,7 +1197,7 @@ else
  (defrule aux_cop
  (rel_name-sids aux|mark ?id ?to)
  (rel_name-sids cop ?id ?inf)
- (parserid-word ?to to)
+ (parserid-word ?to to|To) 
 ;mark(rude-5, to-3)
 ;cop(rude-5, be-4)
 

@@ -72,7 +72,7 @@ for key in sorted(align_dic):
 
 
 #To print left over words:
-l_o.write('@Phrase_@level_@left_@over_@words::\t')
+l_o.write('@B. @Phrase_@level_@left_@over_@words:\t')
 for i in range(0, len(h_s)-1, 2):
 	if h_s[i+1] != 'REPLACED':
 		l_o.write( '%s%s%s ' % (h_s[i] , h_s[i+1], h_s[i+2]))

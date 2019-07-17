@@ -86,7 +86,9 @@
 
   replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org
   cd $HOME_anu_test/Anu_src/
-  ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
+  #After King Shantanu's sudden death ….
+  sed -n '1h;2,$H;${g;s/nonascii[0-9]\+[ ]\([\.?!]\)\n/ \1\n/g;p}' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp1_org
+  ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp1_org  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Stanford parser ..."
   cd $HOME_anu_test/Parsers/stanford-parser/src
@@ -104,7 +106,7 @@
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
 
   echo "Multi word ..."
-  $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
+  $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised $MYPATH/tmp/$1_tmp/multiword_id_mapping.txt > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
   $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression_for_proper_nouns $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/proper_noun_dic.txt
   $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression_for_prov $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/provisional_multi_dic.txt
 
@@ -130,8 +132,9 @@
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out multiword_id_mapping.txt  dir_names.txt  multiword_id_mapping.dat
   $HOME_anu_test/Anu_src/split_file.out proper_noun_dic.txt  dir_names.txt  proper_noun_dic.dat
-  $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
   $HOME_anu_test/Anu_src/split_file.out ner.txt dir_names.txt ner_tmp.dat
 
   if [ "$4" != "general" -a "$4" != "" ]; then

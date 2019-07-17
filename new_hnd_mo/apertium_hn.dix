@@ -24906,7 +24906,8 @@
 <e lm="sAmagAna"><i>sAmagAna</i><par n="kroXa/__n"/></e>
 <e lm="samAgawa"><i>samAgawa</i><par n="amIra/__adj"/></e>
 <e lm="samagra"><i>samagra</i><par n="amIra/__adj"/></e>
-<e lm="sAmagrI"><i>sAmagrI</i><par n="AjAxI/__n"/></e>
+<!-- <e lm="sAmagrI"><i>sAmagrI</i><par n="AjAxI/__n"/></e> -->
+<e lm="sAmagrI"><i>sAmagrI</i><par n="ladak/I__n"/></e>
 <e lm="samAhAra"><i>samAhAra</i><par n="kroXa/__n"/></e>
 <e lm="samAharwA"><i>samAharw</i><par n="gudiy/A__n"/></e>
 <e lm="samAhiwa"><i>samAhiwa</i><par n="amIra/__adj"/></e>

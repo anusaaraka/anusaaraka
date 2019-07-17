@@ -87,6 +87,10 @@ cd $MYPATH1
  echo "Creating Hindi Wordnet dictionaries"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm      < hindi_wordnet_dic1_in_canonical_form.txt
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm      < hindi_wordnet_dic2_in_canonical_form.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd-wrdnet-adj.gdbm	    < hnd-wrdnet-adj_in_canonical_form.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd-wrdnet-adv.gdbm	    < hnd-wrdnet-adv_in_canonical_form.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd-wrdnet-noun.gdbm	    < hnd-wrdnet-noun_in_canonical_form.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd-wrdnet-verb.gdbm	    < hnd-wrdnet-verb_in_canonical_form.txt
  echo "Creating restricted_eng_words dictionary"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm    < restricted_eng_words_in_canonical_form.txt
  echo "Creating restricted_hnd_words dictionary"
@@ -207,7 +211,15 @@ echo "Creating eng_proper_noun_multi.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating transliterate_meaning.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_meaning.gdbm < transliterate_meaning.txt
+ echo "Creating provisional_transliterate_mng.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_transliterate_mng.gdbm < $MYPATH/provisional_transliterate_mng.txt
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
+
+ echo "Creating derivational_mng.gdbm"
+ python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_derivation_morph_mng.py $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm $MYPATH/derivational_dict.txt > $MYPATH/derivational_mng.txt
+ cd $HOME_anu_test/Anu_data/
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/derivational_mng.gdbm < $MYPATH/derivational_mng.txt
+ 

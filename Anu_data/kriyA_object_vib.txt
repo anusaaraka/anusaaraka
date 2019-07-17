@@ -1008,4 +1008,5 @@ rub_ragada	ko
 # Your cat keeps on rubbing itself against my leg. 
 inspire_preraNA_xe	ko
 # As a committed educator, he inspired millions of young people to achieve their very best.
-preriwa_kara	ko	
+help_sahAyawA_kara	ko
+#He will help you. 	(suggested by Chaitanya Sir 03-02-18)

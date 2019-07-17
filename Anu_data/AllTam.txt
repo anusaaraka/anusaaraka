@@ -284,18 +284,18 @@
 0_sakawA_WA,m,s,m	sakawA_WA
 0_sakawA_WA,m,s,u	sakawA_WA
 
-0_wA_rahawA_hE,f,p,a	wI_rahawI_hEM
-0_wA_rahawA_hE,f,p,m	wI_rahawI_ho
-0_wA_rahawA_hE,f,p,u	wI_rahawI_hEM
-0_wA_rahawA_hE,f,s,a	wI_rahawI_hE
-0_wA_rahawA_hE,f,s,m	wI_rahawI_ho
-0_wA_rahawA_hE,f,s,u	wI_rahawI_hUM
-0_wA_rahawA_hE,m,p,a	we_rahawe_hEM
-0_wA_rahawA_hE,m,p,m	we_rahawe_ho
-0_wA_rahawA_hE,m,p,u	we_rahawe_hEM
-0_wA_rahawA_hE,m,s,a	wA_rahawA_hE
-0_wA_rahawA_hE,m,s,m	wA_rahawA_hE
-0_wA_rahawA_hE,m,s,u	wA_rahawA_hUM
+wA_rahawA_hE,f,p,a	wI_rahawI_hEM
+wA_rahawA_hE,f,p,m	wI_rahawI_ho
+wA_rahawA_hE,f,p,u	wI_rahawI_hEM
+wA_rahawA_hE,f,s,a	wI_rahawI_hE
+wA_rahawA_hE,f,s,m	wI_rahawI_ho
+wA_rahawA_hE,f,s,u	wI_rahawI_hUM
+wA_rahawA_hE,m,p,a	we_rahawe_hEM
+wA_rahawA_hE,m,p,m	we_rahawe_ho
+wA_rahawA_hE,m,p,u	we_rahawe_hEM
+wA_rahawA_hE,m,s,a	wA_rahawA_hE
+wA_rahawA_hE,m,s,m	wA_rahawA_hE
+wA_rahawA_hE,m,s,u	wA_rahawA_hUM
 
 0_xenA_padA,f,p,a	0_xenA_padA
 0_xenA_padA,f,p,m	0_xenA_padA
@@ -479,17 +479,17 @@ nA_vAlA_hE,m,p,m	vAle_ho
 nA_vAlA_hE,f,s,m	vAlI_ho
 nA_vAlA_hE,f,p,m	vAle_ho
 
-nA_hI_hE,f,p,m	nA_hI_hE
-nA_hI_hE,f,p,u	nA_hI_hE
-nA_hI_hE,f,s,a	nA_hI_hE
-nA_hI_hE,f,s,m	nA_hI_hE
-nA_hI_hE,f,s,u	nA_hI_hE
-nA_hI_hE,m,p,a	nA_hI_hE
-nA_hI_hE,m,p,m	nA_hI_hE
-nA_hI_hE,m,p,u	nA_hI_hE
-nA_hI_hE,m,s,a	nA_hI_hE
-nA_hI_hE,m,s,m	nA_hI_hE
-nA_hI_hE,m,s,u	nA_hI_hE
+nA_hI_hE,f,p,m	hI_hE
+nA_hI_hE,f,p,u	hI_hEM
+nA_hI_hE,f,s,a	hI_hE
+nA_hI_hE,f,s,m	hI_hE
+nA_hI_hE,f,s,u	hI_hE
+nA_hI_hE,m,p,a	hI_hEM
+nA_hI_hE,m,p,m	hI_hE
+nA_hI_hE,m,p,u	hI_hEM
+nA_hI_hE,m,s,a	hI_hE
+nA_hI_hE,m,s,m	hI_hE
+nA_hI_hE,m,s,u	hI_hE
 
 nA_hI_WA,f,p,a	nA_hI_WA
 nA_hI_WA,f,p,m	nA_hI_WA

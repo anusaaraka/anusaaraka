@@ -20,7 +20,7 @@
  (defrule cp_facts_for_lwg
  (declare (salience 1701))
  (Head-Level-Mother-Daughters ?h ?l ?M $?daut)
- (Node-Category ?M S|SQ|VP|SBAR|and-VB|or-VB|and-MD|and-VBD|SINV);Added and-VB|or-VB|and-MD|and-VBD|SINV in the list by Manju
+ (Node-Category ?M S|SQ|VP|SBAR|and-VB|or-VB|and-MD|and-VBD|SINV|or-VBN);Added and-VB|or-VB|and-MD|and-VBD|SINV in the list by Manju
  (Head-Level-Mother-Daughters ? ? ?Mot $? ?M $?);Added by Manju (29-07-13)
  (not (Node-Category ?Mot Inf_VP));The Republic of Ireland has introduced a blanket ban on smoking to protect public health and reduce illness. 
  =>
@@ -59,7 +59,7 @@
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP $?pre ?VP1 $?pos)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
  ?f2<-(Node-Category ?CC CC)
- (Node-Category ?VP1 VP|and-VB|or-VB|and-MD|and-VBD);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
+ (Node-Category ?VP1 VP|and-VB|or-VB|and-MD|and-VBD|or-VBN);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
  (Node-Category ?VP VP)
  =>    
 	(retract ?f1 ?f)
@@ -82,7 +82,7 @@
  (declare (salience 1599))
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
  ?f2<-(Node-Category ?CC CC)
- (Node-Category ?VP1 VP|and-VB|or-VB|and-MD|and-VBD);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
+ (Node-Category ?VP1 VP|and-VB|or-VB|and-MD|and-VBD|or-VBN);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
  =>
          (retract  ?f1)
          (bind $?verb_list (create$ $?pre1 ?CC $?pos1))
@@ -284,6 +284,7 @@
  ;Here it look like,
  ;(root-verbchunk-tam-parser_chunkids - is making feed - s ing 0 - P2 P3 P6)
  ;Used root to check words insted of word by Shirisha Manju (26-07-16)
+ ; added 'able' to the list by Shirisha Manju (27-06-17)
  (defrule replace_nodes_for_aux
  (declare (salience 60))
  ?f<-(root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre ?node $?post ?main_verb)
@@ -301,7 +302,7 @@
         (bind ?pos (member$ ?node $?chunkid))
         (bind ?head (lowcase ?head))
 ;        (if (and (member$ ?head (create$ make made get making let am being do does doing need can could ought might must should been had may will be is are has shall would were was did to have used use keeps keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
-        (if (and (member$ ?root (create$ make get let do need ought may might must can could would should be been had has have will shall to use keep)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
+        (if (and (member$ ?root (create$ make get let do need ought may might must can could would should be been had has have will shall to use keep able)) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
         (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
         (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
           (if (eq ?cat VBG) then 
@@ -522,16 +523,17 @@
  (assert (cntrl_fact_for_replacing_head_info))
  )
 ;--------------------------------------------------------------------------
- ;Identifying and inserting "not" to lwg 
+ ;Identifying and inserting "not|never" to lwg 
  ;Ex:- I will not do it.
  ;They also [do not attract] or repel other light objects as they did on being electrified
+ ;Teenagers should never feel rejected by their parents.
  ;(root-verbchunk-tam-parser_chunkids do will_do will_0 P2 P4) ==>
  ;(root-verbchunk-tam-parser_chunkids do will_not_do will_not_0 P2 P3 P4)
  (defrule add_not_to_lwg
  (declare (salience -10))
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids ?last)
  (Head-Level-Mother-Daughters ?not ? ?RB ?p_id)
- (parserid-word ?not not|n't) ;You did n't even notice.
+ (parserid-word ?not ?nw&not|never) 
  (Node-Category ?RB RB)
  (cntrl_fact_for_testing_not)
  (test (eq (member$ ?p_id $?ids) FALSE))
@@ -553,10 +555,10 @@
                 (bind ?index1 (+ ?index1 ?index))
                 (bind ?count (+ ?count 1))
                 (if (eq ?count (- ?pos 1)) then
-                    (bind ?new_vrb_chunk (sym-cat (sub-string 1 ?index1 ?cp_vrb_chunk) "not" (sub-string ?index1 (length ?cp_vrb_chunk) ?cp_vrb_chunk)))
+                    (bind ?new_vrb_chunk (sym-cat (sub-string 1 ?index1 ?cp_vrb_chunk) ?nw (sub-string ?index1 (length ?cp_vrb_chunk) ?cp_vrb_chunk)))
                  
 		   (printout t  ?new_vrb_chunk " "?index1" " ?cp_tam)
-                    (bind ?new_tam (sym-cat (sub-string 1 ?index1 ?cp_tam) "not" (sub-string ?index1 (length ?cp_tam) ?cp_tam)))
+                    (bind ?new_tam (sym-cat (sub-string 1 ?index1 ?cp_tam) ?nw (sub-string ?index1 (length ?cp_tam) ?cp_tam)))
                )
 ;               (printout t " new_vrb_chunk " ?new_vrb_chunk " new_tam " ?new_tam " " ?index " " ?count " " ?pos " " ?index1 crlf)
                (bind ?vrb_chunk (sub-string (+ ?index 1) 1000 ?vrb_chunk)) 
@@ -581,6 +583,7 @@
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
  (parserid-word ?h ?w&~Let&~May&~Can) ;May I come in Sir? 
+ (test (eq (integerp (member$ ?w (create$ can could will would shall should))) FALSE))
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids)
   (not (lwgids_imper_checked ?first $?ids))
  =>
@@ -668,9 +671,11 @@
  (declare (salience -20))
  (Head-Level-Mother-Daughters ? ? ?ROOT ?S $?)
  (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
- (or (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP $?)
-     (and (Head-Level-Mother-Daughters ? ? ?S ? ?INTJ ?VP $?)(Node-Category ?INTJ INTJ)))
- (Node-Category ?INTJ INTJ|ADVP|PP|CC|SBAR|S)
+; (or (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP $?)
+;     (and (Head-Level-Mother-Daughters ? ? ?S ? ?INTJ ?VP $?)(Node-Category ?INTJ INTJ)))
+; (Node-Category ?INTJ INTJ|ADVP|PP|CC|SBAR|S)
+ (Head-Level-Mother-Daughters ? ? ?S ?Node ?VP $?)
+ (Node-Category ?Node ~NP)
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids)
@@ -685,7 +690,7 @@
         (bind ?pos (length (create$ ?first $?ids)))
         (bind ?count 0)
         (bind ?cp_tam ?tam)
-        (printout t ?tam crlf)
+;        (printout t ?tam crlf)
         (bind ?index (str-index "_" ?tam))
         (while (neq ?index FALSE)
                 (bind ?count (+ ?count 1))
@@ -769,6 +774,7 @@
  ?f<-(Head-Level-Mother-Daughters ? ? ?V ?id)
  (test (member$ ?id $?chunk_ids))
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?m $?pre ?V $?pos)
+ (Node-Category ?m ~ADVP);The mystery of the Nixon tapes was never solved. 
  =>
  	(retract ?f ?f1)
 	(assert (Head-Level-Mother-Daughters ?head ?l ?m $?pre $?pos))

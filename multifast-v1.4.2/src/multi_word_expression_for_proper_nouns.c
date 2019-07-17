@@ -80,7 +80,11 @@ void replace_space_with_underscore(char inp_text[10000])
 //	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
 	   word_count++; }
-        }
+	   else {
+		 offset_no[j]=offset_count;
+	         word_id[j]=word_count;
+	         word_count++; j++;
+        }}
 	else
 	{
 	   word_count++;
@@ -150,7 +154,7 @@ for (j=0; j < matchp->match_num; j++) { //(Added below code by Roja.)
                 for(i=atoi(id_count); i>=1; i--) {
 //			printf("%d-%d\n", word_ids,i);
                         final_ids=word_ids-i+1;
-                        printf(" %d ", final_ids);
+                        printf(" M%d ", final_ids);
                 }
 
                 printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);

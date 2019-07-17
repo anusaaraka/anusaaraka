@@ -255,7 +255,7 @@ attitude	xqRtikoNa/ravEyA/
 attractive	AkarRI_bala/AkarRaka/
 attribute	guNa/sambanXa_TaharA/pariNAma_bawAyA_jAwA_hE/kAraNa_bawA/Sreya_xe/
 at	kI_ora/se/para/meM/ko/suna_kara/baje/bilakula/
-a	eka/prawi/eka_EsA/vaha/kisI/
+a	eka/prawi/eka_EsA/kisI/
 auctioneer	nIlAma_karane_vAlA/nIlAma_mez_beca/
 auction	nIlAma_kara/nIlAmI/
 audit	leKA_parIkRaNa/leKA_jAzca/
@@ -1983,7 +1983,7 @@ hark	yAxa_xilA/XyAna_se_suna/
 harmonious	saxBAvanApUrNa/samasvara/suvyavasWiwa/
 harmonize	mela_KA/eka_samAna_kara/sura_wAla_milA/
 harmony	sura/laya/wAlamela/
-harm	hAnI/hAnI_pahuzcA/
+harm	hAni/hAni_pahuzcA/
 harp	bahuwa_bola/hArpa/
 harrow	xu:Kaxa/hEro/
 harry	wafga_kara/bAra-bAra_AkramaNa_kara/

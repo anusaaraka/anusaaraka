@@ -148,6 +148,7 @@
  ;----------------------------------------------------------------------------------------------------------------------- 
  ;What is the purpose of Dharma? He wrote the biography of Tagore.
  ;We went to Paris on Sarah's advice. hama [sArA kI] salAha para perisa gaye.
+ ;It signifies the [offeree's] willingness to be bound by the terms of the proposal communicated to him.
  (defrule print_org_word_mng_with_kA_vib
  (declare (salience 1400))
  ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng|proper_noun_dic)
@@ -157,8 +158,13 @@
  (test (member$ ?f_id $?f_ids))
   =>
         (retract ?f0)
+	(if (eq (integerp (str-index "'" ?mng)) TRUE) then
+		(bind ?m (sub-string 1 (- (length ?mng) 2) ?mng))
+	else
+		(bind ?m ?mng)
+	)
  	(bind ?kA_mng (get_kA_mng ?g ?n ?c))
-        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " ?kA_mng " )" crlf)
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?m"  " ?kA_mng " )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_with_kA_vib )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
@@ -173,11 +179,12 @@
  (test (or (eq (sub-string 1 1 ?mng) "@") (eq ?cat PropN))) 
  =>
         (retract ?f0)
+	(bind $?nmng (implode$ (remove_character "_" ?mng " ")))
 	(if (eq ?vib 0) then
-	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  )" crlf)
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " $?nmng"  )" crlf)
 	else  
 		(bind $?v (implode$ (remove_character "_" ?vib " ")))
-	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " $?v " )" crlf)
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " $?nmng"  " $?v " )" crlf)
 	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_for_head_id )" crlf)
  )
@@ -381,8 +388,8 @@
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
- (id-word ?pada_id ?w&~and&~or);Now try generating random text in the style of an inaugural address or an internet chat room.
-  =>
+ ;(id-word ?pada_id ?w&~and&~or);Now try generating random text in the style of an inaugural address or an internet chat room.
+ =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  movement_of_kA_vib )" crlf)
@@ -498,6 +505,7 @@
  (defrule kA_in_hindi_rt_mng
  (declare (salience 610))
  ?f0<-(id-HM-source ?id ?h_mng ?s)
+ (test (neq (numberp ?h_mng) TRUE)) 
  (test (member$ kA (create$ (remove_character "_" ?h_mng " "))))
  (pada_info (group_head_id ?id) (gender ?g) (number ?n) (case ?c) (vibakthi ?vib))
  (test (neq ?vib 0))
@@ -640,7 +648,7 @@
   (defrule PP_pronoun_rule_with_vib_kA
   (declare (salience 941))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
-  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
+  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|ours|my|me|they|its|we|it|him|this|mine)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat PP|infinitive|VP)(group_ids $?f_ids))
@@ -1355,7 +1363,12 @@
   (id-cat_coarse ?id ?cat)
   =>
         (retract ?f1)
-        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
+	(if (eq (integerp (str-index "'" ?h_word)) TRUE) then
+                (bind ?m (sub-string 1 (- (length ?h_word) 2) ?h_word))
+        else
+                (bind ?m ?h_word)
+        )
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?m "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_hid )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------

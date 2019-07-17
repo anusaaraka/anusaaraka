@@ -311,8 +311,8 @@
 
  ;She found the evening boring and uninteresting [, in short ,] a [waste of time] .
  (defrule map_mwe
- ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?pid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
- (parserid-wordid    ?pid  ?wid)
+ ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?mid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+ (multifast_id-wordid    ?mid  ?wid)
  =>
 	(retract ?f)
 	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre ?wid  $?post ?cmp_mng  ?h ?cat ?mng ?p))
@@ -321,9 +321,9 @@
  ;She found the evening boring and uninteresting [, in short ,] a waste of time .
  (defrule remove_punc_ids_in_mwe
  (declare (salience -5))
- ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?pid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
- (parserid-word  ?pid  ?wrd)
- (test (neq (str-index "PUNCT" ?wrd) FALSE))
+ ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?mid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+; (parserid-word  ?pid  ?wrd)
+ (test (neq (str-index "M" (implode$ (create$ ?mid))) FALSE))
  =>
 	(retract ?f)
 	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre $?post ?cmp_mng  ?h ?cat ?mng ?p))	

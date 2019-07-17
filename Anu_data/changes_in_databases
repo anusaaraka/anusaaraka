@@ -1,5 +1,4 @@
-# 
-# changes in male_list.txt
+ changes in male_list.txt
 #  ========================
   1. Removed  :   miwra  
                   vaha  
@@ -89,6 +88,7 @@
 	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
 	24. kAPI    	Suggested by Sukhada 	    (02-09-14)  Eg: I used to be pretty good.
 	25. sara	Suggested by Rajini	    (14-10-16)  Eg: May I know your name sir? 
+	26. Bakwa	Suggested by Chaitanya Sir  (09-08-18)
 
 #  changes in Phrv.txt 
 #  ===================
@@ -173,8 +173,8 @@
 	jayajayakAra_kara f	Suggested by Sukhada (05-05-15) Ex: Bansal is being hailed for saving a young child from drowning. 
 	golI_calA         f	"			"	Ex: The police opened fire on the public.
 	SoBA_baDA       f	Suggested by Bhagyashri Kulkarni (6-9-16) Ex: Beautiful paintings adorned the walls of the palace. 
+	CuttI_xe	f	Suggested by Chaitanya sir   (02-08-17) Ex: The patient also gets discharged from the hospital in seven days.
 	
-
 
 #  changes in compound_phrase.txt  (samAsa.txt)
 #  =========================
@@ -322,7 +322,9 @@
 			ne_ke_bIca		ne_ke_pahale	ne_ke_pare	ne_ke_bAre_meM
 			ne_kI_jarUrawa_hE	ne_vAlA_hE	ne_vAlA_WA	ne_meM
 			ne_para			ne_se		ne_kI_jarUrawa_pada_sakawI_hE,
+			nA_hI_hE
 	5. yA_jAwA_hE,m,s,u		jAwA_hE	 	as  	jAwA_hUM	(Suggested by Somaji 10-11-14)
+	6. 0_wA_rahawA_hE,f,p,a      wI_rahawI_hEM 	as  wA_rahawA_hE,f,p,a      wI_rahawI_hEM (Suggested by Chaitanya Sir 5-06-18)
 
 
   Removed  : 
@@ -550,7 +552,7 @@
 
 	Added 14897 entries extracted from wordnet by Mudit Mittal (11-06-16)
 		aalii	to  zygote  
-
+	yourself	
 
 #  Changes in total-paxasUwra.txt 
 #  ==============================
@@ -944,6 +946,8 @@ Removed:
 	5. ing			wA_huA-0-0	(By Shirisha Manju 	01-09-14)
 	6. shall_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
 	7. will_have_been_ing	0_rahA_hogA-0-0	(Suggested by Soma Mam  19-09-16)
+	8. will_not_be_able_to_0	0_pAyegA-0-nahIM (Suggested by Chaitanya Sir 14-08-17)
+	9. would_be_able_to_0	0_pAyegA-0-0	(Suggested by Chaitanya Sir 09-08-18)
 
  Removed :
  -------
@@ -1125,7 +1129,19 @@ Nandini ji LTRC 	27-11-13)
 	143. screw_verb			lag/hLmawa_juT/Gum/gum as laga/himawa_juTa/GumA/guma  (Suggested by Rajini  14-06-17)
 	144. service_verb		KLxamawa_kara	as	Kixamawa_kara	(Suggested by Rajini             14-06-17)
 	145. title_noun			KLwAba		as	KiwAba		(	"	"		    "	 )	
-
+	146. battlefield_noun		yuXxBUmi 	as	yuXxaBUmi	(	"	"	         09-05-18)
+	147. buddhism_noun		bOXxa_Xarma	as	bOxXa_Xarma	(	"	"		    "    )
+	148. download_verb		kampyUtara_me_detA_trAMsavara_kara as kampyUtara_me_detA_le_A ( Suggested by Chaitanya Sir 09-05-18)
+	149. enough_noun		mAtrA		as	mAwrA		( Suggested by Chaitanya Sir 09-05-18)
+	150. everybody_pronoun		saBa_loga	as	saba_loga	(	"	"		"    )
+	151. obverse_noun		viparIwArW	as	viparIwArWa	(	"	"		"    )
+	152. panic_verb			sanwrAswa_ho	as	sanwraswa_ho	(	"	"		"    )
+	153. lose_verb			lupwa_ho_j	as	lupwa_ho_jA
+					Ko_j		as	Ko_jA		bUla_j	as	bUla_jA
+					kama_ho_j	as	kama_ho_jA	(   By Shirisha Manju           18-05-18)
+	154. welfare_noun    		kalyANakArI_paxvawi  as kalyANakArI_paxXawi ( Suggested by Chaitanya Sir 21-05-18)
+	155. indirectly_adverb		aprawyakRa_yA_parokRa_rUpa_se	as aprawyakRa_rUpa_se/parokRa_rUpa_se (By Manju 01-06-18)
+					
     3. Added new entry:
        ---------------
 	1. attorney-at-law_UNDEFINED    pramANiwa_aBikarwA
@@ -1503,6 +1519,39 @@ Nandini ji LTRC 	27-11-13)
 	183. non-medical_adjective   	gEra_cikiwsIya			(Suggested by Rajini    14-10-16)
 	184. pre-delivery_adjective  	prasava_pUrva			(Suggested by Chaitanya Sir  10-12-16)
 					Ex: The percentage of the women getting the pre-delivery test done thrice is only 18.
+	185. i.e._noun			arWAw				(By Shirisha Manju                29-08-17)
+					Ex: Long-term capital is required for a longer period i.e. five years or more.
+	186. lethality_noun		mAraka_kRamawA			(Suggested by Chaitanya Sir  25-10-17)
+					Ex: The infusion of high technology based precision weaponry has enhanced the lethality of future warfare
+					    manifold.
+	187. inter-operability_noun	anwaHkRamawA			(Suggested by Chaitanya Sir  25-10-17)
+					Ex: To achieve its tasks Indian Navy is enhancing its capabilities, cooperation and inter-operability 
+                                            with regional and extra regional navies.
+	188. reborn_verb     		punarjanma_le/punarjanma_ho
+					Ex :Every time evil raises its head anywhere on earth, I am reborn in some form to fight it.
+	189. rightfully_adverb       	nyAyapUrvaka/iMsAPa_se/jAyaja_wOra_para	(Suggested by Chaitanya Sir  14-02-18)
+					Ex: Bhishm defeated me and you are rightfully his now. 
+	190. dishonored_adjective	apamAniwa                  	(       "       "       "       16-02-18)
+					Ex: They were sad and angry to be dishonored.
+	191. o_interjection		he				(	"	"	"	17-02-18)
+						Ex:O king, all of us have two natures.
+	192. dishonored_adjective	apamAniwa
+	193. reborn_verb		punarjanma_le/punarjanma_ho	(Suggested by Chaitanya Sir  09-05-18)
+	194. rightfully_adverb		nyAyapUrvaka/iMsAPa_se/jAyaja_wOra_para (	" 	"	"    )
+	195. krsnaconscious_noun     	kqRNaBAvanABAviwa			(	"	"    10-05-18)	
+					Ex: Therefore, the conclusion is that a spiritual master who is one hundred percent krsnaconscious is 
+                                            the bona fide spiritual master, for he can solve the problems of life.
+	196. surrendered_adjective   	AwmasamarpaNa_kiyA_huA/Awmasamarpiwa/SaraNAgawa (Suggested by Chaitanya Sir  16-05-18)
+					Ex: Now I am Your disciple, and a soul surrendered unto You.
+	197. nescience_noun  		ajFAna					(       "       "    23-05-18)
+					EX: A man fallen in the ocean of nescience can not be saved simply by rescuing his outward dress — the
+                                            gross material body.
+	198. knower_noun     		jFAwA					(	"	"    24-05-18)	
+					Ex: The Absolute Truth is realized in three phases of understanding by the knower of the Absolute Truth,
+					    and all of them are identical.
+	200. servitor_noun		sevaka					(Suggested by Ayushi Banasthali 11-7-18)
+					Ex: Lord Krushna is Rama Himself, and wherever Lord Rama is, His eternal servitor Hanuman and His 
+					    eternal consort Sita, the goddess of fortune, are present.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1868,6 +1917,8 @@ Nandini ji LTRC 	27-11-13)
 	181. mucus_noun			balagama		(	"	"		  30-08-16)
 	182. aware_adjective 		jAgarUka		(	"	"		    "	  )
 					Ex: How much aware are you about the care of your eyes. 
+	183. tomorrow_noun   		BaviRya			(	"	Chaitanya Sir     17-01-18)
+					Ex: We need to plan for a better tomorrow.
 
 		words extracted automatically from alignment and verified by Rajini:
 
@@ -1902,7 +1953,116 @@ Nandini ji LTRC 	27-11-13)
 	192. beneficial_adjective	PAyaxemanxa		(		"		"     )
 	193. difficult_adjective	kaRtapraxa		(		"		"     )
 	194. extremely_adverb		awyAXika		(		"		"     )
-	
+	195. occur_verb			prakata_ho		(		"	      16-06-17)
+					Ex: In most patients no symptoms occur. aXikawara marIjoM meM koI BI lakRaNa prakata nahIM howe.
+	196. immediately_adverb      	wuranwa			(   By shirisha Manju         17-06-17)
+					Ex: This test is done immediately before and after exercise.
+	197. man_noun        		inasAna			(   By shirisha Manju         27-06-17)
+					Ex: On the addiction of nicotine coming once man starts being dependent on it and can not leave its 
+					    habit easily. 
+	198. only_adverb		basa			(   By shirisha Manju         27-06-17)
+					Ex: Only some things need to be kept in mind.  basa kuCa bAwoM kA XyAna raKanA hogA .
+	199. grower_noun     		ugAne_vAlA/uga/ugA	(Suggested by Chaitanya Sir 12-08-17)
+	200. debtor_noun		uXArakarwA 		(Suggested by Chaitanya Sir 12-08-17)
+					Ex: A contract of guarantee is a conditional promise by the surety that if the principal debtor defaults
+					    he shall be liable to the creditor.
+	201. mostly_adverb              aXikAMSa        	(Suggested by Chaitanya Sir  16-08-17)
+                                        Ex: Debentures are mostly issued to finance the long-term requirements of business and do not carry any
+                                            voting rights.
+	202. finance_noun		viwwapoRaNa		(Suggested by Chaitanya Sir  16-08-17)
+	203. finance_verb		viwwapoRaNa_kara	(Suggested by Chaitanya Sir  16-08-17)
+					Ex: Debentures are mostly issued to finance the long-term requirements of business and do not carry any
+					    voting rights.
+	204. submit_verb		sOmpa			(Suggested by Chaitanya Sir  31-08-17)
+					Ex: Any person wishing to file a grievance must submit a written complaint to the local authority.
+	205. credit_noun		qNa			(   By shirisha Manju         09-08-17)
+					Ex: Firms may get credit from equipment suppliers.
+	206. concern_noun    		prawiRTAna		(Suggested by Chaitanya Sir   09-08-17)
+					Ex: Commercial banks finance the business concern by discounting their credit instruments like bills of
+                                            exchange, promissory notes and hundies.
+	207. revocation_noun 		raxXa_karanA		(Suggested by Chaitanya Sir   09-08-17)
+	207. disabled_adjective		akRama			(Suggested by Chaitanya Sir   09-08-17)						
+					Ex: When a party to a contract has refused to perform or is disabled from performing, his promise, the
+					    promisee may put an end to the contract on account of breach by the first party.
+
+		 words extracted automatically from alignment and verified by interns
+
+		generally_adverb	sAXAraNawaH		often_adverb		bahuXA	
+	 	hence_adverb		isalie			overall_adjective	samagra	
+		individual_noun		vyaRti			shareholder_noun	SeyaraXAraka
+		long-term_adjective	xIrGAvaXika		day-to-day_adjective    xEnanxina
+		method_noun		praviXi/viXi		easy_adjective  	saralawama						
+		borrower_noun   	uXArakarwA		legal_adjective 	kAnUna
+		sole_adjective		ekala			fixed_adjective		niyawa
+		discount_noun		battA			civic_adjective		sAmAjika
+	208. whereby_adverb		jisameM			(Suggested by Chaitanya Sir   25-10-17)
+	209. submit_verb		sOmpa
+	210. still_adverb		wo_BI
+	211. sole_adjective		ekala
+	212. revocation_noun		raxXa_karanA
+	213. etc_noun			iwyAxi/vagEraha    
+	214. bureaucracy_noun		aXikArI-wanwra
+	215. bound_verb			AbaxXa
+	216. fixed_adjective		niyawa
+	217. banknote_noun   		bEMka_nota	(Suggested by Chaitanya Sir   04-01-18)
+					Ex: Cash: It refers to money in the physical form of currency, such as banknotes and coins.
+	218. evacuation_noun 		nikAsI		(Suggested by Chaitanya Sir   04-01-18)
+					Ex: The citizens living in a particular region that is prone to serious environmental disasters may be 
+                                            informed about evacuation procedures, including clear escape routes, well ahead of time.
+	219. amazing_adjective		gZajZaba	(Suggested by Chaitanya Sir   20-01-18)
+	220. revolve_verb		Guma		("		"	      05-02-18)
+					Ex: Do you see the fish on the revolving disc on the pole?
+	221. reborn_adjective		punarjanma	("		"		"     )
+	222. be_verb			bana		("              "             09-02-18)
+					Ex: Therefore, we want you to be the new emperor. isalie, hama cAhawe hEM ki Apa nae samrAta baneM  . 
+	223. diarrhea_noun   		xaswa_roga	(Suggested by Chaitanya Sir   12-02-18)
+					Ex: And your participation in this study will give information regarding the role of norovirus as a 
+                                            cause of diarrhea.
+	224. participation_noun 	BAgIxArI/*/BAga_lenA
+	225. gather_verb		safgaTiwa_kara	(Suggested by Chaitanya Sir   13-02-18)
+					Ex: Susheema gathered his forces and started for Pataliputra. 
+	226. surprisingly_adverb     	hErAnI_kI_bAwa_hE	(Suggested by Chaitanya Sir   13-02-18)
+					Ex: Surprisingly, instead of fighting, the crowd welcomed Ashoka!
+	227. chastise_verb   		dAzta			(Suggested by Chaitanya Sir   13-02-18)
+					Ex: The Lord at once took the position of the teacher and chastised the student, calling him, indirectly                                            , a fool.
+	228. British_noun		britiSa			(Suggested by Chaitanya Sir   07-05-18)
+	229. adopted_adjective		xawwaka			(	"	"		"     )
+	230. assertive_adjective	xqDa			(	"	"		"     )
+	231. battlefield_noun		yuxXasWala		(	"	"		"     )
+	232. chant_noun			japa			(	"	"		"     )
+	233. chant_verb			japa_kara/Bajana_kara	(	"	"	      09-05-18)
+	234. disguise_verb		veRa_baxala		(	"	"		"     )
+	235. domesticate_verb		pAla			(	"	"		"     )
+	236. enough_noun		paryApwa		(	"	"		"     )
+	237. free_adjective		muPwa			(	"	"		"     )
+	238. headless_adjective		binA_sira_kA		(	"	"		"     )
+	239. kneel_verb			GutanoM_ke_bala_bETa	(	"	"	        "     )
+	240. learn_verb			jFAwa_ho		(	"	"		"     )
+	241. obverse_adjective		aBimuKa			(	"	"	        "     )
+	242. participant_noun		BAga_lene_vAlA		(	"	"	        "     )
+	243. personified_adjective	mUrwa_rUpa/mUrwimAna_rUpa (	"	"		"     )
+	244. seethe_verb		mana_hI_mana_gusse_se_KOla/anxara_hI_anxara_gusse_se_KOla ( " " ")
+	245. succeed_verb		kA_sWAna_le		(	"	"		"     )
+	246. tomorrow_noun		BaviRya			(	"	"		"     )
+	247. call_verb			kaha_kara		(	"	"		"     )
+					Ex: The Lord at once took the position of the teacher and chastised the student, calling him, indirectly					    , a fool.
+	248. consequently_adverb     	PalasvarUpa		(	"       "               "     )
+					Ex:Therefore, the breaking of the sanaatana-dharma tradition by irresponsible leaders of society brings
+					   about chaos in that society, and consequently people forget the aim of life — Visnu
+	249. succession_noun 		paramparA		(	"	"		"     )
+					Ex: O Krsna, maintainer of the people, I have heard by disciplic succession that those who destroy
+					    family traditions dwell always in hell
+	250. gross_adjective 		sWUla			(	"	"	      23-05-18)
+					Ex: A man fallen in the ocean of nescience can not be saved simply by rescuing his outward dress — the
+					    gross material body. 
+	251. topmost_adjective       	sabase_UparI/uccawama/sarvocca/sarvopari	("	"	      24-05-18)
+	252. identical_adjective     	ekarUpa			(Suggested by Chaitanya Sir   24-05-18)	 
+	253. indirectly_adverb       	aprawyakRawaH		(	By Manju	      01-06-18)
+					Ex: The Lord at once took the position of the teacher and chastised the student, calling him, 
+					    indirectly, a fool. 
+	254. scripture_noun  		SAswra			(Suggested by Ayushi 	      26-06-18)
+					Ex: he surpasses all studies of Vedic wisdom, and all scriptures of the world. vaha samaswa vExika jFAna                                            waWA viSva ke samaswa SAswroM ke aXyayana ko pICe Coda xewA hE  .
+
     5. Modifying first meaning from the list :
        -------------------------------------
         1. establishment_noun   aXiRTAna                as      sWApanA         (Suggested by Meena  07-02-12   )
@@ -2348,14 +2508,24 @@ Nandini ji LTRC 	27-11-13)
 				Ex: They make teeth dirty and breath stinky.	
 	205. ratio_noun      	sambanXa		as	anupAwa		(	"	"		16-08-16)
 				Ex: Fruits and vegetables have a ratio like this.
-	206. yourself_pronoun   wuma_Kuxa		as	Apane_Apa_ko	(	"	"		  "	)
+	206. yourself_pronoun   wuma_Kuxa		as	apane_Apa	(	"	"		  "	)
 				Ex: You keep yourself far from many diseases by eating less fatty and fibered food. 
 	207. properly_adverb	uciwa_Dafga_se		as	TIka_se		(Suggested by Rajini           14-10-16)
 				Ex: It does not work properly. 
 	208. business_noun   	uxyoga			as	vyApAra		(Suggested by Rajini           17-10-16)
-	209. sugared_UNDEFINED	cInI			as	cInI_yukwa	(Suggested by Chaitanya Sir 		)
+	209. sugared_UNDEFINED	cInI			as	cInI_yukwa	(Suggested by Chaitanya Sir 	       )
+	210. strengthen_verb	Sakwi_baDa		as	majabUwa_kara	(	"	"	       14-08-17) 	
+				Ex: The choice of activities was left to the States/UTs most of whom chose activities that strengthen revenue
+                                    administration but not necessarily helped in moving towards conclusive titling.
+	211. investment_noun   	vinIyukwa_Xana		as	niveSa		(Suggested by Sukhada          28-08-17)
+				Ex: This may be regarded as reinvestment of profits or ploughing back of profits.
+	212. diversity_noun	viBinnawA		as	viviXawA	(Suggested by Chaitanya Sir    25-10-17)
+	213. fixed_adjective	sWira_kI_huI		as	sWira		(	"	"		"      )
+	214. national_adjective	xeSaBakwa		as	rARtrIya	(	"	"		"      )
+	215. profile_noun	pArSva_ciwra		as	varNana		(	"	"		"      )
+	216. innovative_adjective	navIna		as	aBinava		(	"	"	       09-05-18)
+	217. wherever_conjunction	kahIM_BI	as	jahAz_kahIM_BI	(	"	"		"      )
 	
-
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -2407,6 +2577,9 @@ Nandini ji LTRC 	27-11-13)
 	45. light_verb		jal/jala/camaka_uT				(	"	"		  "	)
 	46. place_noun		jagAha						(	"    Rajini		  "	)
 	47. lion_noun		sLha-rASi					(	"	"		  "	)	
+	48. plan_verb		yojanA_wEyAra_kara				(Suggested by Chaitanya Sir 	25-10-17)
+	49. learn_verb		sik						(	"	"		09-05-18)
+	50. lose_verb		ko_xa/k						(   By Shirisha Manju           18-05-18)
 
     7. Removed entry:
        --------------
@@ -2468,7 +2641,13 @@ Nandini ji LTRC 	27-11-13)
 	55. hardened_UNDEFINED      kadA_karanA				(	"	"	"	04-06-16)
  	56. hardening_UNDEFINED     kadA_karanA				(	"	"	"	04-06-16)
 	57. empty_noun		    KAlI_dibbA	(no noun entry in OLD)	(					)
-
+	58. adopted_UNDEFINED	afgIkAra_karanA				(	"	"	"	02-02-18)
+	59. participation_UNDEFINED BAgIxArI				(	"	"	"	12-02-18)
+	60. dishonored_UNDEFINED	apamAniwa_kara			(	"	"	"	16-02-18)
+	61. adopted_UNDEFINED	grahaNa_karanA				(	"	"	"	09-05-18)
+	62. surrendered_UNDEFINED   AwmasamarpaNa_karanA		(	"	"	"	16-05-18)
+	63. topmost_UNDEFINED       sabase_UparI			(	"	"	"	24-05-18)
+	64. posses_verb     raKa_ho/raKa/pAsa_ho/para_niyaNwraNa_raKa	(	"	"	"	   "	)
 
     8. Modified category:
        ------------------
@@ -2513,6 +2692,9 @@ Nandini ji LTRC 	27-11-13)
 	at_the_behest_of	---	(		"		"   )
 	till_after		---	(		"	    21-07-15)	
 	related_to		---	(		"	    13-06-17)
+	in_the_form_of		---	(		"	    02-08-17)
+	in_the_midst_of		---	(		"	    10-05-18) Ex:O descendant of Bharata, at that time Krsna, smiling, in the
+							midst of both the armies, spoke the following words to the grief-stricken Arjuna.
 
 #  Changes in proper_noun-common_noun_compounds.txt 
 #  ================================================
@@ -2625,6 +2807,11 @@ Nandini ji LTRC 	27-11-13)
 	30. Co-scheduling	saha_anusUcana#saha_anusUcana#noun#2#RM	(This entry is not mwe entry. By Roja 03-06-17)
 	31. Fig.		Akqwi.#Akqwi.#noun#2#RM			(	"	"		"	      )
 	32. well_establihed	suprawiRTiwa#suprawiRTiwa#noun#2#RM	(Corrected established spelling and merged this mng in well established										Suggested by Rajini 09-06-17)
+	33. Overdraft		ovaradrAPta#ovaradrAPta#noun#1#RM	(This entry is not mwe entry. By Shirisha Manju 25-10-17)
+	34. Soccer		PutabAla#PutabAla#noun#1#RM		(	"		"		"	  "	)
+	35. americanise		amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM(		"		"	  "     )
+	36. americanize		amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM(		"		"	  "	)	
+
 
     Modified :
     --------
@@ -2717,6 +2904,15 @@ Nandini ji LTRC 	27-11-13)
 	adulterated_food        milAvatI_KAxya_aUZna		as	milAvatI_KAxyAnna				("  "	"	)
 	agricultural_improvement	kqRi_suXAra_aUZnawi	as	kqRi_suXAra_unnawi				("  "	"	)
 	civil_and_session_court	sivila_Ora_sESa_aZsa_UZyAyAlaya	as	sivila_Ora_seSana_nyAyAlaya			("  "	"	)
+	current_assets		cAlU_parisaMpwwiyAM_MswiyAM	as	cAlU_parisaMpwwiyAM		(	By Shirisha Manju 25-10-17)
+	long_term		xIxarkAlika			as	xIrGakAlika			(Suggested by Chaitanya Sir 25-10-17)
+	pros_and_cons   	AgA_pICA			as	Age_pICe			(	"	"	    04-01-18)	
+	after_that      	waxnaMwara			as	waxanaMwara			(	"	"	    11-01-18)
+	pros_and_cons		AgA_pICA			as	Age_pICe			(	"	"	    05-03-18)
+	for_the_time_being      PIlahAla			as	PilahAla			(	"	"	    10-05-18)
+	widely_read		bahuxatiwa			as	bahupaTiwa			(	"	"	    09-08-18)
+		
+
 
     Added new entry:
     ----------------
@@ -3088,11 +3284,28 @@ Nandini ji LTRC 	27-11-13)
                                 Ex: That is why Haridwar is also called the Gate of the Ganges .
 	14. security_guard  	paharexAra		(Suggested by 14anu-ban-01      18-02-15)
 				Ex: The thief broke into the office while his accomplice stalled off the security guard.
-	15. never_mind		koI_bAwa_nahIM		(Suggested by Bhagyashri	(22-07-16)
+	15. never_mind		koI_bAwa_nahIM		(Suggested by Bhagyashri	22-07-16)
 	16. because_of      	ke_kAraNa		(Suggested by Chaitanya sir     07-06-17)
-	17. well_established	suprawiRTiwa		(Suggested by Rajini 		(09-06-17)
+	17. well_established	suprawiRTiwa		(Suggested by Rajini 		09-06-17)
 				(Added this meaning from well_establihed)
-
+	18. stretch_marks	KiMcAva_cihna		(Suggested by Chaitanya sir 	02-08-17)
+	19. in_part		AMSika			(	"	"		25-10-17)
+	20. pros_and_cons   	lABa_va_hAni		(	"	"		04-01-18)
+				Ex: India has to analyze all the pros and cons before giving a green signal.
+	21. after_that		isake_bAxa		(	"	"		11-01-18)
+				Ex: After that they will dispatch the message and wait for the receipt. isake bAxa ve saMxeSa Beja xeMge Ora 
+                                    rasIxa ke lie iMwajAra kareMge.
+	22. long_ago        	bahuwa_samaya_pahale	(       "       "               02-02-18)
+	23. soon_after      	wuranwa_bAxa		(	"	"		05-02-18)
+				Ex: Pandu died soon after Arjun's birth. 
+	24. every_time		jaba_kaBI_BI/jaba_BI	(	"	"		05-02-18)
+				Ex: Every time evil raises its head anywhere on earth, I am reborn in some form to fight it. 
+	25. Your_Majesty	mahAmahima		(Suggested by Chaitanya sir     05-03-18)
+	26. after_that		isake_bAxa		(	"	"		 "	)
+	27. every_time		jaba_kaBI_BI/jaba_BI	(	"	"		 "	)
+	28. long_ago		bahuwa_samaya_pahale	(	"	"		 "	)
+	29. pros_and_cons	lABa_va_hAni		(	"	"		 "	)
+	30. soon_after		wuranwa_bAxa		(	"	"		 "	)
 
    Modifying the head id:
    ---------------------
@@ -3438,6 +3651,7 @@ Nandini ji LTRC 	27-11-13)
 	addition_noun   kA_niyama/SaBuja_kA_niyama 			(Wrongly extracted entry)
 	maxwell-boltzamann_noun mEksavEla-boltSamAna_sAMKyikI		(	"		)	
 	thermodynamic_noun      URmAgawika_wApa				(	"		)
+	twenty-four_UNDEFINED   24	(By Shirisha Manju 25-05-18)
 
    Modified:
    ---------
@@ -3527,7 +3741,7 @@ Nandini ji LTRC 	27-11-13)
 	24. alternating_voltage prawyAvarwI_voltawA#prawyAvarwI_voltawA#noun#2#RM	(	"	"		  "	)
 				Ex: Such a voltage is called  alternating voltage  (ac voltage) and the current driven by it in a circuit is
                                     called the alternating current (ac current).
-	25. average_current	mAXya_XArA #mAXya_XArA #noun#2#RM			(Suggested by 14anu-ban-09      11-04-15)
+	25. average_current	mAXya_XArA#mAXya_XArA#noun#2#RM				(Suggested by 14anu-ban-09      11-04-15)
 				Ex: Thus, the sum of the instantaneous current values over one complete cycle is zero, and the average current
 				    is zero.
 	26. boiling_points	kvaWanAMka#kvaWanAMka#noun#2#WM				(Suggested by 14anu-ban-02      14-04-15)
@@ -3694,7 +3908,11 @@ Nandini ji LTRC 	27-11-13)
 	Egypt	IjIpIWa		as	ijipta			(By Shirisha Manju 	21-10-13)
 	Daisy	xesI		as	dejZI			(Suggested by Chaitanya Sir  03-06-14)
 	Dalhousie	dalahOjZI	as	dalhojI		(Suggested by Chaitanya Sir  03-06-14)
+	mark	niSAna		as	mArka			(	"	"	     25-10-17)
 
+  Added new meaning
+  -----------------
+	b.c.	IsA_pUrva/I.pU.					(Suggested by Chaitanya Sir  05-03-18)
 
 # Changes in kriyA_object_vib.txt
 # ==============================
@@ -3704,7 +3922,6 @@ Nandini ji LTRC 	27-11-13)
    2. ragada  		ko	(Suggested by Sukhada       02-06-14) Ex: Your cat keeps on rubbing itself against my leg. 
    3. preraNA_xe      	ko	(Suggested by Chaitanya Sir 31-08-15) Ex: As a committed educator, he inspired millions of young people to
 									  achieve their very best.
-   4. preriwa_kara    	ko	(	"	"		"   )
 
 # Changes in human.txt
 # ===================
@@ -3917,7 +4134,8 @@ Nandini ji LTRC 	27-11-13)
 	1. following_morning       agalI_subaha#noun#1#RM	as	agalI_subaha#noun#2#RM	    (Suggested by Chaitanya Sir 10-03-15)
 	2. Government_of_India     BArawa_sarakAra#noun#2#RM	as	BArawa_sarakAra#noun#1#RM   (By Manju       13-09-16)
 	3. paper_form      	   kAgaja_rUpa			as	kAgajI_rUpa		    (Suggested by Bhagyashri Kulkarni 16-9-16)
-	4. year_old		   varRIyA			as	varRIya			    (    "             "        "    14-11-16)     
+	4. year_old		   varRIyA			as	varRIya			    (    "             "        "    14-11-16)     	 5. liver_oil       	    eka_prakAra_kI_maCalI_ke_yakqwa_kA_wela  as  yakqwa_kA_wela      (Suggested by Chaitanya Sir 16-06-17)
+	6. fire_pit        	   KulI_havA_meM_agnikuMda	as	agnikuMda		    (	 "		"	   "	)
 
  Modified first meaning:
  -----------------------
@@ -3963,6 +4181,7 @@ Nandini ji LTRC 	27-11-13)
     Added :
 	Heeraben_Modi	hIrAbena_moxI#hIrA_bena_moxI#PropN#2#WM		(By Shirisha Manju )
 	Narendra_Modi's	nareMxra_moxI#nareMxra_moxI#PropN#2#WM  	(By Shirisha Manju )
+	Sri_Krsna	SrIkqRNa#SrIkqRNa#PropN#2#WM			(	"	"  )
 		
 
 # Added new files:

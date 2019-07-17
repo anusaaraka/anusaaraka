@@ -3,6 +3,12 @@
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
+ (deffunction get_no(?node ?o_cat ?m_cat)
+        (bind ?no (sub-string (+ (length ?o_cat) 1 ) (length ?node) ?node ))
+        (bind ?no (explode$ (str-cat ?m_cat ?no)))
+        (bind ?new_no ?no)
+ )
+
  (defglobal ?*count*  = 0)
 
  ;======================================  Modifications for LWG and Order =========================================
@@ -24,7 +30,7 @@
  (Head-Level-Mother-Daughters To|to ? ?TO ?pid)	
  (parserid-word ?pid1 ?head)
  (test (or (eq (- (string_to_integer ?pid)  1)(string_to_integer ?pid1))(eq (- (string_to_integer ?pid) 1) 0)));To counter this force, the child has to apply an external force on the car in the direction of motion.
- (test (eq (member$ ?head (create$ had has have need needs are Are used ought)) FALSE ))
+ (test (eq (member$ ?head (create$ had has have need needs are Are used ought able)) FALSE ))
  ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
  =>
 	(retract ?f ?f0 ?f1 ?f2 ?f3)	 
@@ -61,6 +67,30 @@
         (assert (Node-Category ?toVP  TO_VP))
         (assert (Node-Category ?infVP Inf_VP))
  )
+
+ ; Suggested by Chaitanya Sir
+ ; By getting up early you [will be able to see] these sights. 
+ (defrule modify_ADJP_as_VP
+ (declare (salience 40))
+ ?f<-(Head-Level-Mother-Daughters be ?l ?s $?a ?ADJP) 
+ ?f0<-(Node-Category ?ADJP ADJP)
+ ?f1<-(Head-Level-Mother-Daughters able ?l1 ?ADJP ?JJ ?S)
+ ?f2<-(Node-Category ?S S)
+ ?f4<-(Node-Category ?JJ JJ)
+ ?f3<-(Head-Level-Mother-Daughters to ?l2 ?S ?VP)
+ ?f5<-(Head-Level-Mother-Daughters able ?l3 ?JJ ?id)
+ (Node-Category ?VP VP)
+ =>
+	(retract ?f ?f0 ?f1 ?f2 ?f3 ?f4 ?f5)
+	(bind ?VP1 (get_no ?ADJP ADJP VP))
+	(bind ?MD (get_no ?JJ JJ MD))
+	(assert (Head-Level-Mother-Daughters be ?l ?s $?a ?VP1))
+	(assert (Node-Category ?VP1 VP))
+ 	(assert (Head-Level-Mother-Daughters able ?l1 ?VP1 ?MD ?VP))
+ 	(assert (Head-Level-Mother-Daughters able ?l3 ?MD ?id))
+ 	(assert (Node-Category ?MD MD))
+ )
+
  ;=======================================  Modifications for Pada  ===============================================
  ; Suggested by Chaitanya Sir
  ; Here we remark on two principal thrusts in physics: unification and reduction. 

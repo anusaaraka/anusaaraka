@@ -538,17 +538,33 @@
  (defrule saMjFA_vib_to_saMjFA_samA_vibakthi_rule
  (declare (salience 300))
  (prep_id-relation-anu_ids - saMjFA-saMjFA_samAnAXikaraNa  ?s_id ?sam_id)
- ?f0<-(pada_info (group_head_id ?s_id) (vibakthi ?v))
+ ?f0<-(pada_info (group_head_id ?s_id) (vibakthi ?v)(preposition  ?pid))
  (test (neq ?v 0))
  ?f2<-(pada_control_fact ?sam_id)
  ?f1<-(pada_info (group_head_id ?sam_id)(group_cat PP))
  =>
         (retract ?f2)
-        (modify ?f1 (vibakthi ?v))
-	(modify ?f0 (vibakthi 0))
+        (modify ?f1 (vibakthi ?v)(preposition  ?pid))
+	(modify ?f0 (vibakthi 0)(preposition  0))
         (printout ?*vib_debug_file* "(id-vib-source     "?sam_id"       "?v"  saMjFA_vib_to_saMjFA_samA_vibakthi) " crlf )
  )
 
+ ;---------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 21-07-2018 
+ ;Many [types of proteins and fats] are also found in this.
+ (defrule of_vib_movement_conj
+ (declare (salience 301))
+ (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?h ?id1)
+ (id-root ?h kind|variety|type)
+ (conj_head-left_head-right_head ? ?id1 ?id)
+ ?f0<-(pada_info (group_head_id ?h)(vibakthi ?v) )
+ ?f1<-(pada_info (group_head_id ?id)(vibakthi ?v1))
+ (not (modified_vib ?h))
+ =>
+        (modify ?f0 (vibakthi ?v1) )
+        (modify ?f1 (vibakthi ?v))
+        (assert (modified_vib ?h))
+ )
  ;---------------------------------------------------------------------------------------
  ;Added by Shirisha Manju 16-03-2016 Suggested by Chaitanya Sir
  ;One [kind of response] from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature.

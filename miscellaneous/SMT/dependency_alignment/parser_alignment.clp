@@ -10,6 +10,7 @@
 
 (deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 
+(defglobal ?*left-f* = left)
 
 ;For english parser the case ids are not deleted from group ids 
 (defrule rm_case_rel
@@ -91,7 +92,8 @@
 (anu_id-man_id-src-rule_name ?al ?ml $?)
 (rel_name-grouped_rel_eids ?rel ? $? ?aid $? ?al)
 (rel_name-grouped_rel_hids ? ? $? ?mid $? ?ml)
-(id-word-root-tam ?mid ?w ?r ?)
+(manual_word_info (head_id ?mid) (word ?w) (root ?r))
+;(id-word-root-tam ?mid ?w ?r ?)
 (id-word ?aid ?word)
 (or (word-transliterate_mng ?word ?r)(database_info (components ?r)(group_ids ?aid)))
 (not (anu_cid-man_cid-src-rule_name ? ?mid $?))
@@ -170,9 +172,9 @@
 (defrule get_parser_align_info
 (declare (salience -9))
 (anu_cid-man_cid-src-rule_name ?aid ?mid $?)
-(id-Apertium_output ?aid $?amng)
+?f0<-(id-Apertium_output ?aid $?amng)
 (id-grp_type-ids ?mid ? $?ids)
-?f0<-(manual_word_info (group_ids $?d ?mid $?d1))
+(manual_word_info (group_ids $?d ?mid $?d1))
 =>
         (retract ?f0)
 ;        (assert (parser_align (anu_id ?aid)(man_id ?mid)(anu_meaning $?amng)(man_meaning @h: ?mid)))
@@ -183,8 +185,8 @@
 (defrule get_parser_align_info1
 (declare (salience -10))
 (anu_cid-man_cid-src-rule_name ?aid ?mid $?)
-(id-Apertium_output ?aid $?amng)
-?f0<-(manual_word_info (group_ids $?d ?mid $?d1))
+?f0<-(id-Apertium_output ?aid $?amng)
+(manual_word_info (group_ids $?d ?mid $?d1))
 =>
         (retract ?f0)
         (assert (parser_align (anu_id ?aid)(man_id ?mid)(anu_meaning $?amng)(man_meaning @h: ?mid)))
@@ -194,11 +196,14 @@
 (declare (salience -11))
 (anu_cid-man_cid-src-rule_name ?aid ?mid $?)
 (not (id-Apertium_output ?aid $?amng))
-?f0<-(manual_word_info (head_id ?h) (group_ids $?d ?mid $?d1))
+(manual_word_info (head_id ?h) (group_ids $?d ?mid $?d1))
+(not (got_align ?aid ?mid))
+(not (parser_align (anu_id ?aid) (man_id ?mid)))
 =>
-        (retract ?f0)
+;        (retract ?f0)
 ;        (assert (parser_align (anu_id ?aid)(man_id ?mid)(anu_meaning -)(man_meaning @h: $?d ?mid $?d1)))
         (assert (parser_align (anu_id ?aid)(man_id ?mid)(anu_meaning -)(man_meaning @h: ?mid)))
+	(assert (got_align ?aid ?mid))
 )
 ;-----------------------------------------------------------------------------------
 (defrule replace_id_with_word_for_nos
@@ -242,19 +247,109 @@
 (declare (salience -610))
 (parser_align (anu_id ?aid)(man_id ?mid))
 ?f0<-(manual_word_info (group_ids $?p ?mid $?p1))
+?f1<-(hindi_id_order $?a ?aid $?a1)
 =>
-	(retract ?f0)
+	(retract ?f0 ?f1)
 	(bind ?*count* (+  ?*count* 1))
+	(assert (hindi_id_order $?a $?a1))
 )
 
+(defrule rm_aligned_facts1
+(declare (salience -611))
+(parser_align (anu_id ?aid) (man_id ?mid))
+(id-grp_type-ids ?mid aux|case ?mid $?p ?id $?p1)
+?f0<-(manual_word_info (group_ids $?p ?id $?p1))
+=>
+        (retract ?f0)
+        (bind ?*count* (+  ?*count* 1))
+)
 
 (defrule get_left_over_wrd_info
-(declare (salience -620))
+(declare (salience -615))
 ?f0<-(manual_word_info (head_id ?id))
+(not (got_left_id ?id))
 =>
-	(retract ?f0)
 	(bind ?*p_lids* (create$  ?*p_lids* ?id))
 	(bind ?*count* (+  ?*count* 1))
+	(assert (got_left_id ?id))
+)
+
+(defrule ctrl_fact_to_print_info
+(declare (salience -617))
+(hindi_id_order)
+=>
+	(if (eq (length ?*p_lids*) 0) then
+		(assert (dont_print))
+	)
+)
+
+(defrule get_left_over_ids_fact
+(declare (salience -620))
+(not (dont_print))
+=>
+	(bind ?*p_lids* (sort > (create$ ?*p_lids*)))
+	(assert (left_over_ids ?*p_lids*))
+	(printout ?*left-f* "  Parser Alignment info :  " crlf )
+	(printout ?*left-f* "  --------------------------- " crlf )
+	(if (neq (length ?*p_lids*) 0) then
+		(printout ?*left-f* " Un-assigned Hindi words:  " )		
+	)
+)
+
+(defrule print_single_wrd
+(declare (salience -621))
+?f0<-(left_over_ids ?id)
+(manual_word_info (head_id ?id) (word $?mng)(vibakthi_components ?v $?vib) )
+=>
+        (retract ?f0)
+        (if (eq ?v 0) then
+                (printout ?*left-f* (wx_utf8 (implode$ (create$ $?mng))) crlf)
+        else
+                (printout ?*left-f* (wx_utf8 (implode$ (create$ $?mng ?v $?vib))) crlf)
+        )
+)
+
+(defrule print_left_over_wrds
+(declare (salience -622))
+?f0<-(left_over_ids ?id $?p ?lid)
+(manual_word_info (head_id ?id) (word $?mng)(vibakthi_components ?v $?vib))
+(not (left_over_ids ?))
+=>
+        (retract ?f0)
+        (if (eq ?v 0) then
+                (printout ?*left-f*  (str-cat (wx_utf8 (implode$ (create$ $?mng))) ", ") )
+        else
+                (printout ?*left-f* (str-cat (wx_utf8 (implode$ (create$ $?mng ?v $?vib))) ", "))
+        )
+        (assert (left_over_ids $?p ?lid))
+)
+
+(defrule print_eng_info
+(declare (salience -623))
+(hindi_id_order ?id $?)
+(not (eng_msg_printed))
+=>
+       (printout ?*left-f* " Un-assigned English words:  " )
+       (assert (eng_msg_printed))
+)
+;---------------------------------------------------------------------------------
+(defrule print_eng_left_over
+(declare (salience -624)) 
+?f0<-(hindi_id_order ?id )
+(id-word ?id ?word)
+=>
+        (retract ?f0)
+        (printout ?*left-f* ?word crlf)
+)
+;---------------------------------------------------------------------------------
+(defrule print_eng_left_over1
+(declare (salience -625)) 
+?f0<-(hindi_id_order ?id $?p ?lid)
+(id-word ?id ?word)
+=>
+        (retract ?f0)
+        (printout ?*left-f* ?word ", " )
+        (assert (hindi_id_order $?p ?lid))
 )
 
 (defrule print_word_info

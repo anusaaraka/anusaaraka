@@ -34,9 +34,9 @@ char buffer[BUFFER_SIZE];
 
 //Added below variables by Roja
 char input_line [10000];
-int word_count=0, offset_count=0, flag=0;
-int word_id[1000], offset_no[1000];
-
+int word_count=0, offset_count=0, flag=0, mul_count=0;
+int word_id[1000], offset_no[1000], mul_id[1000];
+FILE *fp1;
 #define PATTERN_COUNT (sizeof(sample_patterns)/sizeof(AC_PATTERN_t))
 
 /***********************************************************************/
@@ -61,6 +61,7 @@ void replace_space_with_underscore(char inp_text[10000])
    char *p, str[1000], *p1;
    int j=0, len1=0;
    word_count=1;
+   mul_count=1;
    p1=inp_text;
    while(1)
     {
@@ -73,17 +74,25 @@ void replace_space_with_underscore(char inp_text[10000])
 	   offset_count=strlen(inp_text)-strlen(p)+1;
 
            //calling function check_for_punctuation()
-//           check_for_punctuation(str);
-//           if(flag==1) {
+           check_for_punctuation(str);
+           if(flag==1) {
            offset_no[j]=offset_count;
 	   word_id[j]=word_count;
+	   mul_id[j] = mul_count;
+ 	   fprintf(fp1, "(multifast_id-wordid\tM%d\t%d)\n", word_count, mul_count);
 //	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
-	   word_count++; }
-//        }
+	   word_count++; mul_count++;}
+	   else {
+		 offset_no[j]=offset_count;
+	         word_id[j]=word_count;
+	   	 mul_id[j] = mul_count;
+		 word_count++; j++;
+        }}
 	else
 	{
 	   word_count++;
+	   mul_count++;
            break;
 	}
     }
@@ -150,7 +159,7 @@ for (j=0; j < matchp->match_num; j++) { //(Added below code by Roja.)
                 for(i=atoi(id_count); i>=1; i--) {
 //			printf("%d-%d\n", word_ids,i);
                         final_ids=word_ids-i+1;
-                        printf(" P%d ", final_ids);
+                        printf(" M%d ", final_ids);
                 }
 
                 printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);
@@ -219,6 +228,7 @@ int main (int argc, char ** argv)
 
         fp = fopen(argv[1], "r");
         if(fp == NULL) printf("File Couldn't Open\n");
+	fp1 = fopen(argv[2], "w");
 
         input_line[0]='_';  tolower_input_line[0]='_';
         while(getline(&line, &len, fp)!=-1)
@@ -287,6 +297,7 @@ int main (int argc, char ** argv)
 
 
     printf(";~~~~~~~~~~\n"); //Added by Roja
+    fprintf(fp1, ";~~~~~~~~~~\n"); //Added by Roja
     }
     
 //    printf ("found %d occurrence in the beginning %d bytes\n", my_param.match_count, my_param.position);

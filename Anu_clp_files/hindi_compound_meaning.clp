@@ -98,8 +98,10 @@
  ?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $? ?id $? ?mng ?head_id ?grp_cat ?mng_typ ?)
  (root-verbchunk-tam-chunkids   ?pada_head  ?chunk  ?tam  $? ?id )
  (test (neq ?chunk is_said_to_be))
+ (id-root ?id ?root)
  =>
         (retract ?f0)
+	(printout t "Warning: Verb Compound Meaning " ?root " " ?mng crlf)
  )
  ;-------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (30-07-13)
@@ -147,8 +149,9 @@
         (retract ?f)
 	(bind ?src (str-cat ?type "_WSD_compound_phrase_word_mng"))
         (print_hindi_mng ?id -  ?src $?ids)
+	(bind $?ids (sort > (create$  ?id $?ids)))
         (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    "?src")" crlf)
-        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?src"  "?id" "(implode$ $?ids)")" crlf)
+        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?src"  "(implode$ $?ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -163,8 +166,9 @@
         (retract ?f)
         (bind ?src (str-cat ?type "_WSD_compound_phrase_root_mng"))
         (print_hindi_mng ?id -  ?src $?ids)
+	(bind $?ids (sort > (create$  ?id $?ids)))
         (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    "?src")" crlf)
-        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?src"  "?id" "(implode$ $?ids)")" crlf)
+        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?src"  "(implode$ $?ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -210,8 +214,9 @@
  =>
         (retract ?f)
         (print_hindi_mng ?id -  WSD_compound_phrase_word_mng $?ids)
+	(bind $?ids (sort > (create$  ?id $?ids)))
         (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng)" crlf)
-        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
+        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -223,8 +228,9 @@
  =>
         (retract ?f)
         (print_hindi_mng ?id -  WSD_compound_phrase_root_mng $?ids)
+	(bind $?ids (sort > (create$  ?id $?ids)))
         (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng)" crlf)
-        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
+        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------

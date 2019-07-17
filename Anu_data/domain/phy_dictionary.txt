@@ -666,7 +666,6 @@ triode_UNDEFINED	trAyoda
 trivalent_UNDEFINED	wrisaMyojaka/wrisaMyojI
 trough_noun	garwa
 turbulence_noun	prakRoBa
-twenty-four_UNDEFINED	24
 twist_noun	vyAvarwana/EMTanaxXa
 typical_adjective	prArUpika
 unaccelerated_verb	awvariwa

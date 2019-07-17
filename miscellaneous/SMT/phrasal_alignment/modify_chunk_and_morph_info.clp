@@ -4,22 +4,55 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
-
 ;============================================== Modify Morph root ==========================
+;(defrule get_morph_fact_for_chandrabinxu
+;(declare (salience 1000))
+;?f<-(man_word-root-cat  ?mng ?mng  dummy_cat)
+;(test (eq (numberp ?mng) FALSE))
+;(test (neq (str-index "yAM" ?mng) FALSE))
+;=>
+;	(bind ?n (str-cat (sub-string 1 (- (str-index "yAM" ?mng) 1) ?mng) "yAz"))
+;	(assert (morph_word ?n))
+;	(bind ?o (type (system "grep \"^mUrwiyAz\" $HOME_anu_test/new_hnd_mo/hi_expanded")))
+;	(printout t (type ?n) " "(type ?o)crlf)
+;;	(printout t (sub-string (+ (str-index ":" ?o) 1) (str-index "<" ?o) ?o) crlf)
+;)
+
+;isameM yaha ulleKa hE ki manuRya ko cAhie ki vaha SrIkqRNa ke Bakwa kI sahAyawA se saMvIkRaNa karawe hue BagavaxgIwA kA aXyayana kare Ora svArWa preriwa vyAKyAoM ke binA use samaJane kA prayAsa kare. 
+(defrule get_kare_root
+?f<-(man_word-root-cat  kare kare  dummy_cat)
+=>
+	(retract ?f)
+	(assert (man_word-root-cat  kare kara  modified_cat))
+)
+
+(defrule get_kisI_root
+?f<-(man_word-root-cat kisI kisI dummy_cat)
+=>
+	(retract ?f)
+	(assert (man_word-root-cat kisI koI modified_cat))
+)
+
 (defrule get_pronoun_root
-?f<-(man_word-root-cat  ?word&yahIM|yahI|inhIM|wumane|isI ?word  dummy_cat)
+?f<-(man_word-root-cat  ?word&yahIM|yahI|inhIM|wumane|isI|vahIM|usI ?word  dummy_cat)
 =>
 	(retract ?f)
 	(if (eq ?word wumane) then
+		(assert (man_word-root-cat ?word wuma modified_cat))
 		(assert (man_word-root-cat ?word wU modified_cat))
 	else
+             (if (eq (integerp (member$ ?word (create$ vahIM usI))) TRUE) then
+		(assert (man_word-root-cat ?word vaha modified_cat))
+	     else
 		(assert (man_word-root-cat ?word yaha modified_cat))
+	    )
 	)
 )
 ;-------------------------------------------------------------------------------------
 ;saxiSoM ==> saxiSa      kareM ==> kara 
 (defrule modify_morph_root
 ?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+(test (neq (numberp ?word) TRUE))
 (test (or (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "oM")(eq (sub-string (- (length ?word) 1) (length ?word) ?word) "eM")))
 =>
         (retract ?f)
@@ -38,6 +71,7 @@
 (defrule modify_morph_root1
 (declare (salience 1100))
 ?f0<-(man_word-root-cat  ?word  ?word       dummy_cat)
+(test (neq (numberp ?word) TRUE))
 (test (eq (sub-string (- (length ?word) 3) (length ?word) ?word) "ezge"))
 =>
         (retract ?f0)
@@ -52,6 +86,7 @@
 (defrule modify_morph_root2
 (declare (salience 1100))
 ?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+(test (neq (numberp ?word) TRUE))
 (test (or (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "Aez")(eq (sub-string (- (length ?word) 2) (length ?word) ?word) "AoM")(eq (sub-string (- (length ?word) 2) (length ?word) ?word) "AeM")))
 =>
         (retract ?f)
@@ -73,17 +108,23 @@
 )
 
 ;-------------------------------------------------------------------------------------
-;kaBI-kaBI hamArI kuCa Ese ajanabiyoM se mulAkAwa ho jAwI hE jinameM hameM eka Sabxa bAwacIwa ke binA BI pahale pala se hI xilacaspI pExA ho jAwI hE .
-;ajanabiyoM => ajanabi
-;(defrule modify_morph_root3
-;(declare (salience 1100))
-;?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
-;(test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "yoM"))
-;=>
-;        (retract ?f)
-;        (bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 4) ?word) "I" )))
-;        (assert (man_word-root-cat ?word ?root modified_cat))
-;)
+(defrule modify_morph_root3
+(declare (salience 1100))
+?f<-(man_word-root-cat  naI   naI adj)
+=>
+        (retract ?f)
+        (assert (man_word-root-cat naI nayA modified_cat))
+)
+
+(defrule modify_morph_root4
+(declare (salience 1100))
+?f<-(man_word-root-cat hUM hUM dummy_cat)
+=>
+        (retract ?f)
+	(assert (man_word-root-cat hUM ho modified_cat))
+)
+
+
 
 ;kyA howA hE , jaba kisI vyakwi ko eca.AI.vI. saMkramaNa ho jAwA hE ?
 (defrule modify_abbr_root
@@ -93,12 +134,19 @@
 (test (eq (numberp ?w) FALSE))
 (test (neq (str-index "." ?w) FALSE))
 (test (eq (string-to-field (sub-string 1 (- (str-index "." ?w) 1) ?w)) ?word))
+(not (man_word-root-cat ?w ?w modified_cat))
 =>
         (retract ?f)
         (assert (man_word-root-cat ?w ?w modified_cat))
 )
-
-
+; BAga [2].
+(defrule get_default_root
+(declare (salience -1))
+(manual_id-word ? ?w&~.)
+(not (man_word-root-cat ?w $?))
+=>
+	(assert (man_word-root-cat ?w ?w dummy_cat))
+)
 
 ;==================================== Modify chunk info ==================================
 
@@ -116,11 +164,11 @@
 ;Scalars can be added, subtracted, multiplied and divided just as the ordinary numbers.
 ;axiSoM ko hama TIka vEse hI joda sakawe hEM, GatA sakawe hEM, guNA yA [BAga kara sakawe hEM jEsA] ki hama sAmAnya safKyAoM ke sAWa karawe hEM .
 ;The word Science originates from the Latin verb Scientia meaning 'to know'.
-;
+;vitAmina-e se BarapUra AhAra [lenA BI] AzKoM ko svasWa banAe raKane meM maxaxagAra sAbiwa ho sakawA hE  .
 (defrule rm_mng_after_hE_from_verb_chunk
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNF|VGNN $?pre ?mid ?lid)
 (manual_word_info (group_ids $? ?mid $?))
-(manual_id-word ?mid  hE|hEM|lie|karake|xeMge|karane)
+(or (manual_id-word ?mid  hE|hEM|lie|karake|xeMge|karane)(manual_id-word ?lid ?w&BI|wo|he))
 ;(manual_word_info (head_id ?mid) (word $? hEM|gaI))
 =>
         (retract ?f)
@@ -133,12 +181,14 @@
 ;if first mng is aux and already one more aux present then remove the first aux
 ;Ex: huI prawIwa howI hE  ==> prawIwa howI hE
 ; kala ravivAra [hogA, hE] nA ? [hogA, hE] ==> [hogA] [hE]
+;guda kolestroYla kA 50 se kama honA Ora bEda kolestroYla kA 100 se aXika [honA KawaranAka hE]. [honA] [KawaranAka hE]
 (defrule rm_first_aux_mng_from_verb_chunk
-?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid)
+?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN ?fid $?pre ?mid)
 (manual_id-word ?mid  hE|hEM)
 ;?f<-(chunk_name-chunk_ids ?chnk&VGF ?fid $?pre ?mid ?lid)
 ;(manual_word_info (head_id ?mid) (word $? howI|howA $?))
-(manual_word_info (head_id ?fid) (word hogA ))
+(or (manual_word_info (head_id ?fid) (word hogA|honA|huA ))
+    (and (manual_id-word ?fid ?w)(test (eq (sub-string 1 1 ?w) "@"))))
 =>
         (retract ?f)
 ;        (assert (chunk_name-chunk_ids ?chnk  $?pre ?mid ?lid))
@@ -224,6 +274,7 @@
 ?f0<-(man_word-root-cat ?m1 ?root1 ?)
 ?f1<-(man_word-root-cat ?m2 ?root2 ?c)
 (test (and (eq (string-to-field (sub-string 1  (- (str-index "-" ?mng) 1) ?mng)) ?m1)(eq (string-to-field (sub-string (+ (str-index "-" ?mng) 1) (length ?mng) ?mng)) ?m2)))
+(not (man_word-root-cat ?mng $?))
 =>
 	(retract ?f0 ?f1)
 	(bind ?r (string-to-field (str-cat ?root1"-"?root2)))

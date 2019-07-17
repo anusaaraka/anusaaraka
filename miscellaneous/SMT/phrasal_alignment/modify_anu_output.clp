@@ -29,6 +29,7 @@
  (declare (salience 2000))
  ?f<-(id-Apertium_output ?a_id $?a_grp)
  (not (id_aper_op_modified ?a_id))
+ (test (eq (member$ @SYMBOL-@SLASH (create$ $?a_grp)) FALSE))
  =>
         (retract ?f)
         (bind ?a_op "")

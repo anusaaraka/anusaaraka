@@ -1,4 +1,4 @@
-
+; Modified 'puraka' as 'pUraka' by Shirisha Manju 02-08-2017 
 (defrule supplement0
 (declare (salience 5000))
 (id-root ?id supplement)
@@ -6,9 +6,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id puraka))
+(assert (id-wsd_root_mng ?id pUraka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  supplement.clp 	supplement0   "  ?id "  puraka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  supplement.clp 	supplement0   "  ?id "  pUraka )" crlf))
 )
 
 (defrule supplement1

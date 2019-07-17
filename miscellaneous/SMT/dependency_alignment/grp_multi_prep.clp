@@ -3,27 +3,18 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(slot tam (default 0))(multislot tam_components (default 0))(multislot group_ids (default 0)))
 
-;==================== to generate hindi parser debug info ==========================
 
-(defrule get_hnd_rel_root_wrd
-(declare (salience 1001))
-(relation_name-rel_ids root 0 ?id)
-(manual_id-word ?id ?w)
-(not (got_wrd ?id ?w))
-=>
-        (printout ?*hin_p_wrd* "(hnd_rel_name-h_wrd-c_wrd       root            0               "?w " )" crlf)
-        (assert (got_wrd ?id ?w))
-)
-
-(defrule get_hnd_rel_wrds
-(declare (salience 1000))
-(relation_name-rel_ids ?rel ?id ?id1)
-(manual_id-word ?id ?w)
-(manual_id-word ?id1 ?w1)
-(not (got_wrd ?id1 ?w1))
-=>
-        (printout ?*hin_p_wrd* "(hnd_rel_name-h_wrd-c_wrd       "?rel"          "?w"            "?w1" )" crlf)
-        (assert (got_wrd ?id1 ?w1))
+(deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 
 ;======================= group and modify prep rels ===========================
@@ -109,7 +100,7 @@
         (retract ?f0 ?f1)
         (assert (hnd_rel_name-h_id-c_ids ?id ?rel $?p - ?in ?h $?ids))
 )
-
+;---------------------------------------------------------------------------
 (defrule grp_case
 (declare (salience 901))
 ?f<-(relation_name-rel_ids ?r ?id ?n)
@@ -124,7 +115,40 @@
 		(assert (hnd_rel_name-h_id-c_ids ?prep ?r ?prep - ?id ?n ?prep))
 	)
 )
-
+;---------------------------------------------------------------------------
+(defrule grp_case1
+(declare (salience 900))
+?f<-(hnd_rel_name-h_id-c_ids ?h ?r $?ids - ?id ?n $?ids)
+?f0<-(relation_name-rel_ids case ?n ?prep)
+=>
+        (retract ?f ?f0)
+        (bind ?*prep_lst* (create$ ?*prep_lst* ?prep))
+	(bind $?ids (sort > (create$ $?ids ?prep)))
+       	(assert (hnd_rel_name-h_id-c_ids ?prep ?r $?ids - ?id ?n $?ids))
+)
+;---------------------------------------------------------------------------
+;isa Jagade ke PalasvarUpa xrupaxa ne eka mahAna yajFa sampanna kiyA jisase use eka EsA puwra prApwa [hone] [kA] varaxAna milA jo xroNAcArya kA vaXa kara sake
+(defrule grp_mark
+(declare (salience 900))
+?f<-(relation_name-rel_ids ?r ?id ?n)
+?f0<-(relation_name-rel_ids mark ?n ?prep)
+(manual_id-word ?prep ?p&kA|kI|ke|meM|vAlA)
+=>
+        (retract ?f ?f0)
+        (bind ?*prep_lst* (create$ ?*prep_lst* ?prep))
+        (assert (hnd_rel_name-h_id-c_ids ?prep ?r ?prep - ?id ?n ?prep))
+)
+;---------------------------------------------------------------------------
+; ... unake piwA ...
+(defrule grp_pronoun_case
+(declare (salience 900))
+?f<-(relation_name-rel_ids ?r ?id ?n)
+(manual_id-word ?n ?p&unakA|unake|usakA|usake|isakA|isake)
+=>
+	(retract ?f)
+        (assert (hnd_rel_name-h_id-c_ids ?n ?r kA - ?id ?n))
+)	
+;---------------------------------------------------------------------------
 (defrule def_rel
 (declare (salience 850))
 ?f0<-(relation_name-rel_ids ?rel ?id ?id1)
@@ -156,4 +180,105 @@
 	(assert (id-grp_type-ids ?id1 case ?id1 $?v))
 	(assert (got_ids ?id))
 )
+
+;============================= debug info ================================
+(defrule cp_ids_fact_for_wrd_fact
+(declare (salience -10))
+(hnd_rel_name-h_id-c_ids ?id ?rel - ?h ?c)
+(not (hnd_rel_name-h_wrd-c_wrd ?id $?))
+(not (got_printed ?id))
+=>
+	(assert (hnd_rel_name-h_wrd-c_wrd ?id ?rel - ?h - ?c))
+)
+
+
+(defrule cp_ids_fact_for_wrd_fact1
+(declare (salience -10))
+(hnd_rel_name-h_id-c_ids ?id ?rel $?ids - ?h ?c $?ids)
+(id-grp_type-ids ?c ? ?c $?ids)
+(not (hnd_rel_name-h_wrd-c_wrds ?id $?))
+(not (got_printed ?id))
+=>
+        (assert (hnd_rel_name-h_wrd-c_wrd ?id ?rel $?ids - ?h  - ?c $?ids))
+)
+
+
+(defrule replace_word_for_nos
+(declare (salience -11))
+?f<-(hnd_rel_name-h_wrd-c_wrd ?id ?rel $?d ?id1 $?d1)
+?f1<-(manual_id-word ?id1 ?mng)
+(test (numberp ?mng))
+=>
+        (retract ?f) 
+        (bind ?mng1 (string-to-field (str-cat @ ?mng)))
+        (assert (hnd_rel_name-h_wrd-c_wrd ?id ?rel $?d ?mng1 $?d1))
+)
+
+(defrule replace_words
+(declare (salience -11))
+?f<-(hnd_rel_name-h_wrd-c_wrd ?id ?rel $?d ?id1 $?d1)
+(manual_id-word ?id1 ?wrd)
+=>
+        (retract ?f )
+        (assert (hnd_rel_name-h_wrd-c_wrd ?id ?rel $?d ?wrd $?d1))
+)
+
+(defrule modify_rel_name_with_:
+(declare (salience -12))
+?f<-(hnd_rel_name-h_id-c_ids ?id ?rel $?v - $?p)
+(hnd_rel_name-h_wrd-c_wrd ?id ?rel $?vib - $? - $?)
+(not (hnd_rel_name-h_id-c_ids ?id ?rel $?vib - $?p))
+=>
+	(retract ?f)
+	(assert (hnd_rel_name-h_id-c_ids ?id ?rel $?vib - $?p))
+)
+
+(defrule print_word_file
+(declare (salience -13))
+?f0<-(hnd_rel_name-h_wrd-c_wrd ?id ?rel $?mng - $?in -  $?mng1)
+(not (hnd_rel_name-h_wrd-c_wrd ?id1&:(< ?id1 ?id) $?))
+=>
+        (retract ?f0 )
+        (if (or (eq (sub-string 1 4 ?rel) "nmod") (eq (sub-string 1 4 ?rel) "amod")(eq (sub-string 1 4 ?rel) "conj")) then
+                (if (and (neq (length $?mng) 0) (> (length $?mng) 1)) then
+                        (bind ?new_mng (implode$ (remove_character " " (implode$ (create$  ?mng)) "_")))
+                        (bind ?new_mng (str-cat ?rel":"?new_mng))
+                else
+                        (if (eq (length $?mng) 1) then
+                                (bind ?new_mng (str-cat ?rel":"(implode$ ?mng)))
+                        else
+                                (bind ?new_mng ?rel)
+                        )
+                )
+                (printout ?*hin_p_wrd* "(hnd_rel_name-h_wrd-c_wrd      "?new_mng"      "(implode$ $?in)"       "(implode$ $?mng1) " )" crlf)
+        else
+                (printout ?*hin_p_wrd* "(hnd_rel_name-h_wrd-c_wrd      "?rel"    "(implode$ $?in)"       "(implode$ $?mng1) " )" crlf)
+        )
+	(assert (got_printed ?id))
+)
+
+(defrule print_id_file
+(declare (salience -14))
+?f0<-(hnd_rel_name-h_id-c_ids ?id ?rel $?mng - $?ids)
+(not (got_id ?id))
+=>
+        (retract ?f0 )
+        (if (or (eq (sub-string 1 4 ?rel) "nmod") (eq (sub-string 1 4 ?rel) "amod")(eq (sub-string 1 4 ?rel) "conj")) then
+                (if (and (neq (length $?mng) 0) (> (length $?mng) 1)) then
+                        (bind ?new_mng (implode$ (remove_character " " (implode$ (create$  ?mng)) "_")))
+                        (bind ?new_mng (string-to-field(str-cat ?rel":"?new_mng)))
+                else
+                        (if (eq (length $?mng) 1) then
+                                (bind ?new_mng (string-to-field(str-cat ?rel":"(implode$ ?mng))))
+                        else
+                                (bind ?new_mng ?rel)
+                        )
+                )
+		(assert (hnd_rel_name-h_id-c_ids ?id ?new_mng -  $?ids))
+        else
+		(assert (hnd_rel_name-h_id-c_ids ?id ?rel -  $?ids))
+        )
+        (assert (got_id ?id))
+)
+
 

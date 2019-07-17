@@ -1,21 +1,28 @@
-parser_path=$HOME/hindi-parsers/parsito
-
+parser_path=$HOME/hindi-parsers/nsdp-cs
 cd $1
 
-python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/group_hyphen_wrds.py  $2 > il_parser_grouped_out
+python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_relations.py $2 $3
 
-utf8_wx il_parser_grouped_out > il_parser_grouped_wx_out
-
-$HOME_anu_test/miscellaneous/SMT/dependency_alignment/mapping-hindi_rel-univ_rel.out < il_parser_grouped_wx_out > il_parser_mapped_rel.txt
-
-awk '{print $1,$2,$3,$4,$5,$7,$8}' il_parser_grouped_wx_out > il_parser_without_morph_tmp.txt
-sed 's/ /\t/g' il_parser_without_morph_tmp.txt | sed 's/^\t//g' > il_parser_without_morph.txt
-
-rm il_parser_without_morph_tmp.txt
-
-python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_relations.py il_parser_mapped_rel.txt hnd_parser_relns.txt
-
-python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_root_and_tam_info.py il_parser_grouped_wx_out hnd_root_and_tam_info.txt
+##########################################
+#parser_path=$HOME/hindi-parsers/parsito
+#
+#cd $1
+#
+#python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/group_hyphen_wrds.py  $2 > il_parser_grouped_out
+#
+#utf8_wx il_parser_grouped_out > il_parser_grouped_wx_out
+#
+#$HOME_anu_test/miscellaneous/SMT/dependency_alignment/mapping-hindi_rel-univ_rel.out < il_parser_grouped_wx_out > il_parser_mapped_rel.txt
+#
+#awk '{print $1,$2,$3,$4,$5,$7,$8}' il_parser_grouped_wx_out > il_parser_without_morph_tmp.txt
+#sed 's/ /\t/g' il_parser_without_morph_tmp.txt | sed 's/^\t//g' > il_parser_without_morph.txt
+#
+#rm il_parser_without_morph_tmp.txt
+#
+#python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_relations.py il_parser_mapped_rel.txt hnd_parser_relns.txt
+#
+#python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_root_and_tam_info.py il_parser_grouped_wx_out hnd_root_and_tam_info.txt
+##########################################
 
 # to generate parsito input
 #$HOME_anu_test/miscellaneous/SMT/dependency_alignment/mapping-hindi_pos-univ_pos.out < pos.txt  > dep_hin_pos.txt
