@@ -96,16 +96,40 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cons
+ (declare (salience 102))
  ?f<-(Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN ?POS $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
  ?f2<-(Head-Level-Mother-Daughters ?pos&'s|' ?lvl1 ?POS ?child)
  (Node-Category	?POS	POS|NNS|NN|CD|NNP)
   =>
   	(retract ?f ?f1 ?f2)
-        (bind ?noun (explode$ (str-cat ?noun ?pos)))
-	(bind ?head (sym-cat ?h ?pos))
-        (assert (Head-Level-Mother-Daughters ?head ?lvl1 ?NN ?noun))
-  	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NN $?post))
+        (bind ?new_noun (explode$ (str-cat ?noun ?pos)))
+	(bind ?new_head (sym-cat ?h ?pos))
+        (assert (Head-Level-Mother-Daughters ?new_head ?lvl1 ?NN ?new_noun))
+  	(assert (Head-Level-Mother-Daughters ?new_head ?lvl ?Mot $?pre ?NN $?post))
+ 	(assert (id-Modified_id ?noun ?new_noun))
+	(assert (id-Modified_word ?noun ?new_head))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;mapping 's word using constituency
+ ;Written by Roja(31-07-19)
+ ;Ex: This book is [Rama's]
+ ;Note: In above sentence parserid-wordid mapping fails. So as per Chaitanya Sir suggestion added this rule using constituency info
+ ;**Note**: Sir also suggested whole file need to be modified using Constituency info instead of dependency
+ (defrule map_wrd_using_POS_info
+ (declare (salience 101))
+ (id-Modified_id ?pid ?mid)
+ (id-Modified_word ?pid ?mw)
+ ?f1<-(parserid-word ?pid ?w)
+ ?f2<-(id-sd_cat ?pid ?cat)
+ ?f3<-(parser_numeric_id-word ?id ?w)
+ ?f4<-(parser_numeric_id-word =(+ ?id 1) ?wrd&'s|')
+ (test (eq (string_to_integer ?pid) ?id));
+=>
+	(retract ?f1 ?f2 ?f3 ?f4)
+	(printout ?*nid_wrd_fp* "(parser_numid-word-remark  " ?id "  "?mw "  "?wrd ")" crlf)
+        (printout ?*l_wrd_fp* "(parserid-word  "?mid "  "?mw ")" crlf)
+        (printout ?*l_cat_fp* "(id-sd_cat  "?mid "  "?cat ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_ner
