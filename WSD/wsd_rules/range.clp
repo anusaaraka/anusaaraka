@@ -121,9 +121,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id paMkwi_SrqMKalA))
+(assert (id-wsd_root_mng ?id paMkwi_SqMKalA)) ;Modified spelling SrqMKalA to SqMKalA by Roja(06-08-19). Suggested by Chaitanya Sir
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  range.clp 	range_default-rule   "  ?id "  paMkwi_SrqMKalA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  range.clp 	range_default-rule   "  ?id "  paMkwi_SqMKalA )" crlf))
 )
 
 ;"range","VTI","1.kawAra_meM_bAzXanA"

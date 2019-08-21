@@ -33,21 +33,25 @@
 	(assert (man_word-root-cat kisI koI modified_cat))
 )
 
+;Removed isI, yahIM , yahI, inhIM, vahIM, usI from ?word variable. Suggested by Chaitanya Sir(21-08-19)
+;[isI] waraha kA eka sarvamAnya sixXAMwa, pleta vivarwanika kA sixXAMwa hE.
+;isI = isa + hI
 (defrule get_pronoun_root
-?f<-(man_word-root-cat  ?word&yahIM|yahI|inhIM|wumane|isI|vahIM|usI ?word  dummy_cat)
+?f<-(man_word-root-cat  ?word&wumane ?word  dummy_cat)
 =>
 	(retract ?f)
 	(if (eq ?word wumane) then
 		(assert (man_word-root-cat ?word wuma modified_cat))
 		(assert (man_word-root-cat ?word wU modified_cat))
-	else
-             (if (eq (integerp (member$ ?word (create$ vahIM usI))) TRUE) then
-		(assert (man_word-root-cat ?word vaha modified_cat))
-	     else
-		(assert (man_word-root-cat ?word yaha modified_cat))
-	    )
 	)
 )
+;Commented below code by Removing above list
+;	else
+;             (if (eq (integerp (member$ ?word (create$ vahIM usI))) TRUE) then
+;		(assert (man_word-root-cat ?word vaha modified_cat))
+;	     else
+;		(assert (man_word-root-cat ?word yaha modified_cat))
+;	    )
 ;-------------------------------------------------------------------------------------
 ;saxiSoM ==> saxiSa      kareM ==> kara 
 (defrule modify_morph_root

@@ -18283,7 +18283,7 @@ covenants_UNDEFINED	niyama_pawra
 coventry_UNDEFINED	koveNtaXI
 cover-up_noun	gupwa_raKane_kI_koSiSa
 cover_noun	Dakkana/tukadI/surakRA-rASi/surakRA/rakama/rahasya/pqRTa-BAga/liPAPA/jilxa/JAdI/gilAPa/cAxara/AvaraNa/ASraya/bacAva/SaraNa/puTTA/surakRA_rASI
-cover_verb	waya_kara/waka_PEla/samBoga_kara/samAviRta_kara/samAviRta_ho/samAveSa_kara/rakRA_kara/PEla_jA/PElA_huA_ho/liKa/kavara_dAla/kAPI_ho/kAma_kara/Gera/DAka/Daka/Daka_le/CupA/caDa/bIme_se_surakRiwa_kara/biKera/bETa/baDA/baDa/AcCAxiwa_kara/DAzka/Cipa/paryApwa_ho/xabA_xe/nukasAna_Bara/kisI_ke_sWAna_para_kArya_kara
+cover_verb	waya_kara/waka_PEla/samBoga_kara/samAviRta_kara/samAviRta_ho/samAveSa_kara/rakRA_kara/PEla_jA/PElA_huA_ho/liKa/kavara_dAla/kAPI_ho/kAma_kara/Gera/Dazka/Dazka_le/CupA/caDa/bIme_se_surakRiwa_kara/biKera/bETa/baDA/baDa/AcCAxiwa_kara/DAzka/Cipa/paryApwa_ho/xabA_xe/nukasAna_Bara/kisI_ke_sWAna_para_kArya_kara
 coverage_UNDEFINED	vyApwi
 coverage_noun	viswqwa_sUcanA/rASi/kRewra/bImA_vyApwi/GatanA_Axi_kI_riporta
 coverages_UNDEFINED	GatanA_Axi_kI_riporta
@@ -42737,7 +42737,7 @@ itineraries_UNDEFINED	yAwrAkrama
 itinerariest_UNDEFINED	yAwrAkrama
 itinerary_noun	yAwrAkrama/yAwrAvivaraNa
 its_adjective	usak/isk/isakA/apanA
-its_pronoun	vaha/usakA/isakA/yaha
+its_pronoun	usakA/isakA
 itself_pronoun	svayam/svayaM/apane_Apa
 itsy-bitsy_adjective	bahuwa_CotA_sA
 itty-bitty_adjective	bahuwa_CotA_sA
@@ -67042,7 +67042,7 @@ rippling_UNDEFINED	laharAnA
 rippling_noun	UrmikA/CotI_lahara
 rips_UNDEFINED	cIrA
 riptide_noun	aSAnwa_jala-kRewra
-rise_noun	vqxXi/vewanavqXxi/uwWAna/pahAdI/caDAva/caDAI/baDowwarI
+rise_noun	vqxXi/vewanavqXxi/uwWAna/caDAva/caDAI/baDowwarI
 rise_verb	uTa/xiKAI_xe/xiKAI_pada/weja_ho/wejI_se_baha/wejI_se_baDa/warakkI_karakara_bana/vixroha_kara/uzcI_ho/uxaya_ho/upara_uTa/upara_kI_aora_caDa/uga/uBAra_ho/Sarma_se_lAla_ho/samApwa_kara/samApwa_ho/punarjIviwa_ho/PUla/paxonnawi_kara/nikala/KuSa_ho/Kade_ho/KadA_ho/jI_uTa/caDa/Bafga_ho/baDa/aXika_weja_ho/aXika_prasanna_ho/uxiwa_ho/wIvra_ho/prasanna_ho_jA/unnawi_kara
 risen_UNDEFINED	uxiwa_honA
 riser_noun	uTane_vAlA/uTane_vAlA_vyakwi/Kada_patta/KadA_pAipa
@@ -84882,7 +84882,7 @@ unconsecrated_adjective	aSuxXa/apaviwra
 unconsidered_UNDEFINED	upeyYakRawa
 unconsidered_adjective	upekRiwa/avicAriwa
 unconsolable_adjective	asamASvaswa
-unconsolidated_adjective	asampiNdiwa
+unconsolidated_adjective	asampidiwa
 unconstipated_adjective	kabjarahiwa
 unconstitutional_adjective	vyavasWAviruxXa/asaMvEXAnika
 unconstitutionaler_UNDEFINED	vyavasWAviruxXa
