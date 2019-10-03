@@ -613,6 +613,7 @@
  31. 	asakRama	amIra/__adj		(By Roja                    17-12-16)
  32.`	yogya		amIra/__adj		(    "				"   )
  33.	xavAI		ladak/I__adj		(Suggested by Chaitanya Sir 17-12-16)
+ 34.	sWalAkqwi	Apawwi/__n		(By Roja		    03-10-19)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -647,6 +648,8 @@ Modified :
   24.   nasla		Gar/a__n		as	rAw/a__n		(		"		"   )
   25. 	PlEta		kroXa/__n		as	Gar/a__n		(		"	    29-09-15)
   26.	gawi		SAnwi/__n		as	Apawwi/__n		(		"	    21-08-19)
+  27.	praNAlI		AjAxI/__n		as	ladak/I__n		(		"	    17-09-19)
+
 	
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
