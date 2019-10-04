@@ -55,6 +55,7 @@
 								    worst in 34 years. 
 	33. gamBIrawA	Suggested by sheetla prassd tiwari (21-06-16) Ex: But when there is a question of the very existence of a unique creation 									   of earth then this much seriousness was incumbent upon.
 	34. gupwawA	Suggested by Chaitanya Sir (16-2-17)	Ex: To say that would compromise his secrecy.
+	35. prArWanA	Suggested by Chaitanya Sir (04-10-19)	Ex: The king prayed to the goddess Aphrodite, the goddess miraculously brought the statue to life.
 	
 
   3. Removed :
@@ -2070,6 +2071,11 @@ Nandini ji LTRC 	27-11-13)
 					    indirectly, a fool. 
 	254. scripture_noun  		SAswra			(Suggested by Ayushi 	      26-06-18)
 					Ex: he surpasses all studies of Vedic wisdom, and all scriptures of the world. vaha samaswa vExika jFAna                                            waWA viSva ke samaswa SAswroM ke aXyayana ko pICe Coda xewA hE  .
+	255. model_noun			prawikqwi		(Suggested by Chaitanya Sir	04-10-19)
+					Ex: In 1943 McCulloch & Pitts developed a Boolean circuit model of brain.
+	266. well-defined		sunirXAriwa		(Suggested by Chaitanya Sir	04-10-19)
+					Ex: Today's successful AI systems operate in well-defined domains and employ narrow, specialized knowledge.
+	267. specialized_adjective	viSiRta			(	"		"		")
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2525,14 +2531,16 @@ Nandini ji LTRC 	27-11-13)
 	210. strengthen_verb	Sakwi_baDa		as	majabUwa_kara	(	"	"	       14-08-17) 	
 				Ex: The choice of activities was left to the States/UTs most of whom chose activities that strengthen revenue
                                     administration but not necessarily helped in moving towards conclusive titling.
-	211. investment_noun   	vinIyukwa_Xana		as	niveSa		(Suggested by Sukhada          28-08-17)
+	211. investment_noun   	vinIyukwa_Xana		as	niveSa		(Suggested by Sukhada		28-08-17)
 				Ex: This may be regarded as reinvestment of profits or ploughing back of profits.
-	212. diversity_noun	viBinnawA		as	viviXawA	(Suggested by Chaitanya Sir    25-10-17)
+	212. diversity_noun	viBinnawA		as	viviXawA	(Suggested by Chaitanya Sir	25-10-17)
 	213. fixed_adjective	sWira_kI_huI		as	sWira		(	"	"		"      )
 	214. national_adjective	xeSaBakwa		as	rARtrIya	(	"	"		"      )
 	215. profile_noun	pArSva_ciwra		as	varNana		(	"	"		"      )
-	216. innovative_adjective	navIna		as	aBinava		(	"	"	       09-05-18)
+	216. innovative_adjective	navIna		as	aBinava		(	"	"		09-05-18)
 	217. wherever_conjunction	kahIM_BI	as	jahAz_kahIM_BI	(	"	"		"      )
+	218. provide_verb	xe			as	praxAna_kara	(	"	"		04-10-19)
+
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -3265,7 +3273,7 @@ Nandini ji LTRC 	27-11-13)
 	171. old_woman       	buDZiyA/vqxXA#buDZiyA/vqxXA#noun#2#RM			(	"	"	    06-10-15)
 				Ex: The old woman stood facing him in silence and looking inquiringly at him. 
 	172. production_units   uwpAxana_viBAga#uwpAxana_viBAga#noun#2#RM		(Suggested by  Manasa	    10-10-15)
-				Ex: We can also observe that the employment level in different production units also goes up or down together.	
+				Ex: We can also observe that the employment level in different production units also goes up or down together.
 	
 
     Added new meaning to the existing word:
@@ -3316,6 +3324,7 @@ Nandini ji LTRC 	27-11-13)
 	28. long_ago		bahuwa_samaya_pahale	(	"	"		 "	)
 	29. pros_and_cons	lABa_va_hAni		(	"	"		 "	)
 	30. soon_after		wuranwa_bAxa		(	"	"		 "	)
+	31. natural_language	 mAnava_BARA		(	"	"		04-10-19)
 
    Modifying the head id:
    ---------------------
@@ -4232,9 +4241,22 @@ Nandini ji LTRC 	27-11-13)
 17. proper_noun_organization_names		(Added by Shirisha Manju 19-12-16.  Suggested by Chaitanya Sir)
 18. proper_noun_person_names			(Added by Shirisha Manju 19-12-16.  Suggested by Chaitanya Sir)
 19. proper_noun_place_names			(Added by Shirisha Manju 19-12-16.  Suggested by Chaitanya Sir)
+20. geography_dic.txt			geography_multi_dic.txt
+    computer_science_dict.txt		computer_science_multi_dic.txt
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
         i) acronyms-common_noun_compounds.txt
        ii) proper_noun-common_noun_compounds.txt
       iii) named_entities.txt
        iv) multi_word_expressions.txt
+
+# Changes in computer_science_dict.txt		
+#========================================
+	Added:
+		arbitrary_noun		manamAnA 
+		appied_noun		anuprayukwa
+		commerce_noun		vANijya
+		commercial_noun		vANijyika
+		commercially_noun	vANijyika_rUpa_se
+		open-minded_noun	vivqwAMwa
+	

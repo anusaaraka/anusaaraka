@@ -20979,7 +20979,7 @@ natural_gas_sales	prAkqwika_gEsa_kI_bikrI#prAkqwika_gEsa_kI_bikrI#noun#3#RM
 natural_growth_rate	sahaja_saMvqxXi_iikAsa_xara#sahaja_saMvqxXi_iikAsa_xara#noun#3#RM
 natural_impulse	nEsargika_manoyoga#nEsargika_manoyoga#noun#2#RM
 natural_instinct	sahaja_pravqwwi#sahaja_pravqwwi#noun#2#RM
-natural_language	prAkqwa_BARA#prAkqwa_BARA#noun#2#RM
+natural_language	 mAnava_BARA/prAkqwa_BARA# mAnava_BARA/prAkqwa_BARA#noun#2#RM
 natural_language_processing	prAkqwa_BARA_saMsAXana#prAkqwa_BARA_saMsAXana#noun#3#RM
 natural_language_programs	rARtrIya_BARA_progrAma#rARtrIya_BARA_progrAma#noun#3#RM
 natural_language_query	prAkqwika_BARA_praSna#prAkqwika_BARA_praSna#noun#3#RM

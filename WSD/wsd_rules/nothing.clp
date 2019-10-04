@@ -6,9 +6,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kuCa_BI_nahI))
+(assert (id-wsd_root_mng ?id kuCa_BI_nahIM))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  nothing.clp 	nothing0   "  ?id "  kuCa_BI_nahI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  nothing.clp 	nothing0   "  ?id "  kuCa_BI_nahIM )" crlf))
 )
 
 (defrule nothing1

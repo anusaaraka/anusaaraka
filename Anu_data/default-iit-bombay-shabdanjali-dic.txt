@@ -49940,7 +49940,7 @@ modality_UNDEFINED	rIwi
 mode_noun	warIkA/praNAlI/moda/anxAja
 model_UNDEFINED	namU
 model_adjective	nayA/AxarSa
-model_noun	namUnA/madala/AxarSa/AkAra/mAdela
+model_noun	namUnA/madala/AxarSa/AkAra/mAdela/prawikqwi
 model_verb	wEyAra_kara/namUnA_bana/gaDa
 modeled_UNDEFINED	mAdela
 modeling_UNDEFINED	mAdela
@@ -61805,7 +61805,7 @@ proverbial_adjective	prasixXa/mhAvare_meM_ulliKiwa/lokokwIya
 proverbially_adverb	kuKyAwa_rUpa_se
 proverbs_UNDEFINED	kahAvawa
 proves_UNDEFINED	sixXa_karanA
-provide_verb	xe/wEyAra_kara/upalabXa_karA/praxAna_kara/kara/kaha/jutA/guzjaiSa_raKa/BaraNa-poRaNa_kara
+provide_verb	praxAna_kara/xe/wEyAra_kara/upalabXa_karA/kara/kaha/jutA/guzjaiSa_raKa/BaraNa-poRaNa_kara
 provided_conjunction	baSarwe_ki
 providence_UNDEFINED	paramAwmA_kA_viXAna
 providence_noun	viXAwA/paramAwmA
@@ -74651,7 +74651,7 @@ specialization_UNDEFINED	viSeSasyawA
 specialization_noun	viSeRajFawA
 specialize_UNDEFINED	viSeRajFa_bananA
 specialize_verb	viSeRajFawA_prApwa_kara/viSeRajFa_bana/viSeRa_aXyayana_kara
-specialized_adjective	viSeRa_waraha_kA/viSeRIkqwa
+specialized_adjective	viSiRta/viSeRa_waraha_kA/viSeRIkqwa
 specializes_UNDEFINED	viSeRa_aXyayana_karanA
 specializing_UNDEFINED	viSeRa_aXyayana_karanA
 specially_adverb	KAsa_wOra_para/viSeRa_rUpa_se
@@ -90842,7 +90842,7 @@ well-conducted_adjective	susaFcAliwa
 well-connected_adjective	kulIna/bade-bade_logoM_se_sambanXa_raKane_vAlA/susafgawa
 well-considered_adjective	suviveciwa/suvicAriwa
 well-cut_adjective	acCA_kAtA_huA/acCA-mahafgA
-well-defined_adjective	susafkewa/warASA_huA/pUrNawaH_spaRta
+well-defined_adjective	sunirXAriwa/susafkewa/warASA_huA/pUrNawaH_spaRta
 well-developed_adjective	suvikasiwa
 well-disposed_adjective	anukUla/sahAnuBUwiSIla/sahamawa
 well-done_adjective	suparipakva/acCI_waraha_se_pakA_huA

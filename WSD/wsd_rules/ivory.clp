@@ -1,4 +1,4 @@
-
+;$$$ Modified meaning from 'hAWI_xAzwa_kA' to 'hAWI_xAzwa' by Roja. Suggested by Chaitanya Sir (04-10-19)
 (defrule ivory0
 (declare (salience 5000))
 (id-root ?id ivory)
@@ -6,9 +6,9 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id hAWI_xAzwa_kA))
+(assert (id-wsd_root_mng ?id hAWI_xAzwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ivory.clp 	ivory0   "  ?id "  hAWI_xAzwa_kA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ivory.clp 	ivory0   "  ?id "  hAWI_xAzwa )" crlf))
 )
 
 ;"ivory","Adj","1.hAWI_xAzwa_kA"

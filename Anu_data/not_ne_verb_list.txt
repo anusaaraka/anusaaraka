@@ -1300,3 +1300,4 @@ wEra	0
 wErA	0
 jala	0
 bana	0
+prArWanA	0

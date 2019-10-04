@@ -40,7 +40,7 @@ alphamosaic_noun	alPAmojeka
 alphanumeric_noun	akRarAMkIya
 altering_noun	parivarwana
 analog_noun	anurUpa
-and_noun	waWA'
+and_noun	waWA
 annotation_noun	tippaNa
 annunciator_noun	AKyApiwra
 appendage_noun	anubaMXa
@@ -1065,3 +1065,9 @@ wideband_noun	viswqwa_bEMda
 window_noun	gavAkRa
 windowing_noun	gavAkRana
 write_noun	leKana
+arbitrary_noun	manamAnA
+appied_noun	anuprayukwa
+commerce_noun	vANijya
+commercial_noun	vANijyika
+commercially_noun	vANijyika_rUpa_se
+open-minded_noun	vivqwAMwa
