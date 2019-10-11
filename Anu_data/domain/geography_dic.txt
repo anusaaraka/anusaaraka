@@ -3,7 +3,7 @@
 #          2) English words are converted to lower case
 #          3) Added category as 'noun' by default
 #	   4) Removed information present in  ( ) Ex: Ababdeh abEbade (janajAwi)
-		to	ababdeh_noun    abEbade
+#		to	ababdeh_noun    abEbade
 #################################################################################
 ababdeh_noun	abEbade
 ababula_noun	AbAbUlA

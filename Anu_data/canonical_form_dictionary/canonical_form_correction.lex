@@ -18,5 +18,6 @@ xeKefg	{	printf("xeKezg");	xeKefge  becomes xeKezge 	}
 yefg	{	printf("yezg");		KAyefge  becomes KAyezge 	}
 kyofki 	{	printf("kyozki");	kyofki   becomes kyozki  	}
 KiFc	{	printf("Kizc");		KiFca    becomes Kizca   */	}
+hAlAfki	{	printf("hAlAzki");	}
 
 %%

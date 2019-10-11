@@ -1,3 +1,20 @@
+ 10-10-19
+ ========
+ 1. Modified following files:	
+	canonical_form_correction.lex:
+		Correte spelling of "hAlAfki" to "hAlAzki"
+ 2. Modified following dictionaries and Updated in changes_in_databases:
+	default-iit-bombay-shabdanjali-dic.txt
+	geography_dic.txt
+	apertium_hn.dix
+ 3. Updated INSTALL file.
+ 4. Update std_tregex version from 3.6.0 to 3.9.2 
+ 5. Modified following files according to above updates:   
+	std_tregex/README
+	std_tregex/run_tregex.sh
+	std_tregex/run_tregex_for_multiparse.sh
+ 6. Updated Log.
+
  10-09-18
  ========
  1. hindi_sent_reorder.clp:  Modified: ki_rule4

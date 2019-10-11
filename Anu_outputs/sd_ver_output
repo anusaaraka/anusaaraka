@@ -196,6 +196,7 @@ Pala wowe ke xvArA KAyA gayA hE.
 Hindi meaning using Stanford parser 2.42
 I got a book from the fat ugly boy. 
 mEMne mote kurUpa ladake se puswaka prApwa kI.
+Warning: Multiple adjective senses are available for ugly . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.43
 The boy has a computer. 
@@ -290,7 +291,7 @@ Apa BAgyaSAlI hEM ki mEM yahAz hUz.
 Hindi meaning using Stanford parser 2.62
 A big, black, ugly dog chased me. 
 eka bade, kAle, kurUpa kuwwe ne merA pICA kiyA.
-Warning: Multiple adjective senses are available for ugly. WSD rule is required 
+Warning: Multiple adjective senses are available for ugly . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.63
 She is very careful about her work. 
@@ -568,6 +569,7 @@ mEMne piCale sapwAha eka baDiyA calaciwra xeKA.
 Hindi meaning using Stanford parser 2.125
 The idol was a beautiful piece of excellent workmanship. 
 prawimA uwwama kArIgarI kI eka sunxara kalAkqwi WI.
+Warning: Multiple adjective senses are available for beautiful . WSD rule is required 
 Warning: Multiple adjective senses are available for excellent . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.126
@@ -734,7 +736,7 @@ hamane usake lie unako cuna liyA.
 Hindi meaning using Stanford parser 2.161
 We picked out some beautiful flowers for her. 
 hamane usake lie kuCa sunxara PUla cuna lie.
-Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.162
 I am afraid that I have badly hurt him. 
@@ -1005,6 +1007,7 @@ Hindi meaning using Stanford parser 2.221
 The sparrow made a beautiful nest. 
 gOrEyA ne eka sunxara GoMsalA banAyA.
 gOrEyA ne sunxara GoMsalA banAyA.
+Warning: Multiple adjective senses are available for beautiful . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.222
 There is a ghost in the room. 
@@ -1169,7 +1172,7 @@ Hindi meaning using Stanford parser 2.257
 The Inspector made an accidental inspection of the school. 
 nirIkRaka ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
 iMspektara ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
-Warning: Multiple adjective senses are available for accidental. WSD rule is required 
+Warning: Multiple adjective senses are available for accidental . WSD rule is required 
 
 Hindi meaning using Stanford parser 2.258
 The priest granted absolution for John's sins. 
@@ -1215,6 +1218,7 @@ hamane Gara ke lie AKirI basa pakadI.
 
 Hindi meaning using Stanford parser 2.267
 The last part of the course was hard because I was running against the wind. 
+xOdane_ke_liye_bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOda rahA WA.
 xOdane_ke_liye_bane mArga kA AKirI BAga kaTina WA kyoMki mEM havA ke viruxXa xOda rahA WA.
 
 Hindi meaning using Stanford parser 2.268
@@ -1600,6 +1604,7 @@ Warning: Multiple adjective senses are available for western . WSD rule is requi
 Hindi meaning using Stanford parser 3.45
 Jumma masjid is considered to be one of the most beautiful mosques in western India. 
 jummA masjixa paScimI BArawa meM sabase aXika sunxara masjixoM meM se eka mAnI jAwI hE.
+Warning: Multiple adjective senses are available for beautiful . WSD rule is required 
 Warning: Multiple adjective senses are available for western . WSD rule is required 
 
 Hindi meaning using Stanford parser 3.46
@@ -1611,7 +1616,7 @@ mEM kuwwoM vEse hI billiyoM ko pasanxa karawA hUz.
 Hindi meaning using Stanford parser 3.47
 He was imprisoned in 1945 for the brutal murder of a sixty year old man. 
 vaha eka sATa varRa ke AxamI ke nirmama KUna ke lie 1945 meM kExa kiyA gayA WA.
-Warning: Multiple adjective senses are available for brutal. WSD rule is required 
+Warning: Multiple adjective senses are available for brutal . WSD rule is required 
 
 Hindi meaning using Stanford parser 3.48
 These cuts in services will particularly affect the old. 
@@ -1866,6 +1871,7 @@ SabxakoRa pawale kAgaja para sAXAraNawayaH CApe gaye hEM.
 
 Hindi meaning using Stanford parser 4.2
 She works on paper because she hates computers. 
+vaha kAgaja para kAma karawI hE kyozki vaha safgaNaka nApasanxa karawI hE.
 vaha kAgaja para kAma karawI hE kyoMki vaha safgaNaka nApasanxa karawI hE.
 
 Hindi meaning using Stanford parser 4.3
@@ -1933,6 +1939,7 @@ Warning: Multiple adjective senses are available for southern . WSD rule is requ
 
 Hindi meaning using Stanford parser 4.15
 He will not come because he is busy. 
+vaha nahIM AegA kyozki vaha vyaswa hE.
 vaha nahIM AegA kyoMki vaha vyaswa hE.
 Warning: Multiple adjective senses are available for busy . WSD rule is required 
 

@@ -61593,7 +61593,7 @@ proposition_verb	yOna_praswAva_raKa/praswAva_raKa[karanA]
 propositioned_UNDEFINED	samasyA
 propositioning_UNDEFINED	samasyA
 propositions_UNDEFINED	samasyA
-propound_verb	praswuwa_kara/vicArArWa_sAmane_raKa/prawipAxiwa_kara
+propound_verb	prawipAxiwa_kara/praswuwa_kara/vicArArWa_sAmane_raKa
 propounded_UNDEFINED	praswuwa_karanA
 propounding_UNDEFINED	praswuwa_karanA
 propounds_UNDEFINED	praswuwa_karanA
