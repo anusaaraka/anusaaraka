@@ -308,7 +308,7 @@
 	(printout ?*ner-file* "(word-wordid-nertype  "?w"  "?wid"  " ?ner")" crlf)
  )
  ;=================================== RULES FOR MAPPING multi word expressions ==============================================
-
+ ;Added by Roja (20-08-17)
  ;She found the evening boring and uninteresting [, in short ,] a [waste of time] .
  (defrule map_mwe
  ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?pre ?mid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
@@ -318,6 +318,7 @@
 	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre ?wid  $?post ?cmp_mng  ?h ?cat ?mng ?p))
  )
 
+ ;Added by Roja (20-08-17)
  ;She found the evening boring and uninteresting [, in short ,] a waste of time .
  (defrule remove_punc_ids_in_mwe
  (declare (salience -5))
@@ -328,7 +329,29 @@
 	(retract ?f)
 	(assert (ids-cmp_mng-head-cat-mng_typ-priority $?pre $?post ?cmp_mng  ?h ?cat ?mng ?p))	
  )
- ;=============================================================================================================================
+
+ ;=================================== RULES FOR MAPPING Domain multi word expressions ==============================================
+ ;NOTE: Above mapping multi word expression rules are copied by changing fact name for domain by Roja (23-10-19)
+ ;What is [Artificial Intelligence]?
+ (defrule map_mwe_for_domain
+ ?f<-(ids-domain_cmp_mng-head-cat-mng_typ-priority $?pre ?mid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+ (multifast_id-wordid    ?mid  ?wid)
+ =>
+        (retract ?f)
+        (assert (ids-domain_cmp_mng-head-cat-mng_typ-priority $?pre ?wid  $?post ?cmp_mng  ?h ?cat ?mng ?p))
+ )
+
+ ;She found the evening boring and uninteresting [, in short ,] a waste of time .
+ (defrule remove_punc_ids_in_mwe_for_domain
+ (declare (salience -5))
+ ?f<-(ids-domain_cmp_mng-head-cat-mng_typ-priority $?pre ?mid  $?post ?cmp_mng  ?h ?cat ?mng ?p)
+; (parserid-word  ?pid  ?wrd)
+ (test (neq (str-index "M" (implode$ (create$ ?mid))) FALSE))
+ =>
+        (retract ?f)
+        (assert (ids-domain_cmp_mng-head-cat-mng_typ-priority $?pre $?post ?cmp_mng  ?h ?cat ?mng ?p))
+ )
+ ;=========================================================================================================================
 
  (defrule end
  (declare (salience -10))

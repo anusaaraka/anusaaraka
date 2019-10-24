@@ -80,7 +80,11 @@ void replace_space_with_underscore(char inp_text[10000])
 //	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
 	   word_count++; }
-        }
+	   else {
+		 offset_no[j]=offset_count;
+	         word_id[j]=word_count;
+	         word_count++; j++;
+        }}
 	else
 	{
 	   word_count++;
@@ -150,7 +154,7 @@ for (j=0; j < matchp->match_num; j++) { //(Added below code by Roja.)
                 for(i=atoi(id_count); i>=1; i--) {
 //			printf("%d-%d\n", word_ids,i);
                         final_ids=word_ids-i+1;
-                        printf(" %d ", final_ids);
+                        printf(" M%d ", final_ids);
                 }
 
                 printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);
@@ -214,11 +218,13 @@ int main (int argc, char ** argv)
 	FILE *fp;
 	char *line;
 	size_t len=0;
+	int k=0;
+	char tolower_input_line[10000];
 
         fp = fopen(argv[1], "r");
         if(fp == NULL) printf("File Couldn't Open\n");
 
-        input_line[0]='_';
+        input_line[0]='_';  tolower_input_line[0]='_';
         while(getline(&line, &len, fp)!=-1)
         {
            strcpy(input_line+1, line);
@@ -227,6 +233,20 @@ int main (int argc, char ** argv)
            //calling function replace_space_with_underscore()
            replace_space_with_underscore(input_line);
            *(input_line+len)='_';
+           k=0;
+           strcpy(tolower_input_line+1, line);
+
+           //tolower 
+           while(tolower_input_line[k])
+           {
+             *(tolower_input_line+k)= tolower(tolower_input_line[k]);
+             k++;
+           } 
+
+
+           //calling function replace_space_with_underscore()
+           replace_space_with_underscore(tolower_input_line);
+           *(tolower_input_line+len)='_'; 
 	//Code added by  Roja ended
 
 	char * chunk_start = input_line;
@@ -244,6 +264,27 @@ int main (int argc, char ** argv)
 
 	        chunk_start += sizeof(buffer);
 	}
+	//Added below code by Roja  
+        //Checking multi words after tolowering the i/p. 
+        strcpy(input_line,tolower_input_line);
+        chunk_start = input_line;
+        end_of_file = input_line+strlen(input_line);
+        input_text.astring = buffer; 
+	//Code added by  Roja ended
+	//This search loop copied from above loop by Roja
+        /* Search loop */
+	while (chunk_start<end_of_file)
+	    {
+        	input_text.length = (chunk_start<end_of_file)?sizeof(buffer):(sizeof(input_line)%sizeof(buffer));
+	        strncpy (buffer, chunk_start, input_text.length);
+	
+		//Changed 3rd argument from 1 to 0 by Roja (Refer example1.c programme for details)
+        	if (ac_automata_search (atm, &input_text, 0, match_handler, (void *)(&my_param)))
+        	    // if the search stopped in the middle (returned 1) we should break the loop
+	            break;
+
+                chunk_start += sizeof(buffer);
+            } 
 
 
     printf(";~~~~~~~~~~\n"); //Added by Roja

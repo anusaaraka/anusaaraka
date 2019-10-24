@@ -182,6 +182,7 @@
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "ner_tmp1.dat")
  (load-facts "multi_word_expressions_tmp.dat")
+ (load-facts "domain_multi_word_expressions.dat")
  (load-facts "multiword_id_mapping.dat")
  (load-facts "provisional_multi_dic.dat")
  (load-facts "proper_noun_dic.dat")
@@ -195,7 +196,7 @@
  (open "E_constituents_info.dat" e_cons_fp "w")
  (open "ner.dat" ner_fp "w")
  (run)
- (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority)
+ (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority ids-domain_cmp_mng-head-cat-mng_typ-priority)
  (clear)
  ;----------------------------------------------------------------------
  (load "global_path.clp")
