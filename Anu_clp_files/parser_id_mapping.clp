@@ -331,6 +331,17 @@
  )
 
  ;=================================== RULES FOR MAPPING Domain multi word expressions ==============================================
+ ;Move this rule from check_for_best_match_in_multi-word.clp to this module
+ ;Load Domain MWE file
+ (defrule load_domain_multi_word_file
+ (declare (salience 9000))
+ (Domain ?domain&~general)
+ =>
+ (bind ?mwe_dic "domain_multi_word_expressions.dat")
+ (printout t ?mwe_dic crlf)
+ (load-facts ?mwe_dic)
+ )
+ ;--------------------------------------------------------------------------------------------------
  ;NOTE: Above mapping multi word expression rules are copied by changing fact name for domain by Roja (23-10-19)
  ;What is [Artificial Intelligence]?
  (defrule map_mwe_for_domain

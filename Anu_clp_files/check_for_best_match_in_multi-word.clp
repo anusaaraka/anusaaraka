@@ -17,16 +17,17 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
  )
  ;--------------------------------------------------------------------------------------------------------------
- ;Load Domain MWE file
- (defrule load_domain_multi_word_file
- (declare (salience 9000))
- (Domain ?domain&~general)
- =>
-; (bind ?mwe_dic (str-cat (sub-string 1 3 ?domain) "_multi_word_expressions.dat"))
- (bind ?mwe_dic "domain_multi_word_expressions.dat")
- (printout t ?mwe_dic crlf)
- (load-facts ?mwe_dic)
- )
+ ;Move this rule to Anu_clp_files/parser_id_mapping.clp module
+ ; ;Load Domain MWE file
+ ; (defrule load_domain_multi_word_file
+ ; (declare (salience 9000))
+ ; (Domain ?domain&~general)
+ ; =>
+ ;; (bind ?mwe_dic (str-cat (sub-string 1 3 ?domain) "_multi_word_expressions.dat"))
+ ; (bind ?mwe_dic "domain_multi_word_expressions.dat")
+ ; (printout t ?mwe_dic crlf)
+ ; (load-facts ?mwe_dic)
+ ; )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja(21-02-14)
  ;The magnitude of electric field E due to a point charge is thus same on a sphere with the point charge at its center; [in other words], it has a spherical symmetry.

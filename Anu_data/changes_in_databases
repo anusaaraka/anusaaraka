@@ -2077,6 +2077,11 @@ Nandini ji LTRC 	27-11-13)
 	266. well-defined		sunirXAriwa		(Suggested by Chaitanya Sir	04-10-19)
 					Ex: Today's successful AI systems operate in well-defined domains and employ narrow, specialized knowledge.
 	267. specialized_adjective	viSiRta			(	"		"		")
+	268. implement_verb		lAgU_kara/kAryAnviwa_kara	(	"		"	31-10-19)
+					Ex: An agent function implements a mapping from perception history to action.
+					Ex: Thus, an agent can be looked upon as a system that implements a mapping from percept sequences to actions.
+	269. perceive_verb		anuBava_kara		(Suggested by Chaitanya Sir		31-10-19)
+					Ex: An agent perceives its environment through sensors.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2542,6 +2547,8 @@ Nandini ji LTRC 	27-11-13)
 	217. wherever_conjunction	kahIM_BI	as	jahAz_kahIM_BI	(	"	"		"      )
 	218. provide_verb	xe			as	praxAna_kara	(	"	"		04-10-19)
 	219. propound_verb	praswuwa_kara		as	prawipAxiwa_kara(	"	"		07-10-19)
+	220. implement_verb	kAryAnviwa_kara		as	kAryAnviwa_kara	(	"	"		31-10-19)
+
 
 	
     6. Removed meaning from existing list:
@@ -2600,6 +2607,7 @@ Nandini ji LTRC 	27-11-13)
 	50. lose_verb		ko_xa/k						(   By Shirisha Manju           18-05-18)
 	51. its_pronoun		vaha/yaha					(Suggested by Chaitanya Sir	21-08-19)
 	52. rise_noun		pahAdI						(	"	"		"	)
+	53. high_noun		uzc						(	"	"		31-10-19)
 
     7. Removed entry:
        --------------
@@ -4261,4 +4269,9 @@ Nandini ji LTRC 	27-11-13)
 		commercial_noun		vANijyika
 		commercially_noun	vANijyika_rUpa_se
 		open-minded_noun	vivqwAMwa
+		perceive_noun		saMvexana			(Suggested by Chaitanya Sir 31-10-19)
+	
+	Modified:
+		sense_noun	saMvexa		to	saMvexana	(	"	"		"   )
+
 	

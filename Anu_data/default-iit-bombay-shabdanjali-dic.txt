@@ -37017,7 +37017,7 @@ high-water_noun	pAnI_kI_UzcI_sawaha
 high-wire_noun	ucca_sWAna_kA_majabUwa_rassI
 high_adjective	UzcA/xuqganXiwa/xamaka/wikRNa/uzcAI/uzcA/uwwama/uwakqRta/unnawa/ullasiwa/ujjvala/uccaxAba/uccawama/uccasWAnIya/ucca/SreRTa/SiRtApUqNa/pramuKa/maXya/maxahoSa/mahAparAXa/mahAna/baxabUxAra/BarI/aXika/awirikwa/paxa_meM_UzcA
 high_adverb	awyAXika/UzcAI_para
-high_noun	uzcA/uzc/uccawama/ucca/svarga/pramuKa/praKara/BArI/UzcA_sWAna
+high_noun	uzcA/uccawama/ucca/svarga/pramuKa/praKara/BArI/UzcA_sWAna
 highball_noun	weja_SarAba/lambe_gilAsa_meM_sodA-vhiskI
 highballs_UNDEFINED	weja_SarAba
 highboy_UNDEFINED	UzcA_ladakA
@@ -39317,7 +39317,7 @@ impleading_UNDEFINED	vakAlawa_karanA
 impleads_UNDEFINED	vakAlawa_karanA
 implecation_UNDEFINED	nihiwArWa
 implement_noun	sAXana/haWiyAra/upakaraNa
-implement_verb	kAryAnvayana_kara/anubanXa_kara/amala_meM_lA
+implement_verb	kAryAnviwa_kara/kAryAnvayana_kara/anubanXa_kara/amala_meM_lA/lAgU_kara
 implementation_noun	kAryAnvayana/lAgU_karanA
 implementations_UNDEFINED	kAryAnvayana
 implemented_UNDEFINED	upakaraNa
@@ -57081,7 +57081,7 @@ perambulation_noun	cahalakaxamI
 perambulations_UNDEFINED	cahalakaxamI
 perambulator_noun	baccA_gAdI/baccA-gAdI
 perambulators_UNDEFINED	baccA_gAdI
-perceive_verb	mahasUsa_kara/xeKa/samaJa_le/mehasUsa_kara/arWa_lagA/samaJa
+perceive_verb	mahasUsa_kara/xeKa/samaJa_le/mehasUsa_kara/arWa_lagA/samaJa/anuBava_kara
 perceived_UNDEFINED	samaJanA
 perceives_UNDEFINED	samaJanA
 perceiving_UNDEFINED	samaJanA

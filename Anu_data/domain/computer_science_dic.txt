@@ -885,7 +885,7 @@ self-dual_noun	svaxvEwa
 semantics_noun	arXa_vijFAna
 semi-group_noun	sAmi_samUha
 semi-ring_noun	sAmivalaya
-sense_noun	saMvexa/aBixiSa/BAva
+sense_noun	saMvexana/aBixiSa/BAva
 sensor_noun	saMvexiwra
 sensor-based_noun	saMvexiwra_AXArI
 sentence_noun	vAkya
@@ -1071,3 +1071,4 @@ commerce_noun	vANijya
 commercial_noun	vANijyika
 commercially_noun	vANijyika_rUpa_se
 open-minded_noun	vivqwAMwa
+perceive_noun	saMvexana

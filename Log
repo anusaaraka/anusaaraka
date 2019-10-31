@@ -1,27 +1,34 @@
- 24-10-19
+ 31-10-19
  ========
  1. In run_modules_std.bat
-	Loaded "domain_multi_word_expressions.dat" 
- 2. In parser_id_mapping.clp:
+	* In parser_id_mapping.clp:
+		Loaded : domain.dat
+		Removed : domain_multi_word_expressions.dat
+ 2. check_for_best_match_in_multi-word.clp:
+	Removed:  load_domain_multi_word_file 
+ 3. In parser_id_mapping.clp:
 	Added: map_mwe_for_domain, remove_punc_ids_in_mwe_for_domain
- 3. multi_word_expression_for_domain.c:
+	Added : load_domain_multi_word_file from above module
+ 4. multi_word_expression_for_domain.c:
 	Modified prog to get mwe for lowcase of the input/sentence.
- 4. multifast-v1.4.2/src/run.sh
+ 5. multifast-v1.4.2/src/run.sh
 	Modified to craete multi_dic.c for doamin (computer_science and geography)
- 5. Modified following files:	
+ 6. Modified following files:	
 	canonical_form_correction.lex:
 		Corrected spelling of "hAlAfki" to "hAlAzki"
- 6. Modified following dictionaries and Updated in changes_in_databases:
+ 7. Anu_data/canonical_form_dictionary/list_Anu_data_domain
+ 8. Modified following dictionaries and Updated in changes_in_databases:
 	default-iit-bombay-shabdanjali-dic.txt
 	geography_dic.txt
 	apertium_hn.dix
- 7. Updated INSTALL file.
- 8. Update std_tregex version from 3.6.0 to 3.9.2 
- 9. Modified following files according to above updates:   
+	computer_science_dic.txt
+ 9. Updated INSTALL file.
+10. Update std_tregex version from 3.6.0 to 3.9.2 
+11. Modified following files according to above updates:   
 	std_tregex/README
 	std_tregex/run_tregex.sh
 	std_tregex/run_tregex_for_multiparse.sh
-10. Updated Log.
+12. Updated Log.
 
  10-09-18
  ========
