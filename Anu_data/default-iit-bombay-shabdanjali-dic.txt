@@ -47723,7 +47723,7 @@ marrieds_UNDEFINED	vivAhiwa
 marries_UNDEFINED	vivAha_karanA
 marring_UNDEFINED	bigAda
 marrow_noun	majjA/kumhadA/kumhAdA
-marry_verb	vivAha_kara/vivAha_kar/vivAha_karanA_kara/vivAha_karA/SAxI_kara/sambanXa_ban/sambanXa_banAnA/pariNaya_kara/banXana_joda
+marry_verb	vivAha_kara/vivAha_karanA_kara/vivAha_karA/SAxI_kara/sambanXa_ban/sambanXa_banAnA/pariNaya_kara/banXana_joda
 marrying_UNDEFINED	vivAha_karanA
 mars_noun	mafgala
 marsala_noun	eka_waraha_kA_maxya
@@ -52486,7 +52486,7 @@ no-no_noun	manAhI
 no-nonsense_adjective	vyAvahArika
 no-one_pronoun	koI_BI_nahIM
 no-show_noun	karwavya_se_BAgane_vAlA
-no_adjective	nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM
+no_adjective	nahIM/nahIM_hEM/koI_nahIM/bilkula_nahIM
 no_adverb	nahIM
 no_interjection	nahIM
 no_noun	inakAra
@@ -64109,7 +64109,7 @@ reasoned_UNDEFINED	viveka_buxXi
 reasoned_adjective	warkasafgawa/suviveciwa
 reasoner_UNDEFINED	warka_karane_vAlA
 reasoning_adjective	warka-sambanXI
-reasoning_noun	warka_viwarka/warkasamgawa_vicAr/wark
+reasoning_noun	warka_viwarka/warkasamgawa_vicAr/warka
 reasonings_UNDEFINED	warka_viwarka
 reasons_UNDEFINED	viveka_buxXi
 reassemble_verb	Pira_se_joda/Pira_se_ikatTA_ho
@@ -93608,3 +93608,4 @@ knower_noun	jFAwA
 described_adjective	varNiwa
 conch-shell_noun	SafKa
 servitor_noun	sevaka
+percept_adjective	boXa

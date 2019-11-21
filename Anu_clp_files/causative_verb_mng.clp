@@ -72,6 +72,21 @@
  )
 
 
+ ;Added mwe_wrd_info function by Roja (19-11-19)
+ ;To print mwe wrd in Sugestion
+ (deffunction mwe_wrd_info($?wrds)
+	(bind ?f_wrd (implode$ (first$ $?wrds)))
+        (bind ?new_wrd  (string-to-field (str-cat ?f_wrd  "_" (nth$ 2 $?wrds))))
+        (if (> (length $?wrds) 2) then
+                (loop-for-count (?i 3 (length $?wrds))
+                        (bind ?n_wrd (explode$ (str-cat ?new_wrd "_" (nth$ ?i $?wrds))))
+                )
+        else
+		(bind ?n_wrd ?new_wrd)
+        )
+	(bind ?mwe_wrd ?n_wrd)
+ )
+
  ;----------------------------------------------------------------------------------------------------------------
 
  ; I am going to remarry when you die
@@ -150,6 +165,31 @@
   	)
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Get word info
+ ;Added by Roja(19-11-19)
+ ;[Image analysis] [systems] are examples of this kind of situation.
+ (defrule assert_dummy_fact
+ (declare (salience 714))
+ (id-HM-source-grp_ids ?id ?mng ?s $?pre ?id1 $?post)
+ (not (fact_created ?id))
+ =>
+	(assert (id-HM-source-grp_wrds ?id ?mng ?s $?pre ?id1 $?post)) 
+	(assert (fact_created ?id))
+ )
+
+ ;Added by Roja (19-11-19)
+ ;To replace ids with word in hindi meaning group fact (for printing suggestion in below rules wrd info needed)
+ (defrule create_wrds_info
+ (declare (salience 713))
+ (id-original_word ?id1 ?w)
+ ?f<-(id-HM-source-grp_wrds ?id ?mng ?s $?pre ?id1 $?post)
+ =>
+	(retract ?f)
+	(assert (id-HM-source-grp_wrds ?id ?mng ?s $?pre ?w $?post))
+ )
+
+ ;Modified by Roja (19-11-19)
+ ;When source info is compound, group ids, source info and suggestion are wrongly printed. So modified rule to print correctly.
  ;Added by Shirisha Manju (22-07-16)
  ;Prince Shreyanshkumar urged Adinatha Prabhu to accept [sugar cane juice] for ending the fast which he accepted .
  (defrule get_comp3_ids
@@ -159,30 +199,47 @@
  (Head-Level-Mother-Daughters  ?  ?  ?NN1  ?id)
  (Head-Level-Mother-Daughters  ?  ?  ?NN2  ?id1)
  (Head-Level-Mother-Daughters  ?  ?  ?NN3  ?id2)
- ?f0<-(id-HM-source ?id ?mng ?)
- ?f1<-(id-HM-source ?id1 ?mng1 ?)
- ?f2<-(id-HM-source ?id2 ?mng2 ?s&WSD_root_mng|Default_meaning)
- (id-original_word ?id ?w)
- (id-original_word ?id1 ?w1)
- (id-original_word ?id2 ?w2)
+ ?f0<-(id-HM-source ?id ?mng ?s) 
+ ?f1<-(id-HM-source-grp_ids ?id ?mng ?s $?ids)
+ ?f2<-(id-HM-source-grp_wrds ?id ?mng ?s $?wrds)
+ ?f3<-(id-HM-source ?id1 ?mng1 ?s1)
+ ?f4<-(id-HM-source-grp_ids ?id1 ?mng1 ?s1 $?ids1)
+ ?f5<-(id-HM-source-grp_wrds ?id1 ?mng1 ?s1 $?wrds1)
+ ?f6<-(id-HM-source ?id2 ?mng2 ?s2&WSD_root_mng|Default_meaning)
+ ?f7<-(id-HM-source-grp_ids ?id2 ?mng2 ?s2 ?id2)
+ ?f8<-(id-HM-source-grp_wrds ?id2 ?mng2 ?s2 ?wrd2)
  =>
-	(retract ?f0 ?f1 ?f2)
-	(assert (id-HM-source ?id -  NN_NN_compound_rule))
-	(assert (id-HM-source ?id1 -  NN_NN_compound_rule))
-	(if (eq ?mng -) then
-	        (bind ?n_mng (string-to-field (str-cat ?mng1"_"?mng2)))
-		(assert (id-comp_mng ?id2 ?id1 ?id2))
-	else
-	        (bind ?n_mng (string-to-field (str-cat ?mng"_"?mng1"_"?mng2)))
-		(assert (id-comp_mng ?id2 ?id ?id1 ?id2))
-	)
-	(assert (id-HM-source ?id2 ?n_mng NN_NN_compound_rule))
-;	(printout t "Warning: Compound Meaning is missing for:	" ?w " "?w1" "?w2 crlf)
-        (bind ?n_w (string-to-field (str-cat ?w "_" ?w1"_"?w2)))
-	(printout t "suggested_compound" ?n_w"	"?n_mng crlf)
-	(assert (id-comp_ids ?id2 ?id ?id1 ?id2))
+	(retract ?f0 ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7 ?f8)
+	(bind ?new_source (string-to-field (str-cat ?s "," ?s1 ",NN_NN_compound_rule")))
+	(bind $?new_wrd (create$ $?wrds $?wrds1 ?wrd2))
+	(printout t $?new_wrd crlf)
+	(assert (id-HM-source ?id -  ?new_source))
+	(assert (id-HM-source ?id1 -  ?new_source))
+        (bind ?n_mng (string-to-field (str-cat ?mng "_" ?mng1 "_" ?mng2)))
+	(assert (id-HM-source ?id2 ?n_mng  ?new_source))
+	(assert (id-HM-source-grp_ids ?id2 ?n_mng ?new_source $?ids $?ids1 ?id2))
+	(bind ?n_w (mwe_wrd_info $?new_wrd))
+	(printout t "suggested_compound " (implode$ ?n_w)"	"?n_mng crlf)
+	(assert (id-comp_mng ?id2 ?n_mng ))
+	(assert (id-comp_ids ?id2 $?ids $?ids1 ?id2))
+;	(assert (id-HM-source ?id -  NN_NN_compound_rule))
+;	(assert (id-HM-source ?id1 -  NN_NN_compound_rule))
+;	(if (eq ?mng -) then
+;	        (bind ?n_mng (string-to-field (str-cat ?mng1"_"?mng2)))
+;		(assert (id-comp_mng ?id2 ?id1 ?id2))
+;	else
+;	        (bind ?n_mng (string-to-field (str-cat ?mng"_"?mng1"_"?mng2)))
+;		(assert (id-comp_mng ?id2 ?id ?id1 ?id2))
+;	)
+;	(assert (id-HM-source ?id2 ?n_mng NN_NN_compound_rule))
+;;	(printout t "Warning: Compound Meaning is missing for:	" ?w " "?w1" "?w2 crlf)
+;        (bind ?n_w (string-to-field (str-cat ?w "_" ?w1"_"?w2)))
+;	(printout t "suggested_compound " ?n_w"	"?n_mng crlf)
+;	(assert (id-comp_ids ?id2 ?id ?id1 ?id2))
  )	
  ;----------------------------------------------------------------------------------------------------------------
+ ;Modified by Roja (19-11-19)
+ ;When source info is compound, group ids, source info and suggestion are wrongly printed. So modified rule to print correctly.
  ;Added by Shirisha Manju (06-02-15) Suggested by Chaitanya Sir
  ;He is solving the problems in the [chapter sets].
  ;Trans Maldivian is one of them which has 20 [sea planes].
@@ -192,20 +249,26 @@
  (and (Node-Category ?NN NN) (Node-Category ?NNS NNS|NN))
  (Head-Level-Mother-Daughters  ? ?  ?NN  ?id)
  (Head-Level-Mother-Daughters  ? ?  ?NNS  ?id1)
- ?f0<-(id-HM-source ?id ?mng ?s)
- ?f1<-(id-HM-source ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning)
- (id-original_word ?id ?w)
- (id-original_word ?id1 ?w1)
+ ?f0<-(id-HM-source ?id ?mng ?s) 
+ ?f1<-(id-HM-source-grp_ids ?id ?mng ?s $?ids)
+ ?f2<-(id-HM-source-grp_wrds ?id ?mng ?s $?wrds)
+ ?f3<-(id-HM-source ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning)
+ ?f4<-(id-HM-source-grp_ids ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning ?id1)
+ ?f5<-(id-HM-source-grp_wrds ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning ?wrd)
  =>
-        (retract ?f ?f0 ?f1)
-	(assert (id-HM-source ?id -  NN_NN_compound_rule))
+        (retract ?f ?f0 ?f1 ?f2 ?f3 ?f4 ?f5)
+	(bind ?new_source (string-to-field (str-cat ?s ",NN_NN_compound_rule")))
+	(bind $?new_wrd (create$ $?wrds ?wrd))
+	(printout t $?new_wrd crlf)
+	(assert (id-HM-source ?id -  ?new_source))
         (bind ?n_mng (string-to-field (str-cat ?mng "_" ?mng1)))
-	(assert (id-HM-source ?id1 ?n_mng NN_NN_compound_rule))
-;	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
-        (bind ?n_w (string-to-field (str-cat ?w"_"?w1)))
-	(printout t "suggested_compound" ?n_w"	"?n_mng crlf)
-	(assert (id-comp_mng ?id1 ?id ?id1 ))
-	(assert (id-comp_ids ?id1 ?id ?id1 ))
+	(assert (id-HM-source ?id1 ?n_mng  ?new_source))
+	(assert (id-HM-source-grp_ids ?id1 ?n_mng ?new_source $?ids ?id1))
+;;	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
+	(bind ?n_w (mwe_wrd_info $?new_wrd))
+	(printout t "suggested_compound " (implode$ ?n_w)"	"?n_mng crlf)
+	(assert (id-comp_mng ?id1 ?n_mng ))
+	(assert (id-comp_ids ?id1 $?ids ?id1 ))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Ex. She was asked about the pay increase but made no comment.
