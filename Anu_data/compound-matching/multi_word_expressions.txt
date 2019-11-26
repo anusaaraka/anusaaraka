@@ -33415,6 +33415,8 @@ bona_fide	prAmANika#prAmANika#noun#2#WM
 #Therefore, the conclusion is that a spiritual master who is one hundred percent krsnaconscious is the bona fide spiritual master, for he can solve the problems of life.	(Suggested by Chaitanya sir     16-05-18)
 for_a_moment	kRaNa_Bara#kRaNa_Bara#noun#3#WM
 #As a great devotee of Krushna, he could not forget Krushna even for a moment, because that is the nature of a devotee. (Suggested by Chaitanya sir     11-07-18)
+that_is	arWAw#arWAw#determiner#1#RM	(Suggested by Chaitanya Sir 26-11-19)
+#A rational agent is one that acts rationally, that is, is in the best possible manner.
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

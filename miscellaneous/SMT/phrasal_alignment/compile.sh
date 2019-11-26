@@ -1,7 +1,8 @@
 echo "Compiling phrasal english dictionaries"
-rm en-hi-gdbm-dict*.gdbm  hi-en/Hin-Eng-dic*.gdbm $HOME_anu_test/Anu_databases/AllTam_rev.gdbm
+rm -f en-hi-gdbm-dict*.gdbm  hi-en/Hin-Eng-dic*.gdbm $HOME_anu_test/Anu_databases/AllTam_rev.gdbm
 gcc -o gdbm-fetch.out gdbm-fetch.c -lgdbm
 $HOME_anu_test/Anu_src/comp.sh replace-punctuation
+
 $HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_physics.gdbm < en-hi-gdbm-dict_physics.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_gyan_nidhi.gdbm < en-hi-gdbm-dict_gyan_nidhi.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  en-hi-gdbm-dict_crm_pns.gdbm < en-hi-gdbm-dict_crm_pns.txt

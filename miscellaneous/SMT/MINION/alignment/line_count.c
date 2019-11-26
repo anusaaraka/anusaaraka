@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
    char *line = NULL, word[1000];
    int  count=0;

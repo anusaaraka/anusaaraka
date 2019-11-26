@@ -162,7 +162,7 @@ void printfun(char *id , char *node , char *root , char *cat ,char *gen,char *nu
   *id='\0';*root='\0';*node='\0';*cat='\0';*gen='\0';*num='\0';*per='\0';*cas='\0';*tam='\0';*new_tam='\0';*t='\0';*head='\0';*name='\0';*rel1='\0';*rel2='\0';
 }
 
-main(int argc, char* argv[])
+char* main(int argc, char* argv[])
 {
  fp= fopen(argv[1],"w");fp1= fopen(argv[2],"w");fp2= fopen(argv[3],"w");fp3= fopen(argv[4],"w");
  yylex();

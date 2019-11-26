@@ -75,7 +75,7 @@ char *ptr;
 
 %%
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
 fp=fopen(argv[1], "w");
 fp1=fopen(argv[2], "w");

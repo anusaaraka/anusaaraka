@@ -5,7 +5,7 @@ MYPATH1=$HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
 cd $HOME_anu_test/Anu_databases/
 	rm *.gdbm
 
-rm $MYPATH/eng_* $MYPATH/hnd_multi* $MYPATH/hnd_phy_multi*
+rm -f $MYPATH/eng_* $MYPATH/hnd_multi* $MYPATH/hnd_phy_multi*
 
 cd  $HOME_anu_test/multifast-v1.4.2/src
 rm -f get_word_count get_word_count_single.out multi_word-dic.c  physics_multi_dic.c  proper_noun-dic.c provisional_multi_dic.c agriculture_multi_dic.c
@@ -20,6 +20,12 @@ cd $HOME_anu_test/miscellaneous/SMT/dependency_alignment/
    $HOME_anu_test/Anu_src/comp.sh mapping-hindi_pos-univ_pos
    $HOME_anu_test/Anu_src/comp.sh mapping-hindi_rel-univ_rel
  
+#Creating wsd_dictionary 
+echo "Creating wsd dictionary..."
+cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment 
+ sh create_wsd_dic.sh 
+ mv $HOME_anu_test/miscellaneous/SMT/MINION/alignment/wsd_dictionary.txt $MYPATH/
+
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  flex canonical_form.lex
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
@@ -211,8 +217,8 @@ echo "Creating eng_proper_noun_multi.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating transliterate_meaning.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_meaning.gdbm < transliterate_meaning.txt
- echo "Creating provisional_transliterate_mng.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_transliterate_mng.gdbm < $MYPATH/provisional_transliterate_mng.txt
+# echo "Creating provisional_transliterate_mng.gdbm"
+# ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_transliterate_mng.gdbm < $MYPATH/provisional_transliterate_mng.txt
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
