@@ -10,8 +10,10 @@
   
   if [ "$4" != "" ] ; then
 #	  cp $4 $MYPATH/    #ilparser
-	python $hindi_parser/mono_jm_parser.py --load $hindi_parser/PARSER/UD/HI/PARSER/hi-ud-parser --test $MYPATH/$2 --output-file $MYPATH/hindi_dep_parser_out.txt
- 	sh $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_conll_info.sh $MYPATH hindi_dep_parser_out.txt hnd_parser_relns.txt
+#	python $hindi_parser/mono_jm_parser.py --load $hindi_parser/PARSER/UD/HI/PARSER/hi-ud-parser --test $MYPATH/hindi_wx_tokenised --output-file $MYPATH/hindi_dep_parser_out.txt
+	echo "Calling irshaad parser..."
+	sh $hindi_parser/run_hindi_parser.sh $MYPATH/$2 $MYPATH/hindi_dep_parser_out.txt 
+ 	sh $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_conll_info.sh $MYPATH $MYPATH/hindi_dep_parser_out.txt $MYPATH/hnd_parser_relns.txt
 	cut -f1 $MYPATH/hindi_dep_parser_out.txt > $MYPATH/hid
 	cut -f2 $MYPATH/hindi_dep_parser_out.txt > $MYPATH/hword
 	paste $MYPATH/hid $MYPATH/hword > $MYPATH/dep_parser_word_tmp.txt
