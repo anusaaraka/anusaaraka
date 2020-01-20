@@ -14,37 +14,46 @@
 	Modified: get_comp3_ids, get_comp2_ids   
  5. multi_word_expression_for_domain.c:
 	Modified prog to get mwe for lowcase of the input/sentence.
- 6. multifast-v1.4.2/src/run.sh
+ 6. hindi_meaning.clp:
+	Modified: deffunction get_first_mng
+	Added:	split_hyphenated_wrd, get_mng_for_hyphenated_wrd
+ 7. miscellaneous/SMT/phrasal_alignment/get_heuristics.clp
+	Renamed: get_hindi_wordnet_match to get_hindi_wordnet_match_using_default_dic
+ 8. multifast-v1.4.2/src/run.sh
 	Modified to create multi_dic.c for doamin (computer_science and geography)
- 7. Modified following files:	
+ 9. Modified following files:	
 	canonical_form_correction.lex:
 		Corrected spelling of "hAlAfki" to "hAlAzki"
- 8. Modified Anu_data/canonical_form_dictionary/list_Anu_data_domain to get above domains
- 9. Added following new programmes to create wsd dictionary:
+10. Modified Anu_data/canonical_form_dictionary/list_Anu_data_domain to get above domains
+11. Added following new programmes to create wsd dictionary:
 	miscellaneous/SMT/MINION/alignment/create_wsd_dic.py
 	miscellaneous/SMT/MINION/alignment/create_wsd_dic.sh
-10. Added above compilation step in dic_compile.sh
-11. Fixed warnings in following files:
+12. Added above compilation step in dic_compile.sh
+13. Fixed warnings in following files:
 	miscellaneous/SMT/MINION/alignment/get_tam_info.lex
 	miscellaneous/SMT/MINION/alignment/get_tam_info_from_full_parser.lex
 	miscellaneous/SMT/MINION/alignment/line_count.c
 	miscellaneous/SMT/MINION/alignment/morph.lex
 	miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
-12. Modified following dictionaries and Updated in changes_in_databases:
+14. Modified following dictionaries and Updated in changes_in_databases:
 	default-iit-bombay-shabdanjali-dic.txt
 	geography_dic.txt
 	apertium_hn.dix
 	computer_science_dic.txt
 	multi_word_expressions.txt
-13. Updated INSTALL file.
-14. Updated following shell files:
+	multi_word_expressions_from_iit_bombay.txt
+15. Updated INSTALL file.
+16. Updated following shell files:
 	Anusaaraka_alignment.sh	-> Calling irshaad parser
-15. Update std_tregex version from 3.6.0 to 3.9.2 
-16. Modified following files according to above updates:   
+	miscellaneous/SMT/phrasal_alignment/align_debug/alignment_debug.sh	
+17. Update std_tregex version from 3.6.0 to 3.9.2 
+18. Modified following files according to above updates:   
 	std_tregex/README
 	std_tregex/run_tregex.sh
 	std_tregex/run_tregex_for_multiparse.sh
-17. Updated Log.
+19. Deleted:
+	miscellaneous/SMT/MINION/dictionaries/wsd_dictionary.txt
+20. Updated Log.
 
  10-09-18
  ========
