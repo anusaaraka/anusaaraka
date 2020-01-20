@@ -2085,6 +2085,16 @@ Nandini ji LTRC 	27-11-13)
 					Ex: Thus, an agent can be looked upon as a system that implements a mapping from percept sequences to actions.
 	269. perceive_verb		anuBava_kara		(Suggested by Chaitanya Sir		31-10-19)
 					Ex: An agent perceives its environment through sensors.
+	270. maximise_verb		aXikawama_kara		(Suggested by Chaitanya Sir		10-01-20)
+	271. maximize_verb		aXikawama_kara		(	"	"			"	)
+					Ex: Rational Action is the action that maximizes the expected value of the performance measure given the percept sequence to date.
+	272. look_verb			najara_dAla		(	"	"			"	)
+					Ex: Now let us look at the concept of a search problem.
+	273. find_verb			pawA_lagA/pawA_laga
+					Ex: Execute allowable actions to find the successor states.
+	274. allowed_adjective		svIqwa/svIkAra_kiyA_huA	(	"	"			"	)
+ 
+
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2613,6 +2623,7 @@ Nandini ji LTRC 	27-11-13)
 	53. high_noun		uzc						(	"	"		31-10-19)
 	54. marry_verb		vivAha_kar					(By Roja			"	)
 	55. no_adjective	koI						(Suggested by Chaitanya Sir	01-11-19)
+	56. account_verb	samaJa						(	"	"		10-01-20)
 
 
     7. Removed entry:
@@ -2682,6 +2693,8 @@ Nandini ji LTRC 	27-11-13)
 	62. surrendered_UNDEFINED   AwmasamarpaNa_karanA		(	"	"	"	16-05-18)
 	63. topmost_UNDEFINED       sabase_UparI			(	"	"	"	24-05-18)
 	64. posses_verb     raKa_ho/raKa/pAsa_ho/para_niyaNwraNa_raKa	(	"	"	"	   "	)
+	65. agents_UNDEFINED	prawiniXi				(	"	"	"	10-01-20)
+
 
     8. Modified category:
        ------------------
@@ -2698,6 +2711,8 @@ Nandini ji LTRC 	27-11-13)
 	11. doctorate_UNDEFINED as	doctorate_noun    	(Suggested by Pramila Banasthali 24-01-14)
 	12. english_UNDEFINED	as	english_noun		( Suggested by Chaitanya Sir     04-11-14)
 	13. dilapidate_UNDEFINED as	dilapidate_verb		(	"	"		 14-06-17)
+	14. allowed_UNDEFINED	as	allowed_adjective	(	"	"		 10-01-20)	
+
 	
 # Changes in preposition.txt
 # ==========================
@@ -3802,7 +3817,9 @@ Nandini ji LTRC 	27-11-13)
 # =====================================================
  Modified:
  --------
-	calendar_month	paMcAMga_samayaa	as	paMcAMga_samaya		(By Roja 20-06-13)
+	calendar_month			paMcAMga_samayaa	as	paMcAMga_samaya		(By Roja 20-06-13)
+	take_into_consideration		vicAra_kara		as	XyAna_raKa		(Suggested by Chaitanya Sir 10-01-20)
+
 
 # Changes in proper_noun_dic.txt
 # ==============================

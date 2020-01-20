@@ -33417,6 +33417,8 @@ for_a_moment	kRaNa_Bara#kRaNa_Bara#noun#3#WM
 #As a great devotee of Krushna, he could not forget Krushna even for a moment, because that is the nature of a devotee. (Suggested by Chaitanya sir     11-07-18)
 that_is	arWAw#arWAw#determiner#1#RM	(Suggested by Chaitanya Sir 26-11-19)
 #A rational agent is one that acts rationally, that is, is in the best possible manner.
+take_into_account	XyAna_raKa/hisAba_mEM_le#XyAna_raKa/hisAba_mEM_le#verb#2#RM
+#Therefore rationality must take into account the limitations of the agent. (Suugested by Chaitanta Sir 10-01-20)
 ###########################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
@@ -33722,8 +33724,8 @@ step_by_step	kramaSaH/kaxama_xara_kaxama#kramaSaH/kaxama_xara_kaxama#noun#3#RM
 strictly_speaking	ImAnaxArI_se_kahA_jAe_wo/kadZAI_se/bilkula_TIka/bolanA#ImAnaxArI_se_kahA_jAe_wo/kadZAI_se/bilkula_TIka/bolanA#adverb#1#RM
 strike_off	takkara/XakkA#takkara/XakkA#noun#1#RM
 strike_off's	takkara/XakkA#takkara/XakkA#noun#1#RM
-take_in	lenA/mAna_lenA#lenA/mAna_lenA#noun#1#RM
-take_in's	lenA/mAna_lenA#lenA/mAna_lenA#noun#1#RM
+#take_in	lenA/mAna_lenA#lenA/mAna_lenA#noun#1#RM	#Suggested by Chaitanya Sir to comment(24-12-19)
+#take_in's	lenA/mAna_lenA#lenA/mAna_lenA#noun#1#RM	#	"		"	"	
 the_vitals	SarIra_ke_muKya_avayava/hraxaya_Ora_maswiRka#SarIra_ke_muKya_avayava/hraxaya_Ora_maswiRka#noun#2#RM
 third_person	anya_puruRa/vyAkaraNa_ke_anusAra#anya_puruRa/vyAkaraNa_ke_anusAra#noun#2#RM
 tour_de_force	PreMca/camawkAra#PreMca/camawkAra#noun#3#RM

@@ -3040,7 +3040,7 @@ accouchement_noun	SiSujanana/prasava
 accoucheur_noun	prasUwi-viSeRajFa
 accoucheuse_noun	xAI/prasAvikA
 account_noun	KAwA/vyAKyA/vqwwAnwa/vivaraNa/vajaha/spaRtIkaraNa/samAcAra-vivaraNa/samAcAra/mUlya/mahawwva/leKA-joKA/leKA/kAraNa/Kabara/jamA_KAwA/bila
-account_verb	vivaraNa_xe/varNana_kara/spaRtIkaraNa_xe/samaJa/mAna/javAba_xe/hisAba_raKa/kuCa_hone_kI_ASafkA/niSciwa_mAwrA_meM_ho
+account_verb	vivaraNa_xe/varNana_kara/spaRtIkaraNa_xe/#samaJa/mAna/javAba_xe/hisAba_raKa/kuCa_hone_kI_ASafkA/niSciwa_mAwrA_meM_ho
 accountabilities_UNDEFINED	javAbaxehI
 accountability_noun	javAbaxehI/uwwaraxAyiwva
 accountable_adjective	uwwaraxAyI/jimmexAra
@@ -4212,7 +4212,6 @@ agendas_UNDEFINED	karane_vAlI_kAryavAhI
 agendum_noun	kAryasUcI
 agent-provocateur_noun	prawiniXi{jo_galawa_kArya_karane_vAle_ko
 agent_noun	prawiniXi/paxArWa/karwu/karwA/karmaka/kAraNa/kAraka/gupwacara/ejanta/aBikarwA/gumASwA
-agents_UNDEFINED	prawiniXi
 ages_UNDEFINED	lambA_samaya
 aggarwal_UNDEFINED	agravAla
 agglomeration_UNDEFINED	samUha
@@ -4850,7 +4849,7 @@ allowance_noun	BawwA/CUta
 allowanced_UNDEFINED	BawwA
 allowances_UNDEFINED	BawwA
 allowancing_UNDEFINED	BawwA
-allowed_UNDEFINED	mAna_lenA
+allowed_adjective	svIqwa/svIkAra_kiyA_huA/mAna_lenA
 allowing_UNDEFINED	mAna_lenA
 allows_UNDEFINED	mAna_lenA
 allows_verb	ijAjawa_xe
@@ -29558,7 +29557,7 @@ finches_UNDEFINED	eka_waraha_kI_CotI_cidiyA
 find-for_against	verb/PEsalA_karanA
 find-out_verb	pawA_kara
 find_noun	Koja
-find_verb	pA/upalabXa_kara/pAyA_jA/mila/Koja/Koja_kara/jAzca_kara/DUzDa/DUzDa_nikAla/anuBava_kara
+find_verb	pA/upalabXa_kara/pAyA_jA/mila/Koja/Koja_kara/jAzca_kara/DUzDa/DUzDa_nikAla/anuBava_kara/pawA_lagA/pawA_laga
 finder_noun	DUzDane_vAlA/pAne_vAlA
 finders_UNDEFINED	DUzDane_vAlA
 finding_noun	jAzca_pariNAma/nirNaya/niRkarRa
@@ -46364,7 +46363,7 @@ look-for_UNDEFINED	DUzDanA
 look-in_noun	mOk
 look_adverb	wiraskAra_se
 look_noun	rUpa/aBivyaFjanA/xqRti/avalokana/PESana/SElI/walASa
-look_verb	xeKa/XyAna_raKa/xiKa/xeKaBAla_kara/vyakwa_kara/rUKa_ho/parIkRaNa_kara/nigAha_dAla/laga_ho/iSArA_kara/bul/baxala_xe/walASa/XyAna_xe/xiKAI_xe/xiSA_kI_ora_ho
+look_verb	xeKa/XyAna_raKa/xiKa/xeKaBAla_kara/vyakwa_kara/rUKa_ho/parIkRaNa_kara/nigAha_dAla/laga_ho/iSArA_kara/bul/baxala_xe/walASa/XyAna_xe/xiKAI_xe/xiSA_kI_ora_ho/najara_dAla
 looked_UNDEFINED	avalokana
 looker_noun	AkarRaka_vyakwi/xarSaka
 lookers_UNDEFINED	AkarRaka_vyakwi
@@ -48122,12 +48121,12 @@ maximaler_UNDEFINED	uccawama
 maximalest_UNDEFINED	uccawama
 maximisation_noun	uccawama_sImA_waka_le_jAnA/mahawwama_mUlyAfkana
 maximise_UNDEFINED	uccawama_sImA_waka_baDAnA
-maximise_verb	uccawama_sImA_waka_baDA/aXikawama_lABa_uTA
+maximise_verb	aXikawama_kara/uccawama_sImA_waka_baDA/aXikawama_lABa_uTA
 maximised_UNDEFINED	uccawama_sImA_waka_baDAnA
 maximises_UNDEFINED	uccawama_sImA_waka_baDAnA
 maximising_UNDEFINED	uccawama_sImA_waka_baDAnA
 maximization_noun	uccawama_sImA_waka_le_jAnA/mahawwama_mUlyAfkana
-maximize_verb	uccawama_sImA_waka_baDA/aXikawama_lABa_uTA
+maximize_verb	aXikawama_kara/uccawama_sImA_waka_baDA/aXikawama_lABa_uTA
 maximized_UNDEFINED	uccawama_sImA_waka_baDAnA
 maximizes_UNDEFINED	uccawama_sImA_waka_baDAnA
 maximizing_UNDEFINED	uccawama_sImA_waka_baDAnA

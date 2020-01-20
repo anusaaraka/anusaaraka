@@ -950,7 +950,7 @@
 ;---------------------------------------------------------------------------
 ;;Added by Shirisha Manju
 ;adv: perfectly == BalIBAzwi == acCI_waraha se
-(defrule get_hindi_wordnet_match
+(defrule get_hindi_wordnet_match_using_default_dic
 (declare (salience 820))
 (current_id ?mid)
 (id-root-cat-possible_mngs ?mid ?root&~hI ?cat $?mng)
@@ -964,7 +964,7 @@
 (id-word ?aid ?)
 ;(test (neq (integerp (member$ $?mng $?pos_mngs)) FALSE))
 =>
-	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match get_hindi_wordnet_match))
+	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match get_hindi_wordnet_match_using_default_dic))
 	(assert (anu_id-man_id-type ?aid ?mid  hindi_wordnet_match))
 )
 ;---------------------------------------------------------------------------

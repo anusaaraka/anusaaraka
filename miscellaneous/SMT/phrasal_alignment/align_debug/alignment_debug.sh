@@ -1,3 +1,4 @@
+source activate irshad_parser
 PRES_PATH=`pwd`
 MYPATH=$HOME_anu_tmp/tmp/$1_tmp
 
@@ -6,7 +7,7 @@ $HOME_anu_test/Anu_src/comp.sh combine_apos
 $HOME_anu_test/Anu_src/comp.sh get_wordid
 #commented below sed by Roja (21-08-19) To avoid next sentence penn output to display in the current sentence
 #sed '1d' $MYPATH/one_sentence_per_line.txt.std.penn > $MYPATH/one_sentence_per_line.txt.std.penn.tmp1
-./combine_apos.out  < $MYPATH/one_sentence_per_line.txt.std.penn.tmp1 > $MYPATH/one_sentence_per_line.txt.std.penn.tmp
+./combine_apos.out  < $MYPATH/one_sentence_per_line.txt.std.penn > $MYPATH/one_sentence_per_line.txt.std.penn.tmp
 #./get_wordid.out < $MYPATH/one_sentence_per_line.txt.std.penn.tmp2  > $MYPATH/one_sentence_per_line.txt.std.penn.tmp3
 
 cd $MYPATH

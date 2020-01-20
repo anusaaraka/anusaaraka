@@ -14131,7 +14131,7 @@ take_heart	prowsAhiwa_ho#prowsAhiwa_ho#verb#2#RM
 take_hold_of	giraPwa_meM_le/hAWa_meM_pakadZa_le#giraPwa_meM_le/hAWa_meM_pakadZa_le#verb#2#RM
 take_holy_orders	purohiwa_bana#purohiwa_bana#verb#2#RM
 take_in	CotA_kara/Gara_meM_Ane_xe/JAzse_meM_A/SAmila_kara/XoKA_xe/gOra_se_xeKa/kAma_le/le_le/le/samaJa/xeKane#CotA_kara/Gara_meM_Ane_xe/JAzse_meM_A/SAmila_kara/XoKA_xe/gOra_se_xeKa/kAma_le/le_le/le/samaJa/xeKane#verb#2#RM
-take_into_consideration	vicAra_kara#vicAra_kara#verb#2#RM
+take_into_consideration	XyAna_raKa#XyAna_raKa#verb#3#RM
 take_issue_with	ke_sAWa_warka-viwarka_kara/para_asahamawi_prakata_kara#ke_sAWa_warka-viwarka_kara/para_asahamawi_prakata_kara#verb#2#RM
 take_it	samaJa#samaJa#verb#2#RM
 take_it_as_read	mAna_le#mAna_le#verb#2#RM

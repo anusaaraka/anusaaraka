@@ -47,13 +47,14 @@
 
  ;------------------------------------------ Functions ---------------------------------------------------------
  ;Added by Shirisha Manju (30-07-13)
+ ;added string-to-field by Roja(10-01-20)
  (deffunction get_first_mng (?wrd ?cat ?dbase)
 	(bind ?mng (gdbm_lookup ?dbase (str-cat ?wrd "_" ?cat)))
         (if (neq ?mng "FALSE") then
         	(if (neq (str-index "/" ?mng) FALSE) then
-                	(bind ?h_mng (sub-string  1 (- (str-index "/" ?mng) 1) ?mng))
+                	(bind ?h_mng (string-to-field (sub-string  1 (- (str-index "/" ?mng) 1) ?mng)))
             	else
-                	(bind ?h_mng  ?mng)
+                	(bind ?h_mng  (string-to-field ?mng))
            	)
 	)
  )
@@ -629,6 +630,77 @@
        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?wx_notation"   transliterate_mng "?id")" crlf)
        (printout ?*PropN_file* ?word crlf)
  )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (13-10-19)
+ ;Rule to split hyphenated word
+ ;The years from 1969 to 1979 marked the early development of [knowledge-based] systems.
+ ;NMT:san 1969 se 1979 waka ke varRoM meM [jFAna AXAriwa] praNAliyoM kA vikAsa huA.
+ (defrule split_hyphenated_wrd
+ (declare (salience 6450))
+ (id-word ?id ?word)
+ ?mng<-(meaning_to_be_decided ?id)
+ (test (neq (numberp ?word) TRUE))
+ (test (neq (str-index "-" ?word) FALSE))
+ =>
+	(bind $?list (create$ ))
+	(bind ?len (length ?word))
+	(bind ?new_wrd ?word)
+	(loop-for-count (?i 1 ?len)
+		(bind ?index (str-index "-" ?new_wrd))
+		(while (neq (str-index "-" ?new_wrd) FALSE)
+			(printout t ?i ?index  crlf)
+			(bind ?wrd (string-to-field (sub-string ?i (- ?index 1) ?new_wrd)))
+			(bind $?list (create$ $?list ?wrd))
+			(bind ?new_wrd (sub-string (+ ?index 1) (length ?new_wrd) ?new_wrd))
+			(bind ?index (+ ?index 1))
+	))
+	(bind $?list (create$  $?list (string-to-field ?new_wrd)))
+	(printout t $?list crlf)
+	(assert (hyphenated_wrd_id-w_list ?id $?list))
+ )
+		
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (14-10-19)
+ ;Rule to get meaning for hyphenated word
+ ;The years from 1969 to 1979 marked the early development of [knowledge-based] systems.
+ ;NMT:san 1969 se 1979 waka ke varRoM meM [jFAna AXAriwa] praNAliyoM kA vikAsa huA.
+ (defrule get_mng_for_hyphenated_wrd
+ (declare (salience 6450))
+ (hyphenated_wrd_id-w_list ?id $?list)
+ ?mng<-(meaning_to_be_decided ?id)
+ (dic_name ?dname)
+ (id-cat_coarse ?id ?cat)
+ (default-cat ?cat1)
+ (test (neq ?cat ?cat1))
+ =>
+	(bind ?hyp_wrd_mng (create$ ))
+        (bind ?wrd (nth$ 1 $?list))
+	(if (neq  (get_first_mng ?wrd ?cat ?dname) FALSE) then
+			(bind ?f_mng (get_first_mng ?wrd ?cat ?dname)) 
+			(bind ?hyp_wrd_mng (create$ ?f_mng))
+		else
+			(bind ?f_mng (get_first_mng ?wrd "noun" ?dname)) ;here ?wrd = knowledge 
+			(bind ?hyp_wrd_mng (create$ ?f_mng))
+	)
+	(loop-for-count (?i  2 (length $?list))
+                (bind ?wrd (nth$ ?i $?list))
+		(if (neq  (get_first_mng ?wrd ?cat ?dname) FALSE) then
+			(bind ?f_mng (get_first_mng ?wrd ?cat ?dname)) ;here ?wrd = based
+			(bind ?hyp_wrd_mng (create$ (sym-cat (implode$ ?hyp_wrd_mng) "-" ?f_mng)))
+		else (if (neq  (get_first_mng ?wrd "noun" ?dname) FALSE) then
+			(bind ?f_mng (get_first_mng ?wrd "noun" ?dname)) 
+			(bind ?hyp_wrd_mng (create$ (sym-cat (implode$ ?hyp_wrd_mng) "-" ?f_mng)))
+		else (if (neq  (get_first_mng ?wrd ?cat1 ?dname) FALSE) then
+			(bind ?f_mng (get_first_mng ?wrd ?cat1 ?dname)) 
+			(bind ?hyp_wrd_mng (create$ (sym-cat (implode$ ?hyp_wrd_mng) "-" ?f_mng)))
+
+		)))
+	)
+        (retract ?mng)
+	(printout t (implode$ ?hyp_wrd_mng) crlf)
+	(printout ?*hin_mng_file* "(id-HM-source   "?id"   "(implode$ ?hyp_wrd_mng)"   Default_meaning)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "(implode$ ?hyp_wrd_mng)"   Default_meaning "?id")" crlf)
+ ) 
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (04-02-12)
  ;That would be the lowest level since the early 1970s.
