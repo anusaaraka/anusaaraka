@@ -1,7 +1,7 @@
 parser_path=$HOME/hindi-parsers/nsdp-cs
 cd $1
 
-python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_relations.py $2 $3
+python3 $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_hnd_relations.py $2 $3
 
 ##########################################
 #parser_path=$HOME/hindi-parsers/parsito

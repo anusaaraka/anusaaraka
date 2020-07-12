@@ -265,7 +265,7 @@
  (load-facts "lwg_info.dat")
  (assert (anu_verb_count-verbs 0))
  (assert (man_verb_count-verbs 0))
- (assert (heuristics anu_exact_match anu_exact_match_without_vib anu_root_match anu_root_match_without_vib multi_dictionary_match dictionary_match dictionary_match_without_vib multi_hindi_wordnet_match hindi_wordnet_match single_verb_match kriyA_mUla_partial_match hnd_and_std_rel_match partial_match hindi_tam_match hindi_tam_dic_match english_word_match transliteration_match scope manual_scope M_layer_match M_layer_partial_match L_layer_match L_layer_partial_match))
+ (assert (heuristics anu_exact_match anu_exact_match_without_vib anu_root_match anu_root_match_without_vib multi_dictionary_match dictionary_match dictionary_match_without_vib multi_hindi_wordnet_match hindi_wordnet_match hindi_wordnet_match_using_dic single_verb_match kriyA_mUla_partial_match hnd_and_std_rel_match partial_match hindi_tam_match hindi_tam_dic_match english_word_match transliteration_match scope manual_scope M_layer_match M_layer_partial_match L_layer_match L_layer_partial_match))
  (open "slot_debug_input.txt" s_fp "a")
  (run)
  (save-facts "align_debug_source1.dat" local anu_id-man_id-src-rule_name no_match_found)

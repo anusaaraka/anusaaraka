@@ -87,7 +87,7 @@ sed -i 's/@symbolSLASH/@SYMBOL-SLASH/g' one_sen_per_line_manual_hindi_sen_wx_in_
 ########################### Adding suffix information ############################################
 
  cd $MYPATH1
-  python add-suf-into-chunks.py $MYPATH/one_sen_per_line_manual_hindi_sen_tokenized.txt $MYPATH/shallow_parser_input.txt.out_canonical > $MYPATH/shallow_parser_output.txt
+  python3 add-suf-into-chunks.py $MYPATH/one_sen_per_line_manual_hindi_sen_tokenized.txt $MYPATH/shallow_parser_input.txt.out_canonical > $MYPATH/shallow_parser_output.txt
  
 ########################### Extracting Morph information #########################################
 

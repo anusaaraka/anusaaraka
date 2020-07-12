@@ -4,14 +4,14 @@
 	http://nlp.stanford.edu/software/stanford-parser-full-2015-12-09.zip
 	(Note: Current version is 3.6.0) 
   2. Download stanford ner latest version from following link:
-	http://nlp.stanford.edu/software/stanford-ner-2016-10-31.zip
-	(Note: Current version 3.7.0)
+	http://nlp.stanford.edu/software/stanford-ner-2018-10-16.zip
+	(Note: Current version 3.9.2)
   3. Copy the above dowloaded zip files in the following path:
 	$HOME_anu_test/Parsers/stanford-parser/
   4. Run:
 	cd $HOME_anu_test/Parsers/stanford-parser/
 	sh get_latest_version_stanford_parser.sh <stanford-parser-latest-version.zip> <stanford-ner-latest-version.zip>
-		Ex: sh get_latest_version_stanford_parser.sh stanford-parser-full-2015-12-09.zip stanford-ner-2016-10-31.zip
+		Ex: sh get_latest_version_stanford_parser.sh stanford-parser-full-2015-12-09.zip stanford-ner-2018-10-16.zip
   5. cd $HOME_anu_test
   6. shell_scripts/remove_out-files.sh 
   7. shell_scripts/anu_compile.sh

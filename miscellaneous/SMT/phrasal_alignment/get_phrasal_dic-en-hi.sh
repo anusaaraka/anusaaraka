@@ -17,7 +17,7 @@ else
 fi
 
 ### Creating Word to word dictionary::
-python create_SL-TL_dict_using_phrase_table.py  $1  en  hi
+python3 create_SL-TL_dict_using_phrase_table.py  $1  en  hi
 cut -f1 -d'|' $1 > f1
 cut -f4 -d'|' $1 > f4
 paste f1 f4 > f1-4

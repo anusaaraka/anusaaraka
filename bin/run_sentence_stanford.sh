@@ -18,16 +18,16 @@
  ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info_tmp.dat  $MYPATH/$1_tmp/$2/Node_category_tmp.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
 
  cd $MYPATH/$1_tmp/$2
- myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
+ timeout 180 myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
  #Following two files are added to handle PropN fact and SYMBOL facts in layered o/p 
- python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py hindi_meanings_tmp1.dat hindi_meanings.dat
- python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py hindi_meanings_with_grp_ids_tmp1.dat hindi_meanings_with_grp_ids.dat
+ python3 $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py hindi_meanings_tmp1.dat hindi_meanings.dat
+ python3 $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py hindi_meanings_with_grp_ids_tmp1.dat hindi_meanings_with_grp_ids.dat
  
  cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat
 
  cd $MYPATH/$1_tmp/$2
- python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
+ python3 $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
  sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
 
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
@@ -47,7 +47,7 @@
 
  sh $HOME_anu_test/bin/abbr.sh
 
- python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
+ python3 $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
 
  cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
  cat  hindi_sentence.dat
@@ -61,5 +61,5 @@
 
  cat errors.txt
 
- myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
- mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
+ #myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
+ #mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat

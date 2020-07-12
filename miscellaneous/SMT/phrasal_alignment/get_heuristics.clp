@@ -964,8 +964,8 @@
 (id-word ?aid ?)
 ;(test (neq (integerp (member$ $?mng $?pos_mngs)) FALSE))
 =>
-	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match get_hindi_wordnet_match_using_default_dic))
-	(assert (anu_id-man_id-type ?aid ?mid  hindi_wordnet_match))
+	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet_match_using_dic get_hindi_wordnet_match_using_default_dic))
+	(assert (anu_id-man_id-type ?aid ?mid  hindi_wordnet_match_using_dic))
 )
 ;---------------------------------------------------------------------------
 ;;Added by Shirisha Manju

@@ -42,7 +42,7 @@ $PATH1/gen_table.pl $1.fmt $1.fmt_split_tmp < ../$1.pre-processed
 
 ##Added by Sukhada (29-06-11)
 # To replace underscore (_) with hyphens (-)  (for WordNet purpose ) Ex: Child_abuse 
-python $PATH1/replace_underscore_with_hyphen.py   $1.fmt_split_tmp  $PATH2/$1_tmp/underscore_hyphen_replace_info.txt  $1.fmt_split_tmp1
+python3 $PATH1/replace_underscore_with_hyphen.py   $1.fmt_split_tmp  $PATH2/$1_tmp/underscore_hyphen_replace_info.txt  $1.fmt_split_tmp1
 
 ##Added by Roja(18-07-12)
 ##Replacing ABBR has these abrevations dont create any problem in CLIPS.

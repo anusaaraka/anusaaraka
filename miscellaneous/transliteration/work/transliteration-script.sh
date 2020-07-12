@@ -5,7 +5,7 @@ export CORENLP=$HOME_anu_test/miscellaneous/transliteration/stanford-corenlp-201
 #rm -rf $HOME_anu_test/miscellaneous/transliteration/work/testmodels
 #mkdir $HOME_anu_test/miscellaneous/transliteration/work/testmodels
 
-python $HOME_anu_test/miscellaneous/transliteration/work/split-char.py $1/$2 > $1/$2_tmp-clean-word
+python3 $HOME_anu_test/miscellaneous/transliteration/work/split-char.py $1/$2 > $1/$2_tmp-clean-word
 
 #echo "running extract phrases"
 #time $HOME_anu_test/miscellaneous/transliteration/phrasal.Beta2/scripts/extract-phrases 1g $HOME_anu_test/miscellaneous/transliteration/work/models $HOME_anu_test/miscellaneous/transliteration/work/testmodels -fFilterCorpus $1/$2_tmp-clean-word

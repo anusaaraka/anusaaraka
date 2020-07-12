@@ -41,7 +41,7 @@ wx_utf8 < $2/tmp/$1_tmp/$1_trnsltn_tmp3.html > $3/$1_trnsltn.html
 if [ -f $HOME_anu_output/$1_sample2.html ] ; then
 	rm $HOME_anu_output/$1_sample2.html
 fi
-python $HOME_anu_test/shell_scripts/this1.py $HOME_anu_output/$1.html $HOME_anu_output $HOME_anu_test $HOME_anu_tmp $1 mail.js $HOME_anu_provisional_wsd_rules
+python3 $HOME_anu_test/shell_scripts/this1.py $HOME_anu_output/$1.html $HOME_anu_output $HOME_anu_test $HOME_anu_tmp $1 mail.js $HOME_anu_provisional_wsd_rules
 #####################
 
 

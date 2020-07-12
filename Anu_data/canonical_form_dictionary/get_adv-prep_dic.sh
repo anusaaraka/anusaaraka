@@ -13,4 +13,4 @@ export LC_ALL=C
 sort -u dictionaries/dic > dictionaries/dic_sort
 
 $HOME_anu_test/Anu_src/converting-dic-to-smt_format.out dictionaries/dic_sort dictionaries/dic_adv_prep
-python $HOME_anu_test/miscellaneous/SMT/MINION/alignment/remove_dup_entry.py  dictionaries/dic_adv_prep > dictionaries/adv_prep_dic_in_canonical_form.txt
+python3 $HOME_anu_test/miscellaneous/SMT/MINION/alignment/remove_dup_entry.py  dictionaries/dic_adv_prep > dictionaries/adv_prep_dic_in_canonical_form.txt

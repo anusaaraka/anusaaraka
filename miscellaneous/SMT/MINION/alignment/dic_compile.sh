@@ -69,6 +69,9 @@ cd $MYPATH1
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture_dic.gdbm < agriculture_dic_in_canonical_form.txt
   echo "Creating social_science_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
+  echo "Creating computer_science.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/computer_science.gdbm < computer_science_dic_in_canonical_form.txt
+
 
  echo "Creating crude_equivalent_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/crude_equivalent_dic.gdbm  < crude_equivalent_dic_in_canonical_form.txt
@@ -219,8 +222,6 @@ echo "Creating eng_proper_noun_multi.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_meaning.gdbm < transliterate_meaning.txt
 # echo "Creating provisional_transliterate_mng.gdbm"
 # ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_transliterate_mng.gdbm < $MYPATH/provisional_transliterate_mng.txt
- echo "Creating computer_science.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/computer_science.gdbm < computer_science_dic_in_canonical_form.txt
 
 
  cd $HOME_anu_test/Anu_data/compound-matching
@@ -228,7 +229,7 @@ echo "Creating eng_proper_noun_multi.gdbm"
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
 
  echo "Creating derivational_mng.gdbm"
- python $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_derivation_morph_mng.py $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm $MYPATH/derivational_dict.txt > $MYPATH/derivational_mng.txt
+ python3 $HOME_anu_test/miscellaneous/SMT/dependency_alignment/get_derivation_morph_mng.py $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm $MYPATH/derivational_dict.txt > $MYPATH/derivational_mng.txt
  cd $HOME_anu_test/Anu_data/
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/derivational_mng.gdbm < $MYPATH/derivational_mng.txt
  

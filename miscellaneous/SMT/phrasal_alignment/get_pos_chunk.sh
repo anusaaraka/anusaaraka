@@ -27,5 +27,5 @@ $HOME_anu_test/miscellaneous/SHALLOW_PARSER/adding@-for-eng-words.out < f1 > f1-
 utf8_wx f1-1 > f1-2
 paste f1-2 f2 > hnd.chunker.wx
 
-python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/print-pos-info.py hnd.tagger.wx > pos.txt
-python $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/create-chunk-facts.py hnd.chunker.wx $1 
+python3 $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/print-pos-info.py hnd.tagger.wx > pos.txt
+python3 $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/create-chunk-facts.py hnd.chunker.wx $1 
