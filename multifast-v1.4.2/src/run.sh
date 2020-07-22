@@ -15,5 +15,6 @@ sh get_multi_word-dic.sh $MYPATH/social_science_multi_dic_in_canonical_form.txt 
 #sh get_multi_word-dic.sh $MYPATH/iskcon_multi_dic_in_canonical_form.txt iskcon_multi_dic.c
 sh get_multi_word-dic.sh $MYPATH/computer_science_multi_dic_in_canonical_form.txt computer_science_multi_dic.c
 sh get_multi_word-dic.sh $MYPATH/geography_multi_dic_in_canonical_form.txt geography_multi_dic.c
+sh get_multi_word-dic.sh $MYPATH/swayam_AI_multi_dic_in_canonical_form.txt swayam_AI_multi_dic.c
 
 rm proper_noun_dic.txt

@@ -28,6 +28,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture_dic.gdbm < agriculture_dic_in_canonical_form.txt
  echo "Creating social_science_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
+ echo "Creating swayam_AI_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/swayam_AI_dic.gdbm < swayam_AI_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 

@@ -183,7 +183,8 @@
  (declare (salience 713))
  (id-original_word ?id1 ?w)
  ?f<-(id-HM-source-grp_wrds ?id ?mng ?s $?pre ?id1 $?post)
- =>
+ (test (neq (numberp ?w) TRUE)) ;25 is 5 by [5]. 
+=>
 	(retract ?f)
 	(assert (id-HM-source-grp_wrds ?id ?mng ?s $?pre ?w $?post))
  )
@@ -219,7 +220,7 @@
 	(assert (id-HM-source ?id2 ?n_mng  ?new_source))
 	(assert (id-HM-source-grp_ids ?id2 ?n_mng ?new_source $?ids $?ids1 ?id2))
 	(bind ?n_w (mwe_wrd_info $?new_wrd))
-	(printout t "suggested_compound " (implode$ ?n_w)"	"?n_mng crlf)
+	(printout t "suggested_compound "?n_w"	"?n_mng crlf)
 	(assert (id-comp_mng ?id2 ?n_mng ))
 	(assert (id-comp_ids ?id2 $?ids $?ids1 ?id2))
 ;	(assert (id-HM-source ?id -  NN_NN_compound_rule))
@@ -266,7 +267,7 @@
 	(assert (id-HM-source-grp_ids ?id1 ?n_mng ?new_source $?ids ?id1))
 ;;	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
 	(bind ?n_w (mwe_wrd_info $?new_wrd))
-	(printout t "suggested_compound " (implode$ ?n_w)"	"?n_mng crlf)
+	(printout t "suggested_compound " ?n_w"	 "?n_mng crlf)
 	(assert (id-comp_mng ?id1 ?n_mng ))
 	(assert (id-comp_ids ?id1 $?ids ?id1 ))
  )

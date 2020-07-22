@@ -71,6 +71,8 @@ cd $MYPATH1
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/social_science_dic.gdbm < social_science_dic_in_canonical_form.txt
   echo "Creating computer_science.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/computer_science.gdbm < computer_science_dic_in_canonical_form.txt
+ echo "Creating swayam_AI_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/swayam_AI_dic.gdbm < swayam_AI_dic_in_canonical_form.txt
 
 
  echo "Creating crude_equivalent_dic.gdbm"
