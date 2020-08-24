@@ -10,7 +10,8 @@ file_name = sys.argv[2]+'/chunks.tmp'
 fw = open(file_name, 'w')
 
 lines = 0
-for line in file(sys.argv[1]):
+#for line in file(sys.argv[1]):
+for line in open(sys.argv[1]):
 	lst =  line.split('\t')
 	if lines == 0  and lst[1].startswith('B-'):#line.strip() == '':
 		lines += 1
@@ -29,7 +30,8 @@ c = 1
 ids = []
 new_file = sys.argv[2]+'/chunk_info.txt'
 fw1 = open(new_file, 'w')
-for line in file(file_name):
+#for line in file(file_name):
+for line in open(file_name):
 	if line.strip() == '':
 		c = 1
 		ids = []

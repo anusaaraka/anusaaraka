@@ -25,7 +25,7 @@ int yywrap()
 
 int main(int argc,char *argv[])
 {     
-	//int yyparse(); //added int to avoid gcc error in 16.04
+	int yyparse(); //added int to avoid gcc error in 16.04
 	yyparse(); 
       	{	int i,j;
        		for(i=1;i<index1;i++){ 

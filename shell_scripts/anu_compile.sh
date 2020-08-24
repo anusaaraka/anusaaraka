@@ -5,6 +5,13 @@
  gcc -o converting-dic-to-alignment_format.out converting-dic-to-alignment_format.c
  gcc -o split-mngs.out split-mngs.c
 
+ #Creating wsd_dictionary 
+ echo "Creating wsd dictionary..."
+ cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
+ sh create_wsd_dic.sh
+ mv $HOME_anu_test/miscellaneous/SMT/MINION/alignment/wsd_dictionary.txt $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries/
+
+
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  echo "Generating Canonical form dictionaries"
  flex canonical_form.lex
